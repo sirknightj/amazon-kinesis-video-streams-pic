@@ -5,7 +5,7 @@
 #---------------------------------------------------------------------------
 PROJECT_NAME           = "Amazon Kinesis Video Streams PIC"
 OUTPUT_DIRECTORY       = doc
-INPUT                  = README.md src/client/include/ src/client/src/ src/common/include/ src/common/src/ src/duration/include/ src/duration/src/
+INPUT                  = README.md src/client/include/com/amazonaws/kinesis/video/client/ src/client/src/
 FILE_PATTERNS          = Include.h *.c
 RECURSIVE              = YES
 EXAMPLE_PATTERNS       = *
