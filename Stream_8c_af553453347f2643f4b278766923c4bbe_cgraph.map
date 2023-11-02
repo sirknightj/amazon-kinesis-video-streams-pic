@@ -1,7 +1,0 @@
-<map id="resetStream" name="resetStream">
-<area shape="rect" id="node1" title=" " alt="" coords="5,107,108,133"/>
-<area shape="rect" id="node2" href="$Stream_8c.html#abc0f57b774ed71ccbce1f35b6f729990" title=" " alt="" coords="193,5,320,32"/>
-<area shape="rect" id="node3" href="$StreamState_8c.html#a468d6e495eb8c1a4ce26e80d59006c9f" title=" " alt="" coords="156,56,357,83"/>
-<area shape="rect" id="node4" href="$AckParser_8c.html#a53a42dbf3c53c6a45935edf0df97c1f7" title=" " alt="" coords="180,107,333,133"/>
-<area shape="rect" id="node5" href="$Stream_8c.html#a4a403863bae8a1609a52464e1b290c36" title=" " alt="" coords="191,157,323,184"/>
-</map>

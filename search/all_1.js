@@ -1,28 +1,4 @@
 var searchData=
 [
-  ['absolutefragmenttimes_15',['absoluteFragmentTimes',['../struct____StreamCaps.html#a77ae7273957819b41ae017918039f1bd',1,'__StreamCaps']]],
-  ['ackparser_2ec_16',['AckParser.c',['../AckParser_8c.html',1,'']]],
-  ['acktype_17',['ackType',['../struct____FragmentAck.html#aa44ed7864b24caf476dbda3b44c9e062',1,'__FragmentAck']]],
-  ['adaptive_18',['adaptive',['../struct____StreamCaps.html#af36c61c6c6c31468570e249bf3338559',1,'__StreamCaps']]],
-  ['allowstreamcreation_19',['allowStreamCreation',['../struct____StreamCaps.html#a611af889ae896b90970b948848edb789',1,'__StreamCaps']]],
-  ['appendvalidatedmetadata_20',['appendValidatedMetadata',['../Stream_8c.html#ae78e83a6af483239ad42df68ebf3b325',1,'Stream.c']]],
-  ['audio_5fcodec_5fid_21',['AUDIO_CODEC_ID',['../Include_8h.html#a804323e3a6397e6d9cf53bff3a07579f',1,'Include.h']]],
-  ['audio_5fcodec_5fid_5faac_22',['AUDIO_CODEC_ID_AAC',['../Include_8h.html#a804323e3a6397e6d9cf53bff3a07579fa2e1dc7843ab5c1396d9e9282ee2e2136',1,'Include.h']]],
-  ['audio_5fcodec_5fid_5fpcm_5falaw_23',['AUDIO_CODEC_ID_PCM_ALAW',['../Include_8h.html#a804323e3a6397e6d9cf53bff3a07579fa4ff27d9a796a83b61d724b8012f54fa8',1,'Include.h']]],
-  ['audio_5fcodec_5fid_5fpcm_5fmulaw_24',['AUDIO_CODEC_ID_PCM_MULAW',['../Include_8h.html#a804323e3a6397e6d9cf53bff3a07579fa8559d712f2f8dbde7bed8db84992743f',1,'Include.h']]],
-  ['audiovideoframetimestampcomparator_25',['audioVideoFrameTimestampComparator',['../FrameOrderCoordinator_8c.html#a4deb751f45791e32d31990c844a8162d',1,'FrameOrderCoordinator.c']]],
-  ['auth_5finfo_5fcurrent_5fversion_26',['AUTH_INFO_CURRENT_VERSION',['../Include_8h.html#a2c4f36e4633a71baf4b8d3ef265fb60c',1,'Include.h']]],
-  ['auth_5finfo_5fnone_27',['AUTH_INFO_NONE',['../Include_8h.html#aefbad90f5b10ed1ea28f1c8cb607ce20a127ced03cf5597ff5ff22023018f360c',1,'Include.h']]],
-  ['auth_5finfo_5ftype_28',['AUTH_INFO_TYPE',['../Include_8h.html#aefbad90f5b10ed1ea28f1c8cb607ce20',1,'Include.h']]],
-  ['auth_5finfo_5ftype_5fcert_29',['AUTH_INFO_TYPE_CERT',['../Include_8h.html#aefbad90f5b10ed1ea28f1c8cb607ce20a8981d710b7aa9ab5072cbfcc30912123',1,'Include.h']]],
-  ['auth_5finfo_5ftype_5fsts_30',['AUTH_INFO_TYPE_STS',['../Include_8h.html#aefbad90f5b10ed1ea28f1c8cb607ce20a187bd15a684f74dcb9416c003d4371d1',1,'Include.h']]],
-  ['auth_5finfo_5fundefined_31',['AUTH_INFO_UNDEFINED',['../Include_8h.html#aefbad90f5b10ed1ea28f1c8cb607ce20a9e2efe61df7ad413333086487d484bd8',1,'Include.h']]],
-  ['authinfo_32',['AuthInfo',['../Include_8h.html#aa462670d8805c169da5a9073b637c506',1,'Include.h']]],
-  ['authintegration_2ec_33',['AuthIntegration.c',['../AuthIntegration_8c.html',1,'']]],
-  ['automatic_5fstreaming_5falways_5fcontinuous_34',['AUTOMATIC_STREAMING_ALWAYS_CONTINUOUS',['../Include_8h.html#aaf60070647422beaf87daa349bb68d1fa606a09ee1f834a9ea71ddb4dfa25ca2d',1,'Include.h']]],
-  ['automatic_5fstreaming_5fflags_35',['AUTOMATIC_STREAMING_FLAGS',['../Include_8h.html#aaf60070647422beaf87daa349bb68d1f',1,'Include.h']]],
-  ['automatic_5fstreaming_5fintermittent_5fproducer_36',['AUTOMATIC_STREAMING_INTERMITTENT_PRODUCER',['../Include_8h.html#aaf60070647422beaf87daa349bb68d1fa4b7ec18493639ffcccf7386ee2d527cc',1,'Include.h']]],
-  ['automaticstreamingflags_37',['automaticStreamingFlags',['../struct____ClientInfo.html#a918504f27fdb48d05391ca4a0987dc3b',1,'__ClientInfo']]],
-  ['avgbandwidthbps_38',['avgBandwidthBps',['../struct____StreamCaps.html#a5cb0baab695faed3993927ffad00760c',1,'__StreamCaps']]],
-  ['avgsessionduration_39',['avgSessionDuration',['../struct____StreamMetrics.html#accdea054e5268f5afd4d729f2e5b2eaf',1,'__StreamMetrics']]]
+  ['readme_2',['README',['../md_README.html',1,'']]]
 ];

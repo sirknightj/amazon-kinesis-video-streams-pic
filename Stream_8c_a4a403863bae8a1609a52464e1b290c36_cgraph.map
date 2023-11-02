@@ -1,7 +1,0 @@
-<map id="shutdownStream" name="shutdownStream">
-<area shape="rect" id="node1" title=" " alt="" coords="5,56,137,83"/>
-<area shape="rect" id="node2" href="$Stream_8c.html#af553453347f2643f4b278766923c4bbe" title=" " alt="" coords="185,56,288,83"/>
-<area shape="rect" id="node3" href="$Stream_8c.html#abc0f57b774ed71ccbce1f35b6f729990" title=" " alt="" coords="373,5,500,32"/>
-<area shape="rect" id="node4" href="$StreamState_8c.html#a468d6e495eb8c1a4ce26e80d59006c9f" title=" " alt="" coords="336,56,537,83"/>
-<area shape="rect" id="node5" href="$AckParser_8c.html#a53a42dbf3c53c6a45935edf0df97c1f7" title=" " alt="" coords="360,107,513,133"/>
-</map>
