@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['servicecallresultcheck_1014',['serviceCallResultCheck',['../StreamEvent_8c.html#a79e8aa8b939011d4c97872b4978c96dc',1,'serviceCallResultCheck(SERVICE_CALL_RESULT callResult):&#160;StreamEvent.c'],['../Include_8h.html#a43690264c11954557c0ee46442da734b',1,'serviceCallResultCheck(SERVICE_CALL_RESULT):&#160;StreamEvent.c']]],
+  ['servicecallresultretry_1015',['serviceCallResultRetry',['../StreamEvent_8c.html#a45df93b1abe0e6780262ca3181f474ab',1,'StreamEvent.c']]],
+  ['setcontentstoreallocator_1016',['setContentStoreAllocator',['../Client_8c.html#a739fd2856ab2d256c2bbfd2b5454aaa1',1,'Client.c']]],
+  ['setnaladaptationflags_1017',['setNalAdaptationFlags',['../Stream_8c.html#ae6c4b540a18ba23052d632bb5cd9f754',1,'Stream.c']]],
+  ['setupdefaultkvsretrystrategyparameters_1018',['setupDefaultKvsRetryStrategyParameters',['../Client_8c.html#a1c417489009f20beac61296ebe7a96f1',1,'Client.c']]],
+  ['shutdownstream_1019',['shutdownStream',['../Stream_8c.html#a4a403863bae8a1609a52464e1b290c36',1,'Stream.c']]],
+  ['sizeofdeviceinfo_1020',['sizeOfDeviceInfo',['../InputValidator_8c.html#a77f05cb996dfae3f54c61348cd34b8b9',1,'InputValidator.c']]],
+  ['sizeofstreamdescription_1021',['sizeOfStreamDescription',['../InputValidator_8c.html#a27edfbdc0cb4bd3c8ac01ccc15119b2a',1,'InputValidator.c']]],
+  ['stepclientstatemachine_1022',['stepClientStateMachine',['../ClientState_8c.html#a8b497e8b74728a7dad51fd533f077adc',1,'ClientState.c']]],
+  ['stopkinesisvideostream_1023',['stopKinesisVideoStream',['../Include_8h.html#a833d76f8826335e4b01fbd3fad825aab',1,'stopKinesisVideoStream(STREAM_HANDLE):&#160;Client.c'],['../Client_8c.html#a3fcc1d95cc26f394d2fad2661218855f',1,'stopKinesisVideoStream(STREAM_HANDLE streamHandle):&#160;Client.c']]],
+  ['stopkinesisvideostreams_1024',['stopKinesisVideoStreams',['../Client_8c.html#abbf582249913fe3a6f13b13b9c76c70d',1,'stopKinesisVideoStreams(CLIENT_HANDLE clientHandle):&#160;Client.c'],['../Include_8h.html#a41ef19cde7640676a17df550a2987346',1,'stopKinesisVideoStreams(CLIENT_HANDLE):&#160;Client.c']]],
+  ['stopkinesisvideostreamsync_1025',['stopKinesisVideoStreamSync',['../Include_8h.html#aefc00192629ed32d1ec1a234155f39e7',1,'stopKinesisVideoStreamSync(STREAM_HANDLE):&#160;Client.c'],['../Client_8c.html#afd9eb674d8c548be5002bb92a74163b3',1,'stopKinesisVideoStreamSync(STREAM_HANDLE streamHandle):&#160;Client.c']]],
+  ['stopstream_1026',['stopStream',['../Stream_8c.html#a0727a137395117fc31e6567443279358',1,'Stream.c']]],
+  ['stopstreamsync_1027',['stopStreamSync',['../Stream_8c.html#a363e330727bd94fc7e64ff6b60516739',1,'Stream.c']]],
+  ['streamformatchanged_1028',['streamFormatChanged',['../Stream_8c.html#a85bd9d003259b57c83e4d5f3ed2217c2',1,'Stream.c']]],
+  ['streamfragmentackevent_1029',['streamFragmentAckEvent',['../StreamEvent_8c.html#a2eaae7f2f32de7730153bfb31a08c35c',1,'StreamEvent.c']]],
+  ['streamfragmentbufferingack_1030',['streamFragmentBufferingAck',['../Stream_8c.html#ad0c8681d27ea2aad6344916e3705bff4',1,'Stream.c']]],
+  ['streamfragmenterrorack_1031',['streamFragmentErrorAck',['../Stream_8c.html#a1cf5bb6af9452afdc971c69b3490c85c',1,'Stream.c']]],
+  ['streamfragmentpersistedack_1032',['streamFragmentPersistedAck',['../Stream_8c.html#ac0bc8d63ec8f84ae45621f3fd7d58c4c',1,'Stream.c']]],
+  ['streamfragmentreceivedack_1033',['streamFragmentReceivedAck',['../Stream_8c.html#a1fcb0a032b6d234faaa6608167b856b1',1,'Stream.c']]],
+  ['streamstartfixuponreconnect_1034',['streamStartFixupOnReconnect',['../Stream_8c.html#ad1857d4eaab7811e838dba48bf3852b4',1,'Stream.c']]],
+  ['streamterminatedevent_1035',['streamTerminatedEvent',['../StreamEvent_8c.html#a5fb5e0dac9e5a6ba605875e31ef74bf5',1,'StreamEvent.c']]]
+];

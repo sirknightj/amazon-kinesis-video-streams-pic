@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "Amazon Kinesis Producer C SDK", "index.html", [
+  [ "Amazon Kinesis Video Streams PIC", "index.html", [
     [ "README", "md_README.html", null ]
   ] ]
 ];
