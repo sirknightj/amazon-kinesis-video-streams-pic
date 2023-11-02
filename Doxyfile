@@ -3,9 +3,9 @@
 #---------------------------------------------------------------------------
 # Project related configuration options
 #---------------------------------------------------------------------------
-PROJECT_NAME           = "Amazon Kinesis Producer C SDK"
+PROJECT_NAME           = "Amazon Kinesis Video Streams PIC"
 OUTPUT_DIRECTORY       = doc
-INPUT                  = src/include/ README.md src/source/
+INPUT                  = README.md src/client/include src/client/src src/common/include src/common/src src/duration/include src/duration/src
 FILE_PATTERNS          = Include.h *.c
 RECURSIVE              = YES
 EXAMPLE_PATTERNS       = *
