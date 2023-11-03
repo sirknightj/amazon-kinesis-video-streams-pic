@@ -1,12 +1,10 @@
 var searchData=
 [
-  ['uint16_6093',['UINT16',['../CommonDefs_8h.html#a09f1a1fb2293e33483cc8d44aefb1eb1',1,'CommonDefs.h']]],
-  ['uint32_6094',['UINT32',['../CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e',1,'CommonDefs.h']]],
-  ['uint64_6095',['UINT64',['../CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c',1,'CommonDefs.h']]],
-  ['uint8_6096',['UINT8',['../CommonDefs_8h.html#ab27e9918b538ce9d8ca692479b375b6a',1,'CommonDefs.h']]],
-  ['ulong_6097',['ULONG',['../CommonDefs_8h.html#af632da489ebc3708ec3ab6791ee53fa4',1,'CommonDefs.h']]],
-  ['unlockmutex_6098',['unlockMutex',['../CommonDefs_8h.html#a026948eabee6283b92732b9a458f4516',1,'CommonDefs.h']]],
-  ['unlockmutexfunc_6099',['UnlockMutexFunc',['../client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a84fdf2f0c7be25efb8128edf71f6cd89',1,'Include.h']]],
-  ['upload_5fhandle_6100',['UPLOAD_HANDLE',['../client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a410d5dcf4f751a0ca3026484f2a47b80',1,'Include.h']]],
-  ['uploadhandleinfo_6101',['UploadHandleInfo',['../Stream_8h.html#a72a8b53af86d44c0d24aa2e9ac1bd2db',1,'Stream.h']]]
+  ['vramalloc_4874',['VramAlloc',['../HybridHeap_8h.html#ab73ea45e50567d0aa19a77e32e1b4cc7',1,'HybridHeap.h']]],
+  ['vramfree_4875',['VramFree',['../HybridHeap_8h.html#aa69cfbe22a0fc6876c85cef4115427de',1,'HybridHeap.h']]],
+  ['vramgetmax_4876',['VramGetMax',['../HybridHeap_8h.html#a1dafed87c26a1ecf8f4f872f1d3f31b7',1,'HybridHeap.h']]],
+  ['vraminit_4877',['VramInit',['../HybridHeap_8h.html#a3b115a3d342845170256838e8b5db7d0',1,'HybridHeap.h']]],
+  ['vramlock_4878',['VramLock',['../HybridHeap_8h.html#a75b4bb42ca88d7b270d6cc73499fe3db',1,'HybridHeap.h']]],
+  ['vramuninit_4879',['VramUninit',['../HybridHeap_8h.html#aa841c522e69d2d21e150d5004602a61a',1,'HybridHeap.h']]],
+  ['vramunlock_4880',['VramUnlock',['../HybridHeap_8h.html#a9a9008fa925cbadefac83dc1a41252c7',1,'HybridHeap.h']]]
 ];

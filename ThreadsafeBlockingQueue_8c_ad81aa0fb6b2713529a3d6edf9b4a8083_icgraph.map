@@ -1,11 +1,6 @@
 <map id="safeBlockingQueueGetCount" name="safeBlockingQueueGetCount">
-<area shape="rect" id="node1" title=" " alt="" coords="696,52,905,79"/>
-<area shape="rect" id="node2" href="$ThreadsafeBlockingQueue_8cpp.html#ad7811978b2ec0e3feb86b828f0d25f44" title=" " alt="" coords="516,23,585,49"/>
-<area shape="rect" id="node3" href="$utils_2src_2Include__i_8h.html#a135e86788c0d8ea8423e0341048f105e" title=" " alt="" coords="453,74,648,115"/>
-<area shape="rect" id="node4" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a8a6e0ee0bd29d3903ad240aa8f856f73" title=" " alt="" coords="276,56,399,83"/>
-<area shape="rect" id="node8" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#ae2d836964bddc99236b2ce7aa521bbaa" title=" " alt="" coords="269,107,405,133"/>
-<area shape="rect" id="node5" href="$Threadpool_8cpp.html#aa2b1ac72bce59b9bcf23b041b50a39ec" title=" " alt="" coords="123,5,221,32"/>
-<area shape="rect" id="node7" href="$Threadpool_8cpp.html#ada6c07e5c7fff26200401e79ac52be65" title=" " alt="" coords="137,56,207,83"/>
-<area shape="rect" id="node6" href="$Threadpool_8cpp.html#a6e43cc04a0fe502cbcc5cb2571b32e88" title=" " alt="" coords="5,5,75,32"/>
-<area shape="rect" id="node9" href="$Threadpool_8cpp.html#a84591e81aa0a5c7ef1e28e9461c22ff5" title=" " alt="" coords="137,107,207,133"/>
+<area shape="rect" id="node1" title=" " alt="" coords="432,31,641,57"/>
+<area shape="rect" id="node2" href="$utils_2src_2Include__i_8h.html#a135e86788c0d8ea8423e0341048f105e" title=" " alt="" coords="189,23,384,65"/>
+<area shape="rect" id="node3" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a8a6e0ee0bd29d3903ad240aa8f856f73" title=" " alt="" coords="12,5,135,32"/>
+<area shape="rect" id="node4" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#ae2d836964bddc99236b2ce7aa521bbaa" title=" " alt="" coords="5,56,141,83"/>
 </map>

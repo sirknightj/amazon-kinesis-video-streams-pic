@@ -1,8 +1,0 @@
-<map id="StateApiTest" name="StateApiTest">
-<area shape="rect" id="node1" title=" " alt="" coords="247,200,350,227"/>
-<area shape="rect" id="node2" href="$classStateTestBase.html" title=" " alt="" coords="241,124,356,151"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,13,53,39"/>
-<area shape="rect" id="node4" href="$structStateTransitionsHookFunctionMetadata.html" title=" " alt="" coords="78,5,293,47"/>
-<area shape="rect" id="node5" href="$struct____StateMachine.html" title=" " alt="" coords="351,13,476,39"/>
-<area shape="rect" id="node6" href="$structTestTransitions.html" title=" " alt="" coords="501,13,619,39"/>
-</map>

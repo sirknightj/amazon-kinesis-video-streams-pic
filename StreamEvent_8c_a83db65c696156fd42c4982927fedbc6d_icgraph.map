@@ -1,6 +1,4 @@
 <map id="createStreamResult" name="createStreamResult">
-<area shape="rect" id="node1" title=" " alt="" coords="359,31,509,57"/>
-<area shape="rect" id="node2" href="$client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a2de9d59ee7b15d6bc45a471055f24587" title=" " alt="" coords="123,31,311,57"/>
-<area shape="rect" id="node3" href="$StreamApiFunctionalityTest_8cpp.html#a0a77adee1ad243eae0bd5bd424c0797e" title=" " alt="" coords="5,5,75,32"/>
-<area shape="rect" id="node4" href="$StateTransitionFunctionalityTest_8cpp.html#ae089d38cc0644baa233b921811566804" title=" " alt="" coords="5,56,75,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="241,5,392,32"/>
+<area shape="rect" id="node2" href="$client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a2de9d59ee7b15d6bc45a471055f24587" title=" " alt="" coords="5,5,193,32"/>
 </map>

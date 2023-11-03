@@ -1,7 +1,5 @@
 <map id="doubleListInsertNodeHeadInternal" name="doubleListInsertNodeHeadInternal">
-<area shape="rect" id="node1" title=" " alt="" coords="365,23,560,65"/>
-<area shape="rect" id="node2" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a5270df841f5b0ad7edd06d0396452343" title=" " alt="" coords="125,5,315,32"/>
-<area shape="rect" id="node4" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a99fdf871f2d09ec026e600d4a6fdaf0e" title=" " alt="" coords="123,56,317,83"/>
-<area shape="rect" id="node3" href="$DoubleLinkedList_8cpp.html#af6cc5b5b0b1d370d5020c0359d4b9ad1" title=" " alt="" coords="5,5,75,32"/>
-<area shape="rect" id="node5" href="$DoubleLinkedList_8cpp.html#aa9c082ef09f57f93d23883510006fcbc" title=" " alt="" coords="5,56,75,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="248,23,443,65"/>
+<area shape="rect" id="node2" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a5270df841f5b0ad7edd06d0396452343" title=" " alt="" coords="7,5,198,32"/>
+<area shape="rect" id="node3" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a99fdf871f2d09ec026e600d4a6fdaf0e" title=" " alt="" coords="5,56,200,83"/>
 </map>

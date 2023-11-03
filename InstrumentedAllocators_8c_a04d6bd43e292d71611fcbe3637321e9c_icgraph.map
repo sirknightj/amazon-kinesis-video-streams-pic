@@ -1,8 +1,7 @@
 <map id="instrumentedAllocatorsMemAlloc" name="instrumentedAllocatorsMemAlloc">
-<area shape="rect" id="node1" title=" " alt="" coords="632,63,839,105"/>
-<area shape="rect" id="node2" href="$utils_2src_2Include__i_8h.html#ac8e7e9577855297083e514318b192bdd" title=" " alt="" coords="377,30,584,71"/>
-<area shape="rect" id="node3" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a7f02331baec4b05064e81f8f8ec2d65a" title=" " alt="" coords="123,41,329,68"/>
-<area shape="rect" id="node5" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a1ea07562e6389eb527885cd2ffc36861" title=" " alt="" coords="129,96,323,123"/>
-<area shape="rect" id="node6" href="$utils_2src_2Include__i_8h.html#a0c5f07f7e099890c044f0f74e08c9ed6" title=" " alt="" coords="377,95,584,137"/>
-<area shape="rect" id="node4" href="$InstrumentedAllocators_8cpp.html#ac44ccfc96528a5329f88e8308efc9c1d" title=" " alt="" coords="5,71,75,97"/>
+<area shape="rect" id="node1" title=" " alt="" coords="515,61,721,102"/>
+<area shape="rect" id="node2" href="$utils_2src_2Include__i_8h.html#ac8e7e9577855297083e514318b192bdd" title=" " alt="" coords="260,28,467,69"/>
+<area shape="rect" id="node3" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a7f02331baec4b05064e81f8f8ec2d65a" title=" " alt="" coords="5,35,212,62"/>
+<area shape="rect" id="node4" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a1ea07562e6389eb527885cd2ffc36861" title=" " alt="" coords="11,100,206,127"/>
+<area shape="rect" id="node5" href="$utils_2src_2Include__i_8h.html#a0c5f07f7e099890c044f0f74e08c9ed6" title=" " alt="" coords="260,93,467,134"/>
 </map>

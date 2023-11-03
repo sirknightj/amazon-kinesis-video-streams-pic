@@ -1,9 +1,7 @@
 <map id="flushLogToFile" name="flushLogToFile">
-<area shape="rect" id="node1" title=" " alt="" coords="568,35,681,61"/>
-<area shape="rect" id="node2" href="$FileLogger_8c.html#a1e6d01f92500d9808b22adaf2df29c10" title=" " alt="" coords="365,9,520,36"/>
-<area shape="rect" id="node7" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#ac0b619e03e3077d3fff0c1e93813f0f1" title=" " alt="" coords="385,60,500,87"/>
-<area shape="rect" id="node3" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a651aa6a154bfb8de98db911c59ed5d69" title=" " alt="" coords="155,5,285,32"/>
-<area shape="rect" id="node5" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a3adc5cba8f7950ef36fdcf33d13a6045" title=" " alt="" coords="123,57,317,98"/>
-<area shape="rect" id="node4" href="$FileLogger_8cpp.html#a4c836f2e8b180f8f5fdfacb57c45cb04" title=" " alt="" coords="5,5,75,32"/>
-<area shape="rect" id="node6" href="$FileLogger_8cpp.html#af1dac7c70a6792642756e9f18741c6ad" title=" " alt="" coords="5,64,75,91"/>
+<area shape="rect" id="node1" title=" " alt="" coords="451,35,564,61"/>
+<area shape="rect" id="node2" href="$FileLogger_8c.html#a1e6d01f92500d9808b22adaf2df29c10" title=" " alt="" coords="248,9,403,36"/>
+<area shape="rect" id="node5" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#ac0b619e03e3077d3fff0c1e93813f0f1" title=" " alt="" coords="268,60,383,87"/>
+<area shape="rect" id="node3" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a651aa6a154bfb8de98db911c59ed5d69" title=" " alt="" coords="37,5,168,32"/>
+<area shape="rect" id="node4" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a3adc5cba8f7950ef36fdcf33d13a6045" title=" " alt="" coords="5,57,200,98"/>
 </map>

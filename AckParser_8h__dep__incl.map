@@ -1,43 +1,16 @@
 <map id="src/client/src/AckParser.h" name="src/client/src/AckParser.h">
-<area shape="rect" id="node1" title=" " alt="" coords="1929,5,2111,32"/>
-<area shape="rect" id="node2" href="$client_2src_2Include__i_8h.html" title=" " alt="" coords="1871,155,2049,181"/>
-<area shape="rect" id="node41" href="$Stream_8h.html" title=" " alt="" coords="1998,80,2165,107"/>
-<area shape="rect" id="node3" href="$AckParser_8c.html" title=" " alt="" coords="594,237,777,263"/>
-<area shape="rect" id="node4" href="$AuthIntegration_8c.html" title=" " alt="" coords="801,237,1021,263"/>
-<area shape="rect" id="node5" href="$Callbacks_8c.html" title=" " alt="" coords="1045,237,1227,263"/>
-<area shape="rect" id="node6" href="$Client_8c.html" title=" " alt="" coords="1252,237,1409,263"/>
-<area shape="rect" id="node7" href="$ClientEvent_8c.html" title=" " alt="" coords="1433,237,1628,263"/>
-<area shape="rect" id="node8" href="$ClientState_8c.html" title=" " alt="" coords="1653,237,1843,263"/>
-<area shape="rect" id="node9" href="$FrameOrderCoordinator_8c.html" title=" " alt="" coords="1867,229,2053,271"/>
-<area shape="rect" id="node10" href="$InputValidator_8c.html" title=" " alt="" coords="2077,237,2286,263"/>
-<area shape="rect" id="node11" href="$Stream_8c.html" title=" " alt="" coords="2310,237,2477,263"/>
-<area shape="rect" id="node12" href="$StreamEvent_8c.html" title=" " alt="" coords="2501,237,2704,263"/>
-<area shape="rect" id="node13" href="$StreamState_8c.html" title=" " alt="" coords="2728,237,2928,263"/>
-<area shape="rect" id="node14" href="$ClientTestFixture_8h.html" title=" " alt="" coords="2952,229,3123,271"/>
-<area shape="rect" id="node15" href="$AcksFunctionalityTest_8cpp.html" title=" " alt="" coords="5,319,227,360"/>
-<area shape="rect" id="node16" href="$CallbacksAndPressuresFunctionalityTest_8cpp.html" title=" " alt="" coords="251,319,498,360"/>
-<area shape="rect" id="node17" href="$ClientApiFunctionalityTest_8cpp.html" title=" " alt="" coords="521,319,687,360"/>
-<area shape="rect" id="node18" href="$ClientApiTest_8cpp.html" title=" " alt="" coords="711,319,876,360"/>
-<area shape="rect" id="node19" href="$ClientFunctionalityTest_8cpp.html" title=" " alt="" coords="901,319,1129,360"/>
-<area shape="rect" id="node20" href="$ClientTestFixture_8cpp.html" title=" " alt="" coords="1153,319,1324,360"/>
-<area shape="rect" id="node21" href="$FrameOrderCoordinatorTest_8cpp.html" title=" " alt="" coords="1349,319,1531,360"/>
-<area shape="rect" id="node22" href="$IntermittentProducerAutomaticStreamingTest_8cpp.html" title=" " alt="" coords="1556,319,1823,360"/>
-<area shape="rect" id="node23" href="$IntermittentProducerFunctionalityTest_8cpp.html" title=" " alt="" coords="1847,319,2063,360"/>
-<area shape="rect" id="node24" href="$MockConsumer_8cpp.html" title=" " alt="" coords="2087,326,2321,353"/>
-<area shape="rect" id="node25" href="$MockProducer_8cpp.html" title=" " alt="" coords="2345,326,2569,353"/>
-<area shape="rect" id="node26" href="$StateTransitionFunctionalityTest_8cpp.html" title=" " alt="" coords="2593,319,2796,360"/>
-<area shape="rect" id="node27" href="$StreamApiFunctionalityScenarioTest_8cpp.html" title=" " alt="" coords="2821,319,3035,360"/>
-<area shape="rect" id="node28" href="$StreamApiFunctionalityTest_8cpp.html" title=" " alt="" coords="3059,319,3234,360"/>
-<area shape="rect" id="node29" href="$StreamApiServiceCallsTest_8cpp.html" title=" " alt="" coords="3258,319,3433,360"/>
-<area shape="rect" id="node30" href="$StreamApiTest_8cpp.html" title=" " alt="" coords="3457,319,3631,360"/>
-<area shape="rect" id="node31" href="$StreamDeviceTagsTest_8cpp.html" title=" " alt="" coords="3655,319,3854,360"/>
-<area shape="rect" id="node32" href="$StreamFunctionalityTest_8cpp.html" title=" " alt="" coords="3877,319,4115,360"/>
-<area shape="rect" id="node33" href="$StreamingSession_8cpp.html" title=" " alt="" coords="4139,319,4312,360"/>
-<area shape="rect" id="node34" href="$StreamParallelTest_8cpp.html" title=" " alt="" coords="4337,319,4538,360"/>
-<area shape="rect" id="node35" href="$StreamPutGetTest_8cpp.html" title=" " alt="" coords="4562,319,4737,360"/>
-<area shape="rect" id="node36" href="$StreamRecoveryFunctionalityTest_8cpp.html" title=" " alt="" coords="4761,319,4975,360"/>
-<area shape="rect" id="node37" href="$StreamStateTransitionsTest_8cpp.html" title=" " alt="" coords="5000,319,5187,360"/>
-<area shape="rect" id="node38" href="$StreamStoppingFunctionalityTest_8cpp.html" title=" " alt="" coords="5211,319,5421,360"/>
-<area shape="rect" id="node39" href="$StreamTokenRotationTest_8cpp.html" title=" " alt="" coords="5446,319,5637,360"/>
-<area shape="rect" id="node40" href="$TokenRotationFunctionalityTest_8cpp.html" title=" " alt="" coords="5661,319,5859,360"/>
+<area shape="rect" id="node1" title=" " alt="" coords="1068,5,1251,32"/>
+<area shape="rect" id="node2" href="$client_2src_2Include__i_8h.html" title=" " alt="" coords="1070,155,1249,181"/>
+<area shape="rect" id="node14" href="$Stream_8h.html" title=" " alt="" coords="1137,80,1304,107"/>
+<area shape="rect" id="node3" href="$AckParser_8c.html" title=" " alt="" coords="5,237,188,263"/>
+<area shape="rect" id="node4" href="$AuthIntegration_8c.html" title=" " alt="" coords="212,237,432,263"/>
+<area shape="rect" id="node5" href="$Callbacks_8c.html" title=" " alt="" coords="456,237,639,263"/>
+<area shape="rect" id="node6" href="$Client_8c.html" title=" " alt="" coords="663,237,821,263"/>
+<area shape="rect" id="node7" href="$ClientEvent_8c.html" title=" " alt="" coords="845,237,1039,263"/>
+<area shape="rect" id="node8" href="$ClientState_8c.html" title=" " alt="" coords="1064,237,1255,263"/>
+<area shape="rect" id="node9" href="$FrameOrderCoordinator_8c.html" title=" " alt="" coords="1279,229,1464,271"/>
+<area shape="rect" id="node10" href="$InputValidator_8c.html" title=" " alt="" coords="1488,237,1697,263"/>
+<area shape="rect" id="node11" href="$Stream_8c.html" title=" " alt="" coords="1721,237,1888,263"/>
+<area shape="rect" id="node12" href="$StreamEvent_8c.html" title=" " alt="" coords="1913,237,2115,263"/>
+<area shape="rect" id="node13" href="$StreamState_8c.html" title=" " alt="" coords="2139,237,2339,263"/>
 </map>

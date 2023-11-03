@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['directoryfunctionalitytest_3847',['DirectoryFunctionalityTest',['../classDirectoryFunctionalityTest.html',1,'']]],
-  ['doublelist_3848',['DoubleList',['../structDoubleList.html',1,'']]],
-  ['doublelistfunctionalitytest_3849',['DoubleListFunctionalityTest',['../classDoubleListFunctionalityTest.html',1,'']]],
-  ['durationstate_3850',['DurationState',['../structDurationState.html',1,'']]]
+  ['encodedframeinfo_3175',['EncodedFrameInfo',['../structEncodedFrameInfo.html',1,'']]],
+  ['exponentialbackoffretrystrategystate_3176',['ExponentialBackoffRetryStrategyState',['../structExponentialBackoffRetryStrategyState.html',1,'']]]
 ];

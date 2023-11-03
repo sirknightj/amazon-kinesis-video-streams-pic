@@ -1,8 +1,0 @@
-<map id="SetUp" name="SetUp">
-<area shape="rect" id="node1" title=" " alt="" coords="5,60,67,87"/>
-<area shape="rect" id="node2" href="$classStateTestBase.html#a32f52f866c57f00a2f5e3b56d3225e85" title=" " alt="" coords="115,35,269,61"/>
-<area shape="rect" id="node6" href="$classStateTestBase.html#a0900206f992822982da034e1cb81e0dd" title=" " alt="" coords="137,85,247,112"/>
-<area shape="rect" id="node3" href="$state_2include_2com_2amazonaws_2kinesis_2video_2state_2Include_8h.html#a9b0fb2fd0f176b99eb08be4251b6e6dd" title=" " alt="" coords="341,5,493,32"/>
-<area shape="rect" id="node5" href="$client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#ab6fc57c1fd3b4beaae32b0c337b0b0b9" title=" " alt="" coords="317,57,517,98"/>
-<area shape="rect" id="node4" href="$State_8c.html#a78ae35103e664dc6821e51794b33ee43" title=" " alt="" coords="565,5,703,32"/>
-</map>

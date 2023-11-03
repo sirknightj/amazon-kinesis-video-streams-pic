@@ -1,6 +1,0 @@
-<map id="CreateStateMachine" name="CreateStateMachine">
-<area shape="rect" id="node1" title=" " alt="" coords="5,35,160,61"/>
-<area shape="rect" id="node2" href="$state_2include_2com_2amazonaws_2kinesis_2video_2state_2Include_8h.html#a9b0fb2fd0f176b99eb08be4251b6e6dd" title=" " alt="" coords="232,5,384,32"/>
-<area shape="rect" id="node4" href="$client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#ab6fc57c1fd3b4beaae32b0c337b0b0b9" title=" " alt="" coords="208,57,408,98"/>
-<area shape="rect" id="node3" href="$State_8c.html#a78ae35103e664dc6821e51794b33ee43" title=" " alt="" coords="456,5,593,32"/>
-</map>

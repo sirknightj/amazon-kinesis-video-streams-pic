@@ -14,7 +14,6 @@ var globals_type =
     [ "l", "globals_type_l.html", null ],
     [ "m", "globals_type_m.html", null ],
     [ "p", "globals_type_p.html", null ],
-    [ "r", "globals_type_r.html", null ],
     [ "s", "globals_type_s.html", null ],
     [ "t", "globals_type_t.html", null ],
     [ "u", "globals_type_u.html", null ],

@@ -1,6 +1,4 @@
 <map id="safeBlockingQueueClear" name="safeBlockingQueueClear">
-<area shape="rect" id="node1" title=" " alt="" coords="291,31,473,57"/>
-<area shape="rect" id="node2" href="$ThreadsafeBlockingQueue_8cpp.html#ae3eba7546d1d3b7451922879fbe9f3a1" title=" " alt="" coords="148,5,217,32"/>
-<area shape="rect" id="node3" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a18067bbb39743a939c8429f15bd52239" title=" " alt="" coords="123,56,243,83"/>
-<area shape="rect" id="node4" href="$Threadpool_8cpp.html#a617b2dd85c0712149ee5f28d0630dc76" title=" " alt="" coords="5,56,75,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="173,5,356,32"/>
+<area shape="rect" id="node2" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a18067bbb39743a939c8429f15bd52239" title=" " alt="" coords="5,5,125,32"/>
 </map>

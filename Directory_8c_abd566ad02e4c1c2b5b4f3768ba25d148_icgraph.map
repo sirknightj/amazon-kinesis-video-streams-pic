@@ -1,10 +1,7 @@
 <map id="traverseDirectory" name="traverseDirectory">
-<area shape="rect" id="node1" title=" " alt="" coords="699,123,835,150"/>
-<area shape="rect" id="node2" href="$HybridFileHeap_8c.html#adf7fef17929b1365758586a33906b212" title=" " alt="" coords="291,54,467,81"/>
-<area shape="rect" id="node3" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a86ed09d46e151bc1362f37f000d89d53" title=" " alt="" coords="313,167,444,194"/>
-<area shape="rect" id="node4" href="$Directory_8cpp.html#a5bcf6620ac575fff514fb8e25e694c24" title=" " alt="" coords="148,142,217,169"/>
-<area shape="rect" id="node5" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#aebca485d0a237a8e05afccba4f202ff8" title=" " alt="" coords="313,218,445,245"/>
-<area shape="rect" id="node8" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a20209fc59634d9cd1730d7a8d24d0e77" title=" " alt="" coords="515,123,651,150"/>
-<area shape="rect" id="node6" href="$Directory_8cpp.html#acd48474d767fecc98b1eb4073995b64d" title=" " alt="" coords="123,218,243,245"/>
-<area shape="rect" id="node7" href="$Directory_8cpp.html#a2fd7616f4c34f7a1f4653b6b5e3eee05" title=" " alt="" coords="5,218,75,245"/>
+<area shape="rect" id="node1" title=" " alt="" coords="413,83,549,109"/>
+<area shape="rect" id="node2" href="$HybridFileHeap_8c.html#adf7fef17929b1365758586a33906b212" title=" " alt="" coords="5,8,181,35"/>
+<area shape="rect" id="node3" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a86ed09d46e151bc1362f37f000d89d53" title=" " alt="" coords="28,83,159,109"/>
+<area shape="rect" id="node4" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#aebca485d0a237a8e05afccba4f202ff8" title=" " alt="" coords="27,145,159,172"/>
+<area shape="rect" id="node5" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a20209fc59634d9cd1730d7a8d24d0e77" title=" " alt="" coords="229,57,365,84"/>
 </map>

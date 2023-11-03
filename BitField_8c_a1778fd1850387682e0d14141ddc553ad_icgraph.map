@@ -1,6 +1,4 @@
 <map id="bitFieldFree" name="bitFieldFree">
-<area shape="rect" id="node1" title=" " alt="" coords="284,31,383,57"/>
-<area shape="rect" id="node2" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a9c376df23bb7576136a7f105fff45fff" title=" " alt="" coords="123,5,236,32"/>
-<area shape="rect" id="node4" href="$BitField_8cpp.html#a24f0c784bb23234bb0f3d820d4036e76" title=" " alt="" coords="145,56,214,83"/>
-<area shape="rect" id="node3" href="$BitField_8cpp.html#a9fccf1de9a1543d570099e0f3645607c" title=" " alt="" coords="5,5,75,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="167,5,265,32"/>
+<area shape="rect" id="node2" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a9c376df23bb7576136a7f105fff45fff" title=" " alt="" coords="5,5,119,32"/>
 </map>

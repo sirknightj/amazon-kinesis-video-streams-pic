@@ -28,10 +28,8 @@ var NAVTREE =
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Data Structure Index", "classes.html", null ],
-      [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Data Fields", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
-        [ "Functions", "functions_func.html", null ],
         [ "Variables", "functions_vars.html", "functions_vars" ]
       ] ]
     ] ],
@@ -48,39 +46,32 @@ var NAVTREE =
       ] ]
     ] ],
     [ "Download", "usergroup0.html", [
-      [ "Source", "^http://trac.osgeo.org/gdal/wiki/DownloadSource", null ],
-      [ "Binaries", "^http://trac.osgeo.org/gdal/wiki/DownloadingGdalBinaries", null ]
+      [ "Releases", "^https://github.com/awslabs/amazon-kinesis-video-streams-producer-c/releases", null ]
     ] ],
-    [ "Issue Tracker", "^https://github.com/OSGeo/gdal/issues/", null ]
+    [ "Issue Tracker", "^https://github.com/awslabs/amazon-kinesis-video-streams-pic/Issues", null ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
 "AckParser_8c.html",
-"BitReader_8c.html#ac0d33e26177667ec5a605cb8ae702ddb",
-"CommonDefs_8h.html#a12dfc91ba7243719e82b14ea0f35654c",
-"CommonDefs_8h.html#aadbfb55fed50f8ee59c1cfebada264c6",
-"DoubleLinkedList_8cpp.html#a88ae7cb12ac34f8816565a59160301dc",
-"HashTable_8cpp.html#adeb1ad819d2c9a0300a85fb4057df76a",
-"InstrumentedAllocators_8c.html#a2ae2d4de6bdf8d1fc28b47e54b1b9136",
-"Mutex_8c.html#adec963c0ec80c39cbd7fba34396b17f9",
-"StateApiTest_8cpp.html",
-"StreamState_8c.html#a468d6e495eb8c1a4ce26e80d59006c9f",
-"StringToInteger_8cpp.html#ac8986f43ede585f220748bd93105c1e8",
-"Version_8c.html#ad76ac69606a36413b4fdda4055611471",
-"classIntermittentProducerAutomaticStreamingTest.html#a10b133c4a3a469967e6e847d7cce6761",
-"client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a46fc4089a76123531ceec6fcb296a4fda8a3eb43e6c4d9adab0236436abf55c90",
-"client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#acdb7b0e9f0083ab4a574ee4b85cbdf64",
-"dir_f3b2a97ca346c6259d024c9b6dcab06f.html",
-"heap_2src_2Include__i_8h.html#a7650ba97c37777dc71fd19904b650150",
-"mkvgen_2src_2Include__i_8h.html#a3f41228b3a6993c1cb5c7de92fb3bb1b",
-"structFileLoggerParameters.html#a2ae4c2487bdcf774614d9eb1396a7490",
-"struct____ClientCallbacks.html#aa606a040b31b503a0f796d4c63834ff6",
-"struct____SecurityTokenInfo.html#af526977053e9ef659cf3cd586bec5fa5",
-"utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a147f0aa41631989664ee0c633fb7dc43",
-"utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#ab70c22176d77bb5690deafe0e57aff9d",
-"view_2include_2com_2amazonaws_2kinesis_2video_2view_2Include_8h.html#ae401aaf463ecbba2102853facaa94941"
+"Client_8c.html#a36adecc15e48c4b21241bbd82ccc7c9a",
+"CommonDefs_8h.html#a85c75d963e62eafa2d41707b9c93679f",
+"ContentView_8c.html#aa638c232344a9dc28b23b6f9b6ebe611",
+"HybridFileHeap_8c.html#adebcd1eb91c40ad98f8db9cf90582114",
+"Mutex_8c.html#a43dcef326b5433a824718b82c22e2420",
+"Stream_8c.html#a0727a137395117fc31e6567443279358",
+"Thread_8c.html#a51b85b2a1e4f0ef889a626fa5a899f95",
+"client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a7055588220d46a840f28044d645bda95",
+"client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#aefc00192629ed32d1ec1a234155f39e7",
+"globals_defs_b.html",
+"mkvgen_2include_2com_2amazonaws_2kinesis_2video_2mkvgen_2Include_8h.html#a4ce540787f2d8eec2eb73789e9336b71",
+"mkvgen_2src_2Include__i_8h.html#ab7ca7eebb14952048ad351102858a283",
+"structSemaphore.html",
+"struct____Frame.html#a8ffac79cdfb8a2da19ee271752749738",
+"struct____StreamMetrics.html",
+"utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a6175cea7538cadea9007657c28bece57",
+"utils_2src_2Include__i_8h.html#a191cf660233073129275690159bb68d1"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -1,12 +1,4 @@
 <map id="putStreamResult" name="putStreamResult">
-<area shape="rect" id="node1" title=" " alt="" coords="881,130,1012,157"/>
-<area shape="rect" id="node2" href="$client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a0693e8e8d14dd8fefb6770e312ff9f9b" title=" " alt="" coords="665,130,833,157"/>
-<area shape="rect" id="node3" href="$classClientTestBase.html#aa492173def631a0529c2663ca9e2eefd" title=" " alt="" coords="397,5,614,47"/>
-<area shape="rect" id="node6" href="$classClientTestBase.html#a3c13a5445e85c6763322ac6da57d8a77" title=" " alt="" coords="393,71,617,98"/>
-<area shape="rect" id="node8" href="$classClientTestBase.html#ae3a85f007c97a1a4bcb8cd1c90aa1918" title=" " alt="" coords="408,123,603,164"/>
-<area shape="rect" id="node9" href="$StreamApiFunctionalityTest_8cpp.html#a1fd6ffd3f66fe6754d737029a85d6355" title=" " alt="" coords="471,189,540,215"/>
-<area shape="rect" id="node10" href="$TokenRotationFunctionalityTest_8cpp.html#a545d1e8a308bc1d24a3e1d53f2381729" title=" " alt="" coords="471,239,540,266"/>
-<area shape="rect" id="node4" href="$StreamParallelTest_8cpp.html#aee048b42123fb9b64dcfd47eb274c5c1" title=" " alt="" coords="151,13,317,39"/>
-<area shape="rect" id="node5" href="$StreamParallelTest_8cpp.html#a14aaff488e4981a60ef8783c72524267" title=" " alt="" coords="5,13,75,39"/>
-<area shape="rect" id="node7" href="$classClientTestBase.html#a7496cd4902012085060e65a313b17eb0" title=" " alt="" coords="123,71,345,98"/>
+<area shape="rect" id="node1" title=" " alt="" coords="221,5,352,32"/>
+<area shape="rect" id="node2" href="$client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a0693e8e8d14dd8fefb6770e312ff9f9b" title=" " alt="" coords="5,5,173,32"/>
 </map>

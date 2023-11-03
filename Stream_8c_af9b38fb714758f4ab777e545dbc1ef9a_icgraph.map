@@ -1,7 +1,4 @@
 <map id="putFragmentMetadata" name="putFragmentMetadata">
-<area shape="rect" id="node1" title=" " alt="" coords="421,56,588,83"/>
-<area shape="rect" id="node2" href="$client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a52a8c3a00692d7d190ea7d0d218af903" title=" " alt="" coords="123,31,373,57"/>
-<area shape="rect" id="node5" href="$StreamPutGetTest_8cpp.html#ab9b93fe56f4de8f245be1924087d24e4" title=" " alt="" coords="213,81,283,108"/>
-<area shape="rect" id="node3" href="$StreamApiTest_8cpp.html#ac14231c42edc11f9597ef8361f5bcd42" title=" " alt="" coords="5,5,75,32"/>
-<area shape="rect" id="node4" href="$StreamRecoveryFunctionalityTest_8cpp.html#a30cf982cb437e3ca00b87b1d60558440" title=" " alt="" coords="5,56,75,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="304,5,471,32"/>
+<area shape="rect" id="node2" href="$client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a52a8c3a00692d7d190ea7d0d218af903" title=" " alt="" coords="5,5,256,32"/>
 </map>

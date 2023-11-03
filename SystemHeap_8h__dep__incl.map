@@ -1,17 +1,10 @@
 <map id="src/heap/src/SystemHeap.h" name="src/heap/src/SystemHeap.h">
-<area shape="rect" id="node1" title=" " alt="" coords="582,5,781,32"/>
-<area shape="rect" id="node2" href="$heap_2src_2Include__i_8h.html" title=" " alt="" coords="594,80,769,107"/>
+<area shape="rect" id="node1" title=" " alt="" coords="478,5,677,32"/>
+<area shape="rect" id="node2" href="$heap_2src_2Include__i_8h.html" title=" " alt="" coords="490,80,665,107"/>
 <area shape="rect" id="node3" href="$AivHeap_8c.html" title=" " alt="" coords="5,155,176,181"/>
 <area shape="rect" id="node4" href="$Common_8c.html" title=" " alt="" coords="201,155,375,181"/>
 <area shape="rect" id="node5" href="$Heap_8c.html" title=" " alt="" coords="400,155,549,181"/>
 <area shape="rect" id="node6" href="$HybridFileHeap_8c.html" title=" " alt="" coords="574,155,789,181"/>
 <area shape="rect" id="node7" href="$HybridHeap_8c.html" title=" " alt="" coords="813,155,1005,181"/>
 <area shape="rect" id="node8" href="$SystemHeap_8c.html" title=" " alt="" coords="1030,155,1229,181"/>
-<area shape="rect" id="node9" href="$HeapTestFixture_8h.html" title=" " alt="" coords="1253,155,1472,181"/>
-<area shape="rect" id="node10" href="$HeapApiFunctionalityTest_8cpp.html" title=" " alt="" coords="629,229,870,271"/>
-<area shape="rect" id="node11" href="$HeapApiTest_8cpp.html" title=" " alt="" coords="895,237,1105,263"/>
-<area shape="rect" id="node12" href="$HeapPerfTest_8cpp.html" title=" " alt="" coords="1130,237,1345,263"/>
-<area shape="rect" id="node13" href="$HeapTestFixture_8cpp.html" title=" " alt="" coords="1369,237,1604,263"/>
-<area shape="rect" id="node14" href="$HybridFileHeapTest_8cpp.html" title=" " alt="" coords="1628,229,1831,271"/>
-<area shape="rect" id="node15" href="$HybridHeapTest_8cpp.html" title=" " alt="" coords="1855,237,2087,263"/>
 </map>

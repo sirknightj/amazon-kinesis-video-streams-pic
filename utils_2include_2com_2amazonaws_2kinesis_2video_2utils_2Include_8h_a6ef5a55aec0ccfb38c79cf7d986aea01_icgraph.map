@@ -1,8 +1,6 @@
 <map id="getFileLength" name="getFileLength">
-<area shape="rect" id="node1" title=" " alt="" coords="497,56,608,83"/>
-<area shape="rect" id="node2" href="$HybridFileHeap_8c.html#a6c071aa2183ec434d82e3bc6e737ab5a" title=" " alt="" coords="301,5,449,32"/>
-<area shape="rect" id="node3" href="$Directory_8c.html#a7ab641a80f64328e31a1457d4111d848" title=" " alt="" coords="319,56,431,83"/>
-<area shape="rect" id="node6" href="$HybridFileHeapTest_8cpp.html#aa4c69fbba2e3c45faad2a15a0ac9d907" title=" " alt="" coords="341,107,410,133"/>
-<area shape="rect" id="node4" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a86ed09d46e151bc1362f37f000d89d53" title=" " alt="" coords="123,56,253,83"/>
-<area shape="rect" id="node5" href="$Directory_8cpp.html#a5bcf6620ac575fff514fb8e25e694c24" title=" " alt="" coords="5,56,75,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="380,31,491,57"/>
+<area shape="rect" id="node2" href="$HybridFileHeap_8c.html#a6c071aa2183ec434d82e3bc6e737ab5a" title=" " alt="" coords="184,5,332,32"/>
+<area shape="rect" id="node3" href="$Directory_8c.html#a7ab641a80f64328e31a1457d4111d848" title=" " alt="" coords="202,56,314,83"/>
+<area shape="rect" id="node4" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a86ed09d46e151bc1362f37f000d89d53" title=" " alt="" coords="5,56,136,83"/>
 </map>

@@ -1,9 +1,6 @@
 <map id="singleListInsertNodeHeadInternal" name="singleListInsertNodeHeadInternal">
-<area shape="rect" id="node1" title=" " alt="" coords="539,74,728,115"/>
-<area shape="rect" id="node2" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a0d5596dda448eb9ec2769ccee615f9e3" title=" " alt="" coords="303,56,489,83"/>
-<area shape="rect" id="node6" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a64816fe826f4c04fbc0b042fae6a2786" title=" " alt="" coords="301,107,491,133"/>
-<area shape="rect" id="node3" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a4518be883c7a3fc11ea1e2345e0e90db" title=" " alt="" coords="123,5,253,32"/>
-<area shape="rect" id="node5" href="$SingleLinkedList_8cpp.html#a921aab2a3c9beccd91415776ec04486d" title=" " alt="" coords="153,56,223,83"/>
-<area shape="rect" id="node4" href="$StackQueue_8cpp.html#adab2753fa52f1afac1909486be1ce61a" title=" " alt="" coords="5,5,75,32"/>
-<area shape="rect" id="node7" href="$SingleLinkedList_8cpp.html#aabc57ef859a3cbae3bdb02ff7c08665a" title=" " alt="" coords="153,107,223,133"/>
+<area shape="rect" id="node1" title=" " alt="" coords="421,23,611,65"/>
+<area shape="rect" id="node2" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a0d5596dda448eb9ec2769ccee615f9e3" title=" " alt="" coords="186,5,371,32"/>
+<area shape="rect" id="node4" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a64816fe826f4c04fbc0b042fae6a2786" title=" " alt="" coords="184,56,373,83"/>
+<area shape="rect" id="node3" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a4518be883c7a3fc11ea1e2345e0e90db" title=" " alt="" coords="5,5,136,32"/>
 </map>

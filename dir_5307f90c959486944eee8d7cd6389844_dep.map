@@ -1,10 +1,10 @@
 <map id="src/trace/include/com/amazonaws" name="src/trace/include/com/amazonaws">
 <area shape="rect" id="node2" href="dir_98a12658b258c97a8a3969893a6aa0f6.html" title="kinesis" alt="" coords="37,63,109,111"/>
 <area shape="rect" id="node3" href="dir_fdedb0aba14d44ce9d99bc100e026e6a.html" title="common" alt="" coords="33,255,111,303"/>
-<area shape="rect" id="edge1-headlabel" href="dir_000033_000058.html" title="2" alt="" coords="68,228,78,243"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000033_000057.html" title="2" alt="" coords="68,228,78,243"/>
 <area shape="rect" id="node4" href="dir_313caf1132e152dd9b58bea13a4052ca.html" title="utils" alt="" coords="73,159,145,207"/>
 <area shape="rect" id="edge2-headlabel" href="dir_000033_000036.html" title="1" alt="" coords="97,131,107,146"/>
-<area shape="rect" id="edge3-headlabel" href="dir_000036_000058.html" title="2" alt="" coords="91,234,100,248"/>
+<area shape="rect" id="edge3-headlabel" href="dir_000036_000057.html" title="2" alt="" coords="91,234,100,248"/>
 <area shape="rect" id="clust2" href="dir_5307f90c959486944eee8d7cd6389844.html" alt="" coords="27,52,244,121"/>
 <area shape="rect" id="clust1" href="dir_c13379278057c2995e0be386b5990e35.html" title="com" alt="" coords="16,16,255,132"/>
 </map>

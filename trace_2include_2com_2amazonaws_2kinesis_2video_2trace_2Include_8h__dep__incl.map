@@ -1,9 +1,5 @@
 <map id="src/trace/include/com/amazonaws/kinesis/video/trace/Include.h" name="src/trace/include/com/amazonaws/kinesis/video/trace/Include.h">
-<area shape="rect" id="node1" title=" " alt="" coords="164,5,359,61"/>
-<area shape="rect" id="node2" href="$trace_2src_2Include__i_8h.html" title=" " alt="" coords="174,109,349,136"/>
-<area shape="rect" id="node3" href="$TraceProfiler_8c.html" title=" " alt="" coords="48,184,243,211"/>
-<area shape="rect" id="node4" href="$TraceTestFixture_8h.html" title=" " alt="" coords="267,184,487,211"/>
-<area shape="rect" id="node5" href="$TraceApiFunctionalityTest_8cpp.html" title=" " alt="" coords="5,259,248,300"/>
-<area shape="rect" id="node6" href="$TraceApiTest_8cpp.html" title=" " alt="" coords="272,266,483,293"/>
-<area shape="rect" id="node7" href="$TraceTestFixture_8cpp.html" title=" " alt="" coords="507,266,741,293"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,200,61"/>
+<area shape="rect" id="node2" href="$trace_2src_2Include__i_8h.html" title=" " alt="" coords="15,109,190,136"/>
+<area shape="rect" id="node3" href="$TraceProfiler_8c.html" title=" " alt="" coords="5,184,200,211"/>
 </map>

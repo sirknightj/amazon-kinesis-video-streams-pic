@@ -1,12 +1,5 @@
 <map id="sizeOfStreamDescription" name="sizeOfStreamDescription">
-<area shape="rect" id="node1" title=" " alt="" coords="1003,173,1187,199"/>
-<area shape="rect" id="node2" href="$Stream_8h.html#a8ebce19442613bad0db7e83ced66dff6" title=" " alt="" coords="789,173,955,199"/>
-<area shape="rect" id="node3" href="$client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a5e718ca634b3f703e0d79920c880c71d" title=" " alt="" coords="539,173,741,199"/>
-<area shape="rect" id="node4" href="$classClientTestBase.html#ae1a992e9619ffcc675579084ca761cfb" title=" " alt="" coords="293,5,474,47"/>
-<area shape="rect" id="node6" href="$classClientTestBase.html#a7508e9e1cf5458c2fbaf1c3a1103a9a6" title=" " alt="" coords="293,71,474,112"/>
-<area shape="rect" id="node7" href="$classClientTestBase.html#ac67f4e5b2fa7846414c13edc8afecb03" title=" " alt="" coords="286,136,481,177"/>
-<area shape="rect" id="node8" href="$classClientTestBase.html#a7e4e0d2ffe3d8616928d88588b9174e3" title=" " alt="" coords="276,202,491,229"/>
-<area shape="rect" id="node9" href="$StreamApiFunctionalityTest_8cpp.html#ad685d0b9c8666230a4994d39dbfc310d" title=" " alt="" coords="349,253,418,279"/>
-<area shape="rect" id="node10" href="$ClientFunctionalityTest_8cpp.html#a81c88a020c2d4b736f277bc3cb7f5dba" title=" " alt="" coords="349,303,418,330"/>
-<area shape="rect" id="node5" href="$classClientTestBase.html#a7496cd4902012085060e65a313b17eb0" title=" " alt="" coords="5,13,228,39"/>
+<area shape="rect" id="node1" title=" " alt="" coords="469,5,653,32"/>
+<area shape="rect" id="node2" href="$Stream_8h.html#a8ebce19442613bad0db7e83ced66dff6" title=" " alt="" coords="256,5,421,32"/>
+<area shape="rect" id="node3" href="$client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a5e718ca634b3f703e0d79920c880c71d" title=" " alt="" coords="5,5,208,32"/>
 </map>

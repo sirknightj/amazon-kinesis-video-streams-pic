@@ -1,9 +1,0 @@
-<map id="mockVramUnlock" name="mockVramUnlock">
-<area shape="rect" id="node1" title=" " alt="" coords="696,31,835,57"/>
-<area shape="rect" id="node2" href="$classHeapTestBase.html#a7af25bd71d97309462ac9aeeb5680faf" title=" " alt="" coords="547,31,648,57"/>
-<area shape="rect" id="node3" href="$classHeapTestBase.html#adc7a1492fc73f501c53c1673176ba270" title=" " alt="" coords="388,31,499,57"/>
-<area shape="rect" id="node4" href="$classHeapTestBase.html#ac027a1eea01bb78b259cb2ae9ab515c4" title=" " alt="" coords="225,5,340,32"/>
-<area shape="rect" id="node5" href="$classHeapTestBase.html#aaf0df15d78627449c77bb2821d295c76" title=" " alt="" coords="252,56,313,83"/>
-<area shape="rect" id="node6" href="$classHybridFileHeapTest.html#aaf0df15d78627449c77bb2821d295c76" title=" " alt="" coords="17,19,165,61"/>
-<area shape="rect" id="node7" href="$classHybridHeapTest.html#aaf0df15d78627449c77bb2821d295c76" title=" " alt="" coords="5,85,177,112"/>
-</map>

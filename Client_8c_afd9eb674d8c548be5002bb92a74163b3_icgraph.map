@@ -1,7 +1,0 @@
-<map id="stopKinesisVideoStreamSync" name="stopKinesisVideoStreamSync">
-<area shape="rect" id="node1" title=" " alt="" coords="495,71,707,98"/>
-<area shape="rect" id="node2" href="$classClientTestBase.html#a4e43eb1aa28d8ffe203e740722039bc7" title=" " alt="" coords="245,5,447,47"/>
-<area shape="rect" id="node4" href="$StreamApiTest_8cpp.html#a4f055a061389622b75298abc71decef1" title=" " alt="" coords="311,71,381,98"/>
-<area shape="rect" id="node5" href="$IntermittentProducerAutomaticStreamingTest_8cpp.html#a2e7e08a966ee72243e6e15e5310b5be1" title=" " alt="" coords="311,122,381,149"/>
-<area shape="rect" id="node3" href="$classClientTestBase.html#ab08cffab213e418e60ad3e16eaef6667" title=" " alt="" coords="5,5,197,47"/>
-</map>

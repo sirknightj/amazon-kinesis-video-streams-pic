@@ -1,20 +1,16 @@
 var searchData=
 [
-  ['view_5fitem_5fallocaiton_5fsize_7579',['VIEW_ITEM_ALLOCAITON_SIZE',['../ViewTestFixture_8h.html#a84d2e67c45fe85b2d0fd41fe8f4637d2',1,'VIEW_ITEM_ALLOCAITON_SIZE():&#160;ViewTestFixture.h'],['../ViewApiFunctionalityTest_8cpp.html#a84d2e67c45fe85b2d0fd41fe8f4637d2',1,'VIEW_ITEM_ALLOCAITON_SIZE():&#160;ViewApiFunctionalityTest.cpp']]],
-  ['view_5fitem_5fduration_7580',['VIEW_ITEM_DURATION',['../ViewApiFunctionalityTest_8cpp.html#a43ec582801170546d6631f3d3f416c1d',1,'VIEW_ITEM_DURATION():&#160;ViewApiFunctionalityTest.cpp'],['../ViewTestFixture_8h.html#a43ec582801170546d6631f3d3f416c1d',1,'VIEW_ITEM_DURATION():&#160;ViewTestFixture.h']]],
-  ['view_5fitem_5fduration_5flarge_7581',['VIEW_ITEM_DURATION_LARGE',['../ViewApiFunctionalityTest_8cpp.html#a0055931a5c43853f0c1ecce89a0c48da',1,'VIEW_ITEM_DURATION_LARGE():&#160;ViewApiFunctionalityTest.cpp'],['../ViewTestFixture_8h.html#a0055931a5c43853f0c1ecce89a0c48da',1,'VIEW_ITEM_DURATION_LARGE():&#160;ViewTestFixture.h']]],
-  ['view_5fnotification_5fcallback_5fcustom_5fdata_7582',['VIEW_NOTIFICATION_CALLBACK_CUSTOM_DATA',['../ViewTestFixture_8h.html#a4b1668bebaf1efc4da3f75babe44964f',1,'ViewTestFixture.h']]],
-  ['void_7583',['VOID',['../CommonDefs_8h.html#a7f319bfc2492a2136964194204e7a8cf',1,'CommonDefs.h']]],
-  ['vram_5falloc_5ffunc_5fsymbol_5fname_7584',['VRAM_ALLOC_FUNC_SYMBOL_NAME',['../HybridHeap_8h.html#aced1c6e03800396b4f769906221f80e3',1,'HybridHeap.h']]],
-  ['vram_5fallocation_5ffooter_5fsize_7585',['VRAM_ALLOCATION_FOOTER_SIZE',['../HybridHeap_8c.html#abab032f3263194388204adbe0c502fb4',1,'HybridHeap.c']]],
-  ['vram_5fallocation_5fheader_5fsize_7586',['VRAM_ALLOCATION_HEADER_SIZE',['../HybridHeap_8c.html#a8f55b3b6394e98e2b70dc5a0e514ab8b',1,'HybridHeap.c']]],
-  ['vram_5fallocation_5ftype_7587',['VRAM_ALLOCATION_TYPE',['../HybridHeap_8h.html#a493bb3a59d944fcdfddaf94ad7ddc052',1,'HybridHeap.h']]],
-  ['vram_5ffree_5ffunc_5fsymbol_5fname_7588',['VRAM_FREE_FUNC_SYMBOL_NAME',['../HybridHeap_8h.html#a62f3d6bf41a0e20038552c38421433a3',1,'HybridHeap.h']]],
-  ['vram_5fgetmax_5ffunc_5fsymbol_5fname_7589',['VRAM_GETMAX_FUNC_SYMBOL_NAME',['../HybridHeap_8h.html#a59088dc08746d0bc1c3078d57f991885',1,'HybridHeap.h']]],
-  ['vram_5finit_5ffunc_5fsymbol_5fname_7590',['VRAM_INIT_FUNC_SYMBOL_NAME',['../HybridHeap_8h.html#a0bc7a6657dd501d07c21e4dc8b5770ae',1,'HybridHeap.h']]],
-  ['vram_5flibrary_5ffull_5fpath_7591',['VRAM_LIBRARY_FULL_PATH',['../HybridHeap_8h.html#aaed929d64ac029dd39d5a34de48b6acd',1,'HybridHeap.h']]],
-  ['vram_5flibrary_5fname_7592',['VRAM_LIBRARY_NAME',['../HybridHeap_8h.html#a63f57bb4dc4fe8c72bc18ddbc69db743',1,'HybridHeap.h']]],
-  ['vram_5flock_5ffunc_5fsymbol_5fname_7593',['VRAM_LOCK_FUNC_SYMBOL_NAME',['../HybridHeap_8h.html#a11542c3d1bcbb5fd62f0320e652b46b4',1,'HybridHeap.h']]],
-  ['vram_5funinit_5ffunc_5fsymbol_5fname_7594',['VRAM_UNINIT_FUNC_SYMBOL_NAME',['../HybridHeap_8h.html#afdaf9b62d74f90c42d9fae963229d246',1,'HybridHeap.h']]],
-  ['vram_5funlock_5ffunc_5fsymbol_5fname_7595',['VRAM_UNLOCK_FUNC_SYMBOL_NAME',['../HybridHeap_8h.html#ade481b75fc9c5d643468fc51e4efc585',1,'HybridHeap.h']]]
+  ['void_6246',['VOID',['../CommonDefs_8h.html#a7f319bfc2492a2136964194204e7a8cf',1,'CommonDefs.h']]],
+  ['vram_5falloc_5ffunc_5fsymbol_5fname_6247',['VRAM_ALLOC_FUNC_SYMBOL_NAME',['../HybridHeap_8h.html#aced1c6e03800396b4f769906221f80e3',1,'HybridHeap.h']]],
+  ['vram_5fallocation_5ffooter_5fsize_6248',['VRAM_ALLOCATION_FOOTER_SIZE',['../HybridHeap_8c.html#abab032f3263194388204adbe0c502fb4',1,'HybridHeap.c']]],
+  ['vram_5fallocation_5fheader_5fsize_6249',['VRAM_ALLOCATION_HEADER_SIZE',['../HybridHeap_8c.html#a8f55b3b6394e98e2b70dc5a0e514ab8b',1,'HybridHeap.c']]],
+  ['vram_5fallocation_5ftype_6250',['VRAM_ALLOCATION_TYPE',['../HybridHeap_8h.html#a493bb3a59d944fcdfddaf94ad7ddc052',1,'HybridHeap.h']]],
+  ['vram_5ffree_5ffunc_5fsymbol_5fname_6251',['VRAM_FREE_FUNC_SYMBOL_NAME',['../HybridHeap_8h.html#a62f3d6bf41a0e20038552c38421433a3',1,'HybridHeap.h']]],
+  ['vram_5fgetmax_5ffunc_5fsymbol_5fname_6252',['VRAM_GETMAX_FUNC_SYMBOL_NAME',['../HybridHeap_8h.html#a59088dc08746d0bc1c3078d57f991885',1,'HybridHeap.h']]],
+  ['vram_5finit_5ffunc_5fsymbol_5fname_6253',['VRAM_INIT_FUNC_SYMBOL_NAME',['../HybridHeap_8h.html#a0bc7a6657dd501d07c21e4dc8b5770ae',1,'HybridHeap.h']]],
+  ['vram_5flibrary_5ffull_5fpath_6254',['VRAM_LIBRARY_FULL_PATH',['../HybridHeap_8h.html#aaed929d64ac029dd39d5a34de48b6acd',1,'HybridHeap.h']]],
+  ['vram_5flibrary_5fname_6255',['VRAM_LIBRARY_NAME',['../HybridHeap_8h.html#a63f57bb4dc4fe8c72bc18ddbc69db743',1,'HybridHeap.h']]],
+  ['vram_5flock_5ffunc_5fsymbol_5fname_6256',['VRAM_LOCK_FUNC_SYMBOL_NAME',['../HybridHeap_8h.html#a11542c3d1bcbb5fd62f0320e652b46b4',1,'HybridHeap.h']]],
+  ['vram_5funinit_5ffunc_5fsymbol_5fname_6257',['VRAM_UNINIT_FUNC_SYMBOL_NAME',['../HybridHeap_8h.html#afdaf9b62d74f90c42d9fae963229d246',1,'HybridHeap.h']]],
+  ['vram_5funlock_5ffunc_5fsymbol_5fname_6258',['VRAM_UNLOCK_FUNC_SYMBOL_NAME',['../HybridHeap_8h.html#ade481b75fc9c5d643468fc51e4efc585',1,'HybridHeap.h']]]
 ];

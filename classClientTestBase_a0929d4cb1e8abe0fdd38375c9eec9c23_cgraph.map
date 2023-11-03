@@ -1,8 +1,0 @@
-<map id="createRetryStrategyFn" name="createRetryStrategyFn">
-<area shape="rect" id="node1" title=" " alt="" coords="5,111,175,138"/>
-<area shape="rect" id="node2" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a9fb6f39966eff5492ec305e8a88fccf0" title="Initializes exponential backoff state with provided configuration This should be called once before c..." alt="" coords="223,104,460,145"/>
-<area shape="rect" id="node3" href="$ExponentialBackoffRetryStrategy_8c.html#ab417fc8fafc037f6ea43ec9c47d42c41" title=" " alt="" coords="508,5,745,47"/>
-<area shape="rect" id="node4" href="$ExponentialBackoffRetryStrategy_8c.html#a58c1c7e465fd7abb3cd2c64c37d096ed" title=" " alt="" coords="521,71,733,112"/>
-<area shape="rect" id="node5" href="$ExponentialBackoffRetryStrategy_8c.html#a35a6d37dbfa6cea9a790d6c1005675bb" title=" " alt="" coords="519,136,734,177"/>
-<area shape="rect" id="node6" href="$ExponentialBackoffRetryStrategy_8c.html#a6f87ef97d58f1c89401a0685ded8514c" title=" " alt="" coords="527,201,727,243"/>
-</map>

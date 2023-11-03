@@ -1,6 +1,4 @@
 <map id="tagClientResult" name="tagClientResult">
-<area shape="rect" id="node1" title=" " alt="" coords="352,31,475,57"/>
-<area shape="rect" id="node2" href="$client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a3bc9cf80f6fc35e1457d2a8c630c02c9" title=" " alt="" coords="123,31,304,57"/>
-<area shape="rect" id="node3" href="$StreamDeviceTagsTest_8cpp.html#a309c29140bb30f72f775ce2145ddc3f5" title=" " alt="" coords="5,5,75,32"/>
-<area shape="rect" id="node4" href="$StateTransitionFunctionalityTest_8cpp.html#ae089d38cc0644baa233b921811566804" title=" " alt="" coords="5,56,75,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="235,5,357,32"/>
+<area shape="rect" id="node2" href="$client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a3bc9cf80f6fc35e1457d2a8c630c02c9" title=" " alt="" coords="5,5,187,32"/>
 </map>

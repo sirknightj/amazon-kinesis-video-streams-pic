@@ -1,8 +1,4 @@
 <map id="src/state/src/Include_i.h" name="src/state/src/Include_i.h">
-<area shape="rect" id="node1" title=" " alt="" coords="185,5,359,32"/>
-<area shape="rect" id="node2" href="$State_8c.html" title=" " alt="" coords="93,80,243,107"/>
-<area shape="rect" id="node3" href="$StateTestFixture_8h.html" title=" " alt="" coords="267,80,487,107"/>
-<area shape="rect" id="node4" href="$StateApiFunctionalityTest_8cpp.html" title=" " alt="" coords="5,155,248,196"/>
-<area shape="rect" id="node5" href="$StateApiTest_8cpp.html" title=" " alt="" coords="272,162,483,189"/>
-<area shape="rect" id="node6" href="$StateTestFixture_8cpp.html" title=" " alt="" coords="507,162,741,189"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,180,32"/>
+<area shape="rect" id="node2" href="$State_8c.html" title=" " alt="" coords="17,80,168,107"/>
 </map>

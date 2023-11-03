@@ -27,7 +27,6 @@ var menudata={children:[
 {text:"Data Structures",url:"annotated.html",children:[
 {text:"Data Structures",url:"annotated.html"},
 {text:"Data Structure Index",url:"classes.html"},
-{text:"Class Hierarchy",url:"inherits.html"},
 {text:"Data Fields",url:"functions.html",children:[
 {text:"All",url:"functions.html",children:[
 {text:"a",url:"functions.html#index_a"},
@@ -52,29 +51,7 @@ var menudata={children:[
 {text:"t",url:"functions_t.html#index_t"},
 {text:"u",url:"functions_u.html#index_u"},
 {text:"v",url:"functions_v.html#index_v"},
-{text:"w",url:"functions_w.html#index_w"},
-{text:"~",url:"functions_~.html#index__7E"}]},
-{text:"Functions",url:"functions_func.html",children:[
-{text:"a",url:"functions_func.html#index_a"},
-{text:"b",url:"functions_func.html#index_b"},
-{text:"c",url:"functions_func.html#index_c"},
-{text:"d",url:"functions_func.html#index_d"},
-{text:"e",url:"functions_func.html#index_e"},
-{text:"f",url:"functions_func.html#index_f"},
-{text:"g",url:"functions_func.html#index_g"},
-{text:"h",url:"functions_func.html#index_h"},
-{text:"i",url:"functions_func.html#index_i"},
-{text:"l",url:"functions_func.html#index_l"},
-{text:"m",url:"functions_func.html#index_m"},
-{text:"o",url:"functions_func.html#index_o"},
-{text:"p",url:"functions_func.html#index_p"},
-{text:"r",url:"functions_func.html#index_r"},
-{text:"s",url:"functions_func.html#index_s"},
-{text:"t",url:"functions_func.html#index_t"},
-{text:"u",url:"functions_func.html#index_u"},
-{text:"v",url:"functions_func.html#index_v"},
-{text:"w",url:"functions_func.html#index_w"},
-{text:"~",url:"functions_func.html#index__7E"}]},
+{text:"w",url:"functions_w.html#index_w"}]},
 {text:"Variables",url:"functions_vars.html",children:[
 {text:"a",url:"functions_vars.html#index_a"},
 {text:"b",url:"functions_vars_b.html#index_b"},
@@ -125,8 +102,7 @@ var menudata={children:[
 {text:"t",url:"globals_t.html#index_t"},
 {text:"u",url:"globals_u.html#index_u"},
 {text:"v",url:"globals_v.html#index_v"},
-{text:"w",url:"globals_w.html#index_w"},
-{text:"z",url:"globals_z.html#index_z"}]},
+{text:"w",url:"globals_w.html#index_w"}]},
 {text:"Functions",url:"globals_func.html",children:[
 {text:"a",url:"globals_func.html#index_a"},
 {text:"b",url:"globals_func_b.html#index_b"},
@@ -147,8 +123,7 @@ var menudata={children:[
 {text:"t",url:"globals_func_t.html#index_t"},
 {text:"u",url:"globals_func_u.html#index_u"},
 {text:"v",url:"globals_func_v.html#index_v"},
-{text:"w",url:"globals_func_w.html#index_w"},
-{text:"z",url:"globals_func_z.html#index_z"}]},
+{text:"w",url:"globals_func_w.html#index_w"}]},
 {text:"Variables",url:"globals_vars.html",children:[
 {text:"a",url:"globals_vars.html#index_a"},
 {text:"b",url:"globals_vars_b.html#index_b"},
@@ -157,9 +132,7 @@ var menudata={children:[
 {text:"g",url:"globals_vars_g.html#index_g"},
 {text:"h",url:"globals_vars_h.html#index_h"},
 {text:"p",url:"globals_vars_p.html#index_p"},
-{text:"r",url:"globals_vars_r.html#index_r"},
-{text:"s",url:"globals_vars_s.html#index_s"},
-{text:"t",url:"globals_vars_t.html#index_t"}]},
+{text:"s",url:"globals_vars_s.html#index_s"}]},
 {text:"Typedefs",url:"globals_type.html",children:[
 {text:"a",url:"globals_type.html#index_a"},
 {text:"b",url:"globals_type_b.html#index_b"},
@@ -175,7 +148,6 @@ var menudata={children:[
 {text:"l",url:"globals_type_l.html#index_l"},
 {text:"m",url:"globals_type_m.html#index_m"},
 {text:"p",url:"globals_type_p.html#index_p"},
-{text:"r",url:"globals_type_r.html#index_r"},
 {text:"s",url:"globals_type_s.html#index_s"},
 {text:"t",url:"globals_type_t.html#index_t"},
 {text:"u",url:"globals_type_u.html#index_u"},
@@ -234,6 +206,5 @@ var menudata={children:[
 {text:"v",url:"globals_defs_v.html#index_v"},
 {text:"w",url:"globals_defs_w.html#index_w"}]}]}]},
 {text:"Download",url:"usergroup0.html",children:[
-{text:"Source",url:"http://trac.osgeo.org/gdal/wiki/DownloadSource"},
-{text:"Binaries",url:"http://trac.osgeo.org/gdal/wiki/DownloadingGdalBinaries"}]},
-{text:"Issue Tracker",url:"https://github.com/OSGeo/gdal/issues/"}]}
+{text:"Releases",url:"https://github.com/awslabs/amazon-kinesis-video-streams-producer-c/releases"}]},
+{text:"Issue Tracker",url:"https://github.com/awslabs/amazon-kinesis-video-streams-pic/Issues"}]}
