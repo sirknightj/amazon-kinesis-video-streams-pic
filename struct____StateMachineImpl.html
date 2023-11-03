@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +28,7 @@
    <div id="projectname">Amazon Kinesis Video Streams PIC
    &#160;<span id="projectnumber">1.0.1</span>
    </div>
-   <div id="projectbrief">Platform Independent Code for Amazon Kinesis Video Streams.</div>
+   <div id="projectbrief">Platform independent code for Amazon Kinesis Video Streams</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('struct____StateMachineImpl.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,47 +82,154 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="struct____StateMachineImpl-members.html">List of all members</a>  </div>
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
 <div class="title">__StateMachineImpl Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="state_2src_2Include__i_8h_source.html">Include_i.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for __StateMachineImpl:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct____StateMachineImpl__coll__graph.png" border="0" usemap="#a____StateMachineImpl_coll__map" alt="Collaboration graph"/></div>
+<map name="a____StateMachineImpl_coll__map" id="a____StateMachineImpl_coll__map">
+<area shape="rect" title=" " alt="" coords="104,184,259,211"/>
+<area shape="rect" href="struct____StateMachine.html" title=" " alt="" coords="5,95,131,121"/>
+<area shape="rect" href="struct____StateMachineContext.html" title=" " alt="" coords="251,95,427,121"/>
+<area shape="rect" href="struct____StateMachineState.html" title=" " alt="" coords="123,5,282,32"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:af9d2dad0f6c8eb5c5884f98976f84517"><td class="memItemLeft" align="right" valign="top"><a id="af9d2dad0f6c8eb5c5884f98976f84517"></a>
-<a class="el" href="struct____StateMachine.html">StateMachine</a>&#160;</td><td class="memItemRight" valign="bottom"><b>stateMachine</b></td></tr>
-<tr class="separator:af9d2dad0f6c8eb5c5884f98976f84517"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1887fd2e4bdc91f21dabc75dd75021a7"><td class="memItemLeft" align="right" valign="top"><a id="a1887fd2e4bdc91f21dabc75dd75021a7"></a>
-GetCurrentTimeFunc&#160;</td><td class="memItemRight" valign="bottom"><b>getCurrentTimeFunc</b></td></tr>
-<tr class="separator:a1887fd2e4bdc91f21dabc75dd75021a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9131204546e1e6710277257cf141e4ef"><td class="memItemLeft" align="right" valign="top"><a id="a9131204546e1e6710277257cf141e4ef"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>getCurrentTimeFuncCustomData</b></td></tr>
-<tr class="separator:a9131204546e1e6710277257cf141e4ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56e3059222650d8570f0cd703e974042"><td class="memItemLeft" align="right" valign="top"><a id="a56e3059222650d8570f0cd703e974042"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>customData</b></td></tr>
-<tr class="separator:a56e3059222650d8570f0cd703e974042"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a96e58457e01dd8579ff9fcb60c906b9c"><td class="memItemLeft" align="right" valign="top"><a id="a96e58457e01dd8579ff9fcb60c906b9c"></a>
-<a class="el" href="struct____StateMachineContext.html">StateMachineContext</a>&#160;</td><td class="memItemRight" valign="bottom"><b>context</b></td></tr>
-<tr class="separator:a96e58457e01dd8579ff9fcb60c906b9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8bc387972198b397f46e53fdc49ccdcc"><td class="memItemLeft" align="right" valign="top"><a id="a8bc387972198b397f46e53fdc49ccdcc"></a>
-UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>stateCount</b></td></tr>
-<tr class="separator:a8bc387972198b397f46e53fdc49ccdcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1574cb00b49e468fb87739cf99778d8b"><td class="memItemLeft" align="right" valign="top"><a id="a1574cb00b49e468fb87739cf99778d8b"></a>
-<a class="el" href="struct____StateMachineState.html">PStateMachineState</a>&#160;</td><td class="memItemRight" valign="bottom"><b>states</b></td></tr>
-<tr class="separator:a1574cb00b49e468fb87739cf99778d8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+Data Fields</h2></td></tr>
+<tr class="memitem:a2f0b95776d2f6c3d37cec7267a8e04a9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="state_2include_2com_2amazonaws_2kinesis_2video_2state_2Include_8h.html#a104e67d15a50b83c6097634831f1aab3">StateMachine</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StateMachineImpl.html#a2f0b95776d2f6c3d37cec7267a8e04a9">stateMachine</a></td></tr>
+<tr class="separator:a2f0b95776d2f6c3d37cec7267a8e04a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaab76527afa4f415c2fe967ee6345937"><td class="memItemLeft" align="right" valign="top"><a class="el" href="mkvgen_2include_2com_2amazonaws_2kinesis_2video_2mkvgen_2Include_8h.html#a0c5b72fcf1f5561e6d9827f4031a73df">GetCurrentTimeFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StateMachineImpl.html#aaab76527afa4f415c2fe967ee6345937">getCurrentTimeFunc</a></td></tr>
+<tr class="separator:aaab76527afa4f415c2fe967ee6345937"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaab2df13b48a34ecca7ffba1e6e72c82"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StateMachineImpl.html#aaab2df13b48a34ecca7ffba1e6e72c82">getCurrentTimeFuncCustomData</a></td></tr>
+<tr class="separator:aaab2df13b48a34ecca7ffba1e6e72c82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a770464cf38155534db591ab6cae057ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StateMachineImpl.html#a770464cf38155534db591ab6cae057ce">customData</a></td></tr>
+<tr class="separator:a770464cf38155534db591ab6cae057ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0ce1482c9dd720ff8f60e2fd8c45265"><td class="memItemLeft" align="right" valign="top"><a class="el" href="state_2src_2Include__i_8h.html#a0162f952a4d7a19aa0d42d58d00a770c">StateMachineContext</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StateMachineImpl.html#aa0ce1482c9dd720ff8f60e2fd8c45265">context</a></td></tr>
+<tr class="separator:aa0ce1482c9dd720ff8f60e2fd8c45265"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15d98a1084789dc80916e3c484dead74"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StateMachineImpl.html#a15d98a1084789dc80916e3c484dead74">stateCount</a></td></tr>
+<tr class="separator:a15d98a1084789dc80916e3c484dead74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7813c4f4b78e75be7831fbcd6af7b42c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="state_2include_2com_2amazonaws_2kinesis_2video_2state_2Include_8h.html#aad21eb8aab7d9cb33218bf2abaeb2d98">PStateMachineState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StateMachineImpl.html#a7813c4f4b78e75be7831fbcd6af7b42c">states</a></td></tr>
+<tr class="separator:a7813c4f4b78e75be7831fbcd6af7b42c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="aa0ce1482c9dd720ff8f60e2fd8c45265"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0ce1482c9dd720ff8f60e2fd8c45265">&#9670;&nbsp;</a></span>context</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="state_2src_2Include__i_8h.html#a0162f952a4d7a19aa0d42d58d00a770c">StateMachineContext</a> context</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a770464cf38155534db591ab6cae057ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a770464cf38155534db591ab6cae057ce">&#9670;&nbsp;</a></span>customData</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> customData</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaab76527afa4f415c2fe967ee6345937"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaab76527afa4f415c2fe967ee6345937">&#9670;&nbsp;</a></span>getCurrentTimeFunc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="mkvgen_2include_2com_2amazonaws_2kinesis_2video_2mkvgen_2Include_8h.html#a0c5b72fcf1f5561e6d9827f4031a73df">GetCurrentTimeFunc</a> getCurrentTimeFunc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaab2df13b48a34ecca7ffba1e6e72c82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaab2df13b48a34ecca7ffba1e6e72c82">&#9670;&nbsp;</a></span>getCurrentTimeFuncCustomData</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> getCurrentTimeFuncCustomData</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a15d98a1084789dc80916e3c484dead74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15d98a1084789dc80916e3c484dead74">&#9670;&nbsp;</a></span>stateCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> stateCount</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2f0b95776d2f6c3d37cec7267a8e04a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f0b95776d2f6c3d37cec7267a8e04a9">&#9670;&nbsp;</a></span>stateMachine</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="state_2include_2com_2amazonaws_2kinesis_2video_2state_2Include_8h.html#a104e67d15a50b83c6097634831f1aab3">StateMachine</a> stateMachine</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7813c4f4b78e75be7831fbcd6af7b42c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7813c4f4b78e75be7831fbcd6af7b42c">&#9670;&nbsp;</a></span>states</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="state_2include_2com_2amazonaws_2kinesis_2video_2state_2Include_8h.html#aad21eb8aab7d9cb33218bf2abaeb2d98">PStateMachineState</a> states</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>src/state/src/<a class="el" href="state_2src_2Include__i_8h_source.html">Include_i.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="struct____StateMachineImpl.html">__StateMachineImpl</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +28,7 @@
    <div id="projectname">Amazon Kinesis Video Streams PIC
    &#160;<span id="projectnumber">1.0.1</span>
    </div>
-   <div id="projectbrief">Platform Independent Code for Amazon Kinesis Video Streams.</div>
+   <div id="projectbrief">Platform independent code for Amazon Kinesis Video Streams</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('FrameOrderCoordinator_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,17 +82,12 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_6908ff505388a07996d238c763adbdab.html">client</a></li><li class="navelem"><a class="el" href="dir_78ce3fde11f1c50580f2f2c408f37c2f.html">src</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">FrameOrderCoordinator.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*******************************************</span></div>
+<a href="FrameOrderCoordinator_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="FrameOrderCoordinator_8h.html#a2ffe4787166a2afdda41c2cb85bf0f5a">    1</a></span>&#160;<span class="comment">/*******************************************</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">PutFrameCoordinator internal include file</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">*******************************************/</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#ifndef __KINESIS_VIDEO_PUT_FRAME_COORDINATOR_INCLUDE_I__</span></div>
@@ -85,63 +101,93 @@ $(function() {
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct____FrameOrderTrackData.html">__FrameOrderTrackData</a> <a class="code" href="struct____FrameOrderTrackData.html">FrameOrderTrackData</a>;</div>
 <div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="struct____FrameOrderTrackData.html">   14</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct____FrameOrderTrackData.html">__FrameOrderTrackData</a> {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="structTrackInfo.html">PTrackInfo</a> pTrackInfo;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="struct____FrameOrderTrackData.html#a2392556b131e6dce05fa7503f790dec6">   15</a></span>&#160;    <a class="code" href="structTrackInfo.html">PTrackInfo</a> <a class="code" href="struct____FrameOrderTrackData.html#a2392556b131e6dce05fa7503f790dec6">pTrackInfo</a>;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="comment">// current number of frames in the queue</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">volatile</span> UINT32 frameCount;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="struct____FrameOrderTrackData.html#a088321c5f89c8015d67c7dde1a2274c0">   18</a></span>&#160;    <span class="keyword">volatile</span> <a class="code" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> <a class="code" href="struct____FrameOrderTrackData.html#a088321c5f89c8015d67c7dde1a2274c0">frameCount</a>;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="structSingleList.html">PStackQueue</a> frameQueue;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="struct____FrameOrderTrackData.html#ad0a3764701a403afce2cd33a9028fc34">   20</a></span>&#160;    <a class="code" href="structSingleList.html">PStackQueue</a> <a class="code" href="struct____FrameOrderTrackData.html#ad0a3764701a403afce2cd33a9028fc34">frameQueue</a>;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;};</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct____FrameOrderTrackData.html">__FrameOrderTrackData</a>* <a class="code" href="struct____FrameOrderTrackData.html">PFrameOrderTrackData</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="FrameOrderCoordinator_8h.html#a9f766c2e68c679f9704642022df5a33c">   22</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct____FrameOrderTrackData.html">__FrameOrderTrackData</a>* <a class="code" href="FrameOrderCoordinator_8h.html#a9f766c2e68c679f9704642022df5a33c">PFrameOrderTrackData</a>;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">typedef</span> STATUS (*FrameTimestampCompareFunc)(<a class="code" href="struct____FrameOrderTrackData.html">PFrameOrderTrackData</a>, <a class="code" href="struct____FrameOrderTrackData.html">PFrameOrderTrackData</a>, UINT64, PBOOL);</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="FrameOrderCoordinator_8h.html#a0edd6f82b2d69414112c679616cdb461">   24</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="CommonDefs_8h.html#a59279bee44f34d08b3cbf3a89fb0d8d9">STATUS</a> (*<a class="code" href="FrameOrderCoordinator_8h.html#aedae9dd024a9a99b6f933f135b01fda9">FrameTimestampCompareFunc</a>)(<a class="code" href="FrameOrderCoordinator_8h.html#a9f766c2e68c679f9704642022df5a33c">PFrameOrderTrackData</a>, <a class="code" href="FrameOrderCoordinator_8h.html#a9f766c2e68c679f9704642022df5a33c">PFrameOrderTrackData</a>, <a class="code" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>, <a class="code" href="CommonDefs_8h.html#a9cd49ddcba7cc97ffa1da63b3e5983c3">PBOOL</a>);</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct____FrameOrderCoordinator.html">__FrameOrderCoordinator</a> <a class="code" href="struct____FrameOrderCoordinator.html">FrameOrderCoordinator</a>;</div>
 <div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="struct____FrameOrderCoordinator.html">   27</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct____FrameOrderCoordinator.html">__FrameOrderCoordinator</a> {</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">// whether any eofr frame has been put</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">volatile</span> BOOL eofrPut;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="struct____FrameOrderCoordinator.html#a3d7f1637dcd7b46a1404851f02fd6620">   29</a></span>&#160;    <span class="keyword">volatile</span> <a class="code" href="CommonDefs_8h.html#a6252187f6e55ba4943e030c350d624bd">BOOL</a> <a class="code" href="struct____FrameOrderCoordinator.html#a3d7f1637dcd7b46a1404851f02fd6620">eofrPut</a>;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="struct____FrameOrderTrackData.html">FrameOrderTrackData</a> putFrameTrackDataList[MAX_SUPPORTED_TRACK_COUNT_PER_STREAM];</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="struct____FrameOrderCoordinator.html#aa22668e081d6901186fc0170a8d8e1da">   31</a></span>&#160;    <a class="code" href="struct____FrameOrderTrackData.html">FrameOrderTrackData</a> <a class="code" href="struct____FrameOrderCoordinator.html#aa22668e081d6901186fc0170a8d8e1da">putFrameTrackDataList</a>[<a class="code" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#aa5924e0cfd27899cdfb728901b72ac2e">MAX_SUPPORTED_TRACK_COUNT_PER_STREAM</a>];</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    UINT32 putFrameTrackDataListCount;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="struct____FrameOrderCoordinator.html#af776907cbed740cda046a6d26cfb5c4a">   33</a></span>&#160;    <a class="code" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> <a class="code" href="struct____FrameOrderCoordinator.html#af776907cbed740cda046a6d26cfb5c4a">putFrameTrackDataListCount</a>;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// indicate whether any frame with FRAME_FLAG_KEY_FRAME set was received</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">volatile</span> BOOL keyFrameDetected;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="struct____FrameOrderCoordinator.html#a270b9d78b2413613ec93a5e954c92971">   36</a></span>&#160;    <span class="keyword">volatile</span> <a class="code" href="CommonDefs_8h.html#a6252187f6e55ba4943e030c350d624bd">BOOL</a> <a class="code" href="struct____FrameOrderCoordinator.html#a270b9d78b2413613ec93a5e954c92971">keyFrameDetected</a>;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">// number of tracks that has frame in the queue</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">volatile</span> UINT32 trackWithFrame;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="struct____FrameOrderCoordinator.html#a521d03325f4dba19737b83bb52affb38">   39</a></span>&#160;    <span class="keyword">volatile</span> <a class="code" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> <a class="code" href="struct____FrameOrderCoordinator.html#a521d03325f4dba19737b83bb52affb38">trackWithFrame</a>;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    MUTEX lock;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="struct____FrameOrderCoordinator.html#a6ef0755957660d11fe5dbaf1888c75fb">   41</a></span>&#160;    <a class="code" href="CommonDefs_8h.html#aacb6173308f40c2f1bb4b0fa0e13411c">MUTEX</a> <a class="code" href="struct____FrameOrderCoordinator.html#a6ef0755957660d11fe5dbaf1888c75fb">lock</a>;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="struct____StreamInfo.html">PStreamInfo</a> pStreamInfo;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="struct____FrameOrderCoordinator.html#ae066aa3ccb016196b68bf23c80736f5e">   43</a></span>&#160;    <a class="code" href="struct____StreamInfo.html">PStreamInfo</a> <a class="code" href="struct____FrameOrderCoordinator.html#ae066aa3ccb016196b68bf23c80736f5e">pStreamInfo</a>;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    FrameTimestampCompareFunc frameTimestampCompareFn;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="struct____FrameOrderCoordinator.html#af48fc017ea98b833b52a0ed65737eaa7">   45</a></span>&#160;    <a class="code" href="FrameOrderCoordinator_8h.html#aedae9dd024a9a99b6f933f135b01fda9">FrameTimestampCompareFunc</a> <a class="code" href="struct____FrameOrderCoordinator.html#af48fc017ea98b833b52a0ed65737eaa7">frameTimestampCompareFn</a>;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;};</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct____FrameOrderCoordinator.html">__FrameOrderCoordinator</a>* <a class="code" href="struct____FrameOrderCoordinator.html">PFrameOrderCoordinator</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="FrameOrderCoordinator_8h.html#ae90958990c31d0b5fb700d38a69be6b4">   47</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct____FrameOrderCoordinator.html">__FrameOrderCoordinator</a>* <a class="code" href="FrameOrderCoordinator_8h.html#ae90958990c31d0b5fb700d38a69be6b4">PFrameOrderCoordinator</a>;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">// Function definitions</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment"></span>STATUS createFrameOrderCoordinator(<a class="code" href="struct____KinesisVideoStream.html">PKinesisVideoStream</a>, <a class="code" href="struct____FrameOrderCoordinator.html">PFrameOrderCoordinator</a>*);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;STATUS freeFrameOrderCoordinator(<a class="code" href="struct____KinesisVideoStream.html">PKinesisVideoStream</a>, <a class="code" href="struct____FrameOrderCoordinator.html">PFrameOrderCoordinator</a>*);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;STATUS frameOrderCoordinatorPutFrame(<a class="code" href="struct____KinesisVideoStream.html">PKinesisVideoStream</a>, <a class="code" href="struct____Frame.html">PFrame</a>);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;STATUS frameOrderCoordinatorFlush(<a class="code" href="struct____KinesisVideoStream.html">PKinesisVideoStream</a>);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment"></span><a class="code" href="CommonDefs_8h.html#a59279bee44f34d08b3cbf3a89fb0d8d9">STATUS</a> <a class="code" href="FrameOrderCoordinator_8h.html#ab0592efe83c6f89f8fe7c364f1333bbc">createFrameOrderCoordinator</a>(<a class="code" href="struct____KinesisVideoStream.html">PKinesisVideoStream</a>, <a class="code" href="struct____FrameOrderCoordinator.html">PFrameOrderCoordinator</a>*);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<a class="code" href="CommonDefs_8h.html#a59279bee44f34d08b3cbf3a89fb0d8d9">STATUS</a> <a class="code" href="FrameOrderCoordinator_8h.html#a005039f449e095d94d3131d73c96ecb7">freeFrameOrderCoordinator</a>(<a class="code" href="struct____KinesisVideoStream.html">PKinesisVideoStream</a>, <a class="code" href="struct____FrameOrderCoordinator.html">PFrameOrderCoordinator</a>*);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<a class="code" href="CommonDefs_8h.html#a59279bee44f34d08b3cbf3a89fb0d8d9">STATUS</a> <a class="code" href="FrameOrderCoordinator_8h.html#adc1a87fc91aaf23666ae0d87ab7e987c">frameOrderCoordinatorPutFrame</a>(<a class="code" href="struct____KinesisVideoStream.html">PKinesisVideoStream</a>, <a class="code" href="struct____Frame.html">PFrame</a>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<a class="code" href="CommonDefs_8h.html#a59279bee44f34d08b3cbf3a89fb0d8d9">STATUS</a> <a class="code" href="FrameOrderCoordinator_8h.html#a37cb1541c7294e74514c8fa0e58b5226">frameOrderCoordinatorFlush</a>(<a class="code" href="struct____KinesisVideoStream.html">PKinesisVideoStream</a>);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;STATUS audioVideoFrameTimestampComparator(<a class="code" href="struct____FrameOrderTrackData.html">PFrameOrderTrackData</a>, <a class="code" href="struct____FrameOrderTrackData.html">PFrameOrderTrackData</a>, UINT64, PBOOL);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<a class="code" href="CommonDefs_8h.html#a59279bee44f34d08b3cbf3a89fb0d8d9">STATUS</a> <a class="code" href="FrameOrderCoordinator_8h.html#a5ace82d8af29edaa1a0644ad467e96ce">audioVideoFrameTimestampComparator</a>(<a class="code" href="struct____FrameOrderTrackData.html">PFrameOrderTrackData</a>, <a class="code" href="struct____FrameOrderTrackData.html">PFrameOrderTrackData</a>, <a class="code" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>, <a class="code" href="CommonDefs_8h.html#a9cd49ddcba7cc97ffa1da63b3e5983c3">PBOOL</a>);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*__KINESIS_VIDEO_PUT_FRAME_COORDINATOR_INCLUDE_I__*/</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aCommonDefs_8h_html_a0b39d6d754cb24c708b0f2bdbe88130e"><div class="ttname"><a href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a></div><div class="ttdeci">unsigned long UINT32</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:142</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a57be03562867144161c1bfee95ca8f7c"><div class="ttname"><a href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a></div><div class="ttdeci">unsigned long long UINT64</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:144</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a59279bee44f34d08b3cbf3a89fb0d8d9"><div class="ttname"><a href="CommonDefs_8h.html#a59279bee44f34d08b3cbf3a89fb0d8d9">STATUS</a></div><div class="ttdeci">#define STATUS</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:456</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a6252187f6e55ba4943e030c350d624bd"><div class="ttname"><a href="CommonDefs_8h.html#a6252187f6e55ba4943e030c350d624bd">BOOL</a></div><div class="ttdeci">INT32 BOOL</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:173</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a9cd49ddcba7cc97ffa1da63b3e5983c3"><div class="ttname"><a href="CommonDefs_8h.html#a9cd49ddcba7cc97ffa1da63b3e5983c3">PBOOL</a></div><div class="ttdeci">BOOL * PBOOL</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:179</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_aacb6173308f40c2f1bb4b0fa0e13411c"><div class="ttname"><a href="CommonDefs_8h.html#aacb6173308f40c2f1bb4b0fa0e13411c">MUTEX</a></div><div class="ttdeci">UINT64 MUTEX</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:217</div></div>
+<div class="ttc" id="aFrameOrderCoordinator_8h_html_a005039f449e095d94d3131d73c96ecb7"><div class="ttname"><a href="FrameOrderCoordinator_8h.html#a005039f449e095d94d3131d73c96ecb7">freeFrameOrderCoordinator</a></div><div class="ttdeci">STATUS freeFrameOrderCoordinator(PKinesisVideoStream, PFrameOrderCoordinator *)</div><div class="ttdef"><b>Definition:</b> FrameOrderCoordinator.c:60</div></div>
+<div class="ttc" id="aFrameOrderCoordinator_8h_html_a37cb1541c7294e74514c8fa0e58b5226"><div class="ttname"><a href="FrameOrderCoordinator_8h.html#a37cb1541c7294e74514c8fa0e58b5226">frameOrderCoordinatorFlush</a></div><div class="ttdeci">STATUS frameOrderCoordinatorFlush(PKinesisVideoStream)</div><div class="ttdef"><b>Definition:</b> FrameOrderCoordinator.c:337</div></div>
+<div class="ttc" id="aFrameOrderCoordinator_8h_html_a5ace82d8af29edaa1a0644ad467e96ce"><div class="ttname"><a href="FrameOrderCoordinator_8h.html#a5ace82d8af29edaa1a0644ad467e96ce">audioVideoFrameTimestampComparator</a></div><div class="ttdeci">STATUS audioVideoFrameTimestampComparator(PFrameOrderTrackData, PFrameOrderTrackData, UINT64, PBOOL)</div><div class="ttdef"><b>Definition:</b> FrameOrderCoordinator.c:94</div></div>
+<div class="ttc" id="aFrameOrderCoordinator_8h_html_a9f766c2e68c679f9704642022df5a33c"><div class="ttname"><a href="FrameOrderCoordinator_8h.html#a9f766c2e68c679f9704642022df5a33c">PFrameOrderTrackData</a></div><div class="ttdeci">struct __FrameOrderTrackData * PFrameOrderTrackData</div><div class="ttdef"><b>Definition:</b> FrameOrderCoordinator.h:22</div></div>
+<div class="ttc" id="aFrameOrderCoordinator_8h_html_ab0592efe83c6f89f8fe7c364f1333bbc"><div class="ttname"><a href="FrameOrderCoordinator_8h.html#ab0592efe83c6f89f8fe7c364f1333bbc">createFrameOrderCoordinator</a></div><div class="ttdeci">STATUS createFrameOrderCoordinator(PKinesisVideoStream, PFrameOrderCoordinator *)</div><div class="ttdef"><b>Definition:</b> FrameOrderCoordinator.c:8</div></div>
+<div class="ttc" id="aFrameOrderCoordinator_8h_html_adc1a87fc91aaf23666ae0d87ab7e987c"><div class="ttname"><a href="FrameOrderCoordinator_8h.html#adc1a87fc91aaf23666ae0d87ab7e987c">frameOrderCoordinatorPutFrame</a></div><div class="ttdeci">STATUS frameOrderCoordinatorPutFrame(PKinesisVideoStream, PFrame)</div><div class="ttdef"><b>Definition:</b> FrameOrderCoordinator.c:244</div></div>
+<div class="ttc" id="aFrameOrderCoordinator_8h_html_ae90958990c31d0b5fb700d38a69be6b4"><div class="ttname"><a href="FrameOrderCoordinator_8h.html#ae90958990c31d0b5fb700d38a69be6b4">PFrameOrderCoordinator</a></div><div class="ttdeci">struct __FrameOrderCoordinator * PFrameOrderCoordinator</div><div class="ttdef"><b>Definition:</b> FrameOrderCoordinator.h:47</div></div>
+<div class="ttc" id="aFrameOrderCoordinator_8h_html_aedae9dd024a9a99b6f933f135b01fda9"><div class="ttname"><a href="FrameOrderCoordinator_8h.html#aedae9dd024a9a99b6f933f135b01fda9">FrameTimestampCompareFunc</a></div><div class="ttdeci">STATUS(* FrameTimestampCompareFunc)(PFrameOrderTrackData, PFrameOrderTrackData, UINT64, PBOOL)</div><div class="ttdef"><b>Definition:</b> FrameOrderCoordinator.h:24</div></div>
+<div class="ttc" id="aclient_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h_html_aa5924e0cfd27899cdfb728901b72ac2e"><div class="ttname"><a href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#aa5924e0cfd27899cdfb728901b72ac2e">MAX_SUPPORTED_TRACK_COUNT_PER_STREAM</a></div><div class="ttdeci">#define MAX_SUPPORTED_TRACK_COUNT_PER_STREAM</div><div class="ttdef"><b>Definition:</b> Include.h:430</div></div>
 <div class="ttc" id="astructSingleList_html"><div class="ttname"><a href="structSingleList.html">SingleList</a></div><div class="ttdef"><b>Definition:</b> Include.h:305</div></div>
 <div class="ttc" id="astructTrackInfo_html"><div class="ttname"><a href="structTrackInfo.html">TrackInfo</a></div><div class="ttdef"><b>Definition:</b> Include.h:357</div></div>
 <div class="ttc" id="astruct____FrameOrderCoordinator_html"><div class="ttname"><a href="struct____FrameOrderCoordinator.html">__FrameOrderCoordinator</a></div><div class="ttdef"><b>Definition:</b> FrameOrderCoordinator.h:27</div></div>
+<div class="ttc" id="astruct____FrameOrderCoordinator_html_a270b9d78b2413613ec93a5e954c92971"><div class="ttname"><a href="struct____FrameOrderCoordinator.html#a270b9d78b2413613ec93a5e954c92971">__FrameOrderCoordinator::keyFrameDetected</a></div><div class="ttdeci">volatile BOOL keyFrameDetected</div><div class="ttdef"><b>Definition:</b> FrameOrderCoordinator.h:36</div></div>
+<div class="ttc" id="astruct____FrameOrderCoordinator_html_a3d7f1637dcd7b46a1404851f02fd6620"><div class="ttname"><a href="struct____FrameOrderCoordinator.html#a3d7f1637dcd7b46a1404851f02fd6620">__FrameOrderCoordinator::eofrPut</a></div><div class="ttdeci">volatile BOOL eofrPut</div><div class="ttdef"><b>Definition:</b> FrameOrderCoordinator.h:29</div></div>
+<div class="ttc" id="astruct____FrameOrderCoordinator_html_a521d03325f4dba19737b83bb52affb38"><div class="ttname"><a href="struct____FrameOrderCoordinator.html#a521d03325f4dba19737b83bb52affb38">__FrameOrderCoordinator::trackWithFrame</a></div><div class="ttdeci">volatile UINT32 trackWithFrame</div><div class="ttdef"><b>Definition:</b> FrameOrderCoordinator.h:39</div></div>
+<div class="ttc" id="astruct____FrameOrderCoordinator_html_a6ef0755957660d11fe5dbaf1888c75fb"><div class="ttname"><a href="struct____FrameOrderCoordinator.html#a6ef0755957660d11fe5dbaf1888c75fb">__FrameOrderCoordinator::lock</a></div><div class="ttdeci">MUTEX lock</div><div class="ttdef"><b>Definition:</b> FrameOrderCoordinator.h:41</div></div>
+<div class="ttc" id="astruct____FrameOrderCoordinator_html_aa22668e081d6901186fc0170a8d8e1da"><div class="ttname"><a href="struct____FrameOrderCoordinator.html#aa22668e081d6901186fc0170a8d8e1da">__FrameOrderCoordinator::putFrameTrackDataList</a></div><div class="ttdeci">FrameOrderTrackData putFrameTrackDataList[MAX_SUPPORTED_TRACK_COUNT_PER_STREAM]</div><div class="ttdef"><b>Definition:</b> FrameOrderCoordinator.h:31</div></div>
+<div class="ttc" id="astruct____FrameOrderCoordinator_html_ae066aa3ccb016196b68bf23c80736f5e"><div class="ttname"><a href="struct____FrameOrderCoordinator.html#ae066aa3ccb016196b68bf23c80736f5e">__FrameOrderCoordinator::pStreamInfo</a></div><div class="ttdeci">PStreamInfo pStreamInfo</div><div class="ttdef"><b>Definition:</b> FrameOrderCoordinator.h:43</div></div>
+<div class="ttc" id="astruct____FrameOrderCoordinator_html_af48fc017ea98b833b52a0ed65737eaa7"><div class="ttname"><a href="struct____FrameOrderCoordinator.html#af48fc017ea98b833b52a0ed65737eaa7">__FrameOrderCoordinator::frameTimestampCompareFn</a></div><div class="ttdeci">FrameTimestampCompareFunc frameTimestampCompareFn</div><div class="ttdef"><b>Definition:</b> FrameOrderCoordinator.h:45</div></div>
+<div class="ttc" id="astruct____FrameOrderCoordinator_html_af776907cbed740cda046a6d26cfb5c4a"><div class="ttname"><a href="struct____FrameOrderCoordinator.html#af776907cbed740cda046a6d26cfb5c4a">__FrameOrderCoordinator::putFrameTrackDataListCount</a></div><div class="ttdeci">UINT32 putFrameTrackDataListCount</div><div class="ttdef"><b>Definition:</b> FrameOrderCoordinator.h:33</div></div>
 <div class="ttc" id="astruct____FrameOrderTrackData_html"><div class="ttname"><a href="struct____FrameOrderTrackData.html">__FrameOrderTrackData</a></div><div class="ttdef"><b>Definition:</b> FrameOrderCoordinator.h:14</div></div>
+<div class="ttc" id="astruct____FrameOrderTrackData_html_a088321c5f89c8015d67c7dde1a2274c0"><div class="ttname"><a href="struct____FrameOrderTrackData.html#a088321c5f89c8015d67c7dde1a2274c0">__FrameOrderTrackData::frameCount</a></div><div class="ttdeci">volatile UINT32 frameCount</div><div class="ttdef"><b>Definition:</b> FrameOrderCoordinator.h:18</div></div>
+<div class="ttc" id="astruct____FrameOrderTrackData_html_a2392556b131e6dce05fa7503f790dec6"><div class="ttname"><a href="struct____FrameOrderTrackData.html#a2392556b131e6dce05fa7503f790dec6">__FrameOrderTrackData::pTrackInfo</a></div><div class="ttdeci">PTrackInfo pTrackInfo</div><div class="ttdef"><b>Definition:</b> FrameOrderCoordinator.h:15</div></div>
+<div class="ttc" id="astruct____FrameOrderTrackData_html_ad0a3764701a403afce2cd33a9028fc34"><div class="ttname"><a href="struct____FrameOrderTrackData.html#ad0a3764701a403afce2cd33a9028fc34">__FrameOrderTrackData::frameQueue</a></div><div class="ttdeci">PStackQueue frameQueue</div><div class="ttdef"><b>Definition:</b> FrameOrderCoordinator.h:20</div></div>
 <div class="ttc" id="astruct____Frame_html"><div class="ttname"><a href="struct____Frame.html">__Frame</a></div><div class="ttdef"><b>Definition:</b> Include.h:292</div></div>
 <div class="ttc" id="astruct____KinesisVideoStream_html"><div class="ttname"><a href="struct____KinesisVideoStream.html">__KinesisVideoStream</a></div><div class="ttdef"><b>Definition:</b> Stream.h:334</div></div>
 <div class="ttc" id="astruct____StreamInfo_html"><div class="ttname"><a href="struct____StreamInfo.html">__StreamInfo</a></div><div class="ttdef"><b>Definition:</b> Include.h:1092</div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_6908ff505388a07996d238c763adbdab.html">client</a></li><li class="navelem"><a class="el" href="dir_78ce3fde11f1c50580f2f2c408f37c2f.html">src</a></li><li class="navelem"><a class="el" href="FrameOrderCoordinator_8h.html">FrameOrderCoordinator.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

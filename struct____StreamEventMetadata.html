@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +28,7 @@
    <div id="projectname">Amazon Kinesis Video Streams PIC
    &#160;<span id="projectnumber">1.0.1</span>
    </div>
-   <div id="projectbrief">Platform Independent Code for Amazon Kinesis Video Streams.</div>
+   <div id="projectbrief">Platform independent code for Amazon Kinesis Video Streams</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('struct____StreamEventMetadata.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,41 +82,111 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="struct____StreamEventMetadata-members.html">List of all members</a>  </div>
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
 <div class="title">__StreamEventMetadata Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h_source.html">Include.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a025c90719163e1abbefe950fe469aa17"><td class="memItemLeft" align="right" valign="top"><a id="a025c90719163e1abbefe950fe469aa17"></a>
-UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>version</b></td></tr>
-<tr class="separator:a025c90719163e1abbefe950fe469aa17"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab16c9737898cdb33c53229a2cc05031d"><td class="memItemLeft" align="right" valign="top"><a id="ab16c9737898cdb33c53229a2cc05031d"></a>
-PCHAR&#160;</td><td class="memItemRight" valign="bottom"><b>imagePrefix</b></td></tr>
-<tr class="separator:ab16c9737898cdb33c53229a2cc05031d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3458c83a09b67d666ef5ffd0d2e28add"><td class="memItemLeft" align="right" valign="top"><a id="a3458c83a09b67d666ef5ffd0d2e28add"></a>
-UINT8&#160;</td><td class="memItemRight" valign="bottom"><b>numberOfPairs</b></td></tr>
-<tr class="separator:a3458c83a09b67d666ef5ffd0d2e28add"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada1111a4ea6e9b619f26e67721796503"><td class="memItemLeft" align="right" valign="top"><a id="ada1111a4ea6e9b619f26e67721796503"></a>
-PCHAR&#160;</td><td class="memItemRight" valign="bottom"><b>names</b> [MAX_EVENT_CUSTOM_PAIRS]</td></tr>
-<tr class="separator:ada1111a4ea6e9b619f26e67721796503"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c8264b9bb383a8bf5b8ffa92884577a"><td class="memItemLeft" align="right" valign="top"><a id="a2c8264b9bb383a8bf5b8ffa92884577a"></a>
-PCHAR&#160;</td><td class="memItemRight" valign="bottom"><b>values</b> [MAX_EVENT_CUSTOM_PAIRS]</td></tr>
-<tr class="separator:a2c8264b9bb383a8bf5b8ffa92884577a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+Data Fields</h2></td></tr>
+<tr class="memitem:a8ffac79cdfb8a2da19ee271752749738"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StreamEventMetadata.html#a8ffac79cdfb8a2da19ee271752749738">version</a></td></tr>
+<tr class="separator:a8ffac79cdfb8a2da19ee271752749738"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6d3fd1a5baa2da32fed59c22054e757"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a6addcc52e2dfddf231bf3213859ae2bb">PCHAR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StreamEventMetadata.html#aa6d3fd1a5baa2da32fed59c22054e757">imagePrefix</a></td></tr>
+<tr class="separator:aa6d3fd1a5baa2da32fed59c22054e757"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5866b92d141143c5735a3ba41630bebf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#ab27e9918b538ce9d8ca692479b375b6a">UINT8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StreamEventMetadata.html#a5866b92d141143c5735a3ba41630bebf">numberOfPairs</a></td></tr>
+<tr class="separator:a5866b92d141143c5735a3ba41630bebf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95b092c4d4697692b2950677ea55ecd1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a6addcc52e2dfddf231bf3213859ae2bb">PCHAR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StreamEventMetadata.html#a95b092c4d4697692b2950677ea55ecd1">names</a> [<a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#aeb25108a947bfef71982039da4609428">MAX_EVENT_CUSTOM_PAIRS</a>]</td></tr>
+<tr class="separator:a95b092c4d4697692b2950677ea55ecd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a013ba296e5b48d0fb27451d5dddf526e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a6addcc52e2dfddf231bf3213859ae2bb">PCHAR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StreamEventMetadata.html#a013ba296e5b48d0fb27451d5dddf526e">values</a> [<a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#aeb25108a947bfef71982039da4609428">MAX_EVENT_CUSTOM_PAIRS</a>]</td></tr>
+<tr class="separator:a013ba296e5b48d0fb27451d5dddf526e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="aa6d3fd1a5baa2da32fed59c22054e757"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6d3fd1a5baa2da32fed59c22054e757">&#9670;&nbsp;</a></span>imagePrefix</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a6addcc52e2dfddf231bf3213859ae2bb">PCHAR</a> imagePrefix</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a95b092c4d4697692b2950677ea55ecd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95b092c4d4697692b2950677ea55ecd1">&#9670;&nbsp;</a></span>names</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a6addcc52e2dfddf231bf3213859ae2bb">PCHAR</a> names[<a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#aeb25108a947bfef71982039da4609428">MAX_EVENT_CUSTOM_PAIRS</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5866b92d141143c5735a3ba41630bebf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5866b92d141143c5735a3ba41630bebf">&#9670;&nbsp;</a></span>numberOfPairs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#ab27e9918b538ce9d8ca692479b375b6a">UINT8</a> numberOfPairs</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a013ba296e5b48d0fb27451d5dddf526e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a013ba296e5b48d0fb27451d5dddf526e">&#9670;&nbsp;</a></span>values</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a6addcc52e2dfddf231bf3213859ae2bb">PCHAR</a> values[<a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#aeb25108a947bfef71982039da4609428">MAX_EVENT_CUSTOM_PAIRS</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8ffac79cdfb8a2da19ee271752749738"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ffac79cdfb8a2da19ee271752749738">&#9670;&nbsp;</a></span>version</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> version</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>src/client/include/com/amazonaws/kinesis/video/client/<a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h_source.html">Include.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="struct____StreamEventMetadata.html">__StreamEventMetadata</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

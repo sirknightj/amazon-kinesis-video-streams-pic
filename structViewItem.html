@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +28,7 @@
    <div id="projectname">Amazon Kinesis Video Streams PIC
    &#160;<span id="projectnumber">1.0.1</span>
    </div>
-   <div id="projectbrief">Platform Independent Code for Amazon Kinesis Video Streams.</div>
+   <div id="projectbrief">Platform independent code for Amazon Kinesis Video Streams</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('structViewItem.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,11 +82,9 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="structViewItem-members.html">List of all members</a>  </div>
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
 <div class="title">ViewItem Struct Reference</div>  </div>
 </div><!--header-->
@@ -74,39 +93,135 @@ $(function() {
 <p><code>#include &lt;<a class="el" href="view_2include_2com_2amazonaws_2kinesis_2video_2view_2Include_8h_source.html">Include.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:af71fc7196dc7eadca1d5d33c452b4ebe"><td class="memItemLeft" align="right" valign="top"><a id="af71fc7196dc7eadca1d5d33c452b4ebe"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>index</b></td></tr>
-<tr class="separator:af71fc7196dc7eadca1d5d33c452b4ebe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5979523e82540c67e5396f3348aa9ae7"><td class="memItemLeft" align="right" valign="top"><a id="a5979523e82540c67e5396f3348aa9ae7"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>timestamp</b></td></tr>
-<tr class="separator:a5979523e82540c67e5396f3348aa9ae7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2499721bd2a161cdd368d6df65f0dc84"><td class="memItemLeft" align="right" valign="top"><a id="a2499721bd2a161cdd368d6df65f0dc84"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>ackTimestamp</b></td></tr>
-<tr class="separator:a2499721bd2a161cdd368d6df65f0dc84"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e987df3876c274d91c8d785ea9ba312"><td class="memItemLeft" align="right" valign="top"><a id="a8e987df3876c274d91c8d785ea9ba312"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>duration</b></td></tr>
-<tr class="separator:a8e987df3876c274d91c8d785ea9ba312"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac285ca08c36aebcba1f8513853f1c321"><td class="memItemLeft" align="right" valign="top"><a id="ac285ca08c36aebcba1f8513853f1c321"></a>
-UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>length</b></td></tr>
-<tr class="separator:ac285ca08c36aebcba1f8513853f1c321"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7ce5a2b87d8a56f4a5f553b1aa06107"><td class="memItemLeft" align="right" valign="top"><a id="af7ce5a2b87d8a56f4a5f553b1aa06107"></a>
-UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>flags</b></td></tr>
-<tr class="separator:af7ce5a2b87d8a56f4a5f553b1aa06107"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed17c042466fdd7e4aaa28e071fb8b2a"><td class="memItemLeft" align="right" valign="top"><a id="aed17c042466fdd7e4aaa28e071fb8b2a"></a>
-ALLOCATION_HANDLE&#160;</td><td class="memItemRight" valign="bottom"><b>handle</b></td></tr>
-<tr class="separator:aed17c042466fdd7e4aaa28e071fb8b2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+Data Fields</h2></td></tr>
+<tr class="memitem:a0634b4f2635e25e9cf12669e0bf7684f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structViewItem.html#a0634b4f2635e25e9cf12669e0bf7684f">index</a></td></tr>
+<tr class="separator:a0634b4f2635e25e9cf12669e0bf7684f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4b5c12f00fd113109e2378ff86dab0a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structViewItem.html#ae4b5c12f00fd113109e2378ff86dab0a">timestamp</a></td></tr>
+<tr class="separator:ae4b5c12f00fd113109e2378ff86dab0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a458187b7f9376d68aef2ac6b6e4054b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structViewItem.html#a458187b7f9376d68aef2ac6b6e4054b4">ackTimestamp</a></td></tr>
+<tr class="separator:a458187b7f9376d68aef2ac6b6e4054b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ff64cd06e87d93cf1ec3fde82cf3658"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structViewItem.html#a0ff64cd06e87d93cf1ec3fde82cf3658">duration</a></td></tr>
+<tr class="separator:a0ff64cd06e87d93cf1ec3fde82cf3658"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6409de572790b092f0a7579eb393d93"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structViewItem.html#ae6409de572790b092f0a7579eb393d93">length</a></td></tr>
+<tr class="separator:ae6409de572790b092f0a7579eb393d93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a821be372043cabb6e452c3ce9bc068"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structViewItem.html#a5a821be372043cabb6e452c3ce9bc068">flags</a></td></tr>
+<tr class="separator:a5a821be372043cabb6e452c3ce9bc068"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0c1b546ef5f4ae3836d47d56ac42f5a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="heap_2include_2com_2amazonaws_2kinesis_2video_2heap_2Include_8h.html#a7e6ad5a8a295eb9c8d7445f8acdfc10e">ALLOCATION_HANDLE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structViewItem.html#ae0c1b546ef5f4ae3836d47d56ac42f5a">handle</a></td></tr>
+<tr class="separator:ae0c1b546ef5f4ae3836d47d56ac42f5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The representation of the item in the cache.</p>
 <p>IMPORTANT!!! This structure should be tightly packed without explicit compiler directives </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+</div><h2 class="groupheader">Field Documentation</h2>
+<a id="a458187b7f9376d68aef2ac6b6e4054b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a458187b7f9376d68aef2ac6b6e4054b4">&#9670;&nbsp;</a></span>ackTimestamp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> ackTimestamp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0ff64cd06e87d93cf1ec3fde82cf3658"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ff64cd06e87d93cf1ec3fde82cf3658">&#9670;&nbsp;</a></span>duration</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> duration</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5a821be372043cabb6e452c3ce9bc068"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a821be372043cabb6e452c3ce9bc068">&#9670;&nbsp;</a></span>flags</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> flags</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae0c1b546ef5f4ae3836d47d56ac42f5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0c1b546ef5f4ae3836d47d56ac42f5a">&#9670;&nbsp;</a></span>handle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="heap_2include_2com_2amazonaws_2kinesis_2video_2heap_2Include_8h.html#a7e6ad5a8a295eb9c8d7445f8acdfc10e">ALLOCATION_HANDLE</a> handle</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0634b4f2635e25e9cf12669e0bf7684f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0634b4f2635e25e9cf12669e0bf7684f">&#9670;&nbsp;</a></span>index</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> index</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae6409de572790b092f0a7579eb393d93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6409de572790b092f0a7579eb393d93">&#9670;&nbsp;</a></span>length</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> length</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae4b5c12f00fd113109e2378ff86dab0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4b5c12f00fd113109e2378ff86dab0a">&#9670;&nbsp;</a></span>timestamp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> timestamp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>src/view/include/com/amazonaws/kinesis/video/view/<a class="el" href="view_2include_2com_2amazonaws_2kinesis_2video_2view_2Include_8h_source.html">Include.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structViewItem.html">ViewItem</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

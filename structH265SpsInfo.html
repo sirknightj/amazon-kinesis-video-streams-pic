@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +28,7 @@
    <div id="projectname">Amazon Kinesis Video Streams PIC
    &#160;<span id="projectnumber">1.0.1</span>
    </div>
-   <div id="projectbrief">Platform Independent Code for Amazon Kinesis Video Streams.</div>
+   <div id="projectbrief">Platform independent code for Amazon Kinesis Video Streams</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('structH265SpsInfo.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,11 +82,9 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="structH265SpsInfo-members.html">List of all members</a>  </div>
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
 <div class="title">H265SpsInfo Struct Reference</div>  </div>
 </div><!--header-->
@@ -74,68 +93,294 @@ $(function() {
 <p><code>#include &lt;<a class="el" href="SpsParser_8h_source.html">SpsParser.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a2362cd9000ae3966c97af7f461595a20"><td class="memItemLeft" align="right" valign="top"><a id="a2362cd9000ae3966c97af7f461595a20"></a>
-UINT8&#160;</td><td class="memItemRight" valign="bottom"><b>conformance_window_flag</b></td></tr>
-<tr class="separator:a2362cd9000ae3966c97af7f461595a20"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab312437d8326bd65e2b4a5e77eb74875"><td class="memItemLeft" align="right" valign="top"><a id="ab312437d8326bd65e2b4a5e77eb74875"></a>
-UINT8&#160;</td><td class="memItemRight" valign="bottom"><b>chroma_format_idc</b></td></tr>
-<tr class="separator:ab312437d8326bd65e2b4a5e77eb74875"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7120fcf1f4c467a1d58cd7f29bb5ec3"><td class="memItemLeft" align="right" valign="top"><a id="ae7120fcf1f4c467a1d58cd7f29bb5ec3"></a>
-UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>conf_win_right_offset</b></td></tr>
-<tr class="separator:ae7120fcf1f4c467a1d58cd7f29bb5ec3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35b3ada15f1b3c953759b9829f93fbaf"><td class="memItemLeft" align="right" valign="top"><a id="a35b3ada15f1b3c953759b9829f93fbaf"></a>
-UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>conf_win_left_offset</b></td></tr>
-<tr class="separator:a35b3ada15f1b3c953759b9829f93fbaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f667f81c4ac0e660d368a597f0fec26"><td class="memItemLeft" align="right" valign="top"><a id="a3f667f81c4ac0e660d368a597f0fec26"></a>
-UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>conf_win_bottom_offset</b></td></tr>
-<tr class="separator:a3f667f81c4ac0e660d368a597f0fec26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60c9fc69d9b4f7e4c3aef420f7e21f99"><td class="memItemLeft" align="right" valign="top"><a id="a60c9fc69d9b4f7e4c3aef420f7e21f99"></a>
-UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>conf_win_top_offset</b></td></tr>
-<tr class="separator:a60c9fc69d9b4f7e4c3aef420f7e21f99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ef2e8367a3d7104bfd10a495724b035"><td class="memItemLeft" align="right" valign="top"><a id="a3ef2e8367a3d7104bfd10a495724b035"></a>
-UINT16&#160;</td><td class="memItemRight" valign="bottom"><b>pic_width_in_luma_samples</b></td></tr>
-<tr class="separator:a3ef2e8367a3d7104bfd10a495724b035"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22fbfb77f8ca7981137d8575216e5504"><td class="memItemLeft" align="right" valign="top"><a id="a22fbfb77f8ca7981137d8575216e5504"></a>
-UINT16&#160;</td><td class="memItemRight" valign="bottom"><b>pic_height_in_luma_samples</b></td></tr>
-<tr class="separator:a22fbfb77f8ca7981137d8575216e5504"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae228e95f26607068395b6e2c4df2053d"><td class="memItemLeft" align="right" valign="top"><a id="ae228e95f26607068395b6e2c4df2053d"></a>
-UINT8&#160;</td><td class="memItemRight" valign="bottom"><b>max_sub_layers_minus1</b></td></tr>
-<tr class="separator:ae228e95f26607068395b6e2c4df2053d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10a1380a5fdbda1a14f536347ccf6dd2"><td class="memItemLeft" align="right" valign="top"><a id="a10a1380a5fdbda1a14f536347ccf6dd2"></a>
-UINT8&#160;</td><td class="memItemRight" valign="bottom"><b>general_profile_space</b></td></tr>
-<tr class="separator:a10a1380a5fdbda1a14f536347ccf6dd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1954ec2efb80069c344bd8f0b931fdb0"><td class="memItemLeft" align="right" valign="top"><a id="a1954ec2efb80069c344bd8f0b931fdb0"></a>
-UINT8&#160;</td><td class="memItemRight" valign="bottom"><b>general_tier_flag</b></td></tr>
-<tr class="separator:a1954ec2efb80069c344bd8f0b931fdb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e3150ec927c2db87f0829b12b794036"><td class="memItemLeft" align="right" valign="top"><a id="a9e3150ec927c2db87f0829b12b794036"></a>
-UINT8&#160;</td><td class="memItemRight" valign="bottom"><b>general_profile_idc</b></td></tr>
-<tr class="separator:a9e3150ec927c2db87f0829b12b794036"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33259217824153f0989796ce30f4a220"><td class="memItemLeft" align="right" valign="top"><a id="a33259217824153f0989796ce30f4a220"></a>
-UINT8&#160;</td><td class="memItemRight" valign="bottom"><b>general_profile_compatibility_flags</b> [4]</td></tr>
-<tr class="separator:a33259217824153f0989796ce30f4a220"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1141bd2bc38d0cc3bc7b9f7a1eda4ebc"><td class="memItemLeft" align="right" valign="top"><a id="a1141bd2bc38d0cc3bc7b9f7a1eda4ebc"></a>
-UINT8&#160;</td><td class="memItemRight" valign="bottom"><b>general_constraint_indicator_flags</b> [6]</td></tr>
-<tr class="separator:a1141bd2bc38d0cc3bc7b9f7a1eda4ebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a23bea6cd6f655fef5c7e2949374cb2"><td class="memItemLeft" align="right" valign="top"><a id="a2a23bea6cd6f655fef5c7e2949374cb2"></a>
-UINT8&#160;</td><td class="memItemRight" valign="bottom"><b>general_level_idc</b></td></tr>
-<tr class="separator:a2a23bea6cd6f655fef5c7e2949374cb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeee8d43199484b68bb2cfa3e0bd39aad"><td class="memItemLeft" align="right" valign="top"><a id="aeee8d43199484b68bb2cfa3e0bd39aad"></a>
-UINT8&#160;</td><td class="memItemRight" valign="bottom"><b>bit_depth_luma_minus8</b></td></tr>
-<tr class="separator:aeee8d43199484b68bb2cfa3e0bd39aad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d08b07054610ca05081806ce9ff124f"><td class="memItemLeft" align="right" valign="top"><a id="a9d08b07054610ca05081806ce9ff124f"></a>
-UINT8&#160;</td><td class="memItemRight" valign="bottom"><b>bit_depth_chroma_minus8</b></td></tr>
-<tr class="separator:a9d08b07054610ca05081806ce9ff124f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+Data Fields</h2></td></tr>
+<tr class="memitem:af20c8cc6f9b482ade8da346d76ad3bab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#ab27e9918b538ce9d8ca692479b375b6a">UINT8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structH265SpsInfo.html#af20c8cc6f9b482ade8da346d76ad3bab">conformance_window_flag</a></td></tr>
+<tr class="separator:af20c8cc6f9b482ade8da346d76ad3bab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf7ee6131ed7893ec7e3af92bccb4606"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#ab27e9918b538ce9d8ca692479b375b6a">UINT8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structH265SpsInfo.html#aaf7ee6131ed7893ec7e3af92bccb4606">chroma_format_idc</a></td></tr>
+<tr class="separator:aaf7ee6131ed7893ec7e3af92bccb4606"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5c64f6b38e9fb80f8f112dd96340446"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structH265SpsInfo.html#ad5c64f6b38e9fb80f8f112dd96340446">conf_win_right_offset</a></td></tr>
+<tr class="separator:ad5c64f6b38e9fb80f8f112dd96340446"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb390923a4b01f80495ef5387156912a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structH265SpsInfo.html#acb390923a4b01f80495ef5387156912a">conf_win_left_offset</a></td></tr>
+<tr class="separator:acb390923a4b01f80495ef5387156912a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acacbb678fcc5d3ebaca8f5da8b22bc9a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structH265SpsInfo.html#acacbb678fcc5d3ebaca8f5da8b22bc9a">conf_win_bottom_offset</a></td></tr>
+<tr class="separator:acacbb678fcc5d3ebaca8f5da8b22bc9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48f7d0f47b268f6a8ba4f4da813b7bd7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structH265SpsInfo.html#a48f7d0f47b268f6a8ba4f4da813b7bd7">conf_win_top_offset</a></td></tr>
+<tr class="separator:a48f7d0f47b268f6a8ba4f4da813b7bd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd7d5f40e97f64cf47cd0e2b049207fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structH265SpsInfo.html#acd7d5f40e97f64cf47cd0e2b049207fc">pic_width_in_luma_samples</a></td></tr>
+<tr class="separator:acd7d5f40e97f64cf47cd0e2b049207fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9a4fb11ab211e330e2af2e39114bb95"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structH265SpsInfo.html#ac9a4fb11ab211e330e2af2e39114bb95">pic_height_in_luma_samples</a></td></tr>
+<tr class="separator:ac9a4fb11ab211e330e2af2e39114bb95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0acb6f429f175866e1e3c935c165667a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#ab27e9918b538ce9d8ca692479b375b6a">UINT8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structH265SpsInfo.html#a0acb6f429f175866e1e3c935c165667a">max_sub_layers_minus1</a></td></tr>
+<tr class="separator:a0acb6f429f175866e1e3c935c165667a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f70b7ece5a394fb93e367097b259841"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#ab27e9918b538ce9d8ca692479b375b6a">UINT8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structH265SpsInfo.html#a0f70b7ece5a394fb93e367097b259841">general_profile_space</a></td></tr>
+<tr class="separator:a0f70b7ece5a394fb93e367097b259841"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8359006dcdf628b9525d0171f0f5cfda"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#ab27e9918b538ce9d8ca692479b375b6a">UINT8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structH265SpsInfo.html#a8359006dcdf628b9525d0171f0f5cfda">general_tier_flag</a></td></tr>
+<tr class="separator:a8359006dcdf628b9525d0171f0f5cfda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a791ae986d4900e31d36c3d621e0fcdcd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#ab27e9918b538ce9d8ca692479b375b6a">UINT8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structH265SpsInfo.html#a791ae986d4900e31d36c3d621e0fcdcd">general_profile_idc</a></td></tr>
+<tr class="separator:a791ae986d4900e31d36c3d621e0fcdcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a612af0a6f46c3786798389c8db26342d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#ab27e9918b538ce9d8ca692479b375b6a">UINT8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structH265SpsInfo.html#a612af0a6f46c3786798389c8db26342d">general_profile_compatibility_flags</a> [4]</td></tr>
+<tr class="separator:a612af0a6f46c3786798389c8db26342d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34c6fbee09541f1f4c334765244da1e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#ab27e9918b538ce9d8ca692479b375b6a">UINT8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structH265SpsInfo.html#a34c6fbee09541f1f4c334765244da1e7">general_constraint_indicator_flags</a> [6]</td></tr>
+<tr class="separator:a34c6fbee09541f1f4c334765244da1e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8d4355fe61cef804fa9c7f0e8482a52"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#ab27e9918b538ce9d8ca692479b375b6a">UINT8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structH265SpsInfo.html#ac8d4355fe61cef804fa9c7f0e8482a52">general_level_idc</a></td></tr>
+<tr class="separator:ac8d4355fe61cef804fa9c7f0e8482a52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafa17256e67f34d2abaaccb6c661f711"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#ab27e9918b538ce9d8ca692479b375b6a">UINT8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structH265SpsInfo.html#aafa17256e67f34d2abaaccb6c661f711">bit_depth_luma_minus8</a></td></tr>
+<tr class="separator:aafa17256e67f34d2abaaccb6c661f711"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8293cfd169b2fd69cfc971c7bfca05fb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#ab27e9918b538ce9d8ca692479b375b6a">UINT8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structH265SpsInfo.html#a8293cfd169b2fd69cfc971c7bfca05fb">bit_depth_chroma_minus8</a></td></tr>
+<tr class="separator:a8293cfd169b2fd69cfc971c7bfca05fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>H265 SPS info structure containing only items needed for resolution calculation </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+</div><h2 class="groupheader">Field Documentation</h2>
+<a id="a8293cfd169b2fd69cfc971c7bfca05fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8293cfd169b2fd69cfc971c7bfca05fb">&#9670;&nbsp;</a></span>bit_depth_chroma_minus8</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#ab27e9918b538ce9d8ca692479b375b6a">UINT8</a> bit_depth_chroma_minus8</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aafa17256e67f34d2abaaccb6c661f711"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafa17256e67f34d2abaaccb6c661f711">&#9670;&nbsp;</a></span>bit_depth_luma_minus8</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#ab27e9918b538ce9d8ca692479b375b6a">UINT8</a> bit_depth_luma_minus8</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaf7ee6131ed7893ec7e3af92bccb4606"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf7ee6131ed7893ec7e3af92bccb4606">&#9670;&nbsp;</a></span>chroma_format_idc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#ab27e9918b538ce9d8ca692479b375b6a">UINT8</a> chroma_format_idc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acacbb678fcc5d3ebaca8f5da8b22bc9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acacbb678fcc5d3ebaca8f5da8b22bc9a">&#9670;&nbsp;</a></span>conf_win_bottom_offset</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> conf_win_bottom_offset</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acb390923a4b01f80495ef5387156912a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb390923a4b01f80495ef5387156912a">&#9670;&nbsp;</a></span>conf_win_left_offset</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> conf_win_left_offset</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad5c64f6b38e9fb80f8f112dd96340446"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5c64f6b38e9fb80f8f112dd96340446">&#9670;&nbsp;</a></span>conf_win_right_offset</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> conf_win_right_offset</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a48f7d0f47b268f6a8ba4f4da813b7bd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48f7d0f47b268f6a8ba4f4da813b7bd7">&#9670;&nbsp;</a></span>conf_win_top_offset</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> conf_win_top_offset</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af20c8cc6f9b482ade8da346d76ad3bab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af20c8cc6f9b482ade8da346d76ad3bab">&#9670;&nbsp;</a></span>conformance_window_flag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#ab27e9918b538ce9d8ca692479b375b6a">UINT8</a> conformance_window_flag</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a34c6fbee09541f1f4c334765244da1e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34c6fbee09541f1f4c334765244da1e7">&#9670;&nbsp;</a></span>general_constraint_indicator_flags</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#ab27e9918b538ce9d8ca692479b375b6a">UINT8</a> general_constraint_indicator_flags[6]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac8d4355fe61cef804fa9c7f0e8482a52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8d4355fe61cef804fa9c7f0e8482a52">&#9670;&nbsp;</a></span>general_level_idc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#ab27e9918b538ce9d8ca692479b375b6a">UINT8</a> general_level_idc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a612af0a6f46c3786798389c8db26342d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a612af0a6f46c3786798389c8db26342d">&#9670;&nbsp;</a></span>general_profile_compatibility_flags</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#ab27e9918b538ce9d8ca692479b375b6a">UINT8</a> general_profile_compatibility_flags[4]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a791ae986d4900e31d36c3d621e0fcdcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a791ae986d4900e31d36c3d621e0fcdcd">&#9670;&nbsp;</a></span>general_profile_idc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#ab27e9918b538ce9d8ca692479b375b6a">UINT8</a> general_profile_idc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0f70b7ece5a394fb93e367097b259841"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f70b7ece5a394fb93e367097b259841">&#9670;&nbsp;</a></span>general_profile_space</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#ab27e9918b538ce9d8ca692479b375b6a">UINT8</a> general_profile_space</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8359006dcdf628b9525d0171f0f5cfda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8359006dcdf628b9525d0171f0f5cfda">&#9670;&nbsp;</a></span>general_tier_flag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#ab27e9918b538ce9d8ca692479b375b6a">UINT8</a> general_tier_flag</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0acb6f429f175866e1e3c935c165667a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0acb6f429f175866e1e3c935c165667a">&#9670;&nbsp;</a></span>max_sub_layers_minus1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#ab27e9918b538ce9d8ca692479b375b6a">UINT8</a> max_sub_layers_minus1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac9a4fb11ab211e330e2af2e39114bb95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9a4fb11ab211e330e2af2e39114bb95">&#9670;&nbsp;</a></span>pic_height_in_luma_samples</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a> pic_height_in_luma_samples</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acd7d5f40e97f64cf47cd0e2b049207fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd7d5f40e97f64cf47cd0e2b049207fc">&#9670;&nbsp;</a></span>pic_width_in_luma_samples</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a> pic_width_in_luma_samples</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>src/mkvgen/src/<a class="el" href="SpsParser_8h_source.html">SpsParser.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structH265SpsInfo.html">H265SpsInfo</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

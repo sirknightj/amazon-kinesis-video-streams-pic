@@ -1,0 +1,25 @@
+var Common_8h =
+[
+    [ "ALLOCATION_HEADER", "structALLOCATION__HEADER.html", "structALLOCATION__HEADER" ],
+    [ "ALLOCATION_FOOTER", "structALLOCATION__FOOTER.html", "structALLOCATION__FOOTER" ],
+    [ "ALLOCATION_FOOTER_MAGIC", "Common_8h.html#a682dc2894b099662e8a23691a69771a1", null ],
+    [ "ALLOCATION_FOOTER_MAGIC_SIZE", "Common_8h.html#a7289e191e38b11b74f176135be192c66", null ],
+    [ "ALLOCATION_HEADER_MAGIC", "Common_8h.html#a59704a0bbafa20fda1e0fdabb4c2dc48", null ],
+    [ "ALLOCATION_HEADER_MAGIC_SIZE", "Common_8h.html#a93d6ad5e00cf6a9f6d73566668b9dc56", null ],
+    [ "PALLOCATION_FOOTER", "Common_8h.html#a805a808aaf85270416d2e5f15b1f86c7", null ],
+    [ "PALLOCATION_HEADER", "Common_8h.html#a65ef001aeedfcc5a75803aa48f335aa6", null ],
+    [ "commonHeapCreate", "Common_8h.html#a179d6159aeee150aed5a31565f5b52a3", null ],
+    [ "decrementUsage", "Common_8h.html#a8b0ce3ffd5153ddb26ec89d3d5e92213", null ],
+    [ "DEFINE_GET_HEAP_SIZE", "Common_8h.html#aacabb48e5aeef853be247c4e060ed852", null ],
+    [ "DEFINE_HEAP_ALLOC", "Common_8h.html#a7e15b40fd374673665c1be19a6b46773", null ],
+    [ "DEFINE_HEAP_CHK", "Common_8h.html#a989f9c38ee78f9ab0696c9b09e363120", null ],
+    [ "DEFINE_HEAP_FREE", "Common_8h.html#a47c290e3cf714d25120f29aed074d104", null ],
+    [ "DEFINE_HEAP_GET_ALLOC_SIZE", "Common_8h.html#a9c122a02cb27cff53fbffb932b9bb52e", null ],
+    [ "DEFINE_HEAP_MAP", "Common_8h.html#a6f9e03ede090f984d585586832ba2c30", null ],
+    [ "DEFINE_HEAP_SET_ALLOC_SIZE", "Common_8h.html#a19902c9a7d05c32dbda45329a7cd756d", null ],
+    [ "DEFINE_HEAP_UNMAP", "Common_8h.html#a04caa0a41eabf85baac7326dbfbbcefd", null ],
+    [ "DEFINE_INIT_HEAP", "Common_8h.html#aa024abcc745f97d2b8888fa5c55e2c25", null ],
+    [ "DEFINE_RELEASE_HEAP", "Common_8h.html#a07da87d4cd6324bf7a530e645177f711", null ],
+    [ "incrementUsage", "Common_8h.html#ac3760a3a99c39be69ec565d4b7ee3e83", null ],
+    [ "validateHeap", "Common_8h.html#a6aea73c0b17da0e31abdd4fb08f4994e", null ]
+];

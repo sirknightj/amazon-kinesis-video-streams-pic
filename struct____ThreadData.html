@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +28,7 @@
    <div id="projectname">Amazon Kinesis Video Streams PIC
    &#160;<span id="projectnumber">1.0.1</span>
    </div>
-   <div id="projectbrief">Platform Independent Code for Amazon Kinesis Video Streams.</div>
+   <div id="projectbrief">Platform independent code for Amazon Kinesis Video Streams</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('struct____ThreadData.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,35 +82,89 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="struct____ThreadData-members.html">List of all members</a>  </div>
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
 <div class="title">__ThreadData Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="dynheader">
+Collaboration diagram for __ThreadData:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct____ThreadData__coll__graph.png" border="0" usemap="#a____ThreadData_coll__map" alt="Collaboration graph"/></div>
+<map name="a____ThreadData_coll__map" id="a____ThreadData_coll__map">
+<area shape="rect" title=" " alt="" coords="16,377,128,404"/>
+<area shape="rect" href="struct____Threadpool.html" title=" " alt="" coords="17,288,127,315"/>
+<area shape="rect" href="structSafeBlockingQueue.html" title=" " alt="" coords="144,199,293,225"/>
+<area shape="rect" href="structSingleList.html" title=" " alt="" coords="29,109,115,136"/>
+<area shape="rect" href="struct____SingleListNode.html" title=" " alt="" coords="5,5,139,32"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:ab8929ac0f1d1a4e95ffcba77271c5fc9"><td class="memItemLeft" align="right" valign="top"><a id="ab8929ac0f1d1a4e95ffcba77271c5fc9"></a>
-volatile ATOMIC_BOOL&#160;</td><td class="memItemRight" valign="bottom"><b>terminate</b></td></tr>
-<tr class="separator:ab8929ac0f1d1a4e95ffcba77271c5fc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0677869b9a9093b226bf567b6134e051"><td class="memItemLeft" align="right" valign="top"><a id="a0677869b9a9093b226bf567b6134e051"></a>
-<a class="el" href="struct____Threadpool.html">PThreadpool</a>&#160;</td><td class="memItemRight" valign="bottom"><b>pThreadpool</b></td></tr>
-<tr class="separator:a0677869b9a9093b226bf567b6134e051"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9cdc7c200d17c5d87e1e85c6abe4aaf"><td class="memItemLeft" align="right" valign="top"><a id="ad9cdc7c200d17c5d87e1e85c6abe4aaf"></a>
-MUTEX&#160;</td><td class="memItemRight" valign="bottom"><b>dataMutex</b></td></tr>
-<tr class="separator:ad9cdc7c200d17c5d87e1e85c6abe4aaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+Data Fields</h2></td></tr>
+<tr class="memitem:a89c16298c475d108d0413797f9af00d3"><td class="memItemLeft" align="right" valign="top">volatile <a class="el" href="CommonDefs_8h.html#ade83a52eef8a7a728920c60d7af79e76">ATOMIC_BOOL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____ThreadData.html#a89c16298c475d108d0413797f9af00d3">terminate</a></td></tr>
+<tr class="separator:a89c16298c475d108d0413797f9af00d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b6425568970866e9911993455fa5924"><td class="memItemLeft" align="right" valign="top"><a class="el" href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a126b9389c37e555d46909ee9a018fe0e">PThreadpool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____ThreadData.html#a9b6425568970866e9911993455fa5924">pThreadpool</a></td></tr>
+<tr class="separator:a9b6425568970866e9911993455fa5924"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0d461c1ef3279e7c54ddbf1afd391fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#aacb6173308f40c2f1bb4b0fa0e13411c">MUTEX</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____ThreadData.html#ae0d461c1ef3279e7c54ddbf1afd391fe">dataMutex</a></td></tr>
+<tr class="separator:ae0d461c1ef3279e7c54ddbf1afd391fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="ae0d461c1ef3279e7c54ddbf1afd391fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0d461c1ef3279e7c54ddbf1afd391fe">&#9670;&nbsp;</a></span>dataMutex</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#aacb6173308f40c2f1bb4b0fa0e13411c">MUTEX</a> dataMutex</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9b6425568970866e9911993455fa5924"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b6425568970866e9911993455fa5924">&#9670;&nbsp;</a></span>pThreadpool</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a126b9389c37e555d46909ee9a018fe0e">PThreadpool</a> pThreadpool</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a89c16298c475d108d0413797f9af00d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89c16298c475d108d0413797f9af00d3">&#9670;&nbsp;</a></span>terminate</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="CommonDefs_8h.html#ade83a52eef8a7a728920c60d7af79e76">ATOMIC_BOOL</a> terminate</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>src/utils/src/Threadpool.c</li>
+<li>src/utils/src/<a class="el" href="Threadpool_8c.html">Threadpool.c</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="struct____ThreadData.html">__ThreadData</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

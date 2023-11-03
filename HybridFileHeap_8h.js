@@ -1,0 +1,28 @@
+var HybridFileHeap_8h =
+[
+    [ "HybridFileHeap", "structHybridFileHeap.html", "structHybridFileHeap" ],
+    [ "FILE_ALLOCATION_TYPE", "HybridFileHeap_8h.html#a6db80cc3b0e98c3032902b4e0f6adb11", null ],
+    [ "FILE_HEAP_DEFAULT_ROOT_DIRECTORY", "HybridFileHeap_8h.html#a454176a6f2a99374731042548e0bfc27", null ],
+    [ "FILE_HEAP_FILE_EXTENSION", "HybridFileHeap_8h.html#a826a1d92b246303cf44538db9d671847", null ],
+    [ "FILE_HEAP_MAX_ROOT_DIR_LEN", "HybridFileHeap_8h.html#a8a2f3eb1f635e78450bb737ac5b4aa6b", null ],
+    [ "FILE_HEAP_STARTING_FILE_INDEX", "HybridFileHeap_8h.html#aaf4ec8593acf6713fdc1566c8326e1b1", null ],
+    [ "FROM_FILE_HANDLE", "HybridFileHeap_8h.html#a72630c9aff9b6790f66bbe396d4aae85", null ],
+    [ "TO_FILE_HANDLE", "HybridFileHeap_8h.html#ac8209f36970361d23802792660e1908a", null ],
+    [ "PHybridFileHeap", "HybridFileHeap_8h.html#a7614a8161457ef05b5879723edcec9fe", null ],
+    [ "DEFINE_ALIGNED_SIZE", "HybridFileHeap_8h.html#a76c14524cc80070897b61a6dda33e8a2", null ],
+    [ "DEFINE_ALLOC_SIZE", "HybridFileHeap_8h.html#a5d1999c1a692ee6fb4591e3054fa95c4", null ],
+    [ "DEFINE_FOOTER_SIZE", "HybridFileHeap_8h.html#aa302204981a343eab08ba253eb5e34f2", null ],
+    [ "DEFINE_HEADER_SIZE", "HybridFileHeap_8h.html#a28a0afdd4811f553bd53bcce78de7d49", null ],
+    [ "DEFINE_HEAP_ALLOC", "HybridFileHeap_8h.html#a5f478ba506c015690f879a97ac8aacab", null ],
+    [ "DEFINE_HEAP_CHK", "HybridFileHeap_8h.html#a3705bc07c5190c8f084fdcdadab15ec8", null ],
+    [ "DEFINE_HEAP_FREE", "HybridFileHeap_8h.html#a82fc8f85774d932e68830d540877e228", null ],
+    [ "DEFINE_HEAP_GET_ALLOC_SIZE", "HybridFileHeap_8h.html#a2c5e94efde6de1dee798eb12b78eb796", null ],
+    [ "DEFINE_HEAP_LIMITS", "HybridFileHeap_8h.html#a15771bc4818eaee7c1d6a010d1a63f8f", null ],
+    [ "DEFINE_HEAP_MAP", "HybridFileHeap_8h.html#a6c071aa2183ec434d82e3bc6e737ab5a", null ],
+    [ "DEFINE_HEAP_SET_ALLOC_SIZE", "HybridFileHeap_8h.html#a8f2e54acd502a0d537f1e32bbabe5fc2", null ],
+    [ "DEFINE_HEAP_UNMAP", "HybridFileHeap_8h.html#ade60105fcae09ddfab2c669da73b9288", null ],
+    [ "DEFINE_INIT_HEAP", "HybridFileHeap_8h.html#a908217b0926b96b3c9fb21b272a7ad47", null ],
+    [ "DEFINE_RELEASE_HEAP", "HybridFileHeap_8h.html#adf7fef17929b1365758586a33906b212", null ],
+    [ "hybridFileCreateHeap", "HybridFileHeap_8h.html#aadbb072412db89c1570f791b16ecba74", null ],
+    [ "removeHeapFile", "HybridFileHeap_8h.html#a50d7838985ae829287e129e332adeef0", null ]
+];

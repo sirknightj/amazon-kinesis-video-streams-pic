@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +28,7 @@
    <div id="projectname">Amazon Kinesis Video Streams PIC
    &#160;<span id="projectnumber">1.0.1</span>
    </div>
-   <div id="projectbrief">Platform Independent Code for Amazon Kinesis Video Streams.</div>
+   <div id="projectbrief">Platform independent code for Amazon Kinesis Video Streams</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('StateTestFixture_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,142 +82,188 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_0608c26f86dacad6145260adfb15aefd.html">state</a></li><li class="navelem"><a class="el" href="dir_fa2fe2601be53b618baa53a950502ac8.html">tst</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">StateTestFixture.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;gtest/gtest.h&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;com/amazonaws/kinesis/video/client/Include.h&gt;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;com/amazonaws/kinesis/video/utils/Include.h&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;com/amazonaws/kinesis/video/state/Include.h&gt;</span></div>
+<a href="StateTestFixture_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;gtest/gtest.h&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html">com/amazonaws/kinesis/video/client/Include.h</a>&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html">com/amazonaws/kinesis/video/utils/Include.h</a>&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="state_2include_2com_2amazonaws_2kinesis_2video_2state_2Include_8h.html">com/amazonaws/kinesis/video/state/Include.h</a>&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;src/state/src/Include_i.h&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="state_2src_2Include__i_8h.html">src/state/src/Include_i.h</a>&quot;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define TEST_STATE_0 ((UINT64) 0)</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define TEST_STATE_1 ((UINT64) (1 &lt;&lt; 0))</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define TEST_STATE_2 ((UINT64) (1 &lt;&lt; 1))</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#define TEST_STATE_3 ((UINT64) (1 &lt;&lt; 2))</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#define TEST_STATE_4 ((UINT64) (1 &lt;&lt; 3))</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#define TEST_STATE_5 ((UINT64) (1 &lt;&lt; 4))</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="StateTestFixture_8h.html#a4497dcd2036de819315b32093cf84818">   11</a></span>&#160;<span class="preprocessor">#define TEST_STATE_0 ((UINT64) 0)</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="StateTestFixture_8h.html#ab522351d9f15cb57dc197c2e03d19cb8">   12</a></span>&#160;<span class="preprocessor">#define TEST_STATE_1 ((UINT64) (1 &lt;&lt; 0))</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="StateTestFixture_8h.html#a2389815502074c1e53eb967a44941d7d">   13</a></span>&#160;<span class="preprocessor">#define TEST_STATE_2 ((UINT64) (1 &lt;&lt; 1))</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="StateTestFixture_8h.html#ad4c4561f38353527fc49534a25fef380">   14</a></span>&#160;<span class="preprocessor">#define TEST_STATE_3 ((UINT64) (1 &lt;&lt; 2))</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="StateTestFixture_8h.html#afd36d662ac359fbad90cba99ff0bfb0d">   15</a></span>&#160;<span class="preprocessor">#define TEST_STATE_4 ((UINT64) (1 &lt;&lt; 3))</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="StateTestFixture_8h.html#af2954a792480fe0615e0bc770c662859">   16</a></span>&#160;<span class="preprocessor">#define TEST_STATE_5 ((UINT64) (1 &lt;&lt; 4))</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#define TEST_STATE_COUNT 6</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="StateTestFixture_8h.html#ac82c36fd0617ce2ccb42bbac5a45e7a0">   18</a></span>&#160;<span class="preprocessor">#define TEST_STATE_COUNT 6</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;STATUS fromTestState(UINT64, PUINT64);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;STATUS executeTestState(UINT64, UINT64);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;STATUS stateTransitionHook(UINT64, PUINT64);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<a class="code" href="CommonDefs_8h.html#a59279bee44f34d08b3cbf3a89fb0d8d9">STATUS</a> <a class="code" href="StateTestFixture_8h.html#a7ef6f57407d050b939f28eb24ea3a448">fromTestState</a>(<a class="code" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>, <a class="code" href="CommonDefs_8h.html#a5f4551b0013ec2c70215fdb00b22d04b">PUINT64</a>);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<a class="code" href="CommonDefs_8h.html#a59279bee44f34d08b3cbf3a89fb0d8d9">STATUS</a> <a class="code" href="StateTestFixture_8h.html#a7fba932cbc00af252a985b0331e2edfd">executeTestState</a>(<a class="code" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>, <a class="code" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<a class="code" href="CommonDefs_8h.html#a59279bee44f34d08b3cbf3a89fb0d8d9">STATUS</a> <a class="code" href="StateTestFixture_8h.html#ac8b281ad2b6276f61f13180ea11ced53">stateTransitionHook</a>(<a class="code" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>, <a class="code" href="CommonDefs_8h.html#a5f4551b0013ec2c70215fdb00b22d04b">PUINT64</a>);</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">extern</span> <a class="code" href="struct____StateMachineState.html">StateMachineState</a> TEST_STATE_MACHINE_STATES[];</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">extern</span> UINT32 TEST_STATE_MACHINE_STATE_COUNT;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">extern</span> <a class="code" href="struct____StateMachineState.html">StateMachineState</a> <a class="code" href="StateTestFixture_8h.html#acceeb9d8b0491942507e15234c2dc0cf">TEST_STATE_MACHINE_STATES</a>[];</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">extern</span> <a class="code" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> <a class="code" href="StateTestFixture_8h.html#a0832abfb7195b1105c47ea11e007c148">TEST_STATE_MACHINE_STATE_COUNT</a>;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="structTestTransitions.html">   27</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    UINT32 stateCount;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    UINT64 nextState;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;} <a class="code" href="structTestTransitions.html">TestTransitions</a>, *<a class="code" href="structTestTransitions.html">PTestTransitions</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="structTestTransitions.html#a15d98a1084789dc80916e3c484dead74">   28</a></span>&#160;    <a class="code" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> <a class="code" href="structTestTransitions.html#a15d98a1084789dc80916e3c484dead74">stateCount</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="structTestTransitions.html#aafa726137dcd48c64093ad48197f349e">   29</a></span>&#160;    <a class="code" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> <a class="code" href="structTestTransitions.html#aafa726137dcd48c64093ad48197f349e">nextState</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="StateTestFixture_8h.html#a86c028ff08c963b8deead38c76566fad">   30</a></span>&#160;} <a class="code" href="structTestTransitions.html">TestTransitions</a>, *<a class="code" href="StateTestFixture_8h.html#a86c028ff08c963b8deead38c76566fad">PTestTransitions</a>;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="structStateTransitionsHookFunctionMetadata.html">   32</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    UINT32 hookFunctionExecutionCountForNon200Response;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="structStateTransitionsHookFunctionMetadata.html#a49c537b117a08b1e4575658213649566">   33</a></span>&#160;    <a class="code" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> <a class="code" href="structStateTransitionsHookFunctionMetadata.html#a49c537b117a08b1e4575658213649566">hookFunctionExecutionCountForNon200Response</a>;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;} <a class="code" href="structStateTransitionsHookFunctionMetadata.html">StateTransitionsHookFunctionMetadata</a>;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classStateTestBase.html">   36</a></span>&#160;<span class="keyword">class </span><a class="code" href="classStateTestBase.html">StateTestBase</a> : <span class="keyword">public</span> ::testing::Test {</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="classStateTestBase.html">StateTestBase</a>() : mStateMachine(NULL)</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classStateTestBase.html#a963c6502cd7ef8c5f0c3194fa85cc9c3">   38</a></span>&#160;    <a class="code" href="classStateTestBase.html#a963c6502cd7ef8c5f0c3194fa85cc9c3">StateTestBase</a>() : <a class="code" href="classStateTestBase.html#afab0fec93c540b8bb8eb7566a0d6ffac">mStateMachine</a>(<a class="code" href="CommonDefs_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        MEMSET(mTestTransitions, 0x00, SIZEOF(mTestTransitions));</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        mTestTransitions[0].nextState = TEST_STATE_1;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        mTestTransitions[1].nextState = TEST_STATE_2;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        mTestTransitions[2].nextState = TEST_STATE_3;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        mTestTransitions[3].nextState = TEST_STATE_4;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        mTestTransitions[4].nextState = TEST_STATE_5;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        mTestTransitions[5].nextState = TEST_STATE_0;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="CommonDefs_8h.html#ae11c3f805f2c8994cc1ea3d8a9ad764a">MEMSET</a>(<a class="code" href="classStateTestBase.html#aed8281b0dea904207f5f0a946d3f351c">mTestTransitions</a>, 0x00, <a class="code" href="CommonDefs_8h.html#adb5bdad0c0d045cf0679648a4f3b19ed">SIZEOF</a>(<a class="code" href="classStateTestBase.html#aed8281b0dea904207f5f0a946d3f351c">mTestTransitions</a>));</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="classStateTestBase.html#aed8281b0dea904207f5f0a946d3f351c">mTestTransitions</a>[0].<a class="code" href="structTestTransitions.html#aafa726137dcd48c64093ad48197f349e">nextState</a> = <a class="code" href="StateTestFixture_8h.html#ab522351d9f15cb57dc197c2e03d19cb8">TEST_STATE_1</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="classStateTestBase.html#aed8281b0dea904207f5f0a946d3f351c">mTestTransitions</a>[1].<a class="code" href="structTestTransitions.html#aafa726137dcd48c64093ad48197f349e">nextState</a> = <a class="code" href="StateTestFixture_8h.html#a2389815502074c1e53eb967a44941d7d">TEST_STATE_2</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="classStateTestBase.html#aed8281b0dea904207f5f0a946d3f351c">mTestTransitions</a>[2].<a class="code" href="structTestTransitions.html#aafa726137dcd48c64093ad48197f349e">nextState</a> = <a class="code" href="StateTestFixture_8h.html#ad4c4561f38353527fc49534a25fef380">TEST_STATE_3</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="classStateTestBase.html#aed8281b0dea904207f5f0a946d3f351c">mTestTransitions</a>[3].<a class="code" href="structTestTransitions.html#aafa726137dcd48c64093ad48197f349e">nextState</a> = <a class="code" href="StateTestFixture_8h.html#afd36d662ac359fbad90cba99ff0bfb0d">TEST_STATE_4</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="classStateTestBase.html#aed8281b0dea904207f5f0a946d3f351c">mTestTransitions</a>[4].<a class="code" href="structTestTransitions.html#aafa726137dcd48c64093ad48197f349e">nextState</a> = <a class="code" href="StateTestFixture_8h.html#af2954a792480fe0615e0bc770c662859">TEST_STATE_5</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="classStateTestBase.html#aed8281b0dea904207f5f0a946d3f351c">mTestTransitions</a>[5].<a class="code" href="structTestTransitions.html#aafa726137dcd48c64093ad48197f349e">nextState</a> = <a class="code" href="StateTestFixture_8h.html#a4497dcd2036de819315b32093cf84818">TEST_STATE_0</a>;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        stateTransitionsHookFunctionMetadata.hookFunctionExecutionCountForNon200Response = 0;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <a class="code" href="classStateTestBase.html#ac0ce56b2701fa0de943db181801eb78b">stateTransitionsHookFunctionMetadata</a>.<a class="code" href="structStateTransitionsHookFunctionMetadata.html#a49c537b117a08b1e4575658213649566">hookFunctionExecutionCountForNon200Response</a> = 0;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    UINT32 GetCurrentStateIndex()</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classStateTestBase.html#aef99cbbb864670ebef40b23cff54e695">   51</a></span>&#160;    <a class="code" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> <a class="code" href="classStateTestBase.html#aef99cbbb864670ebef40b23cff54e695">GetCurrentStateIndex</a>()</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">switch</span> (((<a class="code" href="struct____StateMachineImpl.html">PStateMachineImpl</a>) mStateMachine)-&gt;context.pCurrentState-&gt;state) {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordflow">case</span> TEST_STATE_0:</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">switch</span> (((<a class="code" href="struct____StateMachineImpl.html">PStateMachineImpl</a>) <a class="code" href="classStateTestBase.html#afab0fec93c540b8bb8eb7566a0d6ffac">mStateMachine</a>)-&gt;context.pCurrentState-&gt;state) {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="StateTestFixture_8h.html#a4497dcd2036de819315b32093cf84818">TEST_STATE_0</a>:</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">case</span> TEST_STATE_1:</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="StateTestFixture_8h.html#ab522351d9f15cb57dc197c2e03d19cb8">TEST_STATE_1</a>:</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordflow">case</span> TEST_STATE_2:</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="StateTestFixture_8h.html#a2389815502074c1e53eb967a44941d7d">TEST_STATE_2</a>:</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <span class="keywordflow">return</span> 2;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keywordflow">case</span> TEST_STATE_3:</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="StateTestFixture_8h.html#ad4c4561f38353527fc49534a25fef380">TEST_STATE_3</a>:</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keywordflow">return</span> 3;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keywordflow">case</span> TEST_STATE_4:</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="StateTestFixture_8h.html#afd36d662ac359fbad90cba99ff0bfb0d">TEST_STATE_4</a>:</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="keywordflow">return</span> 4;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordflow">case</span> TEST_STATE_5:</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="StateTestFixture_8h.html#af2954a792480fe0615e0bc770c662859">TEST_STATE_5</a>:</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="keywordflow">return</span> 5;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        }</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="structTestTransitions.html">TestTransitions</a> mTestTransitions[TEST_STATE_COUNT];</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="struct____StateMachine.html">PStateMachine</a> mStateMachine;</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classStateTestBase.html#aed8281b0dea904207f5f0a946d3f351c">   71</a></span>&#160;    <a class="code" href="structTestTransitions.html">TestTransitions</a> <a class="code" href="classStateTestBase.html#aed8281b0dea904207f5f0a946d3f351c">mTestTransitions</a>[<a class="code" href="StateTestFixture_8h.html#ac82c36fd0617ce2ccb42bbac5a45e7a0">TEST_STATE_COUNT</a>];</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classStateTestBase.html#afab0fec93c540b8bb8eb7566a0d6ffac">   72</a></span>&#160;    <a class="code" href="struct____StateMachine.html">PStateMachine</a> <a class="code" href="classStateTestBase.html#afab0fec93c540b8bb8eb7566a0d6ffac">mStateMachine</a>;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="structStateTransitionsHookFunctionMetadata.html">StateTransitionsHookFunctionMetadata</a> stateTransitionsHookFunctionMetadata;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    UINT32 testServiceAPICallResult;</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classStateTestBase.html#ac0ce56b2701fa0de943db181801eb78b">   74</a></span>&#160;    <a class="code" href="structStateTransitionsHookFunctionMetadata.html">StateTransitionsHookFunctionMetadata</a> <a class="code" href="classStateTestBase.html#ac0ce56b2701fa0de943db181801eb78b">stateTransitionsHookFunctionMetadata</a>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classStateTestBase.html#a1ac51b636924b1b5fe0ac4a49cb609de">   75</a></span>&#160;    <a class="code" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> <a class="code" href="classStateTestBase.html#a1ac51b636924b1b5fe0ac4a49cb609de">testServiceAPICallResult</a>;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    STATUS CreateStateMachine()</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classStateTestBase.html#a32f52f866c57f00a2f5e3b56d3225e85">   78</a></span>&#160;    <a class="code" href="CommonDefs_8h.html#a59279bee44f34d08b3cbf3a89fb0d8d9">STATUS</a> <a class="code" href="classStateTestBase.html#a32f52f866c57f00a2f5e3b56d3225e85">CreateStateMachine</a>()</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        STATUS retStatus;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="CommonDefs_8h.html#a59279bee44f34d08b3cbf3a89fb0d8d9">STATUS</a> retStatus;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="comment">// Create the state machine</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        EXPECT_TRUE(STATUS_SUCCEEDED(retStatus = createStateMachine(TEST_STATE_MACHINE_STATES, TEST_STATE_MACHINE_STATE_COUNT, (UINT64) <span class="keyword">this</span>,</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                                                                    kinesisVideoStreamDefaultGetCurrentTime, (UINT64) <span class="keyword">this</span>, &amp;mStateMachine)));</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        EXPECT_TRUE(<a class="code" href="CommonDefs_8h.html#a5f0663a2abf930906b692d406ca59afe">STATUS_SUCCEEDED</a>(retStatus = <a class="code" href="state_2include_2com_2amazonaws_2kinesis_2video_2state_2Include_8h.html#a9b0fb2fd0f176b99eb08be4251b6e6dd">createStateMachine</a>(<a class="code" href="StateTestFixture_8h.html#acceeb9d8b0491942507e15234c2dc0cf">TEST_STATE_MACHINE_STATES</a>, <a class="code" href="StateTestFixture_8h.html#a0832abfb7195b1105c47ea11e007c148">TEST_STATE_MACHINE_STATE_COUNT</a>, (<a class="code" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>) <span class="keyword">this</span>,</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                                                                    <a class="code" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#ab6fc57c1fd3b4beaae32b0c337b0b0b9">kinesisVideoStreamDefaultGetCurrentTime</a>, (<a class="code" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>) <span class="keyword">this</span>, &amp;<a class="code" href="classStateTestBase.html#afab0fec93c540b8bb8eb7566a0d6ffac">mStateMachine</a>)));</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">return</span> retStatus;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    };</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetUp()</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="classStateTestBase.html#a901706a587f9ae84df8b2395fbe759cb">   89</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classStateTestBase.html#a901706a587f9ae84df8b2395fbe759cb">SetUp</a>()</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        UINT32 logLevel = 0;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keyword">auto</span> logLevelStr = GETENV(<span class="stringliteral">&quot;AWS_KVS_LOG_LEVEL&quot;</span>);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">if</span> (logLevelStr != NULL) {</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            assert(STRTOUI32(logLevelStr, NULL, 10, &amp;logLevel) == STATUS_SUCCESS);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            SET_LOGGER_LOG_LEVEL(logLevel);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <a class="code" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> logLevel = 0;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keyword">auto</span> logLevelStr = <a class="code" href="CommonDefs_8h.html#afe3b95df5834d81ffcde5ed897104154">GETENV</a>(<span class="stringliteral">&quot;AWS_KVS_LOG_LEVEL&quot;</span>);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">if</span> (logLevelStr != <a class="code" href="CommonDefs_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            assert(<a class="code" href="CommonDefs_8h.html#a18ef52f8a6e25be9ff9dbd358a479238">STRTOUI32</a>(logLevelStr, <a class="code" href="CommonDefs_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, 10, &amp;logLevel) == <a class="code" href="CommonDefs_8h.html#ae56fdb340b23940f7a64ed2e37c1774a">STATUS_SUCCESS</a>);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <a class="code" href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a0391f6e08ef195306c1df546c55bc92a">SET_LOGGER_LOG_LEVEL</a>(logLevel);</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        }</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        DLOGI(<span class="stringliteral">&quot;\nSetting up test: %s\n&quot;</span>, GetTestName());</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        CreateStateMachine();</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <a class="code" href="PlatformUtils_8h.html#a54979bddf640e3a131864bf11ce51c01">DLOGI</a>(<span class="stringliteral">&quot;\nSetting up test: %s\n&quot;</span>, <a class="code" href="classStateTestBase.html#a0900206f992822982da034e1cb81e0dd">GetTestName</a>());</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <a class="code" href="classStateTestBase.html#a32f52f866c57f00a2f5e3b56d3225e85">CreateStateMachine</a>();</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    };</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> TearDown()</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="classStateTestBase.html#a870a092058305911f3d42df45dd657e5">  102</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classStateTestBase.html#a870a092058305911f3d42df45dd657e5">TearDown</a>()</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        DLOGI(<span class="stringliteral">&quot;\nTearing down test: %s\n&quot;</span>, GetTestName());</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <a class="code" href="PlatformUtils_8h.html#a54979bddf640e3a131864bf11ce51c01">DLOGI</a>(<span class="stringliteral">&quot;\nTearing down test: %s\n&quot;</span>, <a class="code" href="classStateTestBase.html#a0900206f992822982da034e1cb81e0dd">GetTestName</a>());</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="comment">// Proactively free the allocation</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordflow">if</span> (mStateMachine != NULL) {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            freeStateMachine(mStateMachine);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            mStateMachine = NULL;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classStateTestBase.html#afab0fec93c540b8bb8eb7566a0d6ffac">mStateMachine</a> != <a class="code" href="CommonDefs_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <a class="code" href="state_2include_2com_2amazonaws_2kinesis_2video_2state_2Include_8h.html#ab87e1b2f64ea94ca2dd7b860c2399358">freeStateMachine</a>(<a class="code" href="classStateTestBase.html#afab0fec93c540b8bb8eb7566a0d6ffac">mStateMachine</a>);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            <a class="code" href="classStateTestBase.html#afab0fec93c540b8bb8eb7566a0d6ffac">mStateMachine</a> = <a class="code" href="CommonDefs_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        }</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    };</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    PCHAR GetTestName()</div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="classStateTestBase.html#a0900206f992822982da034e1cb81e0dd">  113</a></span>&#160;    <a class="code" href="CommonDefs_8h.html#a6addcc52e2dfddf231bf3213859ae2bb">PCHAR</a> <a class="code" href="classStateTestBase.html#a0900206f992822982da034e1cb81e0dd">GetTestName</a>()</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    {</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordflow">return</span> (PCHAR)::testing::UnitTest::GetInstance()-&gt;current_test_info()-&gt;test_case_name();</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="CommonDefs_8h.html#a6addcc52e2dfddf231bf3213859ae2bb">PCHAR</a>)::testing::UnitTest::GetInstance()-&gt;current_test_info()-&gt;test_case_name();</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    };</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;};</div>
+<div class="ttc" id="aCommonDefs_8h_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="CommonDefs_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:344</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a0b39d6d754cb24c708b0f2bdbe88130e"><div class="ttname"><a href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a></div><div class="ttdeci">unsigned long UINT32</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:142</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a18ef52f8a6e25be9ff9dbd358a479238"><div class="ttname"><a href="CommonDefs_8h.html#a18ef52f8a6e25be9ff9dbd358a479238">STRTOUI32</a></div><div class="ttdeci">#define STRTOUI32</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:955</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a57be03562867144161c1bfee95ca8f7c"><div class="ttname"><a href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a></div><div class="ttdeci">unsigned long long UINT64</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:144</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a59279bee44f34d08b3cbf3a89fb0d8d9"><div class="ttname"><a href="CommonDefs_8h.html#a59279bee44f34d08b3cbf3a89fb0d8d9">STATUS</a></div><div class="ttdeci">#define STATUS</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:456</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a5f0663a2abf930906b692d406ca59afe"><div class="ttname"><a href="CommonDefs_8h.html#a5f0663a2abf930906b692d406ca59afe">STATUS_SUCCEEDED</a></div><div class="ttdeci">#define STATUS_SUCCEEDED(x)</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:461</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a5f4551b0013ec2c70215fdb00b22d04b"><div class="ttname"><a href="CommonDefs_8h.html#a5f4551b0013ec2c70215fdb00b22d04b">PUINT64</a></div><div class="ttdeci">UINT64 * PUINT64</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:189</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a6addcc52e2dfddf231bf3213859ae2bb"><div class="ttname"><a href="CommonDefs_8h.html#a6addcc52e2dfddf231bf3213859ae2bb">PCHAR</a></div><div class="ttdeci">CHAR * PCHAR</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:180</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_adb5bdad0c0d045cf0679648a4f3b19ed"><div class="ttname"><a href="CommonDefs_8h.html#adb5bdad0c0d045cf0679648a4f3b19ed">SIZEOF</a></div><div class="ttdeci">#define SIZEOF(x)</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:386</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_ae11c3f805f2c8994cc1ea3d8a9ad764a"><div class="ttname"><a href="CommonDefs_8h.html#ae11c3f805f2c8994cc1ea3d8a9ad764a">MEMSET</a></div><div class="ttdeci">#define MEMSET</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:804</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_ae56fdb340b23940f7a64ed2e37c1774a"><div class="ttname"><a href="CommonDefs_8h.html#ae56fdb340b23940f7a64ed2e37c1774a">STATUS_SUCCESS</a></div><div class="ttdeci">#define STATUS_SUCCESS</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:458</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_afe3b95df5834d81ffcde5ed897104154"><div class="ttname"><a href="CommonDefs_8h.html#afe3b95df5834d81ffcde5ed897104154">GETENV</a></div><div class="ttdeci">#define GETENV</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:852</div></div>
+<div class="ttc" id="aPlatformUtils_8h_html_a54979bddf640e3a131864bf11ce51c01"><div class="ttname"><a href="PlatformUtils_8h.html#a54979bddf640e3a131864bf11ce51c01">DLOGI</a></div><div class="ttdeci">#define DLOGI(fmt,...)</div><div class="ttdef"><b>Definition:</b> PlatformUtils.h:77</div></div>
+<div class="ttc" id="aStateTestFixture_8h_html_a0832abfb7195b1105c47ea11e007c148"><div class="ttname"><a href="StateTestFixture_8h.html#a0832abfb7195b1105c47ea11e007c148">TEST_STATE_MACHINE_STATE_COUNT</a></div><div class="ttdeci">UINT32 TEST_STATE_MACHINE_STATE_COUNT</div><div class="ttdef"><b>Definition:</b> StateTestFixture.cpp:12</div></div>
+<div class="ttc" id="aStateTestFixture_8h_html_a2389815502074c1e53eb967a44941d7d"><div class="ttname"><a href="StateTestFixture_8h.html#a2389815502074c1e53eb967a44941d7d">TEST_STATE_2</a></div><div class="ttdeci">#define TEST_STATE_2</div><div class="ttdef"><b>Definition:</b> StateTestFixture.h:13</div></div>
+<div class="ttc" id="aStateTestFixture_8h_html_a4497dcd2036de819315b32093cf84818"><div class="ttname"><a href="StateTestFixture_8h.html#a4497dcd2036de819315b32093cf84818">TEST_STATE_0</a></div><div class="ttdeci">#define TEST_STATE_0</div><div class="ttdef"><b>Definition:</b> StateTestFixture.h:11</div></div>
+<div class="ttc" id="aStateTestFixture_8h_html_a7ef6f57407d050b939f28eb24ea3a448"><div class="ttname"><a href="StateTestFixture_8h.html#a7ef6f57407d050b939f28eb24ea3a448">fromTestState</a></div><div class="ttdeci">STATUS fromTestState(UINT64, PUINT64)</div><div class="ttdef"><b>Definition:</b> StateTestFixture.cpp:32</div></div>
+<div class="ttc" id="aStateTestFixture_8h_html_a7fba932cbc00af252a985b0331e2edfd"><div class="ttname"><a href="StateTestFixture_8h.html#a7fba932cbc00af252a985b0331e2edfd">executeTestState</a></div><div class="ttdeci">STATUS executeTestState(UINT64, UINT64)</div><div class="ttdef"><b>Definition:</b> StateTestFixture.cpp:47</div></div>
+<div class="ttc" id="aStateTestFixture_8h_html_a86c028ff08c963b8deead38c76566fad"><div class="ttname"><a href="StateTestFixture_8h.html#a86c028ff08c963b8deead38c76566fad">PTestTransitions</a></div><div class="ttdeci">struct TestTransitions * PTestTransitions</div></div>
+<div class="ttc" id="aStateTestFixture_8h_html_ab522351d9f15cb57dc197c2e03d19cb8"><div class="ttname"><a href="StateTestFixture_8h.html#ab522351d9f15cb57dc197c2e03d19cb8">TEST_STATE_1</a></div><div class="ttdeci">#define TEST_STATE_1</div><div class="ttdef"><b>Definition:</b> StateTestFixture.h:12</div></div>
+<div class="ttc" id="aStateTestFixture_8h_html_ac82c36fd0617ce2ccb42bbac5a45e7a0"><div class="ttname"><a href="StateTestFixture_8h.html#ac82c36fd0617ce2ccb42bbac5a45e7a0">TEST_STATE_COUNT</a></div><div class="ttdeci">#define TEST_STATE_COUNT</div><div class="ttdef"><b>Definition:</b> StateTestFixture.h:18</div></div>
+<div class="ttc" id="aStateTestFixture_8h_html_ac8b281ad2b6276f61f13180ea11ced53"><div class="ttname"><a href="StateTestFixture_8h.html#ac8b281ad2b6276f61f13180ea11ced53">stateTransitionHook</a></div><div class="ttdeci">STATUS stateTransitionHook(UINT64, PUINT64)</div><div class="ttdef"><b>Definition:</b> StateTestFixture.cpp:17</div></div>
+<div class="ttc" id="aStateTestFixture_8h_html_acceeb9d8b0491942507e15234c2dc0cf"><div class="ttname"><a href="StateTestFixture_8h.html#acceeb9d8b0491942507e15234c2dc0cf">TEST_STATE_MACHINE_STATES</a></div><div class="ttdeci">StateMachineState TEST_STATE_MACHINE_STATES[]</div><div class="ttdef"><b>Definition:</b> StateTestFixture.cpp:3</div></div>
+<div class="ttc" id="aStateTestFixture_8h_html_ad4c4561f38353527fc49534a25fef380"><div class="ttname"><a href="StateTestFixture_8h.html#ad4c4561f38353527fc49534a25fef380">TEST_STATE_3</a></div><div class="ttdeci">#define TEST_STATE_3</div><div class="ttdef"><b>Definition:</b> StateTestFixture.h:14</div></div>
+<div class="ttc" id="aStateTestFixture_8h_html_af2954a792480fe0615e0bc770c662859"><div class="ttname"><a href="StateTestFixture_8h.html#af2954a792480fe0615e0bc770c662859">TEST_STATE_5</a></div><div class="ttdeci">#define TEST_STATE_5</div><div class="ttdef"><b>Definition:</b> StateTestFixture.h:16</div></div>
+<div class="ttc" id="aStateTestFixture_8h_html_afd36d662ac359fbad90cba99ff0bfb0d"><div class="ttname"><a href="StateTestFixture_8h.html#afd36d662ac359fbad90cba99ff0bfb0d">TEST_STATE_4</a></div><div class="ttdeci">#define TEST_STATE_4</div><div class="ttdef"><b>Definition:</b> StateTestFixture.h:15</div></div>
 <div class="ttc" id="aclassStateTestBase_html"><div class="ttname"><a href="classStateTestBase.html">StateTestBase</a></div><div class="ttdef"><b>Definition:</b> StateTestFixture.h:36</div></div>
+<div class="ttc" id="aclassStateTestBase_html_a0900206f992822982da034e1cb81e0dd"><div class="ttname"><a href="classStateTestBase.html#a0900206f992822982da034e1cb81e0dd">StateTestBase::GetTestName</a></div><div class="ttdeci">PCHAR GetTestName()</div><div class="ttdef"><b>Definition:</b> StateTestFixture.h:113</div></div>
+<div class="ttc" id="aclassStateTestBase_html_a1ac51b636924b1b5fe0ac4a49cb609de"><div class="ttname"><a href="classStateTestBase.html#a1ac51b636924b1b5fe0ac4a49cb609de">StateTestBase::testServiceAPICallResult</a></div><div class="ttdeci">UINT32 testServiceAPICallResult</div><div class="ttdef"><b>Definition:</b> StateTestFixture.h:75</div></div>
+<div class="ttc" id="aclassStateTestBase_html_a32f52f866c57f00a2f5e3b56d3225e85"><div class="ttname"><a href="classStateTestBase.html#a32f52f866c57f00a2f5e3b56d3225e85">StateTestBase::CreateStateMachine</a></div><div class="ttdeci">STATUS CreateStateMachine()</div><div class="ttdef"><b>Definition:</b> StateTestFixture.h:78</div></div>
+<div class="ttc" id="aclassStateTestBase_html_a870a092058305911f3d42df45dd657e5"><div class="ttname"><a href="classStateTestBase.html#a870a092058305911f3d42df45dd657e5">StateTestBase::TearDown</a></div><div class="ttdeci">virtual void TearDown()</div><div class="ttdef"><b>Definition:</b> StateTestFixture.h:102</div></div>
+<div class="ttc" id="aclassStateTestBase_html_a901706a587f9ae84df8b2395fbe759cb"><div class="ttname"><a href="classStateTestBase.html#a901706a587f9ae84df8b2395fbe759cb">StateTestBase::SetUp</a></div><div class="ttdeci">virtual void SetUp()</div><div class="ttdef"><b>Definition:</b> StateTestFixture.h:89</div></div>
+<div class="ttc" id="aclassStateTestBase_html_a963c6502cd7ef8c5f0c3194fa85cc9c3"><div class="ttname"><a href="classStateTestBase.html#a963c6502cd7ef8c5f0c3194fa85cc9c3">StateTestBase::StateTestBase</a></div><div class="ttdeci">StateTestBase()</div><div class="ttdef"><b>Definition:</b> StateTestFixture.h:38</div></div>
+<div class="ttc" id="aclassStateTestBase_html_ac0ce56b2701fa0de943db181801eb78b"><div class="ttname"><a href="classStateTestBase.html#ac0ce56b2701fa0de943db181801eb78b">StateTestBase::stateTransitionsHookFunctionMetadata</a></div><div class="ttdeci">StateTransitionsHookFunctionMetadata stateTransitionsHookFunctionMetadata</div><div class="ttdef"><b>Definition:</b> StateTestFixture.h:74</div></div>
+<div class="ttc" id="aclassStateTestBase_html_aed8281b0dea904207f5f0a946d3f351c"><div class="ttname"><a href="classStateTestBase.html#aed8281b0dea904207f5f0a946d3f351c">StateTestBase::mTestTransitions</a></div><div class="ttdeci">TestTransitions mTestTransitions[TEST_STATE_COUNT]</div><div class="ttdef"><b>Definition:</b> StateTestFixture.h:71</div></div>
+<div class="ttc" id="aclassStateTestBase_html_aef99cbbb864670ebef40b23cff54e695"><div class="ttname"><a href="classStateTestBase.html#aef99cbbb864670ebef40b23cff54e695">StateTestBase::GetCurrentStateIndex</a></div><div class="ttdeci">UINT32 GetCurrentStateIndex()</div><div class="ttdef"><b>Definition:</b> StateTestFixture.h:51</div></div>
+<div class="ttc" id="aclassStateTestBase_html_afab0fec93c540b8bb8eb7566a0d6ffac"><div class="ttname"><a href="classStateTestBase.html#afab0fec93c540b8bb8eb7566a0d6ffac">StateTestBase::mStateMachine</a></div><div class="ttdeci">PStateMachine mStateMachine</div><div class="ttdef"><b>Definition:</b> StateTestFixture.h:72</div></div>
+<div class="ttc" id="aclient_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h_html"><div class="ttname"><a href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html">Include.h</a></div></div>
+<div class="ttc" id="aclient_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h_html_ab6fc57c1fd3b4beaae32b0c337b0b0b9"><div class="ttname"><a href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#ab6fc57c1fd3b4beaae32b0c337b0b0b9">kinesisVideoStreamDefaultGetCurrentTime</a></div><div class="ttdeci">PUBLIC_API UINT64 kinesisVideoStreamDefaultGetCurrentTime(UINT64 customData)</div><div class="ttdef"><b>Definition:</b> Callbacks.c:10</div></div>
+<div class="ttc" id="astate_2include_2com_2amazonaws_2kinesis_2video_2state_2Include_8h_html"><div class="ttname"><a href="state_2include_2com_2amazonaws_2kinesis_2video_2state_2Include_8h.html">Include.h</a></div></div>
+<div class="ttc" id="astate_2include_2com_2amazonaws_2kinesis_2video_2state_2Include_8h_html_a9b0fb2fd0f176b99eb08be4251b6e6dd"><div class="ttname"><a href="state_2include_2com_2amazonaws_2kinesis_2video_2state_2Include_8h.html#a9b0fb2fd0f176b99eb08be4251b6e6dd">createStateMachine</a></div><div class="ttdeci">PUBLIC_API STATUS createStateMachine(PStateMachineState, UINT32, UINT64, GetCurrentTimeFunc, UINT64, PStateMachine *)</div><div class="ttdef"><b>Definition:</b> State.c:11</div></div>
+<div class="ttc" id="astate_2include_2com_2amazonaws_2kinesis_2video_2state_2Include_8h_html_ab87e1b2f64ea94ca2dd7b860c2399358"><div class="ttname"><a href="state_2include_2com_2amazonaws_2kinesis_2video_2state_2Include_8h.html#ab87e1b2f64ea94ca2dd7b860c2399358">freeStateMachine</a></div><div class="ttdeci">PUBLIC_API STATUS freeStateMachine(PStateMachine)</div><div class="ttdef"><b>Definition:</b> State.c:60</div></div>
+<div class="ttc" id="astate_2src_2Include__i_8h_html"><div class="ttname"><a href="state_2src_2Include__i_8h.html">Include_i.h</a></div></div>
 <div class="ttc" id="astructStateTransitionsHookFunctionMetadata_html"><div class="ttname"><a href="structStateTransitionsHookFunctionMetadata.html">StateTransitionsHookFunctionMetadata</a></div><div class="ttdef"><b>Definition:</b> StateTestFixture.h:32</div></div>
+<div class="ttc" id="astructStateTransitionsHookFunctionMetadata_html_a49c537b117a08b1e4575658213649566"><div class="ttname"><a href="structStateTransitionsHookFunctionMetadata.html#a49c537b117a08b1e4575658213649566">StateTransitionsHookFunctionMetadata::hookFunctionExecutionCountForNon200Response</a></div><div class="ttdeci">UINT32 hookFunctionExecutionCountForNon200Response</div><div class="ttdef"><b>Definition:</b> StateTestFixture.h:33</div></div>
 <div class="ttc" id="astructTestTransitions_html"><div class="ttname"><a href="structTestTransitions.html">TestTransitions</a></div><div class="ttdef"><b>Definition:</b> StateTestFixture.h:27</div></div>
+<div class="ttc" id="astructTestTransitions_html_a15d98a1084789dc80916e3c484dead74"><div class="ttname"><a href="structTestTransitions.html#a15d98a1084789dc80916e3c484dead74">TestTransitions::stateCount</a></div><div class="ttdeci">UINT32 stateCount</div><div class="ttdef"><b>Definition:</b> StateTestFixture.h:28</div></div>
+<div class="ttc" id="astructTestTransitions_html_aafa726137dcd48c64093ad48197f349e"><div class="ttname"><a href="structTestTransitions.html#aafa726137dcd48c64093ad48197f349e">TestTransitions::nextState</a></div><div class="ttdeci">UINT64 nextState</div><div class="ttdef"><b>Definition:</b> StateTestFixture.h:29</div></div>
 <div class="ttc" id="astruct____StateMachineImpl_html"><div class="ttname"><a href="struct____StateMachineImpl.html">__StateMachineImpl</a></div><div class="ttdef"><b>Definition:</b> Include_i.h:46</div></div>
 <div class="ttc" id="astruct____StateMachineState_html"><div class="ttname"><a href="struct____StateMachineState.html">__StateMachineState</a></div><div class="ttdef"><b>Definition:</b> Include.h:83</div></div>
 <div class="ttc" id="astruct____StateMachine_html"><div class="ttname"><a href="struct____StateMachine.html">__StateMachine</a></div><div class="ttdef"><b>Definition:</b> Include.h:98</div></div>
+<div class="ttc" id="autils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h_html"><div class="ttname"><a href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html">Include.h</a></div></div>
+<div class="ttc" id="autils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h_html_a0391f6e08ef195306c1df546c55bc92a"><div class="ttname"><a href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a0391f6e08ef195306c1df546c55bc92a">SET_LOGGER_LOG_LEVEL</a></div><div class="ttdeci">#define SET_LOGGER_LOG_LEVEL(l)</div><div class="ttdef"><b>Definition:</b> Include.h:1034</div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_0608c26f86dacad6145260adfb15aefd.html">state</a></li><li class="navelem"><a class="el" href="dir_fa2fe2601be53b618baa53a950502ac8.html">tst</a></li><li class="navelem"><a class="el" href="StateTestFixture_8h.html">StateTestFixture.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

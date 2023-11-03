@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +28,7 @@
    <div id="projectname">Amazon Kinesis Video Streams PIC
    &#160;<span id="projectnumber">1.0.1</span>
    </div>
-   <div id="projectbrief">Platform Independent Code for Amazon Kinesis Video Streams.</div>
+   <div id="projectbrief">Platform independent code for Amazon Kinesis Video Streams</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('structTimerQueue.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,72 +82,266 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="structTimerQueue-members.html">List of all members</a>  </div>
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
 <div class="title">TimerQueue Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="utils_2src_2Include__i_8h_source.html">Include_i.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for TimerQueue:</div>
+<div class="dyncontent">
+<div class="center"><img src="structTimerQueue__coll__graph.png" border="0" usemap="#aTimerQueue_coll__map" alt="Collaboration graph"/></div>
+<map name="aTimerQueue_coll__map" id="aTimerQueue_coll__map">
+<area shape="rect" title=" " alt="" coords="5,95,108,121"/>
+<area shape="rect" href="structTimerEntry.html" title=" " alt="" coords="9,5,104,32"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a2847cae868693d58753e0047e8aa0340"><td class="memItemLeft" align="right" valign="top"><a id="a2847cae868693d58753e0047e8aa0340"></a>
-volatile TID&#160;</td><td class="memItemRight" valign="bottom"><b>executorTid</b></td></tr>
-<tr class="separator:a2847cae868693d58753e0047e8aa0340"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a311dd873c10f55bc1bd837acc1d20b3c"><td class="memItemLeft" align="right" valign="top"><a id="a311dd873c10f55bc1bd837acc1d20b3c"></a>
-volatile ATOMIC_BOOL&#160;</td><td class="memItemRight" valign="bottom"><b>shutdown</b></td></tr>
-<tr class="separator:a311dd873c10f55bc1bd837acc1d20b3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee7056528ec4931af81bd098c0f8b521"><td class="memItemLeft" align="right" valign="top"><a id="aee7056528ec4931af81bd098c0f8b521"></a>
-volatile ATOMIC_BOOL&#160;</td><td class="memItemRight" valign="bottom"><b>terminated</b></td></tr>
-<tr class="separator:aee7056528ec4931af81bd098c0f8b521"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf2425bb87d0a0f70553d036ae32c29c"><td class="memItemLeft" align="right" valign="top"><a id="aaf2425bb87d0a0f70553d036ae32c29c"></a>
-volatile ATOMIC_BOOL&#160;</td><td class="memItemRight" valign="bottom"><b>started</b></td></tr>
-<tr class="separator:aaf2425bb87d0a0f70553d036ae32c29c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2ff2d6490b0dab97bd9da944fff718a"><td class="memItemLeft" align="right" valign="top"><a id="ac2ff2d6490b0dab97bd9da944fff718a"></a>
-UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>maxTimerCount</b></td></tr>
-<tr class="separator:ac2ff2d6490b0dab97bd9da944fff718a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a310a6fded20e58ca6f95c4537c136190"><td class="memItemLeft" align="right" valign="top"><a id="a310a6fded20e58ca6f95c4537c136190"></a>
-UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>activeTimerCount</b></td></tr>
-<tr class="separator:a310a6fded20e58ca6f95c4537c136190"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa7920b26478b20a8119cfde0be7fbd28"><td class="memItemLeft" align="right" valign="top"><a id="aa7920b26478b20a8119cfde0be7fbd28"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>invokeTime</b></td></tr>
-<tr class="separator:aa7920b26478b20a8119cfde0be7fbd28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1906d5839a54f1bd2a43a9a545641bc"><td class="memItemLeft" align="right" valign="top"><a id="af1906d5839a54f1bd2a43a9a545641bc"></a>
-MUTEX&#160;</td><td class="memItemRight" valign="bottom"><b>executorLock</b></td></tr>
-<tr class="separator:af1906d5839a54f1bd2a43a9a545641bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a968c37e78d79ce11ed3e81950573b782"><td class="memItemLeft" align="right" valign="top"><a id="a968c37e78d79ce11ed3e81950573b782"></a>
-CVAR&#160;</td><td class="memItemRight" valign="bottom"><b>executorCvar</b></td></tr>
-<tr class="separator:a968c37e78d79ce11ed3e81950573b782"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe28262fe4ad826370c5308af85086c5"><td class="memItemLeft" align="right" valign="top"><a id="afe28262fe4ad826370c5308af85086c5"></a>
-MUTEX&#160;</td><td class="memItemRight" valign="bottom"><b>startLock</b></td></tr>
-<tr class="separator:afe28262fe4ad826370c5308af85086c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af220bd9f70b693f1d67ba5d2a3023fd7"><td class="memItemLeft" align="right" valign="top"><a id="af220bd9f70b693f1d67ba5d2a3023fd7"></a>
-CVAR&#160;</td><td class="memItemRight" valign="bottom"><b>startCvar</b></td></tr>
-<tr class="separator:af220bd9f70b693f1d67ba5d2a3023fd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2075950123d521d7b8190b9395fb8869"><td class="memItemLeft" align="right" valign="top"><a id="a2075950123d521d7b8190b9395fb8869"></a>
-MUTEX&#160;</td><td class="memItemRight" valign="bottom"><b>exitLock</b></td></tr>
-<tr class="separator:a2075950123d521d7b8190b9395fb8869"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92027448e8fec9568d17087b15157c77"><td class="memItemLeft" align="right" valign="top"><a id="a92027448e8fec9568d17087b15157c77"></a>
-CVAR&#160;</td><td class="memItemRight" valign="bottom"><b>exitCvar</b></td></tr>
-<tr class="separator:a92027448e8fec9568d17087b15157c77"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af70971d64ae138d9caca3ab3fe771e3d"><td class="memItemLeft" align="right" valign="top"><a id="af70971d64ae138d9caca3ab3fe771e3d"></a>
-<a class="el" href="structTimerEntry.html">PTimerEntry</a>&#160;</td><td class="memItemRight" valign="bottom"><b>pTimers</b></td></tr>
-<tr class="separator:af70971d64ae138d9caca3ab3fe771e3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+Data Fields</h2></td></tr>
+<tr class="memitem:a0760c3b7af38d8a17e2e951813f2f8b8"><td class="memItemLeft" align="right" valign="top">volatile <a class="el" href="CommonDefs_8h.html#a16859d4c44b94d6d88b90e41120eea68">TID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimerQueue.html#a0760c3b7af38d8a17e2e951813f2f8b8">executorTid</a></td></tr>
+<tr class="separator:a0760c3b7af38d8a17e2e951813f2f8b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4a699a4d8baa2b4d9fc8294090856b4"><td class="memItemLeft" align="right" valign="top">volatile <a class="el" href="CommonDefs_8h.html#ade83a52eef8a7a728920c60d7af79e76">ATOMIC_BOOL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimerQueue.html#aa4a699a4d8baa2b4d9fc8294090856b4">shutdown</a></td></tr>
+<tr class="separator:aa4a699a4d8baa2b4d9fc8294090856b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6509f58e186585a919b70506e1bfa21"><td class="memItemLeft" align="right" valign="top">volatile <a class="el" href="CommonDefs_8h.html#ade83a52eef8a7a728920c60d7af79e76">ATOMIC_BOOL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimerQueue.html#aa6509f58e186585a919b70506e1bfa21">terminated</a></td></tr>
+<tr class="separator:aa6509f58e186585a919b70506e1bfa21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3648280663f69982faa1e18c4cc71272"><td class="memItemLeft" align="right" valign="top">volatile <a class="el" href="CommonDefs_8h.html#ade83a52eef8a7a728920c60d7af79e76">ATOMIC_BOOL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimerQueue.html#a3648280663f69982faa1e18c4cc71272">started</a></td></tr>
+<tr class="separator:a3648280663f69982faa1e18c4cc71272"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a0e39167a4b32952d3d73cce0eece9d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimerQueue.html#a5a0e39167a4b32952d3d73cce0eece9d">maxTimerCount</a></td></tr>
+<tr class="separator:a5a0e39167a4b32952d3d73cce0eece9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0a1794e7c277ab8b803335cd9f78e78"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimerQueue.html#ac0a1794e7c277ab8b803335cd9f78e78">activeTimerCount</a></td></tr>
+<tr class="separator:ac0a1794e7c277ab8b803335cd9f78e78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39bce8614f0ff10baa40329d60a64502"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimerQueue.html#a39bce8614f0ff10baa40329d60a64502">invokeTime</a></td></tr>
+<tr class="separator:a39bce8614f0ff10baa40329d60a64502"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3809f369869390b27f88f59c769d2ae9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#aacb6173308f40c2f1bb4b0fa0e13411c">MUTEX</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimerQueue.html#a3809f369869390b27f88f59c769d2ae9">executorLock</a></td></tr>
+<tr class="separator:a3809f369869390b27f88f59c769d2ae9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfd0a6a1d52f9f72429c323261c536eb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a195d7cd42e35c2b87926df619a01a3d3">CVAR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimerQueue.html#abfd0a6a1d52f9f72429c323261c536eb">executorCvar</a></td></tr>
+<tr class="separator:abfd0a6a1d52f9f72429c323261c536eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ad19cf0ea1e553f040bc02ada2c244a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#aacb6173308f40c2f1bb4b0fa0e13411c">MUTEX</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimerQueue.html#a6ad19cf0ea1e553f040bc02ada2c244a">startLock</a></td></tr>
+<tr class="separator:a6ad19cf0ea1e553f040bc02ada2c244a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9fa065bb2b936b0c15fb38fc0afd7ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a195d7cd42e35c2b87926df619a01a3d3">CVAR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimerQueue.html#ad9fa065bb2b936b0c15fb38fc0afd7ca">startCvar</a></td></tr>
+<tr class="separator:ad9fa065bb2b936b0c15fb38fc0afd7ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca71201963a7548ad8fb6def3c457d9d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#aacb6173308f40c2f1bb4b0fa0e13411c">MUTEX</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimerQueue.html#aca71201963a7548ad8fb6def3c457d9d">exitLock</a></td></tr>
+<tr class="separator:aca71201963a7548ad8fb6def3c457d9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa37cafb5f97c4184c308382369eaa4a7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a195d7cd42e35c2b87926df619a01a3d3">CVAR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimerQueue.html#aa37cafb5f97c4184c308382369eaa4a7">exitCvar</a></td></tr>
+<tr class="separator:aa37cafb5f97c4184c308382369eaa4a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a73ba559fc621d70171e18f2191e633"><td class="memItemLeft" align="right" valign="top"><a class="el" href="utils_2src_2Include__i_8h.html#a2d14948504a320342eff2ac211c180dd">PTimerEntry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimerQueue.html#a9a73ba559fc621d70171e18f2191e633">pTimers</a></td></tr>
+<tr class="separator:a9a73ba559fc621d70171e18f2191e633"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Internal timer queue definition </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+</div><h2 class="groupheader">Field Documentation</h2>
+<a id="ac0a1794e7c277ab8b803335cd9f78e78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0a1794e7c277ab8b803335cd9f78e78">&#9670;&nbsp;</a></span>activeTimerCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> activeTimerCount</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abfd0a6a1d52f9f72429c323261c536eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfd0a6a1d52f9f72429c323261c536eb">&#9670;&nbsp;</a></span>executorCvar</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a195d7cd42e35c2b87926df619a01a3d3">CVAR</a> executorCvar</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3809f369869390b27f88f59c769d2ae9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3809f369869390b27f88f59c769d2ae9">&#9670;&nbsp;</a></span>executorLock</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#aacb6173308f40c2f1bb4b0fa0e13411c">MUTEX</a> executorLock</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0760c3b7af38d8a17e2e951813f2f8b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0760c3b7af38d8a17e2e951813f2f8b8">&#9670;&nbsp;</a></span>executorTid</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="CommonDefs_8h.html#a16859d4c44b94d6d88b90e41120eea68">TID</a> executorTid</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa37cafb5f97c4184c308382369eaa4a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa37cafb5f97c4184c308382369eaa4a7">&#9670;&nbsp;</a></span>exitCvar</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a195d7cd42e35c2b87926df619a01a3d3">CVAR</a> exitCvar</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aca71201963a7548ad8fb6def3c457d9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca71201963a7548ad8fb6def3c457d9d">&#9670;&nbsp;</a></span>exitLock</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#aacb6173308f40c2f1bb4b0fa0e13411c">MUTEX</a> exitLock</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a39bce8614f0ff10baa40329d60a64502"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39bce8614f0ff10baa40329d60a64502">&#9670;&nbsp;</a></span>invokeTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> invokeTime</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5a0e39167a4b32952d3d73cce0eece9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a0e39167a4b32952d3d73cce0eece9d">&#9670;&nbsp;</a></span>maxTimerCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> maxTimerCount</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9a73ba559fc621d70171e18f2191e633"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a73ba559fc621d70171e18f2191e633">&#9670;&nbsp;</a></span>pTimers</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="utils_2src_2Include__i_8h.html#a2d14948504a320342eff2ac211c180dd">PTimerEntry</a> pTimers</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa4a699a4d8baa2b4d9fc8294090856b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4a699a4d8baa2b4d9fc8294090856b4">&#9670;&nbsp;</a></span>shutdown</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="CommonDefs_8h.html#ade83a52eef8a7a728920c60d7af79e76">ATOMIC_BOOL</a> shutdown</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad9fa065bb2b936b0c15fb38fc0afd7ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9fa065bb2b936b0c15fb38fc0afd7ca">&#9670;&nbsp;</a></span>startCvar</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a195d7cd42e35c2b87926df619a01a3d3">CVAR</a> startCvar</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3648280663f69982faa1e18c4cc71272"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3648280663f69982faa1e18c4cc71272">&#9670;&nbsp;</a></span>started</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="CommonDefs_8h.html#ade83a52eef8a7a728920c60d7af79e76">ATOMIC_BOOL</a> started</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6ad19cf0ea1e553f040bc02ada2c244a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ad19cf0ea1e553f040bc02ada2c244a">&#9670;&nbsp;</a></span>startLock</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#aacb6173308f40c2f1bb4b0fa0e13411c">MUTEX</a> startLock</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa6509f58e186585a919b70506e1bfa21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6509f58e186585a919b70506e1bfa21">&#9670;&nbsp;</a></span>terminated</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="CommonDefs_8h.html#ade83a52eef8a7a728920c60d7af79e76">ATOMIC_BOOL</a> terminated</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>src/utils/src/<a class="el" href="utils_2src_2Include__i_8h_source.html">Include_i.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structTimerQueue.html">TimerQueue</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

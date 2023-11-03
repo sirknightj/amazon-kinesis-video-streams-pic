@@ -1,0 +1,34 @@
+<map id="computePower" name="computePower">
+<area shape="rect" id="node1" title="Computes power Returns error when the base or exponent values are not within limits...." alt="" coords="2063,462,2181,489"/>
+<area shape="rect" id="node2" href="$ExponentialBackoffRetryStrategy_8c.html#a6a95e0dd1fb1d13986944eb61f673cd4" title=" " alt="" coords="1872,437,2015,463"/>
+<area shape="rect" id="node32" href="$MathTest_8cpp.html#ad83d96e6bd369b07d56cec3280ea2dbf" title=" " alt="" coords="1909,487,1978,514"/>
+<area shape="rect" id="node3" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a0a4035f6c42f410736cecd951333b024" title="Computes and returns the next exponential backoff wait time." alt="" coords="1621,429,1824,471"/>
+<area shape="rect" id="node4" href="$classClientTestBase.html#a9ac8bb80d309f5cc98bf9ed6e1503707" title=" " alt="" coords="1349,316,1561,357"/>
+<area shape="rect" id="node19" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#af6091f9e16273307ce627a5a803b86c8" title="Computes next exponential backoff wait time and blocks the current thread for that much time...." alt="" coords="1336,396,1573,437"/>
+<area shape="rect" id="node20" href="$Client_8c.html#a1c417489009f20beac61296ebe7a96f1" title=" " alt="" coords="1345,461,1565,503"/>
+<area shape="rect" id="node31" href="$ExponentialBackoffUtilsTest_8cpp.html#a4639fec9869c4880c16e5091e195572d" title=" " alt="" coords="1420,527,1489,554"/>
+<area shape="rect" id="node5" href="$classClientTestBase.html#a01da44d52c521f850f8d84656bc65d5f" title=" " alt="" coords="1109,312,1282,353"/>
+<area shape="rect" id="node6" href="$classClientTestBase.html#af9a10b3820fb0df7b7549cda1f8d74f9" title=" " alt="" coords="839,311,1055,352"/>
+<area shape="rect" id="node7" href="$classClientTestBase.html#a901706a587f9ae84df8b2395fbe759cb" title=" " alt="" coords="331,307,497,334"/>
+<area shape="rect" id="node18" href="$classIntermittentProducerAutomaticStreamingTest.html#a1b06560e0e01a806b92c2386220d0b57" title=" " alt="" coords="566,311,790,352"/>
+<area shape="rect" id="node8" href="$classAcksFunctionalityTest.html#a1b06560e0e01a806b92c2386220d0b57" title=" " alt="" coords="53,5,215,47"/>
+<area shape="rect" id="node9" href="$classCallbacksAndPressuresFunctionalityTest.html#a1b06560e0e01a806b92c2386220d0b57" title=" " alt="" coords="5,71,263,112"/>
+<area shape="rect" id="node10" href="$classClientFunctionalityTest.html#a1b06560e0e01a806b92c2386220d0b57" title=" " alt="" coords="49,136,219,177"/>
+<area shape="rect" id="node11" href="$classIntermittentProducerFunctionalityTest.html#a1b06560e0e01a806b92c2386220d0b57" title=" " alt="" coords="13,201,255,243"/>
+<area shape="rect" id="node12" href="$classStateTransitionFunctionalityTest.html#a1b06560e0e01a806b92c2386220d0b57" title=" " alt="" coords="33,267,235,308"/>
+<area shape="rect" id="node13" href="$classStreamApiFunctionalityScenarioTest.html#a1b06560e0e01a806b92c2386220d0b57" title=" " alt="" coords="19,332,249,373"/>
+<area shape="rect" id="node14" href="$classStreamFunctionalityTest.html#a1b06560e0e01a806b92c2386220d0b57" title=" " alt="" coords="45,397,223,439"/>
+<area shape="rect" id="node15" href="$classStreamRecoveryFunctionalityTest.html#a1b06560e0e01a806b92c2386220d0b57" title=" " alt="" coords="27,463,241,504"/>
+<area shape="rect" id="node16" href="$classStreamStoppingFunctionalityTest.html#a1b06560e0e01a806b92c2386220d0b57" title=" " alt="" coords="29,528,239,569"/>
+<area shape="rect" id="node17" href="$classTokenRotationFunctionalityTest.html#a1b06560e0e01a806b92c2386220d0b57" title=" " alt="" coords="35,593,233,635"/>
+<area shape="rect" id="node21" href="$Client_8c.html#aa1d3c4013dcdd00f2b7d739d01aacdb7" title=" " alt="" coords="1103,468,1288,509"/>
+<area shape="rect" id="node22" href="$client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a74db6991a7472fa44ad012303e5cd4ff" title=" " alt="" coords="854,478,1039,505"/>
+<area shape="rect" id="node23" href="$classClientApiFunctionalityTest.html#ab5a85401b9ac5571ddd98cc2b3e2a302" title=" " alt="" coords="319,413,509,455"/>
+<area shape="rect" id="node24" href="$classClientTestBase.html#a9d603be9d929bf2b352b9d92d21e9ecc" title=" " alt="" coords="575,377,781,403"/>
+<area shape="rect" id="node25" href="$client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a0e7cbab2e7c67db60b73ef8317f2df92" title=" " alt="" coords="570,478,786,505"/>
+<area shape="rect" id="node28" href="$classClientTestBase.html#a544b1cbebdcc1e1bbf254ef9bf2b20d0" title=" " alt="" coords="565,529,791,571"/>
+<area shape="rect" id="node29" href="$ClientApiTest_8cpp.html#a2a30ff85260c97f0d98495476226b443" title=" " alt="" coords="643,595,713,622"/>
+<area shape="rect" id="node30" href="$ClientFunctionalityTest_8cpp.html#a8704e21d4a0d5a5f8fc6c1fb42377416" title=" " alt="" coords="643,646,713,673"/>
+<area shape="rect" id="node26" href="$classClientTestBase.html#af3922c982dbc311473602135cec7a3c5" title=" " alt="" coords="311,479,517,520"/>
+<area shape="rect" id="node27" href="$ClientApiTest_8cpp.html#a29e59e966773e8af6adbaa913f51214e" title=" " alt="" coords="379,545,449,571"/>
+</map>

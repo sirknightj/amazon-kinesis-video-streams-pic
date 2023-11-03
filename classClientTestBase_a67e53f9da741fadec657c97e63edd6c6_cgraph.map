@@ -1,0 +1,4 @@
+<map id="getCurrentRetryAttemptNumberFn" name="getCurrentRetryAttemptNumberFn">
+<area shape="rect" id="node1" title=" " alt="" coords="5,13,252,39"/>
+<area shape="rect" id="node2" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a59c48294cde72074883711867235e089" title="Returns updated exponential backoff retry count when PRetryStrategy object is passed." alt="" coords="300,5,503,47"/>
+</map>

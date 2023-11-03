@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +28,7 @@
    <div id="projectname">Amazon Kinesis Video Streams PIC
    &#160;<span id="projectnumber">1.0.1</span>
    </div>
-   <div id="projectbrief">Platform Independent Code for Amazon Kinesis Video Streams.</div>
+   <div id="projectbrief">Platform independent code for Amazon Kinesis Video Streams</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('structWindowsThreadRoutineWrapper.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,11 +82,9 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="structWindowsThreadRoutineWrapper-members.html">List of all members</a>  </div>
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
 <div class="title">WindowsThreadRoutineWrapper Struct Reference</div>  </div>
 </div><!--header-->
@@ -74,23 +93,54 @@ $(function() {
 <p><code>#include &lt;<a class="el" href="utils_2src_2Include__i_8h_source.html">Include_i.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:ae9858afedc4909c81271ec7d66f241c0"><td class="memItemLeft" align="right" valign="top"><a id="ae9858afedc4909c81271ec7d66f241c0"></a>
-startRoutine&#160;</td><td class="memItemRight" valign="bottom"><b>storedStartRoutine</b></td></tr>
-<tr class="separator:ae9858afedc4909c81271ec7d66f241c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abef5b2e8732410a10bb23c2442fa60aa"><td class="memItemLeft" align="right" valign="top"><a id="abef5b2e8732410a10bb23c2442fa60aa"></a>
-PVOID&#160;</td><td class="memItemRight" valign="bottom"><b>storedArgs</b></td></tr>
-<tr class="separator:abef5b2e8732410a10bb23c2442fa60aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+Data Fields</h2></td></tr>
+<tr class="memitem:ac283a192782e45f82cbc849ec16068d2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a50c9983122ffbfa0b1b090013a3985dc">startRoutine</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWindowsThreadRoutineWrapper.html#ac283a192782e45f82cbc849ec16068d2">storedStartRoutine</a></td></tr>
+<tr class="separator:ac283a192782e45f82cbc849ec16068d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a494134c2a3d0d161f03c4c200e8fbec8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a44a84094d41db406043c92f2c6344acc">PVOID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWindowsThreadRoutineWrapper.html#a494134c2a3d0d161f03c4c200e8fbec8">storedArgs</a></td></tr>
+<tr class="separator:a494134c2a3d0d161f03c4c200e8fbec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Internal functionality Thread wrapper for Windows </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+</div><h2 class="groupheader">Field Documentation</h2>
+<a id="a494134c2a3d0d161f03c4c200e8fbec8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a494134c2a3d0d161f03c4c200e8fbec8">&#9670;&nbsp;</a></span>storedArgs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a44a84094d41db406043c92f2c6344acc">PVOID</a> storedArgs</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac283a192782e45f82cbc849ec16068d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac283a192782e45f82cbc849ec16068d2">&#9670;&nbsp;</a></span>storedStartRoutine</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a50c9983122ffbfa0b1b090013a3985dc">startRoutine</a> storedStartRoutine</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>src/utils/src/<a class="el" href="utils_2src_2Include__i_8h_source.html">Include_i.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structWindowsThreadRoutineWrapper.html">WindowsThreadRoutineWrapper</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

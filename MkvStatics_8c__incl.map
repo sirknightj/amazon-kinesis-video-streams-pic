@@ -1,0 +1,30 @@
+<map id="src/mkvgen/src/MkvStatics.c" name="src/mkvgen/src/MkvStatics.c">
+<area shape="rect" id="node1" title=" " alt="" coords="1506,5,1714,32"/>
+<area shape="rect" id="node2" href="$mkvgen_2src_2Include__i_8h.html" title=" " alt="" coords="1564,80,1656,107"/>
+<area shape="rect" id="node3" href="$mkvgen_2include_2com_2amazonaws_2kinesis_2video_2mkvgen_2Include_8h.html" title=" " alt="" coords="1349,155,1532,196"/>
+<area shape="rect" id="node27" href="$NalAdapter_8h.html" title=" " alt="" coords="1557,162,1663,189"/>
+<area shape="rect" id="node28" href="$SpsParser_8h.html" title=" " alt="" coords="1687,162,1783,189"/>
+<area shape="rect" id="node4" href="$CommonDefs_8h.html" title=" " alt="" coords="852,333,1080,375"/>
+<area shape="rect" id="node23" href="$PlatformUtils_8h.html" title=" " alt="" coords="1655,333,1880,375"/>
+<area shape="rect" id="node26" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html" title=" " alt="" coords="1349,244,1532,285"/>
+<area shape="rect" id="node5" title=" " alt="" coords="5,423,89,449"/>
+<area shape="rect" id="node6" title=" " alt="" coords="113,423,187,449"/>
+<area shape="rect" id="node7" title=" " alt="" coords="1732,423,1803,449"/>
+<area shape="rect" id="node8" title=" " alt="" coords="211,423,281,449"/>
+<area shape="rect" id="node9" title=" " alt="" coords="306,423,381,449"/>
+<area shape="rect" id="node10" title=" " alt="" coords="405,423,471,449"/>
+<area shape="rect" id="node11" title=" " alt="" coords="495,423,581,449"/>
+<area shape="rect" id="node12" title=" " alt="" coords="605,423,673,449"/>
+<area shape="rect" id="node13" title=" " alt="" coords="697,423,768,449"/>
+<area shape="rect" id="node14" title=" " alt="" coords="793,423,857,449"/>
+<area shape="rect" id="node15" title=" " alt="" coords="881,423,955,449"/>
+<area shape="rect" id="node16" title=" " alt="" coords="979,423,1051,449"/>
+<area shape="rect" id="node17" title=" " alt="" coords="1075,423,1166,449"/>
+<area shape="rect" id="node18" title=" " alt="" coords="1190,423,1307,449"/>
+<area shape="rect" id="node19" title=" " alt="" coords="1332,423,1411,449"/>
+<area shape="rect" id="node20" title=" " alt="" coords="1435,423,1502,449"/>
+<area shape="rect" id="node21" title=" " alt="" coords="1527,423,1616,449"/>
+<area shape="rect" id="node22" title=" " alt="" coords="1640,423,1708,449"/>
+<area shape="rect" id="node24" title=" " alt="" coords="1827,423,1902,449"/>
+<area shape="rect" id="node25" title=" " alt="" coords="1926,423,2001,449"/>
+</map>

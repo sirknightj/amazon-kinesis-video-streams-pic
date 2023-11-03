@@ -1,4 +1,25 @@
 var searchData=
 [
-  ['libhandle_410',['libHandle',['../structHybridHeap.html#a175d49b43c254f1b2250cfade82a9f85',1,'HybridHeap']]]
+  ['data_5034',['data',['../struct____MetadataTracker.html#a07ac1bfad4d7b62dc93646dc9d6a2d28',1,'__MetadataTracker::data()'],['../struct____AuthInfo.html#a3eeeecbaff64177fa4def1dadd2a917b',1,'__AuthInfo::data()'],['../struct____SingleListNode.html#a3a4296fd952eab97f2db13ad2882393d',1,'__SingleListNode::data()'],['../struct____DoubleListNode.html#a3a4296fd952eab97f2db13ad2882393d',1,'__DoubleListNode::data()']]],
+  ['dataapicalllatency_5035',['dataApiCallLatency',['../struct____StreamMetrics.html#a8a712e3c8f123fc393dc8ab74049977e',1,'__StreamMetrics::dataApiCallLatency()'],['../struct____KinesisVideoStreamDiagnostics.html#a8a712e3c8f123fc393dc8ab74049977e',1,'__KinesisVideoStreamDiagnostics::dataApiCallLatency()']]],
+  ['datamutex_5036',['dataMutex',['../struct____ThreadData.html#ae0d461c1ef3279e7c54ddbf1afd391fe',1,'__ThreadData']]],
+  ['dataoffset_5037',['dataOffset',['../structEncodedFrameInfo.html#a48d6b913c26422088ad398409dbd45d1',1,'EncodedFrameInfo']]],
+  ['decodingts_5038',['decodingTs',['../struct____Frame.html#af593123a0491f5f4d63ed41f12cf8251',1,'__Frame']]],
+  ['describestreamfn_5039',['describeStreamFn',['../struct____ClientCallbacks.html#a042ae80af840f545102bae55bf1284a8',1,'__ClientCallbacks']]],
+  ['designator_5040',['designator',['../structDurationState.html#a21c1484aa8f2d3a91497644a1b6970e3',1,'DurationState']]],
+  ['devicecerttotokenfn_5041',['deviceCertToTokenFn',['../struct____ClientCallbacks.html#aa04c78b23efeab5e289aea0e860e0776',1,'__ClientCallbacks']]],
+  ['devicefingerprint_5042',['deviceFingerprint',['../struct____KinesisVideoClient.html#a765421e889efb0b2b3bcd90c28643bbb',1,'__KinesisVideoClient']]],
+  ['deviceinfo_5043',['deviceInfo',['../struct____KinesisVideoClient.html#a25781ce39cea11ccf7a44ca48c2d5b1e',1,'__KinesisVideoClient']]],
+  ['devicename_5044',['deviceName',['../struct____StreamDescription.html#a2b870d7f810387d25c38c01b4fee1b70',1,'__StreamDescription::deviceName()'],['../struct____StreamDescription__V0.html#a2b870d7f810387d25c38c01b4fee1b70',1,'__StreamDescription_V0::deviceName()']]],
+  ['diagnostics_5045',['diagnostics',['../struct____KinesisVideoStream.html#a7e71a8503632449dce03a54486d41edd',1,'__KinesisVideoStream']]],
+  ['drainedlock_5046',['drainedLock',['../structSemaphore.html#a931d1979a21b5413d9bb7aeafb95c969',1,'Semaphore']]],
+  ['drainednotify_5047',['drainedNotify',['../structSemaphore.html#a685a8a1bd86aff4fa1c5229f16e22b63',1,'Semaphore']]],
+  ['drainthreadcount_5048',['drainThreadCount',['../classSemaphoreFunctionalityTest.html#aad0cbec8c8caa58803dd912ee41a7366',1,'SemaphoreFunctionalityTest']]],
+  ['droppedfragmentreportfn_5049',['droppedFragmentReportFn',['../struct____ClientCallbacks.html#ad67d486b50a8aafead7683f9768b42c2',1,'__ClientCallbacks']]],
+  ['droppedfragments_5050',['droppedFragments',['../struct____StreamMetrics.html#aea8adba6cefb3c5585226fe28b6dfca0',1,'__StreamMetrics::droppedFragments()'],['../struct____KinesisVideoStreamDiagnostics.html#aea8adba6cefb3c5585226fe28b6dfca0',1,'__KinesisVideoStreamDiagnostics::droppedFragments()']]],
+  ['droppedframereportfn_5051',['droppedFrameReportFn',['../struct____ClientCallbacks.html#a4ddb54187aeeecd0ab77680275d3424e',1,'__ClientCallbacks']]],
+  ['droppedframes_5052',['droppedFrames',['../struct____StreamMetrics.html#a966d7593e42771d214239ff4054a51b0',1,'__StreamMetrics::droppedFrames()'],['../struct____KinesisVideoStreamDiagnostics.html#a966d7593e42771d214239ff4054a51b0',1,'__KinesisVideoStreamDiagnostics::droppedFrames()']]],
+  ['duration_5053',['duration',['../struct____FragmentMetadata.html#a0ff64cd06e87d93cf1ec3fde82cf3658',1,'__FragmentMetadata::duration()'],['../struct____Frame.html#a0ff64cd06e87d93cf1ec3fde82cf3658',1,'__Frame::duration()'],['../structEncodedFrameInfo.html#a0ff64cd06e87d93cf1ec3fde82cf3658',1,'EncodedFrameInfo::duration()'],['../structTrace.html#a0ff64cd06e87d93cf1ec3fde82cf3658',1,'Trace::duration()'],['../structViewItem.html#a0ff64cd06e87d93cf1ec3fde82cf3658',1,'ViewItem::duration()']]],
+  ['duration_5fstates_5054',['DURATION_STATES',['../Duration_8c.html#a223b3c857f6bba2650082c008d9d4946',1,'Duration.c']]],
+  ['durationstate_5055',['durationState',['../structParserState.html#a00b45e887695c8768c83e4ba7303afab',1,'ParserState']]]
 ];

@@ -1,0 +1,10 @@
+var searchData=
+[
+  ['ulltostr_4899',['ulltostr',['../utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a87bae88074aeabda5b2e885357592658',1,'ulltostr(UINT64, PCHAR, UINT32, UINT32, PUINT32):&#160;String.c'],['../String_8c.html#a2924c9974ca992985e9731ab32480bb0',1,'ulltostr(UINT64 value, PCHAR pStr, UINT32 size, UINT32 base, PUINT32 pSize):&#160;String.c']]],
+  ['ultostr_4900',['ultostr',['../utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a52f6b3801cc8d8d7e49c49a69c1088ac',1,'ultostr(UINT32, PCHAR, UINT32, UINT32, PUINT32):&#160;String.c'],['../String_8c.html#a7585a391236c7665dfa2ebe77e92b868',1,'ultostr(UINT32 value, PCHAR pStr, UINT32 size, UINT32 base, PUINT32 pSize):&#160;String.c']]],
+  ['unlockmutexfunc_4901',['unlockMutexFunc',['../classClientTestBase.html#acbaaba3bdae9991e7d80b2755de088ee',1,'ClientTestBase']]],
+  ['unsignedsafemultiplyadd_4902',['unsignedSafeMultiplyAdd',['../utils_2src_2Include__i_8h.html#a71aac5c435e310d844cdfa26566f9ecd',1,'unsignedSafeMultiplyAdd(UINT64, UINT64, UINT64, PUINT64):&#160;String.c'],['../String_8c.html#a7b235259caee12b02e6189b155b5b457',1,'unsignedSafeMultiplyAdd(UINT64 multiplicand, UINT64 multiplier, UINT64 addend, PUINT64 pResult):&#160;String.c']]],
+  ['updatecrc32_4903',['updateCrc32',['../utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a5d0175c9e717efe2141cde9fddd7bd5f',1,'updateCrc32(UINT32, PBYTE, UINT32):&#160;Crc32.c'],['../Crc32_8c.html#a95f39b2400045775dfc3eab93e96db26',1,'updateCrc32(UINT32 start, PBYTE pBuffer, UINT32 len):&#160;Crc32.c']]],
+  ['updatefile_4904',['updateFile',['../utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#aba97ad004b4501461608fb5e3eec8418',1,'updateFile(PCHAR filePath, BOOL binMode, PBYTE pBuffer, UINT64 offset, UINT64 size):&#160;FileIo.c'],['../FileIo_8c.html#aa83e1715269cd10bb367a9602b985c99',1,'updateFile(PCHAR filePath, BOOL binMode, PBYTE pBuffer, UINT64 offset, UINT64 size):&#160;FileIo.c']]],
+  ['utiltestbase_4905',['UtilTestBase',['../classUtilTestBase.html#a4a792bb670b848458068a5929f1bf387',1,'UtilTestBase']]]
+];

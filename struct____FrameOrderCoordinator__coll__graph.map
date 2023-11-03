@@ -1,0 +1,13 @@
+<map id="__FrameOrderCoordinator" name="__FrameOrderCoordinator">
+<area shape="rect" id="node1" title=" " alt="" coords="31,469,220,496"/>
+<area shape="rect" id="node2" href="$struct____StreamInfo.html" title=" " alt="" coords="322,379,430,405"/>
+<area shape="rect" id="node3" href="$struct____StreamCaps.html" title=" " alt="" coords="241,288,356,315"/>
+<area shape="rect" id="node4" href="$structTrackInfo.html" title=" " alt="" coords="258,199,339,225"/>
+<area shape="rect" id="node9" href="$struct____FrameOrderTrackData.html" title=" " alt="" coords="15,288,193,315"/>
+<area shape="rect" id="node5" href="$unionTrackCustomData.html" title=" " alt="" coords="231,95,369,121"/>
+<area shape="rect" id="node6" href="$structTrackAudioConfig.html" title=" " alt="" coords="154,5,289,32"/>
+<area shape="rect" id="node7" href="$structTrackVideoConfig.html" title=" " alt="" coords="313,5,447,32"/>
+<area shape="rect" id="node8" href="$struct____Tag.html" title=" " alt="" coords="383,288,441,315"/>
+<area shape="rect" id="node10" href="$structSingleList.html" title=" " alt="" coords="36,199,121,225"/>
+<area shape="rect" id="node11" href="$struct____SingleListNode.html" title=" " alt="" coords="5,95,139,121"/>
+</map>

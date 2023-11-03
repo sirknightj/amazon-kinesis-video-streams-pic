@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +28,7 @@
    <div id="projectname">Amazon Kinesis Video Streams PIC
    &#160;<span id="projectnumber">1.0.1</span>
    </div>
-   <div id="projectbrief">Platform Independent Code for Amazon Kinesis Video Streams.</div>
+   <div id="projectbrief">Platform independent code for Amazon Kinesis Video Streams</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('classStreamingSession.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,53 +82,114 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="classStreamingSession-members.html">List of all members</a>  </div>
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
 <div class="title">StreamingSession Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="StreamingSession_8h_source.html">StreamingSession.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8d1c3a1069bda6261ee547821d0f2021"><td class="memItemLeft" align="right" valign="top">UPLOAD_HANDLE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStreamingSession.html#a8d1c3a1069bda6261ee547821d0f2021">addNewConsumerSession</a> (<a class="el" href="structMockConsumerConfig.html">MockConsumerConfig</a> consumerConfig, STREAM_HANDLE mStreamHandle, UPLOAD_HANDLE uploadHandleOverride=INVALID_UPLOAD_HANDLE_VALUE)</td></tr>
-<tr class="separator:a8d1c3a1069bda6261ee547821d0f2021"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51e81a3c50fd609ec9f685481cc3ef24"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStreamingSession.html#a51e81a3c50fd609ec9f685481cc3ef24">removeConsumerSession</a> (UPLOAD_HANDLE uploadHandle)</td></tr>
-<tr class="separator:a51e81a3c50fd609ec9f685481cc3ef24"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86710c9a9450a735405cf7ac79824f84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStreamingSession.html#a86710c9a9450a735405cf7ac79824f84">clearSessions</a> ()</td></tr>
-<tr class="separator:a86710c9a9450a735405cf7ac79824f84"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d54a7cd4df9833f871ba3c5be68dc3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStreamingSession.html#a2d54a7cd4df9833f871ba3c5be68dc3c">signalDataAvailable</a> (UPLOAD_HANDLE uploadHandle)</td></tr>
-<tr class="separator:a2d54a7cd4df9833f871ba3c5be68dc3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93cce00eba4ea39338a57f5550d8b1c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStreamingSession.html#a93cce00eba4ea39338a57f5550d8b1c4">getActiveUploadHandles</a> (std::vector&lt; UPLOAD_HANDLE &gt; &amp;activeUploadHandles)</td></tr>
-<tr class="separator:a93cce00eba4ea39338a57f5550d8b1c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98d179b71cfa57a6de44e1a01741b4d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMockConsumer.html">MockConsumer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStreamingSession.html#a98d179b71cfa57a6de44e1a01741b4d4">getConsumer</a> (UPLOAD_HANDLE uploadHandle)</td></tr>
-<tr class="separator:a98d179b71cfa57a6de44e1a01741b4d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1685af93ad7d71c0dcc7eb9be9b61679"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStreamingSession.html#a1685af93ad7d71c0dcc7eb9be9b61679">StreamingSession</a> ()</td></tr>
+<tr class="separator:a1685af93ad7d71c0dcc7eb9be9b61679"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af479c1c30932c2eb5ca3af9fd5585b05"><td class="memItemLeft" align="right" valign="top"><a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a410d5dcf4f751a0ca3026484f2a47b80">UPLOAD_HANDLE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStreamingSession.html#af479c1c30932c2eb5ca3af9fd5585b05">addNewConsumerSession</a> (<a class="el" href="structMockConsumerConfig.html">MockConsumerConfig</a> consumerConfig, <a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a182389897d85b04b82e45ea49ea8c777">STREAM_HANDLE</a> mStreamHandle, <a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a410d5dcf4f751a0ca3026484f2a47b80">UPLOAD_HANDLE</a> uploadHandleOverride=<a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a6c3f1e3d463beab6b57b91f9bb9547d1">INVALID_UPLOAD_HANDLE_VALUE</a>)</td></tr>
+<tr class="separator:af479c1c30932c2eb5ca3af9fd5585b05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3f948354c2113e3696cd5b947825484"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStreamingSession.html#ae3f948354c2113e3696cd5b947825484">removeConsumerSession</a> (<a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a410d5dcf4f751a0ca3026484f2a47b80">UPLOAD_HANDLE</a> uploadHandle)</td></tr>
+<tr class="separator:ae3f948354c2113e3696cd5b947825484"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcdd7751eb8c7725ce0b98e2aeb8c8f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStreamingSession.html#afcdd7751eb8c7725ce0b98e2aeb8c8f8">clearSessions</a> ()</td></tr>
+<tr class="separator:afcdd7751eb8c7725ce0b98e2aeb8c8f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e9e59b55413af0187ae640632e91df6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStreamingSession.html#a5e9e59b55413af0187ae640632e91df6">signalDataAvailable</a> (<a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a410d5dcf4f751a0ca3026484f2a47b80">UPLOAD_HANDLE</a> uploadHandle)</td></tr>
+<tr class="separator:a5e9e59b55413af0187ae640632e91df6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93af7bc9abe4e71349f648253aa7ed47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStreamingSession.html#a93af7bc9abe4e71349f648253aa7ed47">getActiveUploadHandles</a> (std::vector&lt; <a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a410d5dcf4f751a0ca3026484f2a47b80">UPLOAD_HANDLE</a> &gt; &amp;activeUploadHandles)</td></tr>
+<tr class="separator:a93af7bc9abe4e71349f648253aa7ed47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10b218bcb290840554823b0758aee17a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMockConsumer.html">MockConsumer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStreamingSession.html#a10b218bcb290840554823b0758aee17a">getConsumer</a> (<a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a410d5dcf4f751a0ca3026484f2a47b80">UPLOAD_HANDLE</a> uploadHandle)</td></tr>
+<tr class="separator:a10b218bcb290840554823b0758aee17a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68b1b5fc8597bae66c8bafc5e15043dc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStreamingSession.html#a68b1b5fc8597bae66c8bafc5e15043dc">~StreamingSession</a> ()</td></tr>
+<tr class="separator:a68b1b5fc8597bae66c8bafc5e15043dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a8c23f8c3ae6eb510fd4bcad4b4fe15d5"><td class="memItemLeft" align="right" valign="top"><a id="a8c23f8c3ae6eb510fd4bcad4b4fe15d5"></a>
-std::map&lt; UPLOAD_HANDLE, <a class="el" href="classMockConsumer.html">MockConsumer</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>mConsumerList</b></td></tr>
-<tr class="separator:a8c23f8c3ae6eb510fd4bcad4b4fe15d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad65ecc8c9df2ec195db693bf03db5486"><td class="memItemLeft" align="right" valign="top"><a id="ad65ecc8c9df2ec195db693bf03db5486"></a>
-std::vector&lt; UPLOAD_HANDLE &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>mActiveUploadHandles</b></td></tr>
-<tr class="separator:ad65ecc8c9df2ec195db693bf03db5486"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0fa1e7d559428c1e379ecde0de9b698"><td class="memItemLeft" align="right" valign="top"><a id="ad0fa1e7d559428c1e379ecde0de9b698"></a>
-UPLOAD_HANDLE&#160;</td><td class="memItemRight" valign="bottom"><b>mUploadHandleCounter</b></td></tr>
-<tr class="separator:ad0fa1e7d559428c1e379ecde0de9b698"><td class="memSeparator" colspan="2">&#160;</td></tr>
+Data Fields</h2></td></tr>
+<tr class="memitem:a6456556efa52b03d709d66a7f48e385a"><td class="memItemLeft" align="right" valign="top">std::map&lt; <a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a410d5dcf4f751a0ca3026484f2a47b80">UPLOAD_HANDLE</a>, <a class="el" href="classMockConsumer.html">MockConsumer</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStreamingSession.html#a6456556efa52b03d709d66a7f48e385a">mConsumerList</a></td></tr>
+<tr class="separator:a6456556efa52b03d709d66a7f48e385a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb865672f93de5f34751bcd345747d76"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a410d5dcf4f751a0ca3026484f2a47b80">UPLOAD_HANDLE</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStreamingSession.html#acb865672f93de5f34751bcd345747d76">mActiveUploadHandles</a></td></tr>
+<tr class="separator:acb865672f93de5f34751bcd345747d76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72fe668ae319ad806f34884e2ee465db"><td class="memItemLeft" align="right" valign="top"><a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a410d5dcf4f751a0ca3026484f2a47b80">UPLOAD_HANDLE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStreamingSession.html#a72fe668ae319ad806f34884e2ee465db">mUploadHandleCounter</a></td></tr>
+<tr class="separator:a72fe668ae319ad806f34884e2ee465db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a1685af93ad7d71c0dcc7eb9be9b61679"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1685af93ad7d71c0dcc7eb9be9b61679">&#9670;&nbsp;</a></span>StreamingSession()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classStreamingSession.html">StreamingSession</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a68b1b5fc8597bae66c8bafc5e15043dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68b1b5fc8597bae66c8bafc5e15043dc">&#9670;&nbsp;</a></span>~StreamingSession()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">~<a class="el" href="classStreamingSession.html">StreamingSession</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classStreamingSession_a68b1b5fc8597bae66c8bafc5e15043dc_cgraph.png" border="0" usemap="#aclassStreamingSession_a68b1b5fc8597bae66c8bafc5e15043dc_cgraph" alt=""/></div>
+<map name="aclassStreamingSession_a68b1b5fc8597bae66c8bafc5e15043dc_cgraph" id="aclassStreamingSession_a68b1b5fc8597bae66c8bafc5e15043dc_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,156,32"/>
+<area shape="rect" href="classStreamingSession.html#afcdd7751eb8c7725ce0b98e2aeb8c8f8" title=" " alt="" coords="204,5,315,32"/>
+</map>
+</div>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a8d1c3a1069bda6261ee547821d0f2021"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8d1c3a1069bda6261ee547821d0f2021">&#9670;&nbsp;</a></span>addNewConsumerSession()</h2>
+<a id="af479c1c30932c2eb5ca3af9fd5585b05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af479c1c30932c2eb5ca3af9fd5585b05">&#9670;&nbsp;</a></span>addNewConsumerSession()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">UPLOAD_HANDLE StreamingSession::addNewConsumerSession </td>
+          <td class="memname"><a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a410d5dcf4f751a0ca3026484f2a47b80">UPLOAD_HANDLE</a> addNewConsumerSession </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structMockConsumerConfig.html">MockConsumerConfig</a>&#160;</td>
           <td class="paramname"><em>consumerConfig</em>, </td>
@@ -115,14 +197,14 @@ UPLOAD_HANDLE&#160;</td><td class="memItemRight" valign="bottom"><b>mUploadHandl
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">STREAM_HANDLE&#160;</td>
+          <td class="paramtype"><a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a182389897d85b04b82e45ea49ea8c777">STREAM_HANDLE</a>&#160;</td>
           <td class="paramname"><em>mStreamHandle</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">UPLOAD_HANDLE&#160;</td>
-          <td class="paramname"><em>uploadHandleOverride</em> = <code>INVALID_UPLOAD_HANDLE_VALUE</code>&#160;</td>
+          <td class="paramtype"><a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a410d5dcf4f751a0ca3026484f2a47b80">UPLOAD_HANDLE</a>&#160;</td>
+          <td class="paramname"><em>uploadHandleOverride</em> = <code><a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a6c3f1e3d463beab6b57b91f9bb9547d1">INVALID_UPLOAD_HANDLE_VALUE</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -140,17 +222,27 @@ UPLOAD_HANDLE&#160;</td><td class="memItemRight" valign="bottom"><b>mUploadHandl
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classStreamingSession_af479c1c30932c2eb5ca3af9fd5585b05_icgraph.png" border="0" usemap="#aclassStreamingSession_af479c1c30932c2eb5ca3af9fd5585b05_icgraph" alt=""/></div>
+<map name="aclassStreamingSession_af479c1c30932c2eb5ca3af9fd5585b05_icgraph" id="aclassStreamingSession_af479c1c30932c2eb5ca3af9fd5585b05_icgraph">
+<area shape="rect" title=" " alt="" coords="548,5,739,32"/>
+<area shape="rect" href="classClientTestBase.html#a3c13a5445e85c6763322ac6da57d8a77" title=" " alt="" coords="276,5,500,32"/>
+<area shape="rect" href="classClientTestBase.html#a7496cd4902012085060e65a313b17eb0" title=" " alt="" coords="5,5,228,32"/>
+</map>
+</div>
 
 </div>
 </div>
-<a id="a86710c9a9450a735405cf7ac79824f84"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a86710c9a9450a735405cf7ac79824f84">&#9670;&nbsp;</a></span>clearSessions()</h2>
+<a id="afcdd7751eb8c7725ce0b98e2aeb8c8f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcdd7751eb8c7725ce0b98e2aeb8c8f8">&#9670;&nbsp;</a></span>clearSessions()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void StreamingSession::clearSessions </td>
+          <td class="memname">void clearSessions </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -158,38 +250,58 @@ UPLOAD_HANDLE&#160;</td><td class="memItemRight" valign="bottom"><b>mUploadHandl
       </table>
 </div><div class="memdoc">
 <p>Clear the mConsumerList map and free all MockConsumers. </p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classStreamingSession_afcdd7751eb8c7725ce0b98e2aeb8c8f8_icgraph.png" border="0" usemap="#aclassStreamingSession_afcdd7751eb8c7725ce0b98e2aeb8c8f8_icgraph" alt=""/></div>
+<map name="aclassStreamingSession_afcdd7751eb8c7725ce0b98e2aeb8c8f8_icgraph" id="aclassStreamingSession_afcdd7751eb8c7725ce0b98e2aeb8c8f8_icgraph">
+<area shape="rect" title=" " alt="" coords="244,31,355,57"/>
+<area shape="rect" href="classClientTestBase.html#a870a092058305911f3d42df45dd657e5" title=" " alt="" coords="5,5,196,32"/>
+<area shape="rect" href="classStreamingSession.html#a68b1b5fc8597bae66c8bafc5e15043dc" title=" " alt="" coords="25,56,176,83"/>
+</map>
+</div>
 
 </div>
 </div>
-<a id="a93cce00eba4ea39338a57f5550d8b1c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a93cce00eba4ea39338a57f5550d8b1c4">&#9670;&nbsp;</a></span>getActiveUploadHandles()</h2>
+<a id="a93af7bc9abe4e71349f648253aa7ed47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93af7bc9abe4e71349f648253aa7ed47">&#9670;&nbsp;</a></span>getActiveUploadHandles()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void StreamingSession::getActiveUploadHandles </td>
+          <td class="memname">void getActiveUploadHandles </td>
           <td>(</td>
-          <td class="paramtype">std::vector&lt; UPLOAD_HANDLE &gt; &amp;&#160;</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a410d5dcf4f751a0ca3026484f2a47b80">UPLOAD_HANDLE</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>activeUploadHandles</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Fills a vector with active upload handles. If any upload handles' connection was closed due to error, they will be removed and wont be in the vector returned. </p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classStreamingSession_a93af7bc9abe4e71349f648253aa7ed47_icgraph.png" border="0" usemap="#aclassStreamingSession_a93af7bc9abe4e71349f648253aa7ed47_icgraph" alt=""/></div>
+<map name="aclassStreamingSession_a93af7bc9abe4e71349f648253aa7ed47_icgraph" id="aclassStreamingSession_a93af7bc9abe4e71349f648253aa7ed47_icgraph">
+<area shape="rect" title=" " alt="" coords="525,13,708,39"/>
+<area shape="rect" href="classClientTestBase.html#abb6f8add0eb881abc4352f9eac66ed51" title=" " alt="" coords="245,13,477,39"/>
+<area shape="rect" href="classClientTestBase.html#ab08cffab213e418e60ad3e16eaef6667" title=" " alt="" coords="5,5,197,47"/>
+</map>
+</div>
 
 </div>
 </div>
-<a id="a98d179b71cfa57a6de44e1a01741b4d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a98d179b71cfa57a6de44e1a01741b4d4">&#9670;&nbsp;</a></span>getConsumer()</h2>
+<a id="a10b218bcb290840554823b0758aee17a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10b218bcb290840554823b0758aee17a">&#9670;&nbsp;</a></span>getConsumer()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classMockConsumer.html">MockConsumer</a> * StreamingSession::getConsumer </td>
+          <td class="memname"><a class="el" href="classMockConsumer.html">MockConsumer</a> * getConsumer </td>
           <td>(</td>
-          <td class="paramtype">UPLOAD_HANDLE&#160;</td>
+          <td class="paramtype"><a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a410d5dcf4f751a0ca3026484f2a47b80">UPLOAD_HANDLE</a>&#160;</td>
           <td class="paramname"><em>uploadHandle</em></td><td>)</td>
           <td></td>
         </tr>
@@ -202,19 +314,29 @@ UPLOAD_HANDLE&#160;</td><td class="memItemRight" valign="bottom"><b>mUploadHandl
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>MockConsumer* that is mapped to uploadHandle. NULL if uploadHandle does not exist. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classStreamingSession_a10b218bcb290840554823b0758aee17a_icgraph.png" border="0" usemap="#aclassStreamingSession_a10b218bcb290840554823b0758aee17a_icgraph" alt=""/></div>
+<map name="aclassStreamingSession_a10b218bcb290840554823b0758aee17a_icgraph" id="aclassStreamingSession_a10b218bcb290840554823b0758aee17a_icgraph">
+<area shape="rect" title=" " alt="" coords="525,13,635,39"/>
+<area shape="rect" href="classClientTestBase.html#abb6f8add0eb881abc4352f9eac66ed51" title=" " alt="" coords="245,13,477,39"/>
+<area shape="rect" href="classClientTestBase.html#ab08cffab213e418e60ad3e16eaef6667" title=" " alt="" coords="5,5,197,47"/>
+</map>
+</div>
 
 </div>
 </div>
-<a id="a51e81a3c50fd609ec9f685481cc3ef24"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a51e81a3c50fd609ec9f685481cc3ef24">&#9670;&nbsp;</a></span>removeConsumerSession()</h2>
+<a id="ae3f948354c2113e3696cd5b947825484"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3f948354c2113e3696cd5b947825484">&#9670;&nbsp;</a></span>removeConsumerSession()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void StreamingSession::removeConsumerSession </td>
+          <td class="memname">void removeConsumerSession </td>
           <td>(</td>
-          <td class="paramtype">UPLOAD_HANDLE&#160;</td>
+          <td class="paramtype"><a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a410d5dcf4f751a0ca3026484f2a47b80">UPLOAD_HANDLE</a>&#160;</td>
           <td class="paramname"><em>uploadHandle</em></td><td>)</td>
           <td></td>
         </tr>
@@ -226,19 +348,30 @@ UPLOAD_HANDLE&#160;</td><td class="memItemRight" valign="bottom"><b>mUploadHandl
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classStreamingSession_ae3f948354c2113e3696cd5b947825484_icgraph.png" border="0" usemap="#aclassStreamingSession_ae3f948354c2113e3696cd5b947825484_icgraph" alt=""/></div>
+<map name="aclassStreamingSession_ae3f948354c2113e3696cd5b947825484_icgraph" id="aclassStreamingSession_ae3f948354c2113e3696cd5b947825484_icgraph">
+<area shape="rect" title=" " alt="" coords="760,13,948,39"/>
+<area shape="rect" href="classClientTestBase.html#ad421cab1aa453a2a3a3791c025101d3c" title=" " alt="" coords="525,5,712,47"/>
+<area shape="rect" href="classClientTestBase.html#abb6f8add0eb881abc4352f9eac66ed51" title=" " alt="" coords="245,13,477,39"/>
+<area shape="rect" href="classClientTestBase.html#ab08cffab213e418e60ad3e16eaef6667" title=" " alt="" coords="5,5,197,47"/>
+</map>
+</div>
 
 </div>
 </div>
-<a id="a2d54a7cd4df9833f871ba3c5be68dc3c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d54a7cd4df9833f871ba3c5be68dc3c">&#9670;&nbsp;</a></span>signalDataAvailable()</h2>
+<a id="a5e9e59b55413af0187ae640632e91df6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e9e59b55413af0187ae640632e91df6">&#9670;&nbsp;</a></span>signalDataAvailable()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void StreamingSession::signalDataAvailable </td>
+          <td class="memname">void signalDataAvailable </td>
           <td>(</td>
-          <td class="paramtype">UPLOAD_HANDLE&#160;</td>
+          <td class="paramtype"><a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a410d5dcf4f751a0ca3026484f2a47b80">UPLOAD_HANDLE</a>&#160;</td>
           <td class="paramname"><em>uploadHandle</em></td><td>)</td>
           <td></td>
         </tr>
@@ -250,17 +383,74 @@ UPLOAD_HANDLE&#160;</td><td class="memItemRight" valign="bottom"><b>mUploadHandl
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classStreamingSession_a5e9e59b55413af0187ae640632e91df6_icgraph.png" border="0" usemap="#aclassStreamingSession_a5e9e59b55413af0187ae640632e91df6_icgraph" alt=""/></div>
+<map name="aclassStreamingSession_a5e9e59b55413af0187ae640632e91df6_icgraph" id="aclassStreamingSession_a5e9e59b55413af0187ae640632e91df6_icgraph">
+<area shape="rect" title=" " alt="" coords="527,13,679,39"/>
+<area shape="rect" href="classClientTestBase.html#aac32b6246530a0041cc4bda25c5b82c8" title=" " alt="" coords="276,5,479,47"/>
+<area shape="rect" href="classClientTestBase.html#a7496cd4902012085060e65a313b17eb0" title=" " alt="" coords="5,13,228,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="acb865672f93de5f34751bcd345747d76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb865672f93de5f34751bcd345747d76">&#9670;&nbsp;</a></span>mActiveUploadHandles</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a410d5dcf4f751a0ca3026484f2a47b80">UPLOAD_HANDLE</a>&gt; mActiveUploadHandles</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6456556efa52b03d709d66a7f48e385a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6456556efa52b03d709d66a7f48e385a">&#9670;&nbsp;</a></span>mConsumerList</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;<a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a410d5dcf4f751a0ca3026484f2a47b80">UPLOAD_HANDLE</a>, <a class="el" href="classMockConsumer.html">MockConsumer</a>*&gt; mConsumerList</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a72fe668ae319ad806f34884e2ee465db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72fe668ae319ad806f34884e2ee465db">&#9670;&nbsp;</a></span>mUploadHandleCounter</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a410d5dcf4f751a0ca3026484f2a47b80">UPLOAD_HANDLE</a> mUploadHandleCounter</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/client/tst/<a class="el" href="StreamingSession_8h_source.html">StreamingSession.h</a></li>
-<li>src/client/tst/StreamingSession.cpp</li>
+<li>src/client/tst/<a class="el" href="StreamingSession_8cpp.html">StreamingSession.cpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classStreamingSession.html">StreamingSession</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

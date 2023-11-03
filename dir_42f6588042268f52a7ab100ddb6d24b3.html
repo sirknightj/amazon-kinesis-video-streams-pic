@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +28,7 @@
    <div id="projectname">Amazon Kinesis Video Streams PIC
    &#160;<span id="projectnumber">1.0.1</span>
    </div>
-   <div id="projectbrief">Platform Independent Code for Amazon Kinesis Video Streams.</div>
+   <div id="projectbrief">Platform independent code for Amazon Kinesis Video Streams</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('dir_42f6588042268f52a7ab100ddb6d24b3.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,20 +82,104 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_6908ff505388a07996d238c763adbdab.html">client</a></li><li class="navelem"><a class="el" href="dir_42f6588042268f52a7ab100ddb6d24b3.html">tst</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">tst Directory Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="dynheader">
+Directory dependency graph for tst:</div>
+<div class="dyncontent">
+<div class="center"><img src="dir_42f6588042268f52a7ab100ddb6d24b3_dep.png" border="0" usemap="#adir__42f6588042268f52a7ab100ddb6d24b3__dep" alt="src/client/tst"/></div>
+<map name="adir__42f6588042268f52a7ab100ddb6d24b3__dep" id="adir__42f6588042268f52a7ab100ddb6d24b3__dep">
+<area shape="rect" href="dir_78ce3fde11f1c50580f2f2c408f37c2f.html" title="src" alt="" coords="27,148,99,196"/>
+<area shape="rect" href="dir_c7a20b80ce65e841dd30fc88a8acdace.html" title="include" alt="" coords="47,244,119,292"/>
+<area shape="rect" href="dir_000050_000002.html" title="1" alt="" coords="78,217,87,232"/>
+<area shape="rect" href="dir_293b65ee0e438b101df8ec50727ccfaa.html" title="mkvgen" alt="" coords="113,340,188,388"/>
+<area shape="rect" href="dir_000002_000015.html" title="1" alt="" coords="126,313,135,328"/>
+<area shape="rect" href="dir_313caf1132e152dd9b58bea13a4052ca.html" title="utils" alt="" coords="115,436,187,484"/>
+<area shape="rect" href="dir_000002_000036.html" title="1" alt="" coords="122,409,131,423"/>
+<area shape="rect" href="dir_42f6588042268f52a7ab100ddb6d24b3.html" title="tst" alt="" coords="53,52,125,100"/>
+<area shape="rect" href="dir_000057_000050.html" title="2" alt="" coords="78,125,87,140"/>
+<area shape="rect" href="dir_000057_000002.html" title="1" alt="" coords="105,223,114,238"/>
+<area shape="rect" href="dir_000057_000015.html" title="1" alt="" coords="152,314,161,328"/>
+<area shape="rect" href="dir_000057_000036.html" title="1" alt="" coords="185,419,194,434"/>
+<area shape="rect" href="dir_000015_000036.html" title="2" alt="" coords="154,410,164,425"/>
+<area shape="rect" href="dir_6908ff505388a07996d238c763adbdab.html" title="client" alt="" coords="16,16,136,303"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:AcksFunctionalityTest_8cpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AcksFunctionalityTest_8cpp.html">AcksFunctionalityTest.cpp</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:CallbacksAndPressuresFunctionalityTest_8cpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CallbacksAndPressuresFunctionalityTest_8cpp.html">CallbacksAndPressuresFunctionalityTest.cpp</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ClientApiFunctionalityTest_8cpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ClientApiFunctionalityTest_8cpp.html">ClientApiFunctionalityTest.cpp</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ClientApiTest_8cpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ClientApiTest_8cpp.html">ClientApiTest.cpp</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ClientFunctionalityTest_8cpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ClientFunctionalityTest_8cpp.html">ClientFunctionalityTest.cpp</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ClientTestFixture_8cpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ClientTestFixture_8cpp.html">ClientTestFixture.cpp</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ClientTestFixture_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ClientTestFixture_8h.html">ClientTestFixture.h</a> <a href="ClientTestFixture_8h_source.html">[code]</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:FrameOrderCoordinatorTest_8cpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FrameOrderCoordinatorTest_8cpp.html">FrameOrderCoordinatorTest.cpp</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:IntermittentProducerAutomaticStreamingTest_8cpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IntermittentProducerAutomaticStreamingTest_8cpp.html">IntermittentProducerAutomaticStreamingTest.cpp</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:IntermittentProducerFunctionalityTest_8cpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="IntermittentProducerFunctionalityTest_8cpp.html">IntermittentProducerFunctionalityTest.cpp</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:MockConsumer_8cpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MockConsumer_8cpp.html">MockConsumer.cpp</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:MockConsumer_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MockConsumer_8h.html">MockConsumer.h</a> <a href="MockConsumer_8h_source.html">[code]</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:MockProducer_8cpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MockProducer_8cpp.html">MockProducer.cpp</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:MockProducer_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MockProducer_8h.html">MockProducer.h</a> <a href="MockProducer_8h_source.html">[code]</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:StateTransitionFunctionalityTest_8cpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StateTransitionFunctionalityTest_8cpp.html">StateTransitionFunctionalityTest.cpp</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:StreamApiFunctionalityScenarioTest_8cpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StreamApiFunctionalityScenarioTest_8cpp.html">StreamApiFunctionalityScenarioTest.cpp</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:StreamApiFunctionalityTest_8cpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StreamApiFunctionalityTest_8cpp.html">StreamApiFunctionalityTest.cpp</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:StreamApiServiceCallsTest_8cpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StreamApiServiceCallsTest_8cpp.html">StreamApiServiceCallsTest.cpp</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:StreamApiTest_8cpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StreamApiTest_8cpp.html">StreamApiTest.cpp</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:StreamDeviceTagsTest_8cpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StreamDeviceTagsTest_8cpp.html">StreamDeviceTagsTest.cpp</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:StreamFunctionalityTest_8cpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StreamFunctionalityTest_8cpp.html">StreamFunctionalityTest.cpp</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:StreamingSession_8cpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StreamingSession_8cpp.html">StreamingSession.cpp</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:StreamingSession_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StreamingSession_8h.html">StreamingSession.h</a> <a href="StreamingSession_8h_source.html">[code]</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:StreamParallelTest_8cpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StreamParallelTest_8cpp.html">StreamParallelTest.cpp</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:StreamPutGetTest_8cpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StreamPutGetTest_8cpp.html">StreamPutGetTest.cpp</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:StreamRecoveryFunctionalityTest_8cpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StreamRecoveryFunctionalityTest_8cpp.html">StreamRecoveryFunctionalityTest.cpp</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:StreamStateTransitionsTest_8cpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StreamStateTransitionsTest_8cpp.html">StreamStateTransitionsTest.cpp</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:StreamStoppingFunctionalityTest_8cpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StreamStoppingFunctionalityTest_8cpp.html">StreamStoppingFunctionalityTest.cpp</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:StreamTokenRotationTest_8cpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="StreamTokenRotationTest_8cpp.html">StreamTokenRotationTest.cpp</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:TokenRotationFunctionalityTest_8cpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TokenRotationFunctionalityTest_8cpp.html">TokenRotationFunctionalityTest.cpp</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_6908ff505388a07996d238c763adbdab.html">client</a></li><li class="navelem"><a class="el" href="dir_42f6588042268f52a7ab100ddb6d24b3.html">tst</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

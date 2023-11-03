@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +28,7 @@
    <div id="projectname">Amazon Kinesis Video Streams PIC
    &#160;<span id="projectnumber">1.0.1</span>
    </div>
-   <div id="projectbrief">Platform Independent Code for Amazon Kinesis Video Streams.</div>
+   <div id="projectbrief">Platform independent code for Amazon Kinesis Video Streams</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('dir_80d059cd509488403b64ec1d1ff9abf6.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,20 +82,43 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b39b5091e8d1d2be4b7fc59d57749634.html">view</a></li><li class="navelem"><a class="el" href="dir_1de8c706b52e1aca6c492cd75cbbda30.html">include</a></li><li class="navelem"><a class="el" href="dir_d3c17a206b573d53dbdcc58b849618aa.html">com</a></li><li class="navelem"><a class="el" href="dir_97dbcc9683b4518ad680d93e59e4b985.html">amazonaws</a></li><li class="navelem"><a class="el" href="dir_a209fa816cd4ec852ad1dfb69df3f4d7.html">kinesis</a></li><li class="navelem"><a class="el" href="dir_5f261ad773bf831d7e170024f8167e71.html">video</a></li><li class="navelem"><a class="el" href="dir_80d059cd509488403b64ec1d1ff9abf6.html">view</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">view Directory Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="dynheader">
+Directory dependency graph for view:</div>
+<div class="dyncontent">
+<div class="center"><img src="dir_80d059cd509488403b64ec1d1ff9abf6_dep.png" border="0" usemap="#adir__80d059cd509488403b64ec1d1ff9abf6__dep" alt="src/view/include/com/amazonaws/kinesis/video/view"/></div>
+<map name="adir__80d059cd509488403b64ec1d1ff9abf6__dep" id="adir__80d059cd509488403b64ec1d1ff9abf6__dep">
+<area shape="rect" href="dir_80d059cd509488403b64ec1d1ff9abf6.html" title="view" alt="" coords="68,52,140,100"/>
+<area shape="rect" href="dir_313caf1132e152dd9b58bea13a4052ca.html" title="utils" alt="" coords="5,244,77,292"/>
+<area shape="rect" href="dir_000049_000036.html" title="1" alt="" coords="45,218,55,233"/>
+<area shape="rect" href="dir_c4d22fc0e4736089ffe45cb281f7e16f.html" title="heap" alt="" coords="68,148,140,196"/>
+<area shape="rect" href="dir_000049_000008.html" title="1" alt="" coords="108,122,117,137"/>
+<area shape="rect" href="dir_fdedb0aba14d44ce9d99bc100e026e6a.html" title="common" alt="" coords="75,340,154,388"/>
+<area shape="rect" href="dir_000049_000058.html" title="2" alt="" coords="136,319,145,334"/>
+<area shape="rect" href="dir_000036_000058.html" title="2" alt="" coords="88,313,97,328"/>
+<area shape="rect" href="dir_000008_000036.html" title="1" alt="" coords="69,226,78,241"/>
+<area shape="rect" href="dir_000008_000058.html" title="2" alt="" coords="116,314,125,329"/>
+<area shape="rect" href="dir_5f261ad773bf831d7e170024f8167e71.html" title="video" alt="" coords="57,16,151,111"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:view_2include_2com_2amazonaws_2kinesis_2video_2view_2Include_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="view_2include_2com_2amazonaws_2kinesis_2video_2view_2Include_8h.html">Include.h</a> <a href="view_2include_2com_2amazonaws_2kinesis_2video_2view_2Include_8h_source.html">[code]</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b39b5091e8d1d2be4b7fc59d57749634.html">view</a></li><li class="navelem"><a class="el" href="dir_1de8c706b52e1aca6c492cd75cbbda30.html">include</a></li><li class="navelem"><a class="el" href="dir_d3c17a206b573d53dbdcc58b849618aa.html">com</a></li><li class="navelem"><a class="el" href="dir_97dbcc9683b4518ad680d93e59e4b985.html">amazonaws</a></li><li class="navelem"><a class="el" href="dir_a209fa816cd4ec852ad1dfb69df3f4d7.html">kinesis</a></li><li class="navelem"><a class="el" href="dir_5f261ad773bf831d7e170024f8167e71.html">video</a></li><li class="navelem"><a class="el" href="dir_80d059cd509488403b64ec1d1ff9abf6.html">view</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

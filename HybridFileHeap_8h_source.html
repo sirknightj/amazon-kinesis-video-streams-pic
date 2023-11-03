@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +28,7 @@
    <div id="projectname">Amazon Kinesis Video Streams PIC
    &#160;<span id="projectnumber">1.0.1</span>
    </div>
-   <div id="projectbrief">Platform Independent Code for Amazon Kinesis Video Streams.</div>
+   <div id="projectbrief">Platform independent code for Amazon Kinesis Video Streams</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('HybridFileHeap_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,17 +82,12 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c4d22fc0e4736089ffe45cb281f7e16f.html">heap</a></li><li class="navelem"><a class="el" href="dir_0dbdd4b98286c9c70a81bbc1f422dcfa.html">src</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">HybridFileHeap.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<a href="HybridFileHeap_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef __HYBRID_FILE_HEAP_H__</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define __HYBRID_FILE_HEAP_H__</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
@@ -79,79 +95,108 @@ $(function() {
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define FILE_ALLOCATION_TYPE 4</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="HybridFileHeap_8h.html#a6db80cc3b0e98c3032902b4e0f6adb11">   12</a></span>&#160;<span class="preprocessor">#define FILE_ALLOCATION_TYPE 4</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// Default location of the root directory for the files</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#define FILE_HEAP_DEFAULT_ROOT_DIRECTORY &quot;.&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="HybridFileHeap_8h.html#a454176a6f2a99374731042548e0bfc27">   15</a></span>&#160;<span class="preprocessor">#define FILE_HEAP_DEFAULT_ROOT_DIRECTORY &quot;.&quot;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">// Extension for the heap files</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#define FILE_HEAP_FILE_EXTENSION &quot;.hfh&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="HybridFileHeap_8h.html#a826a1d92b246303cf44538db9d671847">   18</a></span>&#160;<span class="preprocessor">#define FILE_HEAP_FILE_EXTENSION &quot;.hfh&quot;</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// Starting index for the file heap files</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define FILE_HEAP_STARTING_FILE_INDEX 1</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="HybridFileHeap_8h.html#aaf4ec8593acf6713fdc1566c8326e1b1">   21</a></span>&#160;<span class="preprocessor">#define FILE_HEAP_STARTING_FILE_INDEX 1</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// Define the max root directory length accounting for the max file size of 10, a separator and the file extension</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#define FILE_HEAP_MAX_ROOT_DIR_LEN (MAX_PATH_LEN - 10 - SIZEOF(FILE_HEAP_FILE_EXTENSION) - 1)</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="HybridFileHeap_8h.html#a8a2f3eb1f635e78450bb737ac5b4aa6b">   24</a></span>&#160;<span class="preprocessor">#define FILE_HEAP_MAX_ROOT_DIR_LEN (MAX_PATH_LEN - 10 - SIZEOF(FILE_HEAP_FILE_EXTENSION) - 1)</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#define TO_FILE_HANDLE(h)   ((UINT32) ((UINT64) (h) &gt;&gt; 32))</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#define FROM_FILE_HANDLE(h) (ALLOCATION_HANDLE)(((UINT64) (h) &lt;&lt; 32) | ALIGNMENT_BITS)</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="HybridFileHeap_8h.html#ac8209f36970361d23802792660e1908a">   29</a></span>&#160;<span class="preprocessor">#define TO_FILE_HANDLE(h)   ((UINT32) ((UINT64) (h) &gt;&gt; 32))</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="HybridFileHeap_8h.html#a72630c9aff9b6790f66bbe396d4aae85">   30</a></span>&#160;<span class="preprocessor">#define FROM_FILE_HANDLE(h) (ALLOCATION_HANDLE)(((UINT64) (h) &lt;&lt; 32) | ALIGNMENT_BITS)</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="structHybridFileHeap.html">   35</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="structHybridFileHeap.html#a3225ef75ec4063dce459e5bbcfb1e1a9">   39</a></span>&#160;    <a class="code" href="structBaseHeap.html">BaseHeap</a> <a class="code" href="structHybridFileHeap.html#a3225ef75ec4063dce459e5bbcfb1e1a9">heap</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="structHybridFileHeap.html#a5b7dbb80dd64e3d7f6e516f9ffa9f00a">   39</a></span>&#160;    <a class="code" href="structBaseHeap.html">BaseHeap</a> <a class="code" href="structHybridFileHeap.html#a5b7dbb80dd64e3d7f6e516f9ffa9f00a">heap</a>;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="structHybridFileHeap.html#ae490db586f5eab2ceba941dc811ef415">   44</a></span>&#160;    DOUBLE <a class="code" href="structHybridFileHeap.html#ae490db586f5eab2ceba941dc811ef415">spillRatio</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="structHybridFileHeap.html#a7c48654f7fa6a927b6eb5bdce37ed9a0">   44</a></span>&#160;    <a class="code" href="CommonDefs_8h.html#aeb90fd78c942591ef3a935cf98baf4f8">DOUBLE</a> <a class="code" href="structHybridFileHeap.html#a7c48654f7fa6a927b6eb5bdce37ed9a0">spillRatio</a>;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="structHybridFileHeap.html#a26e900d45e3eca77b899462557f42ce5">   49</a></span>&#160;    CHAR rootDirectory[MAX_PATH_LEN + 1];</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="structHybridFileHeap.html#af5f552feeb57833435b54f9c82eeef8e">   49</a></span>&#160;    <a class="code" href="CommonDefs_8h.html#aebb9e13210d88d43e32e735ada43a425">CHAR</a> rootDirectory[<a class="code" href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#abdd33f362ae3bbdacb5de76473aa8a2f">MAX_PATH_LEN</a> + 1];</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="structHybridFileHeap.html#a19ab56505057ff003588a2d66abf9f61">   54</a></span>&#160;    UINT32 <a class="code" href="structHybridFileHeap.html#a19ab56505057ff003588a2d66abf9f61">handleNum</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="structHybridFileHeap.html#ac7cb39c0c2809823ab06a927291282dc">   54</a></span>&#160;    <a class="code" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> <a class="code" href="structHybridFileHeap.html#ac7cb39c0c2809823ab06a927291282dc">handleNum</a>;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="structHybridFileHeap.html#aecd6dc340a8dd538e68cd803efb60fbd">   59</a></span>&#160;    <a class="code" href="structBaseHeap.html">PBaseHeap</a> <a class="code" href="structHybridFileHeap.html#aecd6dc340a8dd538e68cd803efb60fbd">pMemHeap</a>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;} <a class="code" href="structHybridFileHeap.html">HybridFileHeap</a>, *<a class="code" href="structHybridFileHeap.html">PHybridFileHeap</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="structHybridFileHeap.html#a3c9f4bd78c691211b281ee558690e138">   59</a></span>&#160;    <a class="code" href="structBaseHeap.html">PBaseHeap</a> <a class="code" href="structHybridFileHeap.html#a3c9f4bd78c691211b281ee558690e138">pMemHeap</a>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="HybridFileHeap_8h.html#a7614a8161457ef05b5879723edcec9fe">   60</a></span>&#160;} <a class="code" href="structHybridFileHeap.html">HybridFileHeap</a>, *<a class="code" href="HybridFileHeap_8h.html#a7614a8161457ef05b5879723edcec9fe">PHybridFileHeap</a>;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;STATUS hybridFileCreateHeap(<a class="code" href="structHeap.html">PHeap</a>, UINT32, PCHAR, <a class="code" href="structHybridFileHeap.html">PHybridFileHeap</a>*);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<a class="code" href="CommonDefs_8h.html#a59279bee44f34d08b3cbf3a89fb0d8d9">STATUS</a> <a class="code" href="HybridFileHeap_8h.html#aadbb072412db89c1570f791b16ecba74">hybridFileCreateHeap</a>(<a class="code" href="structHeap.html">PHeap</a>, <a class="code" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>, <a class="code" href="CommonDefs_8h.html#a6addcc52e2dfddf231bf3213859ae2bb">PCHAR</a>, <a class="code" href="structHybridFileHeap.html">PHybridFileHeap</a>*);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;DEFINE_HEAP_ALLOC(hybridFileHeapAlloc);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<a class="code" href="HybridFileHeap_8h.html#a5f478ba506c015690f879a97ac8aacab">DEFINE_HEAP_ALLOC</a>(hybridFileHeapAlloc);</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;DEFINE_HEAP_FREE(hybridFileHeapFree);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<a class="code" href="HybridFileHeap_8h.html#a82fc8f85774d932e68830d540877e228">DEFINE_HEAP_FREE</a>(hybridFileHeapFree);</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;DEFINE_HEAP_GET_ALLOC_SIZE(hybridFileHeapGetAllocSize);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<a class="code" href="HybridFileHeap_8h.html#a2c5e94efde6de1dee798eb12b78eb796">DEFINE_HEAP_GET_ALLOC_SIZE</a>(hybridFileHeapGetAllocSize);</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;DEFINE_HEAP_SET_ALLOC_SIZE(hybridFileHeapSetAllocSize);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<a class="code" href="HybridFileHeap_8h.html#a8f2e54acd502a0d537f1e32bbabe5fc2">DEFINE_HEAP_SET_ALLOC_SIZE</a>(hybridFileHeapSetAllocSize);</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;DEFINE_HEAP_MAP(hybridFileHeapMap);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<a class="code" href="HybridFileHeap_8h.html#a6c071aa2183ec434d82e3bc6e737ab5a">DEFINE_HEAP_MAP</a>(hybridFileHeapMap);</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;DEFINE_HEAP_UNMAP(hybridFileHeapUnmap);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<a class="code" href="HybridFileHeap_8h.html#ade60105fcae09ddfab2c669da73b9288">DEFINE_HEAP_UNMAP</a>(hybridFileHeapUnmap);</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;DEFINE_RELEASE_HEAP(hybridFileHeapRelease);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<a class="code" href="HybridFileHeap_8h.html#adf7fef17929b1365758586a33906b212">DEFINE_RELEASE_HEAP</a>(hybridFileHeapRelease);</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;DEFINE_INIT_HEAP(hybridFileHeapInit);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<a class="code" href="HybridFileHeap_8h.html#a908217b0926b96b3c9fb21b272a7ad47">DEFINE_INIT_HEAP</a>(hybridFileHeapInit);</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;DEFINE_HEAP_CHK(hybridFileHeapDebugCheckAllocator);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<a class="code" href="HybridFileHeap_8h.html#a3705bc07c5190c8f084fdcdadab15ec8">DEFINE_HEAP_CHK</a>(hybridFileHeapDebugCheckAllocator);</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;DEFINE_HEADER_SIZE(hybridFileGetAllocationHeaderSize);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;DEFINE_FOOTER_SIZE(hybridFileGetAllocationFooterSize);</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;DEFINE_ALIGNED_SIZE(hybridFileGetAllocationAlignedSize);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;DEFINE_ALLOC_SIZE(hybridFileGetAllocationSize);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;DEFINE_HEAP_LIMITS(hybridFileGetHeapLimits);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<a class="code" href="HybridFileHeap_8h.html#a28a0afdd4811f553bd53bcce78de7d49">DEFINE_HEADER_SIZE</a>(hybridFileGetAllocationHeaderSize);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<a class="code" href="HybridFileHeap_8h.html#aa302204981a343eab08ba253eb5e34f2">DEFINE_FOOTER_SIZE</a>(hybridFileGetAllocationFooterSize);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<a class="code" href="HybridFileHeap_8h.html#a76c14524cc80070897b61a6dda33e8a2">DEFINE_ALIGNED_SIZE</a>(hybridFileGetAllocationAlignedSize);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<a class="code" href="HybridFileHeap_8h.html#a5d1999c1a692ee6fb4591e3054fa95c4">DEFINE_ALLOC_SIZE</a>(hybridFileGetAllocationSize);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<a class="code" href="HybridFileHeap_8h.html#a15771bc4818eaee7c1d6a010d1a63f8f">DEFINE_HEAP_LIMITS</a>(hybridFileGetHeapLimits);</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;STATUS removeHeapFile(UINT64, DIR_ENTRY_TYPES, PCHAR, PCHAR);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<a class="code" href="CommonDefs_8h.html#a59279bee44f34d08b3cbf3a89fb0d8d9">STATUS</a> <a class="code" href="HybridFileHeap_8h.html#a50d7838985ae829287e129e332adeef0">removeHeapFile</a>(<a class="code" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>, <a class="code" href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a7172b6fcd21bf2b55afde257882013c5">DIR_ENTRY_TYPES</a>, <a class="code" href="CommonDefs_8h.html#a6addcc52e2dfddf231bf3213859ae2bb">PCHAR</a>, <a class="code" href="CommonDefs_8h.html#a6addcc52e2dfddf231bf3213859ae2bb">PCHAR</a>);</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;}</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// __HYBRID_FILE_HEAP_H__</span></div>
+<div class="ttc" id="aCommonDefs_8h_html_a0b39d6d754cb24c708b0f2bdbe88130e"><div class="ttname"><a href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a></div><div class="ttdeci">unsigned long UINT32</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:142</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a57be03562867144161c1bfee95ca8f7c"><div class="ttname"><a href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a></div><div class="ttdeci">unsigned long long UINT64</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:144</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a59279bee44f34d08b3cbf3a89fb0d8d9"><div class="ttname"><a href="CommonDefs_8h.html#a59279bee44f34d08b3cbf3a89fb0d8d9">STATUS</a></div><div class="ttdeci">#define STATUS</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:456</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a6addcc52e2dfddf231bf3213859ae2bb"><div class="ttname"><a href="CommonDefs_8h.html#a6addcc52e2dfddf231bf3213859ae2bb">PCHAR</a></div><div class="ttdeci">CHAR * PCHAR</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:180</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_aeb90fd78c942591ef3a935cf98baf4f8"><div class="ttname"><a href="CommonDefs_8h.html#aeb90fd78c942591ef3a935cf98baf4f8">DOUBLE</a></div><div class="ttdeci">double DOUBLE</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:146</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_aebb9e13210d88d43e32e735ada43a425"><div class="ttname"><a href="CommonDefs_8h.html#aebb9e13210d88d43e32e735ada43a425">CHAR</a></div><div class="ttdeci">char CHAR</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:136</div></div>
+<div class="ttc" id="aHybridFileHeap_8h_html_a15771bc4818eaee7c1d6a010d1a63f8f"><div class="ttname"><a href="HybridFileHeap_8h.html#a15771bc4818eaee7c1d6a010d1a63f8f">DEFINE_HEAP_LIMITS</a></div><div class="ttdeci">DEFINE_HEAP_LIMITS(hybridFileGetHeapLimits)</div><div class="ttdef"><b>Definition:</b> HybridFileHeap.c:551</div></div>
+<div class="ttc" id="aHybridFileHeap_8h_html_a28a0afdd4811f553bd53bcce78de7d49"><div class="ttname"><a href="HybridFileHeap_8h.html#a28a0afdd4811f553bd53bcce78de7d49">DEFINE_HEADER_SIZE</a></div><div class="ttdeci">DEFINE_HEADER_SIZE(hybridFileGetAllocationHeaderSize)</div><div class="ttdef"><b>Definition:</b> HybridFileHeap.c:488</div></div>
+<div class="ttc" id="aHybridFileHeap_8h_html_a2c5e94efde6de1dee798eb12b78eb796"><div class="ttname"><a href="HybridFileHeap_8h.html#a2c5e94efde6de1dee798eb12b78eb796">DEFINE_HEAP_GET_ALLOC_SIZE</a></div><div class="ttdeci">DEFINE_HEAP_GET_ALLOC_SIZE(hybridFileHeapGetAllocSize)</div><div class="ttdef"><b>Definition:</b> HybridFileHeap.c:298</div></div>
+<div class="ttc" id="aHybridFileHeap_8h_html_a3705bc07c5190c8f084fdcdadab15ec8"><div class="ttname"><a href="HybridFileHeap_8h.html#a3705bc07c5190c8f084fdcdadab15ec8">DEFINE_HEAP_CHK</a></div><div class="ttdeci">DEFINE_HEAP_CHK(hybridFileHeapDebugCheckAllocator)</div><div class="ttdef"><b>Definition:</b> HybridFileHeap.c:91</div></div>
+<div class="ttc" id="aHybridFileHeap_8h_html_a50d7838985ae829287e129e332adeef0"><div class="ttname"><a href="HybridFileHeap_8h.html#a50d7838985ae829287e129e332adeef0">removeHeapFile</a></div><div class="ttdeci">STATUS removeHeapFile(UINT64, DIR_ENTRY_TYPES, PCHAR, PCHAR)</div><div class="ttdef"><b>Definition:</b> HybridFileHeap.c:557</div></div>
+<div class="ttc" id="aHybridFileHeap_8h_html_a5d1999c1a692ee6fb4591e3054fa95c4"><div class="ttname"><a href="HybridFileHeap_8h.html#a5d1999c1a692ee6fb4591e3054fa95c4">DEFINE_ALLOC_SIZE</a></div><div class="ttdeci">DEFINE_ALLOC_SIZE(hybridFileGetAllocationSize)</div><div class="ttdef"><b>Definition:</b> HybridFileHeap.c:503</div></div>
+<div class="ttc" id="aHybridFileHeap_8h_html_a5f478ba506c015690f879a97ac8aacab"><div class="ttname"><a href="HybridFileHeap_8h.html#a5f478ba506c015690f879a97ac8aacab">DEFINE_HEAP_ALLOC</a></div><div class="ttdeci">DEFINE_HEAP_ALLOC(hybridFileHeapAlloc)</div><div class="ttdef"><b>Definition:</b> HybridFileHeap.c:178</div></div>
+<div class="ttc" id="aHybridFileHeap_8h_html_a6c071aa2183ec434d82e3bc6e737ab5a"><div class="ttname"><a href="HybridFileHeap_8h.html#a6c071aa2183ec434d82e3bc6e737ab5a">DEFINE_HEAP_MAP</a></div><div class="ttdeci">DEFINE_HEAP_MAP(hybridFileHeapMap)</div><div class="ttdef"><b>Definition:</b> HybridFileHeap.c:399</div></div>
+<div class="ttc" id="aHybridFileHeap_8h_html_a7614a8161457ef05b5879723edcec9fe"><div class="ttname"><a href="HybridFileHeap_8h.html#a7614a8161457ef05b5879723edcec9fe">PHybridFileHeap</a></div><div class="ttdeci">struct HybridFileHeap * PHybridFileHeap</div></div>
+<div class="ttc" id="aHybridFileHeap_8h_html_a76c14524cc80070897b61a6dda33e8a2"><div class="ttname"><a href="HybridFileHeap_8h.html#a76c14524cc80070897b61a6dda33e8a2">DEFINE_ALIGNED_SIZE</a></div><div class="ttdeci">DEFINE_ALIGNED_SIZE(hybridFileGetAllocationAlignedSize)</div><div class="ttdef"><b>Definition:</b> HybridFileHeap.c:498</div></div>
+<div class="ttc" id="aHybridFileHeap_8h_html_a82fc8f85774d932e68830d540877e228"><div class="ttname"><a href="HybridFileHeap_8h.html#a82fc8f85774d932e68830d540877e228">DEFINE_HEAP_FREE</a></div><div class="ttdeci">DEFINE_HEAP_FREE(hybridFileHeapFree)</div><div class="ttdef"><b>Definition:</b> HybridFileHeap.c:246</div></div>
+<div class="ttc" id="aHybridFileHeap_8h_html_a8f2e54acd502a0d537f1e32bbabe5fc2"><div class="ttname"><a href="HybridFileHeap_8h.html#a8f2e54acd502a0d537f1e32bbabe5fc2">DEFINE_HEAP_SET_ALLOC_SIZE</a></div><div class="ttdeci">DEFINE_HEAP_SET_ALLOC_SIZE(hybridFileHeapSetAllocSize)</div><div class="ttdef"><b>Definition:</b> HybridFileHeap.c:337</div></div>
+<div class="ttc" id="aHybridFileHeap_8h_html_a908217b0926b96b3c9fb21b272a7ad47"><div class="ttname"><a href="HybridFileHeap_8h.html#a908217b0926b96b3c9fb21b272a7ad47">DEFINE_INIT_HEAP</a></div><div class="ttdeci">DEFINE_INIT_HEAP(hybridFileHeapInit)</div><div class="ttdef"><b>Definition:</b> HybridFileHeap.c:111</div></div>
+<div class="ttc" id="aHybridFileHeap_8h_html_aa302204981a343eab08ba253eb5e34f2"><div class="ttname"><a href="HybridFileHeap_8h.html#aa302204981a343eab08ba253eb5e34f2">DEFINE_FOOTER_SIZE</a></div><div class="ttdeci">DEFINE_FOOTER_SIZE(hybridFileGetAllocationFooterSize)</div><div class="ttdef"><b>Definition:</b> HybridFileHeap.c:493</div></div>
+<div class="ttc" id="aHybridFileHeap_8h_html_aadbb072412db89c1570f791b16ecba74"><div class="ttname"><a href="HybridFileHeap_8h.html#aadbb072412db89c1570f791b16ecba74">hybridFileCreateHeap</a></div><div class="ttdeci">STATUS hybridFileCreateHeap(PHeap, UINT32, PCHAR, PHybridFileHeap *)</div><div class="ttdef"><b>Definition:</b> HybridFileHeap.c:20</div></div>
+<div class="ttc" id="aHybridFileHeap_8h_html_ade60105fcae09ddfab2c669da73b9288"><div class="ttname"><a href="HybridFileHeap_8h.html#ade60105fcae09ddfab2c669da73b9288">DEFINE_HEAP_UNMAP</a></div><div class="ttdeci">DEFINE_HEAP_UNMAP(hybridFileHeapUnmap)</div><div class="ttdef"><b>Definition:</b> HybridFileHeap.c:453</div></div>
+<div class="ttc" id="aHybridFileHeap_8h_html_adf7fef17929b1365758586a33906b212"><div class="ttname"><a href="HybridFileHeap_8h.html#adf7fef17929b1365758586a33906b212">DEFINE_RELEASE_HEAP</a></div><div class="ttdeci">DEFINE_RELEASE_HEAP(hybridFileHeapRelease)</div><div class="ttdef"><b>Definition:</b> HybridFileHeap.c:143</div></div>
 <div class="ttc" id="astructBaseHeap_html"><div class="ttname"><a href="structBaseHeap.html">BaseHeap</a></div><div class="ttdef"><b>Definition:</b> Include_i.h:123</div></div>
 <div class="ttc" id="astructHeap_html"><div class="ttname"><a href="structHeap.html">Heap</a></div><div class="ttdef"><b>Definition:</b> Include.h:92</div></div>
 <div class="ttc" id="astructHybridFileHeap_html"><div class="ttname"><a href="structHybridFileHeap.html">HybridFileHeap</a></div><div class="ttdef"><b>Definition:</b> HybridFileHeap.h:35</div></div>
-<div class="ttc" id="astructHybridFileHeap_html_a19ab56505057ff003588a2d66abf9f61"><div class="ttname"><a href="structHybridFileHeap.html#a19ab56505057ff003588a2d66abf9f61">HybridFileHeap::handleNum</a></div><div class="ttdeci">UINT32 handleNum</div><div class="ttdef"><b>Definition:</b> HybridFileHeap.h:54</div></div>
-<div class="ttc" id="astructHybridFileHeap_html_a3225ef75ec4063dce459e5bbcfb1e1a9"><div class="ttname"><a href="structHybridFileHeap.html#a3225ef75ec4063dce459e5bbcfb1e1a9">HybridFileHeap::heap</a></div><div class="ttdeci">BaseHeap heap</div><div class="ttdef"><b>Definition:</b> HybridFileHeap.h:39</div></div>
-<div class="ttc" id="astructHybridFileHeap_html_ae490db586f5eab2ceba941dc811ef415"><div class="ttname"><a href="structHybridFileHeap.html#ae490db586f5eab2ceba941dc811ef415">HybridFileHeap::spillRatio</a></div><div class="ttdeci">DOUBLE spillRatio</div><div class="ttdef"><b>Definition:</b> HybridFileHeap.h:44</div></div>
-<div class="ttc" id="astructHybridFileHeap_html_aecd6dc340a8dd538e68cd803efb60fbd"><div class="ttname"><a href="structHybridFileHeap.html#aecd6dc340a8dd538e68cd803efb60fbd">HybridFileHeap::pMemHeap</a></div><div class="ttdeci">PBaseHeap pMemHeap</div><div class="ttdef"><b>Definition:</b> HybridFileHeap.h:59</div></div>
+<div class="ttc" id="astructHybridFileHeap_html_a3c9f4bd78c691211b281ee558690e138"><div class="ttname"><a href="structHybridFileHeap.html#a3c9f4bd78c691211b281ee558690e138">HybridFileHeap::pMemHeap</a></div><div class="ttdeci">PBaseHeap pMemHeap</div><div class="ttdef"><b>Definition:</b> HybridFileHeap.h:59</div></div>
+<div class="ttc" id="astructHybridFileHeap_html_a5b7dbb80dd64e3d7f6e516f9ffa9f00a"><div class="ttname"><a href="structHybridFileHeap.html#a5b7dbb80dd64e3d7f6e516f9ffa9f00a">HybridFileHeap::heap</a></div><div class="ttdeci">BaseHeap heap</div><div class="ttdef"><b>Definition:</b> HybridFileHeap.h:39</div></div>
+<div class="ttc" id="astructHybridFileHeap_html_a7c48654f7fa6a927b6eb5bdce37ed9a0"><div class="ttname"><a href="structHybridFileHeap.html#a7c48654f7fa6a927b6eb5bdce37ed9a0">HybridFileHeap::spillRatio</a></div><div class="ttdeci">DOUBLE spillRatio</div><div class="ttdef"><b>Definition:</b> HybridFileHeap.h:44</div></div>
+<div class="ttc" id="astructHybridFileHeap_html_ac7cb39c0c2809823ab06a927291282dc"><div class="ttname"><a href="structHybridFileHeap.html#ac7cb39c0c2809823ab06a927291282dc">HybridFileHeap::handleNum</a></div><div class="ttdeci">UINT32 handleNum</div><div class="ttdef"><b>Definition:</b> HybridFileHeap.h:54</div></div>
+<div class="ttc" id="autils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h_html_a7172b6fcd21bf2b55afde257882013c5"><div class="ttname"><a href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a7172b6fcd21bf2b55afde257882013c5">DIR_ENTRY_TYPES</a></div><div class="ttdeci">DIR_ENTRY_TYPES</div><div class="ttdef"><b>Definition:</b> Include.h:248</div></div>
+<div class="ttc" id="autils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h_html_abdd33f362ae3bbdacb5de76473aa8a2f"><div class="ttname"><a href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#abdd33f362ae3bbdacb5de76473aa8a2f">MAX_PATH_LEN</a></div><div class="ttdeci">#define MAX_PATH_LEN</div><div class="ttdef"><b>Definition:</b> Include.h:19</div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c4d22fc0e4736089ffe45cb281f7e16f.html">heap</a></li><li class="navelem"><a class="el" href="dir_0dbdd4b98286c9c70a81bbc1f422dcfa.html">src</a></li><li class="navelem"><a class="el" href="HybridFileHeap_8h.html">HybridFileHeap.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +28,7 @@
    <div id="projectname">Amazon Kinesis Video Streams PIC
    &#160;<span id="projectnumber">1.0.1</span>
    </div>
-   <div id="projectbrief">Platform Independent Code for Amazon Kinesis Video Streams.</div>
+   <div id="projectbrief">Platform independent code for Amazon Kinesis Video Streams</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('struct____StreamMetrics.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,110 +82,479 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="struct____StreamMetrics-members.html">List of all members</a>  </div>
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
 <div class="title">__StreamMetrics Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h_source.html">Include.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a2425f7d9d91ff53a0eaff7446661ba03"><td class="memItemLeft" align="right" valign="top"><a id="a2425f7d9d91ff53a0eaff7446661ba03"></a>
-UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>version</b></td></tr>
-<tr class="separator:a2425f7d9d91ff53a0eaff7446661ba03"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93778a62e8aaf45e14b0077960f98650"><td class="memItemLeft" align="right" valign="top"><a id="a93778a62e8aaf45e14b0077960f98650"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>currentViewDuration</b></td></tr>
-<tr class="separator:a93778a62e8aaf45e14b0077960f98650"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a539e8c3be84c6cc80126053f6fd4305e"><td class="memItemLeft" align="right" valign="top"><a id="a539e8c3be84c6cc80126053f6fd4305e"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>overallViewDuration</b></td></tr>
-<tr class="separator:a539e8c3be84c6cc80126053f6fd4305e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa447a67d8f908a8ce5c84df50a0d75fc"><td class="memItemLeft" align="right" valign="top"><a id="aa447a67d8f908a8ce5c84df50a0d75fc"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>currentViewSize</b></td></tr>
-<tr class="separator:aa447a67d8f908a8ce5c84df50a0d75fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a313193e594e980f3a9f97f0e6279b2"><td class="memItemLeft" align="right" valign="top"><a id="a2a313193e594e980f3a9f97f0e6279b2"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>overallViewSize</b></td></tr>
-<tr class="separator:a2a313193e594e980f3a9f97f0e6279b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d37a79ac1ce711bc0dfe92e37cb9434"><td class="memItemLeft" align="right" valign="top"><a id="a8d37a79ac1ce711bc0dfe92e37cb9434"></a>
-DOUBLE&#160;</td><td class="memItemRight" valign="bottom"><b>currentFrameRate</b></td></tr>
-<tr class="separator:a8d37a79ac1ce711bc0dfe92e37cb9434"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c63bb36dfc0fc4585efb5c7a40fdb4c"><td class="memItemLeft" align="right" valign="top"><a id="a8c63bb36dfc0fc4585efb5c7a40fdb4c"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>currentTransferRate</b></td></tr>
-<tr class="separator:a8c63bb36dfc0fc4585efb5c7a40fdb4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abffa5015a68cc653205eac87bb446812"><td class="memItemLeft" align="right" valign="top"><a id="abffa5015a68cc653205eac87bb446812"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>uptime</b></td></tr>
-<tr class="separator:abffa5015a68cc653205eac87bb446812"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb731a9cd66dcbe2ceb7a43d706c9b10"><td class="memItemLeft" align="right" valign="top"><a id="abb731a9cd66dcbe2ceb7a43d706c9b10"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>transferredBytes</b></td></tr>
-<tr class="separator:abb731a9cd66dcbe2ceb7a43d706c9b10"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92cbe5b5ae206a1558f42f1fe3856a56"><td class="memItemLeft" align="right" valign="top"><a id="a92cbe5b5ae206a1558f42f1fe3856a56"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>totalSessions</b></td></tr>
-<tr class="separator:a92cbe5b5ae206a1558f42f1fe3856a56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abee985ea9d296343a2da04d48a665319"><td class="memItemLeft" align="right" valign="top"><a id="abee985ea9d296343a2da04d48a665319"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>totalActiveSessions</b></td></tr>
-<tr class="separator:abee985ea9d296343a2da04d48a665319"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:accdea054e5268f5afd4d729f2e5b2eaf"><td class="memItemLeft" align="right" valign="top"><a id="accdea054e5268f5afd4d729f2e5b2eaf"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>avgSessionDuration</b></td></tr>
-<tr class="separator:accdea054e5268f5afd4d729f2e5b2eaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1d6e339caca72a0e806c5c1f10958ef"><td class="memItemLeft" align="right" valign="top"><a id="ae1d6e339caca72a0e806c5c1f10958ef"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>bufferedAcks</b></td></tr>
-<tr class="separator:ae1d6e339caca72a0e806c5c1f10958ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11ec34d38d0be8669e2c89e636f2a257"><td class="memItemLeft" align="right" valign="top"><a id="a11ec34d38d0be8669e2c89e636f2a257"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>receivedAcks</b></td></tr>
-<tr class="separator:a11ec34d38d0be8669e2c89e636f2a257"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1da83fa6ac5d967240de17694d73f7c"><td class="memItemLeft" align="right" valign="top"><a id="af1da83fa6ac5d967240de17694d73f7c"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>persistedAcks</b></td></tr>
-<tr class="separator:af1da83fa6ac5d967240de17694d73f7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a873bd50d66b8bbb10a6c6f6bec805438"><td class="memItemLeft" align="right" valign="top"><a id="a873bd50d66b8bbb10a6c6f6bec805438"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>errorAcks</b></td></tr>
-<tr class="separator:a873bd50d66b8bbb10a6c6f6bec805438"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc4ab3d5eb4e274ffc23d13275c72ea4"><td class="memItemLeft" align="right" valign="top"><a id="adc4ab3d5eb4e274ffc23d13275c72ea4"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>droppedFrames</b></td></tr>
-<tr class="separator:adc4ab3d5eb4e274ffc23d13275c72ea4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60527e23a0b7b316905ac3f230ecd445"><td class="memItemLeft" align="right" valign="top"><a id="a60527e23a0b7b316905ac3f230ecd445"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>droppedFragments</b></td></tr>
-<tr class="separator:a60527e23a0b7b316905ac3f230ecd445"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef2aaa22372f565a5efb0ba5b86d5eeb"><td class="memItemLeft" align="right" valign="top"><a id="aef2aaa22372f565a5efb0ba5b86d5eeb"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>skippedFrames</b></td></tr>
-<tr class="separator:aef2aaa22372f565a5efb0ba5b86d5eeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d37c5f4d99dc5e9fabe1b6a171249bc"><td class="memItemLeft" align="right" valign="top"><a id="a5d37c5f4d99dc5e9fabe1b6a171249bc"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>storagePressures</b></td></tr>
-<tr class="separator:a5d37c5f4d99dc5e9fabe1b6a171249bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a631242557130f4be6b708fef7c42cc02"><td class="memItemLeft" align="right" valign="top"><a id="a631242557130f4be6b708fef7c42cc02"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>latencyPressures</b></td></tr>
-<tr class="separator:a631242557130f4be6b708fef7c42cc02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b8e86d5ba6279b468613fb556c44fd9"><td class="memItemLeft" align="right" valign="top"><a id="a5b8e86d5ba6279b468613fb556c44fd9"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>bufferPressures</b></td></tr>
-<tr class="separator:a5b8e86d5ba6279b468613fb556c44fd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea62988f5aab1495343f2ef7d59e0a05"><td class="memItemLeft" align="right" valign="top"><a id="aea62988f5aab1495343f2ef7d59e0a05"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>staleEvents</b></td></tr>
-<tr class="separator:aea62988f5aab1495343f2ef7d59e0a05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60cd95585d2feaf6a4ee301ddee122b3"><td class="memItemLeft" align="right" valign="top"><a id="a60cd95585d2feaf6a4ee301ddee122b3"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>putFrameErrors</b></td></tr>
-<tr class="separator:a60cd95585d2feaf6a4ee301ddee122b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aedb9b51d1dae2e154e0ad1c42b3ee067"><td class="memItemLeft" align="right" valign="top"><a id="aedb9b51d1dae2e154e0ad1c42b3ee067"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>cplApiCallLatency</b></td></tr>
-<tr class="separator:aedb9b51d1dae2e154e0ad1c42b3ee067"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a099ca4e4cc1618b95a07b21cf113cbeb"><td class="memItemLeft" align="right" valign="top"><a id="a099ca4e4cc1618b95a07b21cf113cbeb"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>dataApiCallLatency</b></td></tr>
-<tr class="separator:a099ca4e4cc1618b95a07b21cf113cbeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5408133dbdf93299ab1443396ea00553"><td class="memItemLeft" align="right" valign="top"><a id="a5408133dbdf93299ab1443396ea00553"></a>
-DOUBLE&#160;</td><td class="memItemRight" valign="bottom"><b>elementaryFrameRate</b></td></tr>
-<tr class="separator:a5408133dbdf93299ab1443396ea00553"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9345bd604cf0c3f4588d7f389cb0aa7"><td class="memItemLeft" align="right" valign="top"><a id="af9345bd604cf0c3f4588d7f389cb0aa7"></a>
-UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>streamApiCallRetryCount</b></td></tr>
-<tr class="separator:af9345bd604cf0c3f4588d7f389cb0aa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+Data Fields</h2></td></tr>
+<tr class="memitem:a8ffac79cdfb8a2da19ee271752749738"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StreamMetrics.html#a8ffac79cdfb8a2da19ee271752749738">version</a></td></tr>
+<tr class="separator:a8ffac79cdfb8a2da19ee271752749738"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeaf5d168bd6115043589cd18136d0609"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StreamMetrics.html#aeaf5d168bd6115043589cd18136d0609">currentViewDuration</a></td></tr>
+<tr class="separator:aeaf5d168bd6115043589cd18136d0609"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e908236b3e60f3c46a4c6fc50a6bac2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StreamMetrics.html#a2e908236b3e60f3c46a4c6fc50a6bac2">overallViewDuration</a></td></tr>
+<tr class="separator:a2e908236b3e60f3c46a4c6fc50a6bac2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa48eadc540a47912348948b8d1f7e2f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StreamMetrics.html#aa48eadc540a47912348948b8d1f7e2f9">currentViewSize</a></td></tr>
+<tr class="separator:aa48eadc540a47912348948b8d1f7e2f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ddd4f4d146cf969069b40d22bbc7aa7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StreamMetrics.html#a6ddd4f4d146cf969069b40d22bbc7aa7">overallViewSize</a></td></tr>
+<tr class="separator:a6ddd4f4d146cf969069b40d22bbc7aa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a683480de3531b1278f31d29401033528"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#aeb90fd78c942591ef3a935cf98baf4f8">DOUBLE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StreamMetrics.html#a683480de3531b1278f31d29401033528">currentFrameRate</a></td></tr>
+<tr class="separator:a683480de3531b1278f31d29401033528"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a865d4f6c0c84b6aec603531e7ae3315f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StreamMetrics.html#a865d4f6c0c84b6aec603531e7ae3315f">currentTransferRate</a></td></tr>
+<tr class="separator:a865d4f6c0c84b6aec603531e7ae3315f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a347ef33d5077efb32fdc06d1b69e46e3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StreamMetrics.html#a347ef33d5077efb32fdc06d1b69e46e3">uptime</a></td></tr>
+<tr class="separator:a347ef33d5077efb32fdc06d1b69e46e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac70c837cf1d74fd10f88fb6b648cddbb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StreamMetrics.html#ac70c837cf1d74fd10f88fb6b648cddbb">transferredBytes</a></td></tr>
+<tr class="separator:ac70c837cf1d74fd10f88fb6b648cddbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa350f5500bd85f94a54569796b31fb90"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StreamMetrics.html#aa350f5500bd85f94a54569796b31fb90">totalSessions</a></td></tr>
+<tr class="separator:aa350f5500bd85f94a54569796b31fb90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5459f2cec2033d7bc7c9e09ed458021a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StreamMetrics.html#a5459f2cec2033d7bc7c9e09ed458021a">totalActiveSessions</a></td></tr>
+<tr class="separator:a5459f2cec2033d7bc7c9e09ed458021a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26b11060be17cc4ab663d4bbd99446d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StreamMetrics.html#a26b11060be17cc4ab663d4bbd99446d8">avgSessionDuration</a></td></tr>
+<tr class="separator:a26b11060be17cc4ab663d4bbd99446d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac47d0dcc62a079877e25d421ad6ca2f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StreamMetrics.html#ac47d0dcc62a079877e25d421ad6ca2f9">bufferedAcks</a></td></tr>
+<tr class="separator:ac47d0dcc62a079877e25d421ad6ca2f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44294b7c3f5f3286b33eca03c8377cd3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StreamMetrics.html#a44294b7c3f5f3286b33eca03c8377cd3">receivedAcks</a></td></tr>
+<tr class="separator:a44294b7c3f5f3286b33eca03c8377cd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9300c65b0b31cf9a8b02a323420cd803"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StreamMetrics.html#a9300c65b0b31cf9a8b02a323420cd803">persistedAcks</a></td></tr>
+<tr class="separator:a9300c65b0b31cf9a8b02a323420cd803"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b0c9b6aaf4be6e99e4ca29e82f52b42"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StreamMetrics.html#a3b0c9b6aaf4be6e99e4ca29e82f52b42">errorAcks</a></td></tr>
+<tr class="separator:a3b0c9b6aaf4be6e99e4ca29e82f52b42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a966d7593e42771d214239ff4054a51b0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StreamMetrics.html#a966d7593e42771d214239ff4054a51b0">droppedFrames</a></td></tr>
+<tr class="separator:a966d7593e42771d214239ff4054a51b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea8adba6cefb3c5585226fe28b6dfca0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StreamMetrics.html#aea8adba6cefb3c5585226fe28b6dfca0">droppedFragments</a></td></tr>
+<tr class="separator:aea8adba6cefb3c5585226fe28b6dfca0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb309a83f2621ebd34265bb543d2f147"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StreamMetrics.html#abb309a83f2621ebd34265bb543d2f147">skippedFrames</a></td></tr>
+<tr class="separator:abb309a83f2621ebd34265bb543d2f147"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01be24502e3a55f9729c16486d31aabc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StreamMetrics.html#a01be24502e3a55f9729c16486d31aabc">storagePressures</a></td></tr>
+<tr class="separator:a01be24502e3a55f9729c16486d31aabc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51a55799dead7a801e66143b5cfa9ff9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StreamMetrics.html#a51a55799dead7a801e66143b5cfa9ff9">latencyPressures</a></td></tr>
+<tr class="separator:a51a55799dead7a801e66143b5cfa9ff9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc8c5f8f04e8c98a8559c292b7031574"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StreamMetrics.html#adc8c5f8f04e8c98a8559c292b7031574">bufferPressures</a></td></tr>
+<tr class="separator:adc8c5f8f04e8c98a8559c292b7031574"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd9244c57e889b0d2f20ab2211efbfc2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StreamMetrics.html#afd9244c57e889b0d2f20ab2211efbfc2">staleEvents</a></td></tr>
+<tr class="separator:afd9244c57e889b0d2f20ab2211efbfc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a1ce057db24cc02afd85ccbd7617aaa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StreamMetrics.html#a6a1ce057db24cc02afd85ccbd7617aaa">putFrameErrors</a></td></tr>
+<tr class="separator:a6a1ce057db24cc02afd85ccbd7617aaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9f2f303075c0935d6971ba5c72ddfc9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StreamMetrics.html#af9f2f303075c0935d6971ba5c72ddfc9">cplApiCallLatency</a></td></tr>
+<tr class="separator:af9f2f303075c0935d6971ba5c72ddfc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a712e3c8f123fc393dc8ab74049977e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StreamMetrics.html#a8a712e3c8f123fc393dc8ab74049977e">dataApiCallLatency</a></td></tr>
+<tr class="separator:a8a712e3c8f123fc393dc8ab74049977e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2479385648ee37fce2edda5a163b183"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#aeb90fd78c942591ef3a935cf98baf4f8">DOUBLE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StreamMetrics.html#ac2479385648ee37fce2edda5a163b183">elementaryFrameRate</a></td></tr>
+<tr class="separator:ac2479385648ee37fce2edda5a163b183"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a169435cf73c9e306b35c7b043bcc7c53"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StreamMetrics.html#a169435cf73c9e306b35c7b043bcc7c53">streamApiCallRetryCount</a></td></tr>
+<tr class="separator:a169435cf73c9e306b35c7b043bcc7c53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="a26b11060be17cc4ab663d4bbd99446d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26b11060be17cc4ab663d4bbd99446d8">&#9670;&nbsp;</a></span>avgSessionDuration</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> avgSessionDuration</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac47d0dcc62a079877e25d421ad6ca2f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac47d0dcc62a079877e25d421ad6ca2f9">&#9670;&nbsp;</a></span>bufferedAcks</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> bufferedAcks</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adc8c5f8f04e8c98a8559c292b7031574"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc8c5f8f04e8c98a8559c292b7031574">&#9670;&nbsp;</a></span>bufferPressures</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> bufferPressures</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af9f2f303075c0935d6971ba5c72ddfc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9f2f303075c0935d6971ba5c72ddfc9">&#9670;&nbsp;</a></span>cplApiCallLatency</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> cplApiCallLatency</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a683480de3531b1278f31d29401033528"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a683480de3531b1278f31d29401033528">&#9670;&nbsp;</a></span>currentFrameRate</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#aeb90fd78c942591ef3a935cf98baf4f8">DOUBLE</a> currentFrameRate</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a865d4f6c0c84b6aec603531e7ae3315f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a865d4f6c0c84b6aec603531e7ae3315f">&#9670;&nbsp;</a></span>currentTransferRate</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> currentTransferRate</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aeaf5d168bd6115043589cd18136d0609"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeaf5d168bd6115043589cd18136d0609">&#9670;&nbsp;</a></span>currentViewDuration</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> currentViewDuration</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa48eadc540a47912348948b8d1f7e2f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa48eadc540a47912348948b8d1f7e2f9">&#9670;&nbsp;</a></span>currentViewSize</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> currentViewSize</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8a712e3c8f123fc393dc8ab74049977e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a712e3c8f123fc393dc8ab74049977e">&#9670;&nbsp;</a></span>dataApiCallLatency</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> dataApiCallLatency</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aea8adba6cefb3c5585226fe28b6dfca0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea8adba6cefb3c5585226fe28b6dfca0">&#9670;&nbsp;</a></span>droppedFragments</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> droppedFragments</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a966d7593e42771d214239ff4054a51b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a966d7593e42771d214239ff4054a51b0">&#9670;&nbsp;</a></span>droppedFrames</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> droppedFrames</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac2479385648ee37fce2edda5a163b183"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2479385648ee37fce2edda5a163b183">&#9670;&nbsp;</a></span>elementaryFrameRate</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#aeb90fd78c942591ef3a935cf98baf4f8">DOUBLE</a> elementaryFrameRate</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3b0c9b6aaf4be6e99e4ca29e82f52b42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b0c9b6aaf4be6e99e4ca29e82f52b42">&#9670;&nbsp;</a></span>errorAcks</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> errorAcks</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a51a55799dead7a801e66143b5cfa9ff9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51a55799dead7a801e66143b5cfa9ff9">&#9670;&nbsp;</a></span>latencyPressures</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> latencyPressures</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2e908236b3e60f3c46a4c6fc50a6bac2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e908236b3e60f3c46a4c6fc50a6bac2">&#9670;&nbsp;</a></span>overallViewDuration</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> overallViewDuration</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6ddd4f4d146cf969069b40d22bbc7aa7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ddd4f4d146cf969069b40d22bbc7aa7">&#9670;&nbsp;</a></span>overallViewSize</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> overallViewSize</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9300c65b0b31cf9a8b02a323420cd803"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9300c65b0b31cf9a8b02a323420cd803">&#9670;&nbsp;</a></span>persistedAcks</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> persistedAcks</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6a1ce057db24cc02afd85ccbd7617aaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a1ce057db24cc02afd85ccbd7617aaa">&#9670;&nbsp;</a></span>putFrameErrors</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> putFrameErrors</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a44294b7c3f5f3286b33eca03c8377cd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44294b7c3f5f3286b33eca03c8377cd3">&#9670;&nbsp;</a></span>receivedAcks</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> receivedAcks</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abb309a83f2621ebd34265bb543d2f147"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb309a83f2621ebd34265bb543d2f147">&#9670;&nbsp;</a></span>skippedFrames</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> skippedFrames</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afd9244c57e889b0d2f20ab2211efbfc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd9244c57e889b0d2f20ab2211efbfc2">&#9670;&nbsp;</a></span>staleEvents</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> staleEvents</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a01be24502e3a55f9729c16486d31aabc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01be24502e3a55f9729c16486d31aabc">&#9670;&nbsp;</a></span>storagePressures</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> storagePressures</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a169435cf73c9e306b35c7b043bcc7c53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a169435cf73c9e306b35c7b043bcc7c53">&#9670;&nbsp;</a></span>streamApiCallRetryCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> streamApiCallRetryCount</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5459f2cec2033d7bc7c9e09ed458021a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5459f2cec2033d7bc7c9e09ed458021a">&#9670;&nbsp;</a></span>totalActiveSessions</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> totalActiveSessions</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa350f5500bd85f94a54569796b31fb90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa350f5500bd85f94a54569796b31fb90">&#9670;&nbsp;</a></span>totalSessions</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> totalSessions</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac70c837cf1d74fd10f88fb6b648cddbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac70c837cf1d74fd10f88fb6b648cddbb">&#9670;&nbsp;</a></span>transferredBytes</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> transferredBytes</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a347ef33d5077efb32fdc06d1b69e46e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a347ef33d5077efb32fdc06d1b69e46e3">&#9670;&nbsp;</a></span>uptime</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> uptime</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8ffac79cdfb8a2da19ee271752749738"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ffac79cdfb8a2da19ee271752749738">&#9670;&nbsp;</a></span>version</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> version</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>src/client/include/com/amazonaws/kinesis/video/client/<a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h_source.html">Include.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="struct____StreamMetrics.html">__StreamMetrics</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

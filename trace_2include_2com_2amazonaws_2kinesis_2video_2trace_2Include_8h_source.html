@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +28,7 @@
    <div id="projectname">Amazon Kinesis Video Streams PIC
    &#160;<span id="projectnumber">1.0.1</span>
    </div>
-   <div id="projectbrief">Platform Independent Code for Amazon Kinesis Video Streams.</div>
+   <div id="projectbrief">Platform independent code for Amazon Kinesis Video Streams</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,17 +82,12 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_25ba0ccffb7c494f6d8d3b9b0f08d621.html">trace</a></li><li class="navelem"><a class="el" href="dir_6d9ec63329139beb0d8b272d75a07284.html">include</a></li><li class="navelem"><a class="el" href="dir_c13379278057c2995e0be386b5990e35.html">com</a></li><li class="navelem"><a class="el" href="dir_5307f90c959486944eee8d7cd6389844.html">amazonaws</a></li><li class="navelem"><a class="el" href="dir_98a12658b258c97a8a3969893a6aa0f6.html">kinesis</a></li><li class="navelem"><a class="el" href="dir_43c1ba7be3f43362f6087235a8532c8b.html">video</a></li><li class="navelem"><a class="el" href="dir_662cae0b847f2531bd7df845edb610a2.html">trace</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">Include.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<a href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#ifndef __TRACE_PROFILER_INCLUDE_H__</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#define __TRACE_PROFILER_INCLUDE_H__</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
@@ -80,89 +96,125 @@ $(function() {
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;com/amazonaws/kinesis/video/common/CommonDefs.h&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;com/amazonaws/kinesis/video/common/PlatformUtils.h&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="CommonDefs_8h.html">com/amazonaws/kinesis/video/common/CommonDefs.h</a>&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="PlatformUtils_8h.html">com/amazonaws/kinesis/video/common/PlatformUtils.h</a>&gt;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">typedef</span> UINT64 TRACE_PROFILER_HANDLE;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">typedef</span> TRACE_PROFILER_HANDLE* PTRACE_PROFILER_HANDLE;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a45f4790b235576eb55ce367e6d09c3ec">   18</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> <a class="code" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a45f4790b235576eb55ce367e6d09c3ec">TRACE_PROFILER_HANDLE</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a4cee12087618b1556824b908b2e648d5">   19</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a45f4790b235576eb55ce367e6d09c3ec">TRACE_PROFILER_HANDLE</a>* <a class="code" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a4cee12087618b1556824b908b2e648d5">PTRACE_PROFILER_HANDLE</a>;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">typedef</span> UINT64 TRACE_HANDLE;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">typedef</span> TRACE_HANDLE* PTRACE_HANDLE;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a4620d7466da7c92313a5ec245cbf0f94">   21</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> <a class="code" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a4620d7466da7c92313a5ec245cbf0f94">TRACE_HANDLE</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a1ae6e5ccd0cc777674cdef10a8e0b48a">   22</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a4620d7466da7c92313a5ec245cbf0f94">TRACE_HANDLE</a>* <a class="code" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a1ae6e5ccd0cc777674cdef10a8e0b48a">PTRACE_HANDLE</a>;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#ifndef INVALID_TRACE_HANDLE_VALUE</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#define INVALID_TRACE_HANDLE_VALUE ((TRACE_HANDLE) MAX_UINT64)</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a5461a67d238def5d7e82db17ccdec7de">   28</a></span>&#160;<span class="preprocessor">#define INVALID_TRACE_HANDLE_VALUE ((TRACE_HANDLE) MAX_UINT64)</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#ifndef IS_VALID_TRACE_HANDLE</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#define IS_VALID_TRACE_HANDLE(h) ((h) != INVALID_TRACE_HANDLE_VALUE)</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a3f758abc26802dbc72e0aeb752557c16">   32</a></span>&#160;<span class="preprocessor">#define IS_VALID_TRACE_HANDLE(h) ((h) != INVALID_TRACE_HANDLE_VALUE)</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#ifndef INVALID_TRACE_PROFILER_HANDLE</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#define INVALID_TRACE_PROFILER_HANDLE ((TRACE_PROFILER_HANDLE) INVALID_PIC_HANDLE_VALUE)</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a3afc5381f534dac8c36b57c3f4efb6e1">   39</a></span>&#160;<span class="preprocessor">#define INVALID_TRACE_PROFILER_HANDLE ((TRACE_PROFILER_HANDLE) INVALID_PIC_HANDLE_VALUE)</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#ifndef IS_VALID_TRACE_PROFILER_HANDLE</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#define IS_VALID_TRACE_PROFILER_HANDLE(h) ((h) != INVALID_TRACE_PROFILER_HANDLE)</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a9593951f0796a701acf1497bf63e25d0">   43</a></span>&#160;<span class="preprocessor">#define IS_VALID_TRACE_PROFILER_HANDLE(h) ((h) != INVALID_TRACE_PROFILER_HANDLE)</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    PROFILER_FLAGS_NONE = 0x0,</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#af3e9af12f519019a86377d1012efecb4">   49</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#af3e9af12f519019a86377d1012efecb4a220871813adef422311c4f8b7e8cea9f">   53</a></span>&#160;    <a class="code" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#af3e9af12f519019a86377d1012efecb4a220871813adef422311c4f8b7e8cea9f">PROFILER_FLAGS_NONE</a> = 0x0,</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    FLAGS_USE_AIV_TRACE_PROFILER_FORMAT = 0x1 &lt;&lt; 0,</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#af3e9af12f519019a86377d1012efecb4a2054d92b1594fcda6e852276d262fe50">   58</a></span>&#160;    <a class="code" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#af3e9af12f519019a86377d1012efecb4a2054d92b1594fcda6e852276d262fe50">FLAGS_USE_AIV_TRACE_PROFILER_FORMAT</a> = 0x1 &lt;&lt; 0,</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;} TRACE_PROFILER_BEHAVIOR_FLAGS;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;} <a class="code" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#af3e9af12f519019a86377d1012efecb4">TRACE_PROFILER_BEHAVIOR_FLAGS</a>;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#define PROFILER_FORMAT_MASK (UINT32) FLAGS_USE_AIV_TRACE_PROFILER_FORMAT</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a22a654f5a23d933c739e8c58f785eee8">   65</a></span>&#160;<span class="preprocessor">#define PROFILER_FORMAT_MASK (UINT32) FLAGS_USE_AIV_TRACE_PROFILER_FORMAT</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    TRACE_LEVEL_REPORT_ALWAYS = 0,</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    TRACE_LEVEL_CRITICAL,</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    TRACE_LEVEL_INFO,</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    TRACE_LEVEL_DEBUG,</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    TRACE_LEVEL_VERBOSE,</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    TRACE_LEVEL_DISABLED = 0xFF</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;} TRACE_LEVEL;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a96a32cf9d791e8f32d210dd459cf52ac">   70</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a96a32cf9d791e8f32d210dd459cf52aca9877e220090ca56825ea00ff54afb641">   71</a></span>&#160;    <a class="code" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a96a32cf9d791e8f32d210dd459cf52aca9877e220090ca56825ea00ff54afb641">TRACE_LEVEL_REPORT_ALWAYS</a> = 0,</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a96a32cf9d791e8f32d210dd459cf52aca6eeb5dd7dc95e04f67f5ac0ffcf6e2f6">   72</a></span>&#160;    <a class="code" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a96a32cf9d791e8f32d210dd459cf52aca6eeb5dd7dc95e04f67f5ac0ffcf6e2f6">TRACE_LEVEL_CRITICAL</a>,</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a96a32cf9d791e8f32d210dd459cf52aca41b72d4353a5da594eea10c9c5d0aa47">   73</a></span>&#160;    <a class="code" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a96a32cf9d791e8f32d210dd459cf52aca41b72d4353a5da594eea10c9c5d0aa47">TRACE_LEVEL_INFO</a>,</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a96a32cf9d791e8f32d210dd459cf52acaf185bf9237bbd64e5705439844f5e2c4">   74</a></span>&#160;    <a class="code" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a96a32cf9d791e8f32d210dd459cf52acaf185bf9237bbd64e5705439844f5e2c4">TRACE_LEVEL_DEBUG</a>,</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a96a32cf9d791e8f32d210dd459cf52acaa0c8a277d0f950d5d2a520bc15aee59e">   75</a></span>&#160;    <a class="code" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a96a32cf9d791e8f32d210dd459cf52acaa0c8a277d0f950d5d2a520bc15aee59e">TRACE_LEVEL_VERBOSE</a>,</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a96a32cf9d791e8f32d210dd459cf52aca00ab9268723aa33b5a061e32c304a84b">TRACE_LEVEL_DISABLED</a> = 0xFF</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a96a32cf9d791e8f32d210dd459cf52aca00ab9268723aa33b5a061e32c304a84b">   77</a></span>&#160;} <a class="code" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a96a32cf9d791e8f32d210dd459cf52ac">TRACE_LEVEL</a>;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#define STATUS_TP_BASE             0x010100000</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#define STATUS_MIN_PROFILER_BUFFER STATUS_TP_BASE + 0x00000001</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a0f8a600568dbc7a682f3f08c56750ebc">   82</a></span>&#160;<span class="preprocessor">#define STATUS_TP_BASE             0x010100000</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a2e59c134bb1f679de5189e39d839e2e6">   83</a></span>&#160;<span class="preprocessor">#define STATUS_MIN_PROFILER_BUFFER STATUS_TP_BASE + 0x00000001</span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">// Forward declaration of the functions</span></div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword">typedef</span> STATUS (*TraceStartFunc)(TRACE_PROFILER_HANDLE, PCHAR, TRACE_LEVEL, PTRACE_HANDLE);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keyword">typedef</span> STATUS (*TraceStopFunc)(TRACE_PROFILER_HANDLE, TRACE_HANDLE);</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a78e297c10353e5e573d2d90a6cb85422">   91</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="CommonDefs_8h.html#a59279bee44f34d08b3cbf3a89fb0d8d9">STATUS</a> (*<a class="code" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a78e297c10353e5e573d2d90a6cb85422">TraceStartFunc</a>)(<a class="code" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a45f4790b235576eb55ce367e6d09c3ec">TRACE_PROFILER_HANDLE</a>, <a class="code" href="CommonDefs_8h.html#a6addcc52e2dfddf231bf3213859ae2bb">PCHAR</a>, <a class="code" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a96a32cf9d791e8f32d210dd459cf52ac">TRACE_LEVEL</a>, <a class="code" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a1ae6e5ccd0cc777674cdef10a8e0b48a">PTRACE_HANDLE</a>);</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a9aaa32e6502d5b1c49c92fa49c81cca0">   92</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="CommonDefs_8h.html#a59279bee44f34d08b3cbf3a89fb0d8d9">STATUS</a> (*<a class="code" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a9aaa32e6502d5b1c49c92fa49c81cca0">TraceStopFunc</a>)(<a class="code" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a45f4790b235576eb55ce367e6d09c3ec">TRACE_PROFILER_HANDLE</a>, <a class="code" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a4620d7466da7c92313a5ec245cbf0f94">TRACE_HANDLE</a>);</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#define DEFINE_TRACE_START(name)                                                                                                                     \</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#ad3fc1576821c615ced0ccf3a77af2476">   97</a></span>&#160;<span class="preprocessor">#define DEFINE_TRACE_START(name)                                                                                                                     \</span></div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">    STATUS name(TRACE_PROFILER_HANDLE traceProfilerHandle, PCHAR traceName, TRACE_LEVEL traceLevel, PTRACE_HANDLE pTraceHandle)</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#define DEFINE_TRACE_STOP(name) STATUS name(TRACE_PROFILER_HANDLE traceProfilerHandle, TRACE_HANDLE traceHandle)</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#af63259810f16b2774606b8c871c5b938">   99</a></span>&#160;<span class="preprocessor">#define DEFINE_TRACE_STOP(name) STATUS name(TRACE_PROFILER_HANDLE traceProfilerHandle, TRACE_HANDLE traceHandle)</span></div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">// Public functions</span></div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;PUBLIC_API STATUS profilerInitialize(UINT32 bufferSize, TRACE_LEVEL traceLevel, TRACE_PROFILER_BEHAVIOR_FLAGS behaviorFlags,</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                                     PTRACE_PROFILER_HANDLE pTraceProfilerHandle);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<a class="code" href="CommonDefs_8h.html#ab352e1e6ba62012b22ce69c5ef4ec3ee">PUBLIC_API</a> <a class="code" href="CommonDefs_8h.html#a59279bee44f34d08b3cbf3a89fb0d8d9">STATUS</a> <a class="code" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a3e5bcc95d197db9a52f9299e558963ff">profilerInitialize</a>(<a class="code" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> bufferSize, <a class="code" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a96a32cf9d791e8f32d210dd459cf52ac">TRACE_LEVEL</a> traceLevel, <a class="code" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#af3e9af12f519019a86377d1012efecb4">TRACE_PROFILER_BEHAVIOR_FLAGS</a> behaviorFlags,</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                                     <a class="code" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a4cee12087618b1556824b908b2e648d5">PTRACE_PROFILER_HANDLE</a> pTraceProfilerHandle);</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;PUBLIC_API STATUS profilerRelease(TRACE_PROFILER_HANDLE traceProfilerHandle);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<a class="code" href="CommonDefs_8h.html#ab352e1e6ba62012b22ce69c5ef4ec3ee">PUBLIC_API</a> <a class="code" href="CommonDefs_8h.html#a59279bee44f34d08b3cbf3a89fb0d8d9">STATUS</a> <a class="code" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#af53e1fe38fb5d798fdf9be436e067ec7">profilerRelease</a>(<a class="code" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a45f4790b235576eb55ce367e6d09c3ec">TRACE_PROFILER_HANDLE</a> traceProfilerHandle);</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;PUBLIC_API STATUS setProfilerLevel(TRACE_PROFILER_HANDLE traceProfilerHandle, TRACE_LEVEL traceLevel);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<a class="code" href="CommonDefs_8h.html#ab352e1e6ba62012b22ce69c5ef4ec3ee">PUBLIC_API</a> <a class="code" href="CommonDefs_8h.html#a59279bee44f34d08b3cbf3a89fb0d8d9">STATUS</a> <a class="code" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a41d2ec799768bd9962184b4a376e6f30">setProfilerLevel</a>(<a class="code" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a45f4790b235576eb55ce367e6d09c3ec">TRACE_PROFILER_HANDLE</a> traceProfilerHandle, <a class="code" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a96a32cf9d791e8f32d210dd459cf52ac">TRACE_LEVEL</a> traceLevel);</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;PUBLIC_API STATUS getFormattedTraceBuffer(TRACE_PROFILER_HANDLE traceProfilerHandle, PCHAR* ppBuffer, PUINT32 pBufferSize);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<a class="code" href="CommonDefs_8h.html#ab352e1e6ba62012b22ce69c5ef4ec3ee">PUBLIC_API</a> <a class="code" href="CommonDefs_8h.html#a59279bee44f34d08b3cbf3a89fb0d8d9">STATUS</a> <a class="code" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a8a097ed3c11336a8f5d7110ab77eb7ce">getFormattedTraceBuffer</a>(<a class="code" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a45f4790b235576eb55ce367e6d09c3ec">TRACE_PROFILER_HANDLE</a> traceProfilerHandle, <a class="code" href="CommonDefs_8h.html#a6addcc52e2dfddf231bf3213859ae2bb">PCHAR</a>* ppBuffer, <a class="code" href="CommonDefs_8h.html#a5846c7fc941449a20e4b5816635fdd31">PUINT32</a> pBufferSize);</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;PUBLIC_API STATUS freeTraceBuffer(PCHAR pBuffer);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<a class="code" href="CommonDefs_8h.html#ab352e1e6ba62012b22ce69c5ef4ec3ee">PUBLIC_API</a> <a class="code" href="CommonDefs_8h.html#a59279bee44f34d08b3cbf3a89fb0d8d9">STATUS</a> <a class="code" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a4f86368fddf416eef216981de7795911">freeTraceBuffer</a>(<a class="code" href="CommonDefs_8h.html#a6addcc52e2dfddf231bf3213859ae2bb">PCHAR</a> pBuffer);</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;PUBLIC_API DEFINE_TRACE_START(traceStart);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<a class="code" href="CommonDefs_8h.html#ab352e1e6ba62012b22ce69c5ef4ec3ee">PUBLIC_API</a> <a class="code" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#ad3fc1576821c615ced0ccf3a77af2476">DEFINE_TRACE_START</a>(traceStart);</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;PUBLIC_API DEFINE_TRACE_STOP(traceStop);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<a class="code" href="CommonDefs_8h.html#ab352e1e6ba62012b22ce69c5ef4ec3ee">PUBLIC_API</a> <a class="code" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#af63259810f16b2774606b8c871c5b938">DEFINE_TRACE_STOP</a>(traceStop);</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="preprocessor">#include &lt;com/amazonaws/kinesis/video/utils/Include.h&gt;</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html">com/amazonaws/kinesis/video/utils/Include.h</a>&gt;</span></div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;}</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// __TRACE_PROFILER_INCLUDE_H__</span></div>
+<div class="ttc" id="aCommonDefs_8h_html"><div class="ttname"><a href="CommonDefs_8h.html">CommonDefs.h</a></div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a0b39d6d754cb24c708b0f2bdbe88130e"><div class="ttname"><a href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a></div><div class="ttdeci">unsigned long UINT32</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:142</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a57be03562867144161c1bfee95ca8f7c"><div class="ttname"><a href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a></div><div class="ttdeci">unsigned long long UINT64</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:144</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a5846c7fc941449a20e4b5816635fdd31"><div class="ttname"><a href="CommonDefs_8h.html#a5846c7fc941449a20e4b5816635fdd31">PUINT32</a></div><div class="ttdeci">UINT32 * PUINT32</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:187</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a59279bee44f34d08b3cbf3a89fb0d8d9"><div class="ttname"><a href="CommonDefs_8h.html#a59279bee44f34d08b3cbf3a89fb0d8d9">STATUS</a></div><div class="ttdeci">#define STATUS</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:456</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a6addcc52e2dfddf231bf3213859ae2bb"><div class="ttname"><a href="CommonDefs_8h.html#a6addcc52e2dfddf231bf3213859ae2bb">PCHAR</a></div><div class="ttdeci">CHAR * PCHAR</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:180</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_ab352e1e6ba62012b22ce69c5ef4ec3ee"><div class="ttname"><a href="CommonDefs_8h.html#ab352e1e6ba62012b22ce69c5ef4ec3ee">PUBLIC_API</a></div><div class="ttdeci">#define PUBLIC_API</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:58</div></div>
+<div class="ttc" id="aPlatformUtils_8h_html"><div class="ttname"><a href="PlatformUtils_8h.html">PlatformUtils.h</a></div></div>
+<div class="ttc" id="atrace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h_html_a1ae6e5ccd0cc777674cdef10a8e0b48a"><div class="ttname"><a href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a1ae6e5ccd0cc777674cdef10a8e0b48a">PTRACE_HANDLE</a></div><div class="ttdeci">TRACE_HANDLE * PTRACE_HANDLE</div><div class="ttdef"><b>Definition:</b> Include.h:22</div></div>
+<div class="ttc" id="atrace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h_html_a3e5bcc95d197db9a52f9299e558963ff"><div class="ttname"><a href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a3e5bcc95d197db9a52f9299e558963ff">profilerInitialize</a></div><div class="ttdeci">PUBLIC_API STATUS profilerInitialize(UINT32 bufferSize, TRACE_LEVEL traceLevel, TRACE_PROFILER_BEHAVIOR_FLAGS behaviorFlags, PTRACE_PROFILER_HANDLE pTraceProfilerHandle)</div><div class="ttdef"><b>Definition:</b> TraceProfiler.c:11</div></div>
+<div class="ttc" id="atrace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h_html_a41d2ec799768bd9962184b4a376e6f30"><div class="ttname"><a href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a41d2ec799768bd9962184b4a376e6f30">setProfilerLevel</a></div><div class="ttdeci">PUBLIC_API STATUS setProfilerLevel(TRACE_PROFILER_HANDLE traceProfilerHandle, TRACE_LEVEL traceLevel)</div><div class="ttdef"><b>Definition:</b> TraceProfiler.c:93</div></div>
+<div class="ttc" id="atrace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h_html_a45f4790b235576eb55ce367e6d09c3ec"><div class="ttname"><a href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a45f4790b235576eb55ce367e6d09c3ec">TRACE_PROFILER_HANDLE</a></div><div class="ttdeci">UINT64 TRACE_PROFILER_HANDLE</div><div class="ttdef"><b>Definition:</b> Include.h:18</div></div>
+<div class="ttc" id="atrace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h_html_a4620d7466da7c92313a5ec245cbf0f94"><div class="ttname"><a href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a4620d7466da7c92313a5ec245cbf0f94">TRACE_HANDLE</a></div><div class="ttdeci">UINT64 TRACE_HANDLE</div><div class="ttdef"><b>Definition:</b> Include.h:21</div></div>
+<div class="ttc" id="atrace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h_html_a4cee12087618b1556824b908b2e648d5"><div class="ttname"><a href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a4cee12087618b1556824b908b2e648d5">PTRACE_PROFILER_HANDLE</a></div><div class="ttdeci">TRACE_PROFILER_HANDLE * PTRACE_PROFILER_HANDLE</div><div class="ttdef"><b>Definition:</b> Include.h:19</div></div>
+<div class="ttc" id="atrace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h_html_a4f86368fddf416eef216981de7795911"><div class="ttname"><a href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a4f86368fddf416eef216981de7795911">freeTraceBuffer</a></div><div class="ttdeci">PUBLIC_API STATUS freeTraceBuffer(PCHAR pBuffer)</div><div class="ttdef"><b>Definition:</b> TraceProfiler.c:191</div></div>
+<div class="ttc" id="atrace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h_html_a78e297c10353e5e573d2d90a6cb85422"><div class="ttname"><a href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a78e297c10353e5e573d2d90a6cb85422">TraceStartFunc</a></div><div class="ttdeci">STATUS(* TraceStartFunc)(TRACE_PROFILER_HANDLE, PCHAR, TRACE_LEVEL, PTRACE_HANDLE)</div><div class="ttdef"><b>Definition:</b> Include.h:91</div></div>
+<div class="ttc" id="atrace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h_html_a8a097ed3c11336a8f5d7110ab77eb7ce"><div class="ttname"><a href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a8a097ed3c11336a8f5d7110ab77eb7ce">getFormattedTraceBuffer</a></div><div class="ttdeci">PUBLIC_API STATUS getFormattedTraceBuffer(TRACE_PROFILER_HANDLE traceProfilerHandle, PCHAR *ppBuffer, PUINT32 pBufferSize)</div><div class="ttdef"><b>Definition:</b> TraceProfiler.c:126</div></div>
+<div class="ttc" id="atrace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h_html_a96a32cf9d791e8f32d210dd459cf52ac"><div class="ttname"><a href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a96a32cf9d791e8f32d210dd459cf52ac">TRACE_LEVEL</a></div><div class="ttdeci">TRACE_LEVEL</div><div class="ttdef"><b>Definition:</b> Include.h:70</div></div>
+<div class="ttc" id="atrace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h_html_a96a32cf9d791e8f32d210dd459cf52aca00ab9268723aa33b5a061e32c304a84b"><div class="ttname"><a href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a96a32cf9d791e8f32d210dd459cf52aca00ab9268723aa33b5a061e32c304a84b">TRACE_LEVEL_DISABLED</a></div><div class="ttdeci">@ TRACE_LEVEL_DISABLED</div><div class="ttdef"><b>Definition:</b> Include.h:76</div></div>
+<div class="ttc" id="atrace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h_html_a96a32cf9d791e8f32d210dd459cf52aca41b72d4353a5da594eea10c9c5d0aa47"><div class="ttname"><a href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a96a32cf9d791e8f32d210dd459cf52aca41b72d4353a5da594eea10c9c5d0aa47">TRACE_LEVEL_INFO</a></div><div class="ttdeci">@ TRACE_LEVEL_INFO</div><div class="ttdef"><b>Definition:</b> Include.h:73</div></div>
+<div class="ttc" id="atrace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h_html_a96a32cf9d791e8f32d210dd459cf52aca6eeb5dd7dc95e04f67f5ac0ffcf6e2f6"><div class="ttname"><a href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a96a32cf9d791e8f32d210dd459cf52aca6eeb5dd7dc95e04f67f5ac0ffcf6e2f6">TRACE_LEVEL_CRITICAL</a></div><div class="ttdeci">@ TRACE_LEVEL_CRITICAL</div><div class="ttdef"><b>Definition:</b> Include.h:72</div></div>
+<div class="ttc" id="atrace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h_html_a96a32cf9d791e8f32d210dd459cf52aca9877e220090ca56825ea00ff54afb641"><div class="ttname"><a href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a96a32cf9d791e8f32d210dd459cf52aca9877e220090ca56825ea00ff54afb641">TRACE_LEVEL_REPORT_ALWAYS</a></div><div class="ttdeci">@ TRACE_LEVEL_REPORT_ALWAYS</div><div class="ttdef"><b>Definition:</b> Include.h:71</div></div>
+<div class="ttc" id="atrace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h_html_a96a32cf9d791e8f32d210dd459cf52acaa0c8a277d0f950d5d2a520bc15aee59e"><div class="ttname"><a href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a96a32cf9d791e8f32d210dd459cf52acaa0c8a277d0f950d5d2a520bc15aee59e">TRACE_LEVEL_VERBOSE</a></div><div class="ttdeci">@ TRACE_LEVEL_VERBOSE</div><div class="ttdef"><b>Definition:</b> Include.h:75</div></div>
+<div class="ttc" id="atrace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h_html_a96a32cf9d791e8f32d210dd459cf52acaf185bf9237bbd64e5705439844f5e2c4"><div class="ttname"><a href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a96a32cf9d791e8f32d210dd459cf52acaf185bf9237bbd64e5705439844f5e2c4">TRACE_LEVEL_DEBUG</a></div><div class="ttdeci">@ TRACE_LEVEL_DEBUG</div><div class="ttdef"><b>Definition:</b> Include.h:74</div></div>
+<div class="ttc" id="atrace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h_html_a9aaa32e6502d5b1c49c92fa49c81cca0"><div class="ttname"><a href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a9aaa32e6502d5b1c49c92fa49c81cca0">TraceStopFunc</a></div><div class="ttdeci">STATUS(* TraceStopFunc)(TRACE_PROFILER_HANDLE, TRACE_HANDLE)</div><div class="ttdef"><b>Definition:</b> Include.h:92</div></div>
+<div class="ttc" id="atrace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h_html_ad3fc1576821c615ced0ccf3a77af2476"><div class="ttname"><a href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#ad3fc1576821c615ced0ccf3a77af2476">DEFINE_TRACE_START</a></div><div class="ttdeci">#define DEFINE_TRACE_START(name)</div><div class="ttdef"><b>Definition:</b> Include.h:97</div></div>
+<div class="ttc" id="atrace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h_html_af3e9af12f519019a86377d1012efecb4"><div class="ttname"><a href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#af3e9af12f519019a86377d1012efecb4">TRACE_PROFILER_BEHAVIOR_FLAGS</a></div><div class="ttdeci">TRACE_PROFILER_BEHAVIOR_FLAGS</div><div class="ttdef"><b>Definition:</b> Include.h:49</div></div>
+<div class="ttc" id="atrace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h_html_af3e9af12f519019a86377d1012efecb4a2054d92b1594fcda6e852276d262fe50"><div class="ttname"><a href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#af3e9af12f519019a86377d1012efecb4a2054d92b1594fcda6e852276d262fe50">FLAGS_USE_AIV_TRACE_PROFILER_FORMAT</a></div><div class="ttdeci">@ FLAGS_USE_AIV_TRACE_PROFILER_FORMAT</div><div class="ttdef"><b>Definition:</b> Include.h:58</div></div>
+<div class="ttc" id="atrace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h_html_af3e9af12f519019a86377d1012efecb4a220871813adef422311c4f8b7e8cea9f"><div class="ttname"><a href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#af3e9af12f519019a86377d1012efecb4a220871813adef422311c4f8b7e8cea9f">PROFILER_FLAGS_NONE</a></div><div class="ttdeci">@ PROFILER_FLAGS_NONE</div><div class="ttdef"><b>Definition:</b> Include.h:53</div></div>
+<div class="ttc" id="atrace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h_html_af53e1fe38fb5d798fdf9be436e067ec7"><div class="ttname"><a href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#af53e1fe38fb5d798fdf9be436e067ec7">profilerRelease</a></div><div class="ttdeci">PUBLIC_API STATUS profilerRelease(TRACE_PROFILER_HANDLE traceProfilerHandle)</div><div class="ttdef"><b>Definition:</b> TraceProfiler.c:69</div></div>
+<div class="ttc" id="atrace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h_html_af63259810f16b2774606b8c871c5b938"><div class="ttname"><a href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#af63259810f16b2774606b8c871c5b938">DEFINE_TRACE_STOP</a></div><div class="ttdeci">#define DEFINE_TRACE_STOP(name)</div><div class="ttdef"><b>Definition:</b> Include.h:99</div></div>
+<div class="ttc" id="autils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h_html"><div class="ttname"><a href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html">Include.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_25ba0ccffb7c494f6d8d3b9b0f08d621.html">trace</a></li><li class="navelem"><a class="el" href="dir_6d9ec63329139beb0d8b272d75a07284.html">include</a></li><li class="navelem"><a class="el" href="dir_c13379278057c2995e0be386b5990e35.html">com</a></li><li class="navelem"><a class="el" href="dir_5307f90c959486944eee8d7cd6389844.html">amazonaws</a></li><li class="navelem"><a class="el" href="dir_98a12658b258c97a8a3969893a6aa0f6.html">kinesis</a></li><li class="navelem"><a class="el" href="dir_43c1ba7be3f43362f6087235a8532c8b.html">video</a></li><li class="navelem"><a class="el" href="dir_662cae0b847f2531bd7df845edb610a2.html">trace</a></li><li class="navelem"><a class="el" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html">Include.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

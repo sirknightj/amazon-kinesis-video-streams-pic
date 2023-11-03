@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +28,7 @@
    <div id="projectname">Amazon Kinesis Video Streams PIC
    &#160;<span id="projectnumber">1.0.1</span>
    </div>
-   <div id="projectbrief">Platform Independent Code for Amazon Kinesis Video Streams.</div>
+   <div id="projectbrief">Platform independent code for Amazon Kinesis Video Streams</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('AtomicsGnu_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,24 +82,19 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_313caf1132e152dd9b58bea13a4052ca.html">utils</a></li><li class="navelem"><a class="el" href="dir_f3b2a97ca346c6259d024c9b6dcab06f.html">src</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">AtomicsGnu.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef __UTILS_ATOMICS_GNU__</span></div>
+<a href="AtomicsGnu_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef __UTILS_ATOMICS_GNU__</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define __UTILS_ATOMICS_GNU__</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;Include_i.h&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="view_2src_2Include__i_8h.html">Include_i.h</a>&quot;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#ifdef __clang__</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#pragma clang diagnostic push</span></div>
@@ -88,57 +104,57 @@ $(function() {
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#pragma GCC diagnostic ignored &quot;-Wpedantic&quot;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> SIZE_T defaultAtomicLoad(<span class="keyword">volatile</span> SIZE_T* pAtomic)</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a> defaultAtomicLoad(<span class="keyword">volatile</span> <a class="code" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a>* pAtomic)</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">return</span> __atomic_load_n(pAtomic, __ATOMIC_SEQ_CST);</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> VOID defaultAtomicStore(<span class="keyword">volatile</span> SIZE_T* pAtomic, SIZE_T var)</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="CommonDefs_8h.html#a7f319bfc2492a2136964194204e7a8cf">VOID</a> defaultAtomicStore(<span class="keyword">volatile</span> <a class="code" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a>* pAtomic, <a class="code" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a> var)</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    __atomic_store_n(pAtomic, var, __ATOMIC_SEQ_CST);</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> SIZE_T defaultAtomicExchange(<span class="keyword">volatile</span> SIZE_T* pAtomic, SIZE_T var)</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a> defaultAtomicExchange(<span class="keyword">volatile</span> <a class="code" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a>* pAtomic, <a class="code" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a> var)</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">return</span> __atomic_exchange_n(pAtomic, var, __ATOMIC_SEQ_CST);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> BOOL defaultAtomicCompareExchange(<span class="keyword">volatile</span> SIZE_T* pAtomic, SIZE_T* pExpected, SIZE_T desired)</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="CommonDefs_8h.html#a6252187f6e55ba4943e030c350d624bd">BOOL</a> defaultAtomicCompareExchange(<span class="keyword">volatile</span> <a class="code" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a>* pAtomic, <a class="code" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a>* pExpected, <a class="code" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a> desired)</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">return</span> __atomic_compare_exchange_n(pAtomic, pExpected, desired, FALSE, __ATOMIC_SEQ_CST, __ATOMIC_SEQ_CST);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">return</span> __atomic_compare_exchange_n(pAtomic, pExpected, desired, <a class="code" href="CommonDefs_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>, __ATOMIC_SEQ_CST, __ATOMIC_SEQ_CST);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> SIZE_T defaultAtomicIncrement(<span class="keyword">volatile</span> SIZE_T* pAtomic)</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a> defaultAtomicIncrement(<span class="keyword">volatile</span> <a class="code" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a>* pAtomic)</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">return</span> __atomic_fetch_add(pAtomic, 1, __ATOMIC_SEQ_CST);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> SIZE_T defaultAtomicDecrement(<span class="keyword">volatile</span> SIZE_T* pAtomic)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a> defaultAtomicDecrement(<span class="keyword">volatile</span> <a class="code" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a>* pAtomic)</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">return</span> __atomic_fetch_sub(pAtomic, 1, __ATOMIC_SEQ_CST);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> SIZE_T defaultAtomicAdd(<span class="keyword">volatile</span> SIZE_T* pAtomic, SIZE_T var)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a> defaultAtomicAdd(<span class="keyword">volatile</span> <a class="code" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a>* pAtomic, <a class="code" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a> var)</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">return</span> __atomic_fetch_add(pAtomic, var, __ATOMIC_SEQ_CST);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> SIZE_T defaultAtomicSubtract(<span class="keyword">volatile</span> SIZE_T* pAtomic, SIZE_T var)</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a> defaultAtomicSubtract(<span class="keyword">volatile</span> <a class="code" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a>* pAtomic, <a class="code" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a> var)</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">return</span> __atomic_fetch_sub(pAtomic, var, __ATOMIC_SEQ_CST);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> SIZE_T defaultAtomicAnd(<span class="keyword">volatile</span> SIZE_T* pAtomic, SIZE_T var)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a> defaultAtomicAnd(<span class="keyword">volatile</span> <a class="code" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a>* pAtomic, <a class="code" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a> var)</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">return</span> __atomic_fetch_and(pAtomic, var, __ATOMIC_SEQ_CST);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> SIZE_T defaultAtomicOr(<span class="keyword">volatile</span> SIZE_T* pAtomic, SIZE_T var)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a> defaultAtomicOr(<span class="keyword">volatile</span> <a class="code" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a>* pAtomic, <a class="code" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a> var)</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">return</span> __atomic_fetch_or(pAtomic, var, __ATOMIC_SEQ_CST);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> SIZE_T defaultAtomicXor(<span class="keyword">volatile</span> SIZE_T* pAtomic, SIZE_T var)</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a> defaultAtomicXor(<span class="keyword">volatile</span> <a class="code" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a>* pAtomic, <a class="code" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a> var)</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">return</span> __atomic_fetch_xor(pAtomic, var, __ATOMIC_SEQ_CST);</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
@@ -147,10 +163,19 @@ $(function() {
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* __UTILS_ATOMICS_GNU__ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aCommonDefs_8h_html_a1baba44b36e282b82faa9ef9bc9f37a4"><div class="ttname"><a href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a></div><div class="ttdeci">UINT_PTR SIZE_T</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:325</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a6252187f6e55ba4943e030c350d624bd"><div class="ttname"><a href="CommonDefs_8h.html#a6252187f6e55ba4943e030c350d624bd">BOOL</a></div><div class="ttdeci">INT32 BOOL</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:173</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a7f319bfc2492a2136964194204e7a8cf"><div class="ttname"><a href="CommonDefs_8h.html#a7f319bfc2492a2136964194204e7a8cf">VOID</a></div><div class="ttdeci">#define VOID</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:153</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_aa93f0eb578d23995850d61f7d61c55c1"><div class="ttname"><a href="CommonDefs_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></div><div class="ttdeci">#define FALSE</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:197</div></div>
+<div class="ttc" id="aview_2src_2Include__i_8h_html"><div class="ttname"><a href="view_2src_2Include__i_8h.html">Include_i.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_313caf1132e152dd9b58bea13a4052ca.html">utils</a></li><li class="navelem"><a class="el" href="dir_f3b2a97ca346c6259d024c9b6dcab06f.html">src</a></li><li class="navelem"><a class="el" href="AtomicsGnu_8h.html">AtomicsGnu.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

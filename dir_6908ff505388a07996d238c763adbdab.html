@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +28,7 @@
    <div id="projectname">Amazon Kinesis Video Streams PIC
    &#160;<span id="projectnumber">1.0.1</span>
    </div>
-   <div id="projectbrief">Platform Independent Code for Amazon Kinesis Video Streams.</div>
+   <div id="projectbrief">Platform independent code for Amazon Kinesis Video Streams</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('dir_6908ff505388a07996d238c763adbdab.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,26 +82,70 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_6908ff505388a07996d238c763adbdab.html">client</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">client Directory Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="dynheader">
+Directory dependency graph for client:</div>
+<div class="dyncontent">
+<div class="center"><img src="dir_6908ff505388a07996d238c763adbdab_dep.png" border="0" usemap="#adir__6908ff505388a07996d238c763adbdab__dep" alt="src/client"/></div>
+<map name="adir__6908ff505388a07996d238c763adbdab__dep" id="adir__6908ff505388a07996d238c763adbdab__dep">
+<area shape="rect" href="dir_fdedb0aba14d44ce9d99bc100e026e6a.html" title="common" alt="" coords="179,639,258,687"/>
+<area shape="rect" href="dir_313caf1132e152dd9b58bea13a4052ca.html" title="utils" alt="" coords="152,543,224,591"/>
+<area shape="rect" href="dir_000036_000058.html" title="2" alt="" coords="209,611,218,626"/>
+<area shape="rect" href="dir_293b65ee0e438b101df8ec50727ccfaa.html" title="mkvgen" alt="" coords="27,447,101,495"/>
+<area shape="rect" href="dir_000015_000058.html" title="2" alt="" coords="164,615,173,630"/>
+<area shape="rect" href="dir_000015_000036.html" title="2" alt="" coords="144,518,153,532"/>
+<area shape="rect" href="dir_b39b5091e8d1d2be4b7fc59d57749634.html" title="view" alt="" coords="205,351,277,399"/>
+<area shape="rect" href="dir_000043_000058.html" title="2" alt="" coords="234,616,243,631"/>
+<area shape="rect" href="dir_000043_000036.html" title="2" alt="" coords="203,520,212,535"/>
+<area shape="rect" href="dir_c4d22fc0e4736089ffe45cb281f7e16f.html" title="heap" alt="" coords="259,447,331,495"/>
+<area shape="rect" href="dir_000043_000008.html" title="1" alt="" coords="275,419,285,434"/>
+<area shape="rect" href="dir_000008_000058.html" title="2" alt="" coords="244,619,253,634"/>
+<area shape="rect" href="dir_000008_000036.html" title="1" alt="" coords="229,530,238,544"/>
+<area shape="rect" href="dir_0608c26f86dacad6145260adfb15aefd.html" title="state" alt="" coords="83,351,155,399"/>
+<area shape="rect" href="dir_000022_000058.html" title="2" alt="" coords="169,613,179,628"/>
+<area shape="rect" href="dir_000022_000036.html" title="1" alt="" coords="177,515,186,530"/>
+<area shape="rect" href="dir_000022_000015.html" title="1" alt="" coords="89,428,98,442"/>
+<area shape="rect" href="dir_c7a20b80ce65e841dd30fc88a8acdace.html" title="include" alt="" coords="175,255,247,303"/>
+<area shape="rect" href="dir_000022_000002.html" title="1" alt="" coords="173,303,182,318"/>
+<area shape="rect" href="dir_000002_000058.html" title="2" alt="" coords="258,624,267,639"/>
+<area shape="rect" href="dir_000002_000036.html" title="1" alt="" coords="190,517,200,532"/>
+<area shape="rect" href="dir_000002_000015.html" title="1" alt="" coords="59,420,69,434"/>
+<area shape="rect" href="dir_000002_000043.html" title="1" alt="" coords="232,323,241,338"/>
+<area shape="rect" href="dir_000002_000008.html" title="1" alt="" coords="304,422,314,436"/>
+<area shape="rect" href="dir_000002_000022.html" title="1" alt="" coords="147,335,156,350"/>
+<area shape="rect" href="dir_78ce3fde11f1c50580f2f2c408f37c2f.html" title="src" alt="" coords="196,159,268,207"/>
+<area shape="rect" href="dir_000050_000002.html" title="1" alt="" coords="223,231,233,246"/>
+<area shape="rect" href="dir_42f6588042268f52a7ab100ddb6d24b3.html" title="tst" alt="" coords="152,63,224,111"/>
+<area shape="rect" href="dir_000057_000036.html" title="1" alt="" coords="239,556,249,571"/>
+<area shape="rect" href="dir_000057_000015.html" title="1" alt="" coords="56,419,65,434"/>
+<area shape="rect" href="dir_000057_000002.html" title="1" alt="" coords="196,227,205,242"/>
+<area shape="rect" href="dir_000057_000050.html" title="2" alt="" coords="216,131,226,146"/>
+<area shape="rect" href="dir_6908ff505388a07996d238c763adbdab.html" alt="" coords="141,52,331,313"/>
+<area shape="rect" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html" title="src" alt="" coords="16,16,395,697"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="subdirs"></a>
 Directories</h2></td></tr>
 <tr class="memitem:dir_c7a20b80ce65e841dd30fc88a8acdace"><td class="memItemLeft" align="right" valign="top">directory &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dir_c7a20b80ce65e841dd30fc88a8acdace.html">include</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:dir_78ce3fde11f1c50580f2f2c408f37c2f"><td class="memItemLeft" align="right" valign="top">directory &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dir_78ce3fde11f1c50580f2f2c408f37c2f.html">src</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:dir_42f6588042268f52a7ab100ddb6d24b3"><td class="memItemLeft" align="right" valign="top">directory &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dir_42f6588042268f52a7ab100ddb6d24b3.html">tst</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_6908ff505388a07996d238c763adbdab.html">client</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

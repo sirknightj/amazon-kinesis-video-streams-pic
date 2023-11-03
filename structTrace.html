@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +28,7 @@
    <div id="projectname">Amazon Kinesis Video Streams PIC
    &#160;<span id="projectnumber">1.0.1</span>
    </div>
-   <div id="projectbrief">Platform Independent Code for Amazon Kinesis Video Streams.</div>
+   <div id="projectbrief">Platform independent code for Amazon Kinesis Video Streams</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('structTrace.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,11 +82,9 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="structTrace-members.html">List of all members</a>  </div>
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
 <div class="title">Trace Struct Reference</div>  </div>
 </div><!--header-->
@@ -74,33 +93,33 @@ $(function() {
 <p><code>#include &lt;<a class="el" href="trace_2src_2Include__i_8h_source.html">Include_i.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a0c21b564718b87de4dd7d20f2407241d"><td class="memItemLeft" align="right" valign="top">TID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTrace.html#a0c21b564718b87de4dd7d20f2407241d">threadId</a></td></tr>
-<tr class="separator:a0c21b564718b87de4dd7d20f2407241d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb3a19a9b9072f450f4271ff782f35a1"><td class="memItemLeft" align="right" valign="top">CHAR&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTrace.html#acb3a19a9b9072f450f4271ff782f35a1">threadName</a> [MAX_THREAD_NAME+1]</td></tr>
-<tr class="separator:acb3a19a9b9072f450f4271ff782f35a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2de7db22f1818f1d9f749e1679e7cb90"><td class="memItemLeft" align="right" valign="top">TRACE_LEVEL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTrace.html#a2de7db22f1818f1d9f749e1679e7cb90">traceLevel</a></td></tr>
-<tr class="separator:a2de7db22f1818f1d9f749e1679e7cb90"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2fcc9873d133fd83f6b81a3b5f147ab0"><td class="memItemLeft" align="right" valign="top">CHAR&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTrace.html#a2fcc9873d133fd83f6b81a3b5f147ab0">traceName</a> [MAX_TRACE_NAME+1]</td></tr>
-<tr class="separator:a2fcc9873d133fd83f6b81a3b5f147ab0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4cf2664f2c0b809295b3d92d2f883b35"><td class="memItemLeft" align="right" valign="top">UINT32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTrace.html#a4cf2664f2c0b809295b3d92d2f883b35">traceCount</a></td></tr>
-<tr class="separator:a4cf2664f2c0b809295b3d92d2f883b35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a544837e77cfe3731838ac1de74299b8e"><td class="memItemLeft" align="right" valign="top">UINT64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTrace.html#a544837e77cfe3731838ac1de74299b8e">start</a></td></tr>
-<tr class="separator:a544837e77cfe3731838ac1de74299b8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d0b39b2516f7ae30531cbe2f1273155"><td class="memItemLeft" align="right" valign="top">UINT64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTrace.html#a5d0b39b2516f7ae30531cbe2f1273155">duration</a></td></tr>
-<tr class="separator:a5d0b39b2516f7ae30531cbe2f1273155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+Data Fields</h2></td></tr>
+<tr class="memitem:a33d502d60f39a731536e8fdedb1c130e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a16859d4c44b94d6d88b90e41120eea68">TID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTrace.html#a33d502d60f39a731536e8fdedb1c130e">threadId</a></td></tr>
+<tr class="separator:a33d502d60f39a731536e8fdedb1c130e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e1a32a74c3a7e6b2d8ccfc57d1c8c67"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#aebb9e13210d88d43e32e735ada43a425">CHAR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTrace.html#a5e1a32a74c3a7e6b2d8ccfc57d1c8c67">threadName</a> [<a class="el" href="CommonDefs_8h.html#a82c6cf07e413e9ddf2239430dbdae76e">MAX_THREAD_NAME</a>+1]</td></tr>
+<tr class="separator:a5e1a32a74c3a7e6b2d8ccfc57d1c8c67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab631892f34604af2859d4abefc5fcd45"><td class="memItemLeft" align="right" valign="top"><a class="el" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a96a32cf9d791e8f32d210dd459cf52ac">TRACE_LEVEL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTrace.html#ab631892f34604af2859d4abefc5fcd45">traceLevel</a></td></tr>
+<tr class="separator:ab631892f34604af2859d4abefc5fcd45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbf5df7b1b82ef593f5f87ade7322320"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#aebb9e13210d88d43e32e735ada43a425">CHAR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTrace.html#acbf5df7b1b82ef593f5f87ade7322320">traceName</a> [<a class="el" href="trace_2src_2Include__i_8h.html#a2008366abb31ef01845e038691541ca5">MAX_TRACE_NAME</a>+1]</td></tr>
+<tr class="separator:acbf5df7b1b82ef593f5f87ade7322320"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4082a334b13938f3705b561263f39310"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTrace.html#a4082a334b13938f3705b561263f39310">traceCount</a></td></tr>
+<tr class="separator:a4082a334b13938f3705b561263f39310"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f341a86840c60a7b35c6d3c3fafc088"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTrace.html#a2f341a86840c60a7b35c6d3c3fafc088">start</a></td></tr>
+<tr class="separator:a2f341a86840c60a7b35c6d3c3fafc088"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ff64cd06e87d93cf1ec3fde82cf3658"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTrace.html#a0ff64cd06e87d93cf1ec3fde82cf3658">duration</a></td></tr>
+<tr class="separator:a0ff64cd06e87d93cf1ec3fde82cf3658"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="structTrace.html">Trace</a> object declaration </p>
-</div><h2 class="groupheader">Member Data Documentation</h2>
-<a id="a5d0b39b2516f7ae30531cbe2f1273155"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d0b39b2516f7ae30531cbe2f1273155">&#9670;&nbsp;</a></span>duration</h2>
+</div><h2 class="groupheader">Field Documentation</h2>
+<a id="a0ff64cd06e87d93cf1ec3fde82cf3658"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ff64cd06e87d93cf1ec3fde82cf3658">&#9670;&nbsp;</a></span>duration</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">UINT64 Trace::duration</td>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> duration</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -108,14 +127,14 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a544837e77cfe3731838ac1de74299b8e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a544837e77cfe3731838ac1de74299b8e">&#9670;&nbsp;</a></span>start</h2>
+<a id="a2f341a86840c60a7b35c6d3c3fafc088"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f341a86840c60a7b35c6d3c3fafc088">&#9670;&nbsp;</a></span>start</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">UINT64 Trace::start</td>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> start</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -123,14 +142,14 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a0c21b564718b87de4dd7d20f2407241d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0c21b564718b87de4dd7d20f2407241d">&#9670;&nbsp;</a></span>threadId</h2>
+<a id="a33d502d60f39a731536e8fdedb1c130e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33d502d60f39a731536e8fdedb1c130e">&#9670;&nbsp;</a></span>threadId</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TID Trace::threadId</td>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a16859d4c44b94d6d88b90e41120eea68">TID</a> threadId</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -138,14 +157,14 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="acb3a19a9b9072f450f4271ff782f35a1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb3a19a9b9072f450f4271ff782f35a1">&#9670;&nbsp;</a></span>threadName</h2>
+<a id="a5e1a32a74c3a7e6b2d8ccfc57d1c8c67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e1a32a74c3a7e6b2d8ccfc57d1c8c67">&#9670;&nbsp;</a></span>threadName</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">CHAR Trace::threadName[MAX_THREAD_NAME+1]</td>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#aebb9e13210d88d43e32e735ada43a425">CHAR</a> threadName[<a class="el" href="CommonDefs_8h.html#a82c6cf07e413e9ddf2239430dbdae76e">MAX_THREAD_NAME</a>+1]</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -153,14 +172,14 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a4cf2664f2c0b809295b3d92d2f883b35"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4cf2664f2c0b809295b3d92d2f883b35">&#9670;&nbsp;</a></span>traceCount</h2>
+<a id="a4082a334b13938f3705b561263f39310"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4082a334b13938f3705b561263f39310">&#9670;&nbsp;</a></span>traceCount</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">UINT32 Trace::traceCount</td>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> traceCount</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -168,14 +187,14 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a2de7db22f1818f1d9f749e1679e7cb90"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2de7db22f1818f1d9f749e1679e7cb90">&#9670;&nbsp;</a></span>traceLevel</h2>
+<a id="ab631892f34604af2859d4abefc5fcd45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab631892f34604af2859d4abefc5fcd45">&#9670;&nbsp;</a></span>traceLevel</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TRACE_LEVEL Trace::traceLevel</td>
+          <td class="memname"><a class="el" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a96a32cf9d791e8f32d210dd459cf52ac">TRACE_LEVEL</a> traceLevel</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -183,14 +202,14 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a2fcc9873d133fd83f6b81a3b5f147ab0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2fcc9873d133fd83f6b81a3b5f147ab0">&#9670;&nbsp;</a></span>traceName</h2>
+<a id="acbf5df7b1b82ef593f5f87ade7322320"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbf5df7b1b82ef593f5f87ade7322320">&#9670;&nbsp;</a></span>traceName</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">CHAR Trace::traceName[MAX_TRACE_NAME+1]</td>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#aebb9e13210d88d43e32e735ada43a425">CHAR</a> traceName[<a class="el" href="trace_2src_2Include__i_8h.html#a2008366abb31ef01845e038691541ca5">MAX_TRACE_NAME</a>+1]</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -202,9 +221,13 @@ Public Attributes</h2></td></tr>
 <li>src/trace/src/<a class="el" href="trace_2src_2Include__i_8h_source.html">Include_i.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structTrace.html">Trace</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

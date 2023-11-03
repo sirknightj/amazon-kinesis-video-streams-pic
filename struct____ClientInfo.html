@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +28,7 @@
    <div id="projectname">Amazon Kinesis Video Streams PIC
    &#160;<span id="projectnumber">1.0.1</span>
    </div>
-   <div id="projectbrief">Platform Independent Code for Amazon Kinesis Video Streams.</div>
+   <div id="projectbrief">Platform independent code for Amazon Kinesis Video Streams</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('struct____ClientInfo.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,72 +82,267 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="struct____ClientInfo-members.html">List of all members</a>  </div>
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
 <div class="title">__ClientInfo Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h_source.html">Include.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for __ClientInfo:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct____ClientInfo__coll__graph.png" border="0" usemap="#a____ClientInfo_coll__map" alt="Collaboration graph"/></div>
+<map name="a____ClientInfo_coll__map" id="a____ClientInfo_coll__map">
+<area shape="rect" title=" " alt="" coords="82,228,181,255"/>
+<area shape="rect" href="struct____KvsRetryStrategyCallbacks.html" title=" " alt="" coords="201,139,414,165"/>
+<area shape="rect" href="struct____KvsRetryStrategy.html" title=" " alt="" coords="5,5,156,32"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a1c4c8beb8fec429f01372238978bec1a"><td class="memItemLeft" align="right" valign="top"><a id="a1c4c8beb8fec429f01372238978bec1a"></a>
-UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>version</b></td></tr>
-<tr class="separator:a1c4c8beb8fec429f01372238978bec1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88774bf38bf123f41c6e7482d9898e27"><td class="memItemLeft" align="right" valign="top"><a id="a88774bf38bf123f41c6e7482d9898e27"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>createClientTimeout</b></td></tr>
-<tr class="separator:a88774bf38bf123f41c6e7482d9898e27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d2965e7acee55a69103d66947458816"><td class="memItemLeft" align="right" valign="top"><a id="a4d2965e7acee55a69103d66947458816"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>createStreamTimeout</b></td></tr>
-<tr class="separator:a4d2965e7acee55a69103d66947458816"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0edaef651cf07c42202f48d3f9fb6409"><td class="memItemLeft" align="right" valign="top"><a id="a0edaef651cf07c42202f48d3f9fb6409"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>stopStreamTimeout</b></td></tr>
-<tr class="separator:a0edaef651cf07c42202f48d3f9fb6409"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f9d9d8ca28987b8b1e86921b3579a4b"><td class="memItemLeft" align="right" valign="top"><a id="a4f9d9d8ca28987b8b1e86921b3579a4b"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>offlineBufferAvailabilityTimeout</b></td></tr>
-<tr class="separator:a4f9d9d8ca28987b8b1e86921b3579a4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada5b92f0054dd535ed6419879fa54744"><td class="memItemLeft" align="right" valign="top"><a id="ada5b92f0054dd535ed6419879fa54744"></a>
-UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>loggerLogLevel</b></td></tr>
-<tr class="separator:ada5b92f0054dd535ed6419879fa54744"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90861aba910261cbc8b4ebcd1c4f0355"><td class="memItemLeft" align="right" valign="top"><a id="a90861aba910261cbc8b4ebcd1c4f0355"></a>
-BOOL&#160;</td><td class="memItemRight" valign="bottom"><b>logMetric</b></td></tr>
-<tr class="separator:a90861aba910261cbc8b4ebcd1c4f0355"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c70fab83b1629e1463de7cd6fe3f744"><td class="memItemLeft" align="right" valign="top"><a id="a9c70fab83b1629e1463de7cd6fe3f744"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>metricLoggingPeriod</b></td></tr>
-<tr class="separator:a9c70fab83b1629e1463de7cd6fe3f744"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a918504f27fdb48d05391ca4a0987dc3b"><td class="memItemLeft" align="right" valign="top"><a id="a918504f27fdb48d05391ca4a0987dc3b"></a>
-AUTOMATIC_STREAMING_FLAGS&#160;</td><td class="memItemRight" valign="bottom"><b>automaticStreamingFlags</b></td></tr>
-<tr class="separator:a918504f27fdb48d05391ca4a0987dc3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add5a28eeb9314b8c2bab41c2188ba93a"><td class="memItemLeft" align="right" valign="top"><a id="add5a28eeb9314b8c2bab41c2188ba93a"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>reservedCallbackPeriod</b></td></tr>
-<tr class="separator:add5a28eeb9314b8c2bab41c2188ba93a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a653f5319ed2b29bfb0e4b7c4d87dffe0"><td class="memItemLeft" align="right" valign="top"><a id="a653f5319ed2b29bfb0e4b7c4d87dffe0"></a>
-<a class="el" href="struct____KvsRetryStrategy.html">KvsRetryStrategy</a>&#160;</td><td class="memItemRight" valign="bottom"><b>kvsRetryStrategy</b></td></tr>
-<tr class="separator:a653f5319ed2b29bfb0e4b7c4d87dffe0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f9a31793b2c20577e7f9ff16032f9ba"><td class="memItemLeft" align="right" valign="top"><a id="a1f9a31793b2c20577e7f9ff16032f9ba"></a>
-<a class="el" href="struct____KvsRetryStrategyCallbacks.html">KvsRetryStrategyCallbacks</a>&#160;</td><td class="memItemRight" valign="bottom"><b>kvsRetryStrategyCallbacks</b></td></tr>
-<tr class="separator:a1f9a31793b2c20577e7f9ff16032f9ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a524fef1462601ffb1afb532e606f0961"><td class="memItemLeft" align="right" valign="top"><a id="a524fef1462601ffb1afb532e606f0961"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>serviceCallCompletionTimeout</b></td></tr>
-<tr class="separator:a524fef1462601ffb1afb532e606f0961"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0fb54cb5f371a6f6b463a730f31a953e"><td class="memItemLeft" align="right" valign="top"><a id="a0fb54cb5f371a6f6b463a730f31a953e"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>serviceCallConnectionTimeout</b></td></tr>
-<tr class="separator:a0fb54cb5f371a6f6b463a730f31a953e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+Data Fields</h2></td></tr>
+<tr class="memitem:a8ffac79cdfb8a2da19ee271752749738"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____ClientInfo.html#a8ffac79cdfb8a2da19ee271752749738">version</a></td></tr>
+<tr class="separator:a8ffac79cdfb8a2da19ee271752749738"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5732315cda77db588719bf7fc96cc8df"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____ClientInfo.html#a5732315cda77db588719bf7fc96cc8df">createClientTimeout</a></td></tr>
+<tr class="separator:a5732315cda77db588719bf7fc96cc8df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46959e2374d38bf5d1ab53f831ce602c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____ClientInfo.html#a46959e2374d38bf5d1ab53f831ce602c">createStreamTimeout</a></td></tr>
+<tr class="separator:a46959e2374d38bf5d1ab53f831ce602c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47d9c4f4f808482c273389865fd724e0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____ClientInfo.html#a47d9c4f4f808482c273389865fd724e0">stopStreamTimeout</a></td></tr>
+<tr class="separator:a47d9c4f4f808482c273389865fd724e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06c6c7ac213f4705ecdd4fa322619156"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____ClientInfo.html#a06c6c7ac213f4705ecdd4fa322619156">offlineBufferAvailabilityTimeout</a></td></tr>
+<tr class="separator:a06c6c7ac213f4705ecdd4fa322619156"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46550c98ce59d7ecdeda98b7a3c09b5e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____ClientInfo.html#a46550c98ce59d7ecdeda98b7a3c09b5e">loggerLogLevel</a></td></tr>
+<tr class="separator:a46550c98ce59d7ecdeda98b7a3c09b5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ed48c03fd4391826141547a9b326b88"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a6252187f6e55ba4943e030c350d624bd">BOOL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____ClientInfo.html#a4ed48c03fd4391826141547a9b326b88">logMetric</a></td></tr>
+<tr class="separator:a4ed48c03fd4391826141547a9b326b88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3aa5971013601885b54eee934b257bc4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____ClientInfo.html#a3aa5971013601885b54eee934b257bc4">metricLoggingPeriod</a></td></tr>
+<tr class="separator:a3aa5971013601885b54eee934b257bc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71509af30d286de7db3c11b100c83997"><td class="memItemLeft" align="right" valign="top"><a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#aaf60070647422beaf87daa349bb68d1f">AUTOMATIC_STREAMING_FLAGS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____ClientInfo.html#a71509af30d286de7db3c11b100c83997">automaticStreamingFlags</a></td></tr>
+<tr class="separator:a71509af30d286de7db3c11b100c83997"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5857a884d3224e10b1b32cddc9955eeb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____ClientInfo.html#a5857a884d3224e10b1b32cddc9955eeb">reservedCallbackPeriod</a></td></tr>
+<tr class="separator:a5857a884d3224e10b1b32cddc9955eeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a104e4071cea481d2f90d210ea000d830"><td class="memItemLeft" align="right" valign="top"><a class="el" href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a68f282f709149f7f158827f7ffe263a5">KvsRetryStrategy</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____ClientInfo.html#a104e4071cea481d2f90d210ea000d830">kvsRetryStrategy</a></td></tr>
+<tr class="separator:a104e4071cea481d2f90d210ea000d830"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a277f62d52814229fff0c6f614678eb97"><td class="memItemLeft" align="right" valign="top"><a class="el" href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a11b54546b0f4f680cffb600b93ab71c4">KvsRetryStrategyCallbacks</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____ClientInfo.html#a277f62d52814229fff0c6f614678eb97">kvsRetryStrategyCallbacks</a></td></tr>
+<tr class="separator:a277f62d52814229fff0c6f614678eb97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cfb39940bd08356764eb8ba4c15f2f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____ClientInfo.html#a4cfb39940bd08356764eb8ba4c15f2f9">serviceCallCompletionTimeout</a></td></tr>
+<tr class="separator:a4cfb39940bd08356764eb8ba4c15f2f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a99612c800729bd68e97ded7ad79c8d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____ClientInfo.html#a3a99612c800729bd68e97ded7ad79c8d">serviceCallConnectionTimeout</a></td></tr>
+<tr class="separator:a3a99612c800729bd68e97ded7ad79c8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Client Info </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+</div><h2 class="groupheader">Field Documentation</h2>
+<a id="a71509af30d286de7db3c11b100c83997"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71509af30d286de7db3c11b100c83997">&#9670;&nbsp;</a></span>automaticStreamingFlags</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#aaf60070647422beaf87daa349bb68d1f">AUTOMATIC_STREAMING_FLAGS</a> automaticStreamingFlags</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5732315cda77db588719bf7fc96cc8df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5732315cda77db588719bf7fc96cc8df">&#9670;&nbsp;</a></span>createClientTimeout</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> createClientTimeout</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a46959e2374d38bf5d1ab53f831ce602c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46959e2374d38bf5d1ab53f831ce602c">&#9670;&nbsp;</a></span>createStreamTimeout</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> createStreamTimeout</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a104e4071cea481d2f90d210ea000d830"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a104e4071cea481d2f90d210ea000d830">&#9670;&nbsp;</a></span>kvsRetryStrategy</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a68f282f709149f7f158827f7ffe263a5">KvsRetryStrategy</a> kvsRetryStrategy</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a277f62d52814229fff0c6f614678eb97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a277f62d52814229fff0c6f614678eb97">&#9670;&nbsp;</a></span>kvsRetryStrategyCallbacks</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a11b54546b0f4f680cffb600b93ab71c4">KvsRetryStrategyCallbacks</a> kvsRetryStrategyCallbacks</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a46550c98ce59d7ecdeda98b7a3c09b5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46550c98ce59d7ecdeda98b7a3c09b5e">&#9670;&nbsp;</a></span>loggerLogLevel</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> loggerLogLevel</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4ed48c03fd4391826141547a9b326b88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ed48c03fd4391826141547a9b326b88">&#9670;&nbsp;</a></span>logMetric</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a6252187f6e55ba4943e030c350d624bd">BOOL</a> logMetric</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3aa5971013601885b54eee934b257bc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3aa5971013601885b54eee934b257bc4">&#9670;&nbsp;</a></span>metricLoggingPeriod</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> metricLoggingPeriod</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a06c6c7ac213f4705ecdd4fa322619156"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06c6c7ac213f4705ecdd4fa322619156">&#9670;&nbsp;</a></span>offlineBufferAvailabilityTimeout</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> offlineBufferAvailabilityTimeout</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5857a884d3224e10b1b32cddc9955eeb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5857a884d3224e10b1b32cddc9955eeb">&#9670;&nbsp;</a></span>reservedCallbackPeriod</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> reservedCallbackPeriod</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4cfb39940bd08356764eb8ba4c15f2f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cfb39940bd08356764eb8ba4c15f2f9">&#9670;&nbsp;</a></span>serviceCallCompletionTimeout</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> serviceCallCompletionTimeout</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3a99612c800729bd68e97ded7ad79c8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a99612c800729bd68e97ded7ad79c8d">&#9670;&nbsp;</a></span>serviceCallConnectionTimeout</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> serviceCallConnectionTimeout</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a47d9c4f4f808482c273389865fd724e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47d9c4f4f808482c273389865fd724e0">&#9670;&nbsp;</a></span>stopStreamTimeout</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> stopStreamTimeout</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8ffac79cdfb8a2da19ee271752749738"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ffac79cdfb8a2da19ee271752749738">&#9670;&nbsp;</a></span>version</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> version</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>src/client/include/com/amazonaws/kinesis/video/client/<a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h_source.html">Include.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="struct____ClientInfo.html">__ClientInfo</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

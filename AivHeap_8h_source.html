@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +28,7 @@
    <div id="projectname">Amazon Kinesis Video Streams PIC
    &#160;<span id="projectnumber">1.0.1</span>
    </div>
-   <div id="projectbrief">Platform Independent Code for Amazon Kinesis Video Streams.</div>
+   <div id="projectbrief">Platform independent code for Amazon Kinesis Video Streams</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('AivHeap_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,17 +82,12 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c4d22fc0e4736089ffe45cb281f7e16f.html">heap</a></li><li class="navelem"><a class="el" href="dir_0dbdd4b98286c9c70a81bbc1f422dcfa.html">src</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">AivHeap.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<a href="AivHeap_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef __AIV_HEAP_H__</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define __AIV_HEAP_H__</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
@@ -79,41 +95,41 @@ $(function() {
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define ALLOCATION_FLAGS_NONE  0x0000</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define ALLOCATION_FLAGS_ALLOC 0x0001</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#define ALLOCATION_FLAGS_FREE  0x0002</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="AivHeap_8h.html#a4656c5d8da55f793168f6852df66e454">   12</a></span>&#160;<span class="preprocessor">#define ALLOCATION_FLAGS_NONE  0x0000</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="AivHeap_8h.html#a29105e0a35f44bff8d57479c9caa8a29">   13</a></span>&#160;<span class="preprocessor">#define ALLOCATION_FLAGS_ALLOC 0x0001</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="AivHeap_8h.html#a89cd6b6fa1fad203264ece9c25c1a9d8">   14</a></span>&#160;<span class="preprocessor">#define ALLOCATION_FLAGS_FREE  0x0002</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#define AIV_ALLOCATION_TYPE 2</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="AivHeap_8h.html#a1640372dc1f74b0c9848625a53da2e79">   16</a></span>&#160;<span class="preprocessor">#define AIV_ALLOCATION_TYPE 2</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define MIN_FREE_ALLOCATION_SIZE 16</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="AivHeap_8h.html#a82048b154c97542444e02b35e40a606c">   21</a></span>&#160;<span class="preprocessor">#define MIN_FREE_ALLOCATION_SIZE 16</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="structAIV__ALLOCATION__HEADER.html">   28</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structAIV__ALLOCATION__HEADER.html">AIV_ALLOCATION_HEADER</a> {</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">// Base structure</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="structALLOCATION__HEADER.html">ALLOCATION_HEADER</a> header;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="structAIV__ALLOCATION__HEADER.html#ae2fe3788e1ad4a473042ed76fbf4511d">   30</a></span>&#160;    <a class="code" href="structALLOCATION__HEADER.html">ALLOCATION_HEADER</a> <a class="code" href="structAIV__ALLOCATION__HEADER.html#ae2fe3788e1ad4a473042ed76fbf4511d">header</a>;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// The allocation size specified by the caller without alignment or padding</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    UINT64 allocSize;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="structAIV__ALLOCATION__HEADER.html#a3708d6b39880b3d9755efe362eb64b7b">   33</a></span>&#160;    <a class="code" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> <a class="code" href="structAIV__ALLOCATION__HEADER.html#a3708d6b39880b3d9755efe362eb64b7b">allocSize</a>;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// Chaining left and right</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">struct </span><a class="code" href="structAIV__ALLOCATION__HEADER.html">AIV_ALLOCATION_HEADER</a>* pNext;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">struct </span><a class="code" href="structAIV__ALLOCATION__HEADER.html">AIV_ALLOCATION_HEADER</a>* pPrev;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}* <a class="code" href="structAIV__ALLOCATION__HEADER.html">PAIV_ALLOCATION_HEADER</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="structAIV__ALLOCATION__HEADER.html#af92f8f7e8720b31596348d1be87e993a">   36</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structAIV__ALLOCATION__HEADER.html">AIV_ALLOCATION_HEADER</a>* <a class="code" href="structAIV__ALLOCATION__HEADER.html#af92f8f7e8720b31596348d1be87e993a">pNext</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="structAIV__ALLOCATION__HEADER.html#a6c31c25f3bfbf2cdc8afbff99eff5a2a">   37</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structAIV__ALLOCATION__HEADER.html">AIV_ALLOCATION_HEADER</a>* <a class="code" href="structAIV__ALLOCATION__HEADER.html#a6c31c25f3bfbf2cdc8afbff99eff5a2a">pPrev</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="AivHeap_8h.html#a5eb023b8b69b317b72c0653a83b30944">   38</a></span>&#160;}* <a class="code" href="AivHeap_8h.html#a5eb023b8b69b317b72c0653a83b30944">PAIV_ALLOCATION_HEADER</a>;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">// Macros to convert to and from handle</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#define AIV_HANDLE_SHIFT_BITS    2</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#define TO_AIV_HANDLE(pAiv, p)   (ALLOCATION_HANDLE)((UINT64) (((PBYTE) (p) - (PBYTE) ((pAiv)-&gt;pAllocation))) &lt;&lt; AIV_HANDLE_SHIFT_BITS)</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#define FROM_AIV_HANDLE(pAiv, h) ((PVOID) ((PBYTE) ((pAiv)-&gt;pAllocation) + ((UINT64) (h) &gt;&gt; AIV_HANDLE_SHIFT_BITS)))</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="AivHeap_8h.html#a58882edae816d8ad038b086c29f07304">   41</a></span>&#160;<span class="preprocessor">#define AIV_HANDLE_SHIFT_BITS    2</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="AivHeap_8h.html#afd1e18351437b3ecdfc4ad05d8941cb9">   42</a></span>&#160;<span class="preprocessor">#define TO_AIV_HANDLE(pAiv, p)   (ALLOCATION_HANDLE)((UINT64) (((PBYTE) (p) - (PBYTE) ((pAiv)-&gt;pAllocation))) &lt;&lt; AIV_HANDLE_SHIFT_BITS)</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="AivHeap_8h.html#a288393560994cfa8f216694e7772d6fa">   43</a></span>&#160;<span class="preprocessor">#define FROM_AIV_HANDLE(pAiv, h) ((PVOID) ((PBYTE) ((pAiv)-&gt;pAllocation) + ((UINT64) (h) &gt;&gt; AIV_HANDLE_SHIFT_BITS)))</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
 <div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="structAivHeap.html">   48</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="structAivHeap.html#a9ad1aadfa6121cfd1b4f1f392c61bc9e">   52</a></span>&#160;    <a class="code" href="structBaseHeap.html">BaseHeap</a> <a class="code" href="structAivHeap.html#a9ad1aadfa6121cfd1b4f1f392c61bc9e">heap</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="structAivHeap.html#a5b7dbb80dd64e3d7f6e516f9ffa9f00a">   52</a></span>&#160;    <a class="code" href="structBaseHeap.html">BaseHeap</a> <a class="code" href="structAivHeap.html#a5b7dbb80dd64e3d7f6e516f9ffa9f00a">heap</a>;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="structAivHeap.html#ac009e08fda366f9dd4924286665ec014">   57</a></span>&#160;    PVOID <a class="code" href="structAivHeap.html#ac009e08fda366f9dd4924286665ec014">pAllocation</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="structAivHeap.html#a459e5d87072beacd481f95c37dcef924">   57</a></span>&#160;    <a class="code" href="CommonDefs_8h.html#a44a84094d41db406043c92f2c6344acc">PVOID</a> <a class="code" href="structAivHeap.html#a459e5d87072beacd481f95c37dcef924">pAllocation</a>;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="structAivHeap.html#acc593a0d1dc36371a0c3535dd7f1ad4b">   62</a></span>&#160;    <a class="code" href="structAIV__ALLOCATION__HEADER.html">PAIV_ALLOCATION_HEADER</a> <a class="code" href="structAivHeap.html#acc593a0d1dc36371a0c3535dd7f1ad4b">pFree</a>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="structAIV__ALLOCATION__HEADER.html">PAIV_ALLOCATION_HEADER</a> pAlloc;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;} <a class="code" href="structAivHeap.html">AivHeap</a>, *<a class="code" href="structAivHeap.html">PAivHeap</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="structAivHeap.html#af9a7b90c8cfff53a25f9da7ef77cdf36">   62</a></span>&#160;    <a class="code" href="structAIV__ALLOCATION__HEADER.html">PAIV_ALLOCATION_HEADER</a> <a class="code" href="structAivHeap.html#af9a7b90c8cfff53a25f9da7ef77cdf36">pFree</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="structAivHeap.html#ae981849a867351bc023a3b220b630784">   63</a></span>&#160;    <a class="code" href="structAIV__ALLOCATION__HEADER.html">PAIV_ALLOCATION_HEADER</a> <a class="code" href="structAivHeap.html#ae981849a867351bc023a3b220b630784">pAlloc</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="AivHeap_8h.html#aba0e0f98d4d544392b7b40dd4cdabe30">   64</a></span>&#160;} <a class="code" href="structAivHeap.html">AivHeap</a>, *<a class="code" href="AivHeap_8h.html#aba0e0f98d4d544392b7b40dd4cdabe30">PAivHeap</a>;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#define CHK_AIV_ALLOCATION(pAiv, pAlloc)                                                                                                             \</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="AivHeap_8h.html#a1c7215d0ed59d5382da4851b58c2eb3a">   69</a></span>&#160;<span class="preprocessor">#define CHK_AIV_ALLOCATION(pAiv, pAlloc)                                                                                                             \</span></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">    do {                                                                                                                                             \</span></div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">        CHK_ERR((PBYTE) (pAlloc) != NULL &amp;&amp; (PBYTE) (pAlloc) &gt;= ((PBYTE) ((PAivHeap) (pAiv))-&gt;pAllocation) &amp;&amp;                                        \</span></div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">                    (PBYTE) (pAlloc) &lt; ((PBYTE) ((PAivHeap) (pAiv))-&gt;pAllocation) + ((PHeap) (pAiv))-&gt;heapLimit,                                     \</span></div>
@@ -123,76 +139,116 @@ $(function() {
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#ifdef ALIGNED_MEMORY_MODEL</span></div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#define HEAP_PACKED_SIZE(size) ROUND_UP((size), 8)</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#define HEAP_PACKED_SIZE(size) (size)</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="AivHeap_8h.html#abc9335af1ad19f2bd011ec940f8a5f84">   79</a></span>&#160;<span class="preprocessor">#define HEAP_PACKED_SIZE(size) (size)</span></div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#define GET_AIV_ALLOCATION_HEADER(p) ((PAIV_ALLOCATION_HEADER) (p) -1)</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="AivHeap_8h.html#a78d2ad8a726fd1526782a11f84e1f398">   85</a></span>&#160;<span class="preprocessor">#define GET_AIV_ALLOCATION_HEADER(p) ((PAIV_ALLOCATION_HEADER) (p) -1)</span></div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#define GET_AIV_ALLOCATION_SIZE(pAlloc) (((PALLOCATION_HEADER) (pAlloc))-&gt;size)</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="AivHeap_8h.html#afcb22ad9b44b8e3689f102f9f22dcdce">   90</a></span>&#160;<span class="preprocessor">#define GET_AIV_ALLOCATION_SIZE(pAlloc) (((PALLOCATION_HEADER) (pAlloc))-&gt;size)</span></div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#define SET_AIV_ALLOCATION_SIZE(pAlloc, s) (((PALLOCATION_HEADER) (pAlloc))-&gt;size = (UINT64) (s))</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="AivHeap_8h.html#aaab2716a850c8a59b4a7fbb25fdfc074">   95</a></span>&#160;<span class="preprocessor">#define SET_AIV_ALLOCATION_SIZE(pAlloc, s) (((PALLOCATION_HEADER) (pAlloc))-&gt;size = (UINT64) (s))</span></div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">#define GET_AIV_ALLOCATION(pAlloc) ((PBYTE) ((PAIV_ALLOCATION_HEADER) (pAlloc) + 1))</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="AivHeap_8h.html#af322555c61c5fa3e9d2025bb73e254d3">  100</a></span>&#160;<span class="preprocessor">#define GET_AIV_ALLOCATION(pAlloc) ((PBYTE) ((PAIV_ALLOCATION_HEADER) (pAlloc) + 1))</span></div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">#define GET_AIV_ALLOCATION_FOOTER(pAlloc) ((PALLOCATION_FOOTER) (GET_AIV_ALLOCATION(pAlloc) + GET_AIV_ALLOCATION_SIZE(pAlloc)))</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="AivHeap_8h.html#a4e0a14d728b84a7050dc294ce0f8c802">  105</a></span>&#160;<span class="preprocessor">#define GET_AIV_ALLOCATION_FOOTER(pAlloc) ((PALLOCATION_FOOTER) (GET_AIV_ALLOCATION(pAlloc) + GET_AIV_ALLOCATION_SIZE(pAlloc)))</span></div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">#define GET_AIV_ALLOCATION_FOOTER_SIZE(pAlloc) (GET_AIV_ALLOCATION_FOOTER(pAlloc)-&gt;size)</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="AivHeap_8h.html#aba897cae0485e8cbe740e36a921fc9b0">  110</a></span>&#160;<span class="preprocessor">#define GET_AIV_ALLOCATION_FOOTER_SIZE(pAlloc) (GET_AIV_ALLOCATION_FOOTER(pAlloc)-&gt;size)</span></div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor">#define SET_AIV_ALLOCATION_FOOTER_SIZE(pAlloc) (GET_AIV_ALLOCATION_FOOTER(pAlloc)-&gt;size = GET_AIV_ALLOCATION_SIZE(pAlloc))</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="AivHeap_8h.html#a410c90d17027c0ac75b16eae502bad56">  115</a></span>&#160;<span class="preprocessor">#define SET_AIV_ALLOCATION_FOOTER_SIZE(pAlloc) (GET_AIV_ALLOCATION_FOOTER(pAlloc)-&gt;size = GET_AIV_ALLOCATION_SIZE(pAlloc))</span></div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;DEFINE_CREATE_HEAP(aivHeapCreate);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<a class="code" href="AivHeap_8h.html#a3b512eea6c76d7449b3b56f223bea39e">DEFINE_CREATE_HEAP</a>(aivHeapCreate);</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;DEFINE_HEAP_ALLOC(aivHeapAlloc);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<a class="code" href="AivHeap_8h.html#a8f344ccf4df4542471e3c8f219a39db7">DEFINE_HEAP_ALLOC</a>(aivHeapAlloc);</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;DEFINE_HEAP_FREE(aivHeapFree);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<a class="code" href="AivHeap_8h.html#a9730a240ed1c24fb1b8dc6b9a05d7f7e">DEFINE_HEAP_FREE</a>(aivHeapFree);</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;DEFINE_HEAP_GET_ALLOC_SIZE(aivHeapGetAllocSize);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<a class="code" href="AivHeap_8h.html#a3979286c6287796f5b3022e8d20de898">DEFINE_HEAP_GET_ALLOC_SIZE</a>(aivHeapGetAllocSize);</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;DEFINE_HEAP_SET_ALLOC_SIZE(aivHeapSetAllocSize);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<a class="code" href="AivHeap_8h.html#a72941a83f8eb49f0632536591d6be0bf">DEFINE_HEAP_SET_ALLOC_SIZE</a>(aivHeapSetAllocSize);</div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;DEFINE_HEAP_MAP(aivHeapMap);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<a class="code" href="AivHeap_8h.html#a2b8cc4e272d1faa02a0bc4b7e5b74b82">DEFINE_HEAP_MAP</a>(aivHeapMap);</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;DEFINE_HEAP_UNMAP(aivHeapUnmap);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<a class="code" href="AivHeap_8h.html#a95ba982a9a021852012c489ba896117b">DEFINE_HEAP_UNMAP</a>(aivHeapUnmap);</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;DEFINE_RELEASE_HEAP(aivHeapRelease);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<a class="code" href="AivHeap_8h.html#a91ec263997290964040916cf13542370">DEFINE_RELEASE_HEAP</a>(aivHeapRelease);</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;DEFINE_INIT_HEAP(aivHeapInit);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<a class="code" href="AivHeap_8h.html#a57002c2849e9b4566fdb6d7d4cd24e39">DEFINE_INIT_HEAP</a>(aivHeapInit);</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;DEFINE_HEAP_CHK(aivHeapDebugCheckAllocator);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<a class="code" href="AivHeap_8h.html#a195f1ad5fcb536c23900e6222522047c">DEFINE_HEAP_CHK</a>(aivHeapDebugCheckAllocator);</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;DEFINE_HEADER_SIZE(aivGetAllocationHeaderSize);</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;DEFINE_FOOTER_SIZE(aivGetAllocationFooterSize);</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;DEFINE_ALIGNED_SIZE(aivGetAllocationAlignedSize);</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;DEFINE_ALLOC_SIZE(aivGetAllocationSize);</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;DEFINE_HEAP_LIMITS(aivGetHeapLimits);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<a class="code" href="AivHeap_8h.html#a71ebe4c800134c7174338d59c5d14e3a">DEFINE_HEADER_SIZE</a>(aivGetAllocationHeaderSize);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<a class="code" href="AivHeap_8h.html#aeb060822934a35e6086c3a180218e864">DEFINE_FOOTER_SIZE</a>(aivGetAllocationFooterSize);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<a class="code" href="AivHeap_8h.html#a7c01c83706af345214449dc2934dd4b3">DEFINE_ALIGNED_SIZE</a>(aivGetAllocationAlignedSize);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<a class="code" href="AivHeap_8h.html#af881f267a8ae92c75e3b77f49554198c">DEFINE_ALLOC_SIZE</a>(aivGetAllocationSize);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<a class="code" href="AivHeap_8h.html#ad2233c352aa852a8a928bfbc9a842a4c">DEFINE_HEAP_LIMITS</a>(aivGetHeapLimits);</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<a class="code" href="structAIV__ALLOCATION__HEADER.html">PAIV_ALLOCATION_HEADER</a> getFreeBlock(<a class="code" href="structAivHeap.html">PAivHeap</a>, UINT64);</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;VOID splitFreeBlock(<a class="code" href="structAivHeap.html">PAivHeap</a>, <a class="code" href="structAIV__ALLOCATION__HEADER.html">PAIV_ALLOCATION_HEADER</a>, UINT64);</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;VOID splitAllocatedBlock(<a class="code" href="structAivHeap.html">PAivHeap</a>, <a class="code" href="structAIV__ALLOCATION__HEADER.html">PAIV_ALLOCATION_HEADER</a>, UINT64);</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;VOID addAllocatedBlock(<a class="code" href="structAivHeap.html">PAivHeap</a>, <a class="code" href="structAIV__ALLOCATION__HEADER.html">PAIV_ALLOCATION_HEADER</a>);</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;VOID removeChainedBlock(<a class="code" href="structAivHeap.html">PAivHeap</a>, <a class="code" href="structAIV__ALLOCATION__HEADER.html">PAIV_ALLOCATION_HEADER</a>);</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;VOID addFreeBlock(<a class="code" href="structAivHeap.html">PAivHeap</a>, <a class="code" href="structAIV__ALLOCATION__HEADER.html">PAIV_ALLOCATION_HEADER</a>);</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;VOID coalesceFreeToAllocatedBlock(<a class="code" href="structAivHeap.html">PAivHeap</a>, <a class="code" href="structAIV__ALLOCATION__HEADER.html">PAIV_ALLOCATION_HEADER</a>, <a class="code" href="structAIV__ALLOCATION__HEADER.html">PAIV_ALLOCATION_HEADER</a>, UINT64);</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;BOOL checkOverlap(<a class="code" href="structAIV__ALLOCATION__HEADER.html">PAIV_ALLOCATION_HEADER</a>, <a class="code" href="structAIV__ALLOCATION__HEADER.html">PAIV_ALLOCATION_HEADER</a>);</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<a class="code" href="structAIV__ALLOCATION__HEADER.html">PAIV_ALLOCATION_HEADER</a> getLeftBlock(<a class="code" href="structAivHeap.html">PAivHeap</a>, <a class="code" href="structAIV__ALLOCATION__HEADER.html">PAIV_ALLOCATION_HEADER</a>);</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<a class="code" href="structAIV__ALLOCATION__HEADER.html">PAIV_ALLOCATION_HEADER</a> getRightBlock(<a class="code" href="structAivHeap.html">PAivHeap</a>, <a class="code" href="structAIV__ALLOCATION__HEADER.html">PAIV_ALLOCATION_HEADER</a>);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<a class="code" href="structAIV__ALLOCATION__HEADER.html">PAIV_ALLOCATION_HEADER</a> <a class="code" href="AivHeap_8h.html#a09e4f57c9b13c9f3f0986c95fb4138bf">getFreeBlock</a>(<a class="code" href="structAivHeap.html">PAivHeap</a>, <a class="code" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<a class="code" href="CommonDefs_8h.html#a7f319bfc2492a2136964194204e7a8cf">VOID</a> <a class="code" href="AivHeap_8h.html#a31b25ebdd8ab9ba952b95a3485c5e3be">splitFreeBlock</a>(<a class="code" href="structAivHeap.html">PAivHeap</a>, <a class="code" href="structAIV__ALLOCATION__HEADER.html">PAIV_ALLOCATION_HEADER</a>, <a class="code" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<a class="code" href="CommonDefs_8h.html#a7f319bfc2492a2136964194204e7a8cf">VOID</a> <a class="code" href="AivHeap_8h.html#ac4bb50746602d9407abe0a306228d207">splitAllocatedBlock</a>(<a class="code" href="structAivHeap.html">PAivHeap</a>, <a class="code" href="structAIV__ALLOCATION__HEADER.html">PAIV_ALLOCATION_HEADER</a>, <a class="code" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>);</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<a class="code" href="CommonDefs_8h.html#a7f319bfc2492a2136964194204e7a8cf">VOID</a> <a class="code" href="AivHeap_8h.html#afeebcbd23d8a745654c4917265b68ac4">addAllocatedBlock</a>(<a class="code" href="structAivHeap.html">PAivHeap</a>, <a class="code" href="structAIV__ALLOCATION__HEADER.html">PAIV_ALLOCATION_HEADER</a>);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<a class="code" href="CommonDefs_8h.html#a7f319bfc2492a2136964194204e7a8cf">VOID</a> <a class="code" href="AivHeap_8h.html#ae509378722ea2dd25eef59bafbc98cc0">removeChainedBlock</a>(<a class="code" href="structAivHeap.html">PAivHeap</a>, <a class="code" href="structAIV__ALLOCATION__HEADER.html">PAIV_ALLOCATION_HEADER</a>);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<a class="code" href="CommonDefs_8h.html#a7f319bfc2492a2136964194204e7a8cf">VOID</a> <a class="code" href="AivHeap_8h.html#a7a4489cc8913436edc7717b57d6885da">addFreeBlock</a>(<a class="code" href="structAivHeap.html">PAivHeap</a>, <a class="code" href="structAIV__ALLOCATION__HEADER.html">PAIV_ALLOCATION_HEADER</a>);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<a class="code" href="CommonDefs_8h.html#a7f319bfc2492a2136964194204e7a8cf">VOID</a> <a class="code" href="AivHeap_8h.html#ad7a48efb63d37c6edce69f3b4fce9771">coalesceFreeToAllocatedBlock</a>(<a class="code" href="structAivHeap.html">PAivHeap</a>, <a class="code" href="structAIV__ALLOCATION__HEADER.html">PAIV_ALLOCATION_HEADER</a>, <a class="code" href="structAIV__ALLOCATION__HEADER.html">PAIV_ALLOCATION_HEADER</a>, <a class="code" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<a class="code" href="CommonDefs_8h.html#a6252187f6e55ba4943e030c350d624bd">BOOL</a> <a class="code" href="AivHeap_8h.html#a9dc17d0b5a4030fe77ab6ea0623cab6a">checkOverlap</a>(<a class="code" href="structAIV__ALLOCATION__HEADER.html">PAIV_ALLOCATION_HEADER</a>, <a class="code" href="structAIV__ALLOCATION__HEADER.html">PAIV_ALLOCATION_HEADER</a>);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<a class="code" href="structAIV__ALLOCATION__HEADER.html">PAIV_ALLOCATION_HEADER</a> <a class="code" href="AivHeap_8h.html#aabec0605c0119b155f673b2bd13596a6">getLeftBlock</a>(<a class="code" href="structAivHeap.html">PAivHeap</a>, <a class="code" href="structAIV__ALLOCATION__HEADER.html">PAIV_ALLOCATION_HEADER</a>);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<a class="code" href="structAIV__ALLOCATION__HEADER.html">PAIV_ALLOCATION_HEADER</a> <a class="code" href="AivHeap_8h.html#a50ccbf1f9ac0f2b4fe0bbb9374bc8745">getRightBlock</a>(<a class="code" href="structAivHeap.html">PAivHeap</a>, <a class="code" href="structAIV__ALLOCATION__HEADER.html">PAIV_ALLOCATION_HEADER</a>);</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;}</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// __AIV_HEAP_H__</span></div>
+<div class="ttc" id="aAivHeap_8h_html_a09e4f57c9b13c9f3f0986c95fb4138bf"><div class="ttname"><a href="AivHeap_8h.html#a09e4f57c9b13c9f3f0986c95fb4138bf">getFreeBlock</a></div><div class="ttdeci">PAIV_ALLOCATION_HEADER getFreeBlock(PAivHeap, UINT64)</div><div class="ttdef"><b>Definition:</b> AivHeap.c:581</div></div>
+<div class="ttc" id="aAivHeap_8h_html_a195f1ad5fcb536c23900e6222522047c"><div class="ttname"><a href="AivHeap_8h.html#a195f1ad5fcb536c23900e6222522047c">DEFINE_HEAP_CHK</a></div><div class="ttdeci">DEFINE_HEAP_CHK(aivHeapDebugCheckAllocator)</div><div class="ttdef"><b>Definition:</b> AivHeap.c:27</div></div>
+<div class="ttc" id="aAivHeap_8h_html_a2b8cc4e272d1faa02a0bc4b7e5b74b82"><div class="ttname"><a href="AivHeap_8h.html#a2b8cc4e272d1faa02a0bc4b7e5b74b82">DEFINE_HEAP_MAP</a></div><div class="ttdeci">DEFINE_HEAP_MAP(aivHeapMap)</div><div class="ttdef"><b>Definition:</b> AivHeap.c:373</div></div>
+<div class="ttc" id="aAivHeap_8h_html_a31b25ebdd8ab9ba952b95a3485c5e3be"><div class="ttname"><a href="AivHeap_8h.html#a31b25ebdd8ab9ba952b95a3485c5e3be">splitFreeBlock</a></div><div class="ttdeci">VOID splitFreeBlock(PAivHeap, PAIV_ALLOCATION_HEADER, UINT64)</div><div class="ttdef"><b>Definition:</b> AivHeap.c:602</div></div>
+<div class="ttc" id="aAivHeap_8h_html_a3979286c6287796f5b3022e8d20de898"><div class="ttname"><a href="AivHeap_8h.html#a3979286c6287796f5b3022e8d20de898">DEFINE_HEAP_GET_ALLOC_SIZE</a></div><div class="ttdeci">DEFINE_HEAP_GET_ALLOC_SIZE(aivHeapGetAllocSize)</div><div class="ttdef"><b>Definition:</b> AivHeap.c:338</div></div>
+<div class="ttc" id="aAivHeap_8h_html_a3b512eea6c76d7449b3b56f223bea39e"><div class="ttname"><a href="AivHeap_8h.html#a3b512eea6c76d7449b3b56f223bea39e">DEFINE_CREATE_HEAP</a></div><div class="ttdeci">DEFINE_CREATE_HEAP(aivHeapCreate)</div><div class="ttdef"><b>Definition:</b> AivHeap.c:131</div></div>
+<div class="ttc" id="aAivHeap_8h_html_a50ccbf1f9ac0f2b4fe0bbb9374bc8745"><div class="ttname"><a href="AivHeap_8h.html#a50ccbf1f9ac0f2b4fe0bbb9374bc8745">getRightBlock</a></div><div class="ttdeci">PAIV_ALLOCATION_HEADER getRightBlock(PAivHeap, PAIV_ALLOCATION_HEADER)</div><div class="ttdef"><b>Definition:</b> AivHeap.c:983</div></div>
+<div class="ttc" id="aAivHeap_8h_html_a57002c2849e9b4566fdb6d7d4cd24e39"><div class="ttname"><a href="AivHeap_8h.html#a57002c2849e9b4566fdb6d7d4cd24e39">DEFINE_INIT_HEAP</a></div><div class="ttdeci">DEFINE_INIT_HEAP(aivHeapInit)</div><div class="ttdef"><b>Definition:</b> AivHeap.c:165</div></div>
+<div class="ttc" id="aAivHeap_8h_html_a5eb023b8b69b317b72c0653a83b30944"><div class="ttname"><a href="AivHeap_8h.html#a5eb023b8b69b317b72c0653a83b30944">PAIV_ALLOCATION_HEADER</a></div><div class="ttdeci">struct AIV_ALLOCATION_HEADER * PAIV_ALLOCATION_HEADER</div></div>
+<div class="ttc" id="aAivHeap_8h_html_a71ebe4c800134c7174338d59c5d14e3a"><div class="ttname"><a href="AivHeap_8h.html#a71ebe4c800134c7174338d59c5d14e3a">DEFINE_HEADER_SIZE</a></div><div class="ttdeci">DEFINE_HEADER_SIZE(aivGetAllocationHeaderSize)</div><div class="ttdef"><b>Definition:</b> AivHeap.c:424</div></div>
+<div class="ttc" id="aAivHeap_8h_html_a72941a83f8eb49f0632536591d6be0bf"><div class="ttname"><a href="AivHeap_8h.html#a72941a83f8eb49f0632536591d6be0bf">DEFINE_HEAP_SET_ALLOC_SIZE</a></div><div class="ttdeci">DEFINE_HEAP_SET_ALLOC_SIZE(aivHeapSetAllocSize)</div><div class="ttdef"><b>Definition:</b> AivHeap.c:478</div></div>
+<div class="ttc" id="aAivHeap_8h_html_a7a4489cc8913436edc7717b57d6885da"><div class="ttname"><a href="AivHeap_8h.html#a7a4489cc8913436edc7717b57d6885da">addFreeBlock</a></div><div class="ttdeci">VOID addFreeBlock(PAivHeap, PAIV_ALLOCATION_HEADER)</div><div class="ttdef"><b>Definition:</b> AivHeap.c:885</div></div>
+<div class="ttc" id="aAivHeap_8h_html_a7c01c83706af345214449dc2934dd4b3"><div class="ttname"><a href="AivHeap_8h.html#a7c01c83706af345214449dc2934dd4b3">DEFINE_ALIGNED_SIZE</a></div><div class="ttdeci">DEFINE_ALIGNED_SIZE(aivGetAllocationAlignedSize)</div><div class="ttdef"><b>Definition:</b> AivHeap.c:434</div></div>
+<div class="ttc" id="aAivHeap_8h_html_a8f344ccf4df4542471e3c8f219a39db7"><div class="ttname"><a href="AivHeap_8h.html#a8f344ccf4df4542471e3c8f219a39db7">DEFINE_HEAP_ALLOC</a></div><div class="ttdeci">DEFINE_HEAP_ALLOC(aivHeapAlloc)</div><div class="ttdef"><b>Definition:</b> AivHeap.c:252</div></div>
+<div class="ttc" id="aAivHeap_8h_html_a91ec263997290964040916cf13542370"><div class="ttname"><a href="AivHeap_8h.html#a91ec263997290964040916cf13542370">DEFINE_RELEASE_HEAP</a></div><div class="ttdeci">DEFINE_RELEASE_HEAP(aivHeapRelease)</div><div class="ttdef"><b>Definition:</b> AivHeap.c:224</div></div>
+<div class="ttc" id="aAivHeap_8h_html_a95ba982a9a021852012c489ba896117b"><div class="ttname"><a href="AivHeap_8h.html#a95ba982a9a021852012c489ba896117b">DEFINE_HEAP_UNMAP</a></div><div class="ttdeci">DEFINE_HEAP_UNMAP(aivHeapUnmap)</div><div class="ttdef"><b>Definition:</b> AivHeap.c:411</div></div>
+<div class="ttc" id="aAivHeap_8h_html_a9730a240ed1c24fb1b8dc6b9a05d7f7e"><div class="ttname"><a href="AivHeap_8h.html#a9730a240ed1c24fb1b8dc6b9a05d7f7e">DEFINE_HEAP_FREE</a></div><div class="ttdeci">DEFINE_HEAP_FREE(aivHeapFree)</div><div class="ttdef"><b>Definition:</b> AivHeap.c:300</div></div>
+<div class="ttc" id="aAivHeap_8h_html_a9dc17d0b5a4030fe77ab6ea0623cab6a"><div class="ttname"><a href="AivHeap_8h.html#a9dc17d0b5a4030fe77ab6ea0623cab6a">checkOverlap</a></div><div class="ttdeci">BOOL checkOverlap(PAIV_ALLOCATION_HEADER, PAIV_ALLOCATION_HEADER)</div><div class="ttdef"><b>Definition:</b> AivHeap.c:948</div></div>
+<div class="ttc" id="aAivHeap_8h_html_aabec0605c0119b155f673b2bd13596a6"><div class="ttname"><a href="AivHeap_8h.html#aabec0605c0119b155f673b2bd13596a6">getLeftBlock</a></div><div class="ttdeci">PAIV_ALLOCATION_HEADER getLeftBlock(PAivHeap, PAIV_ALLOCATION_HEADER)</div><div class="ttdef"><b>Definition:</b> AivHeap.c:960</div></div>
+<div class="ttc" id="aAivHeap_8h_html_aba0e0f98d4d544392b7b40dd4cdabe30"><div class="ttname"><a href="AivHeap_8h.html#aba0e0f98d4d544392b7b40dd4cdabe30">PAivHeap</a></div><div class="ttdeci">struct AivHeap * PAivHeap</div></div>
+<div class="ttc" id="aAivHeap_8h_html_ac4bb50746602d9407abe0a306228d207"><div class="ttname"><a href="AivHeap_8h.html#ac4bb50746602d9407abe0a306228d207">splitAllocatedBlock</a></div><div class="ttdeci">VOID splitAllocatedBlock(PAivHeap, PAIV_ALLOCATION_HEADER, UINT64)</div><div class="ttdef"><b>Definition:</b> AivHeap.c:693</div></div>
+<div class="ttc" id="aAivHeap_8h_html_ad2233c352aa852a8a928bfbc9a842a4c"><div class="ttname"><a href="AivHeap_8h.html#ad2233c352aa852a8a928bfbc9a842a4c">DEFINE_HEAP_LIMITS</a></div><div class="ttdeci">DEFINE_HEAP_LIMITS(aivGetHeapLimits)</div><div class="ttdef"><b>Definition:</b> AivHeap.c:572</div></div>
+<div class="ttc" id="aAivHeap_8h_html_ad7a48efb63d37c6edce69f3b4fce9771"><div class="ttname"><a href="AivHeap_8h.html#ad7a48efb63d37c6edce69f3b4fce9771">coalesceFreeToAllocatedBlock</a></div><div class="ttdeci">VOID coalesceFreeToAllocatedBlock(PAivHeap, PAIV_ALLOCATION_HEADER, PAIV_ALLOCATION_HEADER, UINT64)</div><div class="ttdef"><b>Definition:</b> AivHeap.c:736</div></div>
+<div class="ttc" id="aAivHeap_8h_html_ae509378722ea2dd25eef59bafbc98cc0"><div class="ttname"><a href="AivHeap_8h.html#ae509378722ea2dd25eef59bafbc98cc0">removeChainedBlock</a></div><div class="ttdeci">VOID removeChainedBlock(PAivHeap, PAIV_ALLOCATION_HEADER)</div><div class="ttdef"><b>Definition:</b> AivHeap.c:849</div></div>
+<div class="ttc" id="aAivHeap_8h_html_aeb060822934a35e6086c3a180218e864"><div class="ttname"><a href="AivHeap_8h.html#aeb060822934a35e6086c3a180218e864">DEFINE_FOOTER_SIZE</a></div><div class="ttdeci">DEFINE_FOOTER_SIZE(aivGetAllocationFooterSize)</div><div class="ttdef"><b>Definition:</b> AivHeap.c:429</div></div>
+<div class="ttc" id="aAivHeap_8h_html_af881f267a8ae92c75e3b77f49554198c"><div class="ttname"><a href="AivHeap_8h.html#af881f267a8ae92c75e3b77f49554198c">DEFINE_ALLOC_SIZE</a></div><div class="ttdeci">DEFINE_ALLOC_SIZE(aivGetAllocationSize)</div><div class="ttdef"><b>Definition:</b> AivHeap.c:439</div></div>
+<div class="ttc" id="aAivHeap_8h_html_afeebcbd23d8a745654c4917265b68ac4"><div class="ttname"><a href="AivHeap_8h.html#afeebcbd23d8a745654c4917265b68ac4">addAllocatedBlock</a></div><div class="ttdeci">VOID addAllocatedBlock(PAivHeap, PAIV_ALLOCATION_HEADER)</div><div class="ttdef"><b>Definition:</b> AivHeap.c:828</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a44a84094d41db406043c92f2c6344acc"><div class="ttname"><a href="CommonDefs_8h.html#a44a84094d41db406043c92f2c6344acc">PVOID</a></div><div class="ttdeci">VOID * PVOID</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:177</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a57be03562867144161c1bfee95ca8f7c"><div class="ttname"><a href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a></div><div class="ttdeci">unsigned long long UINT64</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:144</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a6252187f6e55ba4943e030c350d624bd"><div class="ttname"><a href="CommonDefs_8h.html#a6252187f6e55ba4943e030c350d624bd">BOOL</a></div><div class="ttdeci">INT32 BOOL</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:173</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a7f319bfc2492a2136964194204e7a8cf"><div class="ttname"><a href="CommonDefs_8h.html#a7f319bfc2492a2136964194204e7a8cf">VOID</a></div><div class="ttdeci">#define VOID</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:153</div></div>
 <div class="ttc" id="astructAIV__ALLOCATION__HEADER_html"><div class="ttname"><a href="structAIV__ALLOCATION__HEADER.html">AIV_ALLOCATION_HEADER</a></div><div class="ttdef"><b>Definition:</b> AivHeap.h:28</div></div>
+<div class="ttc" id="astructAIV__ALLOCATION__HEADER_html_a3708d6b39880b3d9755efe362eb64b7b"><div class="ttname"><a href="structAIV__ALLOCATION__HEADER.html#a3708d6b39880b3d9755efe362eb64b7b">AIV_ALLOCATION_HEADER::allocSize</a></div><div class="ttdeci">UINT64 allocSize</div><div class="ttdef"><b>Definition:</b> AivHeap.h:33</div></div>
+<div class="ttc" id="astructAIV__ALLOCATION__HEADER_html_a6c31c25f3bfbf2cdc8afbff99eff5a2a"><div class="ttname"><a href="structAIV__ALLOCATION__HEADER.html#a6c31c25f3bfbf2cdc8afbff99eff5a2a">AIV_ALLOCATION_HEADER::pPrev</a></div><div class="ttdeci">struct AIV_ALLOCATION_HEADER * pPrev</div><div class="ttdef"><b>Definition:</b> AivHeap.h:37</div></div>
+<div class="ttc" id="astructAIV__ALLOCATION__HEADER_html_ae2fe3788e1ad4a473042ed76fbf4511d"><div class="ttname"><a href="structAIV__ALLOCATION__HEADER.html#ae2fe3788e1ad4a473042ed76fbf4511d">AIV_ALLOCATION_HEADER::header</a></div><div class="ttdeci">ALLOCATION_HEADER header</div><div class="ttdef"><b>Definition:</b> AivHeap.h:30</div></div>
+<div class="ttc" id="astructAIV__ALLOCATION__HEADER_html_af92f8f7e8720b31596348d1be87e993a"><div class="ttname"><a href="structAIV__ALLOCATION__HEADER.html#af92f8f7e8720b31596348d1be87e993a">AIV_ALLOCATION_HEADER::pNext</a></div><div class="ttdeci">struct AIV_ALLOCATION_HEADER * pNext</div><div class="ttdef"><b>Definition:</b> AivHeap.h:36</div></div>
 <div class="ttc" id="astructALLOCATION__HEADER_html"><div class="ttname"><a href="structALLOCATION__HEADER.html">ALLOCATION_HEADER</a></div><div class="ttdef"><b>Definition:</b> Common.h:29</div></div>
 <div class="ttc" id="astructAivHeap_html"><div class="ttname"><a href="structAivHeap.html">AivHeap</a></div><div class="ttdef"><b>Definition:</b> AivHeap.h:48</div></div>
-<div class="ttc" id="astructAivHeap_html_a9ad1aadfa6121cfd1b4f1f392c61bc9e"><div class="ttname"><a href="structAivHeap.html#a9ad1aadfa6121cfd1b4f1f392c61bc9e">AivHeap::heap</a></div><div class="ttdeci">BaseHeap heap</div><div class="ttdef"><b>Definition:</b> AivHeap.h:52</div></div>
-<div class="ttc" id="astructAivHeap_html_ac009e08fda366f9dd4924286665ec014"><div class="ttname"><a href="structAivHeap.html#ac009e08fda366f9dd4924286665ec014">AivHeap::pAllocation</a></div><div class="ttdeci">PVOID pAllocation</div><div class="ttdef"><b>Definition:</b> AivHeap.h:57</div></div>
-<div class="ttc" id="astructAivHeap_html_acc593a0d1dc36371a0c3535dd7f1ad4b"><div class="ttname"><a href="structAivHeap.html#acc593a0d1dc36371a0c3535dd7f1ad4b">AivHeap::pFree</a></div><div class="ttdeci">PAIV_ALLOCATION_HEADER pFree</div><div class="ttdef"><b>Definition:</b> AivHeap.h:62</div></div>
+<div class="ttc" id="astructAivHeap_html_a459e5d87072beacd481f95c37dcef924"><div class="ttname"><a href="structAivHeap.html#a459e5d87072beacd481f95c37dcef924">AivHeap::pAllocation</a></div><div class="ttdeci">PVOID pAllocation</div><div class="ttdef"><b>Definition:</b> AivHeap.h:57</div></div>
+<div class="ttc" id="astructAivHeap_html_a5b7dbb80dd64e3d7f6e516f9ffa9f00a"><div class="ttname"><a href="structAivHeap.html#a5b7dbb80dd64e3d7f6e516f9ffa9f00a">AivHeap::heap</a></div><div class="ttdeci">BaseHeap heap</div><div class="ttdef"><b>Definition:</b> AivHeap.h:52</div></div>
+<div class="ttc" id="astructAivHeap_html_ae981849a867351bc023a3b220b630784"><div class="ttname"><a href="structAivHeap.html#ae981849a867351bc023a3b220b630784">AivHeap::pAlloc</a></div><div class="ttdeci">PAIV_ALLOCATION_HEADER pAlloc</div><div class="ttdef"><b>Definition:</b> AivHeap.h:63</div></div>
+<div class="ttc" id="astructAivHeap_html_af9a7b90c8cfff53a25f9da7ef77cdf36"><div class="ttname"><a href="structAivHeap.html#af9a7b90c8cfff53a25f9da7ef77cdf36">AivHeap::pFree</a></div><div class="ttdeci">PAIV_ALLOCATION_HEADER pFree</div><div class="ttdef"><b>Definition:</b> AivHeap.h:62</div></div>
 <div class="ttc" id="astructBaseHeap_html"><div class="ttname"><a href="structBaseHeap.html">BaseHeap</a></div><div class="ttdef"><b>Definition:</b> Include_i.h:123</div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c4d22fc0e4736089ffe45cb281f7e16f.html">heap</a></li><li class="navelem"><a class="el" href="dir_0dbdd4b98286c9c70a81bbc1f422dcfa.html">src</a></li><li class="navelem"><a class="el" href="AivHeap_8h.html">AivHeap.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

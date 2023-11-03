@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +28,7 @@
    <div id="projectname">Amazon Kinesis Video Streams PIC
    &#160;<span id="projectnumber">1.0.1</span>
    </div>
-   <div id="projectbrief">Platform Independent Code for Amazon Kinesis Video Streams.</div>
+   <div id="projectbrief">Platform independent code for Amazon Kinesis Video Streams</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('UtilTestFixture_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,71 +82,66 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_313caf1132e152dd9b58bea13a4052ca.html">utils</a></li><li class="navelem"><a class="el" href="dir_495478099b1eb30ac437e4aa2246103a.html">tst</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">UtilTestFixture.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<a href="UtilTestFixture_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;gtest/gtest.h&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;com/amazonaws/kinesis/video/utils/Include.h&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;src/utils/src/Include_i.h&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html">com/amazonaws/kinesis/video/utils/Include.h</a>&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="utils_2src_2Include__i_8h.html">src/utils/src/Include_i.h</a>&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// Default allocator functions</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">extern</span> UINT64 gTotalUtilsMemoryUsage;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">extern</span> MUTEX gUtilityMemMutex;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">extern</span> <a class="code" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> <a class="code" href="UtilTestFixture_8h.html#a5708d2e4709101e575e88983b767ca7d">gTotalUtilsMemoryUsage</a>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">extern</span> <a class="code" href="CommonDefs_8h.html#aacb6173308f40c2f1bb4b0fa0e13411c">MUTEX</a> <a class="code" href="UtilTestFixture_8h.html#a60c0666f173ec3f806b3d46d2c1bd92a">gUtilityMemMutex</a>;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;INLINE PVOID instrumentedUtilMemAlloc(SIZE_T size)</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="UtilTestFixture_8h.html#aba99d3130e8e5d0474e40261329646f3">   12</a></span>&#160;INLINE <a class="code" href="CommonDefs_8h.html#a44a84094d41db406043c92f2c6344acc">PVOID</a> <a class="code" href="UtilTestFixture_8h.html#aba99d3130e8e5d0474e40261329646f3">instrumentedUtilMemAlloc</a>(<a class="code" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a> size)</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    DLOGS(<span class="stringliteral">&quot;Test malloc %llu bytes&quot;</span>, (UINT64) size);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    MUTEX_LOCK(gUtilityMemMutex);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    gTotalUtilsMemoryUsage += size;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    MUTEX_UNLOCK(gUtilityMemMutex);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    PBYTE pAlloc = (PBYTE) malloc(size + SIZEOF(SIZE_T));</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    *(PSIZE_T) pAlloc = size;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="PlatformUtils_8h.html#a5a6558d3d7188ba8ac355fb3e2036990">DLOGS</a>(<span class="stringliteral">&quot;Test malloc %llu bytes&quot;</span>, (<a class="code" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>) size);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="CommonDefs_8h.html#a591ddb90bbf3f2a43071e118ac71aa40">MUTEX_LOCK</a>(<a class="code" href="UtilTestFixture_8h.html#a60c0666f173ec3f806b3d46d2c1bd92a">gUtilityMemMutex</a>);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="UtilTestFixture_8h.html#a5708d2e4709101e575e88983b767ca7d">gTotalUtilsMemoryUsage</a> += size;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="CommonDefs_8h.html#a9b44863ed520f5bccb6d9147654ca0f5">MUTEX_UNLOCK</a>(<a class="code" href="UtilTestFixture_8h.html#a60c0666f173ec3f806b3d46d2c1bd92a">gUtilityMemMutex</a>);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="CommonDefs_8h.html#a16ac278d310943f39816b8361f2dad64">PBYTE</a> pAlloc = (<a class="code" href="CommonDefs_8h.html#a16ac278d310943f39816b8361f2dad64">PBYTE</a>) malloc(size + <a class="code" href="CommonDefs_8h.html#adb5bdad0c0d045cf0679648a4f3b19ed">SIZEOF</a>(<a class="code" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a>));</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    *(<a class="code" href="CommonDefs_8h.html#aadbfb55fed50f8ee59c1cfebada264c6">PSIZE_T</a>) pAlloc = size;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">return</span> pAlloc + SIZEOF(SIZE_T);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">return</span> pAlloc + <a class="code" href="CommonDefs_8h.html#adb5bdad0c0d045cf0679648a4f3b19ed">SIZEOF</a>(<a class="code" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a>);</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;INLINE PVOID instrumentedUtilMemAlignAlloc(SIZE_T size, SIZE_T alignment)</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="UtilTestFixture_8h.html#acf44f25e7f3f976f84557ae553ef0894">   24</a></span>&#160;INLINE <a class="code" href="CommonDefs_8h.html#a44a84094d41db406043c92f2c6344acc">PVOID</a> <a class="code" href="UtilTestFixture_8h.html#acf44f25e7f3f976f84557ae553ef0894">instrumentedUtilMemAlignAlloc</a>(<a class="code" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a> size, <a class="code" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a> alignment)</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    DLOGS(<span class="stringliteral">&quot;Test align malloc %llu bytes&quot;</span>, (UINT64) size);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="PlatformUtils_8h.html#a5a6558d3d7188ba8ac355fb3e2036990">DLOGS</a>(<span class="stringliteral">&quot;Test align malloc %llu bytes&quot;</span>, (<a class="code" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>) size);</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">// Just do malloc</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    UNUSED_PARAM(alignment);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">return</span> instrumentedUtilMemAlloc(size);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="CommonDefs_8h.html#a21d70e1e2f9df4e3dc4b07ed27e83dcd">UNUSED_PARAM</a>(alignment);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="UtilTestFixture_8h.html#aba99d3130e8e5d0474e40261329646f3">instrumentedUtilMemAlloc</a>(size);</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;INLINE PVOID instrumentedUtilMemCalloc(SIZE_T num, SIZE_T size)</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="UtilTestFixture_8h.html#af3286d66f7d3479e4e388031f41542b9">   32</a></span>&#160;INLINE <a class="code" href="CommonDefs_8h.html#a44a84094d41db406043c92f2c6344acc">PVOID</a> <a class="code" href="UtilTestFixture_8h.html#af3286d66f7d3479e4e388031f41542b9">instrumentedUtilMemCalloc</a>(<a class="code" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a> num, <a class="code" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a> size)</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    SIZE_T overallSize = num * size;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    DLOGS(<span class="stringliteral">&quot;Test calloc %llu bytes&quot;</span>, (UINT64) overallSize);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a> overallSize = num * size;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="PlatformUtils_8h.html#a5a6558d3d7188ba8ac355fb3e2036990">DLOGS</a>(<span class="stringliteral">&quot;Test calloc %llu bytes&quot;</span>, (<a class="code" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>) overallSize);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    MUTEX_LOCK(gUtilityMemMutex);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    gTotalUtilsMemoryUsage += overallSize;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    MUTEX_UNLOCK(gUtilityMemMutex);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="CommonDefs_8h.html#a591ddb90bbf3f2a43071e118ac71aa40">MUTEX_LOCK</a>(<a class="code" href="UtilTestFixture_8h.html#a60c0666f173ec3f806b3d46d2c1bd92a">gUtilityMemMutex</a>);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="UtilTestFixture_8h.html#a5708d2e4709101e575e88983b767ca7d">gTotalUtilsMemoryUsage</a> += overallSize;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="CommonDefs_8h.html#a9b44863ed520f5bccb6d9147654ca0f5">MUTEX_UNLOCK</a>(<a class="code" href="UtilTestFixture_8h.html#a60c0666f173ec3f806b3d46d2c1bd92a">gUtilityMemMutex</a>);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    PBYTE pAlloc = (PBYTE) calloc(1, overallSize + SIZEOF(SIZE_T));</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    *(PSIZE_T) pAlloc = overallSize;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="CommonDefs_8h.html#a16ac278d310943f39816b8361f2dad64">PBYTE</a> pAlloc = (<a class="code" href="CommonDefs_8h.html#a16ac278d310943f39816b8361f2dad64">PBYTE</a>) calloc(1, overallSize + <a class="code" href="CommonDefs_8h.html#adb5bdad0c0d045cf0679648a4f3b19ed">SIZEOF</a>(<a class="code" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a>));</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    *(<a class="code" href="CommonDefs_8h.html#aadbfb55fed50f8ee59c1cfebada264c6">PSIZE_T</a>) pAlloc = overallSize;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">return</span> pAlloc + SIZEOF(SIZE_T);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">return</span> pAlloc + <a class="code" href="CommonDefs_8h.html#adb5bdad0c0d045cf0679648a4f3b19ed">SIZEOF</a>(<a class="code" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a>);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;INLINE VOID instrumentedUtilMemFree(PVOID ptr)</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="UtilTestFixture_8h.html#a2d301262b6588047faab4d78ed476db2">   47</a></span>&#160;INLINE <a class="code" href="CommonDefs_8h.html#a7f319bfc2492a2136964194204e7a8cf">VOID</a> <a class="code" href="UtilTestFixture_8h.html#a2d301262b6588047faab4d78ed476db2">instrumentedUtilMemFree</a>(<a class="code" href="CommonDefs_8h.html#a44a84094d41db406043c92f2c6344acc">PVOID</a> ptr)</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    PBYTE pAlloc = (PBYTE) ptr - SIZEOF(SIZE_T);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    SIZE_T size = *(PSIZE_T) pAlloc;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    DLOGS(<span class="stringliteral">&quot;Test free %llu bytes&quot;</span>, (UINT64) size);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="CommonDefs_8h.html#a16ac278d310943f39816b8361f2dad64">PBYTE</a> pAlloc = (<a class="code" href="CommonDefs_8h.html#a16ac278d310943f39816b8361f2dad64">PBYTE</a>) ptr - <a class="code" href="CommonDefs_8h.html#adb5bdad0c0d045cf0679648a4f3b19ed">SIZEOF</a>(<a class="code" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a>);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a> size = *(<a class="code" href="CommonDefs_8h.html#aadbfb55fed50f8ee59c1cfebada264c6">PSIZE_T</a>) pAlloc;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="PlatformUtils_8h.html#a5a6558d3d7188ba8ac355fb3e2036990">DLOGS</a>(<span class="stringliteral">&quot;Test free %llu bytes&quot;</span>, (<a class="code" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>) size);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    MUTEX_LOCK(gUtilityMemMutex);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    gTotalUtilsMemoryUsage -= size;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    MUTEX_UNLOCK(gUtilityMemMutex);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="CommonDefs_8h.html#a591ddb90bbf3f2a43071e118ac71aa40">MUTEX_LOCK</a>(<a class="code" href="UtilTestFixture_8h.html#a60c0666f173ec3f806b3d46d2c1bd92a">gUtilityMemMutex</a>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="UtilTestFixture_8h.html#a5708d2e4709101e575e88983b767ca7d">gTotalUtilsMemoryUsage</a> -= size;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="CommonDefs_8h.html#a9b44863ed520f5bccb6d9147654ca0f5">MUTEX_UNLOCK</a>(<a class="code" href="UtilTestFixture_8h.html#a60c0666f173ec3f806b3d46d2c1bd92a">gUtilityMemMutex</a>);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    free(pAlloc);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
@@ -133,86 +149,140 @@ $(function() {
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">// Set the allocators to the instrumented equivalents</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">extern</span> memAlloc globalMemAlloc;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">extern</span> memAlignAlloc globalMemAlignAlloc;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">extern</span> memCalloc globalMemCalloc;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">extern</span> memFree globalMemFree;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">extern</span> <a class="code" href="CommonDefs_8h.html#a6beccd5d691880c6994b33e4ad6458c6">memAlloc</a> <a class="code" href="UtilTestFixture_8h.html#a12e87b2cb19574075693d84a858aaed3">globalMemAlloc</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">extern</span> <a class="code" href="CommonDefs_8h.html#a1c96aba1b330560658f14f555646d70a">memAlignAlloc</a> <a class="code" href="UtilTestFixture_8h.html#afad8a6550dd9a96dfa58605167590aff">globalMemAlignAlloc</a>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">extern</span> <a class="code" href="CommonDefs_8h.html#adc3671295d5f3f4cfb1cbdfc3a7c7aa9">memCalloc</a> <a class="code" href="UtilTestFixture_8h.html#ac04465a1834c3e9e94504fa140c79f2a">globalMemCalloc</a>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">extern</span> <a class="code" href="CommonDefs_8h.html#ac97db51965b38efefa3dccdc277c34fb">memFree</a> <a class="code" href="UtilTestFixture_8h.html#a9aa22fab8657949ba1657ab76664f2cb">globalMemFree</a>;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
 <div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classUtilTestBase.html">   68</a></span>&#160;<span class="keyword">class </span><a class="code" href="classUtilTestBase.html">UtilTestBase</a> : <span class="keyword">public</span> ::testing::Test {</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="classUtilTestBase.html">UtilTestBase</a>(BOOL setAllocators = TRUE)</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="classUtilTestBase.html#a4a792bb670b848458068a5929f1bf387">   70</a></span>&#160;    <a class="code" href="classUtilTestBase.html#a4a792bb670b848458068a5929f1bf387">UtilTestBase</a>(<a class="code" href="CommonDefs_8h.html#a6252187f6e55ba4943e030c350d624bd">BOOL</a> setAllocators = <a class="code" href="CommonDefs_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>)</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    {</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="comment">// Store the function pointers</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        gTotalUtilsMemoryUsage = 0;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="UtilTestFixture_8h.html#a5708d2e4709101e575e88983b767ca7d">gTotalUtilsMemoryUsage</a> = 0;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        allocatorsSet = setAllocators;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <a class="code" href="classUtilTestBase.html#a9ece06abc7934b2405b9f3376e6de94c">allocatorsSet</a> = setAllocators;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">if</span> (allocatorsSet) {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            storedMemAlloc = globalMemAlloc;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            storedMemAlignAlloc = globalMemAlignAlloc;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            storedMemCalloc = globalMemCalloc;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            storedMemFree = globalMemFree;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classUtilTestBase.html#a9ece06abc7934b2405b9f3376e6de94c">allocatorsSet</a>) {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <a class="code" href="classUtilTestBase.html#af98dca8db4e6798a7684ab72d248d8c1">storedMemAlloc</a> = <a class="code" href="UtilTestFixture_8h.html#a12e87b2cb19574075693d84a858aaed3">globalMemAlloc</a>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <a class="code" href="classUtilTestBase.html#a84bc3c2297ab580925f1d65410482b5a">storedMemAlignAlloc</a> = <a class="code" href="UtilTestFixture_8h.html#afad8a6550dd9a96dfa58605167590aff">globalMemAlignAlloc</a>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <a class="code" href="classUtilTestBase.html#a037168e34431384a18cc9470927b6f73">storedMemCalloc</a> = <a class="code" href="UtilTestFixture_8h.html#ac04465a1834c3e9e94504fa140c79f2a">globalMemCalloc</a>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <a class="code" href="classUtilTestBase.html#ad1a6052c8eff5e440d1e278543c20443">storedMemFree</a> = <a class="code" href="UtilTestFixture_8h.html#a9aa22fab8657949ba1657ab76664f2cb">globalMemFree</a>;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <span class="comment">// Create the mutex for the synchronization for the instrumentation</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            gUtilityMemMutex = MUTEX_CREATE(FALSE);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <a class="code" href="UtilTestFixture_8h.html#a60c0666f173ec3f806b3d46d2c1bd92a">gUtilityMemMutex</a> = <a class="code" href="CommonDefs_8h.html#a883f3c3c50aa0b7dff2e4d09b9894ae5">MUTEX_CREATE</a>(<a class="code" href="CommonDefs_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>);</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="comment">// Save the instrumented ones</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            globalMemAlloc = instrumentedUtilMemAlloc;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            globalMemAlignAlloc = instrumentedUtilMemAlignAlloc;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            globalMemCalloc = instrumentedUtilMemCalloc;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            globalMemFree = instrumentedUtilMemFree;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <a class="code" href="UtilTestFixture_8h.html#a12e87b2cb19574075693d84a858aaed3">globalMemAlloc</a> = <a class="code" href="UtilTestFixture_8h.html#aba99d3130e8e5d0474e40261329646f3">instrumentedUtilMemAlloc</a>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <a class="code" href="UtilTestFixture_8h.html#afad8a6550dd9a96dfa58605167590aff">globalMemAlignAlloc</a> = <a class="code" href="UtilTestFixture_8h.html#acf44f25e7f3f976f84557ae553ef0894">instrumentedUtilMemAlignAlloc</a>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <a class="code" href="UtilTestFixture_8h.html#ac04465a1834c3e9e94504fa140c79f2a">globalMemCalloc</a> = <a class="code" href="UtilTestFixture_8h.html#af3286d66f7d3479e4e388031f41542b9">instrumentedUtilMemCalloc</a>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <a class="code" href="UtilTestFixture_8h.html#a9aa22fab8657949ba1657ab76664f2cb">globalMemFree</a> = <a class="code" href="UtilTestFixture_8h.html#a2d301262b6588047faab4d78ed476db2">instrumentedUtilMemFree</a>;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        }</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    };</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetUp()</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="classUtilTestBase.html#a901706a587f9ae84df8b2395fbe759cb">   94</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classUtilTestBase.html#a901706a587f9ae84df8b2395fbe759cb">SetUp</a>()</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        UINT32 logLevel = 0;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keyword">auto</span> logLevelStr = GETENV(<span class="stringliteral">&quot;AWS_KVS_LOG_LEVEL&quot;</span>);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordflow">if</span> (logLevelStr != NULL) {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            assert(STRTOUI32(logLevelStr, NULL, 10, &amp;logLevel) == STATUS_SUCCESS);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            SET_LOGGER_LOG_LEVEL(logLevel);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <a class="code" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> logLevel = 0;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keyword">auto</span> logLevelStr = <a class="code" href="CommonDefs_8h.html#afe3b95df5834d81ffcde5ed897104154">GETENV</a>(<span class="stringliteral">&quot;AWS_KVS_LOG_LEVEL&quot;</span>);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordflow">if</span> (logLevelStr != <a class="code" href="CommonDefs_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            assert(<a class="code" href="CommonDefs_8h.html#a18ef52f8a6e25be9ff9dbd358a479238">STRTOUI32</a>(logLevelStr, <a class="code" href="CommonDefs_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, 10, &amp;logLevel) == <a class="code" href="CommonDefs_8h.html#ae56fdb340b23940f7a64ed2e37c1774a">STATUS_SUCCESS</a>);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <a class="code" href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a0391f6e08ef195306c1df546c55bc92a">SET_LOGGER_LOG_LEVEL</a>(logLevel);</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        }</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        DLOGI(<span class="stringliteral">&quot;\nSetting up test: %s\n&quot;</span>, GetTestName());</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <a class="code" href="PlatformUtils_8h.html#a54979bddf640e3a131864bf11ce51c01">DLOGI</a>(<span class="stringliteral">&quot;\nSetting up test: %s\n&quot;</span>, <a class="code" href="classUtilTestBase.html#a0900206f992822982da034e1cb81e0dd">GetTestName</a>());</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    };</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> TearDown()</div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="classUtilTestBase.html#a870a092058305911f3d42df45dd657e5">  106</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classUtilTestBase.html#a870a092058305911f3d42df45dd657e5">TearDown</a>()</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        DLOGI(<span class="stringliteral">&quot;\nTearing down test: %s\n&quot;</span>, GetTestName());</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <a class="code" href="PlatformUtils_8h.html#a54979bddf640e3a131864bf11ce51c01">DLOGI</a>(<span class="stringliteral">&quot;\nTearing down test: %s\n&quot;</span>, <a class="code" href="classUtilTestBase.html#a0900206f992822982da034e1cb81e0dd">GetTestName</a>());</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="comment">// Validate the allocations cleanup</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        DLOGI(<span class="stringliteral">&quot;Final remaining allocation size is %llu\n&quot;</span>, gTotalUtilsMemoryUsage);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <a class="code" href="PlatformUtils_8h.html#a54979bddf640e3a131864bf11ce51c01">DLOGI</a>(<span class="stringliteral">&quot;Final remaining allocation size is %llu\n&quot;</span>, <a class="code" href="UtilTestFixture_8h.html#a5708d2e4709101e575e88983b767ca7d">gTotalUtilsMemoryUsage</a>);</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        EXPECT_EQ((UINT64) 0, gTotalUtilsMemoryUsage);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        EXPECT_EQ((<a class="code" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>) 0, <a class="code" href="UtilTestFixture_8h.html#a5708d2e4709101e575e88983b767ca7d">gTotalUtilsMemoryUsage</a>);</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordflow">if</span> (allocatorsSet) {</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            globalMemAlloc = storedMemAlloc;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            globalMemAlignAlloc = storedMemAlignAlloc;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            globalMemCalloc = storedMemCalloc;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            globalMemFree = storedMemFree;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            MUTEX_FREE(gUtilityMemMutex);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classUtilTestBase.html#a9ece06abc7934b2405b9f3376e6de94c">allocatorsSet</a>) {</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <a class="code" href="UtilTestFixture_8h.html#a12e87b2cb19574075693d84a858aaed3">globalMemAlloc</a> = <a class="code" href="classUtilTestBase.html#af98dca8db4e6798a7684ab72d248d8c1">storedMemAlloc</a>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <a class="code" href="UtilTestFixture_8h.html#afad8a6550dd9a96dfa58605167590aff">globalMemAlignAlloc</a> = <a class="code" href="classUtilTestBase.html#a84bc3c2297ab580925f1d65410482b5a">storedMemAlignAlloc</a>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <a class="code" href="UtilTestFixture_8h.html#ac04465a1834c3e9e94504fa140c79f2a">globalMemCalloc</a> = <a class="code" href="classUtilTestBase.html#a037168e34431384a18cc9470927b6f73">storedMemCalloc</a>;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            <a class="code" href="UtilTestFixture_8h.html#a9aa22fab8657949ba1657ab76664f2cb">globalMemFree</a> = <a class="code" href="classUtilTestBase.html#ad1a6052c8eff5e440d1e278543c20443">storedMemFree</a>;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            <a class="code" href="CommonDefs_8h.html#ae5f77471c3b0cfdd9cc7306c68fac3aa">MUTEX_FREE</a>(<a class="code" href="UtilTestFixture_8h.html#a60c0666f173ec3f806b3d46d2c1bd92a">gUtilityMemMutex</a>);</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        }</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    };</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    PCHAR GetTestName()</div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="classUtilTestBase.html#a0900206f992822982da034e1cb81e0dd">  124</a></span>&#160;    <a class="code" href="CommonDefs_8h.html#a6addcc52e2dfddf231bf3213859ae2bb">PCHAR</a> <a class="code" href="classUtilTestBase.html#a0900206f992822982da034e1cb81e0dd">GetTestName</a>()</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    {</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordflow">return</span> (PCHAR)::testing::UnitTest::GetInstance()-&gt;current_test_info()-&gt;test_case_name();</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="CommonDefs_8h.html#a6addcc52e2dfddf231bf3213859ae2bb">PCHAR</a>)::testing::UnitTest::GetInstance()-&gt;current_test_info()-&gt;test_case_name();</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    };</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <span class="keyword">protected</span>:</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="comment">// Stored function pointers to reset on exit</span></div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    memAlloc storedMemAlloc;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    memAlignAlloc storedMemAlignAlloc;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    memCalloc storedMemCalloc;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    memFree storedMemFree;</div>
+<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="classUtilTestBase.html#af98dca8db4e6798a7684ab72d248d8c1">  131</a></span>&#160;    <a class="code" href="CommonDefs_8h.html#a6beccd5d691880c6994b33e4ad6458c6">memAlloc</a> <a class="code" href="classUtilTestBase.html#af98dca8db4e6798a7684ab72d248d8c1">storedMemAlloc</a>;</div>
+<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="classUtilTestBase.html#a84bc3c2297ab580925f1d65410482b5a">  132</a></span>&#160;    <a class="code" href="CommonDefs_8h.html#a1c96aba1b330560658f14f555646d70a">memAlignAlloc</a> <a class="code" href="classUtilTestBase.html#a84bc3c2297ab580925f1d65410482b5a">storedMemAlignAlloc</a>;</div>
+<div class="line"><a name="l00133"></a><span class="lineno"><a class="line" href="classUtilTestBase.html#a037168e34431384a18cc9470927b6f73">  133</a></span>&#160;    <a class="code" href="CommonDefs_8h.html#adc3671295d5f3f4cfb1cbdfc3a7c7aa9">memCalloc</a> <a class="code" href="classUtilTestBase.html#a037168e34431384a18cc9470927b6f73">storedMemCalloc</a>;</div>
+<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="classUtilTestBase.html#ad1a6052c8eff5e440d1e278543c20443">  134</a></span>&#160;    <a class="code" href="CommonDefs_8h.html#ac97db51965b38efefa3dccdc277c34fb">memFree</a> <a class="code" href="classUtilTestBase.html#ad1a6052c8eff5e440d1e278543c20443">storedMemFree</a>;</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    BOOL allocatorsSet;</div>
+<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="classUtilTestBase.html#a9ece06abc7934b2405b9f3376e6de94c">  136</a></span>&#160;    <a class="code" href="CommonDefs_8h.html#a6252187f6e55ba4943e030c350d624bd">BOOL</a> <a class="code" href="classUtilTestBase.html#a9ece06abc7934b2405b9f3376e6de94c">allocatorsSet</a>;</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;};</div>
+<div class="ttc" id="aCommonDefs_8h_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="CommonDefs_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:344</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a0b39d6d754cb24c708b0f2bdbe88130e"><div class="ttname"><a href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a></div><div class="ttdeci">unsigned long UINT32</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:142</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a16ac278d310943f39816b8361f2dad64"><div class="ttname"><a href="CommonDefs_8h.html#a16ac278d310943f39816b8361f2dad64">PBYTE</a></div><div class="ttdeci">BYTE * PBYTE</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:178</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a18ef52f8a6e25be9ff9dbd358a479238"><div class="ttname"><a href="CommonDefs_8h.html#a18ef52f8a6e25be9ff9dbd358a479238">STRTOUI32</a></div><div class="ttdeci">#define STRTOUI32</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:955</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a1baba44b36e282b82faa9ef9bc9f37a4"><div class="ttname"><a href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a></div><div class="ttdeci">UINT_PTR SIZE_T</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:325</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a1c96aba1b330560658f14f555646d70a"><div class="ttname"><a href="CommonDefs_8h.html#a1c96aba1b330560658f14f555646d70a">memAlignAlloc</a></div><div class="ttdeci">PVOID(* memAlignAlloc)(SIZE_T size, SIZE_T alignment)</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:612</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a21d70e1e2f9df4e3dc4b07ed27e83dcd"><div class="ttname"><a href="CommonDefs_8h.html#a21d70e1e2f9df4e3dc4b07ed27e83dcd">UNUSED_PARAM</a></div><div class="ttdeci">#define UNUSED_PARAM(expr)</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:397</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a44a84094d41db406043c92f2c6344acc"><div class="ttname"><a href="CommonDefs_8h.html#a44a84094d41db406043c92f2c6344acc">PVOID</a></div><div class="ttdeci">VOID * PVOID</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:177</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a57be03562867144161c1bfee95ca8f7c"><div class="ttname"><a href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a></div><div class="ttdeci">unsigned long long UINT64</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:144</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a591ddb90bbf3f2a43071e118ac71aa40"><div class="ttname"><a href="CommonDefs_8h.html#a591ddb90bbf3f2a43071e118ac71aa40">MUTEX_LOCK</a></div><div class="ttdeci">#define MUTEX_LOCK</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:986</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a6252187f6e55ba4943e030c350d624bd"><div class="ttname"><a href="CommonDefs_8h.html#a6252187f6e55ba4943e030c350d624bd">BOOL</a></div><div class="ttdeci">INT32 BOOL</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:173</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a6addcc52e2dfddf231bf3213859ae2bb"><div class="ttname"><a href="CommonDefs_8h.html#a6addcc52e2dfddf231bf3213859ae2bb">PCHAR</a></div><div class="ttdeci">CHAR * PCHAR</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:180</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a6beccd5d691880c6994b33e4ad6458c6"><div class="ttname"><a href="CommonDefs_8h.html#a6beccd5d691880c6994b33e4ad6458c6">memAlloc</a></div><div class="ttdeci">PVOID(* memAlloc)(SIZE_T size)</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:611</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a7f319bfc2492a2136964194204e7a8cf"><div class="ttname"><a href="CommonDefs_8h.html#a7f319bfc2492a2136964194204e7a8cf">VOID</a></div><div class="ttdeci">#define VOID</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:153</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a883f3c3c50aa0b7dff2e4d09b9894ae5"><div class="ttname"><a href="CommonDefs_8h.html#a883f3c3c50aa0b7dff2e4d09b9894ae5">MUTEX_CREATE</a></div><div class="ttdeci">#define MUTEX_CREATE</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:985</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a9b44863ed520f5bccb6d9147654ca0f5"><div class="ttname"><a href="CommonDefs_8h.html#a9b44863ed520f5bccb6d9147654ca0f5">MUTEX_UNLOCK</a></div><div class="ttdeci">#define MUTEX_UNLOCK</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:987</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_aa8cecfc5c5c054d2875c03e77b7be15d"><div class="ttname"><a href="CommonDefs_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></div><div class="ttdeci">#define TRUE</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:201</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_aa93f0eb578d23995850d61f7d61c55c1"><div class="ttname"><a href="CommonDefs_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></div><div class="ttdeci">#define FALSE</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:197</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_aacb6173308f40c2f1bb4b0fa0e13411c"><div class="ttname"><a href="CommonDefs_8h.html#aacb6173308f40c2f1bb4b0fa0e13411c">MUTEX</a></div><div class="ttdeci">UINT64 MUTEX</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:217</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_aadbfb55fed50f8ee59c1cfebada264c6"><div class="ttname"><a href="CommonDefs_8h.html#aadbfb55fed50f8ee59c1cfebada264c6">PSIZE_T</a></div><div class="ttdeci">UINT_PTR * PSIZE_T</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:325</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_ac97db51965b38efefa3dccdc277c34fb"><div class="ttname"><a href="CommonDefs_8h.html#ac97db51965b38efefa3dccdc277c34fb">memFree</a></div><div class="ttdeci">VOID(* memFree)(PVOID ptr)</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:615</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_adb5bdad0c0d045cf0679648a4f3b19ed"><div class="ttname"><a href="CommonDefs_8h.html#adb5bdad0c0d045cf0679648a4f3b19ed">SIZEOF</a></div><div class="ttdeci">#define SIZEOF(x)</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:386</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_adc3671295d5f3f4cfb1cbdfc3a7c7aa9"><div class="ttname"><a href="CommonDefs_8h.html#adc3671295d5f3f4cfb1cbdfc3a7c7aa9">memCalloc</a></div><div class="ttdeci">PVOID(* memCalloc)(SIZE_T num, SIZE_T size)</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:613</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_ae56fdb340b23940f7a64ed2e37c1774a"><div class="ttname"><a href="CommonDefs_8h.html#ae56fdb340b23940f7a64ed2e37c1774a">STATUS_SUCCESS</a></div><div class="ttdeci">#define STATUS_SUCCESS</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:458</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_ae5f77471c3b0cfdd9cc7306c68fac3aa"><div class="ttname"><a href="CommonDefs_8h.html#ae5f77471c3b0cfdd9cc7306c68fac3aa">MUTEX_FREE</a></div><div class="ttdeci">#define MUTEX_FREE</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:989</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_afe3b95df5834d81ffcde5ed897104154"><div class="ttname"><a href="CommonDefs_8h.html#afe3b95df5834d81ffcde5ed897104154">GETENV</a></div><div class="ttdeci">#define GETENV</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:852</div></div>
+<div class="ttc" id="aPlatformUtils_8h_html_a54979bddf640e3a131864bf11ce51c01"><div class="ttname"><a href="PlatformUtils_8h.html#a54979bddf640e3a131864bf11ce51c01">DLOGI</a></div><div class="ttdeci">#define DLOGI(fmt,...)</div><div class="ttdef"><b>Definition:</b> PlatformUtils.h:77</div></div>
+<div class="ttc" id="aPlatformUtils_8h_html_a5a6558d3d7188ba8ac355fb3e2036990"><div class="ttname"><a href="PlatformUtils_8h.html#a5a6558d3d7188ba8ac355fb3e2036990">DLOGS</a></div><div class="ttdeci">#define DLOGS(...)</div><div class="ttdef"><b>Definition:</b> PlatformUtils.h:107</div></div>
+<div class="ttc" id="aUtilTestFixture_8h_html_a12e87b2cb19574075693d84a858aaed3"><div class="ttname"><a href="UtilTestFixture_8h.html#a12e87b2cb19574075693d84a858aaed3">globalMemAlloc</a></div><div class="ttdeci">memAlloc globalMemAlloc</div><div class="ttdef"><b>Definition:</b> Allocators.c:39</div></div>
+<div class="ttc" id="aUtilTestFixture_8h_html_a2d301262b6588047faab4d78ed476db2"><div class="ttname"><a href="UtilTestFixture_8h.html#a2d301262b6588047faab4d78ed476db2">instrumentedUtilMemFree</a></div><div class="ttdeci">INLINE VOID instrumentedUtilMemFree(PVOID ptr)</div><div class="ttdef"><b>Definition:</b> UtilTestFixture.h:47</div></div>
+<div class="ttc" id="aUtilTestFixture_8h_html_a5708d2e4709101e575e88983b767ca7d"><div class="ttname"><a href="UtilTestFixture_8h.html#a5708d2e4709101e575e88983b767ca7d">gTotalUtilsMemoryUsage</a></div><div class="ttdeci">UINT64 gTotalUtilsMemoryUsage</div><div class="ttdef"><b>Definition:</b> UtilTestFixture.cpp:3</div></div>
+<div class="ttc" id="aUtilTestFixture_8h_html_a60c0666f173ec3f806b3d46d2c1bd92a"><div class="ttname"><a href="UtilTestFixture_8h.html#a60c0666f173ec3f806b3d46d2c1bd92a">gUtilityMemMutex</a></div><div class="ttdeci">MUTEX gUtilityMemMutex</div><div class="ttdef"><b>Definition:</b> UtilTestFixture.cpp:4</div></div>
+<div class="ttc" id="aUtilTestFixture_8h_html_a9aa22fab8657949ba1657ab76664f2cb"><div class="ttname"><a href="UtilTestFixture_8h.html#a9aa22fab8657949ba1657ab76664f2cb">globalMemFree</a></div><div class="ttdeci">memFree globalMemFree</div><div class="ttdef"><b>Definition:</b> Allocators.c:43</div></div>
+<div class="ttc" id="aUtilTestFixture_8h_html_aba99d3130e8e5d0474e40261329646f3"><div class="ttname"><a href="UtilTestFixture_8h.html#aba99d3130e8e5d0474e40261329646f3">instrumentedUtilMemAlloc</a></div><div class="ttdeci">INLINE PVOID instrumentedUtilMemAlloc(SIZE_T size)</div><div class="ttdef"><b>Definition:</b> UtilTestFixture.h:12</div></div>
+<div class="ttc" id="aUtilTestFixture_8h_html_ac04465a1834c3e9e94504fa140c79f2a"><div class="ttname"><a href="UtilTestFixture_8h.html#ac04465a1834c3e9e94504fa140c79f2a">globalMemCalloc</a></div><div class="ttdeci">memCalloc globalMemCalloc</div><div class="ttdef"><b>Definition:</b> Allocators.c:41</div></div>
+<div class="ttc" id="aUtilTestFixture_8h_html_acf44f25e7f3f976f84557ae553ef0894"><div class="ttname"><a href="UtilTestFixture_8h.html#acf44f25e7f3f976f84557ae553ef0894">instrumentedUtilMemAlignAlloc</a></div><div class="ttdeci">INLINE PVOID instrumentedUtilMemAlignAlloc(SIZE_T size, SIZE_T alignment)</div><div class="ttdef"><b>Definition:</b> UtilTestFixture.h:24</div></div>
+<div class="ttc" id="aUtilTestFixture_8h_html_af3286d66f7d3479e4e388031f41542b9"><div class="ttname"><a href="UtilTestFixture_8h.html#af3286d66f7d3479e4e388031f41542b9">instrumentedUtilMemCalloc</a></div><div class="ttdeci">INLINE PVOID instrumentedUtilMemCalloc(SIZE_T num, SIZE_T size)</div><div class="ttdef"><b>Definition:</b> UtilTestFixture.h:32</div></div>
+<div class="ttc" id="aUtilTestFixture_8h_html_afad8a6550dd9a96dfa58605167590aff"><div class="ttname"><a href="UtilTestFixture_8h.html#afad8a6550dd9a96dfa58605167590aff">globalMemAlignAlloc</a></div><div class="ttdeci">memAlignAlloc globalMemAlignAlloc</div><div class="ttdef"><b>Definition:</b> Allocators.c:40</div></div>
 <div class="ttc" id="aclassUtilTestBase_html"><div class="ttname"><a href="classUtilTestBase.html">UtilTestBase</a></div><div class="ttdef"><b>Definition:</b> UtilTestFixture.h:68</div></div>
+<div class="ttc" id="aclassUtilTestBase_html_a037168e34431384a18cc9470927b6f73"><div class="ttname"><a href="classUtilTestBase.html#a037168e34431384a18cc9470927b6f73">UtilTestBase::storedMemCalloc</a></div><div class="ttdeci">memCalloc storedMemCalloc</div><div class="ttdef"><b>Definition:</b> UtilTestFixture.h:133</div></div>
+<div class="ttc" id="aclassUtilTestBase_html_a0900206f992822982da034e1cb81e0dd"><div class="ttname"><a href="classUtilTestBase.html#a0900206f992822982da034e1cb81e0dd">UtilTestBase::GetTestName</a></div><div class="ttdeci">PCHAR GetTestName()</div><div class="ttdef"><b>Definition:</b> UtilTestFixture.h:124</div></div>
+<div class="ttc" id="aclassUtilTestBase_html_a4a792bb670b848458068a5929f1bf387"><div class="ttname"><a href="classUtilTestBase.html#a4a792bb670b848458068a5929f1bf387">UtilTestBase::UtilTestBase</a></div><div class="ttdeci">UtilTestBase(BOOL setAllocators=TRUE)</div><div class="ttdef"><b>Definition:</b> UtilTestFixture.h:70</div></div>
+<div class="ttc" id="aclassUtilTestBase_html_a84bc3c2297ab580925f1d65410482b5a"><div class="ttname"><a href="classUtilTestBase.html#a84bc3c2297ab580925f1d65410482b5a">UtilTestBase::storedMemAlignAlloc</a></div><div class="ttdeci">memAlignAlloc storedMemAlignAlloc</div><div class="ttdef"><b>Definition:</b> UtilTestFixture.h:132</div></div>
+<div class="ttc" id="aclassUtilTestBase_html_a870a092058305911f3d42df45dd657e5"><div class="ttname"><a href="classUtilTestBase.html#a870a092058305911f3d42df45dd657e5">UtilTestBase::TearDown</a></div><div class="ttdeci">virtual void TearDown()</div><div class="ttdef"><b>Definition:</b> UtilTestFixture.h:106</div></div>
+<div class="ttc" id="aclassUtilTestBase_html_a901706a587f9ae84df8b2395fbe759cb"><div class="ttname"><a href="classUtilTestBase.html#a901706a587f9ae84df8b2395fbe759cb">UtilTestBase::SetUp</a></div><div class="ttdeci">virtual void SetUp()</div><div class="ttdef"><b>Definition:</b> UtilTestFixture.h:94</div></div>
+<div class="ttc" id="aclassUtilTestBase_html_a9ece06abc7934b2405b9f3376e6de94c"><div class="ttname"><a href="classUtilTestBase.html#a9ece06abc7934b2405b9f3376e6de94c">UtilTestBase::allocatorsSet</a></div><div class="ttdeci">BOOL allocatorsSet</div><div class="ttdef"><b>Definition:</b> UtilTestFixture.h:136</div></div>
+<div class="ttc" id="aclassUtilTestBase_html_ad1a6052c8eff5e440d1e278543c20443"><div class="ttname"><a href="classUtilTestBase.html#ad1a6052c8eff5e440d1e278543c20443">UtilTestBase::storedMemFree</a></div><div class="ttdeci">memFree storedMemFree</div><div class="ttdef"><b>Definition:</b> UtilTestFixture.h:134</div></div>
+<div class="ttc" id="aclassUtilTestBase_html_af98dca8db4e6798a7684ab72d248d8c1"><div class="ttname"><a href="classUtilTestBase.html#af98dca8db4e6798a7684ab72d248d8c1">UtilTestBase::storedMemAlloc</a></div><div class="ttdeci">memAlloc storedMemAlloc</div><div class="ttdef"><b>Definition:</b> UtilTestFixture.h:127</div></div>
+<div class="ttc" id="autils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h_html"><div class="ttname"><a href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html">Include.h</a></div></div>
+<div class="ttc" id="autils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h_html_a0391f6e08ef195306c1df546c55bc92a"><div class="ttname"><a href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a0391f6e08ef195306c1df546c55bc92a">SET_LOGGER_LOG_LEVEL</a></div><div class="ttdeci">#define SET_LOGGER_LOG_LEVEL(l)</div><div class="ttdef"><b>Definition:</b> Include.h:1034</div></div>
+<div class="ttc" id="autils_2src_2Include__i_8h_html"><div class="ttname"><a href="utils_2src_2Include__i_8h.html">Include_i.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_313caf1132e152dd9b58bea13a4052ca.html">utils</a></li><li class="navelem"><a class="el" href="dir_495478099b1eb30ac437e4aa2246103a.html">tst</a></li><li class="navelem"><a class="el" href="UtilTestFixture_8h.html">UtilTestFixture.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

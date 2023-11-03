@@ -1,0 +1,16 @@
+<map id="getStreamingEndpointResultEvent" name="getStreamingEndpointResultEvent">
+<area shape="rect" id="node1" title=" " alt="" coords="5,251,213,293"/>
+<area shape="rect" id="node2" href="$Stream_8h.html#a23cc58cdd627f8e3f19b95464a6ac72b" title=" " alt="" coords="261,132,469,159"/>
+<area shape="rect" id="node11" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a4897c0587e06683fef8c93a2df06f6ea" title=" " alt="" coords="293,259,437,285"/>
+<area shape="rect" id="node13" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a02718342e0528602255a5e35bc477c16" title=" " alt="" coords="292,309,439,336"/>
+<area shape="rect" id="node3" href="$state_2include_2com_2amazonaws_2kinesis_2video_2state_2Include_8h.html#a3bad0d7c7e12adf4a123a4aaa2160941" title=" " alt="" coords="524,5,712,32"/>
+<area shape="rect" id="node4" href="$StreamEvent_8c.html#a6137ef00be09ff9e50ec168a3d524d7a" title=" " alt="" coords="539,56,697,83"/>
+<area shape="rect" id="node5" href="$state_2include_2com_2amazonaws_2kinesis_2video_2state_2Include_8h.html#ac552e89cb372dd943e11cc60a2fc74c4" title=" " alt="" coords="535,107,701,133"/>
+<area shape="rect" id="node6" href="$Stream_8h.html#a468d6e495eb8c1a4ce26e80d59006c9f" title=" " alt="" coords="517,157,719,184"/>
+<area shape="rect" id="node10" href="$StreamEvent_8c.html#a79e8aa8b939011d4c97872b4978c96dc" title=" " alt="" coords="531,208,705,235"/>
+<area shape="rect" id="node7" href="$state_2include_2com_2amazonaws_2kinesis_2video_2state_2Include_8h.html#ac323933daf0496d6eac414db29752de1" title=" " alt="" coords="767,157,905,184"/>
+<area shape="rect" id="node8" href="$State_8c.html#ac4e80d19e5b4a966e3ad6e2bf8d2ea00" title=" " alt="" coords="953,132,1141,159"/>
+<area shape="rect" id="node9" href="$State_8c.html#a2af8818b9f0567689089d35d6fa55c9f" title=" " alt="" coords="964,183,1131,209"/>
+<area shape="rect" id="node12" href="$Semaphore_8c.html#aaffd7a7994fbec1e1fe88f1c95242828" title=" " alt="" coords="521,259,715,285"/>
+<area shape="rect" id="node14" href="$Semaphore_8c.html#ab8f47399c86055a05bfd543a290973a8" title=" " alt="" coords="519,309,717,336"/>
+</map>

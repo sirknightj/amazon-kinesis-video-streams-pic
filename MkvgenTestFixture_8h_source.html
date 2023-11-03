@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +28,7 @@
    <div id="projectname">Amazon Kinesis Video Streams PIC
    &#160;<span id="projectnumber">1.0.1</span>
    </div>
-   <div id="projectbrief">Platform Independent Code for Amazon Kinesis Video Streams.</div>
+   <div id="projectbrief">Platform independent code for Amazon Kinesis Video Streams</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('MkvgenTestFixture_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,137 +82,195 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_293b65ee0e438b101df8ec50727ccfaa.html">mkvgen</a></li><li class="navelem"><a class="el" href="dir_c7ac22ead37c2c566f33eade5454bc04.html">tst</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">MkvgenTestFixture.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#if 0</span></div>
+<a href="MkvgenTestFixture_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#if 0</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#pragma GCC diagnostic ignored &quot;-Wwrite-strings&quot;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;gtest/gtest.h&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;com/amazonaws/kinesis/video/utils/Include.h&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;com/amazonaws/kinesis/video/mkvgen/Include.h&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html">com/amazonaws/kinesis/video/utils/Include.h</a>&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="mkvgen_2include_2com_2amazonaws_2kinesis_2video_2mkvgen_2Include_8h.html">com/amazonaws/kinesis/video/mkvgen/Include.h</a>&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;src/mkvgen/src/Include_i.h&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="mkvgen_2src_2Include__i_8h.html">src/mkvgen/src/Include_i.h</a>&quot;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define MKV_TEST_TIMECODE_SCALE (1 * HUNDREDS_OF_NANOS_IN_A_MILLISECOND)</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="MkvgenTestFixture_8h.html#ab57d5cd222db00dfb6f4bd2fc34791ba">   11</a></span>&#160;<span class="preprocessor">#define MKV_TEST_TIMECODE_SCALE (1 * HUNDREDS_OF_NANOS_IN_A_MILLISECOND)</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define MKV_TEST_BUFFER_SIZE      MKV_MAX_CODEC_PRIVATE_LEN + 100000</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#define MKV_TEST_CLUSTER_DURATION (5 * HUNDREDS_OF_NANOS_IN_A_SECOND)</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#define MKV_TEST_FRAME_DURATION   (40 * HUNDREDS_OF_NANOS_IN_A_MILLISECOND)</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="MkvgenTestFixture_8h.html#af7003fe6e0825623e8846f774e1d94d7">   13</a></span>&#160;<span class="preprocessor">#define MKV_TEST_BUFFER_SIZE      MKV_MAX_CODEC_PRIVATE_LEN + 100000</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="MkvgenTestFixture_8h.html#aab0344a5642c6ed1120f3acc94c1b43e">   14</a></span>&#160;<span class="preprocessor">#define MKV_TEST_CLUSTER_DURATION (5 * HUNDREDS_OF_NANOS_IN_A_SECOND)</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="MkvgenTestFixture_8h.html#a20472e8648746a717d91e69acba8d669">   15</a></span>&#160;<span class="preprocessor">#define MKV_TEST_FRAME_DURATION   (40 * HUNDREDS_OF_NANOS_IN_A_MILLISECOND)</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#define MKV_TEST_BEHAVIOR_FLAGS (MKV_GEN_KEY_FRAME_PROCESSING | MKV_GEN_IN_STREAM_TIME)</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="MkvgenTestFixture_8h.html#a9592b71356f702efc711246bb65f7af4">   17</a></span>&#160;<span class="preprocessor">#define MKV_TEST_BEHAVIOR_FLAGS (MKV_GEN_KEY_FRAME_PROCESSING | MKV_GEN_IN_STREAM_TIME)</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define MKV_TEST_CONTENT_TYPE ((PCHAR) &quot;video/teststream&quot;</span>)</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#define MKV_TEST_CODEC_ID     ((PCHAR) &quot;TestCodec&quot;</span>)</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define MKV_TEST_TRACK_NAME   ((PCHAR) &quot;TestTrack&quot;</span>)</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="MkvgenTestFixture_8h.html#a204cd90ba2fd223d29c75871d251618f">   19</a></span>&#160;<span class="preprocessor">#define MKV_TEST_CONTENT_TYPE ((PCHAR) &quot;video/teststream&quot;</span>)</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="MkvgenTestFixture_8h.html#acf70f5341a51abee2e90058b1b83e826">   20</a></span>&#160;<span class="preprocessor">#define MKV_TEST_CODEC_ID     ((PCHAR) &quot;TestCodec&quot;</span>)</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="MkvgenTestFixture_8h.html#ad640bee452a8f26a54445f14aae63bdd">   21</a></span>&#160;<span class="preprocessor">#define MKV_TEST_TRACK_NAME   ((PCHAR) &quot;TestTrack&quot;</span>)</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#define MKV_TEST_CLIENT_ID ((PCHAR) &quot;TestClientId&quot;</span>)</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="MkvgenTestFixture_8h.html#a8ec8dd21a47acef0c928e65d45a37dcd">   23</a></span>&#160;<span class="preprocessor">#define MKV_TEST_CLIENT_ID ((PCHAR) &quot;TestClientId&quot;</span>)</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#define MKV_TEST_CUSTOM_DATA 0x12345</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="MkvgenTestFixture_8h.html#a7a437baf3fcfe912c612e8e7abc2ff06">   25</a></span>&#160;<span class="preprocessor">#define MKV_TEST_CUSTOM_DATA 0x12345</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define MKV_TEST_TAG_COUNT        5</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#define MKV_TEST_TRACK_INFO_COUNT 1</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#define MKV_TEST_TRACKID          1</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="MkvgenTestFixture_8h.html#aa06b3a7b025ab0d1a467d0649bcb85e0">   27</a></span>&#160;<span class="preprocessor">#define MKV_TEST_TAG_COUNT        5</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="MkvgenTestFixture_8h.html#a73b927853f8e4d82365cea9cf2b4524e">   28</a></span>&#160;<span class="preprocessor">#define MKV_TEST_TRACK_INFO_COUNT 1</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="MkvgenTestFixture_8h.html#affafd6783633310b9e4dfe012d273f14">   29</a></span>&#160;<span class="preprocessor">#define MKV_TEST_TRACKID          1</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#define MKV_TEST_DEFAULT_TRACK_WIDTH  1280</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#define MKV_TEST_DEFAULT_TRACK_HEIGHT 720</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="MkvgenTestFixture_8h.html#a153d9755f6ccae0c8b740117c8bbd492">   31</a></span>&#160;<span class="preprocessor">#define MKV_TEST_DEFAULT_TRACK_WIDTH  1280</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="MkvgenTestFixture_8h.html#a2a98c7553742387eeab7dda54a38c747">   32</a></span>&#160;<span class="preprocessor">#define MKV_TEST_DEFAULT_TRACK_HEIGHT 720</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#define MKV_TEST_SEGMENT_UUID ((PBYTE) &quot;0123456789abcdef&quot;</span>)</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="MkvgenTestFixture_8h.html#ac9f2c536ccd36b1bece6dcfd1bb35c8c">   34</a></span>&#160;<span class="preprocessor">#define MKV_TEST_SEGMENT_UUID ((PBYTE) &quot;0123456789abcdef&quot;</span>)</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;UINT64 getTimeCallback(UINT64);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<a class="code" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> <a class="code" href="MkvgenTestFixture_8h.html#a1b6a35f46c1f738501962a2cf41920cd">getTimeCallback</a>(<a class="code" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">extern</span> BOOL gTimeCallbackCalled;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">extern</span> <a class="code" href="CommonDefs_8h.html#a6252187f6e55ba4943e030c350d624bd">BOOL</a> <a class="code" href="MkvgenTestFixture_8h.html#aa45439ef4f712108502e5004ea9daea1">gTimeCallbackCalled</a>;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classMkvgenTestBase.html">   43</a></span>&#160;<span class="keyword">class </span><a class="code" href="classMkvgenTestBase.html">MkvgenTestBase</a> : <span class="keyword">public</span> ::testing::Test {</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="classMkvgenTestBase.html">MkvgenTestBase</a>() : mBuffer(NULL), mMkvGenerator(NULL)</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classMkvgenTestBase.html#a1d207aee7c9d603f7a0d52edc4388e1b">   45</a></span>&#160;    <a class="code" href="classMkvgenTestBase.html#a1d207aee7c9d603f7a0d52edc4388e1b">MkvgenTestBase</a>() : <a class="code" href="classMkvgenTestBase.html#a181d10456871249785a8515b655e6dba">mBuffer</a>(<a class="code" href="CommonDefs_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>), <a class="code" href="classMkvgenTestBase.html#ade41e1781aac4d2c36b5a5f033d5c959">mMkvGenerator</a>(<a class="code" href="CommonDefs_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    {</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    PBYTE mBuffer;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="struct____MkvGenerator.html">PMkvGenerator</a> mMkvGenerator;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="structTrackInfo.html">TrackInfo</a> mTrackInfo;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    UINT32 mTrackInfoCount;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classMkvgenTestBase.html#a181d10456871249785a8515b655e6dba">   50</a></span>&#160;    <a class="code" href="CommonDefs_8h.html#a16ac278d310943f39816b8361f2dad64">PBYTE</a> <a class="code" href="classMkvgenTestBase.html#a181d10456871249785a8515b655e6dba">mBuffer</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classMkvgenTestBase.html#ade41e1781aac4d2c36b5a5f033d5c959">   51</a></span>&#160;    <a class="code" href="struct____MkvGenerator.html">PMkvGenerator</a> <a class="code" href="classMkvgenTestBase.html#ade41e1781aac4d2c36b5a5f033d5c959">mMkvGenerator</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classMkvgenTestBase.html#a43f5b84a1859aa678c6286686d589b36">   52</a></span>&#160;    <a class="code" href="structTrackInfo.html">TrackInfo</a> <a class="code" href="classMkvgenTestBase.html#a43f5b84a1859aa678c6286686d589b36">mTrackInfo</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classMkvgenTestBase.html#a33695f6b6a0c9c05ee21677baf2de27e">   53</a></span>&#160;    <a class="code" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> <a class="code" href="classMkvgenTestBase.html#a33695f6b6a0c9c05ee21677baf2de27e">mTrackInfoCount</a>;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    STATUS CreateMkvGenerator()</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classMkvgenTestBase.html#ac2756f18f95f13ecb71281ae98a3a58c">   55</a></span>&#160;    <a class="code" href="CommonDefs_8h.html#a59279bee44f34d08b3cbf3a89fb0d8d9">STATUS</a> <a class="code" href="classMkvgenTestBase.html#ac2756f18f95f13ecb71281ae98a3a58c">CreateMkvGenerator</a>()</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        STATUS retStatus = STATUS_SUCCESS;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        mBuffer = (PBYTE) MEMALLOC(MKV_TEST_BUFFER_SIZE);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="CommonDefs_8h.html#a59279bee44f34d08b3cbf3a89fb0d8d9">STATUS</a> retStatus = <a class="code" href="CommonDefs_8h.html#ae56fdb340b23940f7a64ed2e37c1774a">STATUS_SUCCESS</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="classMkvgenTestBase.html#a181d10456871249785a8515b655e6dba">mBuffer</a> = (<a class="code" href="CommonDefs_8h.html#a16ac278d310943f39816b8361f2dad64">PBYTE</a>) <a class="code" href="CommonDefs_8h.html#ae036ed0af51269a923ddd9863141bc9d">MEMALLOC</a>(<a class="code" href="MkvgenTestFixture_8h.html#af7003fe6e0825623e8846f774e1d94d7">MKV_TEST_BUFFER_SIZE</a>);</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="comment">// Create the MKV generator</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        retStatus = createMkvGenerator(MKV_TEST_CONTENT_TYPE, MKV_TEST_BEHAVIOR_FLAGS, MKV_TEST_TIMECODE_SCALE, MKV_TEST_CLUSTER_DURATION,</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                       MKV_TEST_SEGMENT_UUID, &amp;mTrackInfo, mTrackInfoCount, MKV_TEST_CLIENT_ID, NULL, 0, &amp;mMkvGenerator);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        EXPECT_EQ(STATUS_SUCCESS, retStatus);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        retStatus = <a class="code" href="mkvgen_2include_2com_2amazonaws_2kinesis_2video_2mkvgen_2Include_8h.html#af24ee37c25579ff317a5c7dd7f9adbc2">createMkvGenerator</a>(<a class="code" href="MkvgenTestFixture_8h.html#a204cd90ba2fd223d29c75871d251618f">MKV_TEST_CONTENT_TYPE</a>, <a class="code" href="MkvgenTestFixture_8h.html#a9592b71356f702efc711246bb65f7af4">MKV_TEST_BEHAVIOR_FLAGS</a>, <a class="code" href="MkvgenTestFixture_8h.html#ab57d5cd222db00dfb6f4bd2fc34791ba">MKV_TEST_TIMECODE_SCALE</a>, <a class="code" href="MkvgenTestFixture_8h.html#aab0344a5642c6ed1120f3acc94c1b43e">MKV_TEST_CLUSTER_DURATION</a>,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                       <a class="code" href="MkvgenTestFixture_8h.html#ac9f2c536ccd36b1bece6dcfd1bb35c8c">MKV_TEST_SEGMENT_UUID</a>, &amp;<a class="code" href="classMkvgenTestBase.html#a43f5b84a1859aa678c6286686d589b36">mTrackInfo</a>, <a class="code" href="classMkvgenTestBase.html#a33695f6b6a0c9c05ee21677baf2de27e">mTrackInfoCount</a>, <a class="code" href="MkvgenTestFixture_8h.html#a8ec8dd21a47acef0c928e65d45a37dcd">MKV_TEST_CLIENT_ID</a>, <a class="code" href="CommonDefs_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, 0, &amp;<a class="code" href="classMkvgenTestBase.html#ade41e1781aac4d2c36b5a5f033d5c959">mMkvGenerator</a>);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        EXPECT_EQ(<a class="code" href="CommonDefs_8h.html#ae56fdb340b23940f7a64ed2e37c1774a">STATUS_SUCCESS</a>, retStatus);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">return</span> retStatus;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    };</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetUp()</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classMkvgenTestBase.html#a901706a587f9ae84df8b2395fbe759cb">   68</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMkvgenTestBase.html#a901706a587f9ae84df8b2395fbe759cb">SetUp</a>()</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        UINT32 logLevel = 0;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keyword">auto</span> logLevelStr = GETENV(<span class="stringliteral">&quot;AWS_KVS_LOG_LEVEL&quot;</span>);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">if</span> (logLevelStr != NULL) {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            assert(STRTOUI32(logLevelStr, NULL, 10, &amp;logLevel) == STATUS_SUCCESS);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            SET_LOGGER_LOG_LEVEL(logLevel);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> logLevel = 0;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keyword">auto</span> logLevelStr = <a class="code" href="CommonDefs_8h.html#afe3b95df5834d81ffcde5ed897104154">GETENV</a>(<span class="stringliteral">&quot;AWS_KVS_LOG_LEVEL&quot;</span>);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">if</span> (logLevelStr != <a class="code" href="CommonDefs_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            assert(<a class="code" href="CommonDefs_8h.html#a18ef52f8a6e25be9ff9dbd358a479238">STRTOUI32</a>(logLevelStr, <a class="code" href="CommonDefs_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, 10, &amp;logLevel) == <a class="code" href="CommonDefs_8h.html#ae56fdb340b23940f7a64ed2e37c1774a">STATUS_SUCCESS</a>);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <a class="code" href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a0391f6e08ef195306c1df546c55bc92a">SET_LOGGER_LOG_LEVEL</a>(logLevel);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        }</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        mTrackInfoCount = MKV_TEST_TRACK_INFO_COUNT;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        mTrackInfo.version = TRACK_INFO_CURRENT_VERSION;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        mTrackInfo.trackId = MKV_TEST_TRACKID;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        STRCPY(mTrackInfo.codecId, MKV_TEST_CODEC_ID);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        STRCPY(mTrackInfo.trackName, MKV_TEST_TRACK_NAME);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        mTrackInfo.codecPrivateData = NULL;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        mTrackInfo.codecPrivateDataSize = 0;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        mTrackInfo.trackType = MKV_TRACK_INFO_TYPE_VIDEO;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        mTrackInfo.trackCustomData.trackVideoConfig.videoWidth = MKV_TEST_DEFAULT_TRACK_WIDTH;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        mTrackInfo.trackCustomData.trackVideoConfig.videoHeight = MKV_TEST_DEFAULT_TRACK_HEIGHT;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="classMkvgenTestBase.html#a33695f6b6a0c9c05ee21677baf2de27e">mTrackInfoCount</a> = <a class="code" href="MkvgenTestFixture_8h.html#a73b927853f8e4d82365cea9cf2b4524e">MKV_TEST_TRACK_INFO_COUNT</a>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="classMkvgenTestBase.html#a43f5b84a1859aa678c6286686d589b36">mTrackInfo</a>.<a class="code" href="structTrackInfo.html#a8ffac79cdfb8a2da19ee271752749738">version</a> = <a class="code" href="mkvgen_2include_2com_2amazonaws_2kinesis_2video_2mkvgen_2Include_8h.html#a389feb414706ed518bb20bdb542bd931">TRACK_INFO_CURRENT_VERSION</a>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="classMkvgenTestBase.html#a43f5b84a1859aa678c6286686d589b36">mTrackInfo</a>.<a class="code" href="structTrackInfo.html#aab1ae3e1ec5b8bce20b27ea704ec4101">trackId</a> = <a class="code" href="MkvgenTestFixture_8h.html#affafd6783633310b9e4dfe012d273f14">MKV_TEST_TRACKID</a>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="CommonDefs_8h.html#ac4a2548aa9c44fcd11a1d8c5273acbdb">STRCPY</a>(<a class="code" href="classMkvgenTestBase.html#a43f5b84a1859aa678c6286686d589b36">mTrackInfo</a>.<a class="code" href="structTrackInfo.html#aeec0671b25c8c79e494f304e0978ada0">codecId</a>, <a class="code" href="MkvgenTestFixture_8h.html#acf70f5341a51abee2e90058b1b83e826">MKV_TEST_CODEC_ID</a>);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <a class="code" href="CommonDefs_8h.html#ac4a2548aa9c44fcd11a1d8c5273acbdb">STRCPY</a>(<a class="code" href="classMkvgenTestBase.html#a43f5b84a1859aa678c6286686d589b36">mTrackInfo</a>.<a class="code" href="structTrackInfo.html#a149915ca35cf8d5b2c3a460f49a21f12">trackName</a>, <a class="code" href="MkvgenTestFixture_8h.html#ad640bee452a8f26a54445f14aae63bdd">MKV_TEST_TRACK_NAME</a>);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <a class="code" href="classMkvgenTestBase.html#a43f5b84a1859aa678c6286686d589b36">mTrackInfo</a>.<a class="code" href="structTrackInfo.html#a986ae3a943f8afe4dced650531bd5b88">codecPrivateData</a> = <a class="code" href="CommonDefs_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <a class="code" href="classMkvgenTestBase.html#a43f5b84a1859aa678c6286686d589b36">mTrackInfo</a>.<a class="code" href="structTrackInfo.html#a9a8fb75cbf69bf6556e6438226522879">codecPrivateDataSize</a> = 0;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="classMkvgenTestBase.html#a43f5b84a1859aa678c6286686d589b36">mTrackInfo</a>.<a class="code" href="structTrackInfo.html#ac394911c9f53ff43689e23c1a34f3d06">trackType</a> = <a class="code" href="mkvgen_2include_2com_2amazonaws_2kinesis_2video_2mkvgen_2Include_8h.html#a49d3164a782943871b903b967c52cac4a36fe74a2012f7e01bd3739f249f07982">MKV_TRACK_INFO_TYPE_VIDEO</a>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <a class="code" href="classMkvgenTestBase.html#a43f5b84a1859aa678c6286686d589b36">mTrackInfo</a>.<a class="code" href="structTrackInfo.html#ab259ac873c71b4c66e10d3c705f11248">trackCustomData</a>.<a class="code" href="unionTrackCustomData.html#a7a984c23e104a18ec369772d9eecc1c4">trackVideoConfig</a>.<a class="code" href="structTrackVideoConfig.html#a2c2ba1fad47dada0abee024e86eb6116">videoWidth</a> = <a class="code" href="MkvgenTestFixture_8h.html#a153d9755f6ccae0c8b740117c8bbd492">MKV_TEST_DEFAULT_TRACK_WIDTH</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <a class="code" href="classMkvgenTestBase.html#a43f5b84a1859aa678c6286686d589b36">mTrackInfo</a>.<a class="code" href="structTrackInfo.html#ab259ac873c71b4c66e10d3c705f11248">trackCustomData</a>.<a class="code" href="unionTrackCustomData.html#a7a984c23e104a18ec369772d9eecc1c4">trackVideoConfig</a>.<a class="code" href="structTrackVideoConfig.html#af8c2ffc1cb85792503af1ad1d16b83e7">videoHeight</a> = <a class="code" href="MkvgenTestFixture_8h.html#a2a98c7553742387eeab7dda54a38c747">MKV_TEST_DEFAULT_TRACK_HEIGHT</a>;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        DLOGI(<span class="stringliteral">&quot;\nSetting up test: %s\n&quot;</span>, GetTestName());</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        ASSERT_TRUE(STATUS_SUCCEEDED(CreateMkvGenerator()));</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <a class="code" href="PlatformUtils_8h.html#a54979bddf640e3a131864bf11ce51c01">DLOGI</a>(<span class="stringliteral">&quot;\nSetting up test: %s\n&quot;</span>, <a class="code" href="classMkvgenTestBase.html#a0900206f992822982da034e1cb81e0dd">GetTestName</a>());</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        ASSERT_TRUE(<a class="code" href="CommonDefs_8h.html#a5f0663a2abf930906b692d406ca59afe">STATUS_SUCCEEDED</a>(<a class="code" href="classMkvgenTestBase.html#ac2756f18f95f13ecb71281ae98a3a58c">CreateMkvGenerator</a>()));</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="comment">// Reset the globals</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        gTimeCallbackCalled = FALSE;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <a class="code" href="MkvgenTestFixture_8h.html#aa45439ef4f712108502e5004ea9daea1">gTimeCallbackCalled</a> = <a class="code" href="CommonDefs_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    };</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> TearDown()</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="classMkvgenTestBase.html#a870a092058305911f3d42df45dd657e5">   95</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMkvgenTestBase.html#a870a092058305911f3d42df45dd657e5">TearDown</a>()</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        DLOGI(<span class="stringliteral">&quot;\nTearing down test: %s\n&quot;</span>, GetTestName());</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <a class="code" href="PlatformUtils_8h.html#a54979bddf640e3a131864bf11ce51c01">DLOGI</a>(<span class="stringliteral">&quot;\nTearing down test: %s\n&quot;</span>, <a class="code" href="classMkvgenTestBase.html#a0900206f992822982da034e1cb81e0dd">GetTestName</a>());</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="comment">// Free the scratch buffer</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">if</span> (NULL != mBuffer) {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            MEMFREE(mBuffer);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            mBuffer = NULL;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="CommonDefs_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> != <a class="code" href="classMkvgenTestBase.html#a181d10456871249785a8515b655e6dba">mBuffer</a>) {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <a class="code" href="CommonDefs_8h.html#a955371e9e021e3d03714e1ba07952a47">MEMFREE</a>(<a class="code" href="classMkvgenTestBase.html#a181d10456871249785a8515b655e6dba">mBuffer</a>);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <a class="code" href="classMkvgenTestBase.html#a181d10456871249785a8515b655e6dba">mBuffer</a> = <a class="code" href="CommonDefs_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        }</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">if</span> (mMkvGenerator) {</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            freeMkvGenerator(mMkvGenerator);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            mMkvGenerator = NULL;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classMkvgenTestBase.html#ade41e1781aac4d2c36b5a5f033d5c959">mMkvGenerator</a>) {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <a class="code" href="mkvgen_2include_2com_2amazonaws_2kinesis_2video_2mkvgen_2Include_8h.html#a7307d8b66278c36e992403445167157d">freeMkvGenerator</a>(<a class="code" href="classMkvgenTestBase.html#ade41e1781aac4d2c36b5a5f033d5c959">mMkvGenerator</a>);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <a class="code" href="classMkvgenTestBase.html#ade41e1781aac4d2c36b5a5f033d5c959">mMkvGenerator</a> = <a class="code" href="CommonDefs_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        }</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    };</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    PCHAR GetTestName()</div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="classMkvgenTestBase.html#a0900206f992822982da034e1cb81e0dd">  111</a></span>&#160;    <a class="code" href="CommonDefs_8h.html#a6addcc52e2dfddf231bf3213859ae2bb">PCHAR</a> <a class="code" href="classMkvgenTestBase.html#a0900206f992822982da034e1cb81e0dd">GetTestName</a>()</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    {</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">return</span> (PCHAR)::testing::UnitTest::GetInstance()-&gt;current_test_info()-&gt;test_case_name();</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="CommonDefs_8h.html#a6addcc52e2dfddf231bf3213859ae2bb">PCHAR</a>)::testing::UnitTest::GetInstance()-&gt;current_test_info()-&gt;test_case_name();</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    };</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;};</div>
+<div class="ttc" id="aCommonDefs_8h_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="CommonDefs_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:344</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a0b39d6d754cb24c708b0f2bdbe88130e"><div class="ttname"><a href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a></div><div class="ttdeci">unsigned long UINT32</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:142</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a16ac278d310943f39816b8361f2dad64"><div class="ttname"><a href="CommonDefs_8h.html#a16ac278d310943f39816b8361f2dad64">PBYTE</a></div><div class="ttdeci">BYTE * PBYTE</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:178</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a18ef52f8a6e25be9ff9dbd358a479238"><div class="ttname"><a href="CommonDefs_8h.html#a18ef52f8a6e25be9ff9dbd358a479238">STRTOUI32</a></div><div class="ttdeci">#define STRTOUI32</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:955</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a57be03562867144161c1bfee95ca8f7c"><div class="ttname"><a href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a></div><div class="ttdeci">unsigned long long UINT64</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:144</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a59279bee44f34d08b3cbf3a89fb0d8d9"><div class="ttname"><a href="CommonDefs_8h.html#a59279bee44f34d08b3cbf3a89fb0d8d9">STATUS</a></div><div class="ttdeci">#define STATUS</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:456</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a5f0663a2abf930906b692d406ca59afe"><div class="ttname"><a href="CommonDefs_8h.html#a5f0663a2abf930906b692d406ca59afe">STATUS_SUCCEEDED</a></div><div class="ttdeci">#define STATUS_SUCCEEDED(x)</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:461</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a6252187f6e55ba4943e030c350d624bd"><div class="ttname"><a href="CommonDefs_8h.html#a6252187f6e55ba4943e030c350d624bd">BOOL</a></div><div class="ttdeci">INT32 BOOL</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:173</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a6addcc52e2dfddf231bf3213859ae2bb"><div class="ttname"><a href="CommonDefs_8h.html#a6addcc52e2dfddf231bf3213859ae2bb">PCHAR</a></div><div class="ttdeci">CHAR * PCHAR</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:180</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a955371e9e021e3d03714e1ba07952a47"><div class="ttname"><a href="CommonDefs_8h.html#a955371e9e021e3d03714e1ba07952a47">MEMFREE</a></div><div class="ttdeci">#define MEMFREE</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:801</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_aa93f0eb578d23995850d61f7d61c55c1"><div class="ttname"><a href="CommonDefs_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></div><div class="ttdeci">#define FALSE</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:197</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_ac4a2548aa9c44fcd11a1d8c5273acbdb"><div class="ttname"><a href="CommonDefs_8h.html#ac4a2548aa9c44fcd11a1d8c5273acbdb">STRCPY</a></div><div class="ttdeci">#define STRCPY</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:818</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_ae036ed0af51269a923ddd9863141bc9d"><div class="ttname"><a href="CommonDefs_8h.html#ae036ed0af51269a923ddd9863141bc9d">MEMALLOC</a></div><div class="ttdeci">#define MEMALLOC</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:797</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_ae56fdb340b23940f7a64ed2e37c1774a"><div class="ttname"><a href="CommonDefs_8h.html#ae56fdb340b23940f7a64ed2e37c1774a">STATUS_SUCCESS</a></div><div class="ttdeci">#define STATUS_SUCCESS</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:458</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_afe3b95df5834d81ffcde5ed897104154"><div class="ttname"><a href="CommonDefs_8h.html#afe3b95df5834d81ffcde5ed897104154">GETENV</a></div><div class="ttdeci">#define GETENV</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:852</div></div>
+<div class="ttc" id="aMkvgenTestFixture_8h_html_a153d9755f6ccae0c8b740117c8bbd492"><div class="ttname"><a href="MkvgenTestFixture_8h.html#a153d9755f6ccae0c8b740117c8bbd492">MKV_TEST_DEFAULT_TRACK_WIDTH</a></div><div class="ttdeci">#define MKV_TEST_DEFAULT_TRACK_WIDTH</div><div class="ttdef"><b>Definition:</b> MkvgenTestFixture.h:31</div></div>
+<div class="ttc" id="aMkvgenTestFixture_8h_html_a1b6a35f46c1f738501962a2cf41920cd"><div class="ttname"><a href="MkvgenTestFixture_8h.html#a1b6a35f46c1f738501962a2cf41920cd">getTimeCallback</a></div><div class="ttdeci">UINT64 getTimeCallback(UINT64)</div><div class="ttdef"><b>Definition:</b> MkvgenTestFixture.cpp:3</div></div>
+<div class="ttc" id="aMkvgenTestFixture_8h_html_a204cd90ba2fd223d29c75871d251618f"><div class="ttname"><a href="MkvgenTestFixture_8h.html#a204cd90ba2fd223d29c75871d251618f">MKV_TEST_CONTENT_TYPE</a></div><div class="ttdeci">#define MKV_TEST_CONTENT_TYPE</div><div class="ttdef"><b>Definition:</b> MkvgenTestFixture.h:19</div></div>
+<div class="ttc" id="aMkvgenTestFixture_8h_html_a2a98c7553742387eeab7dda54a38c747"><div class="ttname"><a href="MkvgenTestFixture_8h.html#a2a98c7553742387eeab7dda54a38c747">MKV_TEST_DEFAULT_TRACK_HEIGHT</a></div><div class="ttdeci">#define MKV_TEST_DEFAULT_TRACK_HEIGHT</div><div class="ttdef"><b>Definition:</b> MkvgenTestFixture.h:32</div></div>
+<div class="ttc" id="aMkvgenTestFixture_8h_html_a73b927853f8e4d82365cea9cf2b4524e"><div class="ttname"><a href="MkvgenTestFixture_8h.html#a73b927853f8e4d82365cea9cf2b4524e">MKV_TEST_TRACK_INFO_COUNT</a></div><div class="ttdeci">#define MKV_TEST_TRACK_INFO_COUNT</div><div class="ttdef"><b>Definition:</b> MkvgenTestFixture.h:28</div></div>
+<div class="ttc" id="aMkvgenTestFixture_8h_html_a8ec8dd21a47acef0c928e65d45a37dcd"><div class="ttname"><a href="MkvgenTestFixture_8h.html#a8ec8dd21a47acef0c928e65d45a37dcd">MKV_TEST_CLIENT_ID</a></div><div class="ttdeci">#define MKV_TEST_CLIENT_ID</div><div class="ttdef"><b>Definition:</b> MkvgenTestFixture.h:23</div></div>
+<div class="ttc" id="aMkvgenTestFixture_8h_html_a9592b71356f702efc711246bb65f7af4"><div class="ttname"><a href="MkvgenTestFixture_8h.html#a9592b71356f702efc711246bb65f7af4">MKV_TEST_BEHAVIOR_FLAGS</a></div><div class="ttdeci">#define MKV_TEST_BEHAVIOR_FLAGS</div><div class="ttdef"><b>Definition:</b> MkvgenTestFixture.h:17</div></div>
+<div class="ttc" id="aMkvgenTestFixture_8h_html_aa45439ef4f712108502e5004ea9daea1"><div class="ttname"><a href="MkvgenTestFixture_8h.html#aa45439ef4f712108502e5004ea9daea1">gTimeCallbackCalled</a></div><div class="ttdeci">BOOL gTimeCallbackCalled</div><div class="ttdef"><b>Definition:</b> MkvgenApiTest.cpp:3</div></div>
+<div class="ttc" id="aMkvgenTestFixture_8h_html_aab0344a5642c6ed1120f3acc94c1b43e"><div class="ttname"><a href="MkvgenTestFixture_8h.html#aab0344a5642c6ed1120f3acc94c1b43e">MKV_TEST_CLUSTER_DURATION</a></div><div class="ttdeci">#define MKV_TEST_CLUSTER_DURATION</div><div class="ttdef"><b>Definition:</b> MkvgenTestFixture.h:14</div></div>
+<div class="ttc" id="aMkvgenTestFixture_8h_html_ab57d5cd222db00dfb6f4bd2fc34791ba"><div class="ttname"><a href="MkvgenTestFixture_8h.html#ab57d5cd222db00dfb6f4bd2fc34791ba">MKV_TEST_TIMECODE_SCALE</a></div><div class="ttdeci">#define MKV_TEST_TIMECODE_SCALE</div><div class="ttdef"><b>Definition:</b> MkvgenTestFixture.h:11</div></div>
+<div class="ttc" id="aMkvgenTestFixture_8h_html_ac9f2c536ccd36b1bece6dcfd1bb35c8c"><div class="ttname"><a href="MkvgenTestFixture_8h.html#ac9f2c536ccd36b1bece6dcfd1bb35c8c">MKV_TEST_SEGMENT_UUID</a></div><div class="ttdeci">#define MKV_TEST_SEGMENT_UUID</div><div class="ttdef"><b>Definition:</b> MkvgenTestFixture.h:34</div></div>
+<div class="ttc" id="aMkvgenTestFixture_8h_html_acf70f5341a51abee2e90058b1b83e826"><div class="ttname"><a href="MkvgenTestFixture_8h.html#acf70f5341a51abee2e90058b1b83e826">MKV_TEST_CODEC_ID</a></div><div class="ttdeci">#define MKV_TEST_CODEC_ID</div><div class="ttdef"><b>Definition:</b> MkvgenTestFixture.h:20</div></div>
+<div class="ttc" id="aMkvgenTestFixture_8h_html_ad640bee452a8f26a54445f14aae63bdd"><div class="ttname"><a href="MkvgenTestFixture_8h.html#ad640bee452a8f26a54445f14aae63bdd">MKV_TEST_TRACK_NAME</a></div><div class="ttdeci">#define MKV_TEST_TRACK_NAME</div><div class="ttdef"><b>Definition:</b> MkvgenTestFixture.h:21</div></div>
+<div class="ttc" id="aMkvgenTestFixture_8h_html_af7003fe6e0825623e8846f774e1d94d7"><div class="ttname"><a href="MkvgenTestFixture_8h.html#af7003fe6e0825623e8846f774e1d94d7">MKV_TEST_BUFFER_SIZE</a></div><div class="ttdeci">#define MKV_TEST_BUFFER_SIZE</div><div class="ttdef"><b>Definition:</b> MkvgenTestFixture.h:13</div></div>
+<div class="ttc" id="aMkvgenTestFixture_8h_html_affafd6783633310b9e4dfe012d273f14"><div class="ttname"><a href="MkvgenTestFixture_8h.html#affafd6783633310b9e4dfe012d273f14">MKV_TEST_TRACKID</a></div><div class="ttdeci">#define MKV_TEST_TRACKID</div><div class="ttdef"><b>Definition:</b> MkvgenTestFixture.h:29</div></div>
+<div class="ttc" id="aPlatformUtils_8h_html_a54979bddf640e3a131864bf11ce51c01"><div class="ttname"><a href="PlatformUtils_8h.html#a54979bddf640e3a131864bf11ce51c01">DLOGI</a></div><div class="ttdeci">#define DLOGI(fmt,...)</div><div class="ttdef"><b>Definition:</b> PlatformUtils.h:77</div></div>
 <div class="ttc" id="aclassMkvgenTestBase_html"><div class="ttname"><a href="classMkvgenTestBase.html">MkvgenTestBase</a></div><div class="ttdef"><b>Definition:</b> MkvgenTestFixture.h:43</div></div>
+<div class="ttc" id="aclassMkvgenTestBase_html_a0900206f992822982da034e1cb81e0dd"><div class="ttname"><a href="classMkvgenTestBase.html#a0900206f992822982da034e1cb81e0dd">MkvgenTestBase::GetTestName</a></div><div class="ttdeci">PCHAR GetTestName()</div><div class="ttdef"><b>Definition:</b> MkvgenTestFixture.h:111</div></div>
+<div class="ttc" id="aclassMkvgenTestBase_html_a181d10456871249785a8515b655e6dba"><div class="ttname"><a href="classMkvgenTestBase.html#a181d10456871249785a8515b655e6dba">MkvgenTestBase::mBuffer</a></div><div class="ttdeci">PBYTE mBuffer</div><div class="ttdef"><b>Definition:</b> MkvgenTestFixture.h:50</div></div>
+<div class="ttc" id="aclassMkvgenTestBase_html_a1d207aee7c9d603f7a0d52edc4388e1b"><div class="ttname"><a href="classMkvgenTestBase.html#a1d207aee7c9d603f7a0d52edc4388e1b">MkvgenTestBase::MkvgenTestBase</a></div><div class="ttdeci">MkvgenTestBase()</div><div class="ttdef"><b>Definition:</b> MkvgenTestFixture.h:45</div></div>
+<div class="ttc" id="aclassMkvgenTestBase_html_a33695f6b6a0c9c05ee21677baf2de27e"><div class="ttname"><a href="classMkvgenTestBase.html#a33695f6b6a0c9c05ee21677baf2de27e">MkvgenTestBase::mTrackInfoCount</a></div><div class="ttdeci">UINT32 mTrackInfoCount</div><div class="ttdef"><b>Definition:</b> MkvgenTestFixture.h:53</div></div>
+<div class="ttc" id="aclassMkvgenTestBase_html_a43f5b84a1859aa678c6286686d589b36"><div class="ttname"><a href="classMkvgenTestBase.html#a43f5b84a1859aa678c6286686d589b36">MkvgenTestBase::mTrackInfo</a></div><div class="ttdeci">TrackInfo mTrackInfo</div><div class="ttdef"><b>Definition:</b> MkvgenTestFixture.h:52</div></div>
+<div class="ttc" id="aclassMkvgenTestBase_html_a870a092058305911f3d42df45dd657e5"><div class="ttname"><a href="classMkvgenTestBase.html#a870a092058305911f3d42df45dd657e5">MkvgenTestBase::TearDown</a></div><div class="ttdeci">virtual void TearDown()</div><div class="ttdef"><b>Definition:</b> MkvgenTestFixture.h:95</div></div>
+<div class="ttc" id="aclassMkvgenTestBase_html_a901706a587f9ae84df8b2395fbe759cb"><div class="ttname"><a href="classMkvgenTestBase.html#a901706a587f9ae84df8b2395fbe759cb">MkvgenTestBase::SetUp</a></div><div class="ttdeci">virtual void SetUp()</div><div class="ttdef"><b>Definition:</b> MkvgenTestFixture.h:68</div></div>
+<div class="ttc" id="aclassMkvgenTestBase_html_ac2756f18f95f13ecb71281ae98a3a58c"><div class="ttname"><a href="classMkvgenTestBase.html#ac2756f18f95f13ecb71281ae98a3a58c">MkvgenTestBase::CreateMkvGenerator</a></div><div class="ttdeci">STATUS CreateMkvGenerator()</div><div class="ttdef"><b>Definition:</b> MkvgenTestFixture.h:55</div></div>
+<div class="ttc" id="aclassMkvgenTestBase_html_ade41e1781aac4d2c36b5a5f033d5c959"><div class="ttname"><a href="classMkvgenTestBase.html#ade41e1781aac4d2c36b5a5f033d5c959">MkvgenTestBase::mMkvGenerator</a></div><div class="ttdeci">PMkvGenerator mMkvGenerator</div><div class="ttdef"><b>Definition:</b> MkvgenTestFixture.h:51</div></div>
+<div class="ttc" id="amkvgen_2include_2com_2amazonaws_2kinesis_2video_2mkvgen_2Include_8h_html"><div class="ttname"><a href="mkvgen_2include_2com_2amazonaws_2kinesis_2video_2mkvgen_2Include_8h.html">Include.h</a></div></div>
+<div class="ttc" id="amkvgen_2include_2com_2amazonaws_2kinesis_2video_2mkvgen_2Include_8h_html_a389feb414706ed518bb20bdb542bd931"><div class="ttname"><a href="mkvgen_2include_2com_2amazonaws_2kinesis_2video_2mkvgen_2Include_8h.html#a389feb414706ed518bb20bdb542bd931">TRACK_INFO_CURRENT_VERSION</a></div><div class="ttdeci">#define TRACK_INFO_CURRENT_VERSION</div><div class="ttdef"><b>Definition:</b> Include.h:171</div></div>
+<div class="ttc" id="amkvgen_2include_2com_2amazonaws_2kinesis_2video_2mkvgen_2Include_8h_html_a49d3164a782943871b903b967c52cac4a36fe74a2012f7e01bd3739f249f07982"><div class="ttname"><a href="mkvgen_2include_2com_2amazonaws_2kinesis_2video_2mkvgen_2Include_8h.html#a49d3164a782943871b903b967c52cac4a36fe74a2012f7e01bd3739f249f07982">MKV_TRACK_INFO_TYPE_VIDEO</a></div><div class="ttdeci">@ MKV_TRACK_INFO_TYPE_VIDEO</div><div class="ttdef"><b>Definition:</b> Include.h:218</div></div>
+<div class="ttc" id="amkvgen_2include_2com_2amazonaws_2kinesis_2video_2mkvgen_2Include_8h_html_a7307d8b66278c36e992403445167157d"><div class="ttname"><a href="mkvgen_2include_2com_2amazonaws_2kinesis_2video_2mkvgen_2Include_8h.html#a7307d8b66278c36e992403445167157d">freeMkvGenerator</a></div><div class="ttdeci">PUBLIC_API STATUS freeMkvGenerator(PMkvGenerator)</div><div class="ttdef"><b>Definition:</b> MkvGenerator.c:156</div></div>
+<div class="ttc" id="amkvgen_2include_2com_2amazonaws_2kinesis_2video_2mkvgen_2Include_8h_html_af24ee37c25579ff317a5c7dd7f9adbc2"><div class="ttname"><a href="mkvgen_2include_2com_2amazonaws_2kinesis_2video_2mkvgen_2Include_8h.html#af24ee37c25579ff317a5c7dd7f9adbc2">createMkvGenerator</a></div><div class="ttdeci">PUBLIC_API STATUS createMkvGenerator(PCHAR, UINT32, UINT64, UINT64, PBYTE, PTrackInfo, UINT32, PCHAR, GetCurrentTimeFunc, UINT64, PMkvGenerator *)</div><div class="ttdef"><b>Definition:</b> MkvGenerator.c:15</div></div>
+<div class="ttc" id="amkvgen_2src_2Include__i_8h_html"><div class="ttname"><a href="mkvgen_2src_2Include__i_8h.html">Include_i.h</a></div></div>
 <div class="ttc" id="astructTrackInfo_html"><div class="ttname"><a href="structTrackInfo.html">TrackInfo</a></div><div class="ttdef"><b>Definition:</b> Include.h:357</div></div>
+<div class="ttc" id="astructTrackInfo_html_a149915ca35cf8d5b2c3a460f49a21f12"><div class="ttname"><a href="structTrackInfo.html#a149915ca35cf8d5b2c3a460f49a21f12">TrackInfo::trackName</a></div><div class="ttdeci">CHAR trackName[MKV_MAX_TRACK_NAME_LEN+1]</div><div class="ttdef"><b>Definition:</b> Include.h:367</div></div>
+<div class="ttc" id="astructTrackInfo_html_a8ffac79cdfb8a2da19ee271752749738"><div class="ttname"><a href="structTrackInfo.html#a8ffac79cdfb8a2da19ee271752749738">TrackInfo::version</a></div><div class="ttdeci">UINT32 version</div><div class="ttdef"><b>Definition:</b> Include.h:358</div></div>
+<div class="ttc" id="astructTrackInfo_html_a986ae3a943f8afe4dced650531bd5b88"><div class="ttname"><a href="structTrackInfo.html#a986ae3a943f8afe4dced650531bd5b88">TrackInfo::codecPrivateData</a></div><div class="ttdeci">PBYTE codecPrivateData</div><div class="ttdef"><b>Definition:</b> Include.h:373</div></div>
+<div class="ttc" id="astructTrackInfo_html_a9a8fb75cbf69bf6556e6438226522879"><div class="ttname"><a href="structTrackInfo.html#a9a8fb75cbf69bf6556e6438226522879">TrackInfo::codecPrivateDataSize</a></div><div class="ttdeci">UINT32 codecPrivateDataSize</div><div class="ttdef"><b>Definition:</b> Include.h:370</div></div>
+<div class="ttc" id="astructTrackInfo_html_aab1ae3e1ec5b8bce20b27ea704ec4101"><div class="ttname"><a href="structTrackInfo.html#aab1ae3e1ec5b8bce20b27ea704ec4101">TrackInfo::trackId</a></div><div class="ttdeci">UINT64 trackId</div><div class="ttdef"><b>Definition:</b> Include.h:361</div></div>
+<div class="ttc" id="astructTrackInfo_html_ab259ac873c71b4c66e10d3c705f11248"><div class="ttname"><a href="structTrackInfo.html#ab259ac873c71b4c66e10d3c705f11248">TrackInfo::trackCustomData</a></div><div class="ttdeci">TrackCustomData trackCustomData</div><div class="ttdef"><b>Definition:</b> Include.h:379</div></div>
+<div class="ttc" id="astructTrackInfo_html_ac394911c9f53ff43689e23c1a34f3d06"><div class="ttname"><a href="structTrackInfo.html#ac394911c9f53ff43689e23c1a34f3d06">TrackInfo::trackType</a></div><div class="ttdeci">MKV_TRACK_INFO_TYPE trackType</div><div class="ttdef"><b>Definition:</b> Include.h:376</div></div>
+<div class="ttc" id="astructTrackInfo_html_aeec0671b25c8c79e494f304e0978ada0"><div class="ttname"><a href="structTrackInfo.html#aeec0671b25c8c79e494f304e0978ada0">TrackInfo::codecId</a></div><div class="ttdeci">CHAR codecId[MKV_MAX_CODEC_ID_LEN+1]</div><div class="ttdef"><b>Definition:</b> Include.h:364</div></div>
+<div class="ttc" id="astructTrackVideoConfig_html_a2c2ba1fad47dada0abee024e86eb6116"><div class="ttname"><a href="structTrackVideoConfig.html#a2c2ba1fad47dada0abee024e86eb6116">TrackVideoConfig::videoWidth</a></div><div class="ttdeci">UINT16 videoWidth</div><div class="ttdef"><b>Definition:</b> Include.h:336</div></div>
+<div class="ttc" id="astructTrackVideoConfig_html_af8c2ffc1cb85792503af1ad1d16b83e7"><div class="ttname"><a href="structTrackVideoConfig.html#af8c2ffc1cb85792503af1ad1d16b83e7">TrackVideoConfig::videoHeight</a></div><div class="ttdeci">UINT16 videoHeight</div><div class="ttdef"><b>Definition:</b> Include.h:337</div></div>
 <div class="ttc" id="astruct____MkvGenerator_html"><div class="ttname"><a href="struct____MkvGenerator.html">__MkvGenerator</a></div><div class="ttdef"><b>Definition:</b> Include.h:418</div></div>
+<div class="ttc" id="aunionTrackCustomData_html_a7a984c23e104a18ec369772d9eecc1c4"><div class="ttname"><a href="unionTrackCustomData.html#a7a984c23e104a18ec369772d9eecc1c4">TrackCustomData::trackVideoConfig</a></div><div class="ttdeci">TrackVideoConfig trackVideoConfig</div><div class="ttdef"><b>Definition:</b> Include.h:354</div></div>
+<div class="ttc" id="autils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h_html"><div class="ttname"><a href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html">Include.h</a></div></div>
+<div class="ttc" id="autils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h_html_a0391f6e08ef195306c1df546c55bc92a"><div class="ttname"><a href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a0391f6e08ef195306c1df546c55bc92a">SET_LOGGER_LOG_LEVEL</a></div><div class="ttdeci">#define SET_LOGGER_LOG_LEVEL(l)</div><div class="ttdef"><b>Definition:</b> Include.h:1034</div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_293b65ee0e438b101df8ec50727ccfaa.html">mkvgen</a></li><li class="navelem"><a class="el" href="dir_c7ac22ead37c2c566f33eade5454bc04.html">tst</a></li><li class="navelem"><a class="el" href="MkvgenTestFixture_8h.html">MkvgenTestFixture.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

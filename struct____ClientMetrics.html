@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +28,7 @@
    <div id="projectname">Amazon Kinesis Video Streams PIC
    &#160;<span id="projectnumber">1.0.1</span>
    </div>
-   <div id="projectbrief">Platform Independent Code for Amazon Kinesis Video Streams.</div>
+   <div id="projectbrief">Platform independent code for Amazon Kinesis Video Streams</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('struct____ClientMetrics.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,53 +82,175 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="struct____ClientMetrics-members.html">List of all members</a>  </div>
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
 <div class="title">__ClientMetrics Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h_source.html">Include.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a191dd720f419ceb56f4943d116301074"><td class="memItemLeft" align="right" valign="top"><a id="a191dd720f419ceb56f4943d116301074"></a>
-UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>version</b></td></tr>
-<tr class="separator:a191dd720f419ceb56f4943d116301074"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a735a0e6a5ea8abed97ca8ac1e0746124"><td class="memItemLeft" align="right" valign="top"><a id="a735a0e6a5ea8abed97ca8ac1e0746124"></a>
-DOUBLE&#160;</td><td class="memItemRight" valign="bottom"><b>clientAvgApiCallRetryCount</b></td></tr>
-<tr class="separator:a735a0e6a5ea8abed97ca8ac1e0746124"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56fc24c1cfb0562988b7774b11bee88f"><td class="memItemLeft" align="right" valign="top"><a id="a56fc24c1cfb0562988b7774b11bee88f"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>contentStoreSize</b></td></tr>
-<tr class="separator:a56fc24c1cfb0562988b7774b11bee88f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4360a0fd0074be8d2ad515687854bb63"><td class="memItemLeft" align="right" valign="top"><a id="a4360a0fd0074be8d2ad515687854bb63"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>contentStoreAvailableSize</b></td></tr>
-<tr class="separator:a4360a0fd0074be8d2ad515687854bb63"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9745bb976521ab589a7b2c59271d5bc0"><td class="memItemLeft" align="right" valign="top"><a id="a9745bb976521ab589a7b2c59271d5bc0"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>contentStoreAllocatedSize</b></td></tr>
-<tr class="separator:a9745bb976521ab589a7b2c59271d5bc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a484070009f1c6a17ce2229c5c34dae0f"><td class="memItemLeft" align="right" valign="top"><a id="a484070009f1c6a17ce2229c5c34dae0f"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>totalContentViewsSize</b></td></tr>
-<tr class="separator:a484070009f1c6a17ce2229c5c34dae0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c28157bebc405f6c10e1a421e312ef9"><td class="memItemLeft" align="right" valign="top"><a id="a5c28157bebc405f6c10e1a421e312ef9"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>totalFrameRate</b></td></tr>
-<tr class="separator:a5c28157bebc405f6c10e1a421e312ef9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a574e7a70907ddae62a46b9c4d537d25a"><td class="memItemLeft" align="right" valign="top"><a id="a574e7a70907ddae62a46b9c4d537d25a"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>totalTransferRate</b></td></tr>
-<tr class="separator:a574e7a70907ddae62a46b9c4d537d25a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aceb9968647134c3d8b575e51fae58c00"><td class="memItemLeft" align="right" valign="top"><a id="aceb9968647134c3d8b575e51fae58c00"></a>
-DOUBLE&#160;</td><td class="memItemRight" valign="bottom"><b>totalElementaryFrameRate</b></td></tr>
-<tr class="separator:aceb9968647134c3d8b575e51fae58c00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+Data Fields</h2></td></tr>
+<tr class="memitem:a8ffac79cdfb8a2da19ee271752749738"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____ClientMetrics.html#a8ffac79cdfb8a2da19ee271752749738">version</a></td></tr>
+<tr class="separator:a8ffac79cdfb8a2da19ee271752749738"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa19064cc75fe144db4b776ca7cb77141"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#aeb90fd78c942591ef3a935cf98baf4f8">DOUBLE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____ClientMetrics.html#aa19064cc75fe144db4b776ca7cb77141">clientAvgApiCallRetryCount</a></td></tr>
+<tr class="separator:aa19064cc75fe144db4b776ca7cb77141"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a20b48f12312a38dc6b7865363aae5a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____ClientMetrics.html#a1a20b48f12312a38dc6b7865363aae5a">contentStoreSize</a></td></tr>
+<tr class="separator:a1a20b48f12312a38dc6b7865363aae5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36f94f6ed2db5b8e634d07dfbb19e149"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____ClientMetrics.html#a36f94f6ed2db5b8e634d07dfbb19e149">contentStoreAvailableSize</a></td></tr>
+<tr class="separator:a36f94f6ed2db5b8e634d07dfbb19e149"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae29488f1a8109d7937f154ba115d2515"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____ClientMetrics.html#ae29488f1a8109d7937f154ba115d2515">contentStoreAllocatedSize</a></td></tr>
+<tr class="separator:ae29488f1a8109d7937f154ba115d2515"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4342b68a531761499e7cea780d4b1126"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____ClientMetrics.html#a4342b68a531761499e7cea780d4b1126">totalContentViewsSize</a></td></tr>
+<tr class="separator:a4342b68a531761499e7cea780d4b1126"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24533ef42d5f20444f41fd5bf258fd93"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____ClientMetrics.html#a24533ef42d5f20444f41fd5bf258fd93">totalFrameRate</a></td></tr>
+<tr class="separator:a24533ef42d5f20444f41fd5bf258fd93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfa8b83b2e3ca48fb76c9c087c504f60"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____ClientMetrics.html#acfa8b83b2e3ca48fb76c9c087c504f60">totalTransferRate</a></td></tr>
+<tr class="separator:acfa8b83b2e3ca48fb76c9c087c504f60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ea8dda6a4e4e68e88ae0bf25a233186"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#aeb90fd78c942591ef3a935cf98baf4f8">DOUBLE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____ClientMetrics.html#a4ea8dda6a4e4e68e88ae0bf25a233186">totalElementaryFrameRate</a></td></tr>
+<tr class="separator:a4ea8dda6a4e4e68e88ae0bf25a233186"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="aa19064cc75fe144db4b776ca7cb77141"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa19064cc75fe144db4b776ca7cb77141">&#9670;&nbsp;</a></span>clientAvgApiCallRetryCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#aeb90fd78c942591ef3a935cf98baf4f8">DOUBLE</a> clientAvgApiCallRetryCount</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae29488f1a8109d7937f154ba115d2515"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae29488f1a8109d7937f154ba115d2515">&#9670;&nbsp;</a></span>contentStoreAllocatedSize</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> contentStoreAllocatedSize</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a36f94f6ed2db5b8e634d07dfbb19e149"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36f94f6ed2db5b8e634d07dfbb19e149">&#9670;&nbsp;</a></span>contentStoreAvailableSize</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> contentStoreAvailableSize</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1a20b48f12312a38dc6b7865363aae5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a20b48f12312a38dc6b7865363aae5a">&#9670;&nbsp;</a></span>contentStoreSize</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> contentStoreSize</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4342b68a531761499e7cea780d4b1126"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4342b68a531761499e7cea780d4b1126">&#9670;&nbsp;</a></span>totalContentViewsSize</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> totalContentViewsSize</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4ea8dda6a4e4e68e88ae0bf25a233186"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ea8dda6a4e4e68e88ae0bf25a233186">&#9670;&nbsp;</a></span>totalElementaryFrameRate</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#aeb90fd78c942591ef3a935cf98baf4f8">DOUBLE</a> totalElementaryFrameRate</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a24533ef42d5f20444f41fd5bf258fd93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24533ef42d5f20444f41fd5bf258fd93">&#9670;&nbsp;</a></span>totalFrameRate</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> totalFrameRate</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acfa8b83b2e3ca48fb76c9c087c504f60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfa8b83b2e3ca48fb76c9c087c504f60">&#9670;&nbsp;</a></span>totalTransferRate</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> totalTransferRate</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8ffac79cdfb8a2da19ee271752749738"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ffac79cdfb8a2da19ee271752749738">&#9670;&nbsp;</a></span>version</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> version</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>src/client/include/com/amazonaws/kinesis/video/client/<a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h_source.html">Include.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="struct____ClientMetrics.html">__ClientMetrics</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +28,7 @@
    <div id="projectname">Amazon Kinesis Video Streams PIC
    &#160;<span id="projectnumber">1.0.1</span>
    </div>
-   <div id="projectbrief">Platform Independent Code for Amazon Kinesis Video Streams.</div>
+   <div id="projectbrief">Platform independent code for Amazon Kinesis Video Streams</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('struct____KinesisVideoBase.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,62 +82,234 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="struct____KinesisVideoBase-members.html">List of all members</a>  </div>
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
 <div class="title">__KinesisVideoBase Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="client_2src_2Include__i_8h_source.html">Include_i.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for __KinesisVideoBase:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct____KinesisVideoBase__coll__graph.png" border="0" usemap="#a____KinesisVideoBase_coll__map" alt="Collaboration graph"/></div>
+<map name="a____KinesisVideoBase_coll__map" id="a____KinesisVideoBase_coll__map">
+<area shape="rect" title=" " alt="" coords="67,184,219,211"/>
+<area shape="rect" href="struct____StateMachine.html" title=" " alt="" coords="5,95,131,121"/>
+<area shape="rect" href="struct____ServiceCallContext.html" title=" " alt="" coords="155,95,315,121"/>
+<area shape="rect" href="struct____AuthInfo.html" title=" " alt="" coords="189,5,280,32"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a233359b905e1d360e68b1f3ef5a063c9"><td class="memItemLeft" align="right" valign="top"><a id="a233359b905e1d360e68b1f3ef5a063c9"></a>
-UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>identifier</b></td></tr>
-<tr class="separator:a233359b905e1d360e68b1f3ef5a063c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae232ac63db518f3d16499e8219d3b4e6"><td class="memItemLeft" align="right" valign="top"><a id="ae232ac63db518f3d16499e8219d3b4e6"></a>
-UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>version</b></td></tr>
-<tr class="separator:ae232ac63db518f3d16499e8219d3b4e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a832557a54f84348dcadbe383128a6c86"><td class="memItemLeft" align="right" valign="top"><a id="a832557a54f84348dcadbe383128a6c86"></a>
-CHAR&#160;</td><td class="memItemRight" valign="bottom"><b>arn</b> [MAX_ARN_LEN+1]</td></tr>
-<tr class="separator:a832557a54f84348dcadbe383128a6c86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a899c0143040e9c74a73f6cb0fc316000"><td class="memItemLeft" align="right" valign="top"><a id="a899c0143040e9c74a73f6cb0fc316000"></a>
-<a class="el" href="struct____StateMachine.html">PStateMachine</a>&#160;</td><td class="memItemRight" valign="bottom"><b>pStateMachine</b></td></tr>
-<tr class="separator:a899c0143040e9c74a73f6cb0fc316000"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81b30a34da7adcc3d03a4832ba7b4f50"><td class="memItemLeft" align="right" valign="top"><a id="a81b30a34da7adcc3d03a4832ba7b4f50"></a>
-<a class="el" href="struct____ServiceCallContext.html">ServiceCallContext</a>&#160;</td><td class="memItemRight" valign="bottom"><b>serviceCallContext</b></td></tr>
-<tr class="separator:a81b30a34da7adcc3d03a4832ba7b4f50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a330b1bdb111007817352ff871f2731a7"><td class="memItemLeft" align="right" valign="top"><a id="a330b1bdb111007817352ff871f2731a7"></a>
-SERVICE_CALL_RESULT&#160;</td><td class="memItemRight" valign="bottom"><b>result</b></td></tr>
-<tr class="separator:a330b1bdb111007817352ff871f2731a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30237026f5414c9329d67eef369dc036"><td class="memItemLeft" align="right" valign="top"><a id="a30237026f5414c9329d67eef369dc036"></a>
-MUTEX&#160;</td><td class="memItemRight" valign="bottom"><b>lock</b></td></tr>
-<tr class="separator:a30237026f5414c9329d67eef369dc036"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28eb042e23a5e232ee6f00a9cd961edc"><td class="memItemLeft" align="right" valign="top"><a id="a28eb042e23a5e232ee6f00a9cd961edc"></a>
-MUTEX&#160;</td><td class="memItemRight" valign="bottom"><b>streamListLock</b></td></tr>
-<tr class="separator:a28eb042e23a5e232ee6f00a9cd961edc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4b00e231f37c8e04a522d4959820845"><td class="memItemLeft" align="right" valign="top"><a id="ac4b00e231f37c8e04a522d4959820845"></a>
-MUTEX&#160;</td><td class="memItemRight" valign="bottom"><b>putFrameLock</b></td></tr>
-<tr class="separator:ac4b00e231f37c8e04a522d4959820845"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c50706e4e454641cd3fc2008dd8aacc"><td class="memItemLeft" align="right" valign="top"><a id="a8c50706e4e454641cd3fc2008dd8aacc"></a>
-CVAR&#160;</td><td class="memItemRight" valign="bottom"><b>ready</b></td></tr>
-<tr class="separator:a8c50706e4e454641cd3fc2008dd8aacc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00049f795382ea1cd83218a8113b781f"><td class="memItemLeft" align="right" valign="top"><a id="a00049f795382ea1cd83218a8113b781f"></a>
-BOOL&#160;</td><td class="memItemRight" valign="bottom"><b>shutdown</b></td></tr>
-<tr class="separator:a00049f795382ea1cd83218a8113b781f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a104fe0875aee8884b94eb8796caacc33"><td class="memItemLeft" align="right" valign="top"><a id="a104fe0875aee8884b94eb8796caacc33"></a>
-SEMAPHORE_HANDLE&#160;</td><td class="memItemRight" valign="bottom"><b>shutdownSemaphore</b></td></tr>
-<tr class="separator:a104fe0875aee8884b94eb8796caacc33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+Data Fields</h2></td></tr>
+<tr class="memitem:a1c0536c2cf449aee9b476f41db0459fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____KinesisVideoBase.html#a1c0536c2cf449aee9b476f41db0459fc">identifier</a></td></tr>
+<tr class="separator:a1c0536c2cf449aee9b476f41db0459fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ffac79cdfb8a2da19ee271752749738"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____KinesisVideoBase.html#a8ffac79cdfb8a2da19ee271752749738">version</a></td></tr>
+<tr class="separator:a8ffac79cdfb8a2da19ee271752749738"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08daac79bfccacc4b547d2a8dd8c4d66"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#aebb9e13210d88d43e32e735ada43a425">CHAR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____KinesisVideoBase.html#a08daac79bfccacc4b547d2a8dd8c4d66">arn</a> [<a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a461ec9789d743ee44911b62333c610e4">MAX_ARN_LEN</a>+1]</td></tr>
+<tr class="separator:a08daac79bfccacc4b547d2a8dd8c4d66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a706e100a1593d6b901aee3b0232cfc8d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="state_2include_2com_2amazonaws_2kinesis_2video_2state_2Include_8h.html#ae14127da9dccdf66e493cecb41c5c376">PStateMachine</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____KinesisVideoBase.html#a706e100a1593d6b901aee3b0232cfc8d">pStateMachine</a></td></tr>
+<tr class="separator:a706e100a1593d6b901aee3b0232cfc8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1865376e070e5e7feebb74c742fc100"><td class="memItemLeft" align="right" valign="top"><a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a59f8163465195aebd2e5f29016bf511a">ServiceCallContext</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____KinesisVideoBase.html#ae1865376e070e5e7feebb74c742fc100">serviceCallContext</a></td></tr>
+<tr class="separator:ae1865376e070e5e7feebb74c742fc100"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1541cc94bf20aa2d5162acaf33043aa1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#ab3ff0b5f9d6c90bfea2a1363b8e2c0d2">SERVICE_CALL_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____KinesisVideoBase.html#a1541cc94bf20aa2d5162acaf33043aa1">result</a></td></tr>
+<tr class="separator:a1541cc94bf20aa2d5162acaf33043aa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ef0755957660d11fe5dbaf1888c75fb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#aacb6173308f40c2f1bb4b0fa0e13411c">MUTEX</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____KinesisVideoBase.html#a6ef0755957660d11fe5dbaf1888c75fb">lock</a></td></tr>
+<tr class="separator:a6ef0755957660d11fe5dbaf1888c75fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a969c8328560e43d3ef90158267b31119"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#aacb6173308f40c2f1bb4b0fa0e13411c">MUTEX</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____KinesisVideoBase.html#a969c8328560e43d3ef90158267b31119">streamListLock</a></td></tr>
+<tr class="separator:a969c8328560e43d3ef90158267b31119"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0e833dde376d50a32f840855a2caf0b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#aacb6173308f40c2f1bb4b0fa0e13411c">MUTEX</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____KinesisVideoBase.html#ad0e833dde376d50a32f840855a2caf0b">putFrameLock</a></td></tr>
+<tr class="separator:ad0e833dde376d50a32f840855a2caf0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa188ad836bdcaaa42218511c1b45fa69"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a195d7cd42e35c2b87926df619a01a3d3">CVAR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____KinesisVideoBase.html#aa188ad836bdcaaa42218511c1b45fa69">ready</a></td></tr>
+<tr class="separator:aa188ad836bdcaaa42218511c1b45fa69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f5056e3ea10218249fd021f1d9190a7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a6252187f6e55ba4943e030c350d624bd">BOOL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____KinesisVideoBase.html#a8f5056e3ea10218249fd021f1d9190a7">shutdown</a></td></tr>
+<tr class="separator:a8f5056e3ea10218249fd021f1d9190a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e8fbefce30eb9dbe636496f507bd0e2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#ac1048629c12eaac3ad7984955c5abfa1">SEMAPHORE_HANDLE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____KinesisVideoBase.html#a5e8fbefce30eb9dbe636496f507bd0e2">shutdownSemaphore</a></td></tr>
+<tr class="separator:a5e8fbefce30eb9dbe636496f507bd0e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="a08daac79bfccacc4b547d2a8dd8c4d66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08daac79bfccacc4b547d2a8dd8c4d66">&#9670;&nbsp;</a></span>arn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#aebb9e13210d88d43e32e735ada43a425">CHAR</a> arn[<a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a461ec9789d743ee44911b62333c610e4">MAX_ARN_LEN</a>+1]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1c0536c2cf449aee9b476f41db0459fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c0536c2cf449aee9b476f41db0459fc">&#9670;&nbsp;</a></span>identifier</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> identifier</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6ef0755957660d11fe5dbaf1888c75fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ef0755957660d11fe5dbaf1888c75fb">&#9670;&nbsp;</a></span>lock</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#aacb6173308f40c2f1bb4b0fa0e13411c">MUTEX</a> lock</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a706e100a1593d6b901aee3b0232cfc8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a706e100a1593d6b901aee3b0232cfc8d">&#9670;&nbsp;</a></span>pStateMachine</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="state_2include_2com_2amazonaws_2kinesis_2video_2state_2Include_8h.html#ae14127da9dccdf66e493cecb41c5c376">PStateMachine</a> pStateMachine</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad0e833dde376d50a32f840855a2caf0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0e833dde376d50a32f840855a2caf0b">&#9670;&nbsp;</a></span>putFrameLock</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#aacb6173308f40c2f1bb4b0fa0e13411c">MUTEX</a> putFrameLock</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa188ad836bdcaaa42218511c1b45fa69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa188ad836bdcaaa42218511c1b45fa69">&#9670;&nbsp;</a></span>ready</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a195d7cd42e35c2b87926df619a01a3d3">CVAR</a> ready</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1541cc94bf20aa2d5162acaf33043aa1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1541cc94bf20aa2d5162acaf33043aa1">&#9670;&nbsp;</a></span>result</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#ab3ff0b5f9d6c90bfea2a1363b8e2c0d2">SERVICE_CALL_RESULT</a> result</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae1865376e070e5e7feebb74c742fc100"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1865376e070e5e7feebb74c742fc100">&#9670;&nbsp;</a></span>serviceCallContext</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a59f8163465195aebd2e5f29016bf511a">ServiceCallContext</a> serviceCallContext</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8f5056e3ea10218249fd021f1d9190a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f5056e3ea10218249fd021f1d9190a7">&#9670;&nbsp;</a></span>shutdown</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a6252187f6e55ba4943e030c350d624bd">BOOL</a> shutdown</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5e8fbefce30eb9dbe636496f507bd0e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e8fbefce30eb9dbe636496f507bd0e2">&#9670;&nbsp;</a></span>shutdownSemaphore</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#ac1048629c12eaac3ad7984955c5abfa1">SEMAPHORE_HANDLE</a> shutdownSemaphore</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a969c8328560e43d3ef90158267b31119"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a969c8328560e43d3ef90158267b31119">&#9670;&nbsp;</a></span>streamListLock</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#aacb6173308f40c2f1bb4b0fa0e13411c">MUTEX</a> streamListLock</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8ffac79cdfb8a2da19ee271752749738"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ffac79cdfb8a2da19ee271752749738">&#9670;&nbsp;</a></span>version</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> version</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>src/client/src/<a class="el" href="client_2src_2Include__i_8h_source.html">Include_i.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="struct____KinesisVideoBase.html">__KinesisVideoBase</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

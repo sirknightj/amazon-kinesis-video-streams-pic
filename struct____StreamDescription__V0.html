@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +28,7 @@
    <div id="projectname">Amazon Kinesis Video Streams PIC
    &#160;<span id="projectnumber">1.0.1</span>
    </div>
-   <div id="projectbrief">Platform Independent Code for Amazon Kinesis Video Streams.</div>
+   <div id="projectbrief">Platform independent code for Amazon Kinesis Video Streams</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('struct____StreamDescription__V0.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,50 +82,159 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="struct____StreamDescription__V0-members.html">List of all members</a>  </div>
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
 <div class="title">__StreamDescription_V0 Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="client_2src_2Include__i_8h_source.html">Include_i.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:ab93739763c620488ae85c537d97ae03f"><td class="memItemLeft" align="right" valign="top"><a id="ab93739763c620488ae85c537d97ae03f"></a>
-UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>version</b></td></tr>
-<tr class="separator:ab93739763c620488ae85c537d97ae03f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab06217581e0deb5cf149fe0206a16faf"><td class="memItemLeft" align="right" valign="top"><a id="ab06217581e0deb5cf149fe0206a16faf"></a>
-CHAR&#160;</td><td class="memItemRight" valign="bottom"><b>deviceName</b> [MAX_DEVICE_NAME_LEN+1]</td></tr>
-<tr class="separator:ab06217581e0deb5cf149fe0206a16faf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92ab951fa09965d808f3eea70e9db97c"><td class="memItemLeft" align="right" valign="top"><a id="a92ab951fa09965d808f3eea70e9db97c"></a>
-CHAR&#160;</td><td class="memItemRight" valign="bottom"><b>streamName</b> [MAX_STREAM_NAME_LEN+1]</td></tr>
-<tr class="separator:a92ab951fa09965d808f3eea70e9db97c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1e783770ba32b07ea4a585a5d6b4d34"><td class="memItemLeft" align="right" valign="top"><a id="ad1e783770ba32b07ea4a585a5d6b4d34"></a>
-CHAR&#160;</td><td class="memItemRight" valign="bottom"><b>contentType</b> [MAX_CONTENT_TYPE_LEN+1]</td></tr>
-<tr class="separator:ad1e783770ba32b07ea4a585a5d6b4d34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7ed90807b17eefc0ead14ab49dc0800"><td class="memItemLeft" align="right" valign="top"><a id="ad7ed90807b17eefc0ead14ab49dc0800"></a>
-CHAR&#160;</td><td class="memItemRight" valign="bottom"><b>updateVersion</b> [MAX_UPDATE_VERSION_LEN+1]</td></tr>
-<tr class="separator:ad7ed90807b17eefc0ead14ab49dc0800"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17bbf7925638fed0f547812d7f938a56"><td class="memItemLeft" align="right" valign="top"><a id="a17bbf7925638fed0f547812d7f938a56"></a>
-CHAR&#160;</td><td class="memItemRight" valign="bottom"><b>streamArn</b> [MAX_ARN_LEN+1]</td></tr>
-<tr class="separator:a17bbf7925638fed0f547812d7f938a56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acbb1e5e172510b6d23f39542d587a4e7"><td class="memItemLeft" align="right" valign="top"><a id="acbb1e5e172510b6d23f39542d587a4e7"></a>
-STREAM_STATUS&#160;</td><td class="memItemRight" valign="bottom"><b>streamStatus</b></td></tr>
-<tr class="separator:acbb1e5e172510b6d23f39542d587a4e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70c10bbde41b7c2b0cd49cc9219c29cc"><td class="memItemLeft" align="right" valign="top"><a id="a70c10bbde41b7c2b0cd49cc9219c29cc"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>creationTime</b></td></tr>
-<tr class="separator:a70c10bbde41b7c2b0cd49cc9219c29cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+Data Fields</h2></td></tr>
+<tr class="memitem:a8ffac79cdfb8a2da19ee271752749738"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StreamDescription__V0.html#a8ffac79cdfb8a2da19ee271752749738">version</a></td></tr>
+<tr class="separator:a8ffac79cdfb8a2da19ee271752749738"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b870d7f810387d25c38c01b4fee1b70"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#aebb9e13210d88d43e32e735ada43a425">CHAR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StreamDescription__V0.html#a2b870d7f810387d25c38c01b4fee1b70">deviceName</a> [<a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a0666ed218212a20f00a6c65caa3141bc">MAX_DEVICE_NAME_LEN</a>+1]</td></tr>
+<tr class="separator:a2b870d7f810387d25c38c01b4fee1b70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8f9eb6d03628cb4d4d2a16851cbc69e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#aebb9e13210d88d43e32e735ada43a425">CHAR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StreamDescription__V0.html#ac8f9eb6d03628cb4d4d2a16851cbc69e">streamName</a> [<a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a693dbc537c9fd12b061ab52bf1c545e8">MAX_STREAM_NAME_LEN</a>+1]</td></tr>
+<tr class="separator:ac8f9eb6d03628cb4d4d2a16851cbc69e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74bbdb281f1bd7368ac5418d1d0fb7a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#aebb9e13210d88d43e32e735ada43a425">CHAR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StreamDescription__V0.html#a74bbdb281f1bd7368ac5418d1d0fb7a3">contentType</a> [<a class="el" href="mkvgen_2include_2com_2amazonaws_2kinesis_2video_2mkvgen_2Include_8h.html#ab668c931210c2aee021b0deecb1edfaa">MAX_CONTENT_TYPE_LEN</a>+1]</td></tr>
+<tr class="separator:a74bbdb281f1bd7368ac5418d1d0fb7a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a874f8184925c70533f233aea578114c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#aebb9e13210d88d43e32e735ada43a425">CHAR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StreamDescription__V0.html#a874f8184925c70533f233aea578114c9">updateVersion</a> [<a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a40f1517e1fadcad2689c684a62b73dae">MAX_UPDATE_VERSION_LEN</a>+1]</td></tr>
+<tr class="separator:a874f8184925c70533f233aea578114c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56a751580570459b17302e1e2bfb0239"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#aebb9e13210d88d43e32e735ada43a425">CHAR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StreamDescription__V0.html#a56a751580570459b17302e1e2bfb0239">streamArn</a> [<a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a461ec9789d743ee44911b62333c610e4">MAX_ARN_LEN</a>+1]</td></tr>
+<tr class="separator:a56a751580570459b17302e1e2bfb0239"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0ff6e6e7e835ce6b4560d243c76696f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a5ef2dd0da2da9b4e7d35c263d20748e7">STREAM_STATUS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StreamDescription__V0.html#ac0ff6e6e7e835ce6b4560d243c76696f">streamStatus</a></td></tr>
+<tr class="separator:ac0ff6e6e7e835ce6b4560d243c76696f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69a9517b85dca5100014a77b9b22b15f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____StreamDescription__V0.html#a69a9517b85dca5100014a77b9b22b15f">creationTime</a></td></tr>
+<tr class="separator:a69a9517b85dca5100014a77b9b22b15f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="a74bbdb281f1bd7368ac5418d1d0fb7a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74bbdb281f1bd7368ac5418d1d0fb7a3">&#9670;&nbsp;</a></span>contentType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#aebb9e13210d88d43e32e735ada43a425">CHAR</a> contentType[<a class="el" href="mkvgen_2include_2com_2amazonaws_2kinesis_2video_2mkvgen_2Include_8h.html#ab668c931210c2aee021b0deecb1edfaa">MAX_CONTENT_TYPE_LEN</a>+1]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a69a9517b85dca5100014a77b9b22b15f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69a9517b85dca5100014a77b9b22b15f">&#9670;&nbsp;</a></span>creationTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> creationTime</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2b870d7f810387d25c38c01b4fee1b70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b870d7f810387d25c38c01b4fee1b70">&#9670;&nbsp;</a></span>deviceName</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#aebb9e13210d88d43e32e735ada43a425">CHAR</a> deviceName[<a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a0666ed218212a20f00a6c65caa3141bc">MAX_DEVICE_NAME_LEN</a>+1]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a56a751580570459b17302e1e2bfb0239"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56a751580570459b17302e1e2bfb0239">&#9670;&nbsp;</a></span>streamArn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#aebb9e13210d88d43e32e735ada43a425">CHAR</a> streamArn[<a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a461ec9789d743ee44911b62333c610e4">MAX_ARN_LEN</a>+1]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac8f9eb6d03628cb4d4d2a16851cbc69e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8f9eb6d03628cb4d4d2a16851cbc69e">&#9670;&nbsp;</a></span>streamName</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#aebb9e13210d88d43e32e735ada43a425">CHAR</a> streamName[<a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a693dbc537c9fd12b061ab52bf1c545e8">MAX_STREAM_NAME_LEN</a>+1]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac0ff6e6e7e835ce6b4560d243c76696f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0ff6e6e7e835ce6b4560d243c76696f">&#9670;&nbsp;</a></span>streamStatus</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a5ef2dd0da2da9b4e7d35c263d20748e7">STREAM_STATUS</a> streamStatus</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a874f8184925c70533f233aea578114c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a874f8184925c70533f233aea578114c9">&#9670;&nbsp;</a></span>updateVersion</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#aebb9e13210d88d43e32e735ada43a425">CHAR</a> updateVersion[<a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a40f1517e1fadcad2689c684a62b73dae">MAX_UPDATE_VERSION_LEN</a>+1]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8ffac79cdfb8a2da19ee271752749738"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ffac79cdfb8a2da19ee271752749738">&#9670;&nbsp;</a></span>version</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> version</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>src/client/src/<a class="el" href="client_2src_2Include__i_8h_source.html">Include_i.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="struct____StreamDescription__V0.html">__StreamDescription_V0</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

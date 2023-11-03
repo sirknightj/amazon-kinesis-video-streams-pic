@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +28,7 @@
    <div id="projectname">Amazon Kinesis Video Streams PIC
    &#160;<span id="projectnumber">1.0.1</span>
    </div>
-   <div id="projectbrief">Platform Independent Code for Amazon Kinesis Video Streams.</div>
+   <div id="projectbrief">Platform independent code for Amazon Kinesis Video Streams</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('structSemaphore.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,11 +82,9 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="structSemaphore-members.html">List of all members</a>  </div>
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
 <div class="title">Semaphore Struct Reference</div>  </div>
 </div><!--header-->
@@ -74,47 +93,182 @@ $(function() {
 <p><code>#include &lt;<a class="el" href="utils_2src_2Include__i_8h_source.html">Include_i.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:adf4ed81cecfb958f52e494b2dd68979c"><td class="memItemLeft" align="right" valign="top"><a id="adf4ed81cecfb958f52e494b2dd68979c"></a>
-volatile SIZE_T&#160;</td><td class="memItemRight" valign="bottom"><b>permitCount</b></td></tr>
-<tr class="separator:adf4ed81cecfb958f52e494b2dd68979c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff81cca234bafefbaa59929645980a3d"><td class="memItemLeft" align="right" valign="top"><a id="aff81cca234bafefbaa59929645980a3d"></a>
-volatile SIZE_T&#160;</td><td class="memItemRight" valign="bottom"><b>waitCount</b></td></tr>
-<tr class="separator:aff81cca234bafefbaa59929645980a3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a507bbc309f89e5ff67a14aff3f23aaad"><td class="memItemLeft" align="right" valign="top"><a id="a507bbc309f89e5ff67a14aff3f23aaad"></a>
-volatile ATOMIC_BOOL&#160;</td><td class="memItemRight" valign="bottom"><b>locked</b></td></tr>
-<tr class="separator:a507bbc309f89e5ff67a14aff3f23aaad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8442560fcc3e6158b16272f858285da7"><td class="memItemLeft" align="right" valign="top"><a id="a8442560fcc3e6158b16272f858285da7"></a>
-volatile ATOMIC_BOOL&#160;</td><td class="memItemRight" valign="bottom"><b>shutdown</b></td></tr>
-<tr class="separator:a8442560fcc3e6158b16272f858285da7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab81e48353277346cd84fa3812f320d13"><td class="memItemLeft" align="right" valign="top"><a id="ab81e48353277346cd84fa3812f320d13"></a>
-BOOL&#160;</td><td class="memItemRight" valign="bottom"><b>signalSemaphore</b></td></tr>
-<tr class="separator:ab81e48353277346cd84fa3812f320d13"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e84524ca761a4462c8c79fb43b1df40"><td class="memItemLeft" align="right" valign="top"><a id="a6e84524ca761a4462c8c79fb43b1df40"></a>
-SIZE_T&#160;</td><td class="memItemRight" valign="bottom"><b>maxPermitCount</b></td></tr>
-<tr class="separator:a6e84524ca761a4462c8c79fb43b1df40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ccd5ebb3970bb13813fc4e4706c4f4c"><td class="memItemLeft" align="right" valign="top"><a id="a9ccd5ebb3970bb13813fc4e4706c4f4c"></a>
-CVAR&#160;</td><td class="memItemRight" valign="bottom"><b>semaphoreNotify</b></td></tr>
-<tr class="separator:a9ccd5ebb3970bb13813fc4e4706c4f4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5fde02f013dc0d346863e367f68eb2ab"><td class="memItemLeft" align="right" valign="top"><a id="a5fde02f013dc0d346863e367f68eb2ab"></a>
-MUTEX&#160;</td><td class="memItemRight" valign="bottom"><b>semaphoreLock</b></td></tr>
-<tr class="separator:a5fde02f013dc0d346863e367f68eb2ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a06232a7ee3e40f0eed836d21a3a962"><td class="memItemLeft" align="right" valign="top"><a id="a7a06232a7ee3e40f0eed836d21a3a962"></a>
-CVAR&#160;</td><td class="memItemRight" valign="bottom"><b>drainedNotify</b></td></tr>
-<tr class="separator:a7a06232a7ee3e40f0eed836d21a3a962"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb677fe711585dfc6a18da25140fcea3"><td class="memItemLeft" align="right" valign="top"><a id="afb677fe711585dfc6a18da25140fcea3"></a>
-MUTEX&#160;</td><td class="memItemRight" valign="bottom"><b>drainedLock</b></td></tr>
-<tr class="separator:afb677fe711585dfc6a18da25140fcea3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+Data Fields</h2></td></tr>
+<tr class="memitem:abcd12bb977e4912ae26acb518ee1d2f0"><td class="memItemLeft" align="right" valign="top">volatile <a class="el" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSemaphore.html#abcd12bb977e4912ae26acb518ee1d2f0">permitCount</a></td></tr>
+<tr class="separator:abcd12bb977e4912ae26acb518ee1d2f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a084c6dcf21312503f402bcc3964e3f"><td class="memItemLeft" align="right" valign="top">volatile <a class="el" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSemaphore.html#a5a084c6dcf21312503f402bcc3964e3f">waitCount</a></td></tr>
+<tr class="separator:a5a084c6dcf21312503f402bcc3964e3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a573939722a843cec6f7f50109a841eb7"><td class="memItemLeft" align="right" valign="top">volatile <a class="el" href="CommonDefs_8h.html#ade83a52eef8a7a728920c60d7af79e76">ATOMIC_BOOL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSemaphore.html#a573939722a843cec6f7f50109a841eb7">locked</a></td></tr>
+<tr class="separator:a573939722a843cec6f7f50109a841eb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4a699a4d8baa2b4d9fc8294090856b4"><td class="memItemLeft" align="right" valign="top">volatile <a class="el" href="CommonDefs_8h.html#ade83a52eef8a7a728920c60d7af79e76">ATOMIC_BOOL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSemaphore.html#aa4a699a4d8baa2b4d9fc8294090856b4">shutdown</a></td></tr>
+<tr class="separator:aa4a699a4d8baa2b4d9fc8294090856b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e1fa4e911d2bd7e5cff68c3ed9456a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a6252187f6e55ba4943e030c350d624bd">BOOL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSemaphore.html#a8e1fa4e911d2bd7e5cff68c3ed9456a3">signalSemaphore</a></td></tr>
+<tr class="separator:a8e1fa4e911d2bd7e5cff68c3ed9456a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6b0eaf68c2c3dd85e7a7ea1a8ba7109"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSemaphore.html#ad6b0eaf68c2c3dd85e7a7ea1a8ba7109">maxPermitCount</a></td></tr>
+<tr class="separator:ad6b0eaf68c2c3dd85e7a7ea1a8ba7109"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae42defc9b853ce3f0d3f3400a01757c3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a195d7cd42e35c2b87926df619a01a3d3">CVAR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSemaphore.html#ae42defc9b853ce3f0d3f3400a01757c3">semaphoreNotify</a></td></tr>
+<tr class="separator:ae42defc9b853ce3f0d3f3400a01757c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb33441f0decf3b7a5514b5774a85b63"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#aacb6173308f40c2f1bb4b0fa0e13411c">MUTEX</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSemaphore.html#abb33441f0decf3b7a5514b5774a85b63">semaphoreLock</a></td></tr>
+<tr class="separator:abb33441f0decf3b7a5514b5774a85b63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a685a8a1bd86aff4fa1c5229f16e22b63"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a195d7cd42e35c2b87926df619a01a3d3">CVAR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSemaphore.html#a685a8a1bd86aff4fa1c5229f16e22b63">drainedNotify</a></td></tr>
+<tr class="separator:a685a8a1bd86aff4fa1c5229f16e22b63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a931d1979a21b5413d9bb7aeafb95c969"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#aacb6173308f40c2f1bb4b0fa0e13411c">MUTEX</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSemaphore.html#a931d1979a21b5413d9bb7aeafb95c969">drainedLock</a></td></tr>
+<tr class="separator:a931d1979a21b5413d9bb7aeafb95c969"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Internal semaphore definition </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+</div><h2 class="groupheader">Field Documentation</h2>
+<a id="a931d1979a21b5413d9bb7aeafb95c969"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a931d1979a21b5413d9bb7aeafb95c969">&#9670;&nbsp;</a></span>drainedLock</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#aacb6173308f40c2f1bb4b0fa0e13411c">MUTEX</a> drainedLock</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a685a8a1bd86aff4fa1c5229f16e22b63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a685a8a1bd86aff4fa1c5229f16e22b63">&#9670;&nbsp;</a></span>drainedNotify</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a195d7cd42e35c2b87926df619a01a3d3">CVAR</a> drainedNotify</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a573939722a843cec6f7f50109a841eb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a573939722a843cec6f7f50109a841eb7">&#9670;&nbsp;</a></span>locked</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="CommonDefs_8h.html#ade83a52eef8a7a728920c60d7af79e76">ATOMIC_BOOL</a> locked</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad6b0eaf68c2c3dd85e7a7ea1a8ba7109"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6b0eaf68c2c3dd85e7a7ea1a8ba7109">&#9670;&nbsp;</a></span>maxPermitCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a> maxPermitCount</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abcd12bb977e4912ae26acb518ee1d2f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcd12bb977e4912ae26acb518ee1d2f0">&#9670;&nbsp;</a></span>permitCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a> permitCount</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abb33441f0decf3b7a5514b5774a85b63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb33441f0decf3b7a5514b5774a85b63">&#9670;&nbsp;</a></span>semaphoreLock</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#aacb6173308f40c2f1bb4b0fa0e13411c">MUTEX</a> semaphoreLock</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae42defc9b853ce3f0d3f3400a01757c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae42defc9b853ce3f0d3f3400a01757c3">&#9670;&nbsp;</a></span>semaphoreNotify</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a195d7cd42e35c2b87926df619a01a3d3">CVAR</a> semaphoreNotify</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa4a699a4d8baa2b4d9fc8294090856b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4a699a4d8baa2b4d9fc8294090856b4">&#9670;&nbsp;</a></span>shutdown</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="CommonDefs_8h.html#ade83a52eef8a7a728920c60d7af79e76">ATOMIC_BOOL</a> shutdown</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8e1fa4e911d2bd7e5cff68c3ed9456a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e1fa4e911d2bd7e5cff68c3ed9456a3">&#9670;&nbsp;</a></span>signalSemaphore</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a6252187f6e55ba4943e030c350d624bd">BOOL</a> signalSemaphore</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5a084c6dcf21312503f402bcc3964e3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a084c6dcf21312503f402bcc3964e3f">&#9670;&nbsp;</a></span>waitCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a> waitCount</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>src/utils/src/<a class="el" href="utils_2src_2Include__i_8h_source.html">Include_i.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structSemaphore.html">Semaphore</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

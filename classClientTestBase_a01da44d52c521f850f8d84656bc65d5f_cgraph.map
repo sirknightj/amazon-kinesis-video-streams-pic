@@ -1,0 +1,20 @@
+<map id="initTestMembers" name="initTestMembers">
+<area shape="rect" id="node1" title=" " alt="" coords="5,325,136,351"/>
+<area shape="rect" id="node2" href="$classClientTestBase.html#a0929d4cb1e8abe0fdd38375c9eec9c23" title=" " alt="" coords="223,181,392,207"/>
+<area shape="rect" id="node8" href="$classClientTestBase.html#a9ac8bb80d309f5cc98bf9ed6e1503707" title=" " alt="" coords="218,270,397,297"/>
+<area shape="rect" id="node14" href="$classClientTestBase.html#adee5911afacc5195cc0abf7ab116c0f5" title=" " alt="" coords="230,325,385,351"/>
+<area shape="rect" id="node16" href="$classClientTestBase.html#a67e53f9da741fadec657c97e63edd6c6" title=" " alt="" coords="184,375,431,402"/>
+<area shape="rect" id="node18" href="$classClientTestBase.html#a895cc44b572c324b0aaddc6e70708c4a" title=" " alt="" coords="247,426,368,453"/>
+<area shape="rect" id="node3" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a9fb6f39966eff5492ec305e8a88fccf0" title="Initializes exponential backoff state with provided configuration This should be called once before c..." alt="" coords="493,136,730,177"/>
+<area shape="rect" id="node4" href="$ExponentialBackoffRetryStrategy_8c.html#ab417fc8fafc037f6ea43ec9c47d42c41" title=" " alt="" coords="792,5,1029,47"/>
+<area shape="rect" id="node5" href="$ExponentialBackoffRetryStrategy_8c.html#a58c1c7e465fd7abb3cd2c64c37d096ed" title=" " alt="" coords="805,71,1017,112"/>
+<area shape="rect" id="node6" href="$ExponentialBackoffRetryStrategy_8c.html#a35a6d37dbfa6cea9a790d6c1005675bb" title=" " alt="" coords="803,201,1018,243"/>
+<area shape="rect" id="node7" href="$ExponentialBackoffRetryStrategy_8c.html#a6f87ef97d58f1c89401a0685ded8514c" title=" " alt="" coords="811,136,1011,177"/>
+<area shape="rect" id="node9" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a0a4035f6c42f410736cecd951333b024" title="Computes and returns the next exponential backoff wait time." alt="" coords="510,260,713,301"/>
+<area shape="rect" id="node10" href="$ExponentialBackoffRetryStrategy_8c.html#a6a95e0dd1fb1d13986944eb61f673cd4" title=" " alt="" coords="839,267,982,294"/>
+<area shape="rect" id="node12" href="$ExponentialBackoffRetryStrategy_8c.html#aba1cca3745bb19e30d1ed71148fc8c34" title=" " alt="" coords="847,318,975,345"/>
+<area shape="rect" id="node13" href="$ExponentialBackoffRetryStrategy_8c.html#a582226dc271fb379509b2b11f0cbb3b0" title=" " alt="" coords="799,369,1023,411"/>
+<area shape="rect" id="node11" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#aeb8d68204bcfadf40a4e0e0863a859de" title="Computes power Returns error when the base or exponent values are not within limits...." alt="" coords="1077,267,1196,294"/>
+<area shape="rect" id="node15" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#ab7f8dd7fbed43bf8f9e1e2313464408a" title="Frees ExponentialBackoffState and its corresponding ExponentialBackoffConfig struct." alt="" coords="479,326,744,353"/>
+<area shape="rect" id="node17" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a59c48294cde72074883711867235e089" title="Returns updated exponential backoff retry count when PRetryStrategy object is passed." alt="" coords="510,377,713,419"/>
+</map>

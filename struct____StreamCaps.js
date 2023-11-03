@@ -1,0 +1,28 @@
+var struct____StreamCaps =
+[
+    [ "absoluteFragmentTimes", "struct____StreamCaps.html#ac52d1e6ac4d966d17bd1b80bac91235d", null ],
+    [ "adaptive", "struct____StreamCaps.html#ae99d74a5ec5f2c4a8f0b946ee96985f2", null ],
+    [ "allowStreamCreation", "struct____StreamCaps.html#ad9de6fa7b44d3ea72c0d1f882ab0a360", null ],
+    [ "avgBandwidthBps", "struct____StreamCaps.html#ae45ed24e27409cddd7f0baa79b2dcbda", null ],
+    [ "bufferDuration", "struct____StreamCaps.html#a5364844a85ed27a25f98fa06c9d091a9", null ],
+    [ "connectionStalenessDuration", "struct____StreamCaps.html#ab318ea341c2c9e0d34324a15bae7788a", null ],
+    [ "contentType", "struct____StreamCaps.html#a74bbdb281f1bd7368ac5418d1d0fb7a3", null ],
+    [ "fragmentAcks", "struct____StreamCaps.html#a43dbb53b71cff0de65800d257ea831e6", null ],
+    [ "fragmentDuration", "struct____StreamCaps.html#a1407e265fff2821ed2069a07e11dabfb", null ],
+    [ "frameOrderingMode", "struct____StreamCaps.html#a01b518b203a4ef22e5826b24ecc0cdb6", null ],
+    [ "frameRate", "struct____StreamCaps.html#ae98380020d7c676682e1091de801ae74", null ],
+    [ "frameTimecodes", "struct____StreamCaps.html#a84436e755452f510aa713cfa6b44d359", null ],
+    [ "keyFrameFragmentation", "struct____StreamCaps.html#a81ec992ea1c45bcba07ce3e8c8cb9d98", null ],
+    [ "maxLatency", "struct____StreamCaps.html#a2b85e874d7ea86030295a3d3dd52bd45", null ],
+    [ "nalAdaptationFlags", "struct____StreamCaps.html#a2b5871993fe93ea1d46018d5d445221c", null ],
+    [ "recalculateMetrics", "struct____StreamCaps.html#aec0eb2365b63ca58aef5b7111d19ab38", null ],
+    [ "recoverOnError", "struct____StreamCaps.html#adea40b425fcbff9d433d02f9c0752502", null ],
+    [ "replayDuration", "struct____StreamCaps.html#a41baf1c6d1c387f6e482a66ffc506587", null ],
+    [ "segmentUuid", "struct____StreamCaps.html#a5a23dcbd1ba62aad22f9d81eff197cb8", null ],
+    [ "storePressurePolicy", "struct____StreamCaps.html#ad6da7fbc9ff226834fa2b22071292f63", null ],
+    [ "streamingType", "struct____StreamCaps.html#a8516282e216ca0b96a59655ac3369d06", null ],
+    [ "timecodeScale", "struct____StreamCaps.html#acc8de743f05c6b6a969b252b8e0f3a18", null ],
+    [ "trackInfoCount", "struct____StreamCaps.html#ae2e3c5c7b0d75678b3e9d5877ec11680", null ],
+    [ "trackInfoList", "struct____StreamCaps.html#a9bd0adbdc135bfa66dfc2c347cedbcf4", null ],
+    [ "viewOverflowPolicy", "struct____StreamCaps.html#ab1671bd8d865e068df1551b86f59acb7", null ]
+];

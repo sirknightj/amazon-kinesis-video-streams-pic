@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +28,7 @@
    <div id="projectname">Amazon Kinesis Video Streams PIC
    &#160;<span id="projectnumber">1.0.1</span>
    </div>
-   <div id="projectbrief">Platform Independent Code for Amazon Kinesis Video Streams.</div>
+   <div id="projectbrief">Platform independent code for Amazon Kinesis Video Streams</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('struct____KinesisVideoClient.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,90 +82,392 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="struct____KinesisVideoClient-members.html">List of all members</a>  </div>
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
 <div class="title">__KinesisVideoClient Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="client_2src_2Include__i_8h_source.html">Include_i.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for __KinesisVideoClient:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct____KinesisVideoClient__coll__graph.png" border="0" usemap="#a____KinesisVideoClient_coll__map" alt="Collaboration graph"/></div>
+<map name="a____KinesisVideoClient_coll__map" id="a____KinesisVideoClient_coll__map">
+<area shape="rect" title=" " alt="" coords="2006,368,2165,395"/>
+<area shape="rect" href="struct____KinesisVideoStream.html" title=" " alt="" coords="2420,660,2587,687"/>
+<area shape="rect" href="struct____AuthInfo.html" title=" " alt="" coords="789,425,880,452"/>
+<area shape="rect" href="struct____ServiceCallContext.html" title=" " alt="" coords="1171,224,1331,251"/>
+<area shape="rect" href="struct____KinesisVideoBase.html" title=" " alt="" coords="1557,68,1709,95"/>
+<area shape="rect" href="struct____StateMachine.html" title=" " alt="" coords="1188,5,1313,32"/>
+<area shape="rect" href="struct____ClientCallbacks.html" title=" " alt="" coords="1565,368,1702,395"/>
+<area shape="rect" href="struct____DeviceInfo.html" title=" " alt="" coords="1580,317,1687,344"/>
+<area shape="rect" href="struct____ClientInfo.html" title=" " alt="" coords="1201,96,1300,123"/>
+<area shape="rect" href="struct____KvsRetryStrategyCallbacks.html" title=" " alt="" coords="728,140,941,167"/>
+<area shape="rect" href="struct____KvsRetryStrategy.html" title=" " alt="" coords="304,111,455,137"/>
+<area shape="rect" href="struct____Tag.html" title=" " alt="" coords="1221,365,1280,392"/>
+<area shape="rect" href="struct____StreamInfo.html" title=" " alt="" coords="1579,607,1687,633"/>
+<area shape="rect" href="struct____StorageInfo.html" title=" " alt="" coords="1195,275,1306,301"/>
+<area shape="rect" href="struct____FragmentAck.html" title=" " alt="" coords="1189,532,1312,559"/>
+<area shape="rect" href="struct____FragmentAckParser.html" title=" " alt="" coords="1762,500,1925,527"/>
+<area shape="rect" href="structHeap.html" title=" " alt="" coords="1605,267,1661,293"/>
+<area shape="rect" href="struct____FrameOrderCoordinator.html" title=" " alt="" coords="1991,609,2180,636"/>
+<area shape="rect" href="struct____StreamCaps.html" title=" " alt="" coords="1193,600,1308,627"/>
+<area shape="rect" href="structTrackInfo.html" title=" " alt="" coords="794,667,875,693"/>
+<area shape="rect" href="struct____FrameOrderTrackData.html" title=" " alt="" coords="1544,720,1723,747"/>
+<area shape="rect" href="unionTrackCustomData.html" title=" " alt="" coords="311,667,448,693"/>
+<area shape="rect" href="structTrackAudioConfig.html" title=" " alt="" coords="5,641,140,668"/>
+<area shape="rect" href="structTrackVideoConfig.html" title=" " alt="" coords="5,692,140,719"/>
+<area shape="rect" href="struct____ContentView.html" title=" " alt="" coords="2026,660,2145,687"/>
+<area shape="rect" href="structSingleList.html" title=" " alt="" coords="1208,771,1293,797"/>
+<area shape="rect" href="struct____SingleListNode.html" title=" " alt="" coords="768,771,901,797"/>
+<area shape="rect" href="struct____MkvGenerator.html" title=" " alt="" coords="2021,812,2150,839"/>
+<area shape="rect" href="struct____CurrentViewItem.html" title=" " alt="" coords="2012,863,2159,889"/>
+<area shape="rect" href="structViewItem.html" title=" " alt="" coords="1591,863,1675,889"/>
+<area shape="rect" href="struct____KinesisVideoStreamDiagnostics.html" title=" " alt="" coords="1964,913,2207,940"/>
+<area shape="rect" href="struct____MetadataTracker.html" title=" " alt="" coords="2013,968,2157,995"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a84e33a1671c54086b1deaef489ea6bfa"><td class="memItemLeft" align="right" valign="top"><a id="a84e33a1671c54086b1deaef489ea6bfa"></a>
-<a class="el" href="struct____KinesisVideoBase.html">KinesisVideoBase</a>&#160;</td><td class="memItemRight" valign="bottom"><b>base</b></td></tr>
-<tr class="separator:a84e33a1671c54086b1deaef489ea6bfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a293bd18190471dd9b20f7cd8e161d0b7"><td class="memItemLeft" align="right" valign="top"><a id="a293bd18190471dd9b20f7cd8e161d0b7"></a>
-<a class="el" href="struct____DeviceInfo.html">DeviceInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><b>deviceInfo</b></td></tr>
-<tr class="separator:a293bd18190471dd9b20f7cd8e161d0b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61d45d141a843b9bc7b0ad486409ab82"><td class="memItemLeft" align="right" valign="top"><a id="a61d45d141a843b9bc7b0ad486409ab82"></a>
-<a class="el" href="struct____ClientCallbacks.html">ClientCallbacks</a>&#160;</td><td class="memItemRight" valign="bottom"><b>clientCallbacks</b></td></tr>
-<tr class="separator:a61d45d141a843b9bc7b0ad486409ab82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad47eca7e8914697c8f50039ad7da9ef0"><td class="memItemLeft" align="right" valign="top"><a id="ad47eca7e8914697c8f50039ad7da9ef0"></a>
-<a class="el" href="structHeap.html">PHeap</a>&#160;</td><td class="memItemRight" valign="bottom"><b>pHeap</b></td></tr>
-<tr class="separator:ad47eca7e8914697c8f50039ad7da9ef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe4bce15f09aa4e062a4b4b8a50409e5"><td class="memItemLeft" align="right" valign="top"><a id="abe4bce15f09aa4e062a4b4b8a50409e5"></a>
-UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>streamCount</b></td></tr>
-<tr class="separator:abe4bce15f09aa4e062a4b4b8a50409e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2e0a961856a8ef3dd0edc5821fac745"><td class="memItemLeft" align="right" valign="top"><a id="ac2e0a961856a8ef3dd0edc5821fac745"></a>
-<a class="el" href="struct____KinesisVideoStream.html">PKinesisVideoStream</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>streams</b></td></tr>
-<tr class="separator:ac2e0a961856a8ef3dd0edc5821fac745"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6cdf9dc406ea7ba5d5dda90d9794ca30"><td class="memItemLeft" align="right" valign="top"><a id="a6cdf9dc406ea7ba5d5dda90d9794ca30"></a>
-<a class="el" href="struct____AuthInfo.html">AuthInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><b>tokenAuthInfo</b></td></tr>
-<tr class="separator:a6cdf9dc406ea7ba5d5dda90d9794ca30"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6ca3734a28070e788480313817650c9"><td class="memItemLeft" align="right" valign="top"><a id="af6ca3734a28070e788480313817650c9"></a>
-<a class="el" href="struct____AuthInfo.html">AuthInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><b>certAuthInfo</b></td></tr>
-<tr class="separator:af6ca3734a28070e788480313817650c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b54004a42124f5b1e379c70e3e08a01"><td class="memItemLeft" align="right" valign="top"><a id="a4b54004a42124f5b1e379c70e3e08a01"></a>
-BOOL&#160;</td><td class="memItemRight" valign="bottom"><b>clientReady</b></td></tr>
-<tr class="separator:a4b54004a42124f5b1e379c70e3e08a01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7671535d1be2abf3897cc508b66ece0c"><td class="memItemLeft" align="right" valign="top"><a id="a7671535d1be2abf3897cc508b66ece0c"></a>
-CHAR&#160;</td><td class="memItemRight" valign="bottom"><b>deviceFingerprint</b> [MAX_DEVICE_FINGERPRINT_LENGTH+1]</td></tr>
-<tr class="separator:a7671535d1be2abf3897cc508b66ece0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0352781fa30534d765f9cd5f2cad2e0"><td class="memItemLeft" align="right" valign="top"><a id="ad0352781fa30534d765f9cd5f2cad2e0"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>totalAllocationSize</b></td></tr>
-<tr class="separator:ad0352781fa30534d765f9cd5f2cad2e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72ae7646d1fea17fb6481e253ad3b828"><td class="memItemLeft" align="right" valign="top"><a id="a72ae7646d1fea17fb6481e253ad3b828"></a>
-TIMER_QUEUE_HANDLE&#160;</td><td class="memItemRight" valign="bottom"><b>timerQueueHandle</b></td></tr>
-<tr class="separator:a72ae7646d1fea17fb6481e253ad3b828"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a63e1246fd51f06f516483ec4ec7db0"><td class="memItemLeft" align="right" valign="top"><a id="a0a63e1246fd51f06f516483ec4ec7db0"></a>
-TimerCallbackFunc&#160;</td><td class="memItemRight" valign="bottom"><b>timerCallbackFunc</b></td></tr>
-<tr class="separator:a0a63e1246fd51f06f516483ec4ec7db0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c8e0c83cfeb61dd4fa8ab41fed47baa"><td class="memItemLeft" align="right" valign="top"><a id="a4c8e0c83cfeb61dd4fa8ab41fed47baa"></a>
-KinesisVideoClientCallbackHookFunc&#160;</td><td class="memItemRight" valign="bottom"><b>timerCallbackPreHookFunc</b></td></tr>
-<tr class="separator:a4c8e0c83cfeb61dd4fa8ab41fed47baa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c75496283c982c2159a0bbbe935fd90"><td class="memItemLeft" align="right" valign="top"><a id="a0c75496283c982c2159a0bbbe935fd90"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>hookCustomData</b></td></tr>
-<tr class="separator:a0c75496283c982c2159a0bbbe935fd90"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3181e54f0df28edbee9d2f9e200db6cf"><td class="memItemLeft" align="right" valign="top"><a id="a3181e54f0df28edbee9d2f9e200db6cf"></a>
-UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>timerId</b></td></tr>
-<tr class="separator:a3181e54f0df28edbee9d2f9e200db6cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef9d50f5da5421a1c05354e68e672f38"><td class="memItemLeft" align="right" valign="top"><a id="aef9d50f5da5421a1c05354e68e672f38"></a>
-memAlloc&#160;</td><td class="memItemRight" valign="bottom"><b>storedMemAlloc</b></td></tr>
-<tr class="separator:aef9d50f5da5421a1c05354e68e672f38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1aa4fe14d25d78367722473eb19723d"><td class="memItemLeft" align="right" valign="top"><a id="ad1aa4fe14d25d78367722473eb19723d"></a>
-memAlignAlloc&#160;</td><td class="memItemRight" valign="bottom"><b>storedMemAlignAlloc</b></td></tr>
-<tr class="separator:ad1aa4fe14d25d78367722473eb19723d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6704d1cc2242b5f4937984c6a005f46a"><td class="memItemLeft" align="right" valign="top"><a id="a6704d1cc2242b5f4937984c6a005f46a"></a>
-memCalloc&#160;</td><td class="memItemRight" valign="bottom"><b>storedMemCalloc</b></td></tr>
-<tr class="separator:a6704d1cc2242b5f4937984c6a005f46a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e8df3dd210f6b68a6cd5ffda9982cbc"><td class="memItemLeft" align="right" valign="top"><a id="a8e8df3dd210f6b68a6cd5ffda9982cbc"></a>
-memFree&#160;</td><td class="memItemRight" valign="bottom"><b>storedMemFree</b></td></tr>
-<tr class="separator:a8e8df3dd210f6b68a6cd5ffda9982cbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+Data Fields</h2></td></tr>
+<tr class="memitem:a479a646d11e24b720ae1a28eb504150a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="client_2src_2Include__i_8h.html#a2c2c63b365ae0fb4a86db7fe849e3b7a">KinesisVideoBase</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____KinesisVideoClient.html#a479a646d11e24b720ae1a28eb504150a">base</a></td></tr>
+<tr class="separator:a479a646d11e24b720ae1a28eb504150a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25781ce39cea11ccf7a44ca48c2d5b1e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#ac2e2c781e7dd7a083547df7421dc7238">DeviceInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____KinesisVideoClient.html#a25781ce39cea11ccf7a44ca48c2d5b1e">deviceInfo</a></td></tr>
+<tr class="separator:a25781ce39cea11ccf7a44ca48c2d5b1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a919bfbf9a5cabfec4d501b130112fe11"><td class="memItemLeft" align="right" valign="top"><a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#ae66661210d91b6b562e133e4a4010c9e">ClientCallbacks</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____KinesisVideoClient.html#a919bfbf9a5cabfec4d501b130112fe11">clientCallbacks</a></td></tr>
+<tr class="separator:a919bfbf9a5cabfec4d501b130112fe11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7acde0520d5cb9a97fb52763113d6a2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="heap_2include_2com_2amazonaws_2kinesis_2video_2heap_2Include_8h.html#acaabd707c5ac30be3a1afef736396df3">PHeap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____KinesisVideoClient.html#ac7acde0520d5cb9a97fb52763113d6a2">pHeap</a></td></tr>
+<tr class="separator:ac7acde0520d5cb9a97fb52763113d6a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31c99602c4d22b5b66879d1253d79958"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____KinesisVideoClient.html#a31c99602c4d22b5b66879d1253d79958">streamCount</a></td></tr>
+<tr class="separator:a31c99602c4d22b5b66879d1253d79958"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfacedcd513452995b6f2bf4af09397d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="client_2src_2Include__i_8h.html#a6542c313a86ef34c97564d697035a737">PKinesisVideoStream</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____KinesisVideoClient.html#adfacedcd513452995b6f2bf4af09397d">streams</a></td></tr>
+<tr class="separator:adfacedcd513452995b6f2bf4af09397d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20ea34c3f47e2e2b0f7e3f6f765d8d5e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#aa462670d8805c169da5a9073b637c506">AuthInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____KinesisVideoClient.html#a20ea34c3f47e2e2b0f7e3f6f765d8d5e">tokenAuthInfo</a></td></tr>
+<tr class="separator:a20ea34c3f47e2e2b0f7e3f6f765d8d5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f6668b0b0e7a910a8dcd34e0ff4f420"><td class="memItemLeft" align="right" valign="top"><a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#aa462670d8805c169da5a9073b637c506">AuthInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____KinesisVideoClient.html#a6f6668b0b0e7a910a8dcd34e0ff4f420">certAuthInfo</a></td></tr>
+<tr class="separator:a6f6668b0b0e7a910a8dcd34e0ff4f420"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe1ae98892bbc2763df274a7fe8b273c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a6252187f6e55ba4943e030c350d624bd">BOOL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____KinesisVideoClient.html#afe1ae98892bbc2763df274a7fe8b273c">clientReady</a></td></tr>
+<tr class="separator:afe1ae98892bbc2763df274a7fe8b273c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a765421e889efb0b2b3bcd90c28643bbb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#aebb9e13210d88d43e32e735ada43a425">CHAR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____KinesisVideoClient.html#a765421e889efb0b2b3bcd90c28643bbb">deviceFingerprint</a> [<a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#aab464f88c6bbf8deb8e7c28dd3bf3514">MAX_DEVICE_FINGERPRINT_LENGTH</a>+1]</td></tr>
+<tr class="separator:a765421e889efb0b2b3bcd90c28643bbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbf96d7f63f679e87e3b7affbcc1491a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____KinesisVideoClient.html#afbf96d7f63f679e87e3b7affbcc1491a">totalAllocationSize</a></td></tr>
+<tr class="separator:afbf96d7f63f679e87e3b7affbcc1491a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af594b915296a306fc271ab67ab797c9f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a36c08e7bfe1862f8a6e5ac6c4b801d1e">TIMER_QUEUE_HANDLE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____KinesisVideoClient.html#af594b915296a306fc271ab67ab797c9f">timerQueueHandle</a></td></tr>
+<tr class="separator:af594b915296a306fc271ab67ab797c9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab2604404376aaebae11d875a5cf4992"><td class="memItemLeft" align="right" valign="top"><a class="el" href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#ad9682064677a6fd5eb56bb8d5ceed88e">TimerCallbackFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____KinesisVideoClient.html#aab2604404376aaebae11d875a5cf4992">timerCallbackFunc</a></td></tr>
+<tr class="separator:aab2604404376aaebae11d875a5cf4992"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12d1250ae3c84daf9952f0a8ec6ecb4d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="client_2src_2Include__i_8h.html#a00c64e2be37e9408847a4fd4055261e5">KinesisVideoClientCallbackHookFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____KinesisVideoClient.html#a12d1250ae3c84daf9952f0a8ec6ecb4d">timerCallbackPreHookFunc</a></td></tr>
+<tr class="separator:a12d1250ae3c84daf9952f0a8ec6ecb4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae209898fba6ed974f652b2cd8cb60922"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____KinesisVideoClient.html#ae209898fba6ed974f652b2cd8cb60922">hookCustomData</a></td></tr>
+<tr class="separator:ae209898fba6ed974f652b2cd8cb60922"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19f1bc8706decad803addd3685a63928"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____KinesisVideoClient.html#a19f1bc8706decad803addd3685a63928">timerId</a></td></tr>
+<tr class="separator:a19f1bc8706decad803addd3685a63928"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af98dca8db4e6798a7684ab72d248d8c1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a6beccd5d691880c6994b33e4ad6458c6">memAlloc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____KinesisVideoClient.html#af98dca8db4e6798a7684ab72d248d8c1">storedMemAlloc</a></td></tr>
+<tr class="separator:af98dca8db4e6798a7684ab72d248d8c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84bc3c2297ab580925f1d65410482b5a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a1c96aba1b330560658f14f555646d70a">memAlignAlloc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____KinesisVideoClient.html#a84bc3c2297ab580925f1d65410482b5a">storedMemAlignAlloc</a></td></tr>
+<tr class="separator:a84bc3c2297ab580925f1d65410482b5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a037168e34431384a18cc9470927b6f73"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#adc3671295d5f3f4cfb1cbdfc3a7c7aa9">memCalloc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____KinesisVideoClient.html#a037168e34431384a18cc9470927b6f73">storedMemCalloc</a></td></tr>
+<tr class="separator:a037168e34431384a18cc9470927b6f73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1a6052c8eff5e440d1e278543c20443"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#ac97db51965b38efefa3dccdc277c34fb">memFree</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____KinesisVideoClient.html#ad1a6052c8eff5e440d1e278543c20443">storedMemFree</a></td></tr>
+<tr class="separator:ad1a6052c8eff5e440d1e278543c20443"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Kinesis Video client internal structure </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+</div><h2 class="groupheader">Field Documentation</h2>
+<a id="a479a646d11e24b720ae1a28eb504150a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a479a646d11e24b720ae1a28eb504150a">&#9670;&nbsp;</a></span>base</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="client_2src_2Include__i_8h.html#a2c2c63b365ae0fb4a86db7fe849e3b7a">KinesisVideoBase</a> base</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6f6668b0b0e7a910a8dcd34e0ff4f420"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f6668b0b0e7a910a8dcd34e0ff4f420">&#9670;&nbsp;</a></span>certAuthInfo</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#aa462670d8805c169da5a9073b637c506">AuthInfo</a> certAuthInfo</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a919bfbf9a5cabfec4d501b130112fe11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a919bfbf9a5cabfec4d501b130112fe11">&#9670;&nbsp;</a></span>clientCallbacks</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#ae66661210d91b6b562e133e4a4010c9e">ClientCallbacks</a> clientCallbacks</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afe1ae98892bbc2763df274a7fe8b273c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe1ae98892bbc2763df274a7fe8b273c">&#9670;&nbsp;</a></span>clientReady</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a6252187f6e55ba4943e030c350d624bd">BOOL</a> clientReady</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a765421e889efb0b2b3bcd90c28643bbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a765421e889efb0b2b3bcd90c28643bbb">&#9670;&nbsp;</a></span>deviceFingerprint</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#aebb9e13210d88d43e32e735ada43a425">CHAR</a> deviceFingerprint[<a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#aab464f88c6bbf8deb8e7c28dd3bf3514">MAX_DEVICE_FINGERPRINT_LENGTH</a>+1]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a25781ce39cea11ccf7a44ca48c2d5b1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25781ce39cea11ccf7a44ca48c2d5b1e">&#9670;&nbsp;</a></span>deviceInfo</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#ac2e2c781e7dd7a083547df7421dc7238">DeviceInfo</a> deviceInfo</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae209898fba6ed974f652b2cd8cb60922"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae209898fba6ed974f652b2cd8cb60922">&#9670;&nbsp;</a></span>hookCustomData</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> hookCustomData</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac7acde0520d5cb9a97fb52763113d6a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7acde0520d5cb9a97fb52763113d6a2">&#9670;&nbsp;</a></span>pHeap</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="heap_2include_2com_2amazonaws_2kinesis_2video_2heap_2Include_8h.html#acaabd707c5ac30be3a1afef736396df3">PHeap</a> pHeap</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a84bc3c2297ab580925f1d65410482b5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84bc3c2297ab580925f1d65410482b5a">&#9670;&nbsp;</a></span>storedMemAlignAlloc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a1c96aba1b330560658f14f555646d70a">memAlignAlloc</a> storedMemAlignAlloc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af98dca8db4e6798a7684ab72d248d8c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af98dca8db4e6798a7684ab72d248d8c1">&#9670;&nbsp;</a></span>storedMemAlloc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a6beccd5d691880c6994b33e4ad6458c6">memAlloc</a> storedMemAlloc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a037168e34431384a18cc9470927b6f73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a037168e34431384a18cc9470927b6f73">&#9670;&nbsp;</a></span>storedMemCalloc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#adc3671295d5f3f4cfb1cbdfc3a7c7aa9">memCalloc</a> storedMemCalloc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad1a6052c8eff5e440d1e278543c20443"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1a6052c8eff5e440d1e278543c20443">&#9670;&nbsp;</a></span>storedMemFree</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#ac97db51965b38efefa3dccdc277c34fb">memFree</a> storedMemFree</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a31c99602c4d22b5b66879d1253d79958"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31c99602c4d22b5b66879d1253d79958">&#9670;&nbsp;</a></span>streamCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> streamCount</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adfacedcd513452995b6f2bf4af09397d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfacedcd513452995b6f2bf4af09397d">&#9670;&nbsp;</a></span>streams</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="client_2src_2Include__i_8h.html#a6542c313a86ef34c97564d697035a737">PKinesisVideoStream</a>* streams</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aab2604404376aaebae11d875a5cf4992"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab2604404376aaebae11d875a5cf4992">&#9670;&nbsp;</a></span>timerCallbackFunc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#ad9682064677a6fd5eb56bb8d5ceed88e">TimerCallbackFunc</a> timerCallbackFunc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a12d1250ae3c84daf9952f0a8ec6ecb4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12d1250ae3c84daf9952f0a8ec6ecb4d">&#9670;&nbsp;</a></span>timerCallbackPreHookFunc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="client_2src_2Include__i_8h.html#a00c64e2be37e9408847a4fd4055261e5">KinesisVideoClientCallbackHookFunc</a> timerCallbackPreHookFunc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a19f1bc8706decad803addd3685a63928"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19f1bc8706decad803addd3685a63928">&#9670;&nbsp;</a></span>timerId</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> timerId</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af594b915296a306fc271ab67ab797c9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af594b915296a306fc271ab67ab797c9f">&#9670;&nbsp;</a></span>timerQueueHandle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a36c08e7bfe1862f8a6e5ac6c4b801d1e">TIMER_QUEUE_HANDLE</a> timerQueueHandle</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a20ea34c3f47e2e2b0f7e3f6f765d8d5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20ea34c3f47e2e2b0f7e3f6f765d8d5e">&#9670;&nbsp;</a></span>tokenAuthInfo</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#aa462670d8805c169da5a9073b637c506">AuthInfo</a> tokenAuthInfo</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afbf96d7f63f679e87e3b7affbcc1491a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbf96d7f63f679e87e3b7affbcc1491a">&#9670;&nbsp;</a></span>totalAllocationSize</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> totalAllocationSize</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>src/client/src/<a class="el" href="client_2src_2Include__i_8h_source.html">Include_i.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="struct____KinesisVideoClient.html">__KinesisVideoClient</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

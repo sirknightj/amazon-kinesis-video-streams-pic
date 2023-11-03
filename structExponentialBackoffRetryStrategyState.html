@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +28,7 @@
    <div id="projectname">Amazon Kinesis Video Streams PIC
    &#160;<span id="projectnumber">1.0.1</span>
    </div>
-   <div id="projectbrief">Platform Independent Code for Amazon Kinesis Video Streams.</div>
+   <div id="projectbrief">Platform independent code for Amazon Kinesis Video Streams</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('structExponentialBackoffRetryStrategyState.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,44 +82,136 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="structExponentialBackoffRetryStrategyState-members.html">List of all members</a>  </div>
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
 <div class="title">ExponentialBackoffRetryStrategyState Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h_source.html">Include.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for ExponentialBackoffRetryStrategyState:</div>
+<div class="dyncontent">
+<div class="center"><img src="structExponentialBackoffRetryStrategyState__coll__graph.png" border="0" usemap="#aExponentialBackoffRetryStrategyState_coll__map" alt="Collaboration graph"/></div>
+<map name="aExponentialBackoffRetryStrategyState_coll__map" id="aExponentialBackoffRetryStrategyState_coll__map">
+<area shape="rect" title=" " alt="" coords="5,124,243,165"/>
+<area shape="rect" href="struct____ExponentialBackoffRetryStrategyConfig.html" title=" " alt="" coords="26,5,222,47"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:aa9cac1a060fab0da90f923946035f513"><td class="memItemLeft" align="right" valign="top"><a id="aa9cac1a060fab0da90f923946035f513"></a>
-<a class="el" href="struct____ExponentialBackoffRetryStrategyConfig.html">ExponentialBackoffRetryStrategyConfig</a>&#160;</td><td class="memItemRight" valign="bottom"><b>exponentialBackoffRetryStrategyConfig</b></td></tr>
-<tr class="separator:aa9cac1a060fab0da90f923946035f513"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf70677a2e2bfc5432114fad67c72f31"><td class="memItemLeft" align="right" valign="top"><a id="adf70677a2e2bfc5432114fad67c72f31"></a>
-ExponentialBackoffStatus&#160;</td><td class="memItemRight" valign="bottom"><b>status</b></td></tr>
-<tr class="separator:adf70677a2e2bfc5432114fad67c72f31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac388d32692a231de67f9d9f5018ced8b"><td class="memItemLeft" align="right" valign="top"><a id="ac388d32692a231de67f9d9f5018ced8b"></a>
-UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>currentRetryCount</b></td></tr>
-<tr class="separator:ac388d32692a231de67f9d9f5018ced8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c9e6a11a6b3837715a2354d977bbbfa"><td class="memItemLeft" align="right" valign="top"><a id="a6c9e6a11a6b3837715a2354d977bbbfa"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>lastRetrySystemTime</b></td></tr>
-<tr class="separator:a6c9e6a11a6b3837715a2354d977bbbfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e4c0c33beae43ef0031b6d6411da84e"><td class="memItemLeft" align="right" valign="top"><a id="a6e4c0c33beae43ef0031b6d6411da84e"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>lastRetryWaitTime</b></td></tr>
-<tr class="separator:a6e4c0c33beae43ef0031b6d6411da84e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55d581c9509d5e614d72f7ac75ab11b0"><td class="memItemLeft" align="right" valign="top"><a id="a55d581c9509d5e614d72f7ac75ab11b0"></a>
-MUTEX&#160;</td><td class="memItemRight" valign="bottom"><b>retryStrategyLock</b></td></tr>
-<tr class="separator:a55d581c9509d5e614d72f7ac75ab11b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+Data Fields</h2></td></tr>
+<tr class="memitem:ae82b63115a61c816b21d2caf1d2ebb50"><td class="memItemLeft" align="right" valign="top"><a class="el" href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a5deddfbc4cd979a8b74ba3c7b965529e">ExponentialBackoffRetryStrategyConfig</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structExponentialBackoffRetryStrategyState.html#ae82b63115a61c816b21d2caf1d2ebb50">exponentialBackoffRetryStrategyConfig</a></td></tr>
+<tr class="separator:ae82b63115a61c816b21d2caf1d2ebb50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a376debca6498f876c1b6388e4672fb4f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#ab563f913f0fe6a4cfe4464163bfdcdf9">ExponentialBackoffStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structExponentialBackoffRetryStrategyState.html#a376debca6498f876c1b6388e4672fb4f">status</a></td></tr>
+<tr class="separator:a376debca6498f876c1b6388e4672fb4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2480e5e21cefc8c1d48c58ab00ae4ac0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structExponentialBackoffRetryStrategyState.html#a2480e5e21cefc8c1d48c58ab00ae4ac0">currentRetryCount</a></td></tr>
+<tr class="separator:a2480e5e21cefc8c1d48c58ab00ae4ac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a888b9be053d4f096d106d408afd15468"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structExponentialBackoffRetryStrategyState.html#a888b9be053d4f096d106d408afd15468">lastRetrySystemTime</a></td></tr>
+<tr class="separator:a888b9be053d4f096d106d408afd15468"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81277fd00e0085a09828f837753c2314"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structExponentialBackoffRetryStrategyState.html#a81277fd00e0085a09828f837753c2314">lastRetryWaitTime</a></td></tr>
+<tr class="separator:a81277fd00e0085a09828f837753c2314"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74b1309003057fc005c49876a85d21b9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#aacb6173308f40c2f1bb4b0fa0e13411c">MUTEX</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structExponentialBackoffRetryStrategyState.html#a74b1309003057fc005c49876a85d21b9">retryStrategyLock</a></td></tr>
+<tr class="separator:a74b1309003057fc005c49876a85d21b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="a2480e5e21cefc8c1d48c58ab00ae4ac0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2480e5e21cefc8c1d48c58ab00ae4ac0">&#9670;&nbsp;</a></span>currentRetryCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> currentRetryCount</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae82b63115a61c816b21d2caf1d2ebb50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae82b63115a61c816b21d2caf1d2ebb50">&#9670;&nbsp;</a></span>exponentialBackoffRetryStrategyConfig</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a5deddfbc4cd979a8b74ba3c7b965529e">ExponentialBackoffRetryStrategyConfig</a> exponentialBackoffRetryStrategyConfig</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a888b9be053d4f096d106d408afd15468"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a888b9be053d4f096d106d408afd15468">&#9670;&nbsp;</a></span>lastRetrySystemTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> lastRetrySystemTime</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a81277fd00e0085a09828f837753c2314"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81277fd00e0085a09828f837753c2314">&#9670;&nbsp;</a></span>lastRetryWaitTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> lastRetryWaitTime</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a74b1309003057fc005c49876a85d21b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74b1309003057fc005c49876a85d21b9">&#9670;&nbsp;</a></span>retryStrategyLock</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#aacb6173308f40c2f1bb4b0fa0e13411c">MUTEX</a> retryStrategyLock</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a376debca6498f876c1b6388e4672fb4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a376debca6498f876c1b6388e4672fb4f">&#9670;&nbsp;</a></span>status</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#ab563f913f0fe6a4cfe4464163bfdcdf9">ExponentialBackoffStatus</a> status</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>src/utils/include/com/amazonaws/kinesis/video/utils/<a class="el" href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h_source.html">Include.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structExponentialBackoffRetryStrategyState.html">ExponentialBackoffRetryStrategyState</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

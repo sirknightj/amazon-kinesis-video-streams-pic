@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +28,7 @@
    <div id="projectname">Amazon Kinesis Video Streams PIC
    &#160;<span id="projectnumber">1.0.1</span>
    </div>
-   <div id="projectbrief">Platform Independent Code for Amazon Kinesis Video Streams.</div>
+   <div id="projectbrief">Platform independent code for Amazon Kinesis Video Streams</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('classHeapTestBase.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,145 +82,129 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-static-methods">Static Protected Member Functions</a> &#124;
-<a href="#pro-static-attribs">Static Protected Attributes</a> &#124;
-<a href="classHeapTestBase-members.html">List of all members</a>  </div>
+<a href="#pro-static-attribs">Static Protected Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">HeapTestBase Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="HeapTestFixture_8h_source.html">HeapTestFixture.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for HeapTestBase:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="classHeapTestBase.png" usemap="#HeapTestBase_map" alt=""/>
-  <map id="HeapTestBase_map" name="HeapTestBase_map">
-<area href="classHeapApiFunctionalityTest.html" alt="HeapApiFunctionalityTest" shape="rect" coords="0,112,156,136"/>
-<area href="classHeapApiTest.html" alt="HeapApiTest" shape="rect" coords="166,112,322,136"/>
-<area href="classHeapPerfTest.html" alt="HeapPerfTest" shape="rect" coords="332,112,488,136"/>
-<area href="classHybridFileHeapTest.html" alt="HybridFileHeapTest" shape="rect" coords="498,112,654,136"/>
-<area href="classHybridHeapTest.html" alt="HybridHeapTest" shape="rect" coords="664,112,820,136"/>
-  </map>
-</div></div>
+<div class="center"><img src="classHeapTestBase__inherit__graph.png" border="0" usemap="#aHeapTestBase_inherit__map" alt="Inheritance graph"/></div>
+<map name="aHeapTestBase_inherit__map" id="aHeapTestBase_inherit__map">
+<area shape="rect" title=" " alt="" coords="340,80,455,107"/>
+<area shape="rect" href="classHeapApiFunctionalityTest.html" title=" " alt="" coords="5,155,192,181"/>
+<area shape="rect" href="classHeapApiTest.html" title=" " alt="" coords="217,155,319,181"/>
+<area shape="rect" href="classHeapPerfTest.html" title=" " alt="" coords="343,155,451,181"/>
+<area shape="rect" href="classHybridFileHeapTest.html" title=" " alt="" coords="475,155,623,181"/>
+<area shape="rect" href="classHybridHeapTest.html" title=" " alt="" coords="648,155,773,181"/>
+<area shape="rect" title=" " alt="" coords="373,5,421,32"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for HeapTestBase:</div>
+<div class="dyncontent">
+<div class="center"><img src="classHeapTestBase__coll__graph.png" border="0" usemap="#aHeapTestBase_coll__map" alt="Collaboration graph"/></div>
+<map name="aHeapTestBase_coll__map" id="aHeapTestBase_coll__map">
+<area shape="rect" title=" " alt="" coords="5,80,120,107"/>
+<area shape="rect" title=" " alt="" coords="39,5,87,32"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ac027a1eea01bb78b259cb2ae9ab515c4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeapTestBase.html#ac027a1eea01bb78b259cb2ae9ab515c4">HeapTestBase</a> ()</td></tr>
+<tr class="separator:ac027a1eea01bb78b259cb2ae9ab515c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:ad57b5955ce3e3de1658f28c7ae95d1ef"><td class="memItemLeft" align="right" valign="top"><a id="ad57b5955ce3e3de1658f28c7ae95d1ef"></a>
-virtual VOID&#160;</td><td class="memItemRight" valign="bottom"><b>SetUp</b> ()</td></tr>
-<tr class="separator:ad57b5955ce3e3de1658f28c7ae95d1ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf0df15d78627449c77bb2821d295c76"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="CommonDefs_8h.html#a7f319bfc2492a2136964194204e7a8cf">VOID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeapTestBase.html#aaf0df15d78627449c77bb2821d295c76">SetUp</a> ()</td></tr>
+<tr class="separator:aaf0df15d78627449c77bb2821d295c76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-methods"></a>
 Static Protected Member Functions</h2></td></tr>
-<tr class="memitem:a22d408293d7c62a65e86863f6237bc40"><td class="memItemLeft" align="right" valign="top"><a id="a22d408293d7c62a65e86863f6237bc40"></a>
-static VOID&#160;</td><td class="memItemRight" valign="bottom"><b>SetUpInternal</b> ()</td></tr>
-<tr class="separator:a22d408293d7c62a65e86863f6237bc40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa10f7135a09b5542730ea4add8fb7174"><td class="memItemLeft" align="right" valign="top"><a id="aa10f7135a09b5542730ea4add8fb7174"></a>
-static PVOID&#160;</td><td class="memItemRight" valign="bottom"><b>mockDlOpen</b> (PCHAR filename, UINT32 flag)</td></tr>
-<tr class="separator:aa10f7135a09b5542730ea4add8fb7174"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e510d1439c3df8728d2a1dbc792dfc4"><td class="memItemLeft" align="right" valign="top"><a id="a7e510d1439c3df8728d2a1dbc792dfc4"></a>
-static INT32&#160;</td><td class="memItemRight" valign="bottom"><b>mockDlClose</b> (PVOID handle)</td></tr>
-<tr class="separator:a7e510d1439c3df8728d2a1dbc792dfc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afdcb9c6c5ece1a943dc549ef312cd108"><td class="memItemLeft" align="right" valign="top"><a id="afdcb9c6c5ece1a943dc549ef312cd108"></a>
-static PVOID&#160;</td><td class="memItemRight" valign="bottom"><b>mockDlSym</b> (PVOID handle, PCHAR symbol)</td></tr>
-<tr class="separator:afdcb9c6c5ece1a943dc549ef312cd108"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2c147adbcbaef12c627e6a3866e95f3"><td class="memItemLeft" align="right" valign="top"><a id="aa2c147adbcbaef12c627e6a3866e95f3"></a>
-static PCHAR&#160;</td><td class="memItemRight" valign="bottom"><b>mockDlError</b> ()</td></tr>
-<tr class="separator:aa2c147adbcbaef12c627e6a3866e95f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a745c2f6b77355604588376a993adc4db"><td class="memItemLeft" align="right" valign="top">static UINT32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeapTestBase.html#a745c2f6b77355604588376a993adc4db">mockVramInit</a> ()</td></tr>
-<tr class="separator:a745c2f6b77355604588376a993adc4db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a781301d56f4af5ef40629a0bd97f8bc2"><td class="memItemLeft" align="right" valign="top"><a id="a781301d56f4af5ef40629a0bd97f8bc2"></a>
-static UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>mockVramAlloc</b> (UINT32)</td></tr>
-<tr class="separator:a781301d56f4af5ef40629a0bd97f8bc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf07268902655b16595713838d3cf215"><td class="memItemLeft" align="right" valign="top"><a id="adf07268902655b16595713838d3cf215"></a>
-static UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>mockVramFree</b> (UINT32)</td></tr>
-<tr class="separator:adf07268902655b16595713838d3cf215"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76c8a480d5f3f1fa86e4d5b034fdd2ec"><td class="memItemLeft" align="right" valign="top"><a id="a76c8a480d5f3f1fa86e4d5b034fdd2ec"></a>
-static PVOID&#160;</td><td class="memItemRight" valign="bottom"><b>mockVramLock</b> (UINT32)</td></tr>
-<tr class="separator:a76c8a480d5f3f1fa86e4d5b034fdd2ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af96d0e7c3ab070017c0db45f8e90b7c9"><td class="memItemLeft" align="right" valign="top"><a id="af96d0e7c3ab070017c0db45f8e90b7c9"></a>
-static UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>mockVramUnlock</b> (UINT32)</td></tr>
-<tr class="separator:af96d0e7c3ab070017c0db45f8e90b7c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4669654e6ebe351e837151f5c90d1da6"><td class="memItemLeft" align="right" valign="top"><a id="a4669654e6ebe351e837151f5c90d1da6"></a>
-static UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>mockVramUninit</b> ()</td></tr>
-<tr class="separator:a4669654e6ebe351e837151f5c90d1da6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ba87010e4d10fc7a0c47e13319c5379"><td class="memItemLeft" align="right" valign="top"><a id="a0ba87010e4d10fc7a0c47e13319c5379"></a>
-static UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>mockVramGetMax</b> ()</td></tr>
-<tr class="separator:a0ba87010e4d10fc7a0c47e13319c5379"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc7a1492fc73f501c53c1673176ba270"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="CommonDefs_8h.html#a7f319bfc2492a2136964194204e7a8cf">VOID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeapTestBase.html#adc7a1492fc73f501c53c1673176ba270">SetUpInternal</a> ()</td></tr>
+<tr class="separator:adc7a1492fc73f501c53c1673176ba270"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a968f04a1ce43f3b48d0c3b38e09d0b07"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="CommonDefs_8h.html#a44a84094d41db406043c92f2c6344acc">PVOID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeapTestBase.html#a968f04a1ce43f3b48d0c3b38e09d0b07">mockDlOpen</a> (<a class="el" href="CommonDefs_8h.html#a6addcc52e2dfddf231bf3213859ae2bb">PCHAR</a> filename, <a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> flag)</td></tr>
+<tr class="separator:a968f04a1ce43f3b48d0c3b38e09d0b07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8d9f2f480907512f60e8921a5b38f81"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="CommonDefs_8h.html#a0cb58e7e6f0bad369840a52e54a56ae0">INT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeapTestBase.html#ab8d9f2f480907512f60e8921a5b38f81">mockDlClose</a> (<a class="el" href="CommonDefs_8h.html#a44a84094d41db406043c92f2c6344acc">PVOID</a> handle)</td></tr>
+<tr class="separator:ab8d9f2f480907512f60e8921a5b38f81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7af25bd71d97309462ac9aeeb5680faf"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="CommonDefs_8h.html#a44a84094d41db406043c92f2c6344acc">PVOID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeapTestBase.html#a7af25bd71d97309462ac9aeeb5680faf">mockDlSym</a> (<a class="el" href="CommonDefs_8h.html#a44a84094d41db406043c92f2c6344acc">PVOID</a> handle, <a class="el" href="CommonDefs_8h.html#a6addcc52e2dfddf231bf3213859ae2bb">PCHAR</a> symbol)</td></tr>
+<tr class="separator:a7af25bd71d97309462ac9aeeb5680faf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fd414f7e517ac0de02d83cd96cff9bc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="CommonDefs_8h.html#a6addcc52e2dfddf231bf3213859ae2bb">PCHAR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeapTestBase.html#a4fd414f7e517ac0de02d83cd96cff9bc">mockDlError</a> ()</td></tr>
+<tr class="separator:a4fd414f7e517ac0de02d83cd96cff9bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ae91e4829ec2ec60e4a5169f43c4400"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeapTestBase.html#a4ae91e4829ec2ec60e4a5169f43c4400">mockVramInit</a> ()</td></tr>
+<tr class="separator:a4ae91e4829ec2ec60e4a5169f43c4400"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c9f0f999d579275cd22b483324e69d9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeapTestBase.html#a7c9f0f999d579275cd22b483324e69d9">mockVramAlloc</a> (<a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>)</td></tr>
+<tr class="separator:a7c9f0f999d579275cd22b483324e69d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af99a924a4623aebc4308a341e5b0ad6c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeapTestBase.html#af99a924a4623aebc4308a341e5b0ad6c">mockVramFree</a> (<a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>)</td></tr>
+<tr class="separator:af99a924a4623aebc4308a341e5b0ad6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada10b7d25c7fe0d76bb96a525bfe270f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="CommonDefs_8h.html#a44a84094d41db406043c92f2c6344acc">PVOID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeapTestBase.html#ada10b7d25c7fe0d76bb96a525bfe270f">mockVramLock</a> (<a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>)</td></tr>
+<tr class="separator:ada10b7d25c7fe0d76bb96a525bfe270f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51a494149a68ee0f7f5be4661be48d6e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeapTestBase.html#a51a494149a68ee0f7f5be4661be48d6e">mockVramUnlock</a> (<a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>)</td></tr>
+<tr class="separator:a51a494149a68ee0f7f5be4661be48d6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cab0c10cad774fbc7f224c11a10a9e0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeapTestBase.html#a5cab0c10cad774fbc7f224c11a10a9e0">mockVramUninit</a> ()</td></tr>
+<tr class="separator:a5cab0c10cad774fbc7f224c11a10a9e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ee1af6c6d8890628d6de84f0d1267d5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeapTestBase.html#a9ee1af6c6d8890628d6de84f0d1267d5">mockVramGetMax</a> ()</td></tr>
+<tr class="separator:a9ee1af6c6d8890628d6de84f0d1267d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-attribs"></a>
 Static Protected Attributes</h2></td></tr>
-<tr class="memitem:a004762f2c8ec81253dac497a84483f00"><td class="memItemLeft" align="right" valign="top"><a id="a004762f2c8ec81253dac497a84483f00"></a>
-static PVOID&#160;</td><td class="memItemRight" valign="bottom"><b>mDlOpen</b></td></tr>
-<tr class="separator:a004762f2c8ec81253dac497a84483f00"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24c241d3705e684b1ea509378f56d2d4"><td class="memItemLeft" align="right" valign="top"><a id="a24c241d3705e684b1ea509378f56d2d4"></a>
-static INT32&#160;</td><td class="memItemRight" valign="bottom"><b>mDlClose</b></td></tr>
-<tr class="separator:a24c241d3705e684b1ea509378f56d2d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac75349dc5e26a227ffec7003dd98739b"><td class="memItemLeft" align="right" valign="top"><a id="ac75349dc5e26a227ffec7003dd98739b"></a>
-static BOOL&#160;</td><td class="memItemRight" valign="bottom"><b>mDlSym</b></td></tr>
-<tr class="separator:ac75349dc5e26a227ffec7003dd98739b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84bc12f9ddb6c2579e1cbd4d809c7ce5"><td class="memItemLeft" align="right" valign="top"><a id="a84bc12f9ddb6c2579e1cbd4d809c7ce5"></a>
-static UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>mDlOpenCount</b></td></tr>
-<tr class="separator:a84bc12f9ddb6c2579e1cbd4d809c7ce5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82bfc0c85cfe6381aabaa2332f286a68"><td class="memItemLeft" align="right" valign="top"><a id="a82bfc0c85cfe6381aabaa2332f286a68"></a>
-static UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>mDlErrorCount</b></td></tr>
-<tr class="separator:a82bfc0c85cfe6381aabaa2332f286a68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5eb948e6e71ee7e71f149fa729397355"><td class="memItemLeft" align="right" valign="top"><a id="a5eb948e6e71ee7e71f149fa729397355"></a>
-static UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>mDlSymCount</b></td></tr>
-<tr class="separator:a5eb948e6e71ee7e71f149fa729397355"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07466100446557e402e7653147cb5fe6"><td class="memItemLeft" align="right" valign="top"><a id="a07466100446557e402e7653147cb5fe6"></a>
-static UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>mDlCloseCount</b></td></tr>
-<tr class="separator:a07466100446557e402e7653147cb5fe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc81cfcc525113c2b90a2a12b8f43a82"><td class="memItemLeft" align="right" valign="top">static UINT32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeapTestBase.html#acc81cfcc525113c2b90a2a12b8f43a82">mVramGetMax</a></td></tr>
-<tr class="separator:acc81cfcc525113c2b90a2a12b8f43a82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a069fe337cdc72a5b595b5a2760da3c07"><td class="memItemLeft" align="right" valign="top"><a id="a069fe337cdc72a5b595b5a2760da3c07"></a>
-static UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>mVramInit</b></td></tr>
-<tr class="separator:a069fe337cdc72a5b595b5a2760da3c07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46a69cc3cfaa79977bfc2567697d4dbb"><td class="memItemLeft" align="right" valign="top"><a id="a46a69cc3cfaa79977bfc2567697d4dbb"></a>
-static UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>mVramAlloc</b></td></tr>
-<tr class="separator:a46a69cc3cfaa79977bfc2567697d4dbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a851ada397676858353e54ec614dfdbbe"><td class="memItemLeft" align="right" valign="top"><a id="a851ada397676858353e54ec614dfdbbe"></a>
-static UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>mVramFree</b></td></tr>
-<tr class="separator:a851ada397676858353e54ec614dfdbbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a561316e5535a5064b64d30cb04552aa9"><td class="memItemLeft" align="right" valign="top"><a id="a561316e5535a5064b64d30cb04552aa9"></a>
-static PVOID&#160;</td><td class="memItemRight" valign="bottom"><b>mVramLock</b></td></tr>
-<tr class="separator:a561316e5535a5064b64d30cb04552aa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22e6a4dbb026afdacba52fde75d7a8ab"><td class="memItemLeft" align="right" valign="top"><a id="a22e6a4dbb026afdacba52fde75d7a8ab"></a>
-static UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>mVramUnlock</b></td></tr>
-<tr class="separator:a22e6a4dbb026afdacba52fde75d7a8ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a5878b1394d35654f0c623642d12d39"><td class="memItemLeft" align="right" valign="top"><a id="a9a5878b1394d35654f0c623642d12d39"></a>
-static UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>mVramUninit</b></td></tr>
-<tr class="separator:a9a5878b1394d35654f0c623642d12d39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe0c8bc78b2d5a9a807ba9b94eb85f7b"><td class="memItemLeft" align="right" valign="top"><a id="afe0c8bc78b2d5a9a807ba9b94eb85f7b"></a>
-static UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>mVramGetMaxCount</b></td></tr>
-<tr class="separator:afe0c8bc78b2d5a9a807ba9b94eb85f7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeef560bdca7b7971e69dd501479b526e"><td class="memItemLeft" align="right" valign="top"><a id="aeef560bdca7b7971e69dd501479b526e"></a>
-static UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>mVramInitCount</b></td></tr>
-<tr class="separator:aeef560bdca7b7971e69dd501479b526e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef32affdb00299fd27c3001e85d2f0db"><td class="memItemLeft" align="right" valign="top"><a id="aef32affdb00299fd27c3001e85d2f0db"></a>
-static UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>mVramAllocCount</b></td></tr>
-<tr class="separator:aef32affdb00299fd27c3001e85d2f0db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab82b7d39509ad51569566624ff9b01a"><td class="memItemLeft" align="right" valign="top"><a id="aab82b7d39509ad51569566624ff9b01a"></a>
-static UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>mVramFreeCount</b></td></tr>
-<tr class="separator:aab82b7d39509ad51569566624ff9b01a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb2ad4c945547650086e932e19955f95"><td class="memItemLeft" align="right" valign="top"><a id="adb2ad4c945547650086e932e19955f95"></a>
-static UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>mVramLockCount</b></td></tr>
-<tr class="separator:adb2ad4c945547650086e932e19955f95"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab15ec4f313ad6ccbe4ac437e25adf10a"><td class="memItemLeft" align="right" valign="top"><a id="ab15ec4f313ad6ccbe4ac437e25adf10a"></a>
-static UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>mVramUnlockCount</b></td></tr>
-<tr class="separator:ab15ec4f313ad6ccbe4ac437e25adf10a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada1dce733e98b752a45f8585b0f18ba6"><td class="memItemLeft" align="right" valign="top"><a id="ada1dce733e98b752a45f8585b0f18ba6"></a>
-static UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>mVramUninitCount</b></td></tr>
-<tr class="separator:ada1dce733e98b752a45f8585b0f18ba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7aef392d7a8d983b4afbe4d9b0791e52"><td class="memItemLeft" align="right" valign="top">static UINT8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeapTestBase.html#a7aef392d7a8d983b4afbe4d9b0791e52">mScratchBuf</a> [500000]</td></tr>
-<tr class="separator:a7aef392d7a8d983b4afbe4d9b0791e52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af94d3e08e69809ef21a51e5c7a27c799"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="CommonDefs_8h.html#a44a84094d41db406043c92f2c6344acc">PVOID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeapTestBase.html#af94d3e08e69809ef21a51e5c7a27c799">mDlOpen</a></td></tr>
+<tr class="separator:af94d3e08e69809ef21a51e5c7a27c799"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84d644631a85ba146925539227a38b58"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="CommonDefs_8h.html#a0cb58e7e6f0bad369840a52e54a56ae0">INT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeapTestBase.html#a84d644631a85ba146925539227a38b58">mDlClose</a></td></tr>
+<tr class="separator:a84d644631a85ba146925539227a38b58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a625f85f6f7de435ef97d1ff879f9d03f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="CommonDefs_8h.html#a6252187f6e55ba4943e030c350d624bd">BOOL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeapTestBase.html#a625f85f6f7de435ef97d1ff879f9d03f">mDlSym</a></td></tr>
+<tr class="separator:a625f85f6f7de435ef97d1ff879f9d03f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30c1e7a99f1f6872b7cfb86d9c887cfa"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeapTestBase.html#a30c1e7a99f1f6872b7cfb86d9c887cfa">mDlOpenCount</a></td></tr>
+<tr class="separator:a30c1e7a99f1f6872b7cfb86d9c887cfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a854bf226387b2b8e1b0b5a7a7f8fd72c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeapTestBase.html#a854bf226387b2b8e1b0b5a7a7f8fd72c">mDlErrorCount</a></td></tr>
+<tr class="separator:a854bf226387b2b8e1b0b5a7a7f8fd72c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a736fcd2685cbdba33550a72caaaf25f1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeapTestBase.html#a736fcd2685cbdba33550a72caaaf25f1">mDlSymCount</a></td></tr>
+<tr class="separator:a736fcd2685cbdba33550a72caaaf25f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace97040d75830142e665ce088f800784"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeapTestBase.html#ace97040d75830142e665ce088f800784">mDlCloseCount</a></td></tr>
+<tr class="separator:ace97040d75830142e665ce088f800784"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77d3058ca3e63155a0741c2612004800"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeapTestBase.html#a77d3058ca3e63155a0741c2612004800">mVramGetMax</a></td></tr>
+<tr class="separator:a77d3058ca3e63155a0741c2612004800"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad086505596e1d3fe97d3a49cda515267"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeapTestBase.html#ad086505596e1d3fe97d3a49cda515267">mVramInit</a></td></tr>
+<tr class="separator:ad086505596e1d3fe97d3a49cda515267"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9643ee554ed77d8afbcc20ec548bf473"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeapTestBase.html#a9643ee554ed77d8afbcc20ec548bf473">mVramAlloc</a></td></tr>
+<tr class="separator:a9643ee554ed77d8afbcc20ec548bf473"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd8d2974789d25b621cf5ce449c2ca5c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeapTestBase.html#acd8d2974789d25b621cf5ce449c2ca5c">mVramFree</a></td></tr>
+<tr class="separator:acd8d2974789d25b621cf5ce449c2ca5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0080794410fff5c91a7c2058c3a398c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="CommonDefs_8h.html#a44a84094d41db406043c92f2c6344acc">PVOID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeapTestBase.html#ae0080794410fff5c91a7c2058c3a398c">mVramLock</a></td></tr>
+<tr class="separator:ae0080794410fff5c91a7c2058c3a398c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f59b35140aaa50296f52ca2cd486c2c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeapTestBase.html#a8f59b35140aaa50296f52ca2cd486c2c">mVramUnlock</a></td></tr>
+<tr class="separator:a8f59b35140aaa50296f52ca2cd486c2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51889afe601cda56fa05701777f01e92"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeapTestBase.html#a51889afe601cda56fa05701777f01e92">mVramUninit</a></td></tr>
+<tr class="separator:a51889afe601cda56fa05701777f01e92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1643e98b7a8cc05ec34fddc341a9f8a9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeapTestBase.html#a1643e98b7a8cc05ec34fddc341a9f8a9">mVramGetMaxCount</a></td></tr>
+<tr class="separator:a1643e98b7a8cc05ec34fddc341a9f8a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefad61bdb8a8af3884354eecfccf40e7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeapTestBase.html#aefad61bdb8a8af3884354eecfccf40e7">mVramInitCount</a></td></tr>
+<tr class="separator:aefad61bdb8a8af3884354eecfccf40e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a978cd2ae57d97f607e6e223995d2f694"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeapTestBase.html#a978cd2ae57d97f607e6e223995d2f694">mVramAllocCount</a></td></tr>
+<tr class="separator:a978cd2ae57d97f607e6e223995d2f694"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acac11ec6e99163f79f48cce8f33682d9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeapTestBase.html#acac11ec6e99163f79f48cce8f33682d9">mVramFreeCount</a></td></tr>
+<tr class="separator:acac11ec6e99163f79f48cce8f33682d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a871e9cc1a973b8bba80e62dad86a845e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeapTestBase.html#a871e9cc1a973b8bba80e62dad86a845e">mVramLockCount</a></td></tr>
+<tr class="separator:a871e9cc1a973b8bba80e62dad86a845e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50bbe772efb5c5ec2a02c67f2e88de2d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeapTestBase.html#a50bbe772efb5c5ec2a02c67f2e88de2d">mVramUnlockCount</a></td></tr>
+<tr class="separator:a50bbe772efb5c5ec2a02c67f2e88de2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a518ba964e71c97afd807a3f106957a28"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeapTestBase.html#a518ba964e71c97afd807a3f106957a28">mVramUninitCount</a></td></tr>
+<tr class="separator:a518ba964e71c97afd807a3f106957a28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8086339e9d68c7a2e72501593013953"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="CommonDefs_8h.html#ab27e9918b538ce9d8ca692479b375b6a">UINT8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeapTestBase.html#aa8086339e9d68c7a2e72501593013953">mScratchBuf</a> [500000]</td></tr>
+<tr class="separator:aa8086339e9d68c7a2e72501593013953"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a745c2f6b77355604588376a993adc4db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a745c2f6b77355604588376a993adc4db">&#9670;&nbsp;</a></span>mockVramInit()</h2>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ac027a1eea01bb78b259cb2ae9ab515c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac027a1eea01bb78b259cb2ae9ab515c4">&#9670;&nbsp;</a></span>HeapTestBase()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -208,7 +213,362 @@ static UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>mVramUninitC
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">UINT32 HeapTestBase::mockVramInit </td>
+          <td class="memname"><a class="el" href="classHeapTestBase.html">HeapTestBase</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classHeapTestBase_ac027a1eea01bb78b259cb2ae9ab515c4_cgraph.png" border="0" usemap="#aclassHeapTestBase_ac027a1eea01bb78b259cb2ae9ab515c4_cgraph" alt=""/></div>
+<map name="aclassHeapTestBase_ac027a1eea01bb78b259cb2ae9ab515c4_cgraph" id="aclassHeapTestBase_ac027a1eea01bb78b259cb2ae9ab515c4_cgraph">
+<area shape="rect" title=" " alt="" coords="5,81,120,108"/>
+<area shape="rect" href="classHeapTestBase.html#adc7a1492fc73f501c53c1673176ba270" title=" " alt="" coords="168,81,279,108"/>
+<area shape="rect" href="classHeapTestBase.html#ab8d9f2f480907512f60e8921a5b38f81" title=" " alt="" coords="327,5,435,32"/>
+<area shape="rect" href="classHeapTestBase.html#a4fd414f7e517ac0de02d83cd96cff9bc" title=" " alt="" coords="329,56,432,83"/>
+<area shape="rect" href="classHeapTestBase.html#a968f04a1ce43f3b48d0c3b38e09d0b07" title=" " alt="" coords="327,107,434,133"/>
+<area shape="rect" href="classHeapTestBase.html#a7af25bd71d97309462ac9aeeb5680faf" title=" " alt="" coords="330,157,431,184"/>
+<area shape="rect" href="classHeapTestBase.html#a7c9f0f999d579275cd22b483324e69d9" title=" " alt="" coords="492,5,617,32"/>
+<area shape="rect" href="classHeapTestBase.html#af99a924a4623aebc4308a341e5b0ad6c" title=" " alt="" coords="494,56,615,83"/>
+<area shape="rect" href="classHeapTestBase.html#a9ee1af6c6d8890628d6de84f0d1267d5" title=" " alt="" coords="483,107,627,133"/>
+<area shape="rect" href="classHeapTestBase.html#a4ae91e4829ec2ec60e4a5169f43c4400" title=" " alt="" coords="497,157,612,184"/>
+<area shape="rect" href="classHeapTestBase.html#ada10b7d25c7fe0d76bb96a525bfe270f" title=" " alt="" coords="493,208,616,235"/>
+<area shape="rect" href="classHeapTestBase.html#a5cab0c10cad774fbc7f224c11a10a9e0" title=" " alt="" coords="489,259,621,285"/>
+<area shape="rect" href="classHeapTestBase.html#a51a494149a68ee0f7f5be4661be48d6e" title=" " alt="" coords="485,309,624,336"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ab8d9f2f480907512f60e8921a5b38f81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8d9f2f480907512f60e8921a5b38f81">&#9670;&nbsp;</a></span>mockDlClose()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0cb58e7e6f0bad369840a52e54a56ae0">INT32</a> mockDlClose </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="CommonDefs_8h.html#a44a84094d41db406043c92f2c6344acc">PVOID</a>&#160;</td>
+          <td class="paramname"><em>handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classHeapTestBase_ab8d9f2f480907512f60e8921a5b38f81_icgraph.png" border="0" usemap="#aclassHeapTestBase_ab8d9f2f480907512f60e8921a5b38f81_icgraph" alt=""/></div>
+<map name="aclassHeapTestBase_ab8d9f2f480907512f60e8921a5b38f81_icgraph" id="aclassHeapTestBase_ab8d9f2f480907512f60e8921a5b38f81_icgraph">
+<area shape="rect" title=" " alt="" coords="547,31,655,57"/>
+<area shape="rect" href="classHeapTestBase.html#adc7a1492fc73f501c53c1673176ba270" title=" " alt="" coords="388,31,499,57"/>
+<area shape="rect" href="classHeapTestBase.html#ac027a1eea01bb78b259cb2ae9ab515c4" title=" " alt="" coords="225,5,340,32"/>
+<area shape="rect" href="classHeapTestBase.html#aaf0df15d78627449c77bb2821d295c76" title=" " alt="" coords="252,56,313,83"/>
+<area shape="rect" href="classHybridFileHeapTest.html#aaf0df15d78627449c77bb2821d295c76" title=" " alt="" coords="17,19,165,61"/>
+<area shape="rect" href="classHybridHeapTest.html#aaf0df15d78627449c77bb2821d295c76" title=" " alt="" coords="5,85,177,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4fd414f7e517ac0de02d83cd96cff9bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fd414f7e517ac0de02d83cd96cff9bc">&#9670;&nbsp;</a></span>mockDlError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a6addcc52e2dfddf231bf3213859ae2bb">PCHAR</a> mockDlError </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classHeapTestBase_a4fd414f7e517ac0de02d83cd96cff9bc_icgraph.png" border="0" usemap="#aclassHeapTestBase_a4fd414f7e517ac0de02d83cd96cff9bc_icgraph" alt=""/></div>
+<map name="aclassHeapTestBase_a4fd414f7e517ac0de02d83cd96cff9bc_icgraph" id="aclassHeapTestBase_a4fd414f7e517ac0de02d83cd96cff9bc_icgraph">
+<area shape="rect" title=" " alt="" coords="547,31,649,57"/>
+<area shape="rect" href="classHeapTestBase.html#adc7a1492fc73f501c53c1673176ba270" title=" " alt="" coords="388,31,499,57"/>
+<area shape="rect" href="classHeapTestBase.html#ac027a1eea01bb78b259cb2ae9ab515c4" title=" " alt="" coords="225,5,340,32"/>
+<area shape="rect" href="classHeapTestBase.html#aaf0df15d78627449c77bb2821d295c76" title=" " alt="" coords="252,56,313,83"/>
+<area shape="rect" href="classHybridFileHeapTest.html#aaf0df15d78627449c77bb2821d295c76" title=" " alt="" coords="17,19,165,61"/>
+<area shape="rect" href="classHybridHeapTest.html#aaf0df15d78627449c77bb2821d295c76" title=" " alt="" coords="5,85,177,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a968f04a1ce43f3b48d0c3b38e09d0b07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a968f04a1ce43f3b48d0c3b38e09d0b07">&#9670;&nbsp;</a></span>mockDlOpen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a44a84094d41db406043c92f2c6344acc">PVOID</a> mockDlOpen </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="CommonDefs_8h.html#a6addcc52e2dfddf231bf3213859ae2bb">PCHAR</a>&#160;</td>
+          <td class="paramname"><em>filename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td>
+          <td class="paramname"><em>flag</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classHeapTestBase_a968f04a1ce43f3b48d0c3b38e09d0b07_icgraph.png" border="0" usemap="#aclassHeapTestBase_a968f04a1ce43f3b48d0c3b38e09d0b07_icgraph" alt=""/></div>
+<map name="aclassHeapTestBase_a968f04a1ce43f3b48d0c3b38e09d0b07_icgraph" id="aclassHeapTestBase_a968f04a1ce43f3b48d0c3b38e09d0b07_icgraph">
+<area shape="rect" title=" " alt="" coords="547,31,653,57"/>
+<area shape="rect" href="classHeapTestBase.html#adc7a1492fc73f501c53c1673176ba270" title=" " alt="" coords="388,31,499,57"/>
+<area shape="rect" href="classHeapTestBase.html#ac027a1eea01bb78b259cb2ae9ab515c4" title=" " alt="" coords="225,5,340,32"/>
+<area shape="rect" href="classHeapTestBase.html#aaf0df15d78627449c77bb2821d295c76" title=" " alt="" coords="252,56,313,83"/>
+<area shape="rect" href="classHybridFileHeapTest.html#aaf0df15d78627449c77bb2821d295c76" title=" " alt="" coords="17,19,165,61"/>
+<area shape="rect" href="classHybridHeapTest.html#aaf0df15d78627449c77bb2821d295c76" title=" " alt="" coords="5,85,177,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7af25bd71d97309462ac9aeeb5680faf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7af25bd71d97309462ac9aeeb5680faf">&#9670;&nbsp;</a></span>mockDlSym()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a44a84094d41db406043c92f2c6344acc">PVOID</a> mockDlSym </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="CommonDefs_8h.html#a44a84094d41db406043c92f2c6344acc">PVOID</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="CommonDefs_8h.html#a6addcc52e2dfddf231bf3213859ae2bb">PCHAR</a>&#160;</td>
+          <td class="paramname"><em>symbol</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classHeapTestBase_a7af25bd71d97309462ac9aeeb5680faf_cgraph.png" border="0" usemap="#aclassHeapTestBase_a7af25bd71d97309462ac9aeeb5680faf_cgraph" alt=""/></div>
+<map name="aclassHeapTestBase_a7af25bd71d97309462ac9aeeb5680faf_cgraph" id="aclassHeapTestBase_a7af25bd71d97309462ac9aeeb5680faf_cgraph">
+<area shape="rect" title=" " alt="" coords="5,157,107,184"/>
+<area shape="rect" href="classHeapTestBase.html#a7c9f0f999d579275cd22b483324e69d9" title=" " alt="" coords="164,5,289,32"/>
+<area shape="rect" href="classHeapTestBase.html#af99a924a4623aebc4308a341e5b0ad6c" title=" " alt="" coords="166,56,287,83"/>
+<area shape="rect" href="classHeapTestBase.html#a9ee1af6c6d8890628d6de84f0d1267d5" title=" " alt="" coords="155,107,299,133"/>
+<area shape="rect" href="classHeapTestBase.html#a4ae91e4829ec2ec60e4a5169f43c4400" title=" " alt="" coords="169,157,284,184"/>
+<area shape="rect" href="classHeapTestBase.html#ada10b7d25c7fe0d76bb96a525bfe270f" title=" " alt="" coords="165,208,288,235"/>
+<area shape="rect" href="classHeapTestBase.html#a5cab0c10cad774fbc7f224c11a10a9e0" title=" " alt="" coords="161,259,293,285"/>
+<area shape="rect" href="classHeapTestBase.html#a51a494149a68ee0f7f5be4661be48d6e" title=" " alt="" coords="157,309,296,336"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classHeapTestBase_a7af25bd71d97309462ac9aeeb5680faf_icgraph.png" border="0" usemap="#aclassHeapTestBase_a7af25bd71d97309462ac9aeeb5680faf_icgraph" alt=""/></div>
+<map name="aclassHeapTestBase_a7af25bd71d97309462ac9aeeb5680faf_icgraph" id="aclassHeapTestBase_a7af25bd71d97309462ac9aeeb5680faf_icgraph">
+<area shape="rect" title=" " alt="" coords="547,31,648,57"/>
+<area shape="rect" href="classHeapTestBase.html#adc7a1492fc73f501c53c1673176ba270" title=" " alt="" coords="388,31,499,57"/>
+<area shape="rect" href="classHeapTestBase.html#ac027a1eea01bb78b259cb2ae9ab515c4" title=" " alt="" coords="225,5,340,32"/>
+<area shape="rect" href="classHeapTestBase.html#aaf0df15d78627449c77bb2821d295c76" title=" " alt="" coords="252,56,313,83"/>
+<area shape="rect" href="classHybridFileHeapTest.html#aaf0df15d78627449c77bb2821d295c76" title=" " alt="" coords="17,19,165,61"/>
+<area shape="rect" href="classHybridHeapTest.html#aaf0df15d78627449c77bb2821d295c76" title=" " alt="" coords="5,85,177,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7c9f0f999d579275cd22b483324e69d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c9f0f999d579275cd22b483324e69d9">&#9670;&nbsp;</a></span>mockVramAlloc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> mockVramAlloc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classHeapTestBase_a7c9f0f999d579275cd22b483324e69d9_icgraph.png" border="0" usemap="#aclassHeapTestBase_a7c9f0f999d579275cd22b483324e69d9_icgraph" alt=""/></div>
+<map name="aclassHeapTestBase_a7c9f0f999d579275cd22b483324e69d9_icgraph" id="aclassHeapTestBase_a7c9f0f999d579275cd22b483324e69d9_icgraph">
+<area shape="rect" title=" " alt="" coords="696,31,821,57"/>
+<area shape="rect" href="classHeapTestBase.html#a7af25bd71d97309462ac9aeeb5680faf" title=" " alt="" coords="547,31,648,57"/>
+<area shape="rect" href="classHeapTestBase.html#adc7a1492fc73f501c53c1673176ba270" title=" " alt="" coords="388,31,499,57"/>
+<area shape="rect" href="classHeapTestBase.html#ac027a1eea01bb78b259cb2ae9ab515c4" title=" " alt="" coords="225,5,340,32"/>
+<area shape="rect" href="classHeapTestBase.html#aaf0df15d78627449c77bb2821d295c76" title=" " alt="" coords="252,56,313,83"/>
+<area shape="rect" href="classHybridFileHeapTest.html#aaf0df15d78627449c77bb2821d295c76" title=" " alt="" coords="17,19,165,61"/>
+<area shape="rect" href="classHybridHeapTest.html#aaf0df15d78627449c77bb2821d295c76" title=" " alt="" coords="5,85,177,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af99a924a4623aebc4308a341e5b0ad6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af99a924a4623aebc4308a341e5b0ad6c">&#9670;&nbsp;</a></span>mockVramFree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> mockVramFree </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td>
+          <td class="paramname"><em>handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classHeapTestBase_af99a924a4623aebc4308a341e5b0ad6c_icgraph.png" border="0" usemap="#aclassHeapTestBase_af99a924a4623aebc4308a341e5b0ad6c_icgraph" alt=""/></div>
+<map name="aclassHeapTestBase_af99a924a4623aebc4308a341e5b0ad6c_icgraph" id="aclassHeapTestBase_af99a924a4623aebc4308a341e5b0ad6c_icgraph">
+<area shape="rect" title=" " alt="" coords="696,31,817,57"/>
+<area shape="rect" href="classHeapTestBase.html#a7af25bd71d97309462ac9aeeb5680faf" title=" " alt="" coords="547,31,648,57"/>
+<area shape="rect" href="classHeapTestBase.html#adc7a1492fc73f501c53c1673176ba270" title=" " alt="" coords="388,31,499,57"/>
+<area shape="rect" href="classHeapTestBase.html#ac027a1eea01bb78b259cb2ae9ab515c4" title=" " alt="" coords="225,5,340,32"/>
+<area shape="rect" href="classHeapTestBase.html#aaf0df15d78627449c77bb2821d295c76" title=" " alt="" coords="252,56,313,83"/>
+<area shape="rect" href="classHybridFileHeapTest.html#aaf0df15d78627449c77bb2821d295c76" title=" " alt="" coords="17,19,165,61"/>
+<area shape="rect" href="classHybridHeapTest.html#aaf0df15d78627449c77bb2821d295c76" title=" " alt="" coords="5,85,177,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9ee1af6c6d8890628d6de84f0d1267d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ee1af6c6d8890628d6de84f0d1267d5">&#9670;&nbsp;</a></span>mockVramGetMax()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> mockVramGetMax </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classHeapTestBase_a9ee1af6c6d8890628d6de84f0d1267d5_icgraph.png" border="0" usemap="#aclassHeapTestBase_a9ee1af6c6d8890628d6de84f0d1267d5_icgraph" alt=""/></div>
+<map name="aclassHeapTestBase_a9ee1af6c6d8890628d6de84f0d1267d5_icgraph" id="aclassHeapTestBase_a9ee1af6c6d8890628d6de84f0d1267d5_icgraph">
+<area shape="rect" title=" " alt="" coords="696,31,840,57"/>
+<area shape="rect" href="classHeapTestBase.html#a7af25bd71d97309462ac9aeeb5680faf" title=" " alt="" coords="547,31,648,57"/>
+<area shape="rect" href="classHeapTestBase.html#adc7a1492fc73f501c53c1673176ba270" title=" " alt="" coords="388,31,499,57"/>
+<area shape="rect" href="classHeapTestBase.html#ac027a1eea01bb78b259cb2ae9ab515c4" title=" " alt="" coords="225,5,340,32"/>
+<area shape="rect" href="classHeapTestBase.html#aaf0df15d78627449c77bb2821d295c76" title=" " alt="" coords="252,56,313,83"/>
+<area shape="rect" href="classHybridFileHeapTest.html#aaf0df15d78627449c77bb2821d295c76" title=" " alt="" coords="17,19,165,61"/>
+<area shape="rect" href="classHybridHeapTest.html#aaf0df15d78627449c77bb2821d295c76" title=" " alt="" coords="5,85,177,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4ae91e4829ec2ec60e4a5169f43c4400"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ae91e4829ec2ec60e4a5169f43c4400">&#9670;&nbsp;</a></span>mockVramInit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> mockVramInit </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -221,12 +581,25 @@ static UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>mVramUninitC
 </table>
 </div><div class="memdoc">
 <p>Declaring the mock hybrid heap thunk functions </p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classHeapTestBase_a4ae91e4829ec2ec60e4a5169f43c4400_icgraph.png" border="0" usemap="#aclassHeapTestBase_a4ae91e4829ec2ec60e4a5169f43c4400_icgraph" alt=""/></div>
+<map name="aclassHeapTestBase_a4ae91e4829ec2ec60e4a5169f43c4400_icgraph" id="aclassHeapTestBase_a4ae91e4829ec2ec60e4a5169f43c4400_icgraph">
+<area shape="rect" title=" " alt="" coords="696,31,811,57"/>
+<area shape="rect" href="classHeapTestBase.html#a7af25bd71d97309462ac9aeeb5680faf" title=" " alt="" coords="547,31,648,57"/>
+<area shape="rect" href="classHeapTestBase.html#adc7a1492fc73f501c53c1673176ba270" title=" " alt="" coords="388,31,499,57"/>
+<area shape="rect" href="classHeapTestBase.html#ac027a1eea01bb78b259cb2ae9ab515c4" title=" " alt="" coords="225,5,340,32"/>
+<area shape="rect" href="classHeapTestBase.html#aaf0df15d78627449c77bb2821d295c76" title=" " alt="" coords="252,56,313,83"/>
+<area shape="rect" href="classHybridFileHeapTest.html#aaf0df15d78627449c77bb2821d295c76" title=" " alt="" coords="17,19,165,61"/>
+<area shape="rect" href="classHybridHeapTest.html#aaf0df15d78627449c77bb2821d295c76" title=" " alt="" coords="5,85,177,112"/>
+</map>
+</div>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a7aef392d7a8d983b4afbe4d9b0791e52"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7aef392d7a8d983b4afbe4d9b0791e52">&#9670;&nbsp;</a></span>mScratchBuf</h2>
+<a id="ada10b7d25c7fe0d76bb96a525bfe270f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada10b7d25c7fe0d76bb96a525bfe270f">&#9670;&nbsp;</a></span>mockVramLock()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -235,7 +608,394 @@ static UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>mVramUninitC
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">UINT8 HeapTestBase::mScratchBuf</td>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a44a84094d41db406043c92f2c6344acc">PVOID</a> mockVramLock </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td>
+          <td class="paramname"><em>alloc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classHeapTestBase_ada10b7d25c7fe0d76bb96a525bfe270f_icgraph.png" border="0" usemap="#aclassHeapTestBase_ada10b7d25c7fe0d76bb96a525bfe270f_icgraph" alt=""/></div>
+<map name="aclassHeapTestBase_ada10b7d25c7fe0d76bb96a525bfe270f_icgraph" id="aclassHeapTestBase_ada10b7d25c7fe0d76bb96a525bfe270f_icgraph">
+<area shape="rect" title=" " alt="" coords="696,31,819,57"/>
+<area shape="rect" href="classHeapTestBase.html#a7af25bd71d97309462ac9aeeb5680faf" title=" " alt="" coords="547,31,648,57"/>
+<area shape="rect" href="classHeapTestBase.html#adc7a1492fc73f501c53c1673176ba270" title=" " alt="" coords="388,31,499,57"/>
+<area shape="rect" href="classHeapTestBase.html#ac027a1eea01bb78b259cb2ae9ab515c4" title=" " alt="" coords="225,5,340,32"/>
+<area shape="rect" href="classHeapTestBase.html#aaf0df15d78627449c77bb2821d295c76" title=" " alt="" coords="252,56,313,83"/>
+<area shape="rect" href="classHybridFileHeapTest.html#aaf0df15d78627449c77bb2821d295c76" title=" " alt="" coords="17,19,165,61"/>
+<area shape="rect" href="classHybridHeapTest.html#aaf0df15d78627449c77bb2821d295c76" title=" " alt="" coords="5,85,177,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5cab0c10cad774fbc7f224c11a10a9e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cab0c10cad774fbc7f224c11a10a9e0">&#9670;&nbsp;</a></span>mockVramUninit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> mockVramUninit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classHeapTestBase_a5cab0c10cad774fbc7f224c11a10a9e0_icgraph.png" border="0" usemap="#aclassHeapTestBase_a5cab0c10cad774fbc7f224c11a10a9e0_icgraph" alt=""/></div>
+<map name="aclassHeapTestBase_a5cab0c10cad774fbc7f224c11a10a9e0_icgraph" id="aclassHeapTestBase_a5cab0c10cad774fbc7f224c11a10a9e0_icgraph">
+<area shape="rect" title=" " alt="" coords="696,31,828,57"/>
+<area shape="rect" href="classHeapTestBase.html#a7af25bd71d97309462ac9aeeb5680faf" title=" " alt="" coords="547,31,648,57"/>
+<area shape="rect" href="classHeapTestBase.html#adc7a1492fc73f501c53c1673176ba270" title=" " alt="" coords="388,31,499,57"/>
+<area shape="rect" href="classHeapTestBase.html#ac027a1eea01bb78b259cb2ae9ab515c4" title=" " alt="" coords="225,5,340,32"/>
+<area shape="rect" href="classHeapTestBase.html#aaf0df15d78627449c77bb2821d295c76" title=" " alt="" coords="252,56,313,83"/>
+<area shape="rect" href="classHybridFileHeapTest.html#aaf0df15d78627449c77bb2821d295c76" title=" " alt="" coords="17,19,165,61"/>
+<area shape="rect" href="classHybridHeapTest.html#aaf0df15d78627449c77bb2821d295c76" title=" " alt="" coords="5,85,177,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a51a494149a68ee0f7f5be4661be48d6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51a494149a68ee0f7f5be4661be48d6e">&#9670;&nbsp;</a></span>mockVramUnlock()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> mockVramUnlock </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td>
+          <td class="paramname"><em>handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classHeapTestBase_a51a494149a68ee0f7f5be4661be48d6e_icgraph.png" border="0" usemap="#aclassHeapTestBase_a51a494149a68ee0f7f5be4661be48d6e_icgraph" alt=""/></div>
+<map name="aclassHeapTestBase_a51a494149a68ee0f7f5be4661be48d6e_icgraph" id="aclassHeapTestBase_a51a494149a68ee0f7f5be4661be48d6e_icgraph">
+<area shape="rect" title=" " alt="" coords="696,31,835,57"/>
+<area shape="rect" href="classHeapTestBase.html#a7af25bd71d97309462ac9aeeb5680faf" title=" " alt="" coords="547,31,648,57"/>
+<area shape="rect" href="classHeapTestBase.html#adc7a1492fc73f501c53c1673176ba270" title=" " alt="" coords="388,31,499,57"/>
+<area shape="rect" href="classHeapTestBase.html#ac027a1eea01bb78b259cb2ae9ab515c4" title=" " alt="" coords="225,5,340,32"/>
+<area shape="rect" href="classHeapTestBase.html#aaf0df15d78627449c77bb2821d295c76" title=" " alt="" coords="252,56,313,83"/>
+<area shape="rect" href="classHybridFileHeapTest.html#aaf0df15d78627449c77bb2821d295c76" title=" " alt="" coords="17,19,165,61"/>
+<area shape="rect" href="classHybridHeapTest.html#aaf0df15d78627449c77bb2821d295c76" title=" " alt="" coords="5,85,177,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aaf0df15d78627449c77bb2821d295c76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf0df15d78627449c77bb2821d295c76">&#9670;&nbsp;</a></span>SetUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a7f319bfc2492a2136964194204e7a8cf">VOID</a> SetUp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classHybridHeapTest.html#aaf0df15d78627449c77bb2821d295c76">HybridHeapTest</a>, and <a class="el" href="classHybridFileHeapTest.html#aaf0df15d78627449c77bb2821d295c76">HybridFileHeapTest</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classHeapTestBase_aaf0df15d78627449c77bb2821d295c76_cgraph.png" border="0" usemap="#aclassHeapTestBase_aaf0df15d78627449c77bb2821d295c76_cgraph" alt=""/></div>
+<map name="aclassHeapTestBase_aaf0df15d78627449c77bb2821d295c76_cgraph" id="aclassHeapTestBase_aaf0df15d78627449c77bb2821d295c76_cgraph">
+<area shape="rect" title=" " alt="" coords="5,81,67,108"/>
+<area shape="rect" href="classHeapTestBase.html#adc7a1492fc73f501c53c1673176ba270" title=" " alt="" coords="115,81,225,108"/>
+<area shape="rect" href="classHeapTestBase.html#ab8d9f2f480907512f60e8921a5b38f81" title=" " alt="" coords="273,5,381,32"/>
+<area shape="rect" href="classHeapTestBase.html#a4fd414f7e517ac0de02d83cd96cff9bc" title=" " alt="" coords="276,56,379,83"/>
+<area shape="rect" href="classHeapTestBase.html#a968f04a1ce43f3b48d0c3b38e09d0b07" title=" " alt="" coords="274,107,381,133"/>
+<area shape="rect" href="classHeapTestBase.html#a7af25bd71d97309462ac9aeeb5680faf" title=" " alt="" coords="277,157,378,184"/>
+<area shape="rect" href="classHeapTestBase.html#a7c9f0f999d579275cd22b483324e69d9" title=" " alt="" coords="439,5,564,32"/>
+<area shape="rect" href="classHeapTestBase.html#af99a924a4623aebc4308a341e5b0ad6c" title=" " alt="" coords="441,56,562,83"/>
+<area shape="rect" href="classHeapTestBase.html#a9ee1af6c6d8890628d6de84f0d1267d5" title=" " alt="" coords="429,107,573,133"/>
+<area shape="rect" href="classHeapTestBase.html#a4ae91e4829ec2ec60e4a5169f43c4400" title=" " alt="" coords="444,157,559,184"/>
+<area shape="rect" href="classHeapTestBase.html#ada10b7d25c7fe0d76bb96a525bfe270f" title=" " alt="" coords="440,208,563,235"/>
+<area shape="rect" href="classHeapTestBase.html#a5cab0c10cad774fbc7f224c11a10a9e0" title=" " alt="" coords="435,259,567,285"/>
+<area shape="rect" href="classHeapTestBase.html#a51a494149a68ee0f7f5be4661be48d6e" title=" " alt="" coords="432,309,571,336"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classHeapTestBase_aaf0df15d78627449c77bb2821d295c76_icgraph.png" border="0" usemap="#aclassHeapTestBase_aaf0df15d78627449c77bb2821d295c76_icgraph" alt=""/></div>
+<map name="aclassHeapTestBase_aaf0df15d78627449c77bb2821d295c76_icgraph" id="aclassHeapTestBase_aaf0df15d78627449c77bb2821d295c76_icgraph">
+<area shape="rect" title=" " alt="" coords="225,42,287,69"/>
+<area shape="rect" href="classHybridFileHeapTest.html#aaf0df15d78627449c77bb2821d295c76" title=" " alt="" coords="17,5,165,47"/>
+<area shape="rect" href="classHybridHeapTest.html#aaf0df15d78627449c77bb2821d295c76" title=" " alt="" coords="5,71,177,98"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="adc7a1492fc73f501c53c1673176ba270"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc7a1492fc73f501c53c1673176ba270">&#9670;&nbsp;</a></span>SetUpInternal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a7f319bfc2492a2136964194204e7a8cf">VOID</a> SetUpInternal </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classHeapTestBase_adc7a1492fc73f501c53c1673176ba270_cgraph.png" border="0" usemap="#aclassHeapTestBase_adc7a1492fc73f501c53c1673176ba270_cgraph" alt=""/></div>
+<map name="aclassHeapTestBase_adc7a1492fc73f501c53c1673176ba270_cgraph" id="aclassHeapTestBase_adc7a1492fc73f501c53c1673176ba270_cgraph">
+<area shape="rect" title=" " alt="" coords="5,81,116,108"/>
+<area shape="rect" href="classHeapTestBase.html#ab8d9f2f480907512f60e8921a5b38f81" title=" " alt="" coords="164,5,272,32"/>
+<area shape="rect" href="classHeapTestBase.html#a4fd414f7e517ac0de02d83cd96cff9bc" title=" " alt="" coords="167,56,269,83"/>
+<area shape="rect" href="classHeapTestBase.html#a968f04a1ce43f3b48d0c3b38e09d0b07" title=" " alt="" coords="165,107,271,133"/>
+<area shape="rect" href="classHeapTestBase.html#a7af25bd71d97309462ac9aeeb5680faf" title=" " alt="" coords="167,157,269,184"/>
+<area shape="rect" href="classHeapTestBase.html#a7c9f0f999d579275cd22b483324e69d9" title=" " alt="" coords="329,5,455,32"/>
+<area shape="rect" href="classHeapTestBase.html#af99a924a4623aebc4308a341e5b0ad6c" title=" " alt="" coords="331,56,453,83"/>
+<area shape="rect" href="classHeapTestBase.html#a9ee1af6c6d8890628d6de84f0d1267d5" title=" " alt="" coords="320,107,464,133"/>
+<area shape="rect" href="classHeapTestBase.html#a4ae91e4829ec2ec60e4a5169f43c4400" title=" " alt="" coords="335,157,449,184"/>
+<area shape="rect" href="classHeapTestBase.html#ada10b7d25c7fe0d76bb96a525bfe270f" title=" " alt="" coords="331,208,453,235"/>
+<area shape="rect" href="classHeapTestBase.html#a5cab0c10cad774fbc7f224c11a10a9e0" title=" " alt="" coords="326,259,458,285"/>
+<area shape="rect" href="classHeapTestBase.html#a51a494149a68ee0f7f5be4661be48d6e" title=" " alt="" coords="323,309,461,336"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classHeapTestBase_adc7a1492fc73f501c53c1673176ba270_icgraph.png" border="0" usemap="#aclassHeapTestBase_adc7a1492fc73f501c53c1673176ba270_icgraph" alt=""/></div>
+<map name="aclassHeapTestBase_adc7a1492fc73f501c53c1673176ba270_icgraph" id="aclassHeapTestBase_adc7a1492fc73f501c53c1673176ba270_icgraph">
+<area shape="rect" title=" " alt="" coords="388,31,499,57"/>
+<area shape="rect" href="classHeapTestBase.html#ac027a1eea01bb78b259cb2ae9ab515c4" title=" " alt="" coords="225,5,340,32"/>
+<area shape="rect" href="classHeapTestBase.html#aaf0df15d78627449c77bb2821d295c76" title=" " alt="" coords="252,56,313,83"/>
+<area shape="rect" href="classHybridFileHeapTest.html#aaf0df15d78627449c77bb2821d295c76" title=" " alt="" coords="17,19,165,61"/>
+<area shape="rect" href="classHybridHeapTest.html#aaf0df15d78627449c77bb2821d295c76" title=" " alt="" coords="5,85,177,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="a84d644631a85ba146925539227a38b58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84d644631a85ba146925539227a38b58">&#9670;&nbsp;</a></span>mDlClose</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0cb58e7e6f0bad369840a52e54a56ae0">INT32</a> mDlClose</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ace97040d75830142e665ce088f800784"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace97040d75830142e665ce088f800784">&#9670;&nbsp;</a></span>mDlCloseCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> mDlCloseCount</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a854bf226387b2b8e1b0b5a7a7f8fd72c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a854bf226387b2b8e1b0b5a7a7f8fd72c">&#9670;&nbsp;</a></span>mDlErrorCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> mDlErrorCount</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af94d3e08e69809ef21a51e5c7a27c799"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af94d3e08e69809ef21a51e5c7a27c799">&#9670;&nbsp;</a></span>mDlOpen</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a44a84094d41db406043c92f2c6344acc">PVOID</a> mDlOpen</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a30c1e7a99f1f6872b7cfb86d9c887cfa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30c1e7a99f1f6872b7cfb86d9c887cfa">&#9670;&nbsp;</a></span>mDlOpenCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> mDlOpenCount</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a625f85f6f7de435ef97d1ff879f9d03f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a625f85f6f7de435ef97d1ff879f9d03f">&#9670;&nbsp;</a></span>mDlSym</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a6252187f6e55ba4943e030c350d624bd">BOOL</a> mDlSym</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a736fcd2685cbdba33550a72caaaf25f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a736fcd2685cbdba33550a72caaaf25f1">&#9670;&nbsp;</a></span>mDlSymCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> mDlSymCount</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa8086339e9d68c7a2e72501593013953"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8086339e9d68c7a2e72501593013953">&#9670;&nbsp;</a></span>mScratchBuf</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#ab27e9918b538ce9d8ca692479b375b6a">UINT8</a> mScratchBuf</td>
         </tr>
       </table>
   </td>
@@ -248,8 +1008,8 @@ static UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>mVramUninitC
 
 </div>
 </div>
-<a id="acc81cfcc525113c2b90a2a12b8f43a82"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc81cfcc525113c2b90a2a12b8f43a82">&#9670;&nbsp;</a></span>mVramGetMax</h2>
+<a id="a9643ee554ed77d8afbcc20ec548bf473"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9643ee554ed77d8afbcc20ec548bf473">&#9670;&nbsp;</a></span>mVramAlloc</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -258,7 +1018,95 @@ static UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>mVramUninitC
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">UINT32 HeapTestBase::mVramGetMax</td>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> mVramAlloc</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a978cd2ae57d97f607e6e223995d2f694"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a978cd2ae57d97f607e6e223995d2f694">&#9670;&nbsp;</a></span>mVramAllocCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> mVramAllocCount</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acd8d2974789d25b621cf5ce449c2ca5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd8d2974789d25b621cf5ce449c2ca5c">&#9670;&nbsp;</a></span>mVramFree</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> mVramFree</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acac11ec6e99163f79f48cce8f33682d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acac11ec6e99163f79f48cce8f33682d9">&#9670;&nbsp;</a></span>mVramFreeCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> mVramFreeCount</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a77d3058ca3e63155a0741c2612004800"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77d3058ca3e63155a0741c2612004800">&#9670;&nbsp;</a></span>mVramGetMax</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> mVramGetMax</td>
         </tr>
       </table>
   </td>
@@ -271,14 +1119,216 @@ static UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>mVramUninitC
 
 </div>
 </div>
+<a id="a1643e98b7a8cc05ec34fddc341a9f8a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1643e98b7a8cc05ec34fddc341a9f8a9">&#9670;&nbsp;</a></span>mVramGetMaxCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> mVramGetMaxCount</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad086505596e1d3fe97d3a49cda515267"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad086505596e1d3fe97d3a49cda515267">&#9670;&nbsp;</a></span>mVramInit</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> mVramInit</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aefad61bdb8a8af3884354eecfccf40e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefad61bdb8a8af3884354eecfccf40e7">&#9670;&nbsp;</a></span>mVramInitCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> mVramInitCount</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae0080794410fff5c91a7c2058c3a398c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0080794410fff5c91a7c2058c3a398c">&#9670;&nbsp;</a></span>mVramLock</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a44a84094d41db406043c92f2c6344acc">PVOID</a> mVramLock</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a871e9cc1a973b8bba80e62dad86a845e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a871e9cc1a973b8bba80e62dad86a845e">&#9670;&nbsp;</a></span>mVramLockCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> mVramLockCount</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a51889afe601cda56fa05701777f01e92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51889afe601cda56fa05701777f01e92">&#9670;&nbsp;</a></span>mVramUninit</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> mVramUninit</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a518ba964e71c97afd807a3f106957a28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a518ba964e71c97afd807a3f106957a28">&#9670;&nbsp;</a></span>mVramUninitCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> mVramUninitCount</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8f59b35140aaa50296f52ca2cd486c2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f59b35140aaa50296f52ca2cd486c2c">&#9670;&nbsp;</a></span>mVramUnlock</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> mVramUnlock</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a50bbe772efb5c5ec2a02c67f2e88de2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50bbe772efb5c5ec2a02c67f2e88de2d">&#9670;&nbsp;</a></span>mVramUnlockCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> mVramUnlockCount</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/heap/tst/<a class="el" href="HeapTestFixture_8h_source.html">HeapTestFixture.h</a></li>
-<li>src/heap/tst/HeapTestFixture.cpp</li>
+<li>src/heap/tst/<a class="el" href="HeapTestFixture_8cpp.html">HeapTestFixture.cpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classHeapTestBase.html">HeapTestBase</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

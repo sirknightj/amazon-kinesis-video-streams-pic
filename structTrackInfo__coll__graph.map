@@ -1,0 +1,6 @@
+<map id="TrackInfo" name="TrackInfo">
+<area shape="rect" id="node1" title=" " alt="" coords="111,184,192,211"/>
+<area shape="rect" id="node2" href="$unionTrackCustomData.html" title=" " alt="" coords="83,95,220,121"/>
+<area shape="rect" id="node3" href="$structTrackAudioConfig.html" title=" " alt="" coords="5,5,140,32"/>
+<area shape="rect" id="node4" href="$structTrackVideoConfig.html" title=" " alt="" coords="164,5,299,32"/>
+</map>

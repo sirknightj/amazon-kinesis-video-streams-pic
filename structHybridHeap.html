@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +28,7 @@
    <div id="projectname">Amazon Kinesis Video Streams PIC
    &#160;<span id="projectnumber">1.0.1</span>
    </div>
-   <div id="projectbrief">Platform Independent Code for Amazon Kinesis Video Streams.</div>
+   <div id="projectbrief">Platform independent code for Amazon Kinesis Video Streams</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('structHybridHeap.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,62 +82,64 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="structHybridHeap-members.html">List of all members</a>  </div>
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
 <div class="title">HybridHeap Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="HybridHeap_8h_source.html">HybridHeap.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for HybridHeap:</div>
+<div class="dyncontent">
+<div class="center"><img src="structHybridHeap__coll__graph.png" border="0" usemap="#aHybridHeap_coll__map" alt="Collaboration graph"/></div>
+<map name="aHybridHeap_coll__map" id="aHybridHeap_coll__map">
+<area shape="rect" title=" " alt="" coords="5,360,104,387"/>
+<area shape="rect" href="structBaseHeap.html" title=" " alt="" coords="11,256,99,283"/>
+<area shape="rect" href="structHeap.html" title=" " alt="" coords="27,5,83,32"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a06b2e06b1d12bec3cd89b1948522f444"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structBaseHeap.html">BaseHeap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHybridHeap.html#a06b2e06b1d12bec3cd89b1948522f444">heap</a></td></tr>
-<tr class="separator:a06b2e06b1d12bec3cd89b1948522f444"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa929c5827c63ce7462732746ea5a9751"><td class="memItemLeft" align="right" valign="top">VramInit&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHybridHeap.html#aa929c5827c63ce7462732746ea5a9751">vramInit</a></td></tr>
-<tr class="separator:aa929c5827c63ce7462732746ea5a9751"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a0b19e203d8a882c6e5a21e523814d3"><td class="memItemLeft" align="right" valign="top"><a id="a6a0b19e203d8a882c6e5a21e523814d3"></a>
-VramAlloc&#160;</td><td class="memItemRight" valign="bottom"><b>vramAlloc</b></td></tr>
-<tr class="separator:a6a0b19e203d8a882c6e5a21e523814d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ab4043baf7bbf3876f74450c3f6afc7"><td class="memItemLeft" align="right" valign="top"><a id="a7ab4043baf7bbf3876f74450c3f6afc7"></a>
-VramFree&#160;</td><td class="memItemRight" valign="bottom"><b>vramFree</b></td></tr>
-<tr class="separator:a7ab4043baf7bbf3876f74450c3f6afc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a056ad3204c17c0592b43c83dddb1f954"><td class="memItemLeft" align="right" valign="top"><a id="a056ad3204c17c0592b43c83dddb1f954"></a>
-VramLock&#160;</td><td class="memItemRight" valign="bottom"><b>vramLock</b></td></tr>
-<tr class="separator:a056ad3204c17c0592b43c83dddb1f954"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a618783504ce31647e6e057207dc762"><td class="memItemLeft" align="right" valign="top"><a id="a2a618783504ce31647e6e057207dc762"></a>
-VramUnlock&#160;</td><td class="memItemRight" valign="bottom"><b>vramUnlock</b></td></tr>
-<tr class="separator:a2a618783504ce31647e6e057207dc762"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad34b346c1c9a78ee28060513ae7e00d5"><td class="memItemLeft" align="right" valign="top"><a id="ad34b346c1c9a78ee28060513ae7e00d5"></a>
-VramUninit&#160;</td><td class="memItemRight" valign="bottom"><b>vramUninit</b></td></tr>
-<tr class="separator:ad34b346c1c9a78ee28060513ae7e00d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28ed2ac68342167696992de676424c2a"><td class="memItemLeft" align="right" valign="top"><a id="a28ed2ac68342167696992de676424c2a"></a>
-VramGetMax&#160;</td><td class="memItemRight" valign="bottom"><b>vramGetMax</b></td></tr>
-<tr class="separator:a28ed2ac68342167696992de676424c2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d624a5ade7b60a913af98482aa18ecd"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHybridHeap.html#a9d624a5ade7b60a913af98482aa18ecd">vramInitialized</a></td></tr>
-<tr class="separator:a9d624a5ade7b60a913af98482aa18ecd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a175d49b43c254f1b2250cfade82a9f85"><td class="memItemLeft" align="right" valign="top">PVOID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHybridHeap.html#a175d49b43c254f1b2250cfade82a9f85">libHandle</a></td></tr>
-<tr class="separator:a175d49b43c254f1b2250cfade82a9f85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46990b6093a6d92a049125eef15745f2"><td class="memItemLeft" align="right" valign="top">DOUBLE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHybridHeap.html#a46990b6093a6d92a049125eef15745f2">spillRatio</a></td></tr>
-<tr class="separator:a46990b6093a6d92a049125eef15745f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e56b666a4ba196ae526f7fde035a8c1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structBaseHeap.html">PBaseHeap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHybridHeap.html#a1e56b666a4ba196ae526f7fde035a8c1">pMemHeap</a></td></tr>
-<tr class="separator:a1e56b666a4ba196ae526f7fde035a8c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+Data Fields</h2></td></tr>
+<tr class="memitem:a5b7dbb80dd64e3d7f6e516f9ffa9f00a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structBaseHeap.html">BaseHeap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHybridHeap.html#a5b7dbb80dd64e3d7f6e516f9ffa9f00a">heap</a></td></tr>
+<tr class="separator:a5b7dbb80dd64e3d7f6e516f9ffa9f00a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1f7c81ba4334f74b7c54acb60d63f40"><td class="memItemLeft" align="right" valign="top"><a class="el" href="HybridHeap_8h.html#a3b115a3d342845170256838e8b5db7d0">VramInit</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHybridHeap.html#aa1f7c81ba4334f74b7c54acb60d63f40">vramInit</a></td></tr>
+<tr class="separator:aa1f7c81ba4334f74b7c54acb60d63f40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34aa5dbf33876f15814b8e5522c69f7c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="HybridHeap_8h.html#ab73ea45e50567d0aa19a77e32e1b4cc7">VramAlloc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHybridHeap.html#a34aa5dbf33876f15814b8e5522c69f7c">vramAlloc</a></td></tr>
+<tr class="separator:a34aa5dbf33876f15814b8e5522c69f7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30655f816881f6b27f154f1235369884"><td class="memItemLeft" align="right" valign="top"><a class="el" href="HybridHeap_8h.html#aa69cfbe22a0fc6876c85cef4115427de">VramFree</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHybridHeap.html#a30655f816881f6b27f154f1235369884">vramFree</a></td></tr>
+<tr class="separator:a30655f816881f6b27f154f1235369884"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6920880d7f3992c09732526d1ef64d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="HybridHeap_8h.html#a75b4bb42ca88d7b270d6cc73499fe3db">VramLock</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHybridHeap.html#ac6920880d7f3992c09732526d1ef64d4">vramLock</a></td></tr>
+<tr class="separator:ac6920880d7f3992c09732526d1ef64d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10c8b610364dfe592ad75d72d38b18f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="HybridHeap_8h.html#a9a9008fa925cbadefac83dc1a41252c7">VramUnlock</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHybridHeap.html#a10c8b610364dfe592ad75d72d38b18f6">vramUnlock</a></td></tr>
+<tr class="separator:a10c8b610364dfe592ad75d72d38b18f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04cdf85f2d561ace1b85732bcc7c771b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="HybridHeap_8h.html#aa841c522e69d2d21e150d5004602a61a">VramUninit</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHybridHeap.html#a04cdf85f2d561ace1b85732bcc7c771b">vramUninit</a></td></tr>
+<tr class="separator:a04cdf85f2d561ace1b85732bcc7c771b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8281cdae39ae645b3103fd352e681c54"><td class="memItemLeft" align="right" valign="top"><a class="el" href="HybridHeap_8h.html#a1dafed87c26a1ecf8f4f872f1d3f31b7">VramGetMax</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHybridHeap.html#a8281cdae39ae645b3103fd352e681c54">vramGetMax</a></td></tr>
+<tr class="separator:a8281cdae39ae645b3103fd352e681c54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1389037053343aaf042753dc3d90e63"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a6252187f6e55ba4943e030c350d624bd">BOOL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHybridHeap.html#aa1389037053343aaf042753dc3d90e63">vramInitialized</a></td></tr>
+<tr class="separator:aa1389037053343aaf042753dc3d90e63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1ad1a607a3d286c12bffb57be4fd211"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a44a84094d41db406043c92f2c6344acc">PVOID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHybridHeap.html#ae1ad1a607a3d286c12bffb57be4fd211">libHandle</a></td></tr>
+<tr class="separator:ae1ad1a607a3d286c12bffb57be4fd211"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c48654f7fa6a927b6eb5bdce37ed9a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#aeb90fd78c942591ef3a935cf98baf4f8">DOUBLE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHybridHeap.html#a7c48654f7fa6a927b6eb5bdce37ed9a0">spillRatio</a></td></tr>
+<tr class="separator:a7c48654f7fa6a927b6eb5bdce37ed9a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c9f4bd78c691211b281ee558690e138"><td class="memItemLeft" align="right" valign="top"><a class="el" href="heap_2src_2Include__i_8h.html#a7fed83bbe42830c0b4bd8e77cbda720f">PBaseHeap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHybridHeap.html#a3c9f4bd78c691211b281ee558690e138">pMemHeap</a></td></tr>
+<tr class="separator:a3c9f4bd78c691211b281ee558690e138"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Hybrid heap struct </p>
-</div><h2 class="groupheader">Member Data Documentation</h2>
-<a id="a06b2e06b1d12bec3cd89b1948522f444"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a06b2e06b1d12bec3cd89b1948522f444">&#9670;&nbsp;</a></span>heap</h2>
+</div><h2 class="groupheader">Field Documentation</h2>
+<a id="a5b7dbb80dd64e3d7f6e516f9ffa9f00a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b7dbb80dd64e3d7f6e516f9ffa9f00a">&#9670;&nbsp;</a></span>heap</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structBaseHeap.html">BaseHeap</a> HybridHeap::heap</td>
+          <td class="memname"><a class="el" href="structBaseHeap.html">BaseHeap</a> heap</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -124,14 +147,14 @@ VramGetMax&#160;</td><td class="memItemRight" valign="bottom"><b>vramGetMax</b><
 
 </div>
 </div>
-<a id="a175d49b43c254f1b2250cfade82a9f85"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a175d49b43c254f1b2250cfade82a9f85">&#9670;&nbsp;</a></span>libHandle</h2>
+<a id="ae1ad1a607a3d286c12bffb57be4fd211"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1ad1a607a3d286c12bffb57be4fd211">&#9670;&nbsp;</a></span>libHandle</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">PVOID HybridHeap::libHandle</td>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a44a84094d41db406043c92f2c6344acc">PVOID</a> libHandle</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -139,14 +162,14 @@ VramGetMax&#160;</td><td class="memItemRight" valign="bottom"><b>vramGetMax</b><
 
 </div>
 </div>
-<a id="a1e56b666a4ba196ae526f7fde035a8c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1e56b666a4ba196ae526f7fde035a8c1">&#9670;&nbsp;</a></span>pMemHeap</h2>
+<a id="a3c9f4bd78c691211b281ee558690e138"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c9f4bd78c691211b281ee558690e138">&#9670;&nbsp;</a></span>pMemHeap</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structBaseHeap.html">PBaseHeap</a> HybridHeap::pMemHeap</td>
+          <td class="memname"><a class="el" href="heap_2src_2Include__i_8h.html#a7fed83bbe42830c0b4bd8e77cbda720f">PBaseHeap</a> pMemHeap</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -154,14 +177,14 @@ VramGetMax&#160;</td><td class="memItemRight" valign="bottom"><b>vramGetMax</b><
 
 </div>
 </div>
-<a id="a46990b6093a6d92a049125eef15745f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a46990b6093a6d92a049125eef15745f2">&#9670;&nbsp;</a></span>spillRatio</h2>
+<a id="a7c48654f7fa6a927b6eb5bdce37ed9a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c48654f7fa6a927b6eb5bdce37ed9a0">&#9670;&nbsp;</a></span>spillRatio</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">DOUBLE HybridHeap::spillRatio</td>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#aeb90fd78c942591ef3a935cf98baf4f8">DOUBLE</a> spillRatio</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -169,14 +192,56 @@ VramGetMax&#160;</td><td class="memItemRight" valign="bottom"><b>vramGetMax</b><
 
 </div>
 </div>
-<a id="aa929c5827c63ce7462732746ea5a9751"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa929c5827c63ce7462732746ea5a9751">&#9670;&nbsp;</a></span>vramInit</h2>
+<a id="a34aa5dbf33876f15814b8e5522c69f7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34aa5dbf33876f15814b8e5522c69f7c">&#9670;&nbsp;</a></span>vramAlloc</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">VramInit HybridHeap::vramInit</td>
+          <td class="memname"><a class="el" href="HybridHeap_8h.html#ab73ea45e50567d0aa19a77e32e1b4cc7">VramAlloc</a> vramAlloc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a30655f816881f6b27f154f1235369884"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30655f816881f6b27f154f1235369884">&#9670;&nbsp;</a></span>vramFree</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="HybridHeap_8h.html#aa69cfbe22a0fc6876c85cef4115427de">VramFree</a> vramFree</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8281cdae39ae645b3103fd352e681c54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8281cdae39ae645b3103fd352e681c54">&#9670;&nbsp;</a></span>vramGetMax</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="HybridHeap_8h.html#a1dafed87c26a1ecf8f4f872f1d3f31b7">VramGetMax</a> vramGetMax</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa1f7c81ba4334f74b7c54acb60d63f40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1f7c81ba4334f74b7c54acb60d63f40">&#9670;&nbsp;</a></span>vramInit</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="HybridHeap_8h.html#a3b115a3d342845170256838e8b5db7d0">VramInit</a> vramInit</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -184,14 +249,14 @@ VramGetMax&#160;</td><td class="memItemRight" valign="bottom"><b>vramGetMax</b><
 
 </div>
 </div>
-<a id="a9d624a5ade7b60a913af98482aa18ecd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d624a5ade7b60a913af98482aa18ecd">&#9670;&nbsp;</a></span>vramInitialized</h2>
+<a id="aa1389037053343aaf042753dc3d90e63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1389037053343aaf042753dc3d90e63">&#9670;&nbsp;</a></span>vramInitialized</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">BOOL HybridHeap::vramInitialized</td>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a6252187f6e55ba4943e030c350d624bd">BOOL</a> vramInitialized</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -199,13 +264,59 @@ VramGetMax&#160;</td><td class="memItemRight" valign="bottom"><b>vramGetMax</b><
 
 </div>
 </div>
+<a id="ac6920880d7f3992c09732526d1ef64d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6920880d7f3992c09732526d1ef64d4">&#9670;&nbsp;</a></span>vramLock</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="HybridHeap_8h.html#a75b4bb42ca88d7b270d6cc73499fe3db">VramLock</a> vramLock</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a04cdf85f2d561ace1b85732bcc7c771b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04cdf85f2d561ace1b85732bcc7c771b">&#9670;&nbsp;</a></span>vramUninit</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="HybridHeap_8h.html#aa841c522e69d2d21e150d5004602a61a">VramUninit</a> vramUninit</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a10c8b610364dfe592ad75d72d38b18f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10c8b610364dfe592ad75d72d38b18f6">&#9670;&nbsp;</a></span>vramUnlock</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="HybridHeap_8h.html#a9a9008fa925cbadefac83dc1a41252c7">VramUnlock</a> vramUnlock</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>src/heap/src/<a class="el" href="HybridHeap_8h_source.html">HybridHeap.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structHybridHeap.html">HybridHeap</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

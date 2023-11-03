@@ -1,0 +1,46 @@
+<map id="validateClientCallbacks" name="validateClientCallbacks">
+<area shape="rect" id="node1" title=" " alt="" coords="5,569,181,595"/>
+<area shape="rect" id="node2" href="$client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a0583d920a79a14bb3ae0e64d4ce4ad6d" title=" " alt="" coords="229,5,432,47"/>
+<area shape="rect" id="node3" href="$client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a419f9e832a1931772acaa845c3ef4c3c" title=" " alt="" coords="231,71,431,112"/>
+<area shape="rect" id="node4" href="$client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a092921d1e1bc1f3c21588b59ae8b2630" title=" " alt="" coords="231,136,431,177"/>
+<area shape="rect" id="node5" href="$client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a2d07ae024a5a04b0e485725b537f2748" title=" " alt="" coords="231,201,431,243"/>
+<area shape="rect" id="node6" href="$client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#ad89ff3f0f4a79ec8ca085d9ef6b1e8ed" title=" " alt="" coords="231,267,431,308"/>
+<area shape="rect" id="node7" href="$client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a769fba3c2c23be284d1a48e7dd7d5441" title=" " alt="" coords="231,332,431,373"/>
+<area shape="rect" id="node8" href="$client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a25495c5761ca71314c5c9461aaeb78f2" title=" " alt="" coords="231,397,431,439"/>
+<area shape="rect" id="node9" href="$client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#adf43c5cdf751c74d142f125cb7d418c9" title=" " alt="" coords="231,463,431,504"/>
+<area shape="rect" id="node10" href="$client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#ab6fc57c1fd3b4beaae32b0c337b0b0b9" title=" " alt="" coords="231,528,431,569"/>
+<area shape="rect" id="node11" href="$client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a50b4977a1642a70ec908f0cadfa4cdee" title=" " alt="" coords="231,593,431,635"/>
+<area shape="rect" id="node12" href="$client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#acba5de025acf28d0aedbe29eacca5d4a" title=" " alt="" coords="231,659,431,700"/>
+<area shape="rect" id="node13" href="$client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a1f9a9e9265622b29288c8f9c5185c58c" title=" " alt="" coords="231,724,431,765"/>
+<area shape="rect" id="node14" href="$client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a64098b9b01a4f15ba4f06b6e81c9dc17" title=" " alt="" coords="231,789,431,831"/>
+<area shape="rect" id="node15" href="$client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#ad2b4e682ba32458023f83c344b6c7f8a" title=" " alt="" coords="231,855,431,896"/>
+<area shape="rect" id="node16" href="$client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#aa0f057ae785e88245490e5b263ddaeac" title=" " alt="" coords="231,920,431,961"/>
+<area shape="rect" id="node42" href="$client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a025d3569be8abdbec28442a00d036905" title=" " alt="" coords="231,985,431,1027"/>
+<area shape="rect" id="node43" href="$client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#af479572ddb3113b6afe54d12de69ab44" title=" " alt="" coords="231,1051,431,1092"/>
+<area shape="rect" id="node44" href="$client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a582c2fee4e7d1653a5ed2db0283f8646" title=" " alt="" coords="231,1116,431,1157"/>
+<area shape="rect" id="node17" href="$Stream_8c.html#af553453347f2643f4b278766923c4bbe" title=" " alt="" coords="480,927,583,954"/>
+<area shape="rect" id="node18" href="$view_2include_2com_2amazonaws_2kinesis_2video_2view_2Include_8h.html#ad2d0971549d014548bd0dac06531c474" title=" " alt="" coords="652,725,827,751"/>
+<area shape="rect" id="node19" href="$Stream_8c.html#abc0f57b774ed71ccbce1f35b6f729990" title=" " alt="" coords="676,775,803,802"/>
+<area shape="rect" id="node29" href="$Stream_8h.html#a468d6e495eb8c1a4ce26e80d59006c9f" title=" " alt="" coords="639,826,840,853"/>
+<area shape="rect" id="node33" href="$mkvgen_2include_2com_2amazonaws_2kinesis_2video_2mkvgen_2Include_8h.html#ae3ebd475bf51e3b1405331d910b0f50e" title=" " alt="" coords="651,877,828,903"/>
+<area shape="rect" id="node34" href="$AckParser_8c.html#a53a42dbf3c53c6a45935edf0df97c1f7" title=" " alt="" coords="663,927,816,954"/>
+<area shape="rect" id="node35" href="$state_2include_2com_2amazonaws_2kinesis_2video_2state_2Include_8h.html#a1f301ec522219a71c10eb76809061b02" title=" " alt="" coords="631,978,848,1005"/>
+<area shape="rect" id="node36" href="$state_2include_2com_2amazonaws_2kinesis_2video_2state_2Include_8h.html#aecf8b0e8578c88b036f23e351cf8d819" title=" " alt="" coords="896,966,1109,993"/>
+<area shape="rect" id="node37" href="$Stream_8c.html#a4a403863bae8a1609a52464e1b290c36" title=" " alt="" coords="673,1079,805,1106"/>
+<area shape="rect" id="node20" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#afbc851614f5ab25e5cd0b587bc83ed8b" title=" " alt="" coords="924,699,1081,726"/>
+<area shape="rect" id="node24" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#ad4d066b178b0598e70eeedc6ba1ff112" title=" " alt="" coords="939,775,1066,802"/>
+<area shape="rect" id="node27" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#af561b38526f274ca8b39713b295f3242" title=" " alt="" coords="923,826,1083,853"/>
+<area shape="rect" id="node21" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a6bd64952d61f62e63994aa664a40910b" title=" " alt="" coords="1196,623,1357,650"/>
+<area shape="rect" id="node22" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#af33e8a98b29918693fffb13569bcfc41" title=" " alt="" coords="1189,674,1364,701"/>
+<area shape="rect" id="node23" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#aff45228a42f541aa8ebce2bf57b412a5" title=" " alt="" coords="1191,725,1363,751"/>
+<area shape="rect" id="node25" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a6ffeeb7ef8bd41da1c556d77b34217bd" title=" " alt="" coords="1221,775,1333,802"/>
+<area shape="rect" id="node26" href="$SingleLinkedList_8c.html#aa6b962405519a7911d94490382b06b38" title=" " alt="" coords="1444,775,1563,802"/>
+<area shape="rect" id="node28" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#ae56d520bbef7fcf2dad1c8e95079a37c" title=" " alt="" coords="1187,826,1366,853"/>
+<area shape="rect" id="node30" href="$state_2include_2com_2amazonaws_2kinesis_2video_2state_2Include_8h.html#ac323933daf0496d6eac414db29752de1" title=" " alt="" coords="933,877,1072,903"/>
+<area shape="rect" id="node31" href="$State_8c.html#ac4e80d19e5b4a966e3ad6e2bf8d2ea00" title=" " alt="" coords="1183,877,1371,903"/>
+<area shape="rect" id="node32" href="$State_8c.html#a2af8818b9f0567689089d35d6fa55c9f" title=" " alt="" coords="1193,946,1360,973"/>
+<area shape="rect" id="node38" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a0575aff777ef3bae22a4cd89007d61dd" title=" " alt="" coords="940,1054,1065,1081"/>
+<area shape="rect" id="node40" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#aa9f206e786a66e6e7e98e59808b84c01" title=" " alt="" coords="908,1105,1097,1131"/>
+<area shape="rect" id="node39" href="$Semaphore_8c.html#a867d0e43aeacba29048a11e9d9dc9409" title=" " alt="" coords="1179,1054,1375,1081"/>
+<area shape="rect" id="node41" href="$Semaphore_8c.html#a62ab388a8da475b812c9de066b49fd88" title=" " alt="" coords="1157,1105,1396,1131"/>
+</map>

@@ -1,0 +1,12 @@
+<map id="getStreamingEndpointResult" name="getStreamingEndpointResult">
+<area shape="rect" id="node1" title=" " alt="" coords="795,173,1003,199"/>
+<area shape="rect" id="node2" href="$client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a119daa4ae935a858afb37a5f30b040da" title=" " alt="" coords="539,165,747,207"/>
+<area shape="rect" id="node3" href="$classClientTestBase.html#a0dc6ce57fe11f29f41bdc849f9c775d9" title=" " alt="" coords="276,5,491,47"/>
+<area shape="rect" id="node5" href="$classClientTestBase.html#af4345c512b755b14e597a36ad40f1b30" title=" " alt="" coords="276,71,491,112"/>
+<area shape="rect" id="node6" href="$classClientTestBase.html#a0d81f8c81e29ca6e367896d15fd33732" title=" " alt="" coords="286,136,481,177"/>
+<area shape="rect" id="node8" href="$classClientTestBase.html#a7e4e0d2ffe3d8616928d88588b9174e3" title=" " alt="" coords="276,202,491,229"/>
+<area shape="rect" id="node9" href="$StreamApiFunctionalityTest_8cpp.html#a0a77adee1ad243eae0bd5bd424c0797e" title=" " alt="" coords="349,253,418,279"/>
+<area shape="rect" id="node10" href="$StateTransitionFunctionalityTest_8cpp.html#ae089d38cc0644baa233b921811566804" title=" " alt="" coords="349,303,418,330"/>
+<area shape="rect" id="node4" href="$classClientTestBase.html#a7496cd4902012085060e65a313b17eb0" title=" " alt="" coords="5,13,228,39"/>
+<area shape="rect" id="node7" href="$classClientTestBase.html#ac67f4e5b2fa7846414c13edc8afecb03" title=" " alt="" coords="19,136,214,177"/>
+</map>

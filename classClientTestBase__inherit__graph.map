@@ -1,0 +1,26 @@
+<map id="ClientTestBase" name="ClientTestBase">
+<area shape="rect" id="node1" title=" " alt="" coords="101,553,220,580"/>
+<area shape="rect" id="node3" href="$classAcksFunctionalityTest.html" title=" " alt="" coords="328,5,491,32"/>
+<area shape="rect" id="node4" href="$classCallbacksAndPressuresFunctionalityTest.html" title=" " alt="" coords="268,56,551,83"/>
+<area shape="rect" id="node5" href="$classClientApiFunctionalityTest.html" title=" " alt="" coords="314,107,505,133"/>
+<area shape="rect" id="node6" href="$classClientApiTest.html" title=" " alt="" coords="356,157,463,184"/>
+<area shape="rect" id="node7" href="$classClientFunctionalityTest.html" title=" " alt="" coords="324,208,495,235"/>
+<area shape="rect" id="node8" href="$classFrameOrderCoordinatorTest.html" title=" " alt="" coords="309,259,510,285"/>
+<area shape="rect" id="node9" href="$classIntermittentProducerAutomaticStreamingTest.html" title=" " alt="" coords="297,310,521,351"/>
+<area shape="rect" id="node10" href="$classIntermittentProducerFunctionalityTest.html" title=" " alt="" coords="276,376,543,403"/>
+<area shape="rect" id="node11" href="$classStateTransitionFunctionalityTest.html" title=" " alt="" coords="295,427,524,453"/>
+<area shape="rect" id="node12" href="$classStreamApiFunctionalityScenarioTest.html" title=" " alt="" coords="281,477,537,504"/>
+<area shape="rect" id="node13" href="$classStreamApiFunctionalityTest.html" title=" " alt="" coords="309,528,509,555"/>
+<area shape="rect" id="node14" href="$classStreamApiServiceCallsTest.html" title=" " alt="" coords="311,579,507,605"/>
+<area shape="rect" id="node15" href="$classStreamApiTest.html" title=" " alt="" coords="351,629,467,656"/>
+<area shape="rect" id="node16" href="$classStreamDeviceTagsTest.html" title=" " alt="" coords="325,680,494,707"/>
+<area shape="rect" id="node17" href="$classStreamFunctionalityTest.html" title=" " alt="" coords="320,731,499,757"/>
+<area shape="rect" id="node18" href="$classStreamParallelTest.html" title=" " alt="" coords="338,781,481,808"/>
+<area shape="rect" id="node19" href="$classStreamPutGetTest.html" title=" " alt="" coords="340,832,479,859"/>
+<area shape="rect" id="node20" href="$classStreamRecoveryFunctionalityTest.html" title=" " alt="" coords="289,883,529,909"/>
+<area shape="rect" id="node21" href="$classStreamStateTransitionsTest.html" title=" " alt="" coords="310,933,509,960"/>
+<area shape="rect" id="node22" href="$classStreamStoppingFunctionalityTest.html" title=" " alt="" coords="291,984,527,1011"/>
+<area shape="rect" id="node23" href="$classStreamTokenRotationTest.html" title=" " alt="" coords="316,1035,503,1061"/>
+<area shape="rect" id="node24" href="$classTokenRotationFunctionalityTest.html" title=" " alt="" coords="297,1085,521,1112"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,553,53,580"/>
+</map>

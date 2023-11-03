@@ -1,0 +1,26 @@
+var structStreamMkvGenerator =
+[
+    [ "absoluteTimeClusters", "structStreamMkvGenerator.html#a42931ca8275c12ccd35912ea0207f51c", null ],
+    [ "adaptCpdNals", "structStreamMkvGenerator.html#ae769770a7d8b6518a07fa4fa74db3985", null ],
+    [ "clusterDuration", "structStreamMkvGenerator.html#af0173968b9b3746801d8edb49986d1fe", null ],
+    [ "contentType", "structStreamMkvGenerator.html#addae6f7cd9fecc94e3172018e1fd88db", null ],
+    [ "customData", "structStreamMkvGenerator.html#a770464cf38155534db591ab6cae057ce", null ],
+    [ "generatorState", "structStreamMkvGenerator.html#a83032a8beededacf6462203aa394f55a", null ],
+    [ "getTimeFn", "structStreamMkvGenerator.html#adbdf51a47b0c21b5601c323e34c3cefa", null ],
+    [ "keyFrameClustering", "structStreamMkvGenerator.html#a63c88f3cc6104a90036f1ef62faf2725", null ],
+    [ "lastClusterDts", "structStreamMkvGenerator.html#a0264e1425fadb0e4bc21f0f74ed79ea5", null ],
+    [ "lastClusterPts", "structStreamMkvGenerator.html#a8b080b4dfec8163a61335fc22e3fca4a", null ],
+    [ "mkvGenerator", "structStreamMkvGenerator.html#ae7de6c330256deaa425690392269dbeb", null ],
+    [ "nalsAdaptation", "structStreamMkvGenerator.html#a3ad4d45dc384b060d4c1a11926a0c538", null ],
+    [ "segmentUuid", "structStreamMkvGenerator.html#ad97a27c4f12f834816adcf8253a875d7", null ],
+    [ "streamStartTimestamp", "structStreamMkvGenerator.html#a7029a3b519d1961d32fb62aae13d101a", null ],
+    [ "streamStartTimestampStored", "structStreamMkvGenerator.html#afd756fb965b4cd2a18545fe023c0b0d2", null ],
+    [ "streamTimestamps", "structStreamMkvGenerator.html#a860f8c60ca84354b8456775b5283e1c6", null ],
+    [ "timecodeScale", "structStreamMkvGenerator.html#acc8de743f05c6b6a969b252b8e0f3a18", null ],
+    [ "trackInfoCount", "structStreamMkvGenerator.html#ae2e3c5c7b0d75678b3e9d5877ec11680", null ],
+    [ "trackInfoList", "structStreamMkvGenerator.html#a9bd0adbdc135bfa66dfc2c347cedbcf4", null ],
+    [ "version", "structStreamMkvGenerator.html#a196786bb2999337c155fcc3c3eeadfaa", null ],
+    [ "versionSize", "structStreamMkvGenerator.html#ae13a8d382e5ec7b391d6f6f495371a97", null ],
+    [ "videoHeight", "structStreamMkvGenerator.html#af8c2ffc1cb85792503af1ad1d16b83e7", null ],
+    [ "videoWidth", "structStreamMkvGenerator.html#a2c2ba1fad47dada0abee024e86eb6116", null ]
+];

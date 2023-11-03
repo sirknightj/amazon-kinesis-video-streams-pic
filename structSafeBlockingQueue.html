@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +28,7 @@
    <div id="projectname">Amazon Kinesis Video Streams PIC
    &#160;<span id="projectnumber">1.0.1</span>
    </div>
-   <div id="projectbrief">Platform Independent Code for Amazon Kinesis Video Streams.</div>
+   <div id="projectbrief">Platform independent code for Amazon Kinesis Video Streams</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('structSafeBlockingQueue.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,44 +82,137 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="structSafeBlockingQueue-members.html">List of all members</a>  </div>
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
 <div class="title">SafeBlockingQueue Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h_source.html">Include.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for SafeBlockingQueue:</div>
+<div class="dyncontent">
+<div class="center"><img src="structSafeBlockingQueue__coll__graph.png" border="0" usemap="#aSafeBlockingQueue_coll__map" alt="Collaboration graph"/></div>
+<map name="aSafeBlockingQueue_coll__map" id="aSafeBlockingQueue_coll__map">
+<area shape="rect" title=" " alt="" coords="5,199,155,225"/>
+<area shape="rect" href="structSingleList.html" title=" " alt="" coords="37,109,123,136"/>
+<area shape="rect" href="struct____SingleListNode.html" title=" " alt="" coords="13,5,147,32"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a0df0dd4ddc41a6f7c4b64ab84e0cf2eb"><td class="memItemLeft" align="right" valign="top"><a id="a0df0dd4ddc41a6f7c4b64ab84e0cf2eb"></a>
-volatile ATOMIC_BOOL&#160;</td><td class="memItemRight" valign="bottom"><b>terminate</b></td></tr>
-<tr class="separator:a0df0dd4ddc41a6f7c4b64ab84e0cf2eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2230111d4aba03a104320d17ab744e0f"><td class="memItemLeft" align="right" valign="top"><a id="a2230111d4aba03a104320d17ab744e0f"></a>
-volatile SIZE_T&#160;</td><td class="memItemRight" valign="bottom"><b>atLockCount</b></td></tr>
-<tr class="separator:a2230111d4aba03a104320d17ab744e0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc055adf615bbe85a48a3fa189f586a1"><td class="memItemLeft" align="right" valign="top"><a id="abc055adf615bbe85a48a3fa189f586a1"></a>
-<a class="el" href="structSingleList.html">PStackQueue</a>&#160;</td><td class="memItemRight" valign="bottom"><b>queue</b></td></tr>
-<tr class="separator:abc055adf615bbe85a48a3fa189f586a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb58e195a44cc8f7578906d1767888f5"><td class="memItemLeft" align="right" valign="top"><a id="aeb58e195a44cc8f7578906d1767888f5"></a>
-MUTEX&#160;</td><td class="memItemRight" valign="bottom"><b>mutex</b></td></tr>
-<tr class="separator:aeb58e195a44cc8f7578906d1767888f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a550a5dd7246d0be54897ddcebce11ac9"><td class="memItemLeft" align="right" valign="top"><a id="a550a5dd7246d0be54897ddcebce11ac9"></a>
-SEMAPHORE_HANDLE&#160;</td><td class="memItemRight" valign="bottom"><b>semaphore</b></td></tr>
-<tr class="separator:a550a5dd7246d0be54897ddcebce11ac9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acfdfce35d0c87963594ab26b16b30e18"><td class="memItemLeft" align="right" valign="top"><a id="acfdfce35d0c87963594ab26b16b30e18"></a>
-CVAR&#160;</td><td class="memItemRight" valign="bottom"><b>terminationSignal</b></td></tr>
-<tr class="separator:acfdfce35d0c87963594ab26b16b30e18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+Data Fields</h2></td></tr>
+<tr class="memitem:a89c16298c475d108d0413797f9af00d3"><td class="memItemLeft" align="right" valign="top">volatile <a class="el" href="CommonDefs_8h.html#ade83a52eef8a7a728920c60d7af79e76">ATOMIC_BOOL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSafeBlockingQueue.html#a89c16298c475d108d0413797f9af00d3">terminate</a></td></tr>
+<tr class="separator:a89c16298c475d108d0413797f9af00d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27c955c50f8a21cb978b4ba9168cff21"><td class="memItemLeft" align="right" valign="top">volatile <a class="el" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSafeBlockingQueue.html#a27c955c50f8a21cb978b4ba9168cff21">atLockCount</a></td></tr>
+<tr class="separator:a27c955c50f8a21cb978b4ba9168cff21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa07c180a702787bc8c9c71ac517493bb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#aa6dd2ba647fdef626f09c0db233cacb7">PStackQueue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSafeBlockingQueue.html#aa07c180a702787bc8c9c71ac517493bb">queue</a></td></tr>
+<tr class="separator:aa07c180a702787bc8c9c71ac517493bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76fe2a8f7e3cc09dee061f4f8e8341b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#aacb6173308f40c2f1bb4b0fa0e13411c">MUTEX</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSafeBlockingQueue.html#a76fe2a8f7e3cc09dee061f4f8e8341b7">mutex</a></td></tr>
+<tr class="separator:a76fe2a8f7e3cc09dee061f4f8e8341b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a414e85cc83e339c23d19e5667dbc2b87"><td class="memItemLeft" align="right" valign="top"><a class="el" href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#ac1048629c12eaac3ad7984955c5abfa1">SEMAPHORE_HANDLE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSafeBlockingQueue.html#a414e85cc83e339c23d19e5667dbc2b87">semaphore</a></td></tr>
+<tr class="separator:a414e85cc83e339c23d19e5667dbc2b87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f00cb59899cd04ae7ba878d04b4d58c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a195d7cd42e35c2b87926df619a01a3d3">CVAR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSafeBlockingQueue.html#a1f00cb59899cd04ae7ba878d04b4d58c">terminationSignal</a></td></tr>
+<tr class="separator:a1f00cb59899cd04ae7ba878d04b4d58c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="a27c955c50f8a21cb978b4ba9168cff21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27c955c50f8a21cb978b4ba9168cff21">&#9670;&nbsp;</a></span>atLockCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a> atLockCount</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a76fe2a8f7e3cc09dee061f4f8e8341b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76fe2a8f7e3cc09dee061f4f8e8341b7">&#9670;&nbsp;</a></span>mutex</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#aacb6173308f40c2f1bb4b0fa0e13411c">MUTEX</a> mutex</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa07c180a702787bc8c9c71ac517493bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa07c180a702787bc8c9c71ac517493bb">&#9670;&nbsp;</a></span>queue</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#aa6dd2ba647fdef626f09c0db233cacb7">PStackQueue</a> queue</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a414e85cc83e339c23d19e5667dbc2b87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a414e85cc83e339c23d19e5667dbc2b87">&#9670;&nbsp;</a></span>semaphore</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#ac1048629c12eaac3ad7984955c5abfa1">SEMAPHORE_HANDLE</a> semaphore</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a89c16298c475d108d0413797f9af00d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89c16298c475d108d0413797f9af00d3">&#9670;&nbsp;</a></span>terminate</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="CommonDefs_8h.html#ade83a52eef8a7a728920c60d7af79e76">ATOMIC_BOOL</a> terminate</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1f00cb59899cd04ae7ba878d04b4d58c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f00cb59899cd04ae7ba878d04b4d58c">&#9670;&nbsp;</a></span>terminationSignal</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a195d7cd42e35c2b87926df619a01a3d3">CVAR</a> terminationSignal</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>src/utils/include/com/amazonaws/kinesis/video/utils/<a class="el" href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h_source.html">Include.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structSafeBlockingQueue.html">SafeBlockingQueue</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

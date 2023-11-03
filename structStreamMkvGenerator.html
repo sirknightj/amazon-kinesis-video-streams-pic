@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +28,7 @@
    <div id="projectname">Amazon Kinesis Video Streams PIC
    &#160;<span id="projectnumber">1.0.1</span>
    </div>
-   <div id="projectbrief">Platform Independent Code for Amazon Kinesis Video Streams.</div>
+   <div id="projectbrief">Platform independent code for Amazon Kinesis Video Streams</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('structStreamMkvGenerator.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,99 +82,414 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="structStreamMkvGenerator-members.html">List of all members</a>  </div>
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
 <div class="title">StreamMkvGenerator Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="mkvgen_2src_2Include__i_8h_source.html">Include_i.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for StreamMkvGenerator:</div>
+<div class="dyncontent">
+<div class="center"><img src="structStreamMkvGenerator__coll__graph.png" border="0" usemap="#aStreamMkvGenerator_coll__map" alt="Collaboration graph"/></div>
+<map name="aStreamMkvGenerator_coll__map" id="aStreamMkvGenerator_coll__map">
+<area shape="rect" title=" " alt="" coords="141,273,303,300"/>
+<area shape="rect" href="structTrackInfo.html" title=" " alt="" coords="111,184,192,211"/>
+<area shape="rect" href="unionTrackCustomData.html" title=" " alt="" coords="83,95,220,121"/>
+<area shape="rect" href="structTrackAudioConfig.html" title=" " alt="" coords="5,5,140,32"/>
+<area shape="rect" href="structTrackVideoConfig.html" title=" " alt="" coords="164,5,299,32"/>
+<area shape="rect" href="struct____MkvGenerator.html" title=" " alt="" coords="216,184,345,211"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a05a9cde79191dffd54b688663c60c09d"><td class="memItemLeft" align="right" valign="top"><a id="a05a9cde79191dffd54b688663c60c09d"></a>
-<a class="el" href="struct____MkvGenerator.html">MkvGenerator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mkvGenerator</b></td></tr>
-<tr class="separator:a05a9cde79191dffd54b688663c60c09d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec9163d6d717bc4cee42546c68527d36"><td class="memItemLeft" align="right" valign="top"><a id="aec9163d6d717bc4cee42546c68527d36"></a>
-BOOL&#160;</td><td class="memItemRight" valign="bottom"><b>keyFrameClustering</b></td></tr>
-<tr class="separator:aec9163d6d717bc4cee42546c68527d36"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba6b5de445dc0c00456a0e4bfaa10000"><td class="memItemLeft" align="right" valign="top"><a id="aba6b5de445dc0c00456a0e4bfaa10000"></a>
-BOOL&#160;</td><td class="memItemRight" valign="bottom"><b>streamTimestamps</b></td></tr>
-<tr class="separator:aba6b5de445dc0c00456a0e4bfaa10000"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add66b9205f222fdeb834f9b628e9fb56"><td class="memItemLeft" align="right" valign="top"><a id="add66b9205f222fdeb834f9b628e9fb56"></a>
-BOOL&#160;</td><td class="memItemRight" valign="bottom"><b>absoluteTimeClusters</b></td></tr>
-<tr class="separator:add66b9205f222fdeb834f9b628e9fb56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41832df546dad85384978db87be024ad"><td class="memItemLeft" align="right" valign="top"><a id="a41832df546dad85384978db87be024ad"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>timecodeScale</b></td></tr>
-<tr class="separator:a41832df546dad85384978db87be024ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3d975299486e6c0eab36d8cb87f1f1d"><td class="memItemLeft" align="right" valign="top"><a id="ac3d975299486e6c0eab36d8cb87f1f1d"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>clusterDuration</b></td></tr>
-<tr class="separator:ac3d975299486e6c0eab36d8cb87f1f1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e09cea374c0b83875d4d72ba0365a35"><td class="memItemLeft" align="right" valign="top"><a id="a1e09cea374c0b83875d4d72ba0365a35"></a>
-MKV_CONTENT_TYPE&#160;</td><td class="memItemRight" valign="bottom"><b>contentType</b></td></tr>
-<tr class="separator:a1e09cea374c0b83875d4d72ba0365a35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a157d5da03f855c9fc6d7a4776fa220c9"><td class="memItemLeft" align="right" valign="top"><a id="a157d5da03f855c9fc6d7a4776fa220c9"></a>
-GetCurrentTimeFunc&#160;</td><td class="memItemRight" valign="bottom"><b>getTimeFn</b></td></tr>
-<tr class="separator:a157d5da03f855c9fc6d7a4776fa220c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4c7c7c0ab02ea27353924c0837a1774"><td class="memItemLeft" align="right" valign="top"><a id="ad4c7c7c0ab02ea27353924c0837a1774"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>customData</b></td></tr>
-<tr class="separator:ad4c7c7c0ab02ea27353924c0837a1774"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c61ad823bdcc653e154c66b2ef5cb49"><td class="memItemLeft" align="right" valign="top"><a id="a7c61ad823bdcc653e154c66b2ef5cb49"></a>
-MKV_GENERATOR_STATE&#160;</td><td class="memItemRight" valign="bottom"><b>generatorState</b></td></tr>
-<tr class="separator:a7c61ad823bdcc653e154c66b2ef5cb49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab930cc76b01b3ee19e9265edf5d1e69c"><td class="memItemLeft" align="right" valign="top"><a id="ab930cc76b01b3ee19e9265edf5d1e69c"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>lastClusterPts</b></td></tr>
-<tr class="separator:ab930cc76b01b3ee19e9265edf5d1e69c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1aa367fccd9a9395236245ae4e07b01b"><td class="memItemLeft" align="right" valign="top"><a id="a1aa367fccd9a9395236245ae4e07b01b"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>lastClusterDts</b></td></tr>
-<tr class="separator:a1aa367fccd9a9395236245ae4e07b01b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2564a6a03ee8421e3b441678aaf3b3f8"><td class="memItemLeft" align="right" valign="top"><a id="a2564a6a03ee8421e3b441678aaf3b3f8"></a>
-UINT64&#160;</td><td class="memItemRight" valign="bottom"><b>streamStartTimestamp</b></td></tr>
-<tr class="separator:a2564a6a03ee8421e3b441678aaf3b3f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ab7ae3de2f5be0f3e70407387af1d3c"><td class="memItemLeft" align="right" valign="top"><a id="a5ab7ae3de2f5be0f3e70407387af1d3c"></a>
-BOOL&#160;</td><td class="memItemRight" valign="bottom"><b>streamStartTimestampStored</b></td></tr>
-<tr class="separator:a5ab7ae3de2f5be0f3e70407387af1d3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad05ffedee451c845f945557f2def3ee0"><td class="memItemLeft" align="right" valign="top"><a id="ad05ffedee451c845f945557f2def3ee0"></a>
-MKV_NALS_ADAPTATION&#160;</td><td class="memItemRight" valign="bottom"><b>nalsAdaptation</b></td></tr>
-<tr class="separator:ad05ffedee451c845f945557f2def3ee0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afdfce2bc81e03950b532871d5c36a664"><td class="memItemLeft" align="right" valign="top"><a id="afdfce2bc81e03950b532871d5c36a664"></a>
-BOOL&#160;</td><td class="memItemRight" valign="bottom"><b>adaptCpdNals</b></td></tr>
-<tr class="separator:afdfce2bc81e03950b532871d5c36a664"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad52511529a83024f7268ebd8201199e2"><td class="memItemLeft" align="right" valign="top"><a id="ad52511529a83024f7268ebd8201199e2"></a>
-UINT16&#160;</td><td class="memItemRight" valign="bottom"><b>videoWidth</b></td></tr>
-<tr class="separator:ad52511529a83024f7268ebd8201199e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acef22512c1ae3b059c8ab4ac496c0c78"><td class="memItemLeft" align="right" valign="top"><a id="acef22512c1ae3b059c8ab4ac496c0c78"></a>
-UINT16&#160;</td><td class="memItemRight" valign="bottom"><b>videoHeight</b></td></tr>
-<tr class="separator:acef22512c1ae3b059c8ab4ac496c0c78"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b3cb7b946e04011425639a643b81a9c"><td class="memItemLeft" align="right" valign="top"><a id="a5b3cb7b946e04011425639a643b81a9c"></a>
-BYTE&#160;</td><td class="memItemRight" valign="bottom"><b>segmentUuid</b> [MKV_SEGMENT_UUID_LEN]</td></tr>
-<tr class="separator:a5b3cb7b946e04011425639a643b81a9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afbd8beef1ff9d5aeb51b6a7edae3e0ff"><td class="memItemLeft" align="right" valign="top"><a id="afbd8beef1ff9d5aeb51b6a7edae3e0ff"></a>
-<a class="el" href="structTrackInfo.html">PTrackInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><b>trackInfoList</b></td></tr>
-<tr class="separator:afbd8beef1ff9d5aeb51b6a7edae3e0ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b0b6939e49990f7439663b66bebaca6"><td class="memItemLeft" align="right" valign="top"><a id="a4b0b6939e49990f7439663b66bebaca6"></a>
-UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>trackInfoCount</b></td></tr>
-<tr class="separator:a4b0b6939e49990f7439663b66bebaca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1872e1345474c155d3448c94e1288ed5"><td class="memItemLeft" align="right" valign="top"><a id="a1872e1345474c155d3448c94e1288ed5"></a>
-CHAR&#160;</td><td class="memItemRight" valign="bottom"><b>version</b> [MAX_MKV_CLIENT_ID_STRING_LEN+SIZEOF(MKV_GENERATOR_CURRENT_VERSION_STRING)+1]</td></tr>
-<tr class="separator:a1872e1345474c155d3448c94e1288ed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7fb417b9f8c9242f289a488a313fa9b7"><td class="memItemLeft" align="right" valign="top"><a id="a7fb417b9f8c9242f289a488a313fa9b7"></a>
-UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>versionSize</b></td></tr>
-<tr class="separator:a7fb417b9f8c9242f289a488a313fa9b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+Data Fields</h2></td></tr>
+<tr class="memitem:ae7de6c330256deaa425690392269dbeb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="mkvgen_2include_2com_2amazonaws_2kinesis_2video_2mkvgen_2Include_8h.html#a656e7985b9fa6d994168f6e53c68082c">MkvGenerator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structStreamMkvGenerator.html#ae7de6c330256deaa425690392269dbeb">mkvGenerator</a></td></tr>
+<tr class="separator:ae7de6c330256deaa425690392269dbeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63c88f3cc6104a90036f1ef62faf2725"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a6252187f6e55ba4943e030c350d624bd">BOOL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structStreamMkvGenerator.html#a63c88f3cc6104a90036f1ef62faf2725">keyFrameClustering</a></td></tr>
+<tr class="separator:a63c88f3cc6104a90036f1ef62faf2725"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a860f8c60ca84354b8456775b5283e1c6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a6252187f6e55ba4943e030c350d624bd">BOOL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structStreamMkvGenerator.html#a860f8c60ca84354b8456775b5283e1c6">streamTimestamps</a></td></tr>
+<tr class="separator:a860f8c60ca84354b8456775b5283e1c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42931ca8275c12ccd35912ea0207f51c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a6252187f6e55ba4943e030c350d624bd">BOOL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structStreamMkvGenerator.html#a42931ca8275c12ccd35912ea0207f51c">absoluteTimeClusters</a></td></tr>
+<tr class="separator:a42931ca8275c12ccd35912ea0207f51c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc8de743f05c6b6a969b252b8e0f3a18"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structStreamMkvGenerator.html#acc8de743f05c6b6a969b252b8e0f3a18">timecodeScale</a></td></tr>
+<tr class="separator:acc8de743f05c6b6a969b252b8e0f3a18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0173968b9b3746801d8edb49986d1fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structStreamMkvGenerator.html#af0173968b9b3746801d8edb49986d1fe">clusterDuration</a></td></tr>
+<tr class="separator:af0173968b9b3746801d8edb49986d1fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addae6f7cd9fecc94e3172018e1fd88db"><td class="memItemLeft" align="right" valign="top"><a class="el" href="mkvgen_2src_2Include__i_8h.html#a0629b81ca668b453dc9d980ee2b1c575">MKV_CONTENT_TYPE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structStreamMkvGenerator.html#addae6f7cd9fecc94e3172018e1fd88db">contentType</a></td></tr>
+<tr class="separator:addae6f7cd9fecc94e3172018e1fd88db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbdf51a47b0c21b5601c323e34c3cefa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="mkvgen_2include_2com_2amazonaws_2kinesis_2video_2mkvgen_2Include_8h.html#a0c5b72fcf1f5561e6d9827f4031a73df">GetCurrentTimeFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structStreamMkvGenerator.html#adbdf51a47b0c21b5601c323e34c3cefa">getTimeFn</a></td></tr>
+<tr class="separator:adbdf51a47b0c21b5601c323e34c3cefa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a770464cf38155534db591ab6cae057ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structStreamMkvGenerator.html#a770464cf38155534db591ab6cae057ce">customData</a></td></tr>
+<tr class="separator:a770464cf38155534db591ab6cae057ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83032a8beededacf6462203aa394f55a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="mkvgen_2src_2Include__i_8h.html#a50cf22c7fb9c514ecfe87edf68f0c893">MKV_GENERATOR_STATE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structStreamMkvGenerator.html#a83032a8beededacf6462203aa394f55a">generatorState</a></td></tr>
+<tr class="separator:a83032a8beededacf6462203aa394f55a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b080b4dfec8163a61335fc22e3fca4a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structStreamMkvGenerator.html#a8b080b4dfec8163a61335fc22e3fca4a">lastClusterPts</a></td></tr>
+<tr class="separator:a8b080b4dfec8163a61335fc22e3fca4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0264e1425fadb0e4bc21f0f74ed79ea5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structStreamMkvGenerator.html#a0264e1425fadb0e4bc21f0f74ed79ea5">lastClusterDts</a></td></tr>
+<tr class="separator:a0264e1425fadb0e4bc21f0f74ed79ea5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7029a3b519d1961d32fb62aae13d101a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structStreamMkvGenerator.html#a7029a3b519d1961d32fb62aae13d101a">streamStartTimestamp</a></td></tr>
+<tr class="separator:a7029a3b519d1961d32fb62aae13d101a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd756fb965b4cd2a18545fe023c0b0d2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a6252187f6e55ba4943e030c350d624bd">BOOL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structStreamMkvGenerator.html#afd756fb965b4cd2a18545fe023c0b0d2">streamStartTimestampStored</a></td></tr>
+<tr class="separator:afd756fb965b4cd2a18545fe023c0b0d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ad4d45dc384b060d4c1a11926a0c538"><td class="memItemLeft" align="right" valign="top"><a class="el" href="NalAdapter_8h.html#af2c244cb8e84dcd5ce932c8e9c883991">MKV_NALS_ADAPTATION</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structStreamMkvGenerator.html#a3ad4d45dc384b060d4c1a11926a0c538">nalsAdaptation</a></td></tr>
+<tr class="separator:a3ad4d45dc384b060d4c1a11926a0c538"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae769770a7d8b6518a07fa4fa74db3985"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a6252187f6e55ba4943e030c350d624bd">BOOL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structStreamMkvGenerator.html#ae769770a7d8b6518a07fa4fa74db3985">adaptCpdNals</a></td></tr>
+<tr class="separator:ae769770a7d8b6518a07fa4fa74db3985"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c2ba1fad47dada0abee024e86eb6116"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structStreamMkvGenerator.html#a2c2ba1fad47dada0abee024e86eb6116">videoWidth</a></td></tr>
+<tr class="separator:a2c2ba1fad47dada0abee024e86eb6116"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8c2ffc1cb85792503af1ad1d16b83e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structStreamMkvGenerator.html#af8c2ffc1cb85792503af1ad1d16b83e7">videoHeight</a></td></tr>
+<tr class="separator:af8c2ffc1cb85792503af1ad1d16b83e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad97a27c4f12f834816adcf8253a875d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a7f198a4ec02dba18942d78b7bc065e06">BYTE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structStreamMkvGenerator.html#ad97a27c4f12f834816adcf8253a875d7">segmentUuid</a> [<a class="el" href="mkvgen_2include_2com_2amazonaws_2kinesis_2video_2mkvgen_2Include_8h.html#a854109ad23fdceb95c8b878d012f6088">MKV_SEGMENT_UUID_LEN</a>]</td></tr>
+<tr class="separator:ad97a27c4f12f834816adcf8253a875d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bd0adbdc135bfa66dfc2c347cedbcf4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="mkvgen_2include_2com_2amazonaws_2kinesis_2video_2mkvgen_2Include_8h.html#a2ed311acd6dfb73a095c1d6cb3645740">PTrackInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structStreamMkvGenerator.html#a9bd0adbdc135bfa66dfc2c347cedbcf4">trackInfoList</a></td></tr>
+<tr class="separator:a9bd0adbdc135bfa66dfc2c347cedbcf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2e3c5c7b0d75678b3e9d5877ec11680"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structStreamMkvGenerator.html#ae2e3c5c7b0d75678b3e9d5877ec11680">trackInfoCount</a></td></tr>
+<tr class="separator:ae2e3c5c7b0d75678b3e9d5877ec11680"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a196786bb2999337c155fcc3c3eeadfaa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#aebb9e13210d88d43e32e735ada43a425">CHAR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structStreamMkvGenerator.html#a196786bb2999337c155fcc3c3eeadfaa">version</a> [<a class="el" href="mkvgen_2include_2com_2amazonaws_2kinesis_2video_2mkvgen_2Include_8h.html#a4d3576a19021c29d6a5bac312c4f98e0">MAX_MKV_CLIENT_ID_STRING_LEN</a>+<a class="el" href="CommonDefs_8h.html#adb5bdad0c0d045cf0679648a4f3b19ed">SIZEOF</a>(<a class="el" href="mkvgen_2src_2Include__i_8h.html#a3f41228b3a6993c1cb5c7de92fb3bb1b">MKV_GENERATOR_CURRENT_VERSION_STRING</a>)+1]</td></tr>
+<tr class="separator:a196786bb2999337c155fcc3c3eeadfaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae13a8d382e5ec7b391d6f6f495371a97"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structStreamMkvGenerator.html#ae13a8d382e5ec7b391d6f6f495371a97">versionSize</a></td></tr>
+<tr class="separator:ae13a8d382e5ec7b391d6f6f495371a97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>MkvGenerator internal structure </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+</div><h2 class="groupheader">Field Documentation</h2>
+<a id="a42931ca8275c12ccd35912ea0207f51c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42931ca8275c12ccd35912ea0207f51c">&#9670;&nbsp;</a></span>absoluteTimeClusters</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a6252187f6e55ba4943e030c350d624bd">BOOL</a> absoluteTimeClusters</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae769770a7d8b6518a07fa4fa74db3985"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae769770a7d8b6518a07fa4fa74db3985">&#9670;&nbsp;</a></span>adaptCpdNals</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a6252187f6e55ba4943e030c350d624bd">BOOL</a> adaptCpdNals</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af0173968b9b3746801d8edb49986d1fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0173968b9b3746801d8edb49986d1fe">&#9670;&nbsp;</a></span>clusterDuration</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> clusterDuration</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="addae6f7cd9fecc94e3172018e1fd88db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addae6f7cd9fecc94e3172018e1fd88db">&#9670;&nbsp;</a></span>contentType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="mkvgen_2src_2Include__i_8h.html#a0629b81ca668b453dc9d980ee2b1c575">MKV_CONTENT_TYPE</a> contentType</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a770464cf38155534db591ab6cae057ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a770464cf38155534db591ab6cae057ce">&#9670;&nbsp;</a></span>customData</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> customData</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a83032a8beededacf6462203aa394f55a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83032a8beededacf6462203aa394f55a">&#9670;&nbsp;</a></span>generatorState</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="mkvgen_2src_2Include__i_8h.html#a50cf22c7fb9c514ecfe87edf68f0c893">MKV_GENERATOR_STATE</a> generatorState</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adbdf51a47b0c21b5601c323e34c3cefa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbdf51a47b0c21b5601c323e34c3cefa">&#9670;&nbsp;</a></span>getTimeFn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="mkvgen_2include_2com_2amazonaws_2kinesis_2video_2mkvgen_2Include_8h.html#a0c5b72fcf1f5561e6d9827f4031a73df">GetCurrentTimeFunc</a> getTimeFn</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a63c88f3cc6104a90036f1ef62faf2725"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63c88f3cc6104a90036f1ef62faf2725">&#9670;&nbsp;</a></span>keyFrameClustering</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a6252187f6e55ba4943e030c350d624bd">BOOL</a> keyFrameClustering</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0264e1425fadb0e4bc21f0f74ed79ea5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0264e1425fadb0e4bc21f0f74ed79ea5">&#9670;&nbsp;</a></span>lastClusterDts</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> lastClusterDts</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8b080b4dfec8163a61335fc22e3fca4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b080b4dfec8163a61335fc22e3fca4a">&#9670;&nbsp;</a></span>lastClusterPts</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> lastClusterPts</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae7de6c330256deaa425690392269dbeb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7de6c330256deaa425690392269dbeb">&#9670;&nbsp;</a></span>mkvGenerator</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="mkvgen_2include_2com_2amazonaws_2kinesis_2video_2mkvgen_2Include_8h.html#a656e7985b9fa6d994168f6e53c68082c">MkvGenerator</a> mkvGenerator</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3ad4d45dc384b060d4c1a11926a0c538"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ad4d45dc384b060d4c1a11926a0c538">&#9670;&nbsp;</a></span>nalsAdaptation</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="NalAdapter_8h.html#af2c244cb8e84dcd5ce932c8e9c883991">MKV_NALS_ADAPTATION</a> nalsAdaptation</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad97a27c4f12f834816adcf8253a875d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad97a27c4f12f834816adcf8253a875d7">&#9670;&nbsp;</a></span>segmentUuid</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a7f198a4ec02dba18942d78b7bc065e06">BYTE</a> segmentUuid[<a class="el" href="mkvgen_2include_2com_2amazonaws_2kinesis_2video_2mkvgen_2Include_8h.html#a854109ad23fdceb95c8b878d012f6088">MKV_SEGMENT_UUID_LEN</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7029a3b519d1961d32fb62aae13d101a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7029a3b519d1961d32fb62aae13d101a">&#9670;&nbsp;</a></span>streamStartTimestamp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> streamStartTimestamp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afd756fb965b4cd2a18545fe023c0b0d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd756fb965b4cd2a18545fe023c0b0d2">&#9670;&nbsp;</a></span>streamStartTimestampStored</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a6252187f6e55ba4943e030c350d624bd">BOOL</a> streamStartTimestampStored</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a860f8c60ca84354b8456775b5283e1c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a860f8c60ca84354b8456775b5283e1c6">&#9670;&nbsp;</a></span>streamTimestamps</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a6252187f6e55ba4943e030c350d624bd">BOOL</a> streamTimestamps</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acc8de743f05c6b6a969b252b8e0f3a18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc8de743f05c6b6a969b252b8e0f3a18">&#9670;&nbsp;</a></span>timecodeScale</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a57be03562867144161c1bfee95ca8f7c">UINT64</a> timecodeScale</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae2e3c5c7b0d75678b3e9d5877ec11680"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2e3c5c7b0d75678b3e9d5877ec11680">&#9670;&nbsp;</a></span>trackInfoCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> trackInfoCount</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9bd0adbdc135bfa66dfc2c347cedbcf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bd0adbdc135bfa66dfc2c347cedbcf4">&#9670;&nbsp;</a></span>trackInfoList</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="mkvgen_2include_2com_2amazonaws_2kinesis_2video_2mkvgen_2Include_8h.html#a2ed311acd6dfb73a095c1d6cb3645740">PTrackInfo</a> trackInfoList</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a196786bb2999337c155fcc3c3eeadfaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a196786bb2999337c155fcc3c3eeadfaa">&#9670;&nbsp;</a></span>version</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#aebb9e13210d88d43e32e735ada43a425">CHAR</a> version[<a class="el" href="mkvgen_2include_2com_2amazonaws_2kinesis_2video_2mkvgen_2Include_8h.html#a4d3576a19021c29d6a5bac312c4f98e0">MAX_MKV_CLIENT_ID_STRING_LEN</a>+<a class="el" href="CommonDefs_8h.html#adb5bdad0c0d045cf0679648a4f3b19ed">SIZEOF</a>(<a class="el" href="mkvgen_2src_2Include__i_8h.html#a3f41228b3a6993c1cb5c7de92fb3bb1b">MKV_GENERATOR_CURRENT_VERSION_STRING</a>)+1]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae13a8d382e5ec7b391d6f6f495371a97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae13a8d382e5ec7b391d6f6f495371a97">&#9670;&nbsp;</a></span>versionSize</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> versionSize</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af8c2ffc1cb85792503af1ad1d16b83e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8c2ffc1cb85792503af1ad1d16b83e7">&#9670;&nbsp;</a></span>videoHeight</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a> videoHeight</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2c2ba1fad47dada0abee024e86eb6116"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c2ba1fad47dada0abee024e86eb6116">&#9670;&nbsp;</a></span>videoWidth</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a> videoWidth</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>src/mkvgen/src/<a class="el" href="mkvgen_2src_2Include__i_8h_source.html">Include_i.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structStreamMkvGenerator.html">StreamMkvGenerator</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

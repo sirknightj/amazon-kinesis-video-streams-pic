@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +28,7 @@
    <div id="projectname">Amazon Kinesis Video Streams PIC
    &#160;<span id="projectnumber">1.0.1</span>
    </div>
-   <div id="projectbrief">Platform Independent Code for Amazon Kinesis Video Streams.</div>
+   <div id="projectbrief">Platform independent code for Amazon Kinesis Video Streams</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('struct____DeviceInfo__V0.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,44 +82,137 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="struct____DeviceInfo__V0-members.html">List of all members</a>  </div>
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
 <div class="title">__DeviceInfo_V0 Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="client_2src_2Include__i_8h_source.html">Include_i.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for __DeviceInfo_V0:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct____DeviceInfo__V0__coll__graph.png" border="0" usemap="#a____DeviceInfo__V0_coll__map" alt="Collaboration graph"/></div>
+<map name="a____DeviceInfo__V0_coll__map" id="a____DeviceInfo__V0_coll__map">
+<area shape="rect" title=" " alt="" coords="24,95,155,121"/>
+<area shape="rect" href="struct____Tag.html" title=" " alt="" coords="5,5,64,32"/>
+<area shape="rect" href="struct____StorageInfo.html" title=" " alt="" coords="89,5,199,32"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a86a90d0fdc864b6dfdcedbd04481f0cb"><td class="memItemLeft" align="right" valign="top"><a id="a86a90d0fdc864b6dfdcedbd04481f0cb"></a>
-UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>version</b></td></tr>
-<tr class="separator:a86a90d0fdc864b6dfdcedbd04481f0cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a698bd2049eae655f93aef6f6557f134e"><td class="memItemLeft" align="right" valign="top"><a id="a698bd2049eae655f93aef6f6557f134e"></a>
-CHAR&#160;</td><td class="memItemRight" valign="bottom"><b>name</b> [MAX_DEVICE_NAME_LEN+1]</td></tr>
-<tr class="separator:a698bd2049eae655f93aef6f6557f134e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3bfe1e82dd677b6225968bd5f8f9bad9"><td class="memItemLeft" align="right" valign="top"><a id="a3bfe1e82dd677b6225968bd5f8f9bad9"></a>
-UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>tagCount</b></td></tr>
-<tr class="separator:a3bfe1e82dd677b6225968bd5f8f9bad9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a729c45800a2f09719139db64d6f7a52a"><td class="memItemLeft" align="right" valign="top"><a id="a729c45800a2f09719139db64d6f7a52a"></a>
-<a class="el" href="struct____Tag.html">PTag</a>&#160;</td><td class="memItemRight" valign="bottom"><b>tags</b></td></tr>
-<tr class="separator:a729c45800a2f09719139db64d6f7a52a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4042dc36ed0a0c2af390f17caed668eb"><td class="memItemLeft" align="right" valign="top"><a id="a4042dc36ed0a0c2af390f17caed668eb"></a>
-<a class="el" href="struct____StorageInfo.html">StorageInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><b>storageInfo</b></td></tr>
-<tr class="separator:a4042dc36ed0a0c2af390f17caed668eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aafb08a7e9784c732c2e343436af7228b"><td class="memItemLeft" align="right" valign="top"><a id="aafb08a7e9784c732c2e343436af7228b"></a>
-UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>streamCount</b></td></tr>
-<tr class="separator:aafb08a7e9784c732c2e343436af7228b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+Data Fields</h2></td></tr>
+<tr class="memitem:a8ffac79cdfb8a2da19ee271752749738"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____DeviceInfo__V0.html#a8ffac79cdfb8a2da19ee271752749738">version</a></td></tr>
+<tr class="separator:a8ffac79cdfb8a2da19ee271752749738"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae29b86ee5b7796634736e0f241af7ada"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#aebb9e13210d88d43e32e735ada43a425">CHAR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____DeviceInfo__V0.html#ae29b86ee5b7796634736e0f241af7ada">name</a> [<a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a0666ed218212a20f00a6c65caa3141bc">MAX_DEVICE_NAME_LEN</a>+1]</td></tr>
+<tr class="separator:ae29b86ee5b7796634736e0f241af7ada"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dc6040fb28d39523c95ba9d4a1b1b71"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____DeviceInfo__V0.html#a5dc6040fb28d39523c95ba9d4a1b1b71">tagCount</a></td></tr>
+<tr class="separator:a5dc6040fb28d39523c95ba9d4a1b1b71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af89d065f0599a0e41eb41813b08a4531"><td class="memItemLeft" align="right" valign="top"><a class="el" href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#aba6e777e4845e8ba7a1094150475dad6">PTag</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____DeviceInfo__V0.html#af89d065f0599a0e41eb41813b08a4531">tags</a></td></tr>
+<tr class="separator:af89d065f0599a0e41eb41813b08a4531"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a704f1dcb8dd98b487953f5b90ccc3da3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a17a03fac7040a49f8c85e73bb0fc7c19">StorageInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____DeviceInfo__V0.html#a704f1dcb8dd98b487953f5b90ccc3da3">storageInfo</a></td></tr>
+<tr class="separator:a704f1dcb8dd98b487953f5b90ccc3da3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31c99602c4d22b5b66879d1253d79958"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____DeviceInfo__V0.html#a31c99602c4d22b5b66879d1253d79958">streamCount</a></td></tr>
+<tr class="separator:a31c99602c4d22b5b66879d1253d79958"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="ae29b86ee5b7796634736e0f241af7ada"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae29b86ee5b7796634736e0f241af7ada">&#9670;&nbsp;</a></span>name</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#aebb9e13210d88d43e32e735ada43a425">CHAR</a> name[<a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a0666ed218212a20f00a6c65caa3141bc">MAX_DEVICE_NAME_LEN</a>+1]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a704f1dcb8dd98b487953f5b90ccc3da3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a704f1dcb8dd98b487953f5b90ccc3da3">&#9670;&nbsp;</a></span>storageInfo</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a17a03fac7040a49f8c85e73bb0fc7c19">StorageInfo</a> storageInfo</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a31c99602c4d22b5b66879d1253d79958"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31c99602c4d22b5b66879d1253d79958">&#9670;&nbsp;</a></span>streamCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> streamCount</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5dc6040fb28d39523c95ba9d4a1b1b71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5dc6040fb28d39523c95ba9d4a1b1b71">&#9670;&nbsp;</a></span>tagCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> tagCount</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af89d065f0599a0e41eb41813b08a4531"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af89d065f0599a0e41eb41813b08a4531">&#9670;&nbsp;</a></span>tags</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#aba6e777e4845e8ba7a1094150475dad6">PTag</a> tags</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8ffac79cdfb8a2da19ee271752749738"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ffac79cdfb8a2da19ee271752749738">&#9670;&nbsp;</a></span>version</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> version</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>src/client/src/<a class="el" href="client_2src_2Include__i_8h_source.html">Include_i.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="struct____DeviceInfo__V0.html">__DeviceInfo_V0</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

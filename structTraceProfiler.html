@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +28,7 @@
    <div id="projectname">Amazon Kinesis Video Streams PIC
    &#160;<span id="projectnumber">1.0.1</span>
    </div>
-   <div id="projectbrief">Platform Independent Code for Amazon Kinesis Video Streams.</div>
+   <div id="projectbrief">Platform independent code for Amazon Kinesis Video Streams</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('structTraceProfiler.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,54 +82,60 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="structTraceProfiler-members.html">List of all members</a>  </div>
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
 <div class="title">TraceProfiler Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="trace_2src_2Include__i_8h_source.html">Include_i.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for TraceProfiler:</div>
+<div class="dyncontent">
+<div class="center"><img src="structTraceProfiler__coll__graph.png" border="0" usemap="#aTraceProfiler_coll__map" alt="Collaboration graph"/></div>
+<map name="aTraceProfiler_coll__map" id="aTraceProfiler_coll__map">
+<area shape="rect" title=" " alt="" coords="5,109,108,136"/>
+<area shape="rect" href="structTrace.html" title=" " alt="" coords="29,5,85,32"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:aa4f811e5922e658b133db593354b191d"><td class="memItemLeft" align="right" valign="top">TRACE_LEVEL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTraceProfiler.html#aa4f811e5922e658b133db593354b191d">traceLevel</a></td></tr>
-<tr class="separator:aa4f811e5922e658b133db593354b191d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3bded69f4b5afa879236ac1a469831ab"><td class="memItemLeft" align="right" valign="top">TRACE_PROFILER_BEHAVIOR_FLAGS&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTraceProfiler.html#a3bded69f4b5afa879236ac1a469831ab">behaviorFlags</a></td></tr>
-<tr class="separator:a3bded69f4b5afa879236ac1a469831ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2dd484b3f2188af3384bf16835931e23"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTrace.html">PTrace</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTraceProfiler.html#a2dd484b3f2188af3384bf16835931e23">nextTrace</a></td></tr>
-<tr class="separator:a2dd484b3f2188af3384bf16835931e23"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a860ec80ffe18812c09aa0c00499a6a5c"><td class="memItemLeft" align="right" valign="top">PVOID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTraceProfiler.html#a860ec80ffe18812c09aa0c00499a6a5c">traceBufferEnd</a></td></tr>
-<tr class="separator:a860ec80ffe18812c09aa0c00499a6a5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff4585fbd38a60cf1b82fdf0bdef8778"><td class="memItemLeft" align="right" valign="top">UINT32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTraceProfiler.html#aff4585fbd38a60cf1b82fdf0bdef8778">traceCount</a></td></tr>
-<tr class="separator:aff4585fbd38a60cf1b82fdf0bdef8778"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a447a7067c75df8a53d47ea6dd6a38d5e"><td class="memItemLeft" align="right" valign="top">UINT32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTraceProfiler.html#a447a7067c75df8a53d47ea6dd6a38d5e">traceBufferLength</a></td></tr>
-<tr class="separator:a447a7067c75df8a53d47ea6dd6a38d5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13f4337bb5d88d587416d18914f0671a"><td class="memItemLeft" align="right" valign="top">TraceStartFunc&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTraceProfiler.html#a13f4337bb5d88d587416d18914f0671a">traceStartFn</a></td></tr>
-<tr class="separator:a13f4337bb5d88d587416d18914f0671a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5554aa4b24220c3550ae7be946710e1"><td class="memItemLeft" align="right" valign="top"><a id="ac5554aa4b24220c3550ae7be946710e1"></a>
-TraceStopFunc&#160;</td><td class="memItemRight" valign="bottom"><b>traceStopFn</b></td></tr>
-<tr class="separator:ac5554aa4b24220c3550ae7be946710e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4dcc758f4943ab4a5d2a6b2b4d588c4b"><td class="memItemLeft" align="right" valign="top">MUTEX&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTraceProfiler.html#a4dcc758f4943ab4a5d2a6b2b4d588c4b">traceLock</a></td></tr>
-<tr class="separator:a4dcc758f4943ab4a5d2a6b2b4d588c4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9e8e02954279658abe8e02bc8f422d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTrace.html">PTrace</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTraceProfiler.html#ae9e8e02954279658abe8e02bc8f422d6">traceBuffer</a></td></tr>
-<tr class="separator:ae9e8e02954279658abe8e02bc8f422d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+Data Fields</h2></td></tr>
+<tr class="memitem:ab631892f34604af2859d4abefc5fcd45"><td class="memItemLeft" align="right" valign="top"><a class="el" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a96a32cf9d791e8f32d210dd459cf52ac">TRACE_LEVEL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTraceProfiler.html#ab631892f34604af2859d4abefc5fcd45">traceLevel</a></td></tr>
+<tr class="separator:ab631892f34604af2859d4abefc5fcd45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1806972e00e5a3adac237ecbbb4b4f3d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#af3e9af12f519019a86377d1012efecb4">TRACE_PROFILER_BEHAVIOR_FLAGS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTraceProfiler.html#a1806972e00e5a3adac237ecbbb4b4f3d">behaviorFlags</a></td></tr>
+<tr class="separator:a1806972e00e5a3adac237ecbbb4b4f3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae758ac5844fc579ad6f05be9f3ec7a94"><td class="memItemLeft" align="right" valign="top"><a class="el" href="trace_2src_2Include__i_8h.html#ad91f4490e8ea84b5d8ef55bc9e97789c">PTrace</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTraceProfiler.html#ae758ac5844fc579ad6f05be9f3ec7a94">nextTrace</a></td></tr>
+<tr class="separator:ae758ac5844fc579ad6f05be9f3ec7a94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1c73014b5656fa1315cf6ece00e0914"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a44a84094d41db406043c92f2c6344acc">PVOID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTraceProfiler.html#ae1c73014b5656fa1315cf6ece00e0914">traceBufferEnd</a></td></tr>
+<tr class="separator:ae1c73014b5656fa1315cf6ece00e0914"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4082a334b13938f3705b561263f39310"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTraceProfiler.html#a4082a334b13938f3705b561263f39310">traceCount</a></td></tr>
+<tr class="separator:a4082a334b13938f3705b561263f39310"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89fa3e0a373fd9de6d8446cc369fd2cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTraceProfiler.html#a89fa3e0a373fd9de6d8446cc369fd2cb">traceBufferLength</a></td></tr>
+<tr class="separator:a89fa3e0a373fd9de6d8446cc369fd2cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64f68db8a8109170c1c964a24070f6bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a78e297c10353e5e573d2d90a6cb85422">TraceStartFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTraceProfiler.html#a64f68db8a8109170c1c964a24070f6bc">traceStartFn</a></td></tr>
+<tr class="separator:a64f68db8a8109170c1c964a24070f6bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7f19ac49cf60ab4798b7a5824400763"><td class="memItemLeft" align="right" valign="top"><a class="el" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a9aaa32e6502d5b1c49c92fa49c81cca0">TraceStopFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTraceProfiler.html#ae7f19ac49cf60ab4798b7a5824400763">traceStopFn</a></td></tr>
+<tr class="separator:ae7f19ac49cf60ab4798b7a5824400763"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad04bff68804f193d84b985a13c363d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#aacb6173308f40c2f1bb4b0fa0e13411c">MUTEX</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTraceProfiler.html#aad04bff68804f193d84b985a13c363d9">traceLock</a></td></tr>
+<tr class="separator:aad04bff68804f193d84b985a13c363d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3adec40a839092f1c562db2f76d35f39"><td class="memItemLeft" align="right" valign="top"><a class="el" href="trace_2src_2Include__i_8h.html#ad91f4490e8ea84b5d8ef55bc9e97789c">PTrace</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTraceProfiler.html#a3adec40a839092f1c562db2f76d35f39">traceBuffer</a></td></tr>
+<tr class="separator:a3adec40a839092f1c562db2f76d35f39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="structTrace.html">Trace</a> profiler object.</p>
 <p>IMPORTANT!!! This is a variable length object. </p>
-</div><h2 class="groupheader">Member Data Documentation</h2>
-<a id="a3bded69f4b5afa879236ac1a469831ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3bded69f4b5afa879236ac1a469831ab">&#9670;&nbsp;</a></span>behaviorFlags</h2>
+</div><h2 class="groupheader">Field Documentation</h2>
+<a id="a1806972e00e5a3adac237ecbbb4b4f3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1806972e00e5a3adac237ecbbb4b4f3d">&#9670;&nbsp;</a></span>behaviorFlags</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TRACE_PROFILER_BEHAVIOR_FLAGS TraceProfiler::behaviorFlags</td>
+          <td class="memname"><a class="el" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#af3e9af12f519019a86377d1012efecb4">TRACE_PROFILER_BEHAVIOR_FLAGS</a> behaviorFlags</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -116,14 +143,14 @@ TraceStopFunc&#160;</td><td class="memItemRight" valign="bottom"><b>traceStopFn<
 
 </div>
 </div>
-<a id="a2dd484b3f2188af3384bf16835931e23"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2dd484b3f2188af3384bf16835931e23">&#9670;&nbsp;</a></span>nextTrace</h2>
+<a id="ae758ac5844fc579ad6f05be9f3ec7a94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae758ac5844fc579ad6f05be9f3ec7a94">&#9670;&nbsp;</a></span>nextTrace</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structTrace.html">PTrace</a> TraceProfiler::nextTrace</td>
+          <td class="memname"><a class="el" href="trace_2src_2Include__i_8h.html#ad91f4490e8ea84b5d8ef55bc9e97789c">PTrace</a> nextTrace</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -131,14 +158,14 @@ TraceStopFunc&#160;</td><td class="memItemRight" valign="bottom"><b>traceStopFn<
 
 </div>
 </div>
-<a id="ae9e8e02954279658abe8e02bc8f422d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae9e8e02954279658abe8e02bc8f422d6">&#9670;&nbsp;</a></span>traceBuffer</h2>
+<a id="a3adec40a839092f1c562db2f76d35f39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3adec40a839092f1c562db2f76d35f39">&#9670;&nbsp;</a></span>traceBuffer</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structTrace.html">PTrace</a> TraceProfiler::traceBuffer</td>
+          <td class="memname"><a class="el" href="trace_2src_2Include__i_8h.html#ad91f4490e8ea84b5d8ef55bc9e97789c">PTrace</a> traceBuffer</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -146,14 +173,14 @@ TraceStopFunc&#160;</td><td class="memItemRight" valign="bottom"><b>traceStopFn<
 
 </div>
 </div>
-<a id="a860ec80ffe18812c09aa0c00499a6a5c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a860ec80ffe18812c09aa0c00499a6a5c">&#9670;&nbsp;</a></span>traceBufferEnd</h2>
+<a id="ae1c73014b5656fa1315cf6ece00e0914"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1c73014b5656fa1315cf6ece00e0914">&#9670;&nbsp;</a></span>traceBufferEnd</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">PVOID TraceProfiler::traceBufferEnd</td>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a44a84094d41db406043c92f2c6344acc">PVOID</a> traceBufferEnd</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -161,14 +188,14 @@ TraceStopFunc&#160;</td><td class="memItemRight" valign="bottom"><b>traceStopFn<
 
 </div>
 </div>
-<a id="a447a7067c75df8a53d47ea6dd6a38d5e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a447a7067c75df8a53d47ea6dd6a38d5e">&#9670;&nbsp;</a></span>traceBufferLength</h2>
+<a id="a89fa3e0a373fd9de6d8446cc369fd2cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89fa3e0a373fd9de6d8446cc369fd2cb">&#9670;&nbsp;</a></span>traceBufferLength</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">UINT32 TraceProfiler::traceBufferLength</td>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> traceBufferLength</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -176,14 +203,14 @@ TraceStopFunc&#160;</td><td class="memItemRight" valign="bottom"><b>traceStopFn<
 
 </div>
 </div>
-<a id="aff4585fbd38a60cf1b82fdf0bdef8778"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aff4585fbd38a60cf1b82fdf0bdef8778">&#9670;&nbsp;</a></span>traceCount</h2>
+<a id="a4082a334b13938f3705b561263f39310"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4082a334b13938f3705b561263f39310">&#9670;&nbsp;</a></span>traceCount</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">UINT32 TraceProfiler::traceCount</td>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> traceCount</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -191,14 +218,14 @@ TraceStopFunc&#160;</td><td class="memItemRight" valign="bottom"><b>traceStopFn<
 
 </div>
 </div>
-<a id="aa4f811e5922e658b133db593354b191d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa4f811e5922e658b133db593354b191d">&#9670;&nbsp;</a></span>traceLevel</h2>
+<a id="ab631892f34604af2859d4abefc5fcd45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab631892f34604af2859d4abefc5fcd45">&#9670;&nbsp;</a></span>traceLevel</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TRACE_LEVEL TraceProfiler::traceLevel</td>
+          <td class="memname"><a class="el" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a96a32cf9d791e8f32d210dd459cf52ac">TRACE_LEVEL</a> traceLevel</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -206,14 +233,14 @@ TraceStopFunc&#160;</td><td class="memItemRight" valign="bottom"><b>traceStopFn<
 
 </div>
 </div>
-<a id="a4dcc758f4943ab4a5d2a6b2b4d588c4b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4dcc758f4943ab4a5d2a6b2b4d588c4b">&#9670;&nbsp;</a></span>traceLock</h2>
+<a id="aad04bff68804f193d84b985a13c363d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad04bff68804f193d84b985a13c363d9">&#9670;&nbsp;</a></span>traceLock</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">MUTEX TraceProfiler::traceLock</td>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#aacb6173308f40c2f1bb4b0fa0e13411c">MUTEX</a> traceLock</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -221,18 +248,32 @@ TraceStopFunc&#160;</td><td class="memItemRight" valign="bottom"><b>traceStopFn<
 
 </div>
 </div>
-<a id="a13f4337bb5d88d587416d18914f0671a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a13f4337bb5d88d587416d18914f0671a">&#9670;&nbsp;</a></span>traceStartFn</h2>
+<a id="a64f68db8a8109170c1c964a24070f6bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64f68db8a8109170c1c964a24070f6bc">&#9670;&nbsp;</a></span>traceStartFn</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TraceStartFunc TraceProfiler::traceStartFn</td>
+          <td class="memname"><a class="el" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a78e297c10353e5e573d2d90a6cb85422">TraceStartFunc</a> traceStartFn</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Tracing function pointers </p>
+
+</div>
+</div>
+<a id="ae7f19ac49cf60ab4798b7a5824400763"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7f19ac49cf60ab4798b7a5824400763">&#9670;&nbsp;</a></span>traceStopFn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="trace_2include_2com_2amazonaws_2kinesis_2video_2trace_2Include_8h.html#a9aaa32e6502d5b1c49c92fa49c81cca0">TraceStopFunc</a> traceStopFn</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -240,9 +281,13 @@ TraceStopFunc&#160;</td><td class="memItemRight" valign="bottom"><b>traceStopFn<
 <li>src/trace/src/<a class="el" href="trace_2src_2Include__i_8h_source.html">Include_i.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structTraceProfiler.html">TraceProfiler</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

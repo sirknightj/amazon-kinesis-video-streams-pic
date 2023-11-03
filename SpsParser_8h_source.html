@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +28,7 @@
    <div id="projectname">Amazon Kinesis Video Streams PIC
    &#160;<span id="projectnumber">1.0.1</span>
    </div>
-   <div id="projectbrief">Platform Independent Code for Amazon Kinesis Video Streams.</div>
+   <div id="projectbrief">Platform independent code for Amazon Kinesis Video Streams</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('SpsParser_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,17 +82,12 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_293b65ee0e438b101df8ec50727ccfaa.html">mkvgen</a></li><li class="navelem"><a class="el" href="dir_3ba0297a81b4a02a5a61fc5ba7aeb059.html">src</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">SpsParser.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*******************************************</span></div>
+<a href="SpsParser_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*******************************************</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">Stream include file</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">*******************************************/</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#ifndef __SPS_PARSER_H_</span></div>
@@ -85,86 +101,124 @@ $(function() {
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// General defines and data structures</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// Check whether to generate video config element based on the width not being 0</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#define GENERATE_VIDEO_CONFIG(x)                                                                                                                     \</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="SpsParser_8h.html#ad1a7e15a80c0846557c2ac5356b6e178">   17</a></span>&#160;<span class="preprocessor">#define GENERATE_VIDEO_CONFIG(x)                                                                                                                     \</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">    (((PTrackInfo) (x))-&gt;trackType == MKV_TRACK_INFO_TYPE_VIDEO &amp;&amp; ((PTrackInfo) (x))-&gt;trackCustomData.trackVideoConfig.videoWidth != 0)</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define GENERATE_AUDIO_CONFIG(x)                                                                                                                     \</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="SpsParser_8h.html#a2354552ef6c94a67106da002229654ef">   19</a></span>&#160;<span class="preprocessor">#define GENERATE_AUDIO_CONFIG(x)                                                                                                                     \</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">    (((PTrackInfo) (x))-&gt;trackType == MKV_TRACK_INFO_TYPE_AUDIO &amp;&amp; ((PTrackInfo) (x))-&gt;trackCustomData.trackAudioConfig.samplingFrequency != 0)</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// SPS NALU type value</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#define SPS_NALU_TYPE 0x07</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="SpsParser_8h.html#ab6404d6681f9f52a9108f164ca1ddbbb">   23</a></span>&#160;<span class="preprocessor">#define SPS_NALU_TYPE 0x07</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// PPS NALU type value</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#define PPS_NALU_TYPE 0x08</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="SpsParser_8h.html#a78b00bedd83eb5592e183137abf0d883">   26</a></span>&#160;<span class="preprocessor">#define PPS_NALU_TYPE 0x08</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// IDR NALU type value</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#define IDR_NALU_TYPE 0x05</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="SpsParser_8h.html#a28f5c0934346c2525f61de307bb6b132">   29</a></span>&#160;<span class="preprocessor">#define IDR_NALU_TYPE 0x05</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// H265 IDR NALU type value</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#define IDR_W_RADL_NALU_TYPE 0x13</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#define IDR_N_LP_NALU_TYPE   0x14</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="SpsParser_8h.html#a141280a13cce2da9ad0a7fde045bb44a">   32</a></span>&#160;<span class="preprocessor">#define IDR_W_RADL_NALU_TYPE 0x13</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="SpsParser_8h.html#a870ff932b02de6307eaee0a0aa23dff0">   33</a></span>&#160;<span class="preprocessor">#define IDR_N_LP_NALU_TYPE   0x14</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// AUD NALu value</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#define AUD_NALU_TYPE 0x09</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="SpsParser_8h.html#ac835f0fa435a942b7564cca4f7ee5421">   36</a></span>&#160;<span class="preprocessor">#define AUD_NALU_TYPE 0x09</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#define BITMAP_INFO_HEADER_SIZE 40</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="SpsParser_8h.html#ab9b927ffd83438d7ceda26439517ce70">   41</a></span>&#160;<span class="preprocessor">#define BITMAP_INFO_HEADER_SIZE 40</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#define MAX_H265_SPS_SUB_LAYERS 8</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="SpsParser_8h.html#ae68c3757657ccbcf8ed09f982d782aad">   46</a></span>&#160;<span class="preprocessor">#define MAX_H265_SPS_SUB_LAYERS 8</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
 <div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="structH265SpsInfo.html">   51</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    UINT8 conformance_window_flag;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    UINT8 chroma_format_idc;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    UINT32 conf_win_right_offset;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    UINT32 conf_win_left_offset;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    UINT32 conf_win_bottom_offset;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    UINT32 conf_win_top_offset;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    UINT16 pic_width_in_luma_samples;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    UINT16 pic_height_in_luma_samples;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    UINT8 max_sub_layers_minus1;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    UINT8 general_profile_space;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    UINT8 general_tier_flag;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    UINT8 general_profile_idc;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    UINT8 general_profile_compatibility_flags[4];</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    UINT8 general_constraint_indicator_flags[6];</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    UINT8 general_level_idc;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    UINT8 bit_depth_luma_minus8;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    UINT8 bit_depth_chroma_minus8;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;} <a class="code" href="structH265SpsInfo.html">H265SpsInfo</a>, *<a class="code" href="structH265SpsInfo.html">PH265SpsInfo</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="structH265SpsInfo.html#af20c8cc6f9b482ade8da346d76ad3bab">   52</a></span>&#160;    <a class="code" href="CommonDefs_8h.html#ab27e9918b538ce9d8ca692479b375b6a">UINT8</a> <a class="code" href="structH265SpsInfo.html#af20c8cc6f9b482ade8da346d76ad3bab">conformance_window_flag</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="structH265SpsInfo.html#aaf7ee6131ed7893ec7e3af92bccb4606">   53</a></span>&#160;    <a class="code" href="CommonDefs_8h.html#ab27e9918b538ce9d8ca692479b375b6a">UINT8</a> <a class="code" href="structH265SpsInfo.html#aaf7ee6131ed7893ec7e3af92bccb4606">chroma_format_idc</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="structH265SpsInfo.html#ad5c64f6b38e9fb80f8f112dd96340446">   54</a></span>&#160;    <a class="code" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> <a class="code" href="structH265SpsInfo.html#ad5c64f6b38e9fb80f8f112dd96340446">conf_win_right_offset</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="structH265SpsInfo.html#acb390923a4b01f80495ef5387156912a">   55</a></span>&#160;    <a class="code" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> <a class="code" href="structH265SpsInfo.html#acb390923a4b01f80495ef5387156912a">conf_win_left_offset</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="structH265SpsInfo.html#acacbb678fcc5d3ebaca8f5da8b22bc9a">   56</a></span>&#160;    <a class="code" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> <a class="code" href="structH265SpsInfo.html#acacbb678fcc5d3ebaca8f5da8b22bc9a">conf_win_bottom_offset</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="structH265SpsInfo.html#a48f7d0f47b268f6a8ba4f4da813b7bd7">   57</a></span>&#160;    <a class="code" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> <a class="code" href="structH265SpsInfo.html#a48f7d0f47b268f6a8ba4f4da813b7bd7">conf_win_top_offset</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="structH265SpsInfo.html#acd7d5f40e97f64cf47cd0e2b049207fc">   58</a></span>&#160;    <a class="code" href="CommonDefs_8h.html#a09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a> <a class="code" href="structH265SpsInfo.html#acd7d5f40e97f64cf47cd0e2b049207fc">pic_width_in_luma_samples</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="structH265SpsInfo.html#ac9a4fb11ab211e330e2af2e39114bb95">   59</a></span>&#160;    <a class="code" href="CommonDefs_8h.html#a09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a> <a class="code" href="structH265SpsInfo.html#ac9a4fb11ab211e330e2af2e39114bb95">pic_height_in_luma_samples</a>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="structH265SpsInfo.html#a0acb6f429f175866e1e3c935c165667a">   60</a></span>&#160;    <a class="code" href="CommonDefs_8h.html#ab27e9918b538ce9d8ca692479b375b6a">UINT8</a> <a class="code" href="structH265SpsInfo.html#a0acb6f429f175866e1e3c935c165667a">max_sub_layers_minus1</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="structH265SpsInfo.html#a0f70b7ece5a394fb93e367097b259841">   61</a></span>&#160;    <a class="code" href="CommonDefs_8h.html#ab27e9918b538ce9d8ca692479b375b6a">UINT8</a> <a class="code" href="structH265SpsInfo.html#a0f70b7ece5a394fb93e367097b259841">general_profile_space</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="structH265SpsInfo.html#a8359006dcdf628b9525d0171f0f5cfda">   62</a></span>&#160;    <a class="code" href="CommonDefs_8h.html#ab27e9918b538ce9d8ca692479b375b6a">UINT8</a> <a class="code" href="structH265SpsInfo.html#a8359006dcdf628b9525d0171f0f5cfda">general_tier_flag</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="structH265SpsInfo.html#a791ae986d4900e31d36c3d621e0fcdcd">   63</a></span>&#160;    <a class="code" href="CommonDefs_8h.html#ab27e9918b538ce9d8ca692479b375b6a">UINT8</a> <a class="code" href="structH265SpsInfo.html#a791ae986d4900e31d36c3d621e0fcdcd">general_profile_idc</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="structH265SpsInfo.html#a612af0a6f46c3786798389c8db26342d">   64</a></span>&#160;    <a class="code" href="CommonDefs_8h.html#ab27e9918b538ce9d8ca692479b375b6a">UINT8</a> general_profile_compatibility_flags[4];</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="structH265SpsInfo.html#a34c6fbee09541f1f4c334765244da1e7">   65</a></span>&#160;    <a class="code" href="CommonDefs_8h.html#ab27e9918b538ce9d8ca692479b375b6a">UINT8</a> general_constraint_indicator_flags[6];</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="structH265SpsInfo.html#ac8d4355fe61cef804fa9c7f0e8482a52">   66</a></span>&#160;    <a class="code" href="CommonDefs_8h.html#ab27e9918b538ce9d8ca692479b375b6a">UINT8</a> <a class="code" href="structH265SpsInfo.html#ac8d4355fe61cef804fa9c7f0e8482a52">general_level_idc</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="structH265SpsInfo.html#aafa17256e67f34d2abaaccb6c661f711">   67</a></span>&#160;    <a class="code" href="CommonDefs_8h.html#ab27e9918b538ce9d8ca692479b375b6a">UINT8</a> <a class="code" href="structH265SpsInfo.html#aafa17256e67f34d2abaaccb6c661f711">bit_depth_luma_minus8</a>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="structH265SpsInfo.html#a8293cfd169b2fd69cfc971c7bfca05fb">   68</a></span>&#160;    <a class="code" href="CommonDefs_8h.html#ab27e9918b538ce9d8ca692479b375b6a">UINT8</a> <a class="code" href="structH265SpsInfo.html#a8293cfd169b2fd69cfc971c7bfca05fb">bit_depth_chroma_minus8</a>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="SpsParser_8h.html#a5c957a82f54834df9677ec34870087cb">   69</a></span>&#160;} <a class="code" href="structH265SpsInfo.html">H265SpsInfo</a>, *<a class="code" href="SpsParser_8h.html#a5c957a82f54834df9677ec34870087cb">PH265SpsInfo</a>;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">// Internal functionality</span></div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;STATUS getVideoWidthAndHeightFromH264Sps(PBYTE, UINT32, PUINT16, PUINT16);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<a class="code" href="CommonDefs_8h.html#a59279bee44f34d08b3cbf3a89fb0d8d9">STATUS</a> <a class="code" href="SpsParser_8h.html#a35fd3afccf96600fcbf9096612b59b27">getVideoWidthAndHeightFromH264Sps</a>(<a class="code" href="CommonDefs_8h.html#a16ac278d310943f39816b8361f2dad64">PBYTE</a>, <a class="code" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>, <a class="code" href="CommonDefs_8h.html#a3415443e26ca2f821faa371198e7ad02">PUINT16</a>, <a class="code" href="CommonDefs_8h.html#a3415443e26ca2f821faa371198e7ad02">PUINT16</a>);</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;STATUS getVideoWidthAndHeightFromH265Sps(PBYTE, UINT32, PUINT16, PUINT16);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<a class="code" href="CommonDefs_8h.html#a59279bee44f34d08b3cbf3a89fb0d8d9">STATUS</a> <a class="code" href="SpsParser_8h.html#af15541850680e027f967b71faa9c157e">getVideoWidthAndHeightFromH265Sps</a>(<a class="code" href="CommonDefs_8h.html#a16ac278d310943f39816b8361f2dad64">PBYTE</a>, <a class="code" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>, <a class="code" href="CommonDefs_8h.html#a3415443e26ca2f821faa371198e7ad02">PUINT16</a>, <a class="code" href="CommonDefs_8h.html#a3415443e26ca2f821faa371198e7ad02">PUINT16</a>);</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;STATUS getVideoWidthAndHeightFromBih(PBYTE, UINT32, PUINT16, PUINT16);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<a class="code" href="CommonDefs_8h.html#a59279bee44f34d08b3cbf3a89fb0d8d9">STATUS</a> <a class="code" href="SpsParser_8h.html#a89f72a0a51a7a91ad3160a4c41430b29">getVideoWidthAndHeightFromBih</a>(<a class="code" href="CommonDefs_8h.html#a16ac278d310943f39816b8361f2dad64">PBYTE</a>, <a class="code" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>, <a class="code" href="CommonDefs_8h.html#a3415443e26ca2f821faa371198e7ad02">PUINT16</a>, <a class="code" href="CommonDefs_8h.html#a3415443e26ca2f821faa371198e7ad02">PUINT16</a>);</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;STATUS parseH264SpsGetResolution(PBYTE, UINT32, PUINT16, PUINT16);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<a class="code" href="CommonDefs_8h.html#a59279bee44f34d08b3cbf3a89fb0d8d9">STATUS</a> <a class="code" href="SpsParser_8h.html#a8c112f8fb1e00317c959ca5b7cfbdd7d">parseH264SpsGetResolution</a>(<a class="code" href="CommonDefs_8h.html#a16ac278d310943f39816b8361f2dad64">PBYTE</a>, <a class="code" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>, <a class="code" href="CommonDefs_8h.html#a3415443e26ca2f821faa371198e7ad02">PUINT16</a>, <a class="code" href="CommonDefs_8h.html#a3415443e26ca2f821faa371198e7ad02">PUINT16</a>);</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;STATUS parseH265Sps(PBYTE, UINT32, <a class="code" href="structH265SpsInfo.html">PH265SpsInfo</a>);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<a class="code" href="CommonDefs_8h.html#a59279bee44f34d08b3cbf3a89fb0d8d9">STATUS</a> <a class="code" href="SpsParser_8h.html#a049baf77b3ac451118c5d25b8d218d63">parseH265Sps</a>(<a class="code" href="CommonDefs_8h.html#a16ac278d310943f39816b8361f2dad64">PBYTE</a>, <a class="code" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>, <a class="code" href="structH265SpsInfo.html">PH265SpsInfo</a>);</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;STATUS parseH265SpsGetResolution(PBYTE, UINT32, PUINT16, PUINT16);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<a class="code" href="CommonDefs_8h.html#a59279bee44f34d08b3cbf3a89fb0d8d9">STATUS</a> <a class="code" href="SpsParser_8h.html#a435bb0939105faf7574867f7d0e99fab">parseH265SpsGetResolution</a>(<a class="code" href="CommonDefs_8h.html#a16ac278d310943f39816b8361f2dad64">PBYTE</a>, <a class="code" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>, <a class="code" href="CommonDefs_8h.html#a3415443e26ca2f821faa371198e7ad02">PUINT16</a>, <a class="code" href="CommonDefs_8h.html#a3415443e26ca2f821faa371198e7ad02">PUINT16</a>);</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;STATUS parseProfileTierLevel(<a class="code" href="structBitReader.html">PBitReader</a>, <a class="code" href="structH265SpsInfo.html">PH265SpsInfo</a>);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<a class="code" href="CommonDefs_8h.html#a59279bee44f34d08b3cbf3a89fb0d8d9">STATUS</a> <a class="code" href="SpsParser_8h.html#a834de0d8f633696ee02edf60888b47a6">parseProfileTierLevel</a>(<a class="code" href="structBitReader.html">PBitReader</a>, <a class="code" href="structH265SpsInfo.html">PH265SpsInfo</a>);</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;STATUS parseScalingListData(<a class="code" href="structBitReader.html">PBitReader</a>);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<a class="code" href="CommonDefs_8h.html#a59279bee44f34d08b3cbf3a89fb0d8d9">STATUS</a> <a class="code" href="SpsParser_8h.html#a1b40b3eee18503b5948ba1fc0a7052dc">parseScalingListData</a>(<a class="code" href="structBitReader.html">PBitReader</a>);</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;STATUS extractResolutionFromH265SpsInfo(<a class="code" href="structH265SpsInfo.html">PH265SpsInfo</a>, PUINT16, PUINT16);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<a class="code" href="CommonDefs_8h.html#a59279bee44f34d08b3cbf3a89fb0d8d9">STATUS</a> <a class="code" href="SpsParser_8h.html#a5f214080104507ea80d96342340ad7e6">extractResolutionFromH265SpsInfo</a>(<a class="code" href="structH265SpsInfo.html">PH265SpsInfo</a>, <a class="code" href="CommonDefs_8h.html#a3415443e26ca2f821faa371198e7ad02">PUINT16</a>, <a class="code" href="CommonDefs_8h.html#a3415443e26ca2f821faa371198e7ad02">PUINT16</a>);</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;STATUS getH264SpsPpsNalusFromAvccNalus(PBYTE, UINT32, PBYTE*, PUINT32, PBYTE*, PUINT32);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<a class="code" href="CommonDefs_8h.html#a59279bee44f34d08b3cbf3a89fb0d8d9">STATUS</a> <a class="code" href="SpsParser_8h.html#ab5ee8d6e5f2a6b9b1cae49029434e10d">getH264SpsPpsNalusFromAvccNalus</a>(<a class="code" href="CommonDefs_8h.html#a16ac278d310943f39816b8361f2dad64">PBYTE</a>, <a class="code" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>, <a class="code" href="CommonDefs_8h.html#a16ac278d310943f39816b8361f2dad64">PBYTE</a>*, <a class="code" href="CommonDefs_8h.html#a5846c7fc941449a20e4b5816635fdd31">PUINT32</a>, <a class="code" href="CommonDefs_8h.html#a16ac278d310943f39816b8361f2dad64">PBYTE</a>*, <a class="code" href="CommonDefs_8h.html#a5846c7fc941449a20e4b5816635fdd31">PUINT32</a>);</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;STATUS getH265SpsNalusFromAvccNalus(PBYTE, UINT32, PBYTE*, PUINT32);</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<a class="code" href="CommonDefs_8h.html#a59279bee44f34d08b3cbf3a89fb0d8d9">STATUS</a> <a class="code" href="SpsParser_8h.html#a266a076f7546ec599f734c74d3aac4a9">getH265SpsNalusFromAvccNalus</a>(<a class="code" href="CommonDefs_8h.html#a16ac278d310943f39816b8361f2dad64">PBYTE</a>, <a class="code" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>, <a class="code" href="CommonDefs_8h.html#a16ac278d310943f39816b8361f2dad64">PBYTE</a>*, <a class="code" href="CommonDefs_8h.html#a5846c7fc941449a20e4b5816635fdd31">PUINT32</a>);</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;}</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// __SPS_PARSER_H_</span></div>
+<div class="ttc" id="aCommonDefs_8h_html_a09f1a1fb2293e33483cc8d44aefb1eb1"><div class="ttname"><a href="CommonDefs_8h.html#a09f1a1fb2293e33483cc8d44aefb1eb1">UINT16</a></div><div class="ttdeci">unsigned short UINT16</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:140</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a0b39d6d754cb24c708b0f2bdbe88130e"><div class="ttname"><a href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a></div><div class="ttdeci">unsigned long UINT32</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:142</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a16ac278d310943f39816b8361f2dad64"><div class="ttname"><a href="CommonDefs_8h.html#a16ac278d310943f39816b8361f2dad64">PBYTE</a></div><div class="ttdeci">BYTE * PBYTE</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:178</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a3415443e26ca2f821faa371198e7ad02"><div class="ttname"><a href="CommonDefs_8h.html#a3415443e26ca2f821faa371198e7ad02">PUINT16</a></div><div class="ttdeci">UINT16 * PUINT16</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:185</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a5846c7fc941449a20e4b5816635fdd31"><div class="ttname"><a href="CommonDefs_8h.html#a5846c7fc941449a20e4b5816635fdd31">PUINT32</a></div><div class="ttdeci">UINT32 * PUINT32</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:187</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_a59279bee44f34d08b3cbf3a89fb0d8d9"><div class="ttname"><a href="CommonDefs_8h.html#a59279bee44f34d08b3cbf3a89fb0d8d9">STATUS</a></div><div class="ttdeci">#define STATUS</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:456</div></div>
+<div class="ttc" id="aCommonDefs_8h_html_ab27e9918b538ce9d8ca692479b375b6a"><div class="ttname"><a href="CommonDefs_8h.html#ab27e9918b538ce9d8ca692479b375b6a">UINT8</a></div><div class="ttdeci">unsigned char UINT8</div><div class="ttdef"><b>Definition:</b> CommonDefs.h:138</div></div>
+<div class="ttc" id="aSpsParser_8h_html_a049baf77b3ac451118c5d25b8d218d63"><div class="ttname"><a href="SpsParser_8h.html#a049baf77b3ac451118c5d25b8d218d63">parseH265Sps</a></div><div class="ttdeci">STATUS parseH265Sps(PBYTE, UINT32, PH265SpsInfo)</div><div class="ttdef"><b>Definition:</b> SpsParser.c:407</div></div>
+<div class="ttc" id="aSpsParser_8h_html_a1b40b3eee18503b5948ba1fc0a7052dc"><div class="ttname"><a href="SpsParser_8h.html#a1b40b3eee18503b5948ba1fc0a7052dc">parseScalingListData</a></div><div class="ttdeci">STATUS parseScalingListData(PBitReader)</div><div class="ttdef"><b>Definition:</b> SpsParser.c:719</div></div>
+<div class="ttc" id="aSpsParser_8h_html_a266a076f7546ec599f734c74d3aac4a9"><div class="ttname"><a href="SpsParser_8h.html#a266a076f7546ec599f734c74d3aac4a9">getH265SpsNalusFromAvccNalus</a></div><div class="ttdeci">STATUS getH265SpsNalusFromAvccNalus(PBYTE, UINT32, PBYTE *, PUINT32)</div><div class="ttdef"><b>Definition:</b> SpsParser.c:849</div></div>
+<div class="ttc" id="aSpsParser_8h_html_a35fd3afccf96600fcbf9096612b59b27"><div class="ttname"><a href="SpsParser_8h.html#a35fd3afccf96600fcbf9096612b59b27">getVideoWidthAndHeightFromH264Sps</a></div><div class="ttdeci">STATUS getVideoWidthAndHeightFromH264Sps(PBYTE, UINT32, PUINT16, PUINT16)</div><div class="ttdef"><b>Definition:</b> SpsParser.c:12</div></div>
+<div class="ttc" id="aSpsParser_8h_html_a435bb0939105faf7574867f7d0e99fab"><div class="ttname"><a href="SpsParser_8h.html#a435bb0939105faf7574867f7d0e99fab">parseH265SpsGetResolution</a></div><div class="ttdeci">STATUS parseH265SpsGetResolution(PBYTE, UINT32, PUINT16, PUINT16)</div><div class="ttdef"><b>Definition:</b> SpsParser.c:388</div></div>
+<div class="ttc" id="aSpsParser_8h_html_a5c957a82f54834df9677ec34870087cb"><div class="ttname"><a href="SpsParser_8h.html#a5c957a82f54834df9677ec34870087cb">PH265SpsInfo</a></div><div class="ttdeci">struct H265SpsInfo * PH265SpsInfo</div></div>
+<div class="ttc" id="aSpsParser_8h_html_a5f214080104507ea80d96342340ad7e6"><div class="ttname"><a href="SpsParser_8h.html#a5f214080104507ea80d96342340ad7e6">extractResolutionFromH265SpsInfo</a></div><div class="ttdeci">STATUS extractResolutionFromH265SpsInfo(PH265SpsInfo, PUINT16, PUINT16)</div><div class="ttdef"><b>Definition:</b> SpsParser.c:756</div></div>
+<div class="ttc" id="aSpsParser_8h_html_a834de0d8f633696ee02edf60888b47a6"><div class="ttname"><a href="SpsParser_8h.html#a834de0d8f633696ee02edf60888b47a6">parseProfileTierLevel</a></div><div class="ttdeci">STATUS parseProfileTierLevel(PBitReader, PH265SpsInfo)</div><div class="ttdef"><b>Definition:</b> SpsParser.c:594</div></div>
+<div class="ttc" id="aSpsParser_8h_html_a89f72a0a51a7a91ad3160a4c41430b29"><div class="ttname"><a href="SpsParser_8h.html#a89f72a0a51a7a91ad3160a4c41430b29">getVideoWidthAndHeightFromBih</a></div><div class="ttdeci">STATUS getVideoWidthAndHeightFromBih(PBYTE, UINT32, PUINT16, PUINT16)</div><div class="ttdef"><b>Definition:</b> SpsParser.c:183</div></div>
+<div class="ttc" id="aSpsParser_8h_html_a8c112f8fb1e00317c959ca5b7cfbdd7d"><div class="ttname"><a href="SpsParser_8h.html#a8c112f8fb1e00317c959ca5b7cfbdd7d">parseH264SpsGetResolution</a></div><div class="ttdeci">STATUS parseH264SpsGetResolution(PBYTE, UINT32, PUINT16, PUINT16)</div><div class="ttdef"><b>Definition:</b> SpsParser.c:204</div></div>
+<div class="ttc" id="aSpsParser_8h_html_ab5ee8d6e5f2a6b9b1cae49029434e10d"><div class="ttname"><a href="SpsParser_8h.html#ab5ee8d6e5f2a6b9b1cae49029434e10d">getH264SpsPpsNalusFromAvccNalus</a></div><div class="ttdeci">STATUS getH264SpsPpsNalusFromAvccNalus(PBYTE, UINT32, PBYTE *, PUINT32, PBYTE *, PUINT32)</div><div class="ttdef"><b>Definition:</b> SpsParser.c:806</div></div>
+<div class="ttc" id="aSpsParser_8h_html_af15541850680e027f967b71faa9c157e"><div class="ttname"><a href="SpsParser_8h.html#af15541850680e027f967b71faa9c157e">getVideoWidthAndHeightFromH265Sps</a></div><div class="ttdeci">STATUS getVideoWidthAndHeightFromH265Sps(PBYTE, UINT32, PUINT16, PUINT16)</div><div class="ttdef"><b>Definition:</b> SpsParser.c:69</div></div>
 <div class="ttc" id="astructBitReader_html"><div class="ttname"><a href="structBitReader.html">BitReader</a></div><div class="ttdef"><b>Definition:</b> Include.h:823</div></div>
 <div class="ttc" id="astructH265SpsInfo_html"><div class="ttname"><a href="structH265SpsInfo.html">H265SpsInfo</a></div><div class="ttdef"><b>Definition:</b> SpsParser.h:51</div></div>
+<div class="ttc" id="astructH265SpsInfo_html_a0acb6f429f175866e1e3c935c165667a"><div class="ttname"><a href="structH265SpsInfo.html#a0acb6f429f175866e1e3c935c165667a">H265SpsInfo::max_sub_layers_minus1</a></div><div class="ttdeci">UINT8 max_sub_layers_minus1</div><div class="ttdef"><b>Definition:</b> SpsParser.h:60</div></div>
+<div class="ttc" id="astructH265SpsInfo_html_a0f70b7ece5a394fb93e367097b259841"><div class="ttname"><a href="structH265SpsInfo.html#a0f70b7ece5a394fb93e367097b259841">H265SpsInfo::general_profile_space</a></div><div class="ttdeci">UINT8 general_profile_space</div><div class="ttdef"><b>Definition:</b> SpsParser.h:61</div></div>
+<div class="ttc" id="astructH265SpsInfo_html_a48f7d0f47b268f6a8ba4f4da813b7bd7"><div class="ttname"><a href="structH265SpsInfo.html#a48f7d0f47b268f6a8ba4f4da813b7bd7">H265SpsInfo::conf_win_top_offset</a></div><div class="ttdeci">UINT32 conf_win_top_offset</div><div class="ttdef"><b>Definition:</b> SpsParser.h:57</div></div>
+<div class="ttc" id="astructH265SpsInfo_html_a791ae986d4900e31d36c3d621e0fcdcd"><div class="ttname"><a href="structH265SpsInfo.html#a791ae986d4900e31d36c3d621e0fcdcd">H265SpsInfo::general_profile_idc</a></div><div class="ttdeci">UINT8 general_profile_idc</div><div class="ttdef"><b>Definition:</b> SpsParser.h:63</div></div>
+<div class="ttc" id="astructH265SpsInfo_html_a8293cfd169b2fd69cfc971c7bfca05fb"><div class="ttname"><a href="structH265SpsInfo.html#a8293cfd169b2fd69cfc971c7bfca05fb">H265SpsInfo::bit_depth_chroma_minus8</a></div><div class="ttdeci">UINT8 bit_depth_chroma_minus8</div><div class="ttdef"><b>Definition:</b> SpsParser.h:68</div></div>
+<div class="ttc" id="astructH265SpsInfo_html_a8359006dcdf628b9525d0171f0f5cfda"><div class="ttname"><a href="structH265SpsInfo.html#a8359006dcdf628b9525d0171f0f5cfda">H265SpsInfo::general_tier_flag</a></div><div class="ttdeci">UINT8 general_tier_flag</div><div class="ttdef"><b>Definition:</b> SpsParser.h:62</div></div>
+<div class="ttc" id="astructH265SpsInfo_html_aaf7ee6131ed7893ec7e3af92bccb4606"><div class="ttname"><a href="structH265SpsInfo.html#aaf7ee6131ed7893ec7e3af92bccb4606">H265SpsInfo::chroma_format_idc</a></div><div class="ttdeci">UINT8 chroma_format_idc</div><div class="ttdef"><b>Definition:</b> SpsParser.h:53</div></div>
+<div class="ttc" id="astructH265SpsInfo_html_aafa17256e67f34d2abaaccb6c661f711"><div class="ttname"><a href="structH265SpsInfo.html#aafa17256e67f34d2abaaccb6c661f711">H265SpsInfo::bit_depth_luma_minus8</a></div><div class="ttdeci">UINT8 bit_depth_luma_minus8</div><div class="ttdef"><b>Definition:</b> SpsParser.h:67</div></div>
+<div class="ttc" id="astructH265SpsInfo_html_ac8d4355fe61cef804fa9c7f0e8482a52"><div class="ttname"><a href="structH265SpsInfo.html#ac8d4355fe61cef804fa9c7f0e8482a52">H265SpsInfo::general_level_idc</a></div><div class="ttdeci">UINT8 general_level_idc</div><div class="ttdef"><b>Definition:</b> SpsParser.h:66</div></div>
+<div class="ttc" id="astructH265SpsInfo_html_ac9a4fb11ab211e330e2af2e39114bb95"><div class="ttname"><a href="structH265SpsInfo.html#ac9a4fb11ab211e330e2af2e39114bb95">H265SpsInfo::pic_height_in_luma_samples</a></div><div class="ttdeci">UINT16 pic_height_in_luma_samples</div><div class="ttdef"><b>Definition:</b> SpsParser.h:59</div></div>
+<div class="ttc" id="astructH265SpsInfo_html_acacbb678fcc5d3ebaca8f5da8b22bc9a"><div class="ttname"><a href="structH265SpsInfo.html#acacbb678fcc5d3ebaca8f5da8b22bc9a">H265SpsInfo::conf_win_bottom_offset</a></div><div class="ttdeci">UINT32 conf_win_bottom_offset</div><div class="ttdef"><b>Definition:</b> SpsParser.h:56</div></div>
+<div class="ttc" id="astructH265SpsInfo_html_acb390923a4b01f80495ef5387156912a"><div class="ttname"><a href="structH265SpsInfo.html#acb390923a4b01f80495ef5387156912a">H265SpsInfo::conf_win_left_offset</a></div><div class="ttdeci">UINT32 conf_win_left_offset</div><div class="ttdef"><b>Definition:</b> SpsParser.h:55</div></div>
+<div class="ttc" id="astructH265SpsInfo_html_acd7d5f40e97f64cf47cd0e2b049207fc"><div class="ttname"><a href="structH265SpsInfo.html#acd7d5f40e97f64cf47cd0e2b049207fc">H265SpsInfo::pic_width_in_luma_samples</a></div><div class="ttdeci">UINT16 pic_width_in_luma_samples</div><div class="ttdef"><b>Definition:</b> SpsParser.h:58</div></div>
+<div class="ttc" id="astructH265SpsInfo_html_ad5c64f6b38e9fb80f8f112dd96340446"><div class="ttname"><a href="structH265SpsInfo.html#ad5c64f6b38e9fb80f8f112dd96340446">H265SpsInfo::conf_win_right_offset</a></div><div class="ttdeci">UINT32 conf_win_right_offset</div><div class="ttdef"><b>Definition:</b> SpsParser.h:54</div></div>
+<div class="ttc" id="astructH265SpsInfo_html_af20c8cc6f9b482ade8da346d76ad3bab"><div class="ttname"><a href="structH265SpsInfo.html#af20c8cc6f9b482ade8da346d76ad3bab">H265SpsInfo::conformance_window_flag</a></div><div class="ttdeci">UINT8 conformance_window_flag</div><div class="ttdef"><b>Definition:</b> SpsParser.h:52</div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_293b65ee0e438b101df8ec50727ccfaa.html">mkvgen</a></li><li class="navelem"><a class="el" href="dir_3ba0297a81b4a02a5a61fc5ba7aeb059.html">src</a></li><li class="navelem"><a class="el" href="SpsParser_8h.html">SpsParser.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

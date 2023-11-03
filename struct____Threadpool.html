@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +28,7 @@
    <div id="projectname">Amazon Kinesis Video Streams PIC
    &#160;<span id="projectnumber">1.0.1</span>
    </div>
-   <div id="projectbrief">Platform Independent Code for Amazon Kinesis Video Streams.</div>
+   <div id="projectbrief">Platform independent code for Amazon Kinesis Video Streams</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('struct____Threadpool.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,47 +82,154 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="struct____Threadpool-members.html">List of all members</a>  </div>
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
 <div class="title">__Threadpool Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h_source.html">Include.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for __Threadpool:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct____Threadpool__coll__graph.png" border="0" usemap="#a____Threadpool_coll__map" alt="Collaboration graph"/></div>
+<map name="a____Threadpool_coll__map" id="a____Threadpool_coll__map">
+<area shape="rect" title=" " alt="" coords="17,288,127,315"/>
+<area shape="rect" href="structSafeBlockingQueue.html" title=" " alt="" coords="144,199,293,225"/>
+<area shape="rect" href="structSingleList.html" title=" " alt="" coords="29,109,115,136"/>
+<area shape="rect" href="struct____SingleListNode.html" title=" " alt="" coords="5,5,139,32"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a1364336257fabd5db9dfa0741d63a9b9"><td class="memItemLeft" align="right" valign="top"><a id="a1364336257fabd5db9dfa0741d63a9b9"></a>
-volatile ATOMIC_BOOL&#160;</td><td class="memItemRight" valign="bottom"><b>terminate</b></td></tr>
-<tr class="separator:a1364336257fabd5db9dfa0741d63a9b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2367618a45e4c6047d9cb627bb6cf1f1"><td class="memItemLeft" align="right" valign="top"><a id="a2367618a45e4c6047d9cb627bb6cf1f1"></a>
-volatile SIZE_T&#160;</td><td class="memItemRight" valign="bottom"><b>availableThreads</b></td></tr>
-<tr class="separator:a2367618a45e4c6047d9cb627bb6cf1f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add226534653734cbd14759d5f32719d2"><td class="memItemLeft" align="right" valign="top"><a id="add226534653734cbd14759d5f32719d2"></a>
-<a class="el" href="structSafeBlockingQueue.html">PSafeBlockingQueue</a>&#160;</td><td class="memItemRight" valign="bottom"><b>taskQueue</b></td></tr>
-<tr class="separator:add226534653734cbd14759d5f32719d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec785b16488b5f7e9d1ffb058213ca7b"><td class="memItemLeft" align="right" valign="top"><a id="aec785b16488b5f7e9d1ffb058213ca7b"></a>
-<a class="el" href="structSingleList.html">PStackQueue</a>&#160;</td><td class="memItemRight" valign="bottom"><b>threadList</b></td></tr>
-<tr class="separator:aec785b16488b5f7e9d1ffb058213ca7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd8f8d764f1d6b24436024a27eb61a8c"><td class="memItemLeft" align="right" valign="top"><a id="acd8f8d764f1d6b24436024a27eb61a8c"></a>
-MUTEX&#160;</td><td class="memItemRight" valign="bottom"><b>listMutex</b></td></tr>
-<tr class="separator:acd8f8d764f1d6b24436024a27eb61a8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add8f43d7d9f0fc56069ae65c3e21d176"><td class="memItemLeft" align="right" valign="top"><a id="add8f43d7d9f0fc56069ae65c3e21d176"></a>
-UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>minThreads</b></td></tr>
-<tr class="separator:add8f43d7d9f0fc56069ae65c3e21d176"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6361343320d52cb0c5f256ab2759e840"><td class="memItemLeft" align="right" valign="top"><a id="a6361343320d52cb0c5f256ab2759e840"></a>
-UINT32&#160;</td><td class="memItemRight" valign="bottom"><b>maxThreads</b></td></tr>
-<tr class="separator:a6361343320d52cb0c5f256ab2759e840"><td class="memSeparator" colspan="2">&#160;</td></tr>
+Data Fields</h2></td></tr>
+<tr class="memitem:a89c16298c475d108d0413797f9af00d3"><td class="memItemLeft" align="right" valign="top">volatile <a class="el" href="CommonDefs_8h.html#ade83a52eef8a7a728920c60d7af79e76">ATOMIC_BOOL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____Threadpool.html#a89c16298c475d108d0413797f9af00d3">terminate</a></td></tr>
+<tr class="separator:a89c16298c475d108d0413797f9af00d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7726913560504c29538727cd5123d0a"><td class="memItemLeft" align="right" valign="top">volatile <a class="el" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____Threadpool.html#ab7726913560504c29538727cd5123d0a">availableThreads</a></td></tr>
+<tr class="separator:ab7726913560504c29538727cd5123d0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d7977788a403b0a746399bf0cbc150b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#af6640312d38867af1d2ed23dbe3bf822">PSafeBlockingQueue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____Threadpool.html#a9d7977788a403b0a746399bf0cbc150b">taskQueue</a></td></tr>
+<tr class="separator:a9d7977788a403b0a746399bf0cbc150b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a588e1c5e59ce7ca4a7e1a6ae8fc3047c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#aa6dd2ba647fdef626f09c0db233cacb7">PStackQueue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____Threadpool.html#a588e1c5e59ce7ca4a7e1a6ae8fc3047c">threadList</a></td></tr>
+<tr class="separator:a588e1c5e59ce7ca4a7e1a6ae8fc3047c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8cf32af13b65d5c196dcdcddab0b0d2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#aacb6173308f40c2f1bb4b0fa0e13411c">MUTEX</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____Threadpool.html#af8cf32af13b65d5c196dcdcddab0b0d2">listMutex</a></td></tr>
+<tr class="separator:af8cf32af13b65d5c196dcdcddab0b0d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a46791a11a1a1bd9cdf8ff14d7f3ec7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____Threadpool.html#a7a46791a11a1a1bd9cdf8ff14d7f3ec7">minThreads</a></td></tr>
+<tr class="separator:a7a46791a11a1a1bd9cdf8ff14d7f3ec7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8354bfa17aa29d960ae40cb47f8bd30f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct____Threadpool.html#a8354bfa17aa29d960ae40cb47f8bd30f">maxThreads</a></td></tr>
+<tr class="separator:a8354bfa17aa29d960ae40cb47f8bd30f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="ab7726913560504c29538727cd5123d0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7726913560504c29538727cd5123d0a">&#9670;&nbsp;</a></span>availableThreads</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="CommonDefs_8h.html#a1baba44b36e282b82faa9ef9bc9f37a4">SIZE_T</a> availableThreads</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af8cf32af13b65d5c196dcdcddab0b0d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8cf32af13b65d5c196dcdcddab0b0d2">&#9670;&nbsp;</a></span>listMutex</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#aacb6173308f40c2f1bb4b0fa0e13411c">MUTEX</a> listMutex</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8354bfa17aa29d960ae40cb47f8bd30f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8354bfa17aa29d960ae40cb47f8bd30f">&#9670;&nbsp;</a></span>maxThreads</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> maxThreads</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7a46791a11a1a1bd9cdf8ff14d7f3ec7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a46791a11a1a1bd9cdf8ff14d7f3ec7">&#9670;&nbsp;</a></span>minThreads</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="CommonDefs_8h.html#a0b39d6d754cb24c708b0f2bdbe88130e">UINT32</a> minThreads</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9d7977788a403b0a746399bf0cbc150b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d7977788a403b0a746399bf0cbc150b">&#9670;&nbsp;</a></span>taskQueue</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#af6640312d38867af1d2ed23dbe3bf822">PSafeBlockingQueue</a> taskQueue</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a89c16298c475d108d0413797f9af00d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89c16298c475d108d0413797f9af00d3">&#9670;&nbsp;</a></span>terminate</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="CommonDefs_8h.html#ade83a52eef8a7a728920c60d7af79e76">ATOMIC_BOOL</a> terminate</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a588e1c5e59ce7ca4a7e1a6ae8fc3047c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a588e1c5e59ce7ca4a7e1a6ae8fc3047c">&#9670;&nbsp;</a></span>threadList</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#aa6dd2ba647fdef626f09c0db233cacb7">PStackQueue</a> threadList</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>src/utils/include/com/amazonaws/kinesis/video/utils/<a class="el" href="utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h_source.html">Include.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="struct____Threadpool.html">__Threadpool</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

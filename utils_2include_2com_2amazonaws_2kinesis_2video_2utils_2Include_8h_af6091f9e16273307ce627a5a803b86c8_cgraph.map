@@ -1,0 +1,9 @@
+<map id="exponentialBackoffRetryStrategyBlockingWait" name="exponentialBackoffRetryStrategyBlockingWait">
+<area shape="rect" id="node1" title="Computes next exponential backoff wait time and blocks the current thread for that much time...." alt="" coords="5,78,243,119"/>
+<area shape="rect" id="node2" href="$ExponentialBackoffRetryStrategy_8c.html#af6b9df04ee7bdcc30b3e6a38aa7820c9" title="Computes and returns the next exponential backoff wait time." alt="" coords="291,78,493,119"/>
+<area shape="rect" id="node3" href="$ExponentialBackoffRetryStrategy_8c.html#a6a95e0dd1fb1d13986944eb61f673cd4" title=" " alt="" coords="582,5,725,32"/>
+<area shape="rect" id="node5" href="$ExponentialBackoffRetryStrategy_8c.html#aba1cca3745bb19e30d1ed71148fc8c34" title=" " alt="" coords="589,56,717,83"/>
+<area shape="rect" id="node6" href="$ExponentialBackoffRetryStrategy_8c.html#a35a6d37dbfa6cea9a790d6c1005675bb" title=" " alt="" coords="546,107,761,149"/>
+<area shape="rect" id="node7" href="$ExponentialBackoffRetryStrategy_8c.html#a582226dc271fb379509b2b11f0cbb3b0" title=" " alt="" coords="541,173,765,214"/>
+<area shape="rect" id="node4" href="$utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#aeb8d68204bcfadf40a4e0e0863a859de" title="Computes power Returns error when the base or exponent values are not within limits...." alt="" coords="813,5,932,32"/>
+</map>

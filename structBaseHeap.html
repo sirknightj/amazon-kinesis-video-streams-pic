@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +28,7 @@
    <div id="projectname">Amazon Kinesis Video Streams PIC
    &#160;<span id="projectnumber">1.0.1</span>
    </div>
-   <div id="projectbrief">Platform Independent Code for Amazon Kinesis Video Streams.</div>
+   <div id="projectbrief">Platform independent code for Amazon Kinesis Video Streams</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +51,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('structBaseHeap.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,74 +82,139 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="structBaseHeap-members.html">List of all members</a>  </div>
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
 <div class="title">BaseHeap Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="heap_2src_2Include__i_8h_source.html">Include_i.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for BaseHeap:</div>
+<div class="dyncontent">
+<div class="center"><img src="structBaseHeap__coll__graph.png" border="0" usemap="#aBaseHeap_coll__map" alt="Collaboration graph"/></div>
+<map name="aBaseHeap_coll__map" id="aBaseHeap_coll__map">
+<area shape="rect" title=" " alt="" coords="5,256,93,283"/>
+<area shape="rect" href="structHeap.html" title=" " alt="" coords="21,5,77,32"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a87aa96eae3021ace277c52672ffcbc9c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structHeap.html">Heap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structBaseHeap.html#a87aa96eae3021ace277c52672ffcbc9c">heap</a></td></tr>
-<tr class="separator:a87aa96eae3021ace277c52672ffcbc9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab76462ad6cea69ae2ebec100ea16ff97"><td class="memItemLeft" align="right" valign="top">HeapInitializeFunc&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structBaseHeap.html#ab76462ad6cea69ae2ebec100ea16ff97">heapInitializeFn</a></td></tr>
-<tr class="separator:ab76462ad6cea69ae2ebec100ea16ff97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa356e24b347879c5cd4638efa5d2a7f1"><td class="memItemLeft" align="right" valign="top"><a id="aa356e24b347879c5cd4638efa5d2a7f1"></a>
-HeapReleaseFunc&#160;</td><td class="memItemRight" valign="bottom"><b>heapReleaseFn</b></td></tr>
-<tr class="separator:aa356e24b347879c5cd4638efa5d2a7f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06b92e45df65114bda2d032da07ea830"><td class="memItemLeft" align="right" valign="top"><a id="a06b92e45df65114bda2d032da07ea830"></a>
-HeapGetSizeFunc&#160;</td><td class="memItemRight" valign="bottom"><b>heapGetSizeFn</b></td></tr>
-<tr class="separator:a06b92e45df65114bda2d032da07ea830"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a290eb480b73164524ad1c50cc9d770da"><td class="memItemLeft" align="right" valign="top"><a id="a290eb480b73164524ad1c50cc9d770da"></a>
-HeapFreeFunc&#160;</td><td class="memItemRight" valign="bottom"><b>heapFreeFn</b></td></tr>
-<tr class="separator:a290eb480b73164524ad1c50cc9d770da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b9c13d41c958d53426cfcc26b338242"><td class="memItemLeft" align="right" valign="top"><a id="a7b9c13d41c958d53426cfcc26b338242"></a>
-HeapGetAllocSizeFunc&#160;</td><td class="memItemRight" valign="bottom"><b>heapGetAllocSizeFn</b></td></tr>
-<tr class="separator:a7b9c13d41c958d53426cfcc26b338242"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a437d8066326489978780ad480e919617"><td class="memItemLeft" align="right" valign="top"><a id="a437d8066326489978780ad480e919617"></a>
-HeapSetAllocSizeFunc&#160;</td><td class="memItemRight" valign="bottom"><b>heapSetAllocSizeFn</b></td></tr>
-<tr class="separator:a437d8066326489978780ad480e919617"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7babbe7665b0a8a56cb23dbe92626f08"><td class="memItemLeft" align="right" valign="top"><a id="a7babbe7665b0a8a56cb23dbe92626f08"></a>
-HeapAllocFunc&#160;</td><td class="memItemRight" valign="bottom"><b>heapAllocFn</b></td></tr>
-<tr class="separator:a7babbe7665b0a8a56cb23dbe92626f08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84a458c56bb8b61711dfec6cd38888e2"><td class="memItemLeft" align="right" valign="top"><a id="a84a458c56bb8b61711dfec6cd38888e2"></a>
-HeapMapFunc&#160;</td><td class="memItemRight" valign="bottom"><b>heapMapFn</b></td></tr>
-<tr class="separator:a84a458c56bb8b61711dfec6cd38888e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeaae71b22457c540d1c10f40a174bd7c"><td class="memItemLeft" align="right" valign="top"><a id="aeaae71b22457c540d1c10f40a174bd7c"></a>
-HeapUnmapFunc&#160;</td><td class="memItemRight" valign="bottom"><b>heapUnmapFn</b></td></tr>
-<tr class="separator:aeaae71b22457c540d1c10f40a174bd7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc3ee7521d53297b42b88cda90712a65"><td class="memItemLeft" align="right" valign="top"><a id="adc3ee7521d53297b42b88cda90712a65"></a>
-HeapDebugCheckAllocatorFunc&#160;</td><td class="memItemRight" valign="bottom"><b>heapDebugCheckAllocatorFn</b></td></tr>
-<tr class="separator:adc3ee7521d53297b42b88cda90712a65"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92fadf0cb925e723ad50f5af9a598a33"><td class="memItemLeft" align="right" valign="top"><a id="a92fadf0cb925e723ad50f5af9a598a33"></a>
-GetAllocationSizeFunc&#160;</td><td class="memItemRight" valign="bottom"><b>getAllocationSizeFn</b></td></tr>
-<tr class="separator:a92fadf0cb925e723ad50f5af9a598a33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac22cc5bc4f261192e97599aa062d5624"><td class="memItemLeft" align="right" valign="top"><a id="ac22cc5bc4f261192e97599aa062d5624"></a>
-GetAllocationHeaderSizeFunc&#160;</td><td class="memItemRight" valign="bottom"><b>getAllocationHeaderSizeFn</b></td></tr>
-<tr class="separator:ac22cc5bc4f261192e97599aa062d5624"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c006252abb5c3c3bfc752e2f32af715"><td class="memItemLeft" align="right" valign="top"><a id="a9c006252abb5c3c3bfc752e2f32af715"></a>
-GetAllocationFooterSizeFunc&#160;</td><td class="memItemRight" valign="bottom"><b>getAllocationFooterSizeFn</b></td></tr>
-<tr class="separator:a9c006252abb5c3c3bfc752e2f32af715"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93be19b17f7f3237b6f827282c48fae0"><td class="memItemLeft" align="right" valign="top"><a id="a93be19b17f7f3237b6f827282c48fae0"></a>
-GetAllocationAlignedSizeFunc&#160;</td><td class="memItemRight" valign="bottom"><b>getAllocationAlignedSizeFn</b></td></tr>
-<tr class="separator:a93be19b17f7f3237b6f827282c48fae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5cbd65cce46063d1021e9ffb9624eb14"><td class="memItemLeft" align="right" valign="top"><a id="a5cbd65cce46063d1021e9ffb9624eb14"></a>
-GetHeapLimitsFunc&#160;</td><td class="memItemRight" valign="bottom"><b>getHeapLimitsFn</b></td></tr>
-<tr class="separator:a5cbd65cce46063d1021e9ffb9624eb14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+Data Fields</h2></td></tr>
+<tr class="memitem:ad8836da75403ebe2fb40902ecda815bf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structHeap.html">Heap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structBaseHeap.html#ad8836da75403ebe2fb40902ecda815bf">heap</a></td></tr>
+<tr class="separator:ad8836da75403ebe2fb40902ecda815bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22fe248d3f82295002681030d58ac209"><td class="memItemLeft" align="right" valign="top"><a class="el" href="heap_2src_2Include__i_8h.html#a4a9954f98e3afe319dbe8c5fc7baa59f">HeapInitializeFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structBaseHeap.html#a22fe248d3f82295002681030d58ac209">heapInitializeFn</a></td></tr>
+<tr class="separator:a22fe248d3f82295002681030d58ac209"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f1ba1dc46425b840a3cc4144286db4a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="heap_2src_2Include__i_8h.html#aa60739ffb93304bf324caf3e2f158f7a">HeapReleaseFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structBaseHeap.html#a0f1ba1dc46425b840a3cc4144286db4a">heapReleaseFn</a></td></tr>
+<tr class="separator:a0f1ba1dc46425b840a3cc4144286db4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3145d1b19cf881a8c0a6b55ba22cc62"><td class="memItemLeft" align="right" valign="top"><a class="el" href="heap_2src_2Include__i_8h.html#a7970c745c3bc01bc2343ec9c9e51a6a3">HeapGetSizeFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structBaseHeap.html#ab3145d1b19cf881a8c0a6b55ba22cc62">heapGetSizeFn</a></td></tr>
+<tr class="separator:ab3145d1b19cf881a8c0a6b55ba22cc62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a624a8121cbc05016e61d47a83418b779"><td class="memItemLeft" align="right" valign="top"><a class="el" href="heap_2src_2Include__i_8h.html#a1d89e05215b03152ccd441971857aca3">HeapFreeFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structBaseHeap.html#a624a8121cbc05016e61d47a83418b779">heapFreeFn</a></td></tr>
+<tr class="separator:a624a8121cbc05016e61d47a83418b779"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61afa009f898e14029c755686bc4188b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="heap_2src_2Include__i_8h.html#aa6fe4c13ea7ba534cc99d5e5c5285bbc">HeapGetAllocSizeFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structBaseHeap.html#a61afa009f898e14029c755686bc4188b">heapGetAllocSizeFn</a></td></tr>
+<tr class="separator:a61afa009f898e14029c755686bc4188b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e320f76f80bd2b9e7b2eb85cd6f4c8b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="heap_2src_2Include__i_8h.html#a47cf3f0a620944c6e3303047742f1c13">HeapSetAllocSizeFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structBaseHeap.html#a7e320f76f80bd2b9e7b2eb85cd6f4c8b">heapSetAllocSizeFn</a></td></tr>
+<tr class="separator:a7e320f76f80bd2b9e7b2eb85cd6f4c8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28f8f5cb818fcedf406365c3f9b92dd8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="heap_2src_2Include__i_8h.html#af31b4d9b15bf56aac83eebf122a78187">HeapAllocFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structBaseHeap.html#a28f8f5cb818fcedf406365c3f9b92dd8">heapAllocFn</a></td></tr>
+<tr class="separator:a28f8f5cb818fcedf406365c3f9b92dd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04bb0e8a17e8f6393fd1bf7a5a0a23d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="heap_2src_2Include__i_8h.html#a2f3743be9cb0c716cffd8439cee6c93e">HeapMapFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structBaseHeap.html#a04bb0e8a17e8f6393fd1bf7a5a0a23d0">heapMapFn</a></td></tr>
+<tr class="separator:a04bb0e8a17e8f6393fd1bf7a5a0a23d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a906a2efef26a8e0b571a52391b9b2fbd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="heap_2src_2Include__i_8h.html#a4eb5c844fa6e7823d381cce1a63989ff">HeapUnmapFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structBaseHeap.html#a906a2efef26a8e0b571a52391b9b2fbd">heapUnmapFn</a></td></tr>
+<tr class="separator:a906a2efef26a8e0b571a52391b9b2fbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a93de8f69bca4cda1d120ff0f397940"><td class="memItemLeft" align="right" valign="top"><a class="el" href="heap_2src_2Include__i_8h.html#adb63e482e87469af811d41d2e67d65fd">HeapDebugCheckAllocatorFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structBaseHeap.html#a7a93de8f69bca4cda1d120ff0f397940">heapDebugCheckAllocatorFn</a></td></tr>
+<tr class="separator:a7a93de8f69bca4cda1d120ff0f397940"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20b2df3fc7682fd6a8eb553268420e7d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="heap_2src_2Include__i_8h.html#aa408c5bce9d41034989b9bda698b7901">GetAllocationSizeFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structBaseHeap.html#a20b2df3fc7682fd6a8eb553268420e7d">getAllocationSizeFn</a></td></tr>
+<tr class="separator:a20b2df3fc7682fd6a8eb553268420e7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22c53c8a3422c1b1e776d84ac8574a9e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="heap_2src_2Include__i_8h.html#ad56ba9a4c9720dcb64792e17d2e6bf89">GetAllocationHeaderSizeFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structBaseHeap.html#a22c53c8a3422c1b1e776d84ac8574a9e">getAllocationHeaderSizeFn</a></td></tr>
+<tr class="separator:a22c53c8a3422c1b1e776d84ac8574a9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dd969e71b7c1cbcbd8464ad5a0be61f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="heap_2src_2Include__i_8h.html#a8a79591921b66a9ad15cae5585733b5d">GetAllocationFooterSizeFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structBaseHeap.html#a0dd969e71b7c1cbcbd8464ad5a0be61f">getAllocationFooterSizeFn</a></td></tr>
+<tr class="separator:a0dd969e71b7c1cbcbd8464ad5a0be61f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfdbb1e103d80e6052422eca2feaca27"><td class="memItemLeft" align="right" valign="top"><a class="el" href="heap_2src_2Include__i_8h.html#a55af7dee33b2366c980d7ab387f694a4">GetAllocationAlignedSizeFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structBaseHeap.html#abfdbb1e103d80e6052422eca2feaca27">getAllocationAlignedSizeFn</a></td></tr>
+<tr class="separator:abfdbb1e103d80e6052422eca2feaca27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a017d7ef59cd599a8ba02d7704678ed50"><td class="memItemLeft" align="right" valign="top"><a class="el" href="heap_2src_2Include__i_8h.html#abf9ed0f30623705cff8268646b5f54eb">GetHeapLimitsFunc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structBaseHeap.html#a017d7ef59cd599a8ba02d7704678ed50">getHeapLimitsFn</a></td></tr>
+<tr class="separator:a017d7ef59cd599a8ba02d7704678ed50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a87aa96eae3021ace277c52672ffcbc9c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a87aa96eae3021ace277c52672ffcbc9c">&#9670;&nbsp;</a></span>heap</h2>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="abfdbb1e103d80e6052422eca2feaca27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfdbb1e103d80e6052422eca2feaca27">&#9670;&nbsp;</a></span>getAllocationAlignedSizeFn</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structHeap.html">Heap</a> BaseHeap::heap</td>
+          <td class="memname"><a class="el" href="heap_2src_2Include__i_8h.html#a55af7dee33b2366c980d7ab387f694a4">GetAllocationAlignedSizeFunc</a> getAllocationAlignedSizeFn</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0dd969e71b7c1cbcbd8464ad5a0be61f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dd969e71b7c1cbcbd8464ad5a0be61f">&#9670;&nbsp;</a></span>getAllocationFooterSizeFn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="heap_2src_2Include__i_8h.html#a8a79591921b66a9ad15cae5585733b5d">GetAllocationFooterSizeFunc</a> getAllocationFooterSizeFn</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a22c53c8a3422c1b1e776d84ac8574a9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22c53c8a3422c1b1e776d84ac8574a9e">&#9670;&nbsp;</a></span>getAllocationHeaderSizeFn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="heap_2src_2Include__i_8h.html#ad56ba9a4c9720dcb64792e17d2e6bf89">GetAllocationHeaderSizeFunc</a> getAllocationHeaderSizeFn</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a20b2df3fc7682fd6a8eb553268420e7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20b2df3fc7682fd6a8eb553268420e7d">&#9670;&nbsp;</a></span>getAllocationSizeFn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="heap_2src_2Include__i_8h.html#aa408c5bce9d41034989b9bda698b7901">GetAllocationSizeFunc</a> getAllocationSizeFn</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a017d7ef59cd599a8ba02d7704678ed50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a017d7ef59cd599a8ba02d7704678ed50">&#9670;&nbsp;</a></span>getHeapLimitsFn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="heap_2src_2Include__i_8h.html#abf9ed0f30623705cff8268646b5f54eb">GetHeapLimitsFunc</a> getHeapLimitsFn</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad8836da75403ebe2fb40902ecda815bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8836da75403ebe2fb40902ecda815bf">&#9670;&nbsp;</a></span>heap</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structHeap.html">Heap</a> heap</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -136,14 +222,84 @@ GetHeapLimitsFunc&#160;</td><td class="memItemRight" valign="bottom"><b>getHeapL
 
 </div>
 </div>
-<a id="ab76462ad6cea69ae2ebec100ea16ff97"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab76462ad6cea69ae2ebec100ea16ff97">&#9670;&nbsp;</a></span>heapInitializeFn</h2>
+<a id="a28f8f5cb818fcedf406365c3f9b92dd8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28f8f5cb818fcedf406365c3f9b92dd8">&#9670;&nbsp;</a></span>heapAllocFn</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">HeapInitializeFunc BaseHeap::heapInitializeFn</td>
+          <td class="memname"><a class="el" href="heap_2src_2Include__i_8h.html#af31b4d9b15bf56aac83eebf122a78187">HeapAllocFunc</a> heapAllocFn</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7a93de8f69bca4cda1d120ff0f397940"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a93de8f69bca4cda1d120ff0f397940">&#9670;&nbsp;</a></span>heapDebugCheckAllocatorFn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="heap_2src_2Include__i_8h.html#adb63e482e87469af811d41d2e67d65fd">HeapDebugCheckAllocatorFunc</a> heapDebugCheckAllocatorFn</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a624a8121cbc05016e61d47a83418b779"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a624a8121cbc05016e61d47a83418b779">&#9670;&nbsp;</a></span>heapFreeFn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="heap_2src_2Include__i_8h.html#a1d89e05215b03152ccd441971857aca3">HeapFreeFunc</a> heapFreeFn</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a61afa009f898e14029c755686bc4188b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61afa009f898e14029c755686bc4188b">&#9670;&nbsp;</a></span>heapGetAllocSizeFn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="heap_2src_2Include__i_8h.html#aa6fe4c13ea7ba534cc99d5e5c5285bbc">HeapGetAllocSizeFunc</a> heapGetAllocSizeFn</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab3145d1b19cf881a8c0a6b55ba22cc62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3145d1b19cf881a8c0a6b55ba22cc62">&#9670;&nbsp;</a></span>heapGetSizeFn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="heap_2src_2Include__i_8h.html#a7970c745c3bc01bc2343ec9c9e51a6a3">HeapGetSizeFunc</a> heapGetSizeFn</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a22fe248d3f82295002681030d58ac209"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22fe248d3f82295002681030d58ac209">&#9670;&nbsp;</a></span>heapInitializeFn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="heap_2src_2Include__i_8h.html#a4a9954f98e3afe319dbe8c5fc7baa59f">HeapInitializeFunc</a> heapInitializeFn</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -151,13 +307,73 @@ GetHeapLimitsFunc&#160;</td><td class="memItemRight" valign="bottom"><b>getHeapL
 
 </div>
 </div>
+<a id="a04bb0e8a17e8f6393fd1bf7a5a0a23d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04bb0e8a17e8f6393fd1bf7a5a0a23d0">&#9670;&nbsp;</a></span>heapMapFn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="heap_2src_2Include__i_8h.html#a2f3743be9cb0c716cffd8439cee6c93e">HeapMapFunc</a> heapMapFn</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0f1ba1dc46425b840a3cc4144286db4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f1ba1dc46425b840a3cc4144286db4a">&#9670;&nbsp;</a></span>heapReleaseFn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="heap_2src_2Include__i_8h.html#aa60739ffb93304bf324caf3e2f158f7a">HeapReleaseFunc</a> heapReleaseFn</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7e320f76f80bd2b9e7b2eb85cd6f4c8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e320f76f80bd2b9e7b2eb85cd6f4c8b">&#9670;&nbsp;</a></span>heapSetAllocSizeFn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="heap_2src_2Include__i_8h.html#a47cf3f0a620944c6e3303047742f1c13">HeapSetAllocSizeFunc</a> heapSetAllocSizeFn</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a906a2efef26a8e0b571a52391b9b2fbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a906a2efef26a8e0b571a52391b9b2fbd">&#9670;&nbsp;</a></span>heapUnmapFn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="heap_2src_2Include__i_8h.html#a4eb5c844fa6e7823d381cce1a63989ff">HeapUnmapFunc</a> heapUnmapFn</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>src/heap/src/<a class="el" href="heap_2src_2Include__i_8h_source.html">Include_i.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structBaseHeap.html">BaseHeap</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>
