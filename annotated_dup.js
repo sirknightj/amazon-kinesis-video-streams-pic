@@ -1,5 +1,19 @@
 var annotated_dup =
 [
+    [ "Key Features", "md_README.html#autotoc_md8", null ],
+    [ "Build", "md_README.html#autotoc_md9", [
+      [ "Download", "md_README.html#autotoc_md10", null ],
+      [ "Configure", "md_README.html#autotoc_md11", [
+        [ "Cross-Compilation", "md_README.html#autotoc_md12", null ],
+        [ "CMake Arguments", "md_README.html#autotoc_md13", null ]
+      ] ],
+      [ "Build", "md_README.html#autotoc_md14", null ],
+      [ "Note on alignment", "md_README.html#autotoc_md15", null ]
+    ] ],
+    [ "Contributing to this project", "md_README.html#autotoc_md16", null ],
+    [ "Documentation", "md_README.html#autotoc_md17", null ],
+    [ "Related", "md_README.html#autotoc_md18", null ],
+    [ "License", "md_README.html#autotoc_md19", null ],
     [ "__AuthInfo", "struct____AuthInfo.html", "struct____AuthInfo" ],
     [ "__ClientCallbacks", "struct____ClientCallbacks.html", "struct____ClientCallbacks" ],
     [ "__ClientInfo", "struct____ClientInfo.html", "struct____ClientInfo" ],

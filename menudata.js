@@ -24,6 +24,7 @@
 */
 var menudata={children:[
 {text:"Main Page",url:"index.html"},
+{text:"Related Pages",url:"pages.html"},
 {text:"Data Structures",url:"annotated.html",children:[
 {text:"Data Structures",url:"annotated.html"},
 {text:"Data Structure Index",url:"classes.html"},
@@ -206,5 +207,5 @@ var menudata={children:[
 {text:"v",url:"globals_defs_v.html#index_v"},
 {text:"w",url:"globals_defs_w.html#index_w"}]}]}]},
 {text:"Download",url:"usergroup0.html",children:[
-{text:"Releases",url:"https://github.com/awslabs/amazon-kinesis-video-streams-producer-c/releases"}]},
-{text:"Issue Tracker",url:"https://github.com/awslabs/amazon-kinesis-video-streams-pic/Issues"}]}
+{text:"Releases",url:"https://github.com/awslabs/amazon-kinesis-video-streams-pic/releases"}]},
+{text:"Issue Tracker",url:"https://github.com/awslabs/amazon-kinesis-video-streams-pic/issues"}]}

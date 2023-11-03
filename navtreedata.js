@@ -25,6 +25,16 @@
 var NAVTREE =
 [
   [ "Amazon Kinesis Video Streams PIC", "index.html", [
+    [ "Code of Conduct", "md_CODE_OF_CONDUCT.html", null ],
+    [ "Contributing Guidelines", "md_CONTRIBUTING.html", [
+      [ "Reporting Bugs/Feature Requests", "md_CONTRIBUTING.html#autotoc_md2", null ],
+      [ "Contributing via Pull Requests", "md_CONTRIBUTING.html#autotoc_md3", null ],
+      [ "Finding contributions to work on", "md_CONTRIBUTING.html#autotoc_md4", null ],
+      [ "Code of Conduct", "md_CONTRIBUTING.html#autotoc_md5", null ],
+      [ "Security issue notifications", "md_CONTRIBUTING.html#autotoc_md6", null ],
+      [ "Licensing", "md_CONTRIBUTING.html#autotoc_md7", null ]
+    ] ],
+    [ "README", "md_README.html", null ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Data Structure Index", "classes.html", null ],
@@ -46,9 +56,9 @@ var NAVTREE =
       ] ]
     ] ],
     [ "Download", "usergroup0.html", [
-      [ "Releases", "^https://github.com/awslabs/amazon-kinesis-video-streams-producer-c/releases", null ]
+      [ "Releases", "^https://github.com/awslabs/amazon-kinesis-video-streams-pic/releases", null ]
     ] ],
-    [ "Issue Tracker", "^https://github.com/awslabs/amazon-kinesis-video-streams-pic/Issues", null ]
+    [ "Issue Tracker", "^https://github.com/awslabs/amazon-kinesis-video-streams-pic/issues", null ]
   ] ]
 ];
 
@@ -65,13 +75,13 @@ var NAVTREEINDEX =
 "client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#a7055588220d46a840f28044d645bda95",
 "client_2include_2com_2amazonaws_2kinesis_2video_2client_2Include_8h.html#aefc00192629ed32d1ec1a234155f39e7",
 "globals_defs_b.html",
-"mkvgen_2include_2com_2amazonaws_2kinesis_2video_2mkvgen_2Include_8h.html#a4ce540787f2d8eec2eb73789e9336b71",
-"mkvgen_2src_2Include__i_8h.html#ab7ca7eebb14952048ad351102858a283",
-"structSemaphore.html",
-"struct____Frame.html#a8ffac79cdfb8a2da19ee271752749738",
-"struct____StreamMetrics.html",
-"utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a6175cea7538cadea9007657c28bece57",
-"utils_2src_2Include__i_8h.html#a191cf660233073129275690159bb68d1"
+"mkvgen_2include_2com_2amazonaws_2kinesis_2video_2mkvgen_2Include_8h.html#a3aec6a5a17f99e5087ace680de152e74",
+"mkvgen_2src_2Include__i_8h.html#a931dc424a7ff1a5999364f3f4fb16bc0",
+"structParserState.html#ab9fcfab653065e5e0a89b1ad0644894c",
+"struct____FragmentAck.html#ae4b5c12f00fd113109e2378ff86dab0a",
+"struct____StreamDescription__V0.html#a56a751580570459b17302e1e2bfb0239",
+"utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#a55f6c2dcbf967fd54a07cd3d101c4028",
+"utils_2include_2com_2amazonaws_2kinesis_2video_2utils_2Include_8h.html#af8dceb57a7659ffdb6f48c894a0dc85da4097155fa78d1bc1a6f9fd734d21896d"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
