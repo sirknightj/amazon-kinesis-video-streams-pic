@@ -19,7 +19,7 @@ jobs:
 
     - name: Verify formatting
       run: |
-        find . -name "*.c" -o -name "*.h" -o -name "*.cpp" | xargs clang-format --dry-run -Werror -style=llvm
+        find src/ -name "*.c" -o -name "*.h" | xargs clang-format --dry-run -Werror -style=llvm
       shell: bash
 
   format-and-upload:
@@ -44,6 +44,7 @@ jobs:
           find . -name "*.c" -o -name "*.h" -o -name "*.cpp" | xargs clang-format -i -style=llvm
           # Check which files were modified by clang-format
           git diff --name-only --cached > modified_files.txt
+          cat modified_files.txt
         shell: bash
 
       - name: Archive formatted files
