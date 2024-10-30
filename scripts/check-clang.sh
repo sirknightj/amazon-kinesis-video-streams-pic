@@ -14,16 +14,17 @@ SOURCE_FILES=`find src -type f \( -name '*.h' -o -name '*.c' \) -not -path "*/ex
 echo "Performing clang format compliance check...."
 for i in $SOURCE_FILES
 do
-    $CLANG_FORMAT -output-replacements-xml $i | grep -c "<replacement " > /dev/null
+    $CLANG_FORMAT --dry-run --Werror $i
     if [ $? -ne 1 ]
     then
-        echo "$i failed clang-format check."
         FAIL=1
     fi
 done
 
-if [ $FAIL -ne 1 ]; then
-        echo "Clang check passed for the project"
+if [ $FAIL -eq 1 ]; then
+    echo "Clang check failed for the project"
+else
+    echo "Clang check passed for the project"
 fi
 
 exit $FAIL
