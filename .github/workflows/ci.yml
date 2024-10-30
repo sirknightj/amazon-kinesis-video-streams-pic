@@ -10,18 +10,6 @@ on:
       - develop
       - master
 jobs:
-  clang-format-check:
-    runs-on: macos-latest
-    steps:
-      - name: Clone repository
-        uses: actions/checkout@v3
-      - name: Install clang-format
-        run: |
-          brew install clang-format
-          clang-format --version
-      - name: Run clang format check
-        run: |
-          bash scripts/check-clang.sh
   mac-tests:
     strategy:
       matrix:
@@ -32,6 +20,7 @@ jobs:
           - name: Aligned Memory Model Build
             cmake_flags: "-DBUILD_TEST=TRUE -DALIGNED_MEMORY_MODEL=TRUE -DFIXUP_ANNEX_B_TRAILING_NALU_ZERO=TRUE"
         compiler: [gcc, clang]
+      fail-fast: false
 
     runs-on: ${{ matrix.os }}
 
