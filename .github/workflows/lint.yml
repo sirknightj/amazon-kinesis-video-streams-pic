@@ -1,9 +1,5 @@
 name: clang-format-check
-on:
-  push:
-    branches:
-      - master
-      - develop
+on: [ push ]
 jobs:
   check-format:
     runs-on: ubuntu-latest
@@ -21,6 +17,12 @@ jobs:
       run: |
         find . -name "*.c" -o -name "*.h" | xargs clang-format -style=file --dry-run -Werror
       shell: bash
+
+    - name: Clang Format Success Summary
+      if: success()
+      run: |
+        echo "# 🎉 Clang Format Check Passed!" >> $GITHUB_STEP_SUMMARY
+        echo "All files are properly formatted." >> $GITHUB_STEP_SUMMARY
 
   format-and-upload:
     runs-on: ubuntu-latest
@@ -63,3 +65,14 @@ jobs:
         with:
           name: formatted-files
           path: formatted_files
+
+      - name: Generate Markdown Summary for Corrected Files
+        run: |
+          echo "# ❌ Clang Format Check Failed" >> $GITHUB_STEP_SUMMARY
+          echo "Some files are not clang-format compliant. Please review the list of affected files below:" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          while IFS= read -r file; do
+            echo "- \`$file\`" >> $GITHUB_STEP_SUMMARY
+          done < modified_files.txt
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Total Files Formatted**: $(wc -l < modified_files.txt)" >> $GITHUB_STEP_SUMMARY
