@@ -60,7 +60,7 @@ jobs:
           done < modified_files.txt
         shell: bash
 
-      - name: Upload formatted files  # Check the 'summary' tab of the action to find the uploaded files
+      - name: Upload formatted files
         uses: actions/upload-artifact@v4
         with:
           name: formatted-files
@@ -69,10 +69,12 @@ jobs:
       - name: Generate Markdown Summary for Corrected Files
         run: |
           echo "# ❌ Clang Format Check Failed" >> $GITHUB_STEP_SUMMARY
-          echo "Some files are not clang-format compliant. Please review the list of affected files below:" >> $GITHUB_STEP_SUMMARY
+          echo "$(wc -l < modified_files.txt) file(s) are not clang-format compliant. Please review the list of affected files below:" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           while IFS= read -r file; do
             echo "- \`$file\`" >> $GITHUB_STEP_SUMMARY
           done < modified_files.txt
           echo "" >> $GITHUB_STEP_SUMMARY
+          echo "## Fixed files" >> $GITHUB_STEP_SUMMARY
           echo "**Total Files Formatted**: $(wc -l < modified_files.txt)" >> $GITHUB_STEP_SUMMARY
+          echo "Check the \"Artifacts\" below for the corrected files." >> $GITHUB_STEP_SUMMARY
