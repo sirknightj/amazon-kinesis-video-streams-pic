@@ -1,8 +1,13 @@
 name: clang-format-check
-on: [ push ]
+on:
+  push:
+    branches:
+      - master
+      - develop
 jobs:
   clang-format:
     runs-on: ubuntu-latest
+
 
     steps:
     - name: Checkout code
