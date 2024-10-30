@@ -11,7 +11,7 @@ on:
       - master
 jobs:
   clang-format-check:
-    runs-on: macos-11
+    runs-on: macos-latest
     steps:
       - name: Clone repository
         uses: actions/checkout@v3
@@ -22,120 +22,49 @@ jobs:
       - name: Run clang format check
         run: |
           bash scripts/check-clang.sh
-  mac-os-build-gcc:
-    runs-on: macos-latest
-    env:
-      CC: gcc-11
-      CXX: g++-11
-      AWS_KVS_LOG_LEVEL: 2
+  mac-tests:
+    strategy:
+      matrix:
+        os: [macos-13, macos-13-xlarge]
+        config:
+          - name: Default Build
+            cmake_flags: "-DBUILD_TEST=TRUE"
+          - name: Aligned Memory Model Build
+            cmake_flags: "-DBUILD_TEST=TRUE -DALIGNED_MEMORY_MODEL=TRUE -DFIXUP_ANNEX_B_TRAILING_NALU_ZERO=TRUE"
+        compiler: [gcc, clang]
+
+    runs-on: ${{ matrix.os }}
+
     steps:
-      - name: Clone repository
-        uses: actions/checkout@v2
-      - name: Build repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up compiler
         run: |
-          mkdir build && cd build
-          cmake .. -DBUILD_TEST=TRUE
+          if [[ "${{ matrix.compiler }}" == "gcc" ]]; then
+            brew install gcc
+            export CC=$(which gcc)
+            export CXX=$(which g++)
+          else
+            brew install llvm
+            export CC=$(which clang)
+            export CXX=$(which clang++)
+          fi
+          echo "Using $CC and $CXX"
+
+      - name: Configure and build ${{ matrix.config.name }}
+        run: |
+          mkdir -p build
+          cd build
+          cmake .. ${{ matrix.config.cmake_flags }}
           make
+        shell: bash
+
       - name: Run tests
         run: |
           cd build
           ./tst/kvspic_test --gtest_filter="-TimerQueueFunctionalityTest.*:HeapPerfTest.*"
-      - name: Build With ALIGNED_MEMORY_MODEL and FIXUP_ANNEX_B_TRAILING_NALU_ZERO definitions TRUE
-        run: |
-          rm -rf build
-          mkdir build && cd build
-          cmake .. -DBUILD_TEST=TRUE -DALIGNED_MEMORY_MODEL=TRUE -DFIXUP_ANNEX_B_TRAILING_NALU_ZERO=TRUE
-          make
-      - name: Run tests
-        run: |
-          cd build
-          ./tst/kvspic_test --gtest_filter="-TimerQueueFunctionalityTest.*:HeapPerfTest.*"
-  mac-os-build-clang:
-    runs-on: macos-latest
-    env:
-      AWS_KVS_LOG_LEVEL: 2
-    steps:
-      - name: Clone repository
-        uses: actions/checkout@v2
-      - name: Build repository
-        run: |
-          mkdir build && cd build
-          cmake .. -DBUILD_TEST=TRUE -DCOMPILER_WARNINGS=TRUE
-          make
-      - name: Run tests
-        run: |
-          cd build
-          ./tst/kvspic_test --gtest_filter="-TimerQueueFunctionalityTest.*:HeapPerfTest.*"
-      - name: Build With ALIGNED_MEMORY_MODEL and FIXUP_ANNEX_B_TRAILING_NALU_ZERO definitions TRUE
-        run: |
-          rm -rf build
-          mkdir build && cd build
-          cmake .. -DBUILD_TEST=TRUE -DALIGNED_MEMORY_MODEL=TRUE -DFIXUP_ANNEX_B_TRAILING_NALU_ZERO=TRUE
-          make
-      - name: Run tests
-        run: |
-          cd build
-          ./tst/kvspic_test --gtest_filter="-TimerQueueFunctionalityTest.*:HeapPerfTest.*"
-  mac-os-m1-build-clang:
-    runs-on: macos-13-xlarge
-    env:
-      AWS_KVS_LOG_LEVEL: 2
-    steps:
-      - name: Clone repository
-        uses: actions/checkout@v2
-      - name: Build repository
-        run: |
-          brew unlink openssl
-          mkdir build && cd build
-          cmake .. -DBUILD_TEST=TRUE -DCMAKE_C_COMPILER=$(brew --prefix llvm@15)/bin/clang -DCMAKE_CXX_COMPILER=$(brew --prefix llvm@15)/bin/clang++
-          make
-      - name: Run tests
-        run: |
-          cd build
-          ./tst/kvspic_test --gtest_filter="-TimerQueueFunctionalityTest.*:HeapPerfTest.*"
-      - name: Build With ALIGNED_MEMORY_MODEL and FIXUP_ANNEX_B_TRAILING_NALU_ZERO definitions TRUE
-        run: |
-          rm -rf build
-          mkdir build && cd build
-          cmake .. -DBUILD_TEST=TRUE -DALIGNED_MEMORY_MODEL=TRUE -DFIXUP_ANNEX_B_TRAILING_NALU_ZERO=TRUE -DCMAKE_C_COMPILER=$(brew --prefix llvm@15)/bin/clang -DCMAKE_CXX_COMPILER=$(brew --prefix llvm@15)/bin/clang++
-          make
-      - name: Run tests
-        run: |
-          cd build
-          ./tst/kvspic_test --gtest_filter="-TimerQueueFunctionalityTest.*:HeapPerfTest.*"
-  mac-os-m1-build-gcc:
-    runs-on: macos-13-xlarge
-    env:
-      CC: /opt/homebrew/bin/gcc-13
-      CXX: /opt/homebrew/bin/g++-13
-      AWS_KVS_LOG_LEVEL: 2
-    steps:
-      - name: Setup XCode version 15.2
-        uses: maxim-lobanov/setup-xcode@v1
-        with:
-          xcode-version: '15.2'
-      - name: Clone repository
-        uses: actions/checkout@v2
-      - name: Build repository
-        run: |
-          brew unlink openssl
-          mkdir build && cd build
-          cmake .. -DBUILD_TEST=TRUE
-          make
-      - name: Run tests
-        run: |
-          cd build
-          ./tst/kvspic_test --gtest_filter="-TimerQueueFunctionalityTest.*:HeapPerfTest.*"
-      - name: Build With ALIGNED_MEMORY_MODEL and FIXUP_ANNEX_B_TRAILING_NALU_ZERO definitions TRUE
-        run: |
-          rm -rf build
-          mkdir build && cd build
-          cmake .. -DBUILD_TEST=TRUE -DALIGNED_MEMORY_MODEL=TRUE -DFIXUP_ANNEX_B_TRAILING_NALU_ZERO=TRUE
-          make
-      - name: Run tests
-        run: |
-          cd build
-          ./tst/kvspic_test --gtest_filter="-TimerQueueFunctionalityTest.*:HeapPerfTest.*"
+        shell: bash
   linux-gcc-code-coverage:
     runs-on: ubuntu-latest
     env:
