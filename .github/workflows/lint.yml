@@ -5,10 +5,8 @@ on:
       - master
       - develop
 jobs:
-  clang-format:
+  check-format:
     runs-on: ubuntu-latest
-
-
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
