@@ -75,6 +75,7 @@ jobs:
             echo "- \`$file\`" >> $GITHUB_STEP_SUMMARY
           done < modified_files.txt
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "## Fixed files" >> $GITHUB_STEP_SUMMARY
+          echo "## 🛠️ Fixed files" >> $GITHUB_STEP_SUMMARY
           echo "**Total Files Formatted**: $(wc -l < modified_files.txt)" >> $GITHUB_STEP_SUMMARY
-          echo "Check the \"Artifacts\" below for the corrected files." >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "ℹ️ Check the \"Artifacts\" below for the corrected files." >> $GITHUB_STEP_SUMMARY
