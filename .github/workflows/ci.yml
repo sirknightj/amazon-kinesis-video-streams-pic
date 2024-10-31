@@ -37,17 +37,21 @@ jobs:
         run: |
           if [[ "${{ matrix.compiler }}" == "gcc" ]]; then
             brew install gcc
-            echo "CC=$(which gcc)" >> $GITHUB_ENV
-            echo "CXX=$(which g++)" >> $GITHUB_ENV
           else
             brew install llvm
-            echo "CC=$(which clang)" >> $GITHUB_ENV
-            echo "CXX=$(which clang++)" >> $GITHUB_ENV
           fi
-          echo "Using ${{ env.CC }} and ${{ env.CXX }}"
 
       - name: Configure and build ${{ matrix.config.name }}
         run: |
+          if [[ "${{ matrix.compiler }}" == "gcc" ]]; then
+            export CC=$(which gcc)
+            export CXX=$(which g++)
+          else
+            export "CC=$(which clang)"
+            export "CXX=$(which clang++)"
+          fi
+          echo "Using $CC and $CXX"
+
           mkdir -p build
           cd build
           cmake .. -DCMAKE_C_COMPILER=$CC -DCMAKE_CXX_COMPILER=$CXX ${{ matrix.config.cmake_flags }}
@@ -204,20 +208,24 @@ jobs:
           sudo apt update
           if [[ "${{ matrix.arch }}" == "arm64" ]]; then
             sudo apt-get -y install gcc-aarch64-linux-gnu g++-aarch64-linux-gnu binutils-aarch64-linux-gnu
-            echo "CC=$(which aarch64-linux-gnu-gcc)" >> $env:GITHUB_ENV
-            echo "CXX=$(which aarch64-linux-gnu-g++)" >> $env:GITHUB_ENV
           else
             sudo apt-get -y install gcc-arm-linux-gnueabi g++-arm-linux-gnueabi binutils-arm-linux-gnueabi
-            echo "CC=$(which arm-linux-gnueabi-gcc)" >> $env:GITHUB_ENV
-            echo "CXX=$(which arm-linux-gnueabi-g++)" >> $env:GITHUB_ENV
           fi
-          echo "Using compiler $CC and $CXX for ${{ matrix.arch }}"
 
       - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Build Repository - ${{ matrix.arch }} - ${{ matrix.config.name }}
         run: |
+          if [[ "${{ matrix.arch }}" == "arm64" ]]; then
+            export CC=$(which aarch64-linux-gnu-gcc)
+            export CXX=$(which aarch64-linux-gnu-g++)
+          else
+            export CC=$(which arm-linux-gnueabi-gcc)"
+            export CXX=$(which arm-linux-gnueabi-g++)"
+          fi
+          echo "Using compiler $CC and $CXX for ${{ matrix.arch }}"
+          
           mkdir -p build
           cd build
           cmake .. -DCMAKE_C_COMPILER=$CC -DCMAKE_CXX_COMPILER=$CXX ${{ matrix.config.cmake_flags }}
