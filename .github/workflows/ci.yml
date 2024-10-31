@@ -44,17 +44,17 @@ jobs:
       - name: Configure and build ${{ matrix.config.name }}
         run: |
           if [[ "${{ matrix.compiler }}" == "gcc" ]]; then
-            export CC=$(which gcc)
-            export CXX=$(which g++)
+            export CC="gcc"
+            export CXX="g++"
           else
-            export "CC=$(which clang)"
-            export "CXX=$(which clang++)"
+            export CC="clang"
+            export CXX="clang++"
           fi
           echo "Using $CC and $CXX"
 
           mkdir -p build
           cd build
-          cmake .. -DCMAKE_C_COMPILER=$CC -DCMAKE_CXX_COMPILER=$CXX ${{ matrix.config.cmake_flags }}
+          cmake .. ${{ matrix.config.cmake_flags }}
           make
         shell: bash
 
@@ -218,15 +218,15 @@ jobs:
       - name: Build Repository - ${{ matrix.arch }} - ${{ matrix.config.name }}
         run: |
           if [[ "${{ matrix.arch }}" == "arm64" ]]; then
-            export CC=$(which aarch64-linux-gnu-gcc)
-            export CXX=$(which aarch64-linux-gnu-g++)
+            export CC="aarch64-linux-gnu-gcc"
+            export CXX="aarch64-linux-gnu-g++"
           else
-            export CC=$(which arm-linux-gnueabi-gcc)"
-            export CXX=$(which arm-linux-gnueabi-g++)"
+            export CC="arm-linux-gnueabi-gcc"
+            export CXX="arm-linux-gnueabi-g++"
           fi
           echo "Using compiler $CC and $CXX for ${{ matrix.arch }}"
           
           mkdir -p build
           cd build
-          cmake .. -DCMAKE_C_COMPILER=$CC -DCMAKE_CXX_COMPILER=$CXX ${{ matrix.config.cmake_flags }}
+          cmake .. ${{ matrix.config.cmake_flags }}
           make
