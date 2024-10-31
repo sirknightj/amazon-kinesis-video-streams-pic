@@ -37,12 +37,12 @@ jobs:
         run: |
           if [[ "${{ matrix.compiler }}" == "gcc" ]]; then
             brew install gcc
-            echo "CC=$(which gcc)" >> $env:GITHUB_ENV
-            echo "CXX=$(which g++)" >> $env:GITHUB_ENV
+            echo "CC=$(which gcc)" >> $GITHUB_ENV
+            echo "CXX=$(which g++)" >> $GITHUB_ENV
           else
             brew install llvm
-            echo "CC=$(which clang)" >> $env:GITHUB_ENV
-            echo "CXX=$(which clang++)" >> $env:GITHUB_ENV
+            echo "CC=$(which clang)" >> $GITHUB_ENV
+            echo "CXX=$(which clang++)" >> $GITHUB_ENV
           fi
           echo "Using ${{ env.CC }} and ${{ env.CXX }}"
 
@@ -50,7 +50,7 @@ jobs:
         run: |
           mkdir -p build
           cd build
-          cmake .. -DCMAKE_C_COMPILER=${{ env.CC }} -DCMAKE_CXX_COMPILER=${{ env.CXX }} ${{ matrix.config.cmake_flags }}
+          cmake .. -DCMAKE_C_COMPILER=$CC -DCMAKE_CXX_COMPILER=$CXX ${{ matrix.config.cmake_flags }}
           make
         shell: bash
 
@@ -125,9 +125,9 @@ jobs:
       - name: Configure sanitizers
         run: |
           if [[ "${{ matrix.sanitizer }}" == "UNDEFINED_BEHAVIOR_SANITIZER" ]]; then
-            echo "UBSAN_OPTIONS=\"print_stacktrace=1:halt_on_error=1:suppressions=../../tst/suppressions/UBSAN.supp\"" >> $env:GITHUB_ENV
+            echo "UBSAN_OPTIONS=\"print_stacktrace=1:halt_on_error=1:suppressions=../../tst/suppressions/UBSAN.supp\"" >> $GITHUB_ENV
           elif [[ "${{ matrix.sanitizer }}" == "THREAD_SANITIZER" ]]; then
-            echo "TSAN_OPTIONS=\"halt_on_error=1:suppressions=../../tst/suppressions/TSAN.supp\"" >> $env:GITHUB_ENV
+            echo "TSAN_OPTIONS=\"halt_on_error=1:suppressions=../../tst/suppressions/TSAN.supp\"" >> $GITHUB_ENV
           fi
 
       - name: Run tests - ${{ matrix.config.name }}
@@ -220,5 +220,5 @@ jobs:
         run: |
           mkdir -p build
           cd build
-          cmake .. -DCMAKE_C_COMPILER=${{ env.CC }} -DCMAKE_CXX_COMPILER=${{ env.CXX }} ${{ matrix.config.cmake_flags }}
+          cmake .. -DCMAKE_C_COMPILER=$CC -DCMAKE_CXX_COMPILER=$CXX ${{ matrix.config.cmake_flags }}
           make
