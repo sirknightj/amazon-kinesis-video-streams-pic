@@ -143,7 +143,7 @@ jobs:
           timeout --signal=SIGABRT 40m ./tst/kvspic_test --gtest_filter="${{ env.TEST_FILTER }}"
 
   linux-gcc-4_4:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     strategy:
       matrix:
         config:
