@@ -97,11 +97,11 @@ jobs:
   linux-sanitizers:
     strategy:
       matrix:
+        # Todo: add the MEMORY_SANITIZER to this
         sanitizer: |
           - ADDRESS_SANITIZER
           - UNDEFINED_BEHAVIOR_SANITIZER
           - THREAD_SANITIZER
-        # - MEMORY_SANITIZER
         config:
           - name: Default Build
             cmake_flags: "-DBUILD_TEST=TRUE"
