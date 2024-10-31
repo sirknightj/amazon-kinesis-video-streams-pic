@@ -97,7 +97,11 @@ jobs:
   linux-sanitizers:
     strategy:
       matrix:
-        sanitizer: [ ADDRESS_SANITIZER, UNDEFINED_BEHAVIOR_SANITIZER, THREAD_SANITIZER ]
+        sanitizer:
+          - ADDRESS_SANITIZER
+          - UNDEFINED_BEHAVIOR_SANITIZER
+          - THREAD_SANITIZER
+          #  - MEMORY_SANITIZER
         config:
           - name: Default Build
             cmake_flags: "-DBUILD_TEST=TRUE"
@@ -119,14 +123,12 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get -y install clang
-
       - name: Build repository - ${{ matrix.config.name }}
         run: |
           mkdir -p build
           cd build
           cmake .. -D${{ matrix.sanitizer }}=TRUE ${{ matrix.config.cmake_flags }}
           make
-
       - name: Configure sanitizers
         run: |
           if [[ "${{ matrix.sanitizer }}" == "UNDEFINED_BEHAVIOR_SANITIZER" ]]; then
@@ -134,7 +136,6 @@ jobs:
           elif [[ "${{ matrix.sanitizer }}" == "THREAD_SANITIZER" ]]; then
             echo "TSAN_OPTIONS=halt_on_error=1:suppressions=../../tst/suppressions/TSAN.supp" >> $GITHUB_ENV
           fi
-
       - name: Run tests - ${{ matrix.config.name }}
         run: |
           cd build
@@ -143,13 +144,14 @@ jobs:
 
   linux-gcc-4_4:
     runs-on: ubuntu-latest
-    matrix:
-      config:
-        - name: Default Build
-          cmake_flags: "-DBUILD_TEST=TRUE"
-        - name: Aligned Memory Model Build
-          cmake_flags: "-DBUILD_TEST=TRUE -DALIGNED_MEMORY_MODEL=TRUE -DFIXUP_ANNEX_B_TRAILING_NALU_ZERO=TRUE"
-    fail-fast: false
+    strategy:
+      matrix:
+        config:
+          - name: Default Build
+            cmake_flags: "-DBUILD_TEST=TRUE"
+          - name: Aligned Memory Model Build
+            cmake_flags: "-DBUILD_TEST=TRUE -DALIGNED_MEMORY_MODEL=TRUE -DFIXUP_ANNEX_B_TRAILING_NALU_ZERO=TRUE"
+      fail-fast: false
     env:
       CC: gcc-4.4
     steps:
