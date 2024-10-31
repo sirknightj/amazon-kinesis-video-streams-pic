@@ -97,10 +97,7 @@ jobs:
   linux-sanitizers:
     strategy:
       matrix:
-        sanitizer:
-          - ADDRESS_SANITIZER
-          - UNDEFINED_BEHAVIOR_SANITIZER
-          - THREAD_SANITIZER
+        sanitizer: [ ADDRESS_SANITIZER, UNDEFINED_BEHAVIOR_SANITIZER, THREAD_SANITIZER ]
         config:
           - name: Default Build
             cmake_flags: "-DBUILD_TEST=TRUE"
