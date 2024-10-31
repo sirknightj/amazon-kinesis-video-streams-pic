@@ -129,9 +129,9 @@ jobs:
       - name: Configure sanitizers
         run: |
           if [[ "${{ matrix.sanitizer }}" == "UNDEFINED_BEHAVIOR_SANITIZER" ]]; then
-            echo "UBSAN_OPTIONS=\"print_stacktrace=1:halt_on_error=1:suppressions=../../tst/suppressions/UBSAN.supp\"" >> $GITHUB_ENV
+            echo "UBSAN_OPTIONS=print_stacktrace=1:halt_on_error=1:suppressions=../../tst/suppressions/UBSAN.supp" >> $GITHUB_ENV
           elif [[ "${{ matrix.sanitizer }}" == "THREAD_SANITIZER" ]]; then
-            echo "TSAN_OPTIONS=\"halt_on_error=1:suppressions=../../tst/suppressions/TSAN.supp\"" >> $GITHUB_ENV
+            echo "TSAN_OPTIONS=halt_on_error=1:suppressions=../../tst/suppressions/TSAN.supp" >> $GITHUB_ENV
           fi
 
       - name: Run tests - ${{ matrix.config.name }}
