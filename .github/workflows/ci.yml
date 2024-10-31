@@ -98,7 +98,7 @@ jobs:
     strategy:
       matrix:
         # Todo: add the MEMORY_SANITIZER to this
-        sanitizer: |
+        sanitizer:
           - ADDRESS_SANITIZER
           - UNDEFINED_BEHAVIOR_SANITIZER
           - THREAD_SANITIZER
