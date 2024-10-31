@@ -55,7 +55,7 @@ jobs:
           mkdir -p build
           cd build
           cmake .. ${{ matrix.config.cmake_flags }}
-          make
+          make -j$(sysctl -n hw.ncpu)
         shell: bash
 
       - name: Run tests
@@ -229,4 +229,4 @@ jobs:
           mkdir -p build
           cd build
           cmake .. ${{ matrix.config.cmake_flags }}
-          make
+          make -j$(nproc)
