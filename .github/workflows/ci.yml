@@ -196,6 +196,7 @@ jobs:
             cmake_flags: "-DBUILD_TEST=TRUE"
           - name: Aligned Memory Model Build
             cmake_flags: "-DBUILD_TEST=TRUE -DALIGNED_MEMORY_MODEL=TRUE -DFIXUP_ANNEX_B_TRAILING_NALU_ZERO=TRUE"
+      fail-fast: false
 
     steps:
       - name: Install dependencies
