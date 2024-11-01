@@ -53,10 +53,20 @@ if(CODE_COVERAGE)
 endif()
 
 function(enableSanitizer SANITIZER)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0 -g -fsanitize=${SANITIZER} -fno-omit-frame-pointer" PARENT_SCOPE)
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O0 -g -fsanitize=${SANITIZER} -fno-omit-frame-pointer -fno-optimize-sibling-calls" PARENT_SCOPE)
-    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fsanitize=${SANITIZER}" PARENT_SCOPE)
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0 -g -fsanitize=${SANITIZER} -fno-omit-frame-pointer" PARENT_SCOPE)
+  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O0 -g -fsanitize=${SANITIZER} -fno-omit-frame-pointer -fno-optimize-sibling-calls" PARENT_SCOPE)
+  set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fsanitize=${SANITIZER}" PARENT_SCOPE)
 endfunction()
+
+if(KVS_DEFAULT_STACK_SIZE AND CONSTRAINED_DEVICE)
+  message(FATAL_ERROR "Conflicting parameters: KVS_DEFAULT_STACK_SIZE and CONSTRAINED_DEVICE cannot both be set.")
+elseif(KVS_DEFAULT_STACK_SIZE)
+  message(STATUS "Building with default stack size: ${KVS_DEFAULT_STACK_SIZE} bytes")
+  add_compile_definitions(KVS_DEFAULT_STACK_SIZE_BYTES=${KVS_DEFAULT_STACK_SIZE})
+elseif(CONSTRAINED_DEVICE)
+  message(STATUS "Building for constrained device with stack size set to 512 KiB (0.5 MiB)")
+  add_compile_definitions(CONSTRAINED_DEVICE)
+endif()
 
 if(ADDRESS_SANITIZER)
   enableSanitizer("address")
@@ -127,19 +137,19 @@ include_directories(${PIC_HEADERS})
 include_directories(${KINESIS_VIDEO_PIC_SRC})
 
 configure_file(
-  "${CMAKE_CURRENT_SOURCE_DIR}/libkvspic.pc.cmake"
-  "${CMAKE_CURRENT_BINARY_DIR}/libkvspic.pc" @ONLY)
+        "${CMAKE_CURRENT_SOURCE_DIR}/libkvspic.pc.cmake"
+        "${CMAKE_CURRENT_BINARY_DIR}/libkvspic.pc" @ONLY)
 
 add_library(
-  kvspic ${LIBTYPE}
-  ${PIC_CLIENT_SOURCE_FILES}
-  ${PIC_DURATION_SOURCE_FILES}
-  ${PIC_HEAP_SOURCE_FILES}
-  ${PIC_MKVGEN_SOURCE_FILES}
-  ${PIC_STATE_SOURCE_FILES}
-  ${PIC_TRACE_SOURCE_FILES}
-  ${PIC_UTILS_SOURCE_FILES}
-  ${PIC_VIEW_SOURCE_FILES})
+        kvspic ${LIBTYPE}
+        ${PIC_CLIENT_SOURCE_FILES}
+        ${PIC_DURATION_SOURCE_FILES}
+        ${PIC_HEAP_SOURCE_FILES}
+        ${PIC_MKVGEN_SOURCE_FILES}
+        ${PIC_STATE_SOURCE_FILES}
+        ${PIC_TRACE_SOURCE_FILES}
+        ${PIC_UTILS_SOURCE_FILES}
+        ${PIC_VIEW_SOURCE_FILES})
 if(BUILD_SHARED_LIBS)
   set_target_properties(kvspic PROPERTIES VERSION 0.0.0 SOVERSION 0)
 endif()
@@ -150,8 +160,8 @@ if(UNIX AND NOT APPLE)
 endif()
 
 configure_file(
-  "${CMAKE_CURRENT_SOURCE_DIR}/libkvspicClient.pc.cmake"
-  "${CMAKE_CURRENT_BINARY_DIR}/libkvspicClient.pc" @ONLY)
+        "${CMAKE_CURRENT_SOURCE_DIR}/libkvspicClient.pc.cmake"
+        "${CMAKE_CURRENT_BINARY_DIR}/libkvspicClient.pc" @ONLY)
 
 add_library(kvspicClient ${LIBTYPE} ${PIC_CLIENT_SOURCE_FILES})
 if(BUILD_SHARED_LIBS)
@@ -160,8 +170,8 @@ endif()
 target_link_libraries(kvspicClient)
 
 configure_file(
-  "${CMAKE_CURRENT_SOURCE_DIR}/libkvspicState.pc.cmake"
-  "${CMAKE_CURRENT_BINARY_DIR}/libkvspicState.pc" @ONLY)
+        "${CMAKE_CURRENT_SOURCE_DIR}/libkvspicState.pc.cmake"
+        "${CMAKE_CURRENT_BINARY_DIR}/libkvspicState.pc" @ONLY)
 
 add_library(kvspicState ${LIBTYPE} ${PIC_STATE_SOURCE_FILES})
 if(BUILD_SHARED_LIBS)
@@ -170,8 +180,8 @@ endif()
 target_link_libraries(kvspicState)
 
 configure_file(
-  "${CMAKE_CURRENT_SOURCE_DIR}/libkvspicUtils.pc.cmake"
-  "${CMAKE_CURRENT_BINARY_DIR}/libkvspicUtils.pc" @ONLY)
+        "${CMAKE_CURRENT_SOURCE_DIR}/libkvspicUtils.pc.cmake"
+        "${CMAKE_CURRENT_BINARY_DIR}/libkvspicUtils.pc" @ONLY)
 
 add_library(kvspicUtils ${LIBTYPE} ${PIC_UTILS_SOURCE_FILES})
 if(BUILD_SHARED_LIBS)
@@ -184,22 +194,22 @@ if(UNIX AND NOT APPLE)
 endif()
 
 install(
-  TARGETS kvspic kvspicClient kvspicState kvspicUtils
-  ARCHIVE DESTINATION "${CMAKE_INSTALL_LIBDIR}"
-  LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}"
-  RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}")
+        TARGETS kvspic kvspicClient kvspicState kvspicUtils
+        ARCHIVE DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+        LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+        RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}")
 
 install(
-  DIRECTORY ${PIC_HEADERS}
-  DESTINATION .)
+        DIRECTORY ${PIC_HEADERS}
+        DESTINATION .)
 
 install(
-  FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/libkvspic.pc
-    ${CMAKE_CURRENT_BINARY_DIR}/libkvspicClient.pc
-    ${CMAKE_CURRENT_BINARY_DIR}/libkvspicState.pc
-    ${CMAKE_CURRENT_BINARY_DIR}/libkvspicUtils.pc
-  DESTINATION "${CMAKE_INSTALL_LIBDIR}/pkgconfig")
+        FILES
+        ${CMAKE_CURRENT_BINARY_DIR}/libkvspic.pc
+        ${CMAKE_CURRENT_BINARY_DIR}/libkvspicClient.pc
+        ${CMAKE_CURRENT_BINARY_DIR}/libkvspicState.pc
+        ${CMAKE_CURRENT_BINARY_DIR}/libkvspicUtils.pc
+        DESTINATION "${CMAKE_INSTALL_LIBDIR}/pkgconfig")
 
 if(BUILD_TEST)
   add_subdirectory(tst)
