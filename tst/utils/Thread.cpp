@@ -212,7 +212,7 @@ CleanUp:
 TEST_F(ThreadFunctionalityTest, VerifyStackSize)
 {
     TID threadId;
-    SIZE_T threadStack = 32 * 1024;
+    SIZE_T threadStack = PTHREAD_STACK_MIN + (512 * 1024);
     TestThreadInfo threadInfo = { .stackSize = 0, .failure = 0 };
 
     EXPECT_EQ(STATUS_SUCCESS, THREAD_CREATE_WITH_PARAMS(&threadId, fetchStackSizeThreadRoutine, threadStack, &threadInfo));
