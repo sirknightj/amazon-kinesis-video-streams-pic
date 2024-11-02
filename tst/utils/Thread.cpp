@@ -1,9 +1,8 @@
 #include "UtilTestFixture.h"
 
-class ThreadFunctionalityTest : public UtilTestBase {
-};
+class ThreadFunctionalityTest : public UtilTestBase {};
 
-#define TEST_THREAD_COUNT       500
+#define TEST_THREAD_COUNT 500
 
 MUTEX gThreadMutex;
 UINT64 gThreadCount;
@@ -23,7 +22,6 @@ PVOID testThreadRoutine(PVOID arg)
     // Mark as visited
     st->threadVisited = TRUE;
     MUTEX_UNLOCK(gThreadMutex);
-
 
     UINT64 sleepTime = st->threadSleepTime;
     // Just sleep for some time
@@ -51,7 +49,7 @@ TEST_F(ThreadFunctionalityTest, ThreadCreateAndReleaseSimpleCheck)
         st[index].threadVisited = FALSE;
         st[index].threadCleared = FALSE;
         st[index].threadSleepTime = index * HUNDREDS_OF_NANOS_IN_A_MILLISECOND;
-        EXPECT_EQ(STATUS_SUCCESS, THREAD_CREATE(&threads[index], testThreadRoutine, (PVOID)&st[index]));
+        EXPECT_EQ(STATUS_SUCCESS, THREAD_CREATE(&threads[index], testThreadRoutine, (PVOID) &st[index]));
     }
 
     // Await for the threads to finish
@@ -80,13 +78,12 @@ TEST_F(ThreadFunctionalityTest, ThreadCreateAndCancel)
 
     // Create the threads
     for (index = 0; index < TEST_THREAD_COUNT; index++) {
-
         st[index].threadVisited = FALSE;
         st[index].threadCleared = FALSE;
         // Long sleep
         st[index].threadSleepTime = 20 * HUNDREDS_OF_NANOS_IN_A_SECOND;
 
-        EXPECT_EQ(STATUS_SUCCESS, THREAD_CREATE(&threads[index], testThreadRoutine, (PVOID)&st[index]));
+        EXPECT_EQ(STATUS_SUCCESS, THREAD_CREATE(&threads[index], testThreadRoutine, (PVOID) &st[index]));
 #if !(defined _WIN32 || defined _WIN64 || defined __CYGWIN__)
         // We should detach thread for non-windows platforms only
         // Windows implementation would cancel the handle and the
@@ -102,7 +99,6 @@ TEST_F(ThreadFunctionalityTest, ThreadCreateAndCancel)
     for (index = 0; index < TEST_THREAD_COUNT; index++) {
         EXPECT_EQ(STATUS_SUCCESS, THREAD_CANCEL(threads[index]));
     }
-
 
     // Validate that threads have been killed and didn't finish successfully
     MUTEX_LOCK(gThreadMutex);
@@ -134,7 +130,7 @@ TEST_F(ThreadFunctionalityTest, ThreadCreateAndReleaseSimpleCheckWithStack)
         st[index].threadVisited = FALSE;
         st[index].threadCleared = FALSE;
         st[index].threadSleepTime = index * HUNDREDS_OF_NANOS_IN_A_MILLISECOND;
-        EXPECT_EQ(STATUS_SUCCESS, THREAD_CREATE_WITH_PARAMS(&threads[index], testThreadRoutine, threadStack, (PVOID)&st[index]));
+        EXPECT_EQ(STATUS_SUCCESS, THREAD_CREATE_WITH_PARAMS(&threads[index], testThreadRoutine, threadStack, (PVOID) &st[index]));
     }
 
     // Await for the threads to finish
@@ -184,14 +180,15 @@ typedef struct {
 } TestThreadInfo;
 
 // Function to retrieve and print the stack size from within the thread
-PVOID fetchStackSizeThreadRoutine(PVOID arg) {
+PVOID fetchStackSizeThreadRoutine(PVOID arg)
+{
     pthread_attr_t attr;
     SIZE_T stackSize;
     int result = 0;
     TestThreadInfo* pThreadInfo = (TestThreadInfo*) arg;
 
     // Initialize the thread attributes for the running thread
-    result = pthread_getattr_np(pthread_self(), &attr);  // Linux-specific function
+    result = pthread_getattr_np(pthread_self(), &attr); // Linux-specific function
     if (result != 0) {
         goto CleanUp;
     }
@@ -217,7 +214,7 @@ TEST_F(ThreadFunctionalityTest, VerifyStackSize)
 {
     TID threadId;
     SIZE_T threadStack = PTHREAD_STACK_MIN + (512 * 1024);
-    TestThreadInfo threadInfo = { .stackSize = 0, .failure = 0 };
+    TestThreadInfo threadInfo = {.stackSize = 0, .failure = 0};
 
     EXPECT_EQ(STATUS_SUCCESS, THREAD_CREATE_WITH_PARAMS(&threadId, fetchStackSizeThreadRoutine, threadStack, &threadInfo));
 
