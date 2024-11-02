@@ -161,8 +161,10 @@ TEST_F(ThreadFunctionalityTest, NegativeTest)
     SIZE_T threadStack = 16 * 1024;
 
     gThreadCount = 0;
+
+    EXPECT_EQ(STATUS_SUCCESS, THREAD_CREATE_WITH_PARAMS(&threads[1], testThreadRoutine, 0, NULL));
+
     EXPECT_NE(STATUS_SUCCESS, THREAD_CREATE_WITH_PARAMS(NULL, testThreadRoutine, threadStack, NULL));
-    EXPECT_NE(STATUS_SUCCESS, THREAD_CREATE_WITH_PARAMS(&threads[1], testThreadRoutine, 1, NULL));
     EXPECT_NE(STATUS_SUCCESS, THREAD_CREATE_WITH_PARAMS(&threads[2], testThreadRoutine, SIZE_MAX, NULL));
     EXPECT_NE(STATUS_SUCCESS, THREAD_CREATE(NULL, testThreadRoutine, NULL));
 
@@ -209,6 +211,8 @@ CleanUp:
     return NULL;
 }
 
+// Create a thread with the min stack size + 512 KiB
+// Then check that the thread has the requested size.
 TEST_F(ThreadFunctionalityTest, VerifyStackSize)
 {
     TID threadId;
@@ -219,7 +223,8 @@ TEST_F(ThreadFunctionalityTest, VerifyStackSize)
 
     EXPECT_EQ(STATUS_SUCCESS, THREAD_JOIN(threadId, NULL));
 
-    EXPECT_EQ( threadStack, threadInfo.stackSize);
+    EXPECT_EQ(0, threadInfo.failure);
+    EXPECT_EQ(threadStack, threadInfo.stackSize);
 }
 
 #endif
