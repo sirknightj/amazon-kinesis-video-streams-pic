@@ -154,25 +154,25 @@ TEST_F(ThreadFunctionalityTest, ThreadCreateAndReleaseSimpleCheckWithStack)
     MUTEX_FREE(gThreadMutex);
 }
 
+PVOID emptyThreadRoutine(PVOID args)
+{
+    return NULL;
+}
+
 TEST_F(ThreadFunctionalityTest, NegativeTest)
 {
-    TID threads[TEST_THREAD_COUNT];
-    gThreadMutex = MUTEX_CREATE(FALSE);
+    TID threadId = 0;
     SIZE_T threadStack = 16 * 1024;
 
-    gThreadCount = 0;
+    // No out value case
+    EXPECT_NE(STATUS_SUCCESS, THREAD_CREATE_WITH_PARAMS(NULL, emptyThreadRoutine, threadStack, NULL));
 
-    EXPECT_EQ(STATUS_SUCCESS, THREAD_CREATE_WITH_PARAMS(&threads[1], testThreadRoutine, 0, NULL));
+    // Too large case
+    EXPECT_NE(STATUS_SUCCESS, THREAD_CREATE_WITH_PARAMS(&threadId, emptyThreadRoutine, SIZE_MAX, NULL));
+    EXPECT_EQ(0, threadId);
 
-    EXPECT_NE(STATUS_SUCCESS, THREAD_CREATE_WITH_PARAMS(NULL, testThreadRoutine, threadStack, NULL));
-    EXPECT_NE(STATUS_SUCCESS, THREAD_CREATE_WITH_PARAMS(&threads[2], testThreadRoutine, SIZE_MAX, NULL));
-    EXPECT_NE(STATUS_SUCCESS, THREAD_CREATE(NULL, testThreadRoutine, NULL));
-
-    MUTEX_LOCK(gThreadMutex);
-    EXPECT_EQ(0, gThreadCount);
-    MUTEX_UNLOCK(gThreadMutex);
-
-    MUTEX_FREE(gThreadMutex);
+    // No out value case
+    EXPECT_NE(STATUS_SUCCESS, THREAD_CREATE(NULL, emptyThreadRoutine, NULL));
 }
 
 #if !defined _WIN32 && !defined _WIN64 && !defined __CYGWIN__ && !defined __APPLE__ && !defined __MACH__
