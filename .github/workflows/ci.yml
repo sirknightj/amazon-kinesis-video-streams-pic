@@ -59,7 +59,7 @@ jobs:
 
           mkdir -p build
           cd build
-          cmake .. ${{ matrix.config.cmake_flags }}
+          cmake .. ${{ matrix.config.cmake_flags }} --parallel 4
           make -j$(sysctl -n hw.ncpu)
         shell: bash
 
