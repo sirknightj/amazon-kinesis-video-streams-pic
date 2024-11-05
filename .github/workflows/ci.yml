@@ -58,8 +58,16 @@ jobs:
       - name: Run tests
         run: |
           cd build
-          ./tst/kvspic_test --gtest_filter="${{ env.TEST_FILTER }}"
+          ./tst/kvspic_test --gtest_filter="${{ env.TEST_FILTER }}" --gtest_output=xml:test_report.xml
         shell: bash
+
+      - name: Upload failure report
+        if: failure()  # Only upload the failure report if the unit tests fail
+        uses: test-summary/action@v2
+        with:
+          output: ./build/test_report.xml
+          format: gtest
+
   linux-gcc-code-coverage:
     runs-on: ubuntu-latest
     steps:
