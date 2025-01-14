@@ -1,0 +1,67 @@
+name: Build and test on Virtualized Raspberry Pi OS
+
+on:
+  push:
+    branches: [ master, develop ]
+  pull_request:
+    branches: [ master, develop ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      matrix:
+        include:
+          # Debian 11 - arm64
+          - os: bullseye-arm64
+            image: ghcr.io/dtcooper/raspberrypi-os:python3.12-bullseye
+            platform: linux/arm64
+          # Debian 12 - arm64
+          - os: bookworm-arm64
+            image: ghcr.io/dtcooper/raspberrypi-os:python3.12-bookworm
+            platform: linux/arm64
+
+          # Debian 11 - arm32v7
+          - os: bullseye-arm64
+            image: public.ecr.aws/debian/armhf:bookworm-20241111
+            platform: linux/arm/v7
+          # Debian 12 - arm32v7
+          - os: bookworm-arm32v7
+            image: public.ecr.aws/debian/armhf:bullseye-20241111
+            platform: linux/arm/v7
+
+      fail-fast: false
+
+    name: Build on ${{ matrix.os }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and Test
+        env:
+          AWS_KVS_LOG_LEVEL: 2
+        run: |
+          docker run --rm -v ${{ github.workspace }}:/workspace -w /workspace \
+            -e AWS_KVS_LOG_LEVEL \
+            --platform ${{ matrix.platform }} \
+            ${{ matrix.image }} \
+            /bin/bash -c '
+              set -ex
+              apt-get update
+              apt-get install -y automake build-essential cmake
+
+              mkdir -p build
+              cd build
+
+              cmake .. -DBUILD_TEST=ON -DALIGNED_MEMORY_MODEL=ON
+              make -j$(nproc)
+          
+              ./tst/kvspic_test
+            '
