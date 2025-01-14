@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 180
     strategy:
       matrix:
         include:
@@ -43,6 +43,16 @@ jobs:
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
+
+      - name: Check System Architecture
+        run: |
+          docker run --rm --platform ${{ matrix.platform }} ${{ matrix.image }} \
+          /bin/bash -c '
+            echo "System architecture:"
+            getconf LONG_BIT
+            echo "Kernel information:"
+            uname -a
+          '
 
       - name: Build and Test
         env:
