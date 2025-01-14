@@ -23,7 +23,7 @@ jobs:
             platform: linux/arm64
 
           # Debian 11 - arm32v7
-          - os: bullseye-arm64
+          - os: bullseye-arm32v7
             image: public.ecr.aws/debian/armhf:bookworm-20241111
             platform: linux/arm/v7
           # Debian 12 - arm32v7
@@ -55,7 +55,7 @@ jobs:
             /bin/bash -c '
               set -ex
               apt-get update
-              apt-get install -y automake build-essential cmake
+              apt-get install -y automake build-essential cmake git
 
               mkdir -p build
               cd build
