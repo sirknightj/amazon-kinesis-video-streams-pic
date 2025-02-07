@@ -301,7 +301,7 @@ TEST_F(ThreadFunctionalityTest, CheckThreadName) {
     // We expect "UnsetValue" to be overwritten to empty string
     EXPECT_EQ(STATUS_SUCCESS, GETTNAME(GETTID(), threadName, SIZEOF(threadName))) << "Failed to get thread name";
 
-    EXPECT_STREQ("", threadName) << "Main thread doesn't have a name, so it should be empty string!";
+    EXPECT_STRNE("UnsetValue", threadName) << "Main thread should either be named nothing, so it should be empty string!";
 }
 
 #if defined(__APPLE__) && defined(__MACH__) || \

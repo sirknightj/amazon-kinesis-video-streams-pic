@@ -137,8 +137,8 @@ jobs:
         run: |
           mkdir -p build
           cd build
-          cmake .. -D${{ matrix.sanitizer }}=TRUE ${{ matrix.config.cmake_flags }}
-          make
+          cmake .. -D${{ matrix.sanitizer }}=ON ${{ matrix.config.cmake_flags }}
+          make -j$(nproc)
       - name: Configure sanitizers
         run: |
           if [[ "${{ matrix.sanitizer }}" == "UNDEFINED_BEHAVIOR_SANITIZER" ]]; then
