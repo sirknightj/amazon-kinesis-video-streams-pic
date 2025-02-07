@@ -314,7 +314,15 @@ TEST_F(ThreadFunctionalityTest, CheckChangedThreadName) {
     // Change this thread's name to "MainThread"
     CHAR threadName[4096];
     STRCPY(threadName, "UnsetValue");
-    pthread_setname_np("MainThread");
+
+    // pthread_setname_np has (pthread_t __target_thread, const char *__name) API in Linux,
+    // but (const char *__name) API in Mac
+#if defined(__APPLE__) && defined(__MACH__)
+    EXPECT_EQ(0, pthread_setname_np("MainThread")) << "Failed to set thread name on Mac!";
+#else
+    EXPECT_EQ(0, pthread_setname_np(GETTID(), "MainThread")) << "Failed to set thread name on Linux!";
+#endif
+
     EXPECT_EQ(STATUS_SUCCESS, GETTNAME(GETTID(), threadName, SIZEOF(threadName))) << "Failed to get thread name";
 
     // Verify
@@ -323,6 +331,4 @@ TEST_F(ThreadFunctionalityTest, CheckChangedThreadName) {
     // Restore the original thread name
     pthread_setname_np(prevThreadName);
 }
-#else
-#pragma message("Not set??")
 #endif
