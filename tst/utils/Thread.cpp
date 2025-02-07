@@ -329,6 +329,10 @@ TEST_F(ThreadFunctionalityTest, CheckChangedThreadName) {
     EXPECT_STREQ("MainThread", threadName) << "ThreadName wasn't updated to 'MainThread'";
 
     // Restore the original thread name
-    pthread_setname_np(prevThreadName);
+#if defined(__APPLE__) && defined(__MACH__)
+    EXPECT_EQ(0, pthread_setname_np(prevThreadName)) << "Failed to reset the thread name on Mac!";
+#else
+    EXPECT_EQ(0, pthread_setname_np(GETTID(), prevThreadName)) << "Failed to reset the thread name on Linux!";
+#endif
 }
 #endif
