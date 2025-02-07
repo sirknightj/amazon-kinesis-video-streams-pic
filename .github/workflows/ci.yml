@@ -130,6 +130,8 @@ jobs:
           echo | clang -dM -E -
           
           cat /usr/include/pthread.h
+          
+          ldd --version
 
       - name: Build repository - ${{ matrix.config.name }}
         run: |
