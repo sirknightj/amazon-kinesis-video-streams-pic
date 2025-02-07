@@ -121,6 +121,10 @@ typedef long double LDOUBLE;
 
 #elif defined(__GNUC__)
 
+#if defined(__linux__) && !defined(_GNU_SOURCE)
+#define _GNU_SOURCE
+#endif
+
 #include <stdint.h>
 
 typedef char CHAR;
@@ -234,9 +238,6 @@ typedef UINT64 MUTEX;
 #if defined __WINDOWS_BUILD__
 typedef PCONDITION_VARIABLE CVAR;
 #else
-#if defined(__linux__) && !defined(_GNU_SOURCE)
-#define _GNU_SOURCE
-#endif
 #include <pthread.h>
 #include <signal.h>
 typedef pthread_cond_t* CVAR;
