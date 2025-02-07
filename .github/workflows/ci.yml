@@ -106,7 +106,7 @@ jobs:
             cmake_flags: "-DBUILD_TEST=TRUE -DALIGNED_MEMORY_MODEL=TRUE -DFIXUP_ANNEX_B_TRAILING_NALU_ZERO=TRUE"
       fail-fast: false
 
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
 
     env:
       CC: clang
@@ -123,7 +123,11 @@ jobs:
 
       - name: Check installed clang versions
         run: |
+          set -x
           ls /usr/bin/clang*
+          
+          # Print the Clang flags
+          echo | clang -dM -E -
 
       - name: Build repository - ${{ matrix.config.name }}
         run: |
