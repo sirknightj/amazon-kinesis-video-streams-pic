@@ -128,6 +128,8 @@ jobs:
           
           # Print the Clang flags
           echo | clang -dM -E -
+          
+          cat /usr/include/pthread.h
 
       - name: Build repository - ${{ matrix.config.name }}
         run: |
