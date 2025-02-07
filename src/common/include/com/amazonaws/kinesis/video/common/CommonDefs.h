@@ -236,7 +236,6 @@ typedef PCONDITION_VARIABLE CVAR;
 #else
 #if defined(__linux__) && !defined(_GNU_SOURCE)
 #define _GNU_SOURCE
-#pragma message("Setting GNU source !!!!!")
 #endif
 #include <pthread.h>
 #include <signal.h>

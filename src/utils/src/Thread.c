@@ -152,8 +152,7 @@ PUBLIC_API STATUS defaultGetThreadName(TID thread, PCHAR name, UINT32 len)
     }
 
 #if defined(__APPLE__) && defined(__MACH__) || \
-    (defined(__GLIBC__) && (__GLIBC__ > 2 || (__GLIBC__ == 2 && __GLIBC_MINOR__ >= 12))) && \
-    defined(pthread_getname_np)
+    (defined(__GLIBC__) && (__GLIBC__ > 2 || (__GLIBC__ == 2 && __GLIBC_MINOR__ >= 12)))
     retValue = pthread_getname_np((pthread_t) thread, name, len);
 #elif defined ANDROID_BUILD
     // This will return the current thread name on Android

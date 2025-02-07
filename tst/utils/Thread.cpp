@@ -293,3 +293,36 @@ TEST_F(ThreadFunctionalityTest, VerifyStackSize)
 }
 
 #endif
+
+TEST_F(ThreadFunctionalityTest, CheckThreadName) {
+    CHAR threadName[4096];
+    STRCPY(threadName, "UnsetValue");
+
+    // We expect "UnsetValue" to be overwritten to empty string
+    EXPECT_EQ(STATUS_SUCCESS, GETTNAME(GETTID(), threadName, SIZEOF(threadName))) << "Failed to get thread name";
+
+    EXPECT_STREQ("", threadName) << "Main thread doesn't have a name, so it should be empty string!";
+}
+
+#if defined(__APPLE__) && defined(__MACH__) || \
+    (defined(__GLIBC__) && (__GLIBC__ > 2 || (__GLIBC__ == 2 && __GLIBC_MINOR__ >= 12)))
+TEST_F(ThreadFunctionalityTest, CheckChangedThreadName) {
+    // Save the original thread name, if any
+    CHAR prevThreadName[4096];
+    EXPECT_EQ(STATUS_SUCCESS, GETTNAME(GETTID(), prevThreadName, SIZEOF(prevThreadName))) << "Failed to get thread name";
+
+    // Change this thread's name to "MainThread"
+    CHAR threadName[4096];
+    STRCPY(threadName, "UnsetValue");
+    pthread_setname_np("MainThread");
+    EXPECT_EQ(STATUS_SUCCESS, GETTNAME(GETTID(), threadName, SIZEOF(threadName))) << "Failed to get thread name";
+
+    // Verify
+    EXPECT_STREQ("MainThread", threadName) << "ThreadName wasn't updated to 'MainThread'";
+
+    // Restore the original thread name
+    pthread_setname_np(prevThreadName);
+}
+#else
+#pragma message("Not set??")
+#endif
