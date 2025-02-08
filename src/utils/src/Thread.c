@@ -166,7 +166,7 @@ PUBLIC_API STATUS defaultGetThreadName(TID thread, PCHAR name, UINT32 len)
 
 PUBLIC_API TID defaultGetThreadId()
 {
-    return (TID) pthread_self();
+    return (TID) (PVOID) pthread_self();
 }
 
 PUBLIC_API STATUS defaultCreateThreadWithParams(PTID pThreadId, PThreadParams pThreadParams, startRoutine start, PVOID args)
