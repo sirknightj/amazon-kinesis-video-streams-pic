@@ -166,13 +166,7 @@ PUBLIC_API STATUS defaultGetThreadName(TID thread, PCHAR name, UINT32 len)
 
 PUBLIC_API TID defaultGetThreadId()
 {
-#ifdef __linux__
-    #include <sys/syscall.h>
-    #include <unistd.h>
-    return (TID)syscall(SYS_gettid);
-#else
     return (TID) pthread_self();
-#endif
 }
 
 PUBLIC_API STATUS defaultCreateThreadWithParams(PTID pThreadId, PThreadParams pThreadParams, startRoutine start, PVOID args)
