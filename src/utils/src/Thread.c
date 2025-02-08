@@ -151,8 +151,7 @@ PUBLIC_API STATUS defaultGetThreadName(TID thread, PCHAR name, UINT32 len)
         return STATUS_INVALID_ARG;
     }
 
-#if defined(__APPLE__) && defined(__MACH__) || \
-    (defined(__GLIBC__) && (__GLIBC__ > 2 || (__GLIBC__ == 2 && __GLIBC_MINOR__ >= 12)))
+#if defined(__APPLE__) && defined(__MACH__) || (defined(__GLIBC__) && (__GLIBC__ > 2 || (__GLIBC__ == 2 && __GLIBC_MINOR__ >= 12)))
     retValue = pthread_getname_np((pthread_t) thread, name, len);
 #elif defined ANDROID_BUILD
     // This will return the current thread name on Android
@@ -167,7 +166,7 @@ PUBLIC_API STATUS defaultGetThreadName(TID thread, PCHAR name, UINT32 len)
 
 PUBLIC_API TID defaultGetThreadId()
 {
-    return (TID) pthread_self();
+    return (TID) (uintptr_t) pthread_self();
 }
 
 PUBLIC_API STATUS defaultCreateThreadWithParams(PTID pThreadId, PThreadParams pThreadParams, startRoutine start, PVOID args)
