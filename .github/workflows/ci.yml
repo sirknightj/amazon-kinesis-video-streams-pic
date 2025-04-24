@@ -265,7 +265,7 @@ jobs:
       - name: Install deps
         run: |
           yum update -y
-          yum install -y gcc gcc-c++ make cmake3 procps-ng
+          yum install -y gcc gcc-c++ make cmake3 which
           ln -s /usr/bin/cmake3 /usr/local/bin/cmake
 
       - name: Check GCC version
@@ -273,6 +273,11 @@ jobs:
           gcc --version
           which gcc
           gcc -v
+
+      - name: Check CMake version
+        run: |
+          cmake --version
+          which cmake
 
       - name: Build repository
         run: |
