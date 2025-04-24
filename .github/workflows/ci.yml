@@ -166,8 +166,8 @@ jobs:
 
       - name: Install deps
         run: |
-          apt-get update
-          apt-get install -y software-properties-common
+          apt-get -q update
+          apt-get install -y software-properties-common cmake
           add-apt-repository -y ppa:ubuntu-toolchain-r/test
           add-apt-repository 'deb http://archive.ubuntu.com/ubuntu/ trusty main'
           add-apt-repository 'deb http://archive.ubuntu.com/ubuntu/ trusty universe'
