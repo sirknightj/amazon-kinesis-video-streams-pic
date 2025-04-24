@@ -274,9 +274,9 @@ jobs:
         run: |
           # Note: Need to clone manually since actions/checkout currently requires node 20
           # and node 20 requires GLIBC_2.27
-          git clone --depth 1 --single-branch -b "${GITHUB_REF##refs/heads/}" "$REPO_URL" repo
-          cd repo
-          git rev-parse --short HEAD
+          git clone --depth 1 --single-branch -b "$GITHUB_REF_NAME" "$REPO_URL"
+          cd $(basename "${GITHUB_REPOSITORY}")
+          git checkout "$GITHUB_SHA"
 
       - name: Build repository
         working-directory: ./repo
