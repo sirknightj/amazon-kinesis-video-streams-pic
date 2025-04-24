@@ -173,7 +173,7 @@ jobs:
           add-apt-repository 'deb http://archive.ubuntu.com/ubuntu/ trusty main'
           add-apt-repository 'deb http://archive.ubuntu.com/ubuntu/ trusty universe'
           apt-get -q update
-          apt-get -y install gcc-4.4 g++-4.4
+          apt-get -y install gcc-4.4
 
       - name: Build repository
         run: |
