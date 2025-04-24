@@ -159,6 +159,7 @@ jobs:
 
     env:
       CC: gcc-4.4
+      DEBIAN_FRONTEND: noninteractive
 
     steps:
       - name: Clone repository
@@ -167,7 +168,7 @@ jobs:
       - name: Install deps
         run: |
           apt-get -q update
-          apt-get install -y software-properties-common cmake
+          apt-get install -y software-properties-common cmake git
           add-apt-repository -y ppa:ubuntu-toolchain-r/test
           add-apt-repository 'deb http://archive.ubuntu.com/ubuntu/ trusty main'
           add-apt-repository 'deb http://archive.ubuntu.com/ubuntu/ trusty universe'
