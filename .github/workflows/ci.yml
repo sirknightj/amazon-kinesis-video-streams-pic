@@ -164,8 +164,10 @@ jobs:
       - name: Clone repository
         uses: actions/checkout@v4
 
-      - name: Install gcc-4.4
+      - name: Install deps
         run: |
+          apt-get update
+          apt-get install -y software-properties-common
           add-apt-repository -y ppa:ubuntu-toolchain-r/test
           add-apt-repository 'deb http://archive.ubuntu.com/ubuntu/ trusty main'
           add-apt-repository 'deb http://archive.ubuntu.com/ubuntu/ trusty universe'
