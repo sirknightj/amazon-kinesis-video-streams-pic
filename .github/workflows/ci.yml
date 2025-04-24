@@ -273,7 +273,7 @@ jobs:
           # and node 20 requires GLIBC_2.27
           git clone ${{ github.server_url }}/${{ github.repository }}
           cd $(basename "${{ github.repository }}")
-          git checkout ${{ github.ref }}
+          git checkout -b testing ${{ github.ref }}
 
       - name: Build repository
         working-directory: ./repo
