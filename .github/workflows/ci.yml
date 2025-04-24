@@ -268,15 +268,12 @@ jobs:
           ln -s /usr/bin/cmake3 /usr/local/bin/cmake
 
       - name: Clone repository
-        env:
-          REPO_URL: ${{ github.server_url }}/${{ github.repository }}
-          REPO_REF: ${{ github.ref }}
         run: |
           # Note: Need to clone manually since actions/checkout currently requires node 20
           # and node 20 requires GLIBC_2.27
-          git clone --depth 1 --single-branch -b "$GITHUB_REF_NAME" "$REPO_URL"
-          cd $(basename "${GITHUB_REPOSITORY}")
-          git checkout "$GITHUB_SHA"
+          git clone ${{ github.server_url }}/${{ github.repository }}
+          cd $(basename "${{ github.repository }}")
+          git checkout ${{ github.ref }}
 
       - name: Build repository
         working-directory: ./repo
