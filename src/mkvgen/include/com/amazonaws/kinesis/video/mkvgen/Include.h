@@ -493,7 +493,9 @@ PUBLIC_API STATUS mkvgenHasStreamStarted(PMkvGenerator, PBOOL);
  *
  * @return STATUS code of the execution
  */
-PUBLIC_API STATUS createMkvGenerator(PCHAR contentType, UINT32 behaviorFlags, UINT64 timecodeScale, UINT64 clusterDuration, PBYTE segmentUuid, PTrackInfo trackInfoList, UINT32 trackInfoCount, PCHAR clientId, GetCurrentTimeFunc getTimeFn, UINT64 customData, PMkvGenerator* ppMkvGenerator);
+PUBLIC_API STATUS createMkvGenerator(PCHAR contentType, UINT32 behaviorFlags, UINT64 timecodeScale, UINT64 clusterDuration, PBYTE segmentUuid,
+                                     PTrackInfo trackInfoList, UINT32 trackInfoCount, PCHAR clientId, GetCurrentTimeFunc getTimeFn, UINT64 customData,
+                                     PMkvGenerator* ppMkvGenerator);
 
 /**
  * Frees and de-allocates the memory of the MkvGenerator and it's sub-objects
@@ -576,7 +578,8 @@ PUBLIC_API STATUS mkvgenIncreaseTagsTagSize(PBYTE pBuffer, UINT32 sizeIncrease);
  *
  * @return STATUS code of the execution
  */
-PUBLIC_API STATUS mkvgenPackageFrame(PMkvGenerator pMkvGenerator, PFrame pFrame, PTrackInfo pTrackInfo, PBYTE pBuffer, PUINT32 pSize, PEncodedFrameInfo pEncodedFrameInfo);
+PUBLIC_API STATUS mkvgenPackageFrame(PMkvGenerator pMkvGenerator, PFrame pFrame, PTrackInfo pTrackInfo, PBYTE pBuffer, PUINT32 pSize,
+                                     PEncodedFrameInfo pEncodedFrameInfo);
 
 /**
  * Converts an MKV timecode to a timestamp
@@ -648,7 +651,8 @@ PUBLIC_API STATUS mkvgenGetTrackInfo(PTrackInfo pTrackInfos, UINT32 trackInfoCou
  *
  * @return Status of the operation
  */
-PUBLIC_API STATUS mkvgenGenerateAacCpd(KVS_MPEG4_AUDIO_OBJECT_TYPES objectType, UINT32 samplingFrequency, UINT16 channelConfig, PBYTE pBuffer, UINT32 bufferLen);
+PUBLIC_API STATUS mkvgenGenerateAacCpd(KVS_MPEG4_AUDIO_OBJECT_TYPES objectType, UINT32 samplingFrequency, UINT16 channelConfig, PBYTE pBuffer,
+                                       UINT32 bufferLen);
 
 /**
  * Generate PCM audio cpd

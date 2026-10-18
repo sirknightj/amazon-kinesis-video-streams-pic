@@ -203,7 +203,8 @@ typedef VOID (*ContentViewItemRemoveNotificationCallbackFunc)(PContentView pCont
  *
  * @return STATUS code of the execution
  **/
-PUBLIC_API STATUS createContentView(UINT32 maxItemCount, UINT64 bufferDuration, ContentViewItemRemoveNotificationCallbackFunc removeCallbackFunc, UINT64 customData, CONTENT_VIEW_OVERFLOW_POLICY overflowStrategy, PContentView* ppContentView);
+PUBLIC_API STATUS createContentView(UINT32 maxItemCount, UINT64 bufferDuration, ContentViewItemRemoveNotificationCallbackFunc removeCallbackFunc,
+                                    UINT64 customData, CONTENT_VIEW_OVERFLOW_POLICY overflowStrategy, PContentView* ppContentView);
 
 /**
  * Frees and de-allocates the memory of the ContentView and it's sub-objects
@@ -343,7 +344,8 @@ PUBLIC_API STATUS contentViewGetAllocationSize(PContentView pContentView, PUINT3
  * @param flags Item flags.
  *
  */
-PUBLIC_API STATUS contentViewAddItem(PContentView pContentView, UINT64 timestamp, UINT64 ackTimeStamp, UINT64 duration, ALLOCATION_HANDLE allocHandle, UINT32 offset, UINT32 length, UINT32 flags);
+PUBLIC_API STATUS contentViewAddItem(PContentView pContentView, UINT64 timestamp, UINT64 ackTimeStamp, UINT64 duration, ALLOCATION_HANDLE allocHandle,
+                                     UINT32 offset, UINT32 length, UINT32 flags);
 
 /**
  * Gets the view's temporal window duration

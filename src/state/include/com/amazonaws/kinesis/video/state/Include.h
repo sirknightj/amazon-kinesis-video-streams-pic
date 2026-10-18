@@ -123,7 +123,8 @@ typedef struct __StateMachine* PStateMachine;
  *
  * @return STATUS code of the execution
  */
-PUBLIC_API STATUS createStateMachine(PStateMachineState pStates, UINT32 stateCount, UINT64 customData, GetCurrentTimeFunc getCurrentTimeFunc, UINT64 getCurrentTimeFuncCustomData, PStateMachine* ppStateMachine);
+PUBLIC_API STATUS createStateMachine(PStateMachineState pStates, UINT32 stateCount, UINT64 customData, GetCurrentTimeFunc getCurrentTimeFunc,
+                                     UINT64 getCurrentTimeFuncCustomData, PStateMachine* ppStateMachine);
 
 /**
  * Creates a state machine with a state machine name string to identify the state machine. State machine name is mandatory
@@ -140,7 +141,8 @@ PUBLIC_API STATUS createStateMachine(PStateMachineState pStates, UINT32 stateCou
  *
  * @return STATUS code of the execution
  */
-PUBLIC_API STATUS createStateMachineWithName(PStateMachineState pStates, UINT32 stateCount, UINT64 customData, GetCurrentTimeFunc getCurrentTimeFunc, UINT64 getCurrentTimeFuncCustomData, PCHAR pStateMachineName, PStateMachine* ppStateMachine);
+PUBLIC_API STATUS createStateMachineWithName(PStateMachineState pStates, UINT32 stateCount, UINT64 customData, GetCurrentTimeFunc getCurrentTimeFunc,
+                                             UINT64 getCurrentTimeFuncCustomData, PCHAR pStateMachineName, PStateMachine* ppStateMachine);
 
 /**
  * Free the state machine object

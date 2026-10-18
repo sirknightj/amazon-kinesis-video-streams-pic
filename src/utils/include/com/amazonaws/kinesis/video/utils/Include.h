@@ -1499,7 +1499,8 @@ PUBLIC_API SIZE_T getInstrumentedTotalAllocationSize();
  *
  * @return STATUS code of the execution
  */
-PUBLIC_API STATUS createFileLogger(UINT64 maxStringBufferLen, UINT64 maxLogFileCount, PCHAR logFileDir, BOOL printLog, BOOL setGlobalLogFn, logPrintFunc* pFilePrintFn);
+PUBLIC_API STATUS createFileLogger(UINT64 maxStringBufferLen, UINT64 maxLogFileCount, PCHAR logFileDir, BOOL printLog, BOOL setGlobalLogFn,
+                                   logPrintFunc* pFilePrintFn);
 
 /**
  * Creates a file based logger object and installs the global logger callback function
@@ -1515,7 +1516,8 @@ PUBLIC_API STATUS createFileLogger(UINT64 maxStringBufferLen, UINT64 maxLogFileC
  *
  * @return STATUS code of the execution
  */
-PUBLIC_API STATUS createFileLoggerWithLevelFiltering(UINT64 maxStringBufferLen, UINT64 maxLogFileCount, PCHAR logFileDir, BOOL printLog, BOOL setGlobalLogFn, BOOL enableAllLevels, UINT32 level, logPrintFunc* pFilePrintFn);
+PUBLIC_API STATUS createFileLoggerWithLevelFiltering(UINT64 maxStringBufferLen, UINT64 maxLogFileCount, PCHAR logFileDir, BOOL printLog,
+                                                     BOOL setGlobalLogFn, BOOL enableAllLevels, UINT32 level, logPrintFunc* pFilePrintFn);
 
 /**
  * Frees the static file logger object and resets the global logging function if it was

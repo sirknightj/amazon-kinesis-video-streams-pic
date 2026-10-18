@@ -1662,7 +1662,8 @@ typedef STATUS (*DroppedFragmentReportFunc)(UINT64 customData, STREAM_HANDLE str
  *
  * @return Status of the callback
  */
-typedef STATUS (*StreamErrorReportFunc)(UINT64 customData, STREAM_HANDLE streamHandle, UPLOAD_HANDLE uploadHandle, UINT64 fragmentTimecode, STATUS errorStatus);
+typedef STATUS (*StreamErrorReportFunc)(UINT64 customData, STREAM_HANDLE streamHandle, UPLOAD_HANDLE uploadHandle, UINT64 fragmentTimecode,
+                                        STATUS errorStatus);
 
 /**
  * Reports a received fragment ack for the stream.
@@ -1722,7 +1723,8 @@ typedef STATUS (*StreamClosedFunc)(UINT64 customData, STREAM_HANDLE streamHandle
  *
  * @return Status of the callback
  */
-typedef STATUS (*StreamDataAvailableFunc)(UINT64 customData, STREAM_HANDLE streamHandle, PCHAR streamName, UPLOAD_HANDLE uploadHandle, UINT64 duration, UINT64 size);
+typedef STATUS (*StreamDataAvailableFunc)(UINT64 customData, STREAM_HANDLE streamHandle, PCHAR streamName, UPLOAD_HANDLE uploadHandle,
+                                          UINT64 duration, UINT64 size);
 
 ///////////////////////////////////////////////////////////////
 // Synchronization callbacks - Locking
@@ -1888,7 +1890,8 @@ typedef STATUS (*DeviceCertToTokenFunc)(UINT64 customData, PCHAR deviceName, PSe
  *
  * @return Status of the callback
  */
-typedef STATUS (*CreateStreamFunc)(UINT64 customData, PCHAR deviceName, PCHAR streamName, PCHAR contentType, PCHAR kmsKeyId, UINT64 retention, PServiceCallContext pCallbackContext);
+typedef STATUS (*CreateStreamFunc)(UINT64 customData, PCHAR deviceName, PCHAR streamName, PCHAR contentType, PCHAR kmsKeyId, UINT64 retention,
+                                   PServiceCallContext pCallbackContext);
 
 /**
  * Describe stream callback function.
@@ -1939,7 +1942,8 @@ typedef STATUS (*GetStreamingTokenFunc)(UINT64 customData, PCHAR streamName, STR
  *
  * @return Status of the callback
  */
-typedef STATUS (*PutStreamFunc)(UINT64 customData, PCHAR streamName, PCHAR containerType, UINT64 streamStartTime, BOOL absoluteFragmentTimestamp, BOOL ackRequired, PCHAR streamingEndpoint, PServiceCallContext pCallbackContext);
+typedef STATUS (*PutStreamFunc)(UINT64 customData, PCHAR streamName, PCHAR containerType, UINT64 streamStartTime, BOOL absoluteFragmentTimestamp,
+                                BOOL ackRequired, PCHAR streamingEndpoint, PServiceCallContext pCallbackContext);
 
 /**
  * Tag a resource function.
@@ -2156,7 +2160,8 @@ PUBLIC_API STATUS putKinesisVideoFrame(STREAM_HANDLE streamHandle, PFrame pFrame
  *
  * @return Status of the function call.
  */
-PUBLIC_API STATUS getKinesisVideoStreamData(STREAM_HANDLE streamHandle, UPLOAD_HANDLE uploadHandle, PBYTE pBuffer, UINT32 bufferSize, PUINT32 pFilledSize);
+PUBLIC_API STATUS getKinesisVideoStreamData(STREAM_HANDLE streamHandle, UPLOAD_HANDLE uploadHandle, PBYTE pBuffer, UINT32 bufferSize,
+                                            PUINT32 pFilledSize);
 
 /**
  * Inserts a "metadata" - a key/value string pair into the stream.
