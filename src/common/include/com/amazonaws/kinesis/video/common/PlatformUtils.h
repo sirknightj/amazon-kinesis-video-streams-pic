@@ -1,5 +1,6 @@
 /**
- * Platform specific definitions for logging, assert, etc..
+ * @file
+ * @brief Platform specific definitions for logging, assert, etc.
  */
 #ifndef __PLATFORM_UTILS_DEFINES_H__
 #define __PLATFORM_UTILS_DEFINES_H__

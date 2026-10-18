@@ -1,5 +1,6 @@
 /**
- * Main public include file
+ * @file
+ * @brief MKV generator public include file - packages frames into an MKV stream.
  */
 #ifndef __MKV_GEN_INCLUDE__
 #define __MKV_GEN_INCLUDE__
@@ -292,28 +293,28 @@ typedef enum {
 typedef struct __Frame {
     UINT32 version;
 
-    // Id of the frame
+    /// Id of the frame
     UINT32 index;
 
-    // Flags associated with the frame (ex. IFrame for frames)
+    /// Flags associated with the frame (ex. IFrame for frames)
     FRAME_FLAGS flags;
 
-    // The decoding timestamp of the frame in 100ns precision
+    /// The decoding timestamp of the frame in 100ns precision
     UINT64 decodingTs;
 
-    // The presentation timestamp of the frame in 100ns precision
+    /// The presentation timestamp of the frame in 100ns precision
     UINT64 presentationTs;
 
-    // The duration of the frame in 100ns precision. Can be 0.
+    /// The duration of the frame in 100ns precision. Can be 0.
     UINT64 duration;
 
-    // Size of the frame data in bytes
+    /// Size of the frame data in bytes
     UINT32 size;
 
-    // The frame bits
+    /// The frame bits
     PBYTE frameData;
 
-    // Id of the track this frame belong to
+    /// Id of the track this frame belong to
     UINT64 trackId;
 } Frame, *PFrame;
 
@@ -357,25 +358,25 @@ typedef union {
 typedef struct {
     UINT32 version;
 
-    // Unique Identifier for TrackInfo
+    /// Unique Identifier for TrackInfo
     UINT64 trackId;
 
-    // Codec ID of the stream. Null terminated.
+    /// Codec ID of the stream. Null terminated.
     CHAR codecId[MKV_MAX_CODEC_ID_LEN + 1];
 
-    // Human readable track name. Null terminated.
+    /// Human readable track name. Null terminated.
     CHAR trackName[MKV_MAX_TRACK_NAME_LEN + 1];
 
-    // Size of the codec private data in bytes. Can be 0 if no CPD is used.
+    /// Size of the codec private data in bytes. Can be 0 if no CPD is used.
     UINT32 codecPrivateDataSize;
 
-    // Codec private data. Can be NULL if no CPD is used. Allocated in heap.
+    /// Codec private data. Can be NULL if no CPD is used. Allocated in heap.
     PBYTE codecPrivateData;
 
-    // Track's content type.
+    /// Track's content type.
     MKV_TRACK_INFO_TYPE trackType;
 
-    // Track type specific data.
+    /// Track type specific data.
     TrackCustomData trackCustomData;
 
     // ------------------------------- V0 compat ----------------------
@@ -385,28 +386,28 @@ typedef struct {
  * The representation of the packaged frame information
  */
 typedef struct {
-    // Stream start timestamp adjusted with the timecode scale and the generator properties.
+    /// Stream start timestamp adjusted with the timecode scale and the generator properties.
     UINT64 streamStartTs;
 
-    // Cluster timestamp adjusted with the timecode scale and the generator properties.
+    /// Cluster timestamp adjusted with the timecode scale and the generator properties.
     UINT64 clusterPts;
 
-    // Frame decoding timestamp of first frame in the cluster adjusted with the timecode scale.
+    /// Frame decoding timestamp of first frame in the cluster adjusted with the timecode scale.
     UINT64 clusterDts;
 
-    // Frame presentation timestamp adjusted with the timecode scale.
+    /// Frame presentation timestamp adjusted with the timecode scale.
     UINT64 framePts;
 
-    // Frame decoding timestamp adjusted with the timecode scale.
+    /// Frame decoding timestamp adjusted with the timecode scale.
     UINT64 frameDts;
 
-    // Frame duration adjusted with the timecode scale.
+    /// Frame duration adjusted with the timecode scale.
     UINT64 duration;
 
-    // The offset where the original/adapted frame data begins
+    /// The offset where the original/adapted frame data begins
     UINT16 dataOffset;
 
-    // The state of the MKV stream generator.
+    /// The state of the MKV stream generator.
     MKV_STREAM_STATE streamState;
 
 } EncodedFrameInfo, *PEncodedFrameInfo;
@@ -464,11 +465,11 @@ typedef enum {
 /**
  * Gets the current time in 100ns from some timestamp.
  *
- * @param 1 UINT64 - Custom handle passed by the caller.
+ * @param customData Custom handle passed by the caller.
  *
  * @return Current time value in 100ns
  */
-typedef UINT64 (*GetCurrentTimeFunc)(UINT64);
+typedef UINT64 (*GetCurrentTimeFunc)(UINT64 customData);
 
 ////////////////////////////////////////////////////
 // Public functions
@@ -478,189 +479,189 @@ PUBLIC_API STATUS mkvgenHasStreamStarted(PMkvGenerator, PBOOL);
 /**
  * Create the MkvGenerator object
  *
- * @PCHAR - The content type of the stream
- * @UINT32 - The behavior flags
- * @UINT64 - Default timecode scale which will be applied to the generated MKV in 100ns
- * @UINT64 - Duration of the cluster in 100ns
- * @PBYTE - IN/OPT - Optional Segment UUID to use with size MKV_SEGMENT_UUID_LEN. Otherwise random UUID is generated
- * @PTrackInfo - IN - List of TrackInfo structures
- * @UINT32 - Number of the TrackInfo elements in the list
- * PCHAR - IN/OPT - Optional client id string. Null terminated if specified.
- * @GetCurrentTimeFunc - the time function callback
- * UINT64 - custom data to be passed to the callback
- * @PMkvGenerator* - returns the newly created object
+ * @param contentType The content type of the stream
+ * @param behaviorFlags The behavior flags
+ * @param timecodeScale Default timecode scale which will be applied to the generated MKV in 100ns
+ * @param clusterDuration Duration of the cluster in 100ns
+ * @param[in] segmentUuid Optional Segment UUID to use with size MKV_SEGMENT_UUID_LEN. Otherwise random UUID is generated
+ * @param[in] trackInfoList List of TrackInfo structures
+ * @param trackInfoCount Number of the TrackInfo elements in the list
+ * @param[in] clientId Optional client id string. Null terminated if specified.
+ * @param getTimeFn the time function callback
+ * @param customData custom data to be passed to the callback
+ * @param ppMkvGenerator returns the newly created object
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
-PUBLIC_API STATUS createMkvGenerator(PCHAR, UINT32, UINT64, UINT64, PBYTE, PTrackInfo, UINT32, PCHAR, GetCurrentTimeFunc, UINT64, PMkvGenerator*);
+PUBLIC_API STATUS createMkvGenerator(PCHAR contentType, UINT32 behaviorFlags, UINT64 timecodeScale, UINT64 clusterDuration, PBYTE segmentUuid, PTrackInfo trackInfoList, UINT32 trackInfoCount, PCHAR clientId, GetCurrentTimeFunc getTimeFn, UINT64 customData, PMkvGenerator* ppMkvGenerator);
 
 /**
  * Frees and de-allocates the memory of the MkvGenerator and it's sub-objects
  *
  * NOTE: This function is idempotent - can be called at various stages of construction.
  *
- * @PMkvGenerator - the object to free
+ * @param pMkvGenerator the object to free
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
-PUBLIC_API STATUS freeMkvGenerator(PMkvGenerator);
+PUBLIC_API STATUS freeMkvGenerator(PMkvGenerator pMkvGenerator);
 
 /**
  * Resets the generator to the initial state
  *
- * @PMkvGenerator - the object to reset
+ * @param pMkvGenerator the object to reset
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
-PUBLIC_API STATUS mkvgenResetGenerator(PMkvGenerator);
+PUBLIC_API STATUS mkvgenResetGenerator(PMkvGenerator pMkvGenerator);
 
 /**
  * Generates the MKV header
  *
- * @PMkvGenerator - The generator object
- * @PBYTE - Buffer to hold the packaged bits
- * @PUINT32 - IN/OUT - Size of the produced packaged bits
- * @PUINT64 - OUT - Stream start timestamp
+ * @param pMkvGenerator The generator object
+ * @param pBuffer Buffer to hold the packaged bits
+ * @param[in,out] pSize Size of the produced packaged bits
+ * @param[out] pStreamStartTs Stream start timestamp
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
-PUBLIC_API STATUS mkvgenGenerateHeader(PMkvGenerator, PBYTE, PUINT32, PUINT64);
+PUBLIC_API STATUS mkvgenGenerateHeader(PMkvGenerator pMkvGenerator, PBYTE pBuffer, PUINT32 pSize, PUINT64 pStreamStartTs);
 
 /**
  * Generates the MKV Tags/Tag/SimpleTag/<TagName, TagString> element
  *
- * @PMkvGenerator - The generator object
- * @PBYTE - Buffer to hold the packaged bits
- * @PCHAR - Name of the tag
- * @PCHAR - Value of the tag as a string
- * @PUINT32 - IN/OUT - Size of the produced packaged bits
+ * @param pMkvGenerator The generator object
+ * @param pBuffer Buffer to hold the packaged bits
+ * @param tagName Name of the tag
+ * @param tagValue Value of the tag as a string
+ * @param[in,out] pSize Size of the produced packaged bits
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
-PUBLIC_API STATUS mkvgenGenerateTag(PMkvGenerator, PBYTE, PCHAR, PCHAR, PUINT32);
+PUBLIC_API STATUS mkvgenGenerateTag(PMkvGenerator pMkvGenerator, PBYTE pBuffer, PCHAR tagName, PCHAR tagValue, PUINT32 pSize);
 
 /**
  * Generates the MKV Tags/Tag/SimpleTag/<TagName, TagString> element
  * and allows you to select to start at Tags, Tag, or Simple
  *
- * @PBYTE - Buffer to hold the packaged bits
- * @PCHAR - Name of the tag
- * @PCHAR - Value of the tag as a string
- * @PUINT32 - IN/OUT - Size of the produced packaged bits
- * @MKV_TREE_TYPE - top parent in series of prefix tags to generate
+ * @param pBuffer Buffer to hold the packaged bits
+ * @param tagName Name of the tag
+ * @param tagValue Value of the tag as a string
+ * @param[in,out] pSize Size of the produced packaged bits
+ * @param parent top parent in series of prefix tags to generate
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
-PUBLIC_API STATUS mkvgenGenerateTagsChain(PBYTE, PCHAR, PCHAR, PUINT32, MKV_TREE_TYPE);
+PUBLIC_API STATUS mkvgenGenerateTagsChain(PBYTE pBuffer, PCHAR tagName, PCHAR tagValue, PUINT32 pSize, MKV_TREE_TYPE parent);
 
 /**
  * Edits the sizes of an existings TAGS and TAG element in a buffer.
  *
- * @PBYTE - Buffer to hold the packaged bits
- * @PUINT32 - Number of bytes to add to the size
+ * @param pBuffer Buffer to hold the packaged bits
+ * @param sizeIncrease Number of bytes to add to the size
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
-PUBLIC_API STATUS mkvgenIncreaseTagsTagSize(PBYTE, UINT32);
+PUBLIC_API STATUS mkvgenIncreaseTagsTagSize(PBYTE pBuffer, UINT32 sizeIncrease);
 
 /**
  * Packages a frame into an MKV fragment
  *
- * @PMkvGenerator - The generator object
- * @PFrame - Frame to package
- * @PTrackInfo - IN - The track info object the frame belongs to
- * @PBYTE - Buffer to hold the packaged bits
- * @PUINT32 - IN/OUT - Size of the produced packaged bits
- * @PEncodedFrameInfo - OUT OPT - Information about the encoded frame - optional.
+ * @param pMkvGenerator The generator object
+ * @param pFrame Frame to package
+ * @param[in] pTrackInfo The track info object the frame belongs to
+ * @param pBuffer Buffer to hold the packaged bits
+ * @param[in,out] pSize Size of the produced packaged bits
+ * @param[out] pEncodedFrameInfo Optional. Information about the encoded frame - optional.
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
-PUBLIC_API STATUS mkvgenPackageFrame(PMkvGenerator, PFrame, PTrackInfo, PBYTE, PUINT32, PEncodedFrameInfo);
+PUBLIC_API STATUS mkvgenPackageFrame(PMkvGenerator pMkvGenerator, PFrame pFrame, PTrackInfo pTrackInfo, PBYTE pBuffer, PUINT32 pSize, PEncodedFrameInfo pEncodedFrameInfo);
 
 /**
  * Converts an MKV timecode to a timestamp
  *
- * @PMkvGenerator - The generator object
- * UINT64 - MKV timecode to convert
- * @PUINT64 - OUT - The converted timestamp
+ * @param pMkvGenerator The generator object
+ * @param timecode MKV timecode to convert
+ * @param[out] pTimestamp The converted timestamp
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
-PUBLIC_API STATUS mkvgenTimecodeToTimestamp(PMkvGenerator, UINT64, PUINT64);
+PUBLIC_API STATUS mkvgenTimecodeToTimestamp(PMkvGenerator pMkvGenerator, UINT64 timecode, PUINT64 pTimestamp);
 
 /**
  * Gets the MKV overhead in bytes for a specified type of frame
  *
- * @PMkvGenerator - The generator object
- * MKV_STREAM_STATE - Type of frame to get the overhead for
- * @PUINT32 - OUT - The overhead in bytes
+ * @param pMkvGenerator The generator object
+ * @param mkvStreamState Type of frame to get the overhead for
+ * @param[out] pOverhead The overhead in bytes
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
-PUBLIC_API STATUS mkvgenGetMkvOverheadSize(PMkvGenerator, MKV_STREAM_STATE, PUINT32);
+PUBLIC_API STATUS mkvgenGetMkvOverheadSize(PMkvGenerator pMkvGenerator, MKV_STREAM_STATE mkvStreamState, PUINT32 pOverhead);
 
 /**
  * Gets the current generator timestamps
  *
- * @PMkvGenerator - The generator object
- * PUINT64 - OUT - MKV stream start timestamp
- * PUINT64 - OUT - MKV cluster start timestamp
- * PUINT64 - OUT - Decoding timestamp of the first frame of the cluster
+ * @param pMkvGenerator The generator object
+ * @param[out] pStreamStartTs MKV stream start timestamp
+ * @param[out] pClusterStartTs MKV cluster start timestamp
+ * @param[out] pClusterStartDts Decoding timestamp of the first frame of the cluster
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
-PUBLIC_API STATUS mkvgenGetCurrentTimestamps(PMkvGenerator, PUINT64, PUINT64, PUINT64);
+PUBLIC_API STATUS mkvgenGetCurrentTimestamps(PMkvGenerator pMkvGenerator, PUINT64 pStreamStartTs, PUINT64 pClusterStartTs, PUINT64 pClusterStartDts);
 
 /**
  * Sets the Codec Private Data for a particular track
  *
- * @PMkvGenerator - The generator object
- * UINT64 - IN - Track ID to set the Codec Private Data for
- * UINT32 - IN - Codec Private Data size
- * PBYTE - IN - Codec private Data bytes
+ * @param pMkvGenerator The generator object
+ * @param[in] trackId Track ID to set the Codec Private Data for
+ * @param[in] codecPrivateDataSize Codec Private Data size
+ * @param[in] codecPrivateData Codec private Data bytes
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
-PUBLIC_API STATUS mkvgenSetCodecPrivateData(PMkvGenerator, UINT64, UINT32, PBYTE);
+PUBLIC_API STATUS mkvgenSetCodecPrivateData(PMkvGenerator pMkvGenerator, UINT64 trackId, UINT32 codecPrivateDataSize, PBYTE codecPrivateData);
 
 /**
  * Gets the track info for a specified track id
  *
- * @PTrackInfo - IN - Track info array
- * @UINT32 - IN - Track info count
- * @UINT64 - IN - Track ID
- * @PTrackInfo* - OUT/OPT - Track info object matching the track id
- * @PUINT32 - OUT/OPT - Track index
+ * @param[in] pTrackInfos Track info array
+ * @param[in] trackInfoCount Track info count
+ * @param[in] trackId Track ID
+ * @param[out] ppTrackInfo Optional. Track info object matching the track id
+ * @param[out] pIndex Optional. Track index
  *
  * @return Status of the operation
  */
-PUBLIC_API STATUS mkvgenGetTrackInfo(PTrackInfo, UINT32, UINT64, PTrackInfo*, PUINT32);
+PUBLIC_API STATUS mkvgenGetTrackInfo(PTrackInfo pTrackInfos, UINT32 trackInfoCount, UINT64 trackId, PTrackInfo* ppTrackInfo, PUINT32 pIndex);
 
 /**
  * Generate AAC audio cpd
  *
- * @KVS_MPEG4_AUDIO_OBJECT_TYPES - IN - MPEG4 object type
- * @UINT32 - IN - Sampling Frequency
- * @UINT16 - IN - Channel Count
- * @PBYTE - OUT - Buffer for cpd, should have at least KVS_AAC_CPD_SIZE_BYTE (2 bytes)
- * @UINT32 - IN - size of buffer
+ * @param[in] objectType MPEG4 object type
+ * @param[in] samplingFrequency Sampling Frequency
+ * @param[in] channelConfig Channel Count
+ * @param[out] pBuffer Buffer for cpd, should have at least KVS_AAC_CPD_SIZE_BYTE (2 bytes)
+ * @param[in] bufferLen size of buffer
  *
  * @return Status of the operation
  */
-PUBLIC_API STATUS mkvgenGenerateAacCpd(KVS_MPEG4_AUDIO_OBJECT_TYPES, UINT32, UINT16, PBYTE, UINT32);
+PUBLIC_API STATUS mkvgenGenerateAacCpd(KVS_MPEG4_AUDIO_OBJECT_TYPES objectType, UINT32 samplingFrequency, UINT16 channelConfig, PBYTE pBuffer, UINT32 bufferLen);
 
 /**
  * Generate PCM audio cpd
  *
- * @KVS_PCM_FORMAT_CODE - IN - pcm format code. Either KVS_PCM_FORMAT_CODE_ALAW or KVS_PCM_FORMAT_CODE_MUALAW
- * @UINT32 - IN - Sampling Frequency
- * @UINT16 - IN - Channel Count
- * @PBYTE - OUT - Buffer for cpd, should have at least KVS_PCM_CPD_SIZE_BYTE (18 bytes)
- * @UINT32 - IN - size of buffer
+ * @param[in] format pcm format code. Either KVS_PCM_FORMAT_CODE_ALAW or KVS_PCM_FORMAT_CODE_MUALAW
+ * @param[in] samplingRate Sampling Frequency
+ * @param[in] channels Channel Count
+ * @param[out] buffer Buffer for cpd, should have at least KVS_PCM_CPD_SIZE_BYTE (18 bytes)
+ * @param[in] bufferLen size of buffer
  *
  * @return Status of the operation
  */
-PUBLIC_API STATUS mkvgenGeneratePcmCpd(KVS_PCM_FORMAT_CODE, UINT32, UINT16, PBYTE, UINT32);
+PUBLIC_API STATUS mkvgenGeneratePcmCpd(KVS_PCM_FORMAT_CODE format, UINT32 samplingRate, UINT16 channels, PBYTE buffer, UINT32 bufferLen);
 
 #ifdef __cplusplus
 }

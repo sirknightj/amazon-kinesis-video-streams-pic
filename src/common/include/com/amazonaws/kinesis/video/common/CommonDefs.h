@@ -1,6 +1,7 @@
-//
-// Common definition file
-//
+/**
+ * @file
+ * @brief Common type definitions, status codes and macros shared by all PIC modules.
+ */
 
 #ifndef __COMMON_DEFINITIONS__
 #define __COMMON_DEFINITIONS__
@@ -719,10 +720,10 @@ extern getTmTime globalGetThreadSafeTmTime;
 
 typedef struct __ThreadParams ThreadParams;
 struct __ThreadParams {
-    // Version of the struct
+    /// Version of the struct
     UINT32 version;
 
-    // Stack size, in bytes. 0 = use defaults
+    /// Stack size, in bytes. 0 = use defaults
     SIZE_T stackSize;
 };
 typedef struct __ThreadParams* PThreadParams;

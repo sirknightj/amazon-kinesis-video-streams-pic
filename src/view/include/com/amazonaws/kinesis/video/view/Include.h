@@ -1,5 +1,6 @@
 /**
- * Main public include file
+ * @file
+ * @brief Content view public include file - the window of buffered items indexed by timestamp.
  */
 #ifndef __CONTENT_VIEW_INCLUDE__
 #define __CONTENT_VIEW_INCLUDE__
@@ -126,25 +127,25 @@ extern "C" {
  * IMPORTANT!!! This structure should be tightly packed without explicit compiler directives
  */
 typedef struct {
-    // Id of the item
+    /// Id of the item
     UINT64 index;
 
-    // The timestamp of the item
+    /// The timestamp of the item
     UINT64 timestamp;
 
-    // The timestamp used to map acks from backend
+    /// The timestamp used to map acks from backend
     UINT64 ackTimestamp;
 
-    // The duration of the item
+    /// The duration of the item
     UINT64 duration;
 
-    // Length of the data in bytes
+    /// Length of the data in bytes
     UINT32 length;
 
-    // Whether this item depends on others (ex. IFrame for frames)
+    /// Whether this item depends on others (ex. IFrame for frames)
     UINT32 flags;
 
-    // The data allocation handle
+    /// The data allocation handle
     ALLOCATION_HANDLE handle;
 } ViewItem, *PViewItem;
 
@@ -152,10 +153,10 @@ typedef struct {
  * Determine how content view drop frames when overflow is detected
  */
 typedef enum {
-    // drop single view item from the buffer
+    /// drop single view item from the buffer
     CONTENT_VIEW_OVERFLOW_POLICY_DROP_TAIL_VIEW_ITEM,
 
-    // drop entire fragment
+    /// drop entire fragment
     CONTENT_VIEW_OVERFLOW_POLICY_DROP_UNTIL_FRAGMENT_START,
 } CONTENT_VIEW_OVERFLOW_POLICY;
 
@@ -170,21 +171,21 @@ struct __ContentView {
 
 typedef struct __ContentView* PContentView;
 
-/**
+/*
  * Callback functions definitions
  */
 
 /**
  * Callback to notify about an item falling out of the window
  *
- * param 1 PContentView - Content view which notifies the caller - this pointer
- * param 2 UINT64 - Custom pass-through value
- * param 3 PViewItem - item that's about to fall off from the window
- * param 4 BOOL - whether the item was current - i.e. it wasn't consumed
+ * @param pContentView Content view which notifies the caller - this pointer
+ * @param customData Custom pass-through value
+ * @param pViewItem item that's about to fall off from the window
+ * @param currentRemoved whether the item was current - i.e. it wasn't consumed
  *
  * @return VOID
  */
-typedef VOID (*ContentViewItemRemoveNotificationCallbackFunc)(PContentView, UINT64, PViewItem, BOOL);
+typedef VOID (*ContentViewItemRemoveNotificationCallbackFunc)(PContentView pContentView, UINT64 customData, PViewItem pViewItem, BOOL currentRemoved);
 
 ////////////////////////////////////////////////////
 // Public functions
@@ -193,115 +194,114 @@ typedef VOID (*ContentViewItemRemoveNotificationCallbackFunc)(PContentView, UINT
 /**
  * Create the ContentView object
  *
- * @UINT32 - Max number of items in the window
- * @UINT64 - Duration of items to keep in the window
- * @ContentViewItemRemoveNotificationCallbackFunc - Optional - Callback function
- * @UINT64 - Custom data to pass to the callback
- * @CONTENT_VIEW_OVERFLOW_STRATEGY - how content view will drop frame when overflow happens
- * @PContentView* - returns the newly created object
+ * @param maxItemCount Max number of items in the window
+ * @param bufferDuration Duration of items to keep in the window
+ * @param removeCallbackFunc Optional - Callback function
+ * @param customData Custom data to pass to the callback
+ * @param overflowStrategy how content view will drop frame when overflow happens
+ * @param ppContentView returns the newly created object
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  **/
-PUBLIC_API STATUS createContentView(UINT32, UINT64, ContentViewItemRemoveNotificationCallbackFunc, UINT64, CONTENT_VIEW_OVERFLOW_POLICY,
-                                    PContentView*);
+PUBLIC_API STATUS createContentView(UINT32 maxItemCount, UINT64 bufferDuration, ContentViewItemRemoveNotificationCallbackFunc removeCallbackFunc, UINT64 customData, CONTENT_VIEW_OVERFLOW_POLICY overflowStrategy, PContentView* ppContentView);
 
 /**
  * Frees and de-allocates the memory of the ContentView and it's sub-objects
  *
  * NOTE: This function is idempotent - can be called at various stages of construction.
  *
- * @PContentView - the object to free
+ * @param pContentView the object to free
  */
-PUBLIC_API STATUS freeContentView(PContentView);
+PUBLIC_API STATUS freeContentView(PContentView pContentView);
 
 /**
  * Checks whether an item with a given index exists
  *
- * PContentView - Content view
- * UINT64 - item index
- * PBOOL - whether the item exists
+ * @param pContentView Content view
+ * @param itemIndex item index
+ * @param pExists whether the item exists
  *
  */
-PUBLIC_API STATUS contentViewItemExists(PContentView, UINT64, PBOOL);
+PUBLIC_API STATUS contentViewItemExists(PContentView pContentView, UINT64 itemIndex, PBOOL pExists);
 
 /**
  * Checks whether an item with a given timestamp is in the range
  *
- * PContentView - Content view
- * UINT64 - item timestamp
- * BOOL - whether check against ackTimestamp or contentView timestamp
- * PBOOL - whether the item exists
+ * @param pContentView Content view
+ * @param timestamp item timestamp
+ * @param checkAckTimeStamp whether check against ackTimestamp or contentView timestamp
+ * @param pInRange whether the item exists
  *
  */
-PUBLIC_API STATUS contentViewTimestampInRange(PContentView, UINT64, BOOL, PBOOL);
+PUBLIC_API STATUS contentViewTimestampInRange(PContentView pContentView, UINT64 timestamp, BOOL checkAckTimeStamp, PBOOL pInRange);
 
 /**
  * Gets an item from the current index and advances the index. Iterates to the next item.
  *
- * PContentView - Content view
- * PViewItem* - The current item pointer
+ * @param pContentView Content view
+ * @param ppItem The current item pointer
  *
  */
-PUBLIC_API STATUS contentViewGetNext(PContentView, PViewItem*);
+PUBLIC_API STATUS contentViewGetNext(PContentView pContentView, PViewItem* ppItem);
 
 /**
  * Gets an item from the given index. Current remains untouched.
  *
- * PContentView - Content view
- * UINT64 - the index of the item
- * PViewItem* - The current item pointer
+ * @param pContentView Content view
+ * @param itemIndex the index of the item
+ * @param ppItem The current item pointer
  *
  */
-PUBLIC_API STATUS contentViewGetItemAt(PContentView, UINT64, PViewItem*);
+PUBLIC_API STATUS contentViewGetItemAt(PContentView pContentView, UINT64 itemIndex, PViewItem* ppItem);
 
 /**
  * Finds an item corresponding to the timestamp. Current remains untouched.
  *
- * PContentView - Content view
- * UINT64 - the index of the item
- * BOOL - whether check against ackTimestamp or contentView timestamp
- * PViewItem* - The current item pointer
+ * @param pContentView Content view
+ * @param timestamp the index of the item
+ * @param checkAckTimeStamp whether check against ackTimestamp or contentView timestamp
+ * @param ppItem The current item pointer
  *
  */
-PUBLIC_API STATUS contentViewGetItemWithTimestamp(PContentView, UINT64, BOOL, PViewItem*);
+PUBLIC_API STATUS contentViewGetItemWithTimestamp(PContentView pContentView, UINT64 timestamp, BOOL checkAckTimeStamp, PViewItem* ppItem);
 
 /**
  * Gets the current index
  *
- * PContentView - Content view
- * PUINT64 - current item index
+ * @param pContentView Content view
+ * @param pIndex current item index
  *
  */
-PUBLIC_API STATUS contentViewGetCurrentIndex(PContentView, PUINT64);
+PUBLIC_API STATUS contentViewGetCurrentIndex(PContentView pContentView, PUINT64 pIndex);
 
 /**
  * Sets the current item at a given index
  *
- * PContentView - Content view
- * UINT64 - new current item index
+ * @param pContentView Content view
+ * @param index new current item index
  *
  */
-PUBLIC_API STATUS contentViewSetCurrentIndex(PContentView, UINT64);
+PUBLIC_API STATUS contentViewSetCurrentIndex(PContentView pContentView, UINT64 index);
 
 /**
  * Rolls back the current item by a specified duration or as far as the tail.
  * Optionally looks for a key-framed item.
  *
- * PContentView - Content view.
- * UINT64 - Timestamp to set the current to. NOTE: the timestamp will be inclusive.
- * BOOL - Whether to look for a key framed item.
- * BOOL - Whether to stop at the last buffering ACK.
+ * @param pContentView Content view.
+ * @param duration Timestamp to set the current to. NOTE: the timestamp will be inclusive.
+ * @param keyFrame Whether to look for a key framed item.
+ * @param lastReceivedAck Whether to stop at the last buffering ACK.
  *
  */
-PUBLIC_API STATUS contentViewRollbackCurrent(PContentView, UINT64, BOOL, BOOL);
+PUBLIC_API STATUS contentViewRollbackCurrent(PContentView pContentView, UINT64 duration, BOOL keyFrame, BOOL lastReceivedAck);
 
 /**
  * Resets the current item to the tail position
  *
- * PContentView - Content view
+ * @param pContentView Content view
  *
  */
-PUBLIC_API STATUS contentViewResetCurrent(PContentView);
+PUBLIC_API STATUS contentViewResetCurrent(PContentView pContentView);
 
 /**
  * Gets the tail item
@@ -310,7 +310,7 @@ PUBLIC_API STATUS contentViewResetCurrent(PContentView);
  * PViewItem - The tail item
  *
  */
-PUBLIC_API STATUS contentViewGetTail(PContentView, PViewItem*);
+PUBLIC_API STATUS contentViewGetTail(PContentView pContentView, PViewItem* ppItem);
 
 /**
  * Gets the head item
@@ -319,94 +319,94 @@ PUBLIC_API STATUS contentViewGetTail(PContentView, PViewItem*);
  * PViewItem - The head item
  *
  */
-PUBLIC_API STATUS contentViewGetHead(PContentView, PViewItem*);
+PUBLIC_API STATUS contentViewGetHead(PContentView pContentView, PViewItem* ppItem);
 
 /**
  * Gets the overall allocation size
  *
- * PContentView - Content view
- * PUINT32 - OUT - The overall allocation size
+ * @param pContentView Content view
+ * @param[out] pAllocationSize The overall allocation size
  *
  */
-PUBLIC_API STATUS contentViewGetAllocationSize(PContentView, PUINT32);
+PUBLIC_API STATUS contentViewGetAllocationSize(PContentView pContentView, PUINT32 pAllocationSize);
 
 /**
  * Adds an item to the head of the view
  *
- * PContentView - Content view
- * UINT64 - item timestamp (decoding timestamp)
- * UINT64 - item presentation timestamp
- * UINT64 - item duration
- * ALLOCATION_HANDLE - Allocation handle
- * UINT32 - Byte offset of the data from the beginning of the allocation
- * UINT32 - Size of the data in bytes
- * UINT32 - Item flags.
+ * @param pContentView Content view
+ * @param timestamp item timestamp (decoding timestamp)
+ * @param ackTimeStamp item timestamp used to map acks from the backend
+ * @param duration item duration
+ * @param allocHandle Allocation handle
+ * @param offset Byte offset of the data from the beginning of the allocation
+ * @param length Size of the data in bytes
+ * @param flags Item flags.
  *
  */
-PUBLIC_API STATUS contentViewAddItem(PContentView, UINT64, UINT64, UINT64, ALLOCATION_HANDLE, UINT32, UINT32, UINT32);
+PUBLIC_API STATUS contentViewAddItem(PContentView pContentView, UINT64 timestamp, UINT64 ackTimeStamp, UINT64 duration, ALLOCATION_HANDLE allocHandle, UINT32 offset, UINT32 length, UINT32 flags);
 
 /**
  * Gets the view's temporal window duration
  *
- * PContentView - Content view
- * PUINT64 - current window duration - from the head timestamp to the current timestamp
- * PUINT64 - Optional - entire window duration - from the head timestamp to the tail timestamp
+ * @param pContentView Content view
+ * @param pCurrentDuration current window duration - from the head timestamp to the current timestamp
+ * @param pWindowDuration Optional - entire window duration - from the head timestamp to the tail timestamp
  *
  */
-PUBLIC_API STATUS contentViewGetWindowDuration(PContentView, PUINT64, PUINT64);
+PUBLIC_API STATUS contentViewGetWindowDuration(PContentView pContentView, PUINT64 pCurrentDuration, PUINT64 pWindowDuration);
 
 /**
  * Gets the view's window item count and entire window item count (optionally)
  *
- * PContentView - Content view
- * PUINT64 - current window item count - the number of elements from the current to the head
- * PUINT64 - Optional - entire window item count - the number of elements in the entire window
+ * @param pContentView Content view
+ * @param pCurrentItemCount current window item count - the number of elements from the current to the head
+ * @param pWindowItemCount Optional - entire window item count - the number of elements in the entire window
  *
  */
-PUBLIC_API STATUS contentViewGetWindowItemCount(PContentView, PUINT64, PUINT64);
+PUBLIC_API STATUS contentViewGetWindowItemCount(PContentView pContentView, PUINT64 pCurrentItemCount, PUINT64 pWindowItemCount);
 
 /**
  * Gets the view's window allocation size and entire window allocation size (optionally)
  *
- * PContentView - Content view
- * PUINT64 - current window allocation size - the size of all allocations from the current to the head
- * PUINT64 - Optional - entire window size - the size of all allocations in the entire window
+ * @param pContentView Content view
+ * @param pCurrentAllocationSize current window allocation size - the size of all allocations from the current to the head
+ * @param pWindowAllocationSize Optional - entire window size - the size of all allocations in the entire window
  *
  */
-PUBLIC_API STATUS contentViewGetWindowAllocationSize(PContentView, PUINT64, PUINT64);
+PUBLIC_API STATUS contentViewGetWindowAllocationSize(PContentView pContentView, PUINT64 pCurrentAllocationSize, PUINT64 pWindowAllocationSize);
 
 /**
  * Trims the tail till the given item. The remove callbacks will be fired and the current shifted if needed.
  *
- * PContentView - Content view
- * UINT64 - Trim the tail to this item
+ * @param pContentView Content view
+ * @param itemIndex Trim the tail to this item
  *
  */
-PUBLIC_API STATUS contentViewTrimTail(PContentView, UINT64);
+PUBLIC_API STATUS contentViewTrimTail(PContentView pContentView, UINT64 itemIndex);
 
 /**
  * Trims the tail based on CONTENT_VIEW_OVERFLOW_POLICY
  *
- * PContentView - Content view
+ * @param pContentView Content view
  *
  */
-PUBLIC_API STATUS contentViewTrimTailItems(PContentView);
+PUBLIC_API STATUS contentViewTrimTailItems(PContentView pContentView);
 
 /**
  * Removes all items in the content view. Calls the remove callback if specified.
  *
- * PContentView - Content view
+ * @param pContentView Content view
  */
-PUBLIC_API STATUS contentViewRemoveAll(PContentView);
+PUBLIC_API STATUS contentViewRemoveAll(PContentView pContentView);
 
 /**
  * Checks whether there is an available slot both temporary and depth-wise
  * in the content view without evicting a tail item.
  *
- * PContentView - Content view
- * PBOOL - OUT OPT - Whether there is available space to put an item without tail eviction.
+ * @param pContentView Content view
+ * @param[out] pWindowAvailability Optional. Whether there is available space to put an item without tail eviction.
  */
-PUBLIC_API STATUS contentViewCheckAvailability(PContentView, PBOOL);
+PUBLIC_API STATUS contentViewCheckAvailability(PContentView pContentView, PBOOL pWindowAvailability);
 
 #ifdef __cplusplus
 }

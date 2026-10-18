@@ -1,0 +1,59 @@
+# Doxygen configuration for the Amazon Kinesis Video Streams PIC public API.
+# Generate with: doxygen Doxyfile  (output in doc/html)
+# Only the settings that differ from the Doxygen defaults are listed here.
+
+PROJECT_NAME           = "Amazon Kinesis Video Streams PIC"
+PROJECT_NUMBER         = $(PROJECT_NUMBER)
+PROJECT_BRIEF          = "Platform Independent Code for Amazon Kinesis Video Streams"
+OUTPUT_DIRECTORY       = doc
+
+# Public headers only - the internal headers under src/*/src are not part of the API
+INPUT                  = README.md \
+                         docs/status-codes.md \
+                         src/client/include \
+                         src/common/include \
+                         src/heap/include \
+                         src/mkvgen/include \
+                         src/state/include \
+                         src/trace/include \
+                         src/utils/include \
+                         src/view/include
+FILE_PATTERNS          = *.h *.md
+RECURSIVE              = YES
+EXCLUDE_PATTERNS       = */dlfcn_win_stub.h
+EXCLUDE_SYMBOLS        = __*_INCLUDE__ __*_INCLUDE_H__ __*_DEFINES_H__ __COMMON_DEFINITIONS__ __UTILS_H__
+USE_MDFILE_AS_MAINPAGE = README.md
+
+# Show includes the way users write them: #include <com/amazonaws/kinesis/video/client/Include.h>
+FULL_PATH_NAMES        = YES
+STRIP_FROM_PATH        = src .
+STRIP_FROM_INC_PATH    = src/client/include \
+                         src/common/include \
+                         src/heap/include \
+                         src/mkvgen/include \
+                         src/state/include \
+                         src/trace/include \
+                         src/utils/include \
+                         src/view/include
+
+OPTIMIZE_OUTPUT_FOR_C  = YES
+TYPEDEF_HIDES_STRUCT   = YES
+EXTRACT_ALL            = YES
+SORT_MEMBER_DOCS       = NO
+
+ENABLE_PREPROCESSING   = YES
+MACRO_EXPANSION        = YES
+# Only expand what is needed to parse declarations, so STATUS, VOID, etc. are shown as written
+EXPAND_ONLY_PREDEF     = YES
+EXPAND_AS_DEFINED      = DEFINE_TRACE_START DEFINE_TRACE_STOP
+SEARCH_INCLUDES        = YES
+INCLUDE_PATH           = src/common/include
+PREDEFINED             = PUBLIC_API=
+
+GENERATE_TREEVIEW      = YES
+DISABLE_INDEX          = YES
+GENERATE_LATEX         = NO
+HAVE_DOT               = NO
+
+QUIET                  = YES
+WARN_NO_PARAMDOC       = NO

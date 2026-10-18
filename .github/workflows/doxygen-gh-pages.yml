@@ -1,0 +1,80 @@
+name: Doxygen GitHub Pages
+
+# Builds the API reference on every PR and publishes it on pushes:
+#   master  -> https://awslabs.github.io/amazon-kinesis-video-streams-pic/
+#   develop -> https://awslabs.github.io/amazon-kinesis-video-streams-pic/develop/
+on:
+  push:
+    branches:
+      - master
+      - develop
+  pull_request:
+    branches:
+      - master
+      - develop
+
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Doxygen
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y doxygen
+
+      - name: Check the status code table is up to date
+        run: python3 scripts/generate-status-codes.py --check
+
+      - name: Generate Doxygen documentation
+        env:
+          PROJECT_NUMBER: ${{ github.event_name == 'push' && github.ref_name || '' }}
+        run: |
+          doxygen Doxyfile
+          touch doc/html/.nojekyll
+
+      - name: Upload documentation
+        uses: actions/upload-artifact@v4
+        with:
+          name: doxygen-html
+          path: doc/html
+          include-hidden-files: true
+
+  deploy-docs:
+    if: github.event_name == 'push'
+    needs: build-docs
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: gh-pages-deploy
+      cancel-in-progress: false
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download documentation
+        uses: actions/download-artifact@v4
+        with:
+          name: doxygen-html
+          path: doc/html
+
+      - name: Deploy master to the site root
+        if: github.ref_name == 'master'
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: doc/html
+          branch: gh-pages
+          clean-exclude: develop
+
+      - name: Deploy develop to /develop
+        if: github.ref_name == 'develop'
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: doc/html
+          branch: gh-pages
+          target-folder: develop

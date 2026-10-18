@@ -1,5 +1,6 @@
 /**
- * Main public include file
+ * @file
+ * @brief State machine public include file.
  */
 #ifndef __CONTENT_STATE_INCLUDE__
 #define __CONTENT_STATE_INCLUDE__
@@ -53,34 +54,34 @@ extern "C" {
 /**
  * State transition function definitions
  *
- * @param 1 UINT64 - IN - Custom data passed in
- * @param 2 PUINT64 - OUT - Returned next state on success
+ * @param[in] customData Custom data passed in
+ * @param[out] pNextState Returned next state on success
  *
  * @return Status of the callback
  */
-typedef STATUS (*GetNextStateFunc)(UINT64, PUINT64);
+typedef STATUS (*GetNextStateFunc)(UINT64 customData, PUINT64 pNextState);
 
 /**
  * State execution function definitions
  *
- * @param 1 - IN - Custom data passed in
- * @param 2 - IN - Delay time Time after which to execute the function
+ * @param[in] customData Custom data passed in
+ * @param[in] delayTime Delay time Time after which to execute the function
  *
  * @return Status of the callback
  */
-typedef STATUS (*ExecuteStateFunc)(UINT64, UINT64);
+typedef STATUS (*ExecuteStateFunc)(UINT64 customData, UINT64 delayTime);
 
 /**
  * Function which gets called for each state before state machine
  * transitions to a different state. State machine transitioning to
  * the same state will not result in the transition hook being called
  *
- * @param 1 - IN - Custom data passed in
- * @param 2 - OUT - An opaque return value
+ * @param[in] customData Custom data passed in
+ * @param[out] pStateTransitionWaitTime An opaque return value
  *
  * @return Status of the callback
  */
-typedef STATUS (*StateTransitionHookFunc)(UINT64, PUINT64);
+typedef STATUS (*StateTransitionHookFunc)(UINT64 customData, PUINT64 pStateTransitionWaitTime);
 
 /**
  * State Machine state
@@ -113,111 +114,111 @@ typedef struct __StateMachine* PStateMachine;
 /**
  * Creates the state machine object
  *
- * @param 1 PStateMachineState - IN - List of state machine details on states, state transition functions and valid state transition list (mandatory)
- * @param 2 UINT32 - IN - stateCount - Number of entries in the PStateMachineState list (mandatory)
- * @param 3 UINT64 - IN - customData - application specific data that needs to be passed around (optional)
- * @param 4 GetCurrentTimeFunc - IN - custom get time function that the state machine should use to state transition wait time (optional)
- * @param 5 UINT64 - IN - getCurrentTimeFuncCustomData - custom data for getCurrentTimeFunc (optional)
- * @param 6 PStateMachine - OUT - Allocated state machine object
+ * @param[in] pStates List of state machine details on states, state transition functions and valid state transition list (mandatory)
+ * @param[in] stateCount Number of entries in the PStateMachineState list (mandatory)
+ * @param[in] customData application specific data that needs to be passed around (optional)
+ * @param[in] getCurrentTimeFunc custom get time function that the state machine should use to state transition wait time (optional)
+ * @param[in] getCurrentTimeFuncCustomData custom data for getCurrentTimeFunc (optional)
+ * @param[out] ppStateMachine Allocated state machine object
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
-PUBLIC_API STATUS createStateMachine(PStateMachineState, UINT32, UINT64, GetCurrentTimeFunc, UINT64, PStateMachine*);
+PUBLIC_API STATUS createStateMachine(PStateMachineState pStates, UINT32 stateCount, UINT64 customData, GetCurrentTimeFunc getCurrentTimeFunc, UINT64 getCurrentTimeFuncCustomData, PStateMachine* ppStateMachine);
 
 /**
  * Creates a state machine with a state machine name string to identify the state machine. State machine name is mandatory
  * if using this API and cannot exceed 32 characters and cannot be an empty string
  *
- * @param 1 PStateMachineState - IN - List of state machine details on states, state transition functions and valid state transition list (mandatory)
- * @param 2 UINT32 - IN - stateCount - Number of entries in the PStateMachineState list (mandatory)
- * @param 3 UINT64 - IN - customData - application specific data that needs to be passed around (optional)
- * @param 4 GetCurrentTimeFunc - IN - custom get time function that the state machine should use to state transition wait time (optional)
- * @param 5 UINT64 - IN - getCurrentTimeFuncCustomData - custom data for getCurrentTimeFunc (optional)
- * @param 6 PCHAR - IN - pStateMachineName - name for the state machine. This will be used in the logs to uniquely identify a state machine (useful
+ * @param[in] pStates List of state machine details on states, state transition functions and valid state transition list (mandatory)
+ * @param[in] stateCount Number of entries in the PStateMachineState list (mandatory)
+ * @param[in] customData application specific data that needs to be passed around (optional)
+ * @param[in] getCurrentTimeFunc custom get time function that the state machine should use to state transition wait time (optional)
+ * @param[in] getCurrentTimeFuncCustomData custom data for getCurrentTimeFunc (optional)
+ * @param[in] pStateMachineName name for the state machine. This will be used in the logs to uniquely identify a state machine (useful
  * when there are multiple state machines running simultaneously
- * @param 6 PStateMachine - OUT - Allocated state machine object
+ * @param[out] ppStateMachine Allocated state machine object
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
-PUBLIC_API STATUS createStateMachineWithName(PStateMachineState, UINT32, UINT64, GetCurrentTimeFunc, UINT64, PCHAR, PStateMachine*);
+PUBLIC_API STATUS createStateMachineWithName(PStateMachineState pStates, UINT32 stateCount, UINT64 customData, GetCurrentTimeFunc getCurrentTimeFunc, UINT64 getCurrentTimeFuncCustomData, PCHAR pStateMachineName, PStateMachine* ppStateMachine);
 
 /**
  * Free the state machine object
- * @param 1 PStateMachine - IN - State machine object to be deallocated
+ * @param[in] pStateMachine State machine object to be deallocated
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
-PUBLIC_API STATUS freeStateMachine(PStateMachine);
+PUBLIC_API STATUS freeStateMachine(PStateMachine pStateMachine);
 
 /**
  * Step to next valid state in a state machine.
- * @param 1 PStateMachine - IN - State machine object
+ * @param[in] pStateMachine State machine object
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
-PUBLIC_API STATUS stepStateMachine(PStateMachine);
+PUBLIC_API STATUS stepStateMachine(PStateMachine pStateMachine);
 
 /**
  * Checks whether the next state machine state is in the list of accepted states
- * @param 1 PStateMachine - IN - State machine object
- * @param 2 UINT64 - IN - requiredStates - ORed list of allowed states to transition to a particular state
+ * @param[in] pStateMachine State machine object
+ * @param[in] requiredStates ORed list of allowed states to transition to a particular state
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
-PUBLIC_API STATUS acceptStateMachineState(PStateMachine, UINT64);
+PUBLIC_API STATUS acceptStateMachineState(PStateMachine pStateMachine, UINT64 requiredStates);
 
 /**
  * Validate if the next state can accept the current state before transitioning
- * @param 1 PStateMachine - IN - State machine object
- * @param 2 UINT64 - IN - state - The next state to transition to
- * @param 3 PStateMachineState - OUT - Pointer to the state object given it's state
+ * @param[in] pStateMachine State machine object
+ * @param[in] state The next state to transition to
+ * @param[out] ppState Pointer to the state object given it's state
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
-PUBLIC_API STATUS getStateMachineState(PStateMachine, UINT64, PStateMachineState*);
+PUBLIC_API STATUS getStateMachineState(PStateMachine pStateMachine, UINT64 state, PStateMachineState* ppState);
 
 /**
  * Gets a pointer to the current state object
- * @param 1 PStateMachine - IN - State machine object
- * @param 3 PStateMachineState - OUT - Pointer to the state object for the current state
+ * @param[in] pStateMachine State machine object
+ * @param[out] ppState Pointer to the state object for the current state
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
-PUBLIC_API STATUS getStateMachineCurrentState(PStateMachine, PStateMachineState*);
+PUBLIC_API STATUS getStateMachineCurrentState(PStateMachine pStateMachine, PStateMachineState* ppState);
 
 /**
  * Force sets a pointer to the current state object
- * @param 1 PStateMachine - IN - State machine object
- * @param 3 UINT64 - IN - state - Set state machine to a particular state
+ * @param[in] pStateMachine State machine object
+ * @param[in] state Set state machine to a particular state
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
-PUBLIC_API STATUS setStateMachineCurrentState(PStateMachine, UINT64);
+PUBLIC_API STATUS setStateMachineCurrentState(PStateMachine pStateMachine, UINT64 state);
 
 /**
  * Resets the state machine retry count
- * @param 1 PStateMachine - IN - State machine object to be deallocated
+ * @param[in] pStateMachine State machine object to be deallocated
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
-PUBLIC_API STATUS resetStateMachineRetryCount(PStateMachine);
+PUBLIC_API STATUS resetStateMachineRetryCount(PStateMachine pStateMachine);
 
 /**
  * Calls the from function of the current state to determine if the state machine is ready to
  * move on to another state.
- * @param 1 PStateMachine - IN - State machine object to be deallocated
- * @param 2 PBOOL - OUT - Returns TRUE if state machine is ready to transition, else false
+ * @param[in] pStateMachine State machine object to be deallocated
+ * @param[out] pTransitionReady Returns TRUE if state machine is ready to transition, else false
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
-PUBLIC_API STATUS checkForStateTransition(PStateMachine, PBOOL);
+PUBLIC_API STATUS checkForStateTransition(PStateMachine pStateMachine, PBOOL pTransitionReady);
 
 /**
  * Return state machine name set up
- * @param 1 PStateMachine - IN - State machine object to be deallocated
- * @return - Returns the name set for the state machine
+ * @param[in] pStateMachine State machine object to be deallocated
+ * @return Returns the name set for the state machine
  */
-PUBLIC_API PCHAR getStateMachineName(PStateMachine);
+PUBLIC_API PCHAR getStateMachineName(PStateMachine pStateMachine);
 
 static const ExponentialBackoffRetryStrategyConfig DEFAULT_STATE_MACHINE_EXPONENTIAL_BACKOFF_RETRY_CONFIGURATION = {
     /* Exponential wait times with this config will look like following -

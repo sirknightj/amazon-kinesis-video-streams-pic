@@ -73,6 +73,17 @@ If you wish to submit a pull request to this project, please do so on the `devel
 
 ## Documentation
 
+The API reference is generated from the public headers with Doxygen and published to GitHub Pages:
+
+* [master](https://awslabs.github.io/amazon-kinesis-video-streams-pic/) - latest release
+* [develop](https://awslabs.github.io/amazon-kinesis-video-streams-pic/develop/) - upcoming release
+
+To look up an error code from the logs, such as `0x5200002e`, see [Status Codes](docs/status-codes.md).
+
+To generate the documentation locally, install Doxygen and run `doxygen Doxyfile` from the repository root. The output is written to `doc/html`.
+
+If you add or change a status code, regenerate the status code table with `python3 scripts/generate-status-codes.py`.
+
 ## Related
 
 ## License

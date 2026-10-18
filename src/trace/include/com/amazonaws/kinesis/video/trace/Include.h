@@ -1,5 +1,6 @@
 /**
- * Trace Profiler main include file
+ * @file
+ * @brief Trace Profiler main include file.
  */
 #ifndef __TRACE_PROFILER_INCLUDE_H__
 #define __TRACE_PROFILER_INCLUDE_H__
@@ -88,7 +89,7 @@ typedef enum {
 /**
  * Trace function prototypes
  */
-typedef STATUS (*TraceStartFunc)(TRACE_PROFILER_HANDLE, PCHAR, TRACE_LEVEL, PTRACE_HANDLE);
+typedef STATUS (*TraceStartFunc)(TRACE_PROFILER_HANDLE traceProfilerHandle, PCHAR traceName, TRACE_LEVEL traceLevel, PTRACE_HANDLE pTraceHandle);
 typedef STATUS (*TraceStopFunc)(TRACE_PROFILER_HANDLE, TRACE_HANDLE);
 
 /**
@@ -106,11 +107,11 @@ typedef STATUS (*TraceStopFunc)(TRACE_PROFILER_HANDLE, TRACE_HANDLE);
  *
  * Parameters:
  *
- *      @bufferSize Internal buffer size of the profiler used to store the traces. The actual allocation will be slightly larger.
- *      @traceLevel Initial trace level.
- *      @behaviorFlags Trace profiler behavior flags
+ *      @param bufferSize Internal buffer size of the profiler used to store the traces. The actual allocation will be slightly larger.
+ *      @param traceLevel Initial trace level.
+ *      @param behaviorFlags Trace profiler behavior flags
  *
- *      @pTraceProfilerHandle OUT_PARAM The newly created trace profiler.
+ *      @param[out] pTraceProfilerHandle The newly created trace profiler.
  */
 PUBLIC_API STATUS profilerInitialize(UINT32 bufferSize, TRACE_LEVEL traceLevel, TRACE_PROFILER_BEHAVIOR_FLAGS behaviorFlags,
                                      PTRACE_PROFILER_HANDLE pTraceProfilerHandle);
@@ -120,7 +121,7 @@ PUBLIC_API STATUS profilerInitialize(UINT32 bufferSize, TRACE_LEVEL traceLevel, 
  *
  * Parameters:
  *
- *      @traceProfilerHandle Trace profiler object.
+ *      @param traceProfilerHandle Trace profiler object.
  */
 PUBLIC_API STATUS profilerRelease(TRACE_PROFILER_HANDLE traceProfilerHandle);
 
@@ -131,8 +132,8 @@ PUBLIC_API STATUS profilerRelease(TRACE_PROFILER_HANDLE traceProfilerHandle);
  *
  * Parameters:
  *
- *      @traceProfilerHandle Trace profiler object.
- *      @traceLevel New trace level to use. Can be used for enabling/disabling profiler
+ *      @param traceProfilerHandle Trace profiler object.
+ *      @param traceLevel New trace level to use. Can be used for enabling/disabling profiler
  */
 PUBLIC_API STATUS setProfilerLevel(TRACE_PROFILER_HANDLE traceProfilerHandle, TRACE_LEVEL traceLevel);
 
@@ -143,9 +144,9 @@ PUBLIC_API STATUS setProfilerLevel(TRACE_PROFILER_HANDLE traceProfilerHandle, TR
  *
  * Parameters:
  *
- *      @traceProfilerHandle Trace profiler object.
- *      @ppBuffer OUT_PARAM Can not be NULL. The buffer will be allocated by the trace profiler and returned in this pointer.
- *      @pBufferSize OUT_OPT_PARAM The buffer size.
+ *      @param traceProfilerHandle Trace profiler object.
+ *      @param[out] ppBuffer Can not be NULL. The buffer will be allocated by the trace profiler and returned in this pointer.
+ *      @param[out] pBufferSize Optional. The buffer size.
  */
 PUBLIC_API STATUS getFormattedTraceBuffer(TRACE_PROFILER_HANDLE traceProfilerHandle, PCHAR* ppBuffer, PUINT32 pBufferSize);
 
@@ -154,7 +155,7 @@ PUBLIC_API STATUS getFormattedTraceBuffer(TRACE_PROFILER_HANDLE traceProfilerHan
  *
  * Parameters:
  *
- *      @pBuffer IN_PARAM The previously returned trace buffer to be released.
+ *      @param[in] pBuffer The previously returned trace buffer to be released.
  */
 PUBLIC_API STATUS freeTraceBuffer(PCHAR pBuffer);
 
@@ -166,11 +167,11 @@ PUBLIC_API STATUS freeTraceBuffer(PCHAR pBuffer);
  *
  * Parameters:
  *
- *      @traceProfilerHandle Trace profiler object.
- *      @traceName The name of the newly initialized trace.
- *      @traceLevel Trace level which will be used to match against the profiler trace level.
+ *      @param traceProfilerHandle Trace profiler object.
+ *      @param traceName The name of the newly initialized trace.
+ *      @param traceLevel Trace level which will be used to match against the profiler trace level.
  *
- *      @pTraceHandle OUT_PARAM The newly initialized trace object.
+ *      @param[out] pTraceHandle The newly initialized trace object.
  */
 PUBLIC_API DEFINE_TRACE_START(traceStart);
 
@@ -181,8 +182,8 @@ PUBLIC_API DEFINE_TRACE_START(traceStart);
  *
  * Parameters:
  *
- *      @traceProfilerHandle Trace profiler object.
- *      @traceHandle traceHandle to stop the trace for.
+ *      @param traceProfilerHandle Trace profiler object.
+ *      @param traceHandle traceHandle to stop the trace for.
  */
 PUBLIC_API DEFINE_TRACE_STOP(traceStop);
 

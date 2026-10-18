@@ -1,5 +1,6 @@
 /**
- * Various utility functionality
+ * @file
+ * @brief Various utility functionality.
  */
 #ifndef __UTILS_H__
 #define __UTILS_H__
@@ -73,31 +74,31 @@ extern "C" {
 /**
  * Base64 encode/decode functionality
  */
-PUBLIC_API STATUS base64Encode(PVOID, UINT32, PCHAR, PUINT32);
+PUBLIC_API STATUS base64Encode(PVOID pInputData, UINT32 inputLength, PCHAR pOutputData, PUINT32 pOutputLength);
 PUBLIC_API STATUS base64Decode(PCHAR, UINT32, PBYTE, PUINT32);
 
 /**
  * Hex encode/decode functionality
  */
-PUBLIC_API STATUS hexEncode(PVOID, UINT32, PCHAR, PUINT32);
+PUBLIC_API STATUS hexEncode(PVOID pInputData, UINT32 inputLength, PCHAR pOutputData, PUINT32 pOutputLength);
 PUBLIC_API STATUS hexEncodeCase(PVOID, UINT32, PCHAR, PUINT32, BOOL);
 PUBLIC_API STATUS hexDecode(PCHAR, UINT32, PBYTE, PUINT32);
 
 /**
  * Integer to string conversion routines
  */
-PUBLIC_API STATUS ulltostr(UINT64, PCHAR, UINT32, UINT32, PUINT32);
+PUBLIC_API STATUS ulltostr(UINT64 value, PCHAR pStr, UINT32 size, UINT32 base, PUINT32 pSize);
 PUBLIC_API STATUS ultostr(UINT32, PCHAR, UINT32, UINT32, PUINT32);
 
 /**
  * String to integer conversion routines. NOTE: The base is in [2-36]
  *
- * @param 1 - IN - Input string to process
- * @param 2 - IN/OPT - Pointer to the end of the string. If NULL, the NULL terminator would be used
- * @param 3 - IN - Base of the number (10 - for decimal)
- * @param 4 - OUT - The resulting value
+ * @param[in] pStart Input string to process
+ * @param[in] pEnd Optional. Pointer to the end of the string. If NULL, the NULL terminator would be used
+ * @param[in] base Base of the number (10 - for decimal)
+ * @param[out] pRet The resulting value
  */
-PUBLIC_API STATUS strtoui32(PCHAR, PCHAR, UINT32, PUINT32);
+PUBLIC_API STATUS strtoui32(PCHAR pStart, PCHAR pEnd, UINT32 base, PUINT32 pRet);
 PUBLIC_API STATUS strtoui64(PCHAR, PCHAR, UINT32, PUINT64);
 PUBLIC_API STATUS strtoi32(PCHAR, PCHAR, UINT32, PINT32);
 PUBLIC_API STATUS strtoi64(PCHAR, PCHAR, UINT32, PINT64);
@@ -105,61 +106,61 @@ PUBLIC_API STATUS strtoi64(PCHAR, PCHAR, UINT32, PINT64);
 /**
  * Safe variant of strchr
  *
- * @param 1 - IN - Input string to process
- * @param 2 - IN/OPT - String length. 0 if NULL terminated and the length is calculated.
- * @param 3 - IN - The character to look for
+ * @param[in] pStr Input string to process
+ * @param[in] strLen Optional. String length. 0 if NULL terminated and the length is calculated.
+ * @param[in] ch The character to look for
  *
- * @return - Pointer to the first occurrence or NULL
+ * @return Pointer to the first occurrence or NULL
  */
-PUBLIC_API PCHAR strnchr(PCHAR, UINT32, CHAR);
+PUBLIC_API PCHAR strnchr(PCHAR pStr, UINT32 strLen, CHAR ch);
 
 /**
  * Safe variant of strstr. This is a default implementation for strnstr when not available.
  *
- * @param 1 - IN - Input string to process
- * @param 3 - IN - The string to look for
- * @param 2 - IN - String length.
+ * @param[in] haystack Input string to process
+ * @param[in] needle The string to look for
+ * @param[in] len String length.
  *
- * @return - Pointer to the first occurrence or NULL
+ * @return Pointer to the first occurrence or NULL
  */
-PUBLIC_API PCHAR defaultStrnstr(PCHAR, PCHAR, SIZE_T);
+PUBLIC_API PCHAR defaultStrnstr(PCHAR haystack, PCHAR needle, SIZE_T len);
 
 /**
  * Left and right trim of the whitespace
  *
- * @param 1 - IN - Input string to process
- * @param 2 - IN/OPT - String length. 0 if NULL terminated and the length is calculated.
- * @param 3 and 4 - OUT - The pointer to the trimmed start and/or end
+ * @param[in] pStr Input string to process
+ * @param[in] strLen Optional. String length. 0 if NULL terminated and the length is calculated.
+ * @param[out] ppStart The pointer to the trimmed start
  *
  * @return Status of the operation
  */
-PUBLIC_API STATUS ltrimstr(PCHAR, UINT32, PCHAR*);
+PUBLIC_API STATUS ltrimstr(PCHAR pStr, UINT32 strLen, PCHAR* ppStart);
 PUBLIC_API STATUS rtrimstr(PCHAR, UINT32, PCHAR*);
 PUBLIC_API STATUS trimstrall(PCHAR, UINT32, PCHAR*, PCHAR*);
 
 /**
  * To lower and to upper string conversion
  *
- * @param 1 - IN - Input string to convert
- * @param 2 - IN - String length. 0 if NULL terminated and the length is calculated.
- * @param 3 - OUT - The pointer to the converted string - can be pointing to the same location. Size should be enough
+ * @param[in] pStr Input string to convert
+ * @param[in] strLen String length. 0 if NULL terminated and the length is calculated.
+ * @param[out] pConverted The pointer to the converted string - can be pointing to the same location. Size should be enough
  *
  * @return Status of the operation
  */
-PUBLIC_API STATUS tolowerstr(PCHAR, UINT32, PCHAR);
+PUBLIC_API STATUS tolowerstr(PCHAR pStr, UINT32 strLen, PCHAR pConverted);
 PUBLIC_API STATUS toupperstr(PCHAR, UINT32, PCHAR);
 
 /**
  * To lower/upper string conversion internal function
  *
- * @param 1 - IN - Input string to convert
- * @param 2 - IN - String length. 0 if NULL terminated and the length is calculated.
- * @param 3 - INT - Whether to upper (TRUE) or to lower (FALSE)
- * @param 4 - OUT - The pointer to the converted string - can be pointing to the same location. Size should be enough
+ * @param[in] pStr Input string to convert
+ * @param[in] strLen String length. 0 if NULL terminated and the length is calculated.
+ * @param[in] toUpper Whether to upper (TRUE) or to lower (FALSE)
+ * @param[out] pConverted The pointer to the converted string - can be pointing to the same location. Size should be enough
  *
  * @return Status of the operation
  */
-STATUS tolowerupperstr(PCHAR, UINT32, BOOL, PCHAR);
+STATUS tolowerupperstr(PCHAR pStr, UINT32 strLen, BOOL toUpper, PCHAR pConverted);
 
 /**
  * File I/O functionality
@@ -208,39 +209,39 @@ PUBLIC_API STATUS createFile(PCHAR filePath, UINT64 size);
  */
 typedef struct __Tag Tag;
 struct __Tag {
-    // Version of the struct
+    /// Version of the struct
     UINT32 version;
 
-    // Tag name - null terminated
-    PCHAR name; // pointer to a string with MAX_TAG_NAME_LEN chars max including the NULL terminator
+    /// Tag name - null terminated
+    PCHAR name; ///< pointer to a string with MAX_TAG_NAME_LEN chars max including the NULL terminator
 
-    // Tag value - null terminated
-    PCHAR value; // pointer to a string with MAX_TAG_VALUE_LEN chars max including the NULL terminator
+    /// Tag value - null terminated
+    PCHAR value; ///< pointer to a string with MAX_TAG_VALUE_LEN chars max including the NULL terminator
 };
 typedef struct __Tag* PTag;
 
 /**
  * Validates the tags
  *
- * @param 1 UINT32 - IN - Number of tags
- * @param 2 PTag - IN - Array of tags
+ * @param[in] tagCount Number of tags
+ * @param[in] tags Array of tags
  *
  * @return Status of the function call.
  */
-PUBLIC_API STATUS validateTags(UINT32, PTag);
+PUBLIC_API STATUS validateTags(UINT32 tagCount, PTag tags);
 
 /**
  * Packages the tags in a provided buffer
  *
- * @param 1 UINT32 - IN - Number of tags
- * @param 2 PTag - IN - Array of tags
- * @param 3 UINT32 - IN - Buffer size
- * @param 4 PTag - IN/OUT - Buffer to package in
- * @param 5 PUINT32 - OUT/OPT - Real size of the bytes needed
+ * @param[in] tagCount Number of tags
+ * @param[in] pSrcTags Array of tags
+ * @param[in] tagsSize Buffer size
+ * @param[in,out] pDstTags Buffer to package in
+ * @param[out] pSize Optional. Real size of the bytes needed
  *
  * @return Status of the function call.
  */
-PUBLIC_API STATUS packageTags(UINT32, PTag, UINT32, PTag, PUINT32);
+PUBLIC_API STATUS packageTags(UINT32 tagCount, PTag pSrcTags, UINT32 tagsSize, PTag pDstTags, PUINT32 pSize);
 
 /////////////////////////////////////////
 // Directory functionality
@@ -251,37 +252,37 @@ typedef enum { DIR_ENTRY_TYPE_FILE, DIR_ENTRY_TYPE_LINK, DIR_ENTRY_TYPE_DIRECTOR
 /**
  * Callback function declaration.
  *
- * @UINT64 - the caller passed data
- * @DIR_ENTRY_TYPES - the type of the entry
- * @PCHAR - the full path of the entry
- * @PCHAR - the name of the entry
+ * @param customData the caller passed data
+ * @param entryType the type of the entry
+ * @param path the full path of the entry
+ * @param name the name of the entry
  */
-typedef STATUS (*DirectoryEntryCallbackFunc)(UINT64, DIR_ENTRY_TYPES, PCHAR, PCHAR);
+typedef STATUS (*DirectoryEntryCallbackFunc)(UINT64 customData, DIR_ENTRY_TYPES entryType, PCHAR path, PCHAR name);
 
 /**
  * Remove a directory - empty or not
  *
- * @PCHAR - directory path
- * @UINT64 - custom caller data passed to the callback
- * @BOOL - whether to iterate
- * @DirectoryEntryCallbackFunc - the callback function called with each entry
+ * @param dirPath directory path
+ * @param userData custom caller data passed to the callback
+ * @param iterate whether to iterate
+ * @param entryFn the callback function called with each entry
  */
-PUBLIC_API STATUS traverseDirectory(PCHAR, UINT64, BOOL iterate, DirectoryEntryCallbackFunc);
+PUBLIC_API STATUS traverseDirectory(PCHAR dirPath, UINT64 userData, BOOL iterate, DirectoryEntryCallbackFunc entryFn);
 
 /**
  * Remove a directory - empty or not
  *
- * @PCHAR - directory path
+ * @param dirPath directory path
  */
-PUBLIC_API STATUS removeDirectory(PCHAR);
+PUBLIC_API STATUS removeDirectory(PCHAR dirPath);
 
 /**
  * Gets the directory size
  *
- * @PCHAR - directory path
- * @PUINT64 - returned combined size
+ * @param dirPath directory path
+ * @param pSize returned combined size
  */
-PUBLIC_API STATUS getDirectorySize(PCHAR, PUINT64);
+PUBLIC_API STATUS getDirectorySize(PCHAR dirPath, PUINT64 pSize);
 
 /**
  * Double-linked list definition
@@ -315,122 +316,122 @@ typedef struct {
 /**
  * Create a new double linked list
  */
-PUBLIC_API STATUS doubleListCreate(PDoubleList*);
+PUBLIC_API STATUS doubleListCreate(PDoubleList* ppList);
 
 /**
  * Frees a double linked list and deallocates the nodes
  */
-PUBLIC_API STATUS doubleListFree(PDoubleList);
+PUBLIC_API STATUS doubleListFree(PDoubleList pList);
 
 /**
  * Clears and deallocates all the items
  */
-PUBLIC_API STATUS doubleListClear(PDoubleList, BOOL);
+PUBLIC_API STATUS doubleListClear(PDoubleList pList, BOOL freeData);
 
 /**
  * Insert a node in the head position in the list
  */
-PUBLIC_API STATUS doubleListInsertNodeHead(PDoubleList, PDoubleListNode);
+PUBLIC_API STATUS doubleListInsertNodeHead(PDoubleList pList, PDoubleListNode pNode);
 
 /**
  * Insert a new node with the data at the head position in the list
  */
-PUBLIC_API STATUS doubleListInsertItemHead(PDoubleList, UINT64);
+PUBLIC_API STATUS doubleListInsertItemHead(PDoubleList pList, UINT64 data);
 
 /**
  * Insert a node in the tail position in the list
  */
-PUBLIC_API STATUS doubleListInsertNodeTail(PDoubleList, PDoubleListNode);
+PUBLIC_API STATUS doubleListInsertNodeTail(PDoubleList pList, PDoubleListNode pNode);
 
 /**
  * Insert a new node with the data at the tail position in the list
  */
-PUBLIC_API STATUS doubleListInsertItemTail(PDoubleList, UINT64);
+PUBLIC_API STATUS doubleListInsertItemTail(PDoubleList pList, UINT64 data);
 
 /**
  * Insert a node before a given node
  */
-PUBLIC_API STATUS doubleListInsertNodeBefore(PDoubleList, PDoubleListNode, PDoubleListNode);
+PUBLIC_API STATUS doubleListInsertNodeBefore(PDoubleList pList, PDoubleListNode pNode, PDoubleListNode pInsertNode);
 
 /**
  * Insert a new node with the data before a given node
  */
-PUBLIC_API STATUS doubleListInsertItemBefore(PDoubleList, PDoubleListNode, UINT64);
+PUBLIC_API STATUS doubleListInsertItemBefore(PDoubleList pList, PDoubleListNode pNode, UINT64 data);
 
 /**
  * Insert a node after a given node
  */
-PUBLIC_API STATUS doubleListInsertNodeAfter(PDoubleList, PDoubleListNode, PDoubleListNode);
+PUBLIC_API STATUS doubleListInsertNodeAfter(PDoubleList pList, PDoubleListNode pNode, PDoubleListNode pInsertNode);
 
 /**
  * Insert a new node with the data after a given node
  */
-PUBLIC_API STATUS doubleListInsertItemAfter(PDoubleList, PDoubleListNode, UINT64);
+PUBLIC_API STATUS doubleListInsertItemAfter(PDoubleList pList, PDoubleListNode pNode, UINT64 data);
 
 /**
  * Removes and deletes the head
  */
-PUBLIC_API STATUS doubleListDeleteHead(PDoubleList);
+PUBLIC_API STATUS doubleListDeleteHead(PDoubleList pList);
 
 /**
  * Removes and deletes the tail
  */
-PUBLIC_API STATUS doubleListDeleteTail(PDoubleList);
+PUBLIC_API STATUS doubleListDeleteTail(PDoubleList pList);
 
 /**
  * Removes the specified node
  */
-PUBLIC_API STATUS doubleListRemoveNode(PDoubleList, PDoubleListNode);
+PUBLIC_API STATUS doubleListRemoveNode(PDoubleList pList, PDoubleListNode pNode);
 
 /**
  * Removes and deletes the specified node
  */
-PUBLIC_API STATUS doubleListDeleteNode(PDoubleList, PDoubleListNode);
+PUBLIC_API STATUS doubleListDeleteNode(PDoubleList pList, PDoubleListNode pNode);
 
 /**
  * Gets the head node
  */
-PUBLIC_API STATUS doubleListGetHeadNode(PDoubleList, PDoubleListNode*);
+PUBLIC_API STATUS doubleListGetHeadNode(PDoubleList pList, PDoubleListNode* ppNode);
 
 /**
  * Gets the tail node
  */
-PUBLIC_API STATUS doubleListGetTailNode(PDoubleList, PDoubleListNode*);
+PUBLIC_API STATUS doubleListGetTailNode(PDoubleList pList, PDoubleListNode* ppNode);
 
 /**
  * Gets the node at the specified index
  */
-PUBLIC_API STATUS doubleListGetNodeAt(PDoubleList, UINT32, PDoubleListNode*);
+PUBLIC_API STATUS doubleListGetNodeAt(PDoubleList pList, UINT32 index, PDoubleListNode* ppNode);
 
 /**
  * Gets the node data at the specified index
  */
-PUBLIC_API STATUS doubleListGetNodeDataAt(PDoubleList, UINT32, PUINT64);
+PUBLIC_API STATUS doubleListGetNodeDataAt(PDoubleList pList, UINT32 index, PUINT64 pData);
 
 /**
  * Gets the node data
  */
-PUBLIC_API STATUS doubleListGetNodeData(PDoubleListNode, PUINT64);
+PUBLIC_API STATUS doubleListGetNodeData(PDoubleListNode pNode, PUINT64 pData);
 
 /**
  * Gets the next node
  */
-PUBLIC_API STATUS doubleListGetNextNode(PDoubleListNode, PDoubleListNode*);
+PUBLIC_API STATUS doubleListGetNextNode(PDoubleListNode pNode, PDoubleListNode* ppNode);
 
 /**
  * Gets the previous node
  */
-PUBLIC_API STATUS doubleListGetPrevNode(PDoubleListNode, PDoubleListNode*);
+PUBLIC_API STATUS doubleListGetPrevNode(PDoubleListNode pNode, PDoubleListNode* ppNode);
 
 /**
  * Gets the count of nodes in the list
  */
-PUBLIC_API STATUS doubleListGetNodeCount(PDoubleList, PUINT32);
+PUBLIC_API STATUS doubleListGetNodeCount(PDoubleList pList, PUINT32 pCount);
 
 /**
  * Append a double list to the other and then free the list being appended
  */
-PUBLIC_API STATUS doubleListAppendList(PDoubleList, PDoubleList*);
+PUBLIC_API STATUS doubleListAppendList(PDoubleList pDstList, PDoubleList* ppListToAppend);
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 // Single-linked list functionality
@@ -438,102 +439,102 @@ PUBLIC_API STATUS doubleListAppendList(PDoubleList, PDoubleList*);
 /**
  * Create a new single linked list
  */
-PUBLIC_API STATUS singleListCreate(PSingleList*);
+PUBLIC_API STATUS singleListCreate(PSingleList* ppList);
 
 /**
  * Frees a single linked list and deallocates the nodes
  */
-PUBLIC_API STATUS singleListFree(PSingleList);
+PUBLIC_API STATUS singleListFree(PSingleList pList);
 
 /**
  * Clears and deallocates all the items
  */
-PUBLIC_API STATUS singleListClear(PSingleList, BOOL);
+PUBLIC_API STATUS singleListClear(PSingleList pList, BOOL freeData);
 
 /**
  * Insert a node in the head position in the list
  */
-PUBLIC_API STATUS singleListInsertNodeHead(PSingleList, PSingleListNode);
+PUBLIC_API STATUS singleListInsertNodeHead(PSingleList pList, PSingleListNode pNode);
 
 /**
  * Insert a new node with the data at the head position in the list
  */
-PUBLIC_API STATUS singleListInsertItemHead(PSingleList, UINT64);
+PUBLIC_API STATUS singleListInsertItemHead(PSingleList pList, UINT64 data);
 
 /**
  * Insert a node in the tail position in the list
  */
-PUBLIC_API STATUS singleListInsertNodeTail(PSingleList, PSingleListNode);
+PUBLIC_API STATUS singleListInsertNodeTail(PSingleList pList, PSingleListNode pNode);
 
 /**
  * Insert a new node with the data at the tail position in the list
  */
-PUBLIC_API STATUS singleListInsertItemTail(PSingleList, UINT64);
+PUBLIC_API STATUS singleListInsertItemTail(PSingleList pList, UINT64 data);
 
 /**
  * Insert a node after a given node
  */
-PUBLIC_API STATUS singleListInsertNodeAfter(PSingleList, PSingleListNode, PSingleListNode);
+PUBLIC_API STATUS singleListInsertNodeAfter(PSingleList pList, PSingleListNode pNode, PSingleListNode pInsertNode);
 
 /**
  * Insert a new node with the data after a given node
  */
-PUBLIC_API STATUS singleListInsertItemAfter(PSingleList, PSingleListNode, UINT64);
+PUBLIC_API STATUS singleListInsertItemAfter(PSingleList pList, PSingleListNode pNode, UINT64 data);
 
 /**
  * Removes and deletes the head
  */
-PUBLIC_API STATUS singleListDeleteHead(PSingleList);
+PUBLIC_API STATUS singleListDeleteHead(PSingleList pList);
 
 /**
  * Removes and deletes the specified node
  */
-PUBLIC_API STATUS singleListDeleteNode(PSingleList, PSingleListNode);
+PUBLIC_API STATUS singleListDeleteNode(PSingleList pList, PSingleListNode pNode);
 
 /**
  * Removes and deletes the next node of the specified node
  */
-PUBLIC_API STATUS singleListDeleteNextNode(PSingleList, PSingleListNode);
+PUBLIC_API STATUS singleListDeleteNextNode(PSingleList pList, PSingleListNode pNode);
 
 /**
  * Gets the head node
  */
-PUBLIC_API STATUS singleListGetHeadNode(PSingleList, PSingleListNode*);
+PUBLIC_API STATUS singleListGetHeadNode(PSingleList pList, PSingleListNode* ppNode);
 
 /**
  * Gets the tail node
  */
-PUBLIC_API STATUS singleListGetTailNode(PSingleList, PSingleListNode*);
+PUBLIC_API STATUS singleListGetTailNode(PSingleList pList, PSingleListNode* ppNode);
 
 /**
  * Gets the node at the specified index
  */
-PUBLIC_API STATUS singleListGetNodeAt(PSingleList, UINT32, PSingleListNode*);
+PUBLIC_API STATUS singleListGetNodeAt(PSingleList pList, UINT32 index, PSingleListNode* ppNode);
 
 /**
  * Gets the node data at the specified index
  */
-PUBLIC_API STATUS singleListGetNodeDataAt(PSingleList, UINT32, PUINT64);
+PUBLIC_API STATUS singleListGetNodeDataAt(PSingleList pList, UINT32 index, PUINT64 pData);
 
 /**
  * Gets the node data
  */
-PUBLIC_API STATUS singleListGetNodeData(PSingleListNode, PUINT64);
+PUBLIC_API STATUS singleListGetNodeData(PSingleListNode pNode, PUINT64 pData);
 
 /**
  * Gets the next node
  */
-PUBLIC_API STATUS singleListGetNextNode(PSingleListNode, PSingleListNode*);
+PUBLIC_API STATUS singleListGetNextNode(PSingleListNode pNode, PSingleListNode* ppNode);
 
 /**
  * Gets the count of nodes in the list
  */
-PUBLIC_API STATUS singleListGetNodeCount(PSingleList, PUINT32);
+PUBLIC_API STATUS singleListGetNodeCount(PSingleList pList, PUINT32 pCount);
 
 /**
  * Append a single list to the other and then free the list being appended
  */
-STATUS singleListAppendList(PSingleList, PSingleList*);
+STATUS singleListAppendList(PSingleList pDstList, PSingleList* ppListToAppend);
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 // Stack/Queue functionality
@@ -549,97 +550,97 @@ typedef StackQueueIterator* PStackQueueIterator;
 /**
  * Create a new stack queue
  */
-PUBLIC_API STATUS stackQueueCreate(PStackQueue*);
+PUBLIC_API STATUS stackQueueCreate(PStackQueue* ppStackQueue);
 
 /**
  * Frees and de-allocates the stack queue
  */
-PUBLIC_API STATUS stackQueueFree(PStackQueue);
+PUBLIC_API STATUS stackQueueFree(PStackQueue pStackQueue);
 
 /**
  * Clears and de-allocates all the items
  */
-PUBLIC_API STATUS stackQueueClear(PStackQueue, BOOL);
+PUBLIC_API STATUS stackQueueClear(PStackQueue pStackQueue, BOOL freeData);
 
 /**
  * Gets the number of items in the stack/queue
  */
-PUBLIC_API STATUS stackQueueGetCount(PStackQueue, PUINT32);
+PUBLIC_API STATUS stackQueueGetCount(PStackQueue pStackQueue, PUINT32 pCount);
 
 /**
  * Gets the item at the given index
  */
-PUBLIC_API STATUS stackQueueGetAt(PStackQueue, UINT32, PUINT64);
+PUBLIC_API STATUS stackQueueGetAt(PStackQueue pStackQueue, UINT32 index, PUINT64 pItem);
 
 /**
  * Sets the item value at the given index
  */
-PUBLIC_API STATUS stackQueueSetAt(PStackQueue, UINT32, UINT64);
+PUBLIC_API STATUS stackQueueSetAt(PStackQueue pStackQueue, UINT32 index, UINT64 item);
 
 /**
  * Gets the index of an item
  */
-PUBLIC_API STATUS stackQueueGetIndexOf(PStackQueue, UINT64, PUINT32);
+PUBLIC_API STATUS stackQueueGetIndexOf(PStackQueue pStackQueue, UINT64 item, PUINT32 pIndex);
 
 /**
  * Removes the item at the given index
  */
-PUBLIC_API STATUS stackQueueRemoveAt(PStackQueue, UINT32);
+PUBLIC_API STATUS stackQueueRemoveAt(PStackQueue pStackQueue, UINT32 index);
 
 /**
  * Removes the item at the given item
  */
-PUBLIC_API STATUS stackQueueRemoveItem(PStackQueue, UINT64);
+PUBLIC_API STATUS stackQueueRemoveItem(PStackQueue pStackQueue, UINT64 item);
 
 /**
  * Whether the stack queue is empty
  */
-PUBLIC_API STATUS stackQueueIsEmpty(PStackQueue, PBOOL);
+PUBLIC_API STATUS stackQueueIsEmpty(PStackQueue pStackQueue, PBOOL pIsEmpty);
 
 /**
  * Pushes an item onto the stack
  */
-PUBLIC_API STATUS stackQueuePush(PStackQueue, UINT64);
+PUBLIC_API STATUS stackQueuePush(PStackQueue pStackQueue, UINT64 item);
 
 /**
  * Pops an item from the stack
  */
-PUBLIC_API STATUS stackQueuePop(PStackQueue, PUINT64);
+PUBLIC_API STATUS stackQueuePop(PStackQueue pStackQueue, PUINT64 pItem);
 
 /**
  * Peeks an item from the stack without popping
  */
-PUBLIC_API STATUS stackQueuePeek(PStackQueue, PUINT64);
+PUBLIC_API STATUS stackQueuePeek(PStackQueue pStackQueue, PUINT64 pItem);
 
 /**
  * Enqueues an item in the queue
  */
-PUBLIC_API STATUS stackQueueEnqueue(PStackQueue, UINT64);
+PUBLIC_API STATUS stackQueueEnqueue(PStackQueue pStackQueue, UINT64 item);
 
 /**
  * Dequeues an item from the queue
  */
-PUBLIC_API STATUS stackQueueDequeue(PStackQueue, PUINT64);
+PUBLIC_API STATUS stackQueueDequeue(PStackQueue pStackQueue, PUINT64 pItem);
 
 /**
  * Gets the iterator
  */
-PUBLIC_API STATUS stackQueueGetIterator(PStackQueue, PStackQueueIterator);
+PUBLIC_API STATUS stackQueueGetIterator(PStackQueue pStackQueue, PStackQueueIterator pIterator);
 
 /**
  * Iterates to next
  */
-PUBLIC_API STATUS stackQueueIteratorNext(PStackQueueIterator);
+PUBLIC_API STATUS stackQueueIteratorNext(PStackQueueIterator pIterator);
 
 /**
  * Gets the data
  */
-PUBLIC_API STATUS stackQueueIteratorGetItem(StackQueueIterator, PUINT64);
+PUBLIC_API STATUS stackQueueIteratorGetItem(StackQueueIterator iterator, PUINT64 pData);
 
 /**
  * Inserts item into queue after given index
  */
-PUBLIC_API STATUS stackQueueEnqueueAfterIndex(PStackQueue, UINT32, UINT64);
+PUBLIC_API STATUS stackQueueEnqueueAfterIndex(PStackQueue pStackQueue, UINT32 index, UINT64 item);
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 // Hash table functionality
@@ -676,10 +677,10 @@ typedef struct {
  * To terminate the iteration the caller must return
  * STATUS_HASH_ENTRY_ITERATION_ABORT
  *
- * @UINT64 - data that was passed to the iterate function
- * @PHashEntry - the entry to process
+ * @param customData data that was passed to the iterate function
+ * @param pHashEntry the entry to process
  */
-typedef STATUS (*HashEntryCallbackFunc)(UINT64, PHashEntry);
+typedef STATUS (*HashEntryCallbackFunc)(UINT64 customData, PHashEntry pHashEntry);
 
 /**
  * Hash table error values starting from 0x40100000
@@ -692,72 +693,72 @@ typedef STATUS (*HashEntryCallbackFunc)(UINT64, PHashEntry);
 /**
  * Create a new hash table with default parameters
  */
-PUBLIC_API STATUS hashTableCreate(PHashTable*);
+PUBLIC_API STATUS hashTableCreate(PHashTable* ppHashTable);
 
 /**
  * Create a new hash table with specific parameters
  */
-PUBLIC_API STATUS hashTableCreateWithParams(UINT32, UINT32, PHashTable*);
+PUBLIC_API STATUS hashTableCreateWithParams(UINT32 bucketCount, UINT32 bucketLength, PHashTable* ppHashTable);
 
 /**
  * Frees and de-allocates the hash table
  */
-PUBLIC_API STATUS hashTableFree(PHashTable);
+PUBLIC_API STATUS hashTableFree(PHashTable pHashTable);
 
 /**
  * Clears all the items and the buckets
  */
-PUBLIC_API STATUS hashTableClear(PHashTable);
+PUBLIC_API STATUS hashTableClear(PHashTable pHashTable);
 
 /**
  * Gets the number of items in the hash table
  */
-PUBLIC_API STATUS hashTableGetCount(PHashTable, PUINT32);
+PUBLIC_API STATUS hashTableGetCount(PHashTable pHashTable, PUINT32 pItemCount);
 
 /**
  * Whether the hash table is empty
  */
-PUBLIC_API STATUS hashTableIsEmpty(PHashTable, PBOOL);
+PUBLIC_API STATUS hashTableIsEmpty(PHashTable pHashTable, PBOOL pIsEmpty);
 
 /**
  * Puts an item into the hash table
  */
-PUBLIC_API STATUS hashTablePut(PHashTable, UINT64, UINT64);
+PUBLIC_API STATUS hashTablePut(PHashTable pHashTable, UINT64 key, UINT64 value);
 
 /**
  * Upserts an item into the hash table
  */
-PUBLIC_API STATUS hashTableUpsert(PHashTable, UINT64, UINT64);
+PUBLIC_API STATUS hashTableUpsert(PHashTable pHashTable, UINT64 key, UINT64 value);
 
 /**
  * Gets an item from the hash table
  */
-PUBLIC_API STATUS hashTableGet(PHashTable, UINT64, PUINT64);
+PUBLIC_API STATUS hashTableGet(PHashTable pHashTable, UINT64 key, PUINT64 pValue);
 
 /**
  * Checks whether an item exists in the hash table
  */
-PUBLIC_API STATUS hashTableContains(PHashTable, UINT64, PBOOL);
+PUBLIC_API STATUS hashTableContains(PHashTable pHashTable, UINT64 key, PBOOL pContains);
 
 /**
  * Removes an item from the hash table. If the bucket is empty it's deleted. The existing items will be shifted.
  */
-PUBLIC_API STATUS hashTableRemove(PHashTable, UINT64);
+PUBLIC_API STATUS hashTableRemove(PHashTable pHashTable, UINT64 key);
 
 /**
  * Gets the number of buckets
  */
-PUBLIC_API STATUS hashTableGetBucketCount(PHashTable, PUINT32);
+PUBLIC_API STATUS hashTableGetBucketCount(PHashTable pHashTable, PUINT32 pBucketCount);
 
 /**
  * Gets all the entries from the hash table
  */
-PUBLIC_API STATUS hashTableGetAllEntries(PHashTable, PHashEntry, PUINT32);
+PUBLIC_API STATUS hashTableGetAllEntries(PHashTable pHashTable, PHashEntry pHashEntries, PUINT32 pHashCount);
 
 /**
  * Iterates over the hash entries. No predefined order
  */
-PUBLIC_API STATUS hashTableIterateEntries(PHashTable, UINT64, HashEntryCallbackFunc);
+PUBLIC_API STATUS hashTableIterateEntries(PHashTable pHashTable, UINT64 callerData, HashEntryCallbackFunc hashEntryFn);
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 // Bitfield functionality
@@ -780,32 +781,32 @@ typedef struct {
 /**
  * Create a new bit field with all bits set to 0
  */
-PUBLIC_API STATUS bitFieldCreate(UINT32, PBitField*);
+PUBLIC_API STATUS bitFieldCreate(UINT32 itemCount, PBitField* ppBitField);
 
 /**
  * Frees and de-allocates the bit field object
  */
-PUBLIC_API STATUS bitFieldFree(PBitField);
+PUBLIC_API STATUS bitFieldFree(PBitField pBitField);
 
 /**
  * Sets or clears all the bits
  */
-PUBLIC_API STATUS bitFieldReset(PBitField, BOOL);
+PUBLIC_API STATUS bitFieldReset(PBitField pBitField, BOOL isSet);
 
 /**
  * Gets the bit field size in items
  */
-PUBLIC_API STATUS bitFieldGetCount(PBitField, PUINT32);
+PUBLIC_API STATUS bitFieldGetCount(PBitField pBitField, PUINT32 pItemCount);
 
 /**
  * Gets the value of the bit
  */
-PUBLIC_API STATUS bitFieldGet(PBitField, UINT32, PBOOL);
+PUBLIC_API STATUS bitFieldGet(PBitField pBitField, UINT32 index, PBOOL pIsSet);
 
 /**
  * Sets the value of the bit
  */
-PUBLIC_API STATUS bitFieldSet(PBitField, UINT32, BOOL);
+PUBLIC_API STATUS bitFieldSet(PBitField pBitField, UINT32 index, BOOL isSet);
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 // BitBuffer reader functionality
@@ -822,45 +823,45 @@ PUBLIC_API STATUS bitFieldSet(PBitField, UINT32, BOOL);
  * Bit Buffer reader declaration
  */
 typedef struct {
-    // Bit buffer
+    /// Bit buffer
     PBYTE buffer;
 
-    // Size of the buffer in bits
+    /// Size of the buffer in bits
     UINT32 bitBufferSize;
 
-    // Current bit
+    /// Current bit
     UINT32 currentBit;
 } BitReader, *PBitReader;
 
 /**
  * Resets the bit reader object
  */
-PUBLIC_API STATUS bitReaderReset(PBitReader, PBYTE, UINT32);
+PUBLIC_API STATUS bitReaderReset(PBitReader pBitReader, PBYTE buffer, UINT32 bitBufferSize);
 
 /**
  * Set current pointer
  */
-PUBLIC_API STATUS bitReaderSetCurrent(PBitReader, UINT32);
+PUBLIC_API STATUS bitReaderSetCurrent(PBitReader pBitReader, UINT32 current);
 
 /**
  * Read a bit from the current pointer
  */
-PUBLIC_API STATUS bitReaderReadBit(PBitReader, PUINT32);
+PUBLIC_API STATUS bitReaderReadBit(PBitReader pBitReader, PUINT32 pRead);
 
 /**
  * Read up-to 32 bits from the current pointer
  */
-PUBLIC_API STATUS bitReaderReadBits(PBitReader, UINT32, PUINT32);
+PUBLIC_API STATUS bitReaderReadBits(PBitReader pBitReader, UINT32 bitCount, PUINT32 pRead);
 
 /**
  * Read the Exponential Golomb encoded number from the current position
  */
-PUBLIC_API STATUS bitReaderReadExpGolomb(PBitReader, PUINT32);
+PUBLIC_API STATUS bitReaderReadExpGolomb(PBitReader pBitReader, PUINT32 pRead);
 
 /**
  * Read the Exponential Golomb encoded signed number from the current position
  */
-PUBLIC_API STATUS bitReaderReadExpGolombSe(PBitReader, PINT32);
+PUBLIC_API STATUS bitReaderReadExpGolombSe(PBitReader pBitReader, PINT32 pRead);
 
 ////////////////////////////////////////////////////
 // Endianness functionality
@@ -993,28 +994,28 @@ BOOL checkBufferValues(PVOID, BYTE, SIZE_T);
 /**
  * This function generates the time string based on the timestamp format requested and the timestamp provided
  * Example: generateTimestampStrInMilliseconds(1689093566, "%Y-%m-%d %H:%M:%S", timeString, (UINT32) ARRAY_SIZE(timeString), &timeStrLen);
- * @UINT64  - IN - timestamp in 100ns to be converted to string. Sample timestamp input: 1689093566
- * @PCHAR   - IN - timestamp format string. Sample time format input: %Y-%m-%d %H:%M:%S
- * @PCHAR   - IN - buffer to hold the resulting string. Sample timestring output: 2023-07-11 16:37:07
- * @UINT32  - IN - buffer size
- * @PUINT32 - OUT - actual number of characters in the result string not including null terminator
- * @return  - STATUS code of the execution
+ * @param[in] timestamp timestamp in 100ns to be converted to string. Sample timestamp input: 1689093566
+ * @param[in] formatStr timestamp format string. Sample time format input: %Y-%m-%d %H:%M:%S
+ * @param[in] pDestBuffer buffer to hold the resulting string. Sample timestring output: 2023-07-11 16:37:07
+ * @param[in] destBufferLen buffer size
+ * @param[out] pFormattedStrLen actual number of characters in the result string not including null terminator
+ * @return STATUS code of the execution
  */
-PUBLIC_API STATUS generateTimestampStr(UINT64, PCHAR, PCHAR, UINT32, PUINT32);
+PUBLIC_API STATUS generateTimestampStr(UINT64 timestamp, PCHAR formatStr, PCHAR pDestBuffer, UINT32 destBufferLen, PUINT32 pFormattedStrLen);
 
 /**
  * This function generates the millisecond portion of the timestamp and appends to the timestamp format supplied.
  * The output is of the format: <Timestring-format>.ssssss where ssssss is the millisecond format
  * Example: generateTimestampStrInMilliseconds("%Y-%m-%d %H:%M:%S", timeString, (UINT32) ARRAY_SIZE(timeString), &timeStrLen);
  * Formats can be constructed using this: https://man7.org/linux/man-pages/man3/strftime.3.html
- * @PCHAR   - IN - timestamp format string without milliseconds. Sample time format input: %Y-%m-%d %H:%M:%S
- * @PCHAR   - IN - buffer to hold the resulting string. Sample timestring output: 2023-07-11 16:37:07.025527,
+ * @param[in] formatStr timestamp format string without milliseconds. Sample time format input: %Y-%m-%d %H:%M:%S
+ * @param[in] pDestBuffer buffer to hold the resulting string. Sample timestring output: 2023-07-11 16:37:07.025527,
  * where 025527 is the appended millisecond value
- * @UINT32  - IN - buffer size
- * @PUINT32 - OUT - actual number of characters in the result string not including null terminator
- * @return  - STATUS code of the execution
+ * @param[in] destBufferLen buffer size
+ * @param[out] pFormattedStrLen actual number of characters in the result string not including null terminator
+ * @return STATUS code of the execution
  */
-PUBLIC_API STATUS generateTimestampStrInMilliseconds(PCHAR, PCHAR, UINT32, PUINT32);
+PUBLIC_API STATUS generateTimestampStrInMilliseconds(PCHAR formatStr, PCHAR pDestBuffer, UINT32 destBufferLen, PUINT32 pFormattedStrLen);
 
 // yyyy-mm-dd HH:MM:SS
 #define MAX_TIMESTAMP_FORMAT_STR_LEN 26
@@ -1045,33 +1046,33 @@ PUBLIC_API VOID loggerSetLogLevel(UINT32);
 
 /**
  * Get current log level
- * @return - UINT32 - current log level
+ * @return UINT32 - current log level
  */
 PUBLIC_API UINT32 loggerGetLogLevel();
 
 /**
  * Prepend log message with timestamp and thread id.
- * @PCHAR - IN - buffer holding the log
- * @UINT32 - IN - buffer length
- * @PCHAR - IN - log format string
- * @UINT32 - IN - log level
- * @return - VOID
+ * @param[in] buffer buffer holding the log
+ * @param[in] bufferLen buffer length
+ * @param[in] fmt log format string
+ * @param[in] logLevel log level
  */
-PUBLIC_API VOID addLogMetadata(PCHAR, UINT32, PCHAR, UINT32);
+PUBLIC_API VOID addLogMetadata(PCHAR buffer, UINT32 bufferLen, PCHAR fmt, UINT32 logLevel);
 
 /**
  * Updates a CRC32 checksum
- * @UINT32 - IN - initial checksum result from previous update; for the first call, it should be 0.
- * @PBYTE - IN - buffer used to compute checksum
- * @UINT32 - IN - number of bytes to use from buffer
- * @return - UINT32 crc32 checksum
+ * @param[in] start initial checksum result from previous update; for the first call, it should be 0.
+ * @param[in] pBuffer buffer used to compute checksum
+ * @param[in] len number of bytes to use from buffer
+ * @return UINT32 crc32 checksum
  */
-PUBLIC_API UINT32 updateCrc32(UINT32, PBYTE, UINT32);
+PUBLIC_API UINT32 updateCrc32(UINT32 start, PBYTE pBuffer, UINT32 len);
 
 /**
- * @PBYTE - IN - buffer used to compute checksum
- * @UINT32 - IN - number of bytes to use from buffer
- * @return - UINT32 crc32 checksum
+ * Computes a CRC32 checksum of a buffer
+ * @param[in] pBuffer buffer used to compute checksum
+ * @param[in] len number of bytes to use from buffer
+ * @return UINT32 crc32 checksum
  */
 #define COMPUTE_CRC32(pBuffer, len) (updateCrc32(0, pBuffer, len))
 
@@ -1130,12 +1131,12 @@ typedef TIMER_QUEUE_HANDLE* PTIMER_QUEUE_HANDLE;
  * NOTE: Returning other non-STATUS_SUCCESS status will issue a warning but the timer will
  * still continue to be scheduled.
  *
- * @UINT32 - Timer ID that's fired
- * @UINT64 - Current time the scheduling is triggered
- * @UINT64 - Data that was passed to the timer function
+ * @param timerId Timer ID that's fired
+ * @param currentTime Current time the scheduling is triggered
+ * @param customData Data that was passed to the timer function
  *
  */
-typedef STATUS (*TimerCallbackFunc)(UINT32, UINT64, UINT64);
+typedef STATUS (*TimerCallbackFunc)(UINT32 timerId, UINT64 currentTime, UINT64 customData);
 
 /**
  * Timer queue error values starting from 0x41100000
@@ -1148,11 +1149,11 @@ typedef STATUS (*TimerCallbackFunc)(UINT32, UINT64, UINT64);
 #define STATUS_TIMER_QUEUE_SHUTDOWN        STATUS_TIMER_QUEUE_BASE + 0x00000005
 
 /**
- * @param - PTIMER_QUEUE_HANDLE - OUT - Timer queue handle
+ * @param[out] pHandle Timer queue handle
  *
- * @return  - STATUS code of the execution
+ * @return STATUS code of the execution
  */
-PUBLIC_API STATUS timerQueueCreate(PTIMER_QUEUE_HANDLE);
+PUBLIC_API STATUS timerQueueCreate(PTIMER_QUEUE_HANDLE pHandle);
 
 /*
  * Frees the Timer queue object
@@ -1161,7 +1162,7 @@ PUBLIC_API STATUS timerQueueCreate(PTIMER_QUEUE_HANDLE);
  *
  * @param - PTIMER_QUEUE_HANDLE - IN/OUT/OPT - Timer queue handle to free
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
 PUBLIC_API STATUS timerQueueFree(PTIMER_QUEUE_HANDLE);
 
@@ -1177,7 +1178,7 @@ PUBLIC_API STATUS timerQueueFree(PTIMER_QUEUE_HANDLE);
  * @param - UINT64 - IN - Timer callback function custom data
  * @param - PUINT32 - IN - Created timers ID
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
 PUBLIC_API STATUS timerQueueAddTimer(TIMER_QUEUE_HANDLE, UINT64, UINT64, TimerCallbackFunc, UINT64, PUINT32);
 
@@ -1191,7 +1192,7 @@ PUBLIC_API STATUS timerQueueAddTimer(TIMER_QUEUE_HANDLE, UINT64, UINT64, TimerCa
  * @param - UINT32 - IN - Timer id to cancel
  * @param - UINT64 - IN - provided customData. CustomData needs to match in order to successfully cancel.
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
 PUBLIC_API STATUS timerQueueCancelTimer(TIMER_QUEUE_HANDLE, UINT32, UINT64);
 
@@ -1201,7 +1202,7 @@ PUBLIC_API STATUS timerQueueCancelTimer(TIMER_QUEUE_HANDLE, UINT32, UINT64);
  * @param - TIMER_QUEUE_HANDLE - IN - Timer queue handle
  * @param - UINT64 - IN - provided customData.
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
 PUBLIC_API STATUS timerQueueCancelTimersWithCustomData(TIMER_QUEUE_HANDLE, UINT64);
 
@@ -1210,7 +1211,7 @@ PUBLIC_API STATUS timerQueueCancelTimersWithCustomData(TIMER_QUEUE_HANDLE, UINT6
  *
  * @param - TIMER_QUEUE_HANDLE - IN - Timer queue handle
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
 PUBLIC_API STATUS timerQueueCancelAllTimers(TIMER_QUEUE_HANDLE);
 
@@ -1220,7 +1221,7 @@ PUBLIC_API STATUS timerQueueCancelAllTimers(TIMER_QUEUE_HANDLE);
  * @param - TIMER_QUEUE_HANDLE - IN - Timer queue handle
  * @param - PUINT32 - OUT - pointer to store active timer count
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
 PUBLIC_API STATUS timerQueueGetTimerCount(TIMER_QUEUE_HANDLE, PUINT32);
 
@@ -1232,7 +1233,7 @@ PUBLIC_API STATUS timerQueueGetTimerCount(TIMER_QUEUE_HANDLE, PUINT32);
  * @param - PUINT32 - IN/OUT - size of the array passing in and will store the number of timer ids when the function returns
  * @param - PUINT32* - OUT/OPT - array that will store the timer ids. can be NULL.
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
 PUBLIC_API STATUS timerQueueGetTimersWithCustomData(TIMER_QUEUE_HANDLE, UINT64, PUINT32, PUINT32);
 
@@ -1244,7 +1245,7 @@ PUBLIC_API STATUS timerQueueGetTimersWithCustomData(TIMER_QUEUE_HANDLE, UINT64, 
  * @param - UINT32 - IN - Timer id to update
  * @param - UINT32 - IN - new period
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
 PUBLIC_API STATUS timerQueueUpdateTimerPeriod(TIMER_QUEUE_HANDLE, UINT64, UINT32, UINT64);
 
@@ -1254,7 +1255,7 @@ PUBLIC_API STATUS timerQueueUpdateTimerPeriod(TIMER_QUEUE_HANDLE, UINT64, UINT32
  * @param - TIMER_QUEUE_HANDLE - IN - Timer queue handle
  * @param - UINT32 - IN - Timer id to update
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
 PUBLIC_API STATUS timerQueueKick(TIMER_QUEUE_HANDLE, UINT32);
 
@@ -1264,7 +1265,7 @@ PUBLIC_API STATUS timerQueueKick(TIMER_QUEUE_HANDLE, UINT32);
  *
  * @param - TIMER_QUEUE_HANDLE - IN - Timer queue handle
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
 PUBLIC_API STATUS timerQueueShutdown(TIMER_QUEUE_HANDLE);
 
@@ -1307,22 +1308,22 @@ typedef SEMAPHORE_HANDLE* PSEMAPHORE_HANDLE;
 /**
  * Create a semaphore object
  *
- * @param - UINT32 - IN - The permit count
- * @param - PSEMAPHORE_HANDLE - OUT - Semaphore handle
+ * @param[in] maxPermits The permit count
+ * @param[out] pHandle Semaphore handle
  *
- * @return  - STATUS code of the execution
+ * @return STATUS code of the execution
  */
-PUBLIC_API STATUS semaphoreCreate(UINT32, PSEMAPHORE_HANDLE);
+PUBLIC_API STATUS semaphoreCreate(UINT32 maxPermits, PSEMAPHORE_HANDLE pHandle);
 
 /**
  * Create a semaphore object that starts with 0 count
  *
- * @param - UINT32 - IN - The permit count
- * @param - PSEMAPHORE_HANDLE - OUT - Semaphore handle
+ * @param[in] maxPermits The permit count
+ * @param[out] pHandle Semaphore handle
  *
- * @return  - STATUS code of the execution
+ * @return STATUS code of the execution
  */
-PUBLIC_API STATUS semaphoreEmptyCreate(UINT32, PSEMAPHORE_HANDLE);
+PUBLIC_API STATUS semaphoreEmptyCreate(UINT32 maxPermits, PSEMAPHORE_HANDLE pHandle);
 
 /*
  * Frees the semaphore object releasing all the awaiting threads.
@@ -1331,7 +1332,7 @@ PUBLIC_API STATUS semaphoreEmptyCreate(UINT32, PSEMAPHORE_HANDLE);
  *
  * @param - PSEMAPHORE_HANDLE - IN/OUT/OPT - Semaphore handle to free
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
 PUBLIC_API STATUS semaphoreFree(PSEMAPHORE_HANDLE);
 
@@ -1343,7 +1344,7 @@ PUBLIC_API STATUS semaphoreFree(PSEMAPHORE_HANDLE);
  * @param - SEMAPHORE_HANDLE - IN - Semaphore handle
  * @param - UINT64 - IN - Time to wait to acquire in 100ns
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
 PUBLIC_API STATUS semaphoreAcquire(SEMAPHORE_HANDLE, UINT64);
 
@@ -1352,7 +1353,7 @@ PUBLIC_API STATUS semaphoreAcquire(SEMAPHORE_HANDLE, UINT64);
  *
  * @param - SEMAPHORE_HANDLE - IN - Semaphore handle
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
 PUBLIC_API STATUS semaphoreRelease(SEMAPHORE_HANDLE);
 
@@ -1361,7 +1362,7 @@ PUBLIC_API STATUS semaphoreRelease(SEMAPHORE_HANDLE);
  *
  * @param - SEMAPHORE_HANDLE - IN - Semaphore handle
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
 PUBLIC_API STATUS semaphoreLock(SEMAPHORE_HANDLE);
 
@@ -1370,7 +1371,7 @@ PUBLIC_API STATUS semaphoreLock(SEMAPHORE_HANDLE);
  *
  * @param - SEMAPHORE_HANDLE - IN - Semaphore handle
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
 PUBLIC_API STATUS semaphoreUnlock(SEMAPHORE_HANDLE);
 
@@ -1380,7 +1381,7 @@ PUBLIC_API STATUS semaphoreUnlock(SEMAPHORE_HANDLE);
  * @param - SEMAPHORE_HANDLE - IN - Semaphore handle
  * @param - UINT64 - IN - Timeout value to wait for
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
 PUBLIC_API STATUS semaphoreWaitUntilClear(SEMAPHORE_HANDLE, UINT64);
 
@@ -1390,7 +1391,7 @@ PUBLIC_API STATUS semaphoreWaitUntilClear(SEMAPHORE_HANDLE, UINT64);
  * @param - SEMAPHORE_HANDLE - IN - Semaphore handle
  * @param - PINT32 - OUT - Value of count
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
 PUBLIC_API STATUS semaphoreGetCount(SEMAPHORE_HANDLE, PINT32);
 
@@ -1401,7 +1402,7 @@ PUBLIC_API STATUS semaphoreGetCount(SEMAPHORE_HANDLE, PINT32);
 /**
  * Sets the global allocators to the instrumented ones.
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
 PUBLIC_API STATUS setInstrumentedAllocators();
 
@@ -1415,7 +1416,7 @@ PUBLIC_API STATUS setInstrumentedAllocators();
  *
  * ex: CHK_STATUS(SET_INSTRUMENTED_ALLOCATORS);
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
 PUBLIC_API STATUS setInstrumentedAllocatorsNoop();
 
@@ -1425,7 +1426,7 @@ PUBLIC_API STATUS setInstrumentedAllocatorsNoop();
  * NOTE: Any attempt to free allocations which were allocated after set call
  * past this API call will result in memory corruption.
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
 PUBLIC_API STATUS resetInstrumentedAllocators();
 
@@ -1439,14 +1440,14 @@ PUBLIC_API STATUS resetInstrumentedAllocators();
  *
  * ex: CHK_STATUS(RESET_INSTRUMENTED_ALLOCATORS);
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
 PUBLIC_API STATUS resetInstrumentedAllocatorsNoop();
 
 /**
  * Returns the current total allocation size.
  *
- * @return - Total allocation size
+ * @return Total allocation size
  */
 PUBLIC_API SIZE_T getInstrumentedTotalAllocationSize();
 
@@ -1489,38 +1490,38 @@ PUBLIC_API SIZE_T getInstrumentedTotalAllocationSize();
 /**
  * Creates a file based logger object and installs the global logger callback function
  *
- * @param - UINT64 - IN - Size of string buffer in file logger. When the string buffer is full the logger will flush everything into a new file
- * @param - UINT64 - IN - Max number of log file. When exceeded, the oldest file will be deleted when new one is generated
- * @param - PCHAR - IN - Directory in which the log file will be generated
- * @param - BOOL - IN - Whether to print log to std out too
- * @param - BOOL - IN - Whether to set global logger function pointer
- * @param - logPrintFunc* - OUT/OPT - Optional function pointer to be returned to the caller that contains the main function for actual output
+ * @param[in] maxStringBufferLen Size of string buffer in file logger. When the string buffer is full the logger will flush everything into a new file
+ * @param[in] maxLogFileCount Max number of log file. When exceeded, the oldest file will be deleted when new one is generated
+ * @param[in] logFileDir Directory in which the log file will be generated
+ * @param[in] printLog Whether to print log to std out too
+ * @param[in] setGlobalLogFn Whether to set global logger function pointer
+ * @param[out] pFilePrintFn Optional function pointer to be returned to the caller that contains the main function for actual output
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
-PUBLIC_API STATUS createFileLogger(UINT64, UINT64, PCHAR, BOOL, BOOL, logPrintFunc*);
+PUBLIC_API STATUS createFileLogger(UINT64 maxStringBufferLen, UINT64 maxLogFileCount, PCHAR logFileDir, BOOL printLog, BOOL setGlobalLogFn, logPrintFunc* pFilePrintFn);
 
 /**
  * Creates a file based logger object and installs the global logger callback function
  *
- * @param - UINT64 - IN - Size of string buffer in file logger. When the string buffer is full the logger will flush everything into a new file
- * @param - UINT64 - IN - Max number of log file. When exceeded, the oldest file will be deleted when new one is generated
- * @param - PCHAR - IN - Directory in which the log file will be generated
- * @param - BOOL - IN - Whether to print log to std out too
- * @param - BOOL - IN - Whether to set global logger function pointer
- * @param - BOOL - IN - Whether to enable logging other log levels into a file
- * @param - UINT32 - IN - Log level that needs to be filtered into another file
- * @param - logPrintFunc* - OUT/OPT - Optional function pointer to be returned to the caller that contains the main function for actual output
+ * @param[in] maxStringBufferLen Size of string buffer in file logger. When the string buffer is full the logger will flush everything into a new file
+ * @param[in] maxLogFileCount Max number of log file. When exceeded, the oldest file will be deleted when new one is generated
+ * @param[in] logFileDir Directory in which the log file will be generated
+ * @param[in] printLog Whether to print log to std out too
+ * @param[in] setGlobalLogFn Whether to set global logger function pointer
+ * @param[in] enableAllLevels Whether to enable logging other log levels into a file
+ * @param[in] level Log level that needs to be filtered into another file
+ * @param[out] pFilePrintFn Optional function pointer to be returned to the caller that contains the main function for actual output
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
-PUBLIC_API STATUS createFileLoggerWithLevelFiltering(UINT64, UINT64, PCHAR, BOOL, BOOL, BOOL, UINT32, logPrintFunc*);
+PUBLIC_API STATUS createFileLoggerWithLevelFiltering(UINT64 maxStringBufferLen, UINT64 maxLogFileCount, PCHAR logFileDir, BOOL printLog, BOOL setGlobalLogFn, BOOL enableAllLevels, UINT32 level, logPrintFunc* pFilePrintFn);
 
 /**
  * Frees the static file logger object and resets the global logging function if it was
  * previously set by the create function.
  *
- * @return - STATUS code of the execution
+ * @return STATUS code of the execution
  */
 PUBLIC_API STATUS freeFileLogger();
 
@@ -1550,14 +1551,14 @@ typedef PUINT64 PRetryStrategyConfig;
  * A generic retry strategy
  */
 struct __KvsRetryStrategy {
-    // Pointer to metadata/state/details for the retry strategy.
-    // The actual data type is abstracted and will be inferred by
-    // the RetryHandlerFn
+    /// Pointer to metadata/state/details for the retry strategy.
+    /// The actual data type is abstracted and will be inferred by
+    /// the RetryHandlerFn
     PRetryStrategy pRetryStrategy;
-    // Optional configuration used to build the retry strategy. Once the retry strategy is created,
-    // any changes to the config will be useless.
+    /// Optional configuration used to build the retry strategy. Once the retry strategy is created,
+    /// any changes to the config will be useless.
     PRetryStrategyConfig pRetryStrategyConfig;
-    // Retry strategy type as defined in the above enum
+    /// Retry strategy type as defined in the above enum
     KVS_RETRY_STRATEGY_TYPE retryStrategyType;
 };
 
@@ -1567,51 +1568,50 @@ typedef struct __KvsRetryStrategy* PKvsRetryStrategy;
 /**
  * Handler to create retry strategy
  *
- * @param 1 PKvsRetryStrategy - IN - KvsRetryStrategy passed by the caller.
- * @param 1 PKvsRetryStrategy - OUT - pRetryStrategy field of KvsRetryStrategy struct will be populated.
+ * @param[in,out] pKvsRetryStrategy KvsRetryStrategy passed by the caller. Its pRetryStrategy field will be populated.
  *
  * @return Status of the callback
  */
-typedef STATUS (*CreateRetryStrategyFn)(PKvsRetryStrategy);
+typedef STATUS (*CreateRetryStrategyFn)(PKvsRetryStrategy pKvsRetryStrategy);
 
 /**
  * Handler to get retry count
  *
- * @param 1 PKvsRetryStrategy - IN - KvsRetryStrategy passed by the caller.
- * @param 2 PUINT32 - OUT - retry count value
+ * @param[in] pKvsRetryStrategy KvsRetryStrategy passed by the caller.
+ * @param[out] pRetryCount retry count value
  *
  * @return Status of the callback
  */
-typedef STATUS (*GetCurrentRetryAttemptNumberFn)(PKvsRetryStrategy, PUINT32);
+typedef STATUS (*GetCurrentRetryAttemptNumberFn)(PKvsRetryStrategy pKvsRetryStrategy, PUINT32 pRetryCount);
 
 /**
  * Handler to release resources associated with a retry strategy
  *
- * @param 1 PKvsRetryStrategy - KvsRetryStrategy passed by the caller.
+ * @param pKvsRetryStrategy KvsRetryStrategy passed by the caller.
  *
  * @return Status of the callback
  */
-typedef STATUS (*FreeRetryStrategyFn)(PKvsRetryStrategy);
+typedef STATUS (*FreeRetryStrategyFn)(PKvsRetryStrategy pKvsRetryStrategy);
 
 /**
  * Handler to execute retry strategy
  *
- * @param 1 PKvsRetryStrategy - IN - KvsRetryStrategy passed by the caller.
- * @param 2 PUINT64 - OUT - wait time value computed by ExecuteRetryStrategyFn
+ * @param[in] pKvsRetryStrategy KvsRetryStrategy passed by the caller.
+ * @param[out] pRetryWaitTime wait time value computed by ExecuteRetryStrategyFn
  *
  * @return Status of the callback
  */
-typedef STATUS (*ExecuteRetryStrategyFn)(PKvsRetryStrategy, PUINT64);
+typedef STATUS (*ExecuteRetryStrategyFn)(PKvsRetryStrategy pKvsRetryStrategy, PUINT64 pRetryWaitTime);
 
 struct __KvsRetryStrategyCallbacks {
-    // Pointer to the function to create new retry strategy
+    /// Pointer to the function to create new retry strategy
     CreateRetryStrategyFn createRetryStrategyFn;
-    // Get retry count
+    /// Get retry count
     GetCurrentRetryAttemptNumberFn getCurrentRetryAttemptNumberFn;
-    // Pointer to the function to release allocated resources
-    // associated with the retry strategy
+    /// Pointer to the function to release allocated resources
+    /// associated with the retry strategy
     FreeRetryStrategyFn freeRetryStrategyFn;
-    // Pointer to the actual handler for the given retry strategy
+    /// Pointer to the actual handler for the given retry strategy
     ExecuteRetryStrategyFn executeRetryStrategyFn;
 };
 
@@ -1680,26 +1680,26 @@ typedef enum {
 } ExponentialBackoffJitterType;
 
 typedef struct __ExponentialBackoffRetryStrategyConfig {
-    // Max retries after which an error will be returned
-    // to the application. For infinite retries, set this
-    // to KVS_INFINITE_EXPONENTIAL_RETRIES.
+    /// Max retries after which an error will be returned
+    /// to the application. For infinite retries, set this
+    /// to KVS_INFINITE_EXPONENTIAL_RETRIES.
     UINT32 maxRetryCount;
-    // Maximum retry wait time in milliseconds. Once the retry wait time
-    // reaches this value, subsequent retries will wait for
-    // maxRetryWaitTime (plus jitter).
+    /// Maximum retry wait time in milliseconds. Once the retry wait time
+    /// reaches this value, subsequent retries will wait for
+    /// maxRetryWaitTime (plus jitter).
     UINT64 maxRetryWaitTime;
-    // Factor for computing the exponential backoff wait time in milliseconds
+    /// Factor for computing the exponential backoff wait time in milliseconds
     UINT64 retryFactorTime;
-    // The minimum time (in milliseconds) between two consecutive retries
-    // after which retry state will be reset i.e. retries
-    // will start from initial retry state.
+    /// The minimum time (in milliseconds) between two consecutive retries
+    /// after which retry state will be reset i.e. retries
+    /// will start from initial retry state.
     UINT64 minTimeToResetRetryState;
-    // Jitter type indicating how much jitter to be added
-    // Default will be FULL_JITTER
+    /// Jitter type indicating how much jitter to be added
+    /// Default will be FULL_JITTER
     ExponentialBackoffJitterType jitterType;
-    // Factor determining random jitter value (in milliseconds).
-    // Jitter will be between [0, jitterFactor)
-    // This parameter is only valid for jitter type FIXED_JITTER
+    /// Factor determining random jitter value (in milliseconds).
+    /// Jitter will be between [0, jitterFactor)
+    /// This parameter is only valid for jitter type FIXED_JITTER
     UINT32 jitterFactor;
 } ExponentialBackoffRetryStrategyConfig, *PExponentialBackoffRetryStrategyConfig;
 
@@ -1710,11 +1710,11 @@ typedef struct {
     ExponentialBackoffRetryStrategyConfig exponentialBackoffRetryStrategyConfig;
     ExponentialBackoffStatus status;
     UINT32 currentRetryCount;
-    // The system time at which last retry happened
+    /// The system time at which last retry happened
     UINT64 lastRetrySystemTime;
-    // The actual wait time for last retry
+    /// The actual wait time for last retry
     UINT64 lastRetryWaitTime;
-    // Lock to update operations
+    /// Lock to update operations
     MUTEX retryStrategyLock;
 } ExponentialBackoffRetryStrategyState, *PExponentialBackoffRetryStrategyState;
 
@@ -1781,11 +1781,11 @@ Direct API usage example:
  *
  * THREAD SAFE.
  *
- * @param 1 PKvsRetryStrategy - OUT - pRetryStrategy field of KvsRetryStrategy struct will be populated.
+ * @param[out] pKvsRetryStrategy pRetryStrategy field of KvsRetryStrategy struct will be populated.
  *                                    If PKvsRetryStrategy->PRetryStrategyConfig not provided, default config will be used
  * @return Status of the function call.
  */
-PUBLIC_API STATUS exponentialBackoffRetryStrategyCreate(PKvsRetryStrategy);
+PUBLIC_API STATUS exponentialBackoffRetryStrategyCreate(PKvsRetryStrategy pKvsRetryStrategy);
 
 /**
  * @brief
@@ -1798,10 +1798,11 @@ PUBLIC_API STATUS exponentialBackoffRetryStrategyCreate(PKvsRetryStrategy);
  * ExponentialBackoffState using the exponentialBackoffStateCreate OR exponentialBackoffStateWithDefaultConfigCreate
  * API and then call exponentialBackoffBlockingWait
  *
- * @param 1 PKvsRetryStrategy - IN - Opaque Exponential backoff retry strategy
+ * @param[in] pKvsRetryStrategy Opaque Exponential backoff retry strategy
+ * @param[out] retryWaitTime Computed wait time in 100ns
  * @return Status of the function call.
  */
-PUBLIC_API STATUS getExponentialBackoffRetryStrategyWaitTime(PKvsRetryStrategy, PUINT64);
+PUBLIC_API STATUS getExponentialBackoffRetryStrategyWaitTime(PKvsRetryStrategy pKvsRetryStrategy, PUINT64 retryWaitTime);
 
 /**
  * @brief
@@ -1817,31 +1818,31 @@ PUBLIC_API STATUS getExponentialBackoffRetryStrategyWaitTime(PKvsRetryStrategy, 
  * ExponentialBackoffState using the exponentialBackoffStateCreate OR exponentialBackoffStateWithDefaultConfigCreate
  * API and then call exponentialBackoffBlockingWait
  *
- * @param 1 PKvsRetryStrategy - IN - Opaque Exponential backoff retry strategy
+ * @param[in] pKvsRetryStrategy Opaque Exponential backoff retry strategy
  * @return Status of the function call.
  */
-PUBLIC_API STATUS exponentialBackoffRetryStrategyBlockingWait(PKvsRetryStrategy);
+PUBLIC_API STATUS exponentialBackoffRetryStrategyBlockingWait(PKvsRetryStrategy pKvsRetryStrategy);
 
 /**
  * @brief Returns updated exponential backoff retry count when PRetryStrategy object is passed
  *
  * THREAD SAFE.
  *
- * @param 1 PKvsRetryStrategy - IN - Opaque Exponential backoff retry strategy for which retry state is maintained
- * @param 2 PUINT32 - OUT - Retry count
+ * @param[in] pKvsRetryStrategy Opaque Exponential backoff retry strategy for which retry state is maintained
+ * @param[out] pRetryCount Retry count
  * @return Status of the function call.
  */
-PUBLIC_API STATUS getExponentialBackoffRetryCount(PKvsRetryStrategy, PUINT32);
+PUBLIC_API STATUS getExponentialBackoffRetryCount(PKvsRetryStrategy pKvsRetryStrategy, PUINT32 pRetryCount);
 /**
  * @brief Frees ExponentialBackoffState and its corresponding ExponentialBackoffConfig struct
  *
  * THREAD SAFE.
  *
- * @param 1 PKvsRetryStrategy - IN - Opaque Exponential backoff retry strategy.
+ * @param[in] pKvsRetryStrategy Opaque Exponential backoff retry strategy.
  *                              pRetryStrategy field within PKvsRetryStrategy will be released.
  * @return Status of the function call.
  */
-PUBLIC_API STATUS exponentialBackoffRetryStrategyFree(PKvsRetryStrategy);
+PUBLIC_API STATUS exponentialBackoffRetryStrategyFree(PKvsRetryStrategy pKvsRetryStrategy);
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 // Math Utility APIs
@@ -1855,14 +1856,14 @@ PUBLIC_API STATUS exponentialBackoffRetryStrategyFree(PKvsRetryStrategy);
  *  base: [6, 100], exponent: [0, 9]
  *  base: [101, 1000], exponent: [0, 6]
  *
- * @param - UINT32 - IN - Base.
- * @param - UINT32 - IN - Exponent.
- * @param - PUINT64 - OUT - Result.
+ * @param[in] base Base.
+ * @param[in] exponent Exponent.
+ * @param[out] result Result.
  *
- * @return - STATUS code of the execution.
+ * @return STATUS code of the execution.
  *
  */
-PUBLIC_API STATUS computePower(UINT64, UINT64, PUINT64);
+PUBLIC_API STATUS computePower(UINT64 base, UINT64 exponent, PUINT64 result);
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 // Threadsafe Blocking Queue APIs
@@ -1880,56 +1881,56 @@ typedef struct {
 /**
  * Create a new thread safe blocking queue
  *
- * @param - PSafeBlockingQueue* - OUT - Pointer to PSafeBlockingQueue to create.
+ * @param[out] ppSafeQueue Pointer to PSafeBlockingQueue to create.
  */
-PUBLIC_API STATUS safeBlockingQueueCreate(PSafeBlockingQueue*);
+PUBLIC_API STATUS safeBlockingQueueCreate(PSafeBlockingQueue* ppSafeQueue);
 
 /**
  * Frees and de-allocates the thread safe blocking queue
  *
- * @param - PSafeBlockingQueue - OUT - PSafeBlockingQueue to destroy.
+ * @param[out] pSafeQueue PSafeBlockingQueue to destroy.
  */
-PUBLIC_API STATUS safeBlockingQueueFree(PSafeBlockingQueue);
+PUBLIC_API STATUS safeBlockingQueueFree(PSafeBlockingQueue pSafeQueue);
 
 /**
  * Clears and de-allocates all the items
  *
- * @param - PSafeBlockingQueue - IN - PSafeBlockingQueue to affect.
- * @param - BOOL - IN - Free objects stored in queue
+ * @param[in] pSafeQueue PSafeBlockingQueue to affect.
+ * @param[in] freeData Free objects stored in queue
  */
-PUBLIC_API STATUS safeBlockingQueueClear(PSafeBlockingQueue, BOOL);
+PUBLIC_API STATUS safeBlockingQueueClear(PSafeBlockingQueue pSafeQueue, BOOL freeData);
 
 /**
  * Gets the number of items in the stack/queue
  *
- * @param - PSafeBlockingQueue - IN - PSafeBlockingQueue to affect.
- * @param - PUINT32 - OUT - Pointer to integer to store count in
+ * @param[in] pSafeQueue PSafeBlockingQueue to affect.
+ * @param[out] pCount Pointer to integer to store count in
  */
-PUBLIC_API STATUS safeBlockingQueueGetCount(PSafeBlockingQueue, PUINT32);
+PUBLIC_API STATUS safeBlockingQueueGetCount(PSafeBlockingQueue pSafeQueue, PUINT32 pCount);
 
 /**
  * Whether the thread safe blocking queue is empty
  *
- * @param - PSafeBlockingQueue - IN - PSafeBlockingQueue to affect.
- * @param - PBOOL - OUT - Pointer to bool to store whether the queue is empty (true) or not (false)
+ * @param[in] pSafeQueue PSafeBlockingQueue to affect.
+ * @param[out] pIsEmpty Pointer to bool to store whether the queue is empty (true) or not (false)
  */
-PUBLIC_API STATUS safeBlockingQueueIsEmpty(PSafeBlockingQueue, PBOOL);
+PUBLIC_API STATUS safeBlockingQueueIsEmpty(PSafeBlockingQueue pSafeQueue, PBOOL pIsEmpty);
 
 /**
  * Enqueues an item in the queue
  *
- * @param - PSafeBlockingQueue - IN - PSafeBlockingQueue to affect.
- * @param - UINT64 - IN - casted pointer to object to enqueue
+ * @param[in] pSafeQueue PSafeBlockingQueue to affect.
+ * @param[in] item casted pointer to object to enqueue
  */
-PUBLIC_API STATUS safeBlockingQueueEnqueue(PSafeBlockingQueue, UINT64);
+PUBLIC_API STATUS safeBlockingQueueEnqueue(PSafeBlockingQueue pSafeQueue, UINT64 item);
 
 /**
  * Dequeues an item from the queue
  *
- * @param - PSafeBlockingQueue - IN - PSafeBlockingQueue to affect.
- * @param - PUINT64 - OUT - casted pointer to object dequeued
+ * @param[in] pSafeQueue PSafeBlockingQueue to affect.
+ * @param[out] pItem casted pointer to object dequeued
  */
-PUBLIC_API STATUS safeBlockingQueueDequeue(PSafeBlockingQueue, PUINT64);
+PUBLIC_API STATUS safeBlockingQueueDequeue(PSafeBlockingQueue pSafeQueue, PUINT64 pItem);
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 // Threadpool APIs
@@ -1940,13 +1941,13 @@ PUBLIC_API STATUS safeBlockingQueueDequeue(PSafeBlockingQueue, PUINT64);
 
 typedef struct __Threadpool {
     volatile ATOMIC_BOOL terminate;
-    // threads waiting for a task
+    /// threads waiting for a task
     volatile SIZE_T availableThreads;
 
-    // tracks task
+    /// tracks task
     PSafeBlockingQueue taskQueue;
 
-    // tracks threads created
+    /// tracks threads created
     PStackQueue threadList;
 
     MUTEX listMutex;
@@ -1957,25 +1958,25 @@ typedef struct __Threadpool {
 /**
  * Create a new threadpool
  *
- * @param - PThreadpool* - OUT - Pointer to PThreadpool to create
- * @param - UINT32 - IN - minimum threads the threadpool must maintain (cannot be 0)
- * @param - UINT32 - IN - maximum threads the threadpool is allowed to create
+ * @param[out] ppThreadpool Pointer to PThreadpool to create
+ * @param[in] minThreads minimum threads the threadpool must maintain (cannot be 0)
+ * @param[in] maxThreads maximum threads the threadpool is allowed to create
  *                       (cannot be 0, must be greater than minimum)
  */
-PUBLIC_API STATUS threadpoolCreate(PThreadpool*, UINT32, UINT32);
+PUBLIC_API STATUS threadpoolCreate(PThreadpool* ppThreadpool, UINT32 minThreads, UINT32 maxThreads);
 
 /**
  * Destroy a threadpool
  *
- * @param - PThreadpool - IN - PThreadpool to destroy
+ * @param[in] pThreadpool PThreadpool to destroy
  */
 PUBLIC_API STATUS threadpoolFree(PThreadpool pThreadpool);
 
 /**
  * Amount of threads currently tracked by this threadpool
  *
- * @param - PThreadpool - IN - PThreadpool to modify
- * @param - PUINT32 - OUT - Pointer to integer to store the count
+ * @param[in] pThreadpool PThreadpool to modify
+ * @param[out] pCount Pointer to integer to store the count
  */
 PUBLIC_API STATUS threadpoolTotalThreadCount(PThreadpool pThreadpool, PUINT32 pCount);
 
@@ -1986,11 +1987,11 @@ PUBLIC_API STATUS threadpoolTotalThreadCount(PThreadpool pThreadpool, PUINT32 pC
  *          STATUS_FAILED/ if the threadpool is already at its
  *          predetermined max.
  *
- * @param - PThreadpool - IN - PThreadpool to modify
- * @param - startRoutine - IN - function pointer to run in thread
- * @param - PVOID - IN - custom data to send to function pointer
+ * @param[in] pThreadpool PThreadpool to modify
+ * @param[in] function function pointer to run in thread
+ * @param[in] customData custom data to send to function pointer
  */
-PUBLIC_API STATUS threadpoolTryAdd(PThreadpool, startRoutine, PVOID);
+PUBLIC_API STATUS threadpoolTryAdd(PThreadpool pThreadpool, startRoutine function, PVOID customData);
 
 /**
  * Create a thread with the given task.
@@ -1999,11 +2000,11 @@ PUBLIC_API STATUS threadpoolTryAdd(PThreadpool, startRoutine, PVOID);
  *          or if the task was added to the queue for the next thread.
  *          STATUS_FAILED/ if the threadpool queue is full.
  *
- * @param - PThreadpool - IN - PThreadpool to modify
- * @param - startRoutine - IN - function pointer to run in thread
- * @param - PVOID - IN - custom data to send to function pointer
+ * @param[in] pThreadpool PThreadpool to modify
+ * @param[in] function function pointer to run in thread
+ * @param[in] customData custom data to send to function pointer
  */
-PUBLIC_API STATUS threadpoolPush(PThreadpool, startRoutine, PVOID);
+PUBLIC_API STATUS threadpoolPush(PThreadpool pThreadpool, startRoutine function, PVOID customData);
 
 /**
  * @brief Checks if an environment variable is set to an enabled or disabled value, with a default if unset.
@@ -2012,21 +2013,21 @@ PUBLIC_API STATUS threadpoolPush(PThreadpool, startRoutine, PVOID);
  * Recognized disabled values: "0", "false", "off" (case-insensitive).
  * Unset or unrecognized values return the provided default.
  *
- * @param - PCHAR - IN - The name of the environment variable to check for.
- * @param - BOOL - IN - The default value to return if the variable is unset.
+ * @param[in] envVarName The name of the environment variable to check for.
+ * @param[in] defaultVal The default value to return if the variable is unset.
  *
- * @return - BOOL - TRUE/FALSE based on the variable value, or defaultVal if unset.
+ * @return BOOL - TRUE/FALSE based on the variable value, or defaultVal if unset.
  */
-PUBLIC_API BOOL isEnvVarEnabledWithDefault(PCHAR, BOOL);
+PUBLIC_API BOOL isEnvVarEnabledWithDefault(PCHAR envVarName, BOOL defaultVal);
 
 /**
  * @brief Checks if an environment variable is enabled (default=OFF). Equivalent to isEnvVarEnabledWithDefault(envVarName, FALSE).
  *
- * @param - PCHAR - IN - The name of the environment variable to check for.
+ * @param[in] envVarName The name of the environment variable to check for.
  *
- * @return - BOOL - TRUE if the environment variable is enabled, FALSE otherwise.
+ * @return BOOL - TRUE if the environment variable is enabled, FALSE otherwise.
  */
-PUBLIC_API BOOL isEnvVarEnabled(PCHAR);
+PUBLIC_API BOOL isEnvVarEnabled(PCHAR envVarName);
 
 #ifdef __cplusplus
 }

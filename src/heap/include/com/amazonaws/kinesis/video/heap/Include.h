@@ -1,5 +1,6 @@
 /**
- * Memory heap public include file
+ * @file
+ * @brief Memory heap public include file.
  */
 #ifndef __MEM_HEAP_INCLUDE_H__
 #define __MEM_HEAP_INCLUDE_H__
@@ -147,54 +148,54 @@ typedef struct {
 /**
  * Creates and initializes the heap
  */
-PUBLIC_API STATUS heapInitialize(UINT64, UINT32, UINT32, PCHAR, PHeap*);
+PUBLIC_API STATUS heapInitialize(UINT64 heapLimit, UINT32 spillRatio, UINT32 behaviorFlags, PCHAR pRootDirectory, PHeap* ppHeap);
 
 /**
  * Releases the entire heap.
  * IMPORTANT: Some heaps will leak memory if the allocations are not freed previously
  */
-PUBLIC_API STATUS heapRelease(PHeap);
+PUBLIC_API STATUS heapRelease(PHeap pHeap);
 
 /**
  * Returns the current utilization size of the heap.
  */
-PUBLIC_API STATUS heapGetSize(PHeap, PUINT64);
+PUBLIC_API STATUS heapGetSize(PHeap pHeap, PUINT64 pHeapSize);
 
 /**
  * Allocates memory from the heap
  */
-PUBLIC_API STATUS heapAlloc(PHeap, UINT64, PALLOCATION_HANDLE);
+PUBLIC_API STATUS heapAlloc(PHeap pHeap, UINT64 size, PALLOCATION_HANDLE pHandle);
 
 /**
  * Frees allocated memory
  */
-PUBLIC_API STATUS heapFree(PHeap, ALLOCATION_HANDLE);
+PUBLIC_API STATUS heapFree(PHeap pHeap, ALLOCATION_HANDLE handle);
 
 /**
  * Gets the size of the allocation
  */
-PUBLIC_API STATUS heapGetAllocSize(PHeap, ALLOCATION_HANDLE, PUINT64);
+PUBLIC_API STATUS heapGetAllocSize(PHeap pHeap, ALLOCATION_HANDLE handle, PUINT64 pAllocSize);
 
 /**
  * Sets the size of the allocation and returns a new handle
  * NOTE: pHandle is IN/OUT param and will be updated on success.
  */
-PUBLIC_API STATUS heapSetAllocSize(PHeap, PALLOCATION_HANDLE, UINT64);
+PUBLIC_API STATUS heapSetAllocSize(PHeap pHeap, PALLOCATION_HANDLE pHandle, UINT64 allocSize);
 
 /**
  * Maps the allocated handle and retrieves a memory address
  */
-PUBLIC_API STATUS heapMap(PHeap, ALLOCATION_HANDLE, PVOID*, PUINT64);
+PUBLIC_API STATUS heapMap(PHeap pHeap, ALLOCATION_HANDLE handle, PVOID* ppAllocation, PUINT64 pSize);
 
 /**
  * Un-maps the previously mapped memory
  */
-PUBLIC_API STATUS heapUnmap(PHeap, PVOID);
+PUBLIC_API STATUS heapUnmap(PHeap pHeap, PVOID pAllocation);
 
 /**
  * Debug validates/outputs information about the heap
  */
-PUBLIC_API STATUS heapDebugCheckAllocator(PHeap, BOOL);
+PUBLIC_API STATUS heapDebugCheckAllocator(PHeap pHeap, BOOL dump);
 
 #ifdef __cplusplus
 }
